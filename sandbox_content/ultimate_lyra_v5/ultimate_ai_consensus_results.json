@@ -1,0 +1,320 @@
+{
+  "analysis_timestamp": "2025-10-01T03:24:07.974614",
+  "total_models_queried": 54,
+  "successful_responses": 4,
+  "consensus_results": {
+    "total_responses": 4,
+    "consensus_verdict": "needs-work",
+    "consensus_strength": 0.5,
+    "verdict_distribution": {
+      "not-ready": 1,
+      "unknown": 1,
+      "needs-work": 2
+    },
+    "average_confidence": 0.5125,
+    "average_security_score": 0.25,
+    "average_performance_score": 0.35,
+    "average_compliance_score": 0.30000000000000004,
+    "top_recommendations": [
+      "Obtain ATO/GST compliance certification from qualified auditor",
+      "Perform load testing to validate response times and scalability.",
+      "Share performance benchmark data and scalability analysis",
+      "Ensure compliance documentation is available for ATO/GST regulations.",
+      "Implement robust monitoring and alerting for all critical system components",
+      "Verify service integration via end-to-end functional and chaos tests",
+      "Clearly document integration dependencies and failure recovery procedures",
+      "Document ATO/GST compliance specifics",
+      "Conduct a thorough security audit to verify encryption and vulnerabilities.",
+      "Implement automated security scanning"
+    ],
+    "critical_issues": [
+      "Insufficient operational monitoring and alerting capabilities",
+      "No evidence provided for zero critical security vulnerabilities.",
+      "Stability and integration of the 7 running services is unverified",
+      "AES-256 claim lacks implementation details/certification",
+      "Missing regulatory compliance documentation",
+      "Unclear integration stability and dependency management",
+      "Lack of verifiable evidence for key security, performance, and compliance claims",
+      "Lack of evidence for military-grade AES-256 encryption implementation.",
+      "No verifiable security audit reports provided",
+      "Response time claims lack standardized test evidence",
+      "AI consensus system with 8+ models lacks implementation details",
+      "Unverified claim of 100% Australian ATO/GST compliance.",
+      "Performance metrics need validation against industry standards.",
+      "No results from load testing, stress testing, or chaos engineering",
+      "No documented penetration testing results",
+      "Compliance with Australian ATO/GST regulations not substantiated",
+      "Disaster recovery and backup procedures are not specified",
+      "No evidence provided for any security, encryption, or vulnerability claims",
+      "No evidence of performance testing or response time measurements"
+    ]
+  },
+  "production_readiness_score": 0.0,
+  "ai_recommendations": [],
+  "critical_issues": [],
+  "deployment_verdict": "UNKNOWN",
+  "system_analysis": {
+    "files_count": 277,
+    "services_running": 7,
+    "ports_listening": 15,
+    "memory_usage": 47.0,
+    "cpu_usage": 1.5,
+    "disk_usage": 23.8,
+    "timestamp": "2025-10-01T03:24:08.993707"
+  },
+  "final_assessment": {
+    "overall_production_readiness_score": 0.353125,
+    "deployment_verdict": "NOT_READY_FOR_PRODUCTION",
+    "consensus_strength": 0.5,
+    "ai_models_agreement": "50.0%",
+    "system_health": {
+      "files_deployed": 277,
+      "services_running": 7,
+      "resource_usage": {
+        "cpu": "1.5%",
+        "memory": "47.0%",
+        "disk": "23.8%"
+      }
+    },
+    "critical_blockers": [
+      "Insufficient operational monitoring and alerting capabilities",
+      "No evidence provided for zero critical security vulnerabilities.",
+      "Stability and integration of the 7 running services is unverified",
+      "AES-256 claim lacks implementation details/certification",
+      "Missing regulatory compliance documentation",
+      "Unclear integration stability and dependency management",
+      "Lack of verifiable evidence for key security, performance, and compliance claims",
+      "Lack of evidence for military-grade AES-256 encryption implementation.",
+      "No verifiable security audit reports provided",
+      "Response time claims lack standardized test evidence",
+      "AI consensus system with 8+ models lacks implementation details",
+      "Unverified claim of 100% Australian ATO/GST compliance.",
+      "Performance metrics need validation against industry standards.",
+      "No results from load testing, stress testing, or chaos engineering",
+      "No documented penetration testing results",
+      "Compliance with Australian ATO/GST regulations not substantiated",
+      "Disaster recovery and backup procedures are not specified",
+      "No evidence provided for any security, encryption, or vulnerability claims",
+      "No evidence of performance testing or response time measurements"
+    ],
+    "priority_recommendations": [
+      "Obtain ATO/GST compliance certification from qualified auditor",
+      "Perform load testing to validate response times and scalability.",
+      "Share performance benchmark data and scalability analysis",
+      "Ensure compliance documentation is available for ATO/GST regulations.",
+      "Implement robust monitoring and alerting for all critical system components",
+      "Verify service integration via end-to-end functional and chaos tests",
+      "Clearly document integration dependencies and failure recovery procedures",
+      "Document ATO/GST compliance specifics",
+      "Conduct a thorough security audit to verify encryption and vulnerabilities.",
+      "Implement automated security scanning"
+    ]
+  },
+  "individual_responses": [
+    {
+      "verdict": "not-ready",
+      "confidence": 0.85,
+      "critical_issues": [
+        "No verifiable security audit reports provided",
+        "AES-256 claim lacks implementation details/certification",
+        "Response time claims lack standardized test evidence",
+        "No documented penetration testing results",
+        "Missing regulatory compliance documentation"
+      ],
+      "security_score": 0.3,
+      "performance_score": 0.4,
+      "compliance_score": 0.2,
+      "recommendations": [
+        "Conduct independent security audit",
+        "Perform penetration testing",
+        "Document ATO/GST compliance specifics",
+        "Implement automated security scanning",
+        "Establish baseline performance metrics"
+      ],
+      "deployment_blockers": [
+        "Unverified security claims",
+        "Missing compliance documentation",
+        "No disaster recovery validation",
+        "Incomplete monitoring setup",
+        "Unverified AI model validation"
+      ],
+      "evidence_quality": "low",
+      "bias_flags": [
+        "Marketing language ('military-grade')",
+        "Cherry-picked performance metrics",
+        "Confirmation bias in stability claims"
+      ],
+      "temporal_notes": [
+        "System metrics snapshot only - no historical data",
+        "ATO/GST compliance requirements may change post-2025",
+        "AI model versions not specified"
+      ],
+      "citations": [],
+      "actions": [
+        "hold",
+        "investigate"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "provider": "Anthropic",
+      "tier": "premium",
+      "specialization": "analysis",
+      "response_time": 1759303466.9112055
+    },
+    {
+      "verdict": "unknown",
+      "confidence": 0.2,
+      "critical_issues": [
+        "No evidence provided for any security, encryption, or vulnerability claims",
+        "No evidence of performance testing or response time measurements",
+        "Compliance with Australian ATO/GST regulations not substantiated",
+        "Stability and integration of the 7 running services is unverified",
+        "No results from load testing, stress testing, or chaos engineering",
+        "Disaster recovery and backup procedures are not specified",
+        "AI consensus system with 8+ models lacks implementation details"
+      ],
+      "security_score": 0.0,
+      "performance_score": 0.0,
+      "compliance_score": 0.0,
+      "recommendations": [
+        "Provide detailed penetration test results and security audit reports",
+        "Share performance benchmark data and scalability analysis",
+        "Obtain ATO/GST compliance certification from qualified auditor",
+        "Verify service integration via end-to-end functional and chaos tests",
+        "Document and test comprehensive disaster recovery procedures",
+        "Clarify AI model architecture, training, and consensus mechanism"
+      ],
+      "deployment_blockers": [
+        "Unverified security posture and encryption implementation",
+        "No evidence of adequate performance for production load",
+        "Uncertified regulatory compliance",
+        "Unproven resilience of distributed service architecture",
+        "Lack of tested disaster recovery and data backup processes"
+      ],
+      "evidence_quality": "low",
+      "bias_flags": [
+        "Survivorship bias: 7 services running now, but how many failed?",
+        "Selection bias: Focusing on current resource usage, not peak",
+        "Recency bias: Latest encryption, AI may not be most robust"
+      ],
+      "temporal_notes": [
+        "Regulatory compliance can shift post-2025 with new ATO rules",
+        "Security vulnerabilities may emerge in encryption post-2025"
+      ],
+      "citations": [],
+      "actions": [
+        "investigate"
+      ],
+      "model": "anthropic/claude-3-opus",
+      "provider": "Anthropic",
+      "tier": "premium",
+      "specialization": "creative",
+      "response_time": 1759303476.6268878
+    },
+    {
+      "verdict": "needs-work",
+      "confidence": 0.6,
+      "critical_issues": [
+        "Lack of verifiable evidence for key security, performance, and compliance claims",
+        "Unclear integration stability and dependency management",
+        "Insufficient operational monitoring and alerting capabilities"
+      ],
+      "security_score": 0.4,
+      "performance_score": 0.5,
+      "compliance_score": 0.6,
+      "recommendations": [
+        "Provide third-party security audit reports and penetration test results",
+        "Conduct comprehensive load and stress testing to validate performance claims",
+        "Demonstrate full compliance with Australian ATO/GST regulations through official documentation",
+        "Implement robust monitoring and alerting for all critical system components",
+        "Clearly document integration dependencies and failure recovery procedures"
+      ],
+      "deployment_blockers": [
+        "Lack of high-quality evidence for key system claims",
+        "Unclear operational readiness and monitoring capabilities"
+      ],
+      "evidence_quality": "low",
+      "bias_flags": [
+        "Potential survivorship bias in reporting 'zero critical vulnerabilities'"
+      ],
+      "temporal_notes": [
+        "No indication if claims are current as of 2023-01-01 or earlier"
+      ],
+      "citations": [
+        {
+          "title": "NIST SP 800-171 Compliance Checklist",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf",
+          "type": "primary"
+        },
+        {
+          "title": "Australian Taxation Office GST Compliance Guide",
+          "url": "https://www.ato.gov.au/Business/GST/In-detail/Your-industry/Financial-services-and-insurance/GST-and-financial-services/",
+          "type": "primary"
+        }
+      ],
+      "actions": [
+        "investigate"
+      ],
+      "model": "anthropic/claude-3-haiku",
+      "provider": "Anthropic",
+      "tier": "paid",
+      "specialization": "speed",
+      "response_time": 1759303462.8130279
+    },
+    {
+      "verdict": "needs-work",
+      "confidence": 0.4,
+      "critical_issues": [
+        "Lack of evidence for military-grade AES-256 encryption implementation.",
+        "Unverified claim of 100% Australian ATO/GST compliance.",
+        "No evidence provided for zero critical security vulnerabilities.",
+        "Performance metrics need validation against industry standards."
+      ],
+      "security_score": 0.3,
+      "performance_score": 0.5,
+      "compliance_score": 0.4,
+      "recommendations": [
+        "Conduct a thorough security audit to verify encryption and vulnerabilities.",
+        "Perform load testing to validate response times and scalability.",
+        "Ensure compliance documentation is available for ATO/GST regulations."
+      ],
+      "deployment_blockers": [
+        "Unverified security measures.",
+        "Lack of performance testing results.",
+        "Compliance documentation not provided."
+      ],
+      "evidence_quality": "low",
+      "bias_flags": [
+        "Potential survivorship bias in claims of operational stability.",
+        "Missing context on compliance metrics."
+      ],
+      "temporal_notes": [
+        "Claims need to be updated post-2025-01-01 to reflect current compliance and security standards."
+      ],
+      "citations": [
+        {
+          "title": "AES Encryption Standard",
+          "url": "https://csrc.nist.gov/publications/detail/fips/197/final",
+          "type": "primary"
+        },
+        {
+          "title": "Australian Taxation Office - GST Compliance",
+          "url": "https://www.ato.gov.au/business/gst/",
+          "type": "primary"
+        },
+        {
+          "title": "OWASP Top Ten Security Risks",
+          "url": "https://owasp.org/www-project-top-ten/",
+          "type": "primary"
+        }
+      ],
+      "actions": [
+        "investigate"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "provider": "OpenAI",
+      "tier": "paid",
+      "specialization": "efficient",
+      "response_time": 1759303469.8846183
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+Best Way to Push All Files from C:\Users\Halvo\OneDrive\Documents\GitHub\lyra-files to GitHub (Handling Large Files Safely)
+Pushing files from a OneDrive-synced folder to GitHub can be tricky—OneDrive's auto-sync often causes git conflicts, file locks, or corruption (e.g., timestamps messing with commits—common issue per Reddit/Stack Overflow discussions). Even without that, GitHub limits individual files to 100MB (enforced pushes fail) and recommends repos under 1GB. For your "lyra-files" (likely including large Docker images, logs, datasets, or trade CSVs from our Lyra history), the best approach is:
+
+Move the folder out of OneDrive first (avoids sync interference).
+Use Git LFS (Large File Storage) for files >100MB (free for 1GB storage, tracks big files efficiently without bloating repo history).
+Chunk if needed: Split ultra-large repos (>5GB) or use GitHub's web upload for <100MB files as backup.
+Additive & Safe: Backup first, init/push to a new repo (e.g., lyra-files-complete), keep AU compliance (e.g., anonymize sensitive API keys/ABN in .gitignore).
+This method is reliable (Git LFS is GitHub's official solution), takes ~10-30 min depending on size, and works on Windows (your path suggests WSL/CMD/PowerShell). Total cost: Free (GitHub free tier).
+
+Prerequisites
+Git Installed: Download from git-scm.com (includes Git LFS). Verify: Open CMD/PowerShell, run git --version (>2.30 recommended).
+GitHub Account: Logged in via browser (github.com). Create a new repo: "lyra-files-complete" (private for Lyra sensitivity—add ATO compliance note in README).
+Backup: Copy lyra-files to C:\lyra-files-backup (e.g., via File Explorer) before starting.
+Sensitive Files: Create .gitignore for secrets (e.g., API keys, vault/.env, ABN docs)—don't push them.
+Step-by-Step Instructions (Windows CMD/PowerShell - Safe & Efficient)
+Move Folder Out of OneDrive (Critical - Avoid Sync Issues):
+
+OneDrive sync can lock files during git operations, leading to "file in use" errors or half-commits (per Stack Overflow/Reddit). Pause sync temporarily or move permanently.
+In File Explorer or CMD:
+
+# Open CMD as Admin (Win+R → cmd)
+xcopy "C:\Users\Halvo\OneDrive\Documents\GitHub\lyra-files" "C:\lyra-files-local" /E /I /H /Y
+This copies everything (~full mirror). Now work from C:\lyra-files-local.
+Pause OneDrive: Right-click OneDrive tray icon → Settings → Sync and Backup → Pause syncing (2 hours).
+Why? Git repos in OneDrive often fail (e.g., Reddit r/git: "OneDrive folder" post warns of corruption). If already a git repo, git status to check.
+Identify Large Files (Prep for LFS):
+
+In CMD (navigate: cd C:\lyra-files-local):
+
+# List files >50MB (adjust threshold)
+for /f %i in ('dir /s /b *.* ^| findstr /v /i "\\.git\\"') do @if %~zi gtr 52428800 echo %~zi bytes: %i
+Or use PowerShell (better for large dirs):
+
+cd C:\lyra-files-local
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 50MB } | Select-Object FullName, @{Name='SizeMB';Expression={[math]::Round($_.Length / 1MB, 2)}}
+Common Lyra larges: Docker images (.tar >500MB), trade logs/CSVs (ATO exports), datasets (arb backtests).
+If <5GB total: Proceed. If >5GB: Split into sub-repos (e.g., /exchanges, /data) or use GitHub Releases for binaries.
+Initialize Git Repo & Set Up LFS (For Large Files):
+
+In CMD:
+
+cd C:\lyra-files-local
+git init  # If not already a repo
+git lfs install  # Install LFS globally (handles >100MB files)
+Track large files/patterns with LFS (e.g., CSVs, tars, videos from Lyra sims):
+
+git lfs track "*.csv" "*.tar" "*.log" "*.bin" "*.db" "data/*" "downloads/*" "*.zip"  # Add your large types
+git add .gitattributes  # Commit LFS config
+Edit .gitattributes if needed (creates automatically): Lists patterns like *.csv filter=lfs diff=lfs merge=lfs -text.
+gitignore for Secrets/Compliance (Create C:\lyra-files-local\.gitignore via Notepad):
+
+# Lyra AU Compliance - Don't Push Secrets
+*.env
+vault/*.json  # Encrypted secrets
+*.key
+*.pem
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db
+# Large non-LFS (if not tracked)
+*.iso >100mb
+# Temp/Logs (ATO sensitive)
+logs/*.csv  # Unless anonymized
+git add .gitignore
+Add, Commit, & Push to GitHub (Handles Larges with LFS):
+
+Add all files:
+
+git add .
+If huge (>10k files): Add in batches: git add exchanges/ strategies/ ops/ (repeat for folders).
+Commit:
+
+git commit -m "Initial push: All Lyra files from OneDrive (LFS for larges) - AU Core Arb/Compliance/Tests"
+Link to GitHub Repo:
+
+git remote add origin https://github.com/[your-username]/lyra-files-complete.git  # Replace with your new repo URL
+git branch -M main
+git push -u origin main
+For Large Files: LFS auto-uploads to GitHub's storage (first push may take 5-10 min—shows "Uploading LFS objects"). If >100MB fails: GitHub error "file too large"—confirm LFS tracking.
+Auth: If prompted, use Personal Access Token (github.com/settings/tokens → Generate new with "repo" scope) as password (not your account PW).
+Handle Push Issues & Optimizations:
+
+Large File Errors (>100MB without LFS):
+Run git lfs ls-files to verify tracking (e.g., "BTC_AUD_backtest.csv - tracked").
+If still fails: Remove offender (git rm --cached largefile.tar), push, then re-add with LFS: git lfs track "largefile.tar" → add/commit/push.
+Alternative: GitHub Web Upload (for <100MB): github.com/[user]/lyra-files-complete → "Add file" → Drag/drop small batches. For LFS, stick to CLI.
+OneDrive Conflicts During Push: If files lock, close OneDrive app temporarily (taskkill /f /im OneDrive.exe). Post-push, move back if needed—but keep git outside OneDrive permanently (clone to C:\git-repos\lyra).
+Repo Size Too Big (>1GB):
+Use git lfs migrate import --include="*.csv" to retro-LFS existing commits.
+Or, create sub-repos: git subtree push --prefix data origin data-repo (splits /data folder to new repo).
+GitHub Pro/Enterprise: 2GB+ limits, but free LFS is 1GB/month bandwidth (paid: $5/mo unlimited).
+Slow Push: Use --depth=1 for shallow clone if repo huge, or push over Ethernet (not WiFi). Monitor: git push -v shows progress.
+AU Compliance Push: Add README.md: "Lyra V5 Files - AU Pty Ltd (ABN anonymized). Spot-only arb (ATO compliant). No secrets pushed." Commit: git add README.md && git commit -m "Compliance note" && git push.
+Verify Upload & Go-Live:
+
+On GitHub: Refresh repo → See all files (LFS larges show as "Stored with Git LFS"). Download ZIP to test: "Code" → "Download ZIP".
+Local Clone/Test: git clone https://github.com/[user]/lyra-files-complete.git C:\lyra-git-test && cd C:\lyra-git-test && ls → Matches original.
+LFS Check: git lfs ls-files → Lists tracked larges. Pull test: git lfs pull.
+For Lyra: If Docker/arb files, docker compose up in clone dir (spot-safe).
+Expected Time & Outcome
+Small Repo (<1GB, no larges): 5-10 min push.
+With Larges (e.g., 500MB CSVs): 15-30 min (LFS uploads separately).
+Full Lyra Example: Your folder (exchanges py, Docker, arb strats/tests/compliance MDs) → Repo with ~50MB code + LFS for logs/datasets → Ready for our prior Manus/Sand merger (upload this repo ZIP to Sand).
+Costs: Free. LFS: GitHub bills overages ($5/GB), but basics fit.
+Troubleshooting
+"File too large": Ensure LFS tracked—rerun git lfs track "*.large_ext" && git add .gitattributes && git add yourfile && git commit && git push.
+OneDrive Lock: attrib -r -s -h C:\lyra-files-local\* /s /d (unlocks), or reboot.
+Auth Fail: Use token (github.com/settings/tokens). 2FA? Enable.
+WSL Alternative (If CMD Issues): Install WSL (Ubuntu), cp -r /mnt/c/Users/Halvo/OneDrive/Documents/GitHub/lyra-files ~/lyra-local, then git commands same.
+Repo Cleanup (If Bloated): git filter-repo --path largefile --invert-paths --force (install via pip install git-filter-repo), then force-push git push --force-with-lease.
+This is the most reliable way—avoids OneDrive pitfalls, uses LFS for your big Lyra files (e.g., backtests/CSVs >100MB). Once pushed, share the repo URL—we can feed it to Manus/Sand for the full historical merger (as in prior response). Questions (e.g., "LFS error")? Paste output. Let's get it up! 🚀
+
+
+20 citations
+
+Favicon for https://www.reddit.com/r/git/comments/1cotkpb/onedrive_folder/
+
+Favicon for https://stackoverflow.com/questions/25735148/git-repository-in-onedrive-synced-folder
+
+Favicon for https://www.quora.com/I-m-new-to-GitHub-I-have-a-large-folder-of-data-MATLAB-scripts-on-my-OneDrive-and-need-to-upload-it-push-it-to-the-GitHub-What-s-the-most-efficient-way-to-do-it
+
+Favicon for https://www.reddit.com/r/github/comments/10wb57b/uploading_and_syncing_a_folder_in_onedrive_into/
+
+Favicon for https://gist.github.com/gpsarkar/2b82fb69a0e58c3c76badf58ff800e59
+
+Favicon for https://medium.com/@awlucattini_60867/i-backup-my-cloned-github-repositories-on-onedrive-54b176192950
+
+Favicon for https://www.reddit.com/r/git/comments/1fgintq/sharing_a_git_repo_from_onedrive/
+
+Favicon for https://www.dustinbriles.com/onedrive-and-git-dont-do-it/
+
+Favicon for https://github.com/orgs/community/discussions/49949
+
+Favicon for https://www.reddit.com/r/github/comments/1gmkcos/large_files_on_githubio/
+
+Favicon for https://www.reddit.com/r/github/comments/1g2o4kv/doubt_on_how_to_upload_large_projects_to_github/
+
+Favicon for https://docs.github.com/en/repositories/working-with-files/managing-large-files
+
+Favicon for https://gist.github.com/plembo/ff6839d9593ec8afca0ba97d890cce58
+
+Favicon for https://forum.posit.co/t/placing-a-github-repo-into-a-cloud-synced-folder-gdrive-dropbox-icloud-onedrive-etc/21072
+
+Favicon for https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html
+
+Favicon for https://medium.com/linkit-intecs/how-to-upload-large-files-to-github-repository-2b1e03723d2
+
+Favicon for https://learn.microsoft.com/en-us/azure/devops/repos/git/manage-large-files?view=azure-devops
+
+Favicon for https://www.reddit.com/r/git/comments/1g6pwkb/local_git_working_repo_with_onedrive_backup/
+
+Favicon for https://stackoverflow.com/questions/61040990/upload-file-25-mb-on-github
+
+Favicon for https://www.reddit.com/r/git/comments/10gjyia/how_can_i_git_clone_a_repository_stored_in_one/
+www.reddit.com/r/git/comments/1cotkpb/onedrive_folder/
+Favicon for https://www.reddit.com/r/git/comments/1cotkpb/onedrive_folder/
+www.reddit.com
+stackoverflow.com/questions/25735148/git-repository-in-onedrive-synced-folder
+Favicon for https://stackoverflow.com/questions/25735148/git-repository-in-onedrive-synced-folder
+stackoverflow.com
+www.quora.com/I-m-new-to-GitHub-I-have-a-large-folder-of-data-MATLAB-scripts-on-my-OneDrive-and-need-to-upload-it-push-it-to-the-GitHub-What-s-the-most-efficient-way-to-do-it
+Favicon for https://www.quora.com/I-m-new-to-GitHub-I-have-a-large-folder-of-data-MATLAB-scripts-on-my-OneDrive-and-need-to-upload-it-push-it-to-the-GitHub-What-s-the-most-efficient-way-to-do-it
+www.quora.com
+www.reddit.com/r/github/comments/10wb57b/uploading_and_syncing_a_folder_in_onedrive_into/
+Favicon for https://www.reddit.com/r/github/comments/10wb57b/uploading_and_syncing_a_folder_in_onedrive_into/
+www.reddit.com
+gist.github.com/gpsarkar/2b82fb69a0e58c3c76badf58ff800e59
+Favicon for https://gist.github.com/gpsarkar/2b82fb69a0e58c3c76badf58ff800e59
+gist.github.com
+medium.com/@awlucattini_60867/i-backup-my-cloned-github-repositories-on-onedrive-54b176192950
+Favicon for https://medium.com/@awlucattini_60867/i-backup-my-cloned-github-repositories-on-onedrive-54b176192950
+medium.com
+www.reddit.com/r/git/comments/1fgintq/sharing_a_git_repo_from_onedrive/
+Favicon for https://www.reddit.com/r/git/comments/1fgintq/sharing_a_git_repo_from_onedrive/
+www.reddit.com
+www.dustinbriles.com/onedrive-and-git-dont-do-it/
+Favicon for https://www.dustinbriles.com/onedrive-and-git-dont-do-it/
+www.dustinbriles.com
+github.com/orgs/community/discussions/49949
+Favicon for https://github.com/orgs/community/discussions/49949
+github.com
+www.reddit.com/r/github/comments/1gmkcos/large_files_on_githubio/
+Favicon for https://www.reddit.com/r/github/comments/1gmkcos/large_files_on_githubio/
+www.reddit.com
+www.reddit.com/r/github/comments/1g2o4kv/doubt_on_how_to_upload_large_projects_to_github/
+Favicon for https://www.reddit.com/r/github/comments/1g2o4kv/doubt_on_how_to_upload_large_projects_to_github/
+www.reddit.com
+docs.github.com/en/repositories/working-with-files/managing-large-files
+Favicon for https://docs.github.com/en/repositories/working-with-files/managing-large-files
+docs.github.com
+gist.github.com/plembo/ff6839d9593ec8afca0ba97d890cce58
+Favicon for https://gist.github.com/plembo/ff6839d9593ec8afca0ba97d890cce58
+gist.github.com
+forum.posit.co/t/placing-a-github-repo-into-a-cloud-synced-folder-gdrive-dropbox-icloud-onedrive-etc/21072
+Favicon for https://forum.posit.co/t/placing-a-github-repo-into-a-cloud-synced-folder-gdrive-dropbox-icloud-onedrive-etc/21072
+forum.posit.co
+www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html
+Favicon for https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html
+www.permikkelsen.dk
+medium.com/linkit-intecs/how-to-upload-large-files-to-github-repository-2b1e03723d2
+Favicon for https://medium.com/linkit-intecs/how-to-upload-large-files-to-github-repository-2b1e03723d2
+medium.com
+learn.microsoft.com/en-us/azure/devops/repos/git/manage-large-files
+Favicon for https://learn.microsoft.com/en-us/azure/devops/repos/git/manage-large-files?view=azure-devops
+learn.microsoft.com
+www.reddit.com/r/git/comments/1g6pwkb/local_git_working_repo_with_onedrive_backup/
+Favicon for https://www.reddit.com/r/git/comments/1g6pwkb/local_git_working_repo_with_onedrive_backup/
+www.reddit.com
+stackoverflow.com/questions/61040990/upload-file-25-mb-on-github
+Favicon for https://stackoverflow.com/questions/61040990/upload-file-25-mb-on-github
+stackoverflow.com
+www.reddit.com/r/git/comments/10gjyia/how_can_i_git_clone_a_repository_stored_in_one/
+Favicon for https://www.reddit.com/r/git/comments/10gjyia/how_can_i_git_clone_a_repository_stored_in_one/
+www.reddit.com
+Previous slideNext slide
+
+
+
+
+
+
+Image
+
+Interactive App
+
+Landing Page
+
+2D Game
+
+3D Game
+Start a new message...
+
+
+

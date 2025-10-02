@@ -1,0 +1,160 @@
+version: '3.8'
+
+services:
+  ngrok:
+    build: .
+    container_name: lyra_ngrok_ultimate
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN:-your_ngrok_token_here}
+      - NGROK_SUBDOMAIN_INGEST=${NGROK_SUBDOMAIN_INGEST:-lyra-ingest}
+      - NGROK_SUBDOMAIN_DASH=${NGROK_SUBDOMAIN_DASH:-lyra-dash}
+      - NGROK_SUBDOMAIN_METRICS=${NGROK_SUBDOMAIN_METRICS:-lyra-metrics}
+      - NGROK_SUBDOMAIN_INSPECT=${NGROK_SUBDOMAIN_INSPECT:-lyra-inspect}
+      - NGROK_REGION=${NGROK_REGION:-ap}
+      - AUTO_RESTART_ENABLED=true
+      - MANUS_INTEGRATION=true
+      - COMPLIANCE_MODE=spot_only
+    ports:
+      - "4040:4040"  # Ngrok Inspector
+      - "8081:8081"  # Ingest Gateway (matches your current setup)
+      - "8000:8000"  # Dashboard
+      - "3000:3000"  # Grafana Metrics
+      - "8086:8086"  # Hummingbot Integration
+      - "9090:9090"  # Prometheus
+      - "8080:8080"  # Additional Services
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/halvolyra/ultimate_lyra_systems:/host/ultimate_lyra_systems:ro
+    networks:
+      - lyra_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "manus_verification.py"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 120s
+    depends_on:
+      - auto-ngrok-monitor
+    labels:
+      - "io.lyra.service=ngrok"
+      - "io.lyra.mode=production"
+      - "io.lyra.compliance=ISO_27001"
+      - "io.lyra.auto-restart=enabled"
+
+  auto-ngrok-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitor
+    container_name: lyra_auto_ngrok_monitor
+    environment:
+      - MONITOR_INTERVAL=30
+      - MAX_RESTARTS=10
+      - NGROK_URL=https://3ce37fa57d09.ngrok.app
+      - LOCAL_PORT=8081
+    volumes:
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - lyra_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import requests; requests.get('http://localhost:8081/health', timeout=5)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "io.lyra.service=monitor"
+      - "io.lyra.function=auto-restart"
+
+  ingest-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    container_name: lyra_ingest_gateway
+    environment:
+      - FLASK_ENV=production
+      - GATEWAY_PORT=8081
+      - SECURITY_TOKEN=lyra_1759057116_5d20aef7f3777214
+      - MAX_COMMAND_TIMEOUT=60
+      - ALLOWED_COMMANDS=ls,ps,cat,echo,python3,docker
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./logs:/app/logs
+      - /home/halvolyra/ultimate_lyra_systems:/host/ultimate_lyra_systems
+    networks:
+      - lyra_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "io.lyra.service=gateway"
+      - "io.lyra.function=command-execution"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: lyra_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - lyra_network
+    restart: unless-stopped
+    labels:
+      - "io.lyra.service=monitoring"
+      - "io.lyra.function=metrics"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: lyra_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=lyra_admin_2025
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./config/grafana:/etc/grafana/provisioning
+    networks:
+      - lyra_network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    labels:
+      - "io.lyra.service=monitoring"
+      - "io.lyra.function=visualization"
+
+networks:
+  lyra_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+    labels:
+      - "io.lyra.network=production"
+
+volumes:
+  prometheus_data:
+    driver: local
+    labels:
+      - "io.lyra.volume=metrics"
+  grafana_data:
+    driver: local
+    labels:
+      - "io.lyra.volume=dashboards"

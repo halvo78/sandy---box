@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  ultimate-ai-consensus:
+    build: .
+    ports:
+      - "8800:8800"
+    environment:
+      - PRODUCTION_MODE=true
+      - AI_CONSENSUS_ENABLED=true
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ultimate_lyra
+      POSTGRES_USER: lyra_user
+      POSTGRES_PASSWORD: secure_password_2025
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin2025
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: unless-stopped
+
+  ai-enhanced-dashboard:
+    build:
+      context: .
+      dockerfile: containerization/Dockerfile.dashboard
+    ports:
+      - "8751:8751"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  grafana_data:
+

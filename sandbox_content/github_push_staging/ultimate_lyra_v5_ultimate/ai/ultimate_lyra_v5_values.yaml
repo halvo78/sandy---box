@@ -1,0 +1,564 @@
+# Default values for lyra-trading-system
+global:
+  imageRegistry: "lyra-registry.com"
+  imageTag: "latest"
+  namespace: "lyra-trading"
+
+# AI Consensus Configuration
+aiConsensus:
+  enabled: true
+  consensus_strength: 0.75
+  models_count: 3
+
+# Resource Configuration
+resources:
+  total_services: 71
+  total_replicas: 153
+
+# Tier Configuration
+
+tier_1_core:
+  enabled: true
+  description: "Foundation infrastructure services"
+  services:
+    database:
+      enabled: true
+      port: 5432
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    redis:
+      enabled: true
+      port: 6379
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    message_queue:
+      enabled: true
+      port: 5672
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    config_manager:
+      enabled: true
+      port: 8000
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+    health_monitor:
+      enabled: true
+      port: 8001
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+tier_2_ai:
+  enabled: true
+  description: "327+ AI models with OpenRouter integration"
+  services:
+    ai_consensus:
+      enabled: true
+      port: 8090
+      replicas: 5
+      resources:
+        cpu: "1000m"
+        memory: "2Gi"
+    model_router:
+      enabled: true
+      port: 8091
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    prompt_manager:
+      enabled: true
+      port: 8092
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    response_analyzer:
+      enabled: true
+      port: 8093
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+tier_3_exchanges:
+  enabled: true
+  description: "All 12 exchanges with unified API"
+  services:
+    exchange_manager:
+      enabled: true
+      port: 8100
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    okx_service:
+      enabled: true
+      port: 8101
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    binance_service:
+      enabled: true
+      port: 8102
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    kraken_service:
+      enabled: true
+      port: 8103
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    gateio_service:
+      enabled: true
+      port: 8104
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    whitebit_service:
+      enabled: true
+      port: 8105
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    swyftx_service:
+      enabled: true
+      port: 8106
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    btcmarkets_service:
+      enabled: true
+      port: 8107
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    coinbase_service:
+      enabled: true
+      port: 8108
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    bitfinex_service:
+      enabled: true
+      port: 8109
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    huobi_service:
+      enabled: true
+      port: 8110
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    independent_reserve:
+      enabled: true
+      port: 8111
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+tier_4_strategies:
+  enabled: true
+  description: "All 17 trading strategies with execution engines"
+  services:
+    strategy_engine:
+      enabled: true
+      port: 8200
+      replicas: 3
+      resources:
+        cpu: "1000m"
+        memory: "2Gi"
+    ai_momentum:
+      enabled: true
+      port: 8201
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    cross_arbitrage:
+      enabled: true
+      port: 8202
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    market_making:
+      enabled: true
+      port: 8203
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    triangular_arbitrage:
+      enabled: true
+      port: 8204
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    mean_reversion:
+      enabled: true
+      port: 8205
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    twap_vwap:
+      enabled: true
+      port: 8206
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    basket_rebalancing:
+      enabled: true
+      port: 8207
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    statistical_arbitrage:
+      enabled: true
+      port: 8208
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    dca_strategy:
+      enabled: true
+      port: 8209
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    event_driven:
+      enabled: true
+      port: 8210
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    grid_trading:
+      enabled: true
+      port: 8211
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    cash_carry:
+      enabled: true
+      port: 8212
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    funding_rate:
+      enabled: true
+      port: 8213
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    margin_arbitrage:
+      enabled: true
+      port: 8214
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    hedged_making:
+      enabled: true
+      port: 8215
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    covered_calls:
+      enabled: true
+      port: 8216
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    volatility_plays:
+      enabled: true
+      port: 8217
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+tier_5_risk:
+  enabled: true
+  description: "Comprehensive risk management and safety"
+  services:
+    risk_engine:
+      enabled: true
+      port: 8300
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    position_manager:
+      enabled: true
+      port: 8301
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    stop_loss:
+      enabled: true
+      port: 8302
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    drawdown_monitor:
+      enabled: true
+      port: 8303
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+tier_6_hummingbot:
+  enabled: true
+  description: "Professional market making integration"
+  services:
+    hummingbot_core:
+      enabled: true
+      port: 8400
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    strategy_orchestrator:
+      enabled: true
+      port: 8401
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    performance_tracker:
+      enabled: true
+      port: 8402
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    hb_config_manager:
+      enabled: true
+      port: 8403
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+tier_7_security:
+  enabled: true
+  description: "Military-grade security and vault management"
+  services:
+    vault_manager:
+      enabled: true
+      port: 8500
+      replicas: 3
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    encryption_service:
+      enabled: true
+      port: 8501
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    key_rotation:
+      enabled: true
+      port: 8502
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+    audit_logger:
+      enabled: true
+      port: 8503
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+tier_8_compliance:
+  enabled: true
+  description: "100% Australian compliance monitoring"
+  services:
+    ato_reporter:
+      enabled: true
+      port: 8600
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    gst_calculator:
+      enabled: true
+      port: 8601
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    audit_trail:
+      enabled: true
+      port: 8602
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    compliance_checker:
+      enabled: true
+      port: 8603
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+tier_9_monitoring:
+  enabled: true
+  description: "Professional monitoring and analytics"
+  services:
+    prometheus:
+      enabled: true
+      port: 9090
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    grafana:
+      enabled: true
+      port: 3000
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    loki:
+      enabled: true
+      port: 3100
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    alertmanager:
+      enabled: true
+      port: 9093
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+tier_10_interface:
+  enabled: true
+  description: "Professional web interfaces and dashboards"
+  services:
+    main_dashboard:
+      enabled: true
+      port: 8700
+      replicas: 3
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    trading_interface:
+      enabled: true
+      port: 8701
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    analytics_ui:
+      enabled: true
+      port: 8702
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+    admin_panel:
+      enabled: true
+      port: 8703
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"
+tier_11_notifications:
+  enabled: true
+  description: "Alerts and communication systems"
+  services:
+    telegram_bot:
+      enabled: true
+      port: 8800
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+    email_service:
+      enabled: true
+      port: 8801
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+    sms_gateway:
+      enabled: true
+      port: 8802
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+    webhook_manager:
+      enabled: true
+      port: 8803
+      replicas: 2
+      resources:
+        cpu: "100m"
+        memory: "256Mi"
+tier_12_data:
+  enabled: true
+  description: "Data management and analytics pipeline"
+  services:
+    data_ingestion:
+      enabled: true
+      port: 8900
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    data_processor:
+      enabled: true
+      port: 8901
+      replicas: 2
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+    analytics_engine:
+      enabled: true
+      port: 8902
+      replicas: 2
+      resources:
+        cpu: "1000m"
+        memory: "2Gi"
+    backup_manager:
+      enabled: true
+      port: 8903
+      replicas: 2
+      resources:
+        cpu: "250m"
+        memory: "512Mi"

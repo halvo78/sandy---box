@@ -1,0 +1,206 @@
+Awesome—here’s the full menu of strategies your system can run, grouped by capability and arranged in a **one-at-a-time rollout path**. I’ve called out what each needs (prereqs), what we validate first, and the “no-go” conditions so you stay in control.
+
+# Phase 1 — Spot-only (bring these online first)
+
+1. **AI Momentum (timeframe-driven)**
+
+   * What it does: trend follow (MA/RSI/AI overlay) on BTC/USDT, ETH/USDT, etc.
+   * Prereqs: spot API keys; fees + min-notional captured; post-only supported for safety probes.
+   * First live: 1 symbol, US$1 notional, limit-only; reject if (edge ≤ fees + slippage buffer).
+   * No-go: strategy can’t read trading fees/limits; kill-switch tripped.
+
+2. **Mean Reversion (RSI/Bollinger)**
+
+   * What it does: fade short-term extremes back to mid.
+   * Prereqs: OHLCV fetch stable; fee-aware net P&L.
+   * First live: micro buy/sell at band edges, wide post-only.
+   * No-go: spread < 1.5× total costs; liquidity too thin.
+
+3. **Donchian/Breakout**
+
+   * What it does: break of N-period high/low with pullback filter.
+   * Prereqs: clean candles; stop/exit logic (cancel-replace) verified.
+   * First live: buy a breakout with 0.5× ATR trail; post-only entry if exchange supports.
+   * No-go: ATR too small to cover costs; repeated cancel errors.
+
+4. **Triangular Arbitrage (single exchange)**
+
+   * What it does: A/B, B/C, C/A loop when product of quotes > costs.
+   * Prereqs: 3 legs available on same venue; atomic or rapid sequencing; fee table per leg.
+   * First live: simulate prices in memory, then place **min-size** leg-by-leg with pre-calculated net edge ≥ (3× taker + slippage).
+   * No-go: any leg lacks liquidity at quoted depth; rounding/precision fails.
+
+5. **Cross-Exchange Spot Arbitrage (inventory-to-inventory, no transfers)**
+
+   * What it does: buy lower on X, sell higher on Y from pre-funded balances.
+   * Prereqs: balances on both venues; withdrawal disabled for phase-in; real-time quotes + fees per venue.
+   * First live: 1 symbol, maker-maker if possible; otherwise taker-maker with edge ≥ all fees + slippage + inventory rebalancing cost.
+   * No-go: inventory imbalance exceeds cap; edge ≤ cost; any cancel failure.
+
+6. **Wide-Spread Market Making (post-only, low inventory risk)**
+
+   * What it does: place far-from-touch bid/ask; only collect if spread compensates costs.
+   * Prereqs: strict post-only; inventory caps; cancel-all works.
+   * First live: 1 level per side, small size; spread ≥ (fees + 2× slippage buffer).
+   * No-go: orders convert to taker; inventory breaches cap.
+
+7. **Execution-only TWAP/VWAP (not alpha, for fills)**
+
+   * What it does: controlled schedule fills for rebalance or exits.
+   * Prereqs: clock/latency sanity; partial-fill handling.
+   * First live: tiny slice schedule with strict price bands.
+   * No-go: price impact > threshold; schedule lagging > 2× target.
+
+8. **Periodic Basket Rebalance (delta control)**
+
+   * What it does: maintain target weights across 2–5 assets.
+   * Prereqs: position snapshot; fee-aware rebalance math; min order checks.
+   * First live: rebalance drift > threshold only; TWAP child orders.
+   * No-go: any order would be below min notional; sum fees > drift benefit.
+
+# Phase 2 — Advanced Spot Quant (after Phase 1 is stable)
+
+9. **Statistical Arb (cointegration pairs)**
+
+   * What it does: trade z-score deviations on related assets (e.g., ETH vs. wETH proxy, or BTC vs. BTC.D factor).
+   * Prereqs: stable residuals + live hedge ratio; cointegration backtest window validated.
+   * First live: 1 pair, micro sizes, strict z-entry/exit; fee-aware.
+   * No-go: half-life too long/unstable; residuals non-stationary.
+
+10. **Event-Filtered AI (news/sentiment gating)**
+
+* What it does: block/allow entries around events; not a “trade the news” system yet.
+* Prereqs: reliable event feed; human confirm switch.
+* First live: advisory-only; must pass manual “arm” to place orders.
+* No-go: feed gaps; conflicting signals.
+
+11. **Grid (conservative, wide bands)**
+
+* What it does: range accrual with fee-aware steps; wide to avoid churn.
+* Prereqs: verified min tick/amount; cancel-replace stable.
+* First live: 3–5 levels, tiny size; bands ≥ 3× total costs.
+* No-go: realized grid P&L < fees over rolling window.
+
+# Phase 3 — Margin & Perpetuals (enable **later**, one at a time)
+
+12. **Cash-and-Carry Basis (long spot, short perp)**
+
+* What it does: lock basis/funding; delta-neutral carry.
+* Prereqs: margin/perp accounts KYC’d; borrow/short permissions; funding/fees APIs; hedge link tested; liquidation buffers.
+* First live: 1 asset, tiny notional; hard caps; continuous hedge audit.
+* No-go: borrow unavailable; funding turns negative vs. costs; hedge drift > threshold.
+
+13. **Funding Rate Harvest (perp vs. perp or perp vs. spot)**
+
+* What it does: capture predictable funding with opposing legs.
+* Prereqs: funding schedule; position caps; emergency exit.
+* First live: micro exposure during 1 funding interval.
+* No-go: funding < costs; volatility spike hits stops.
+
+14. **Margin Spot Arb (borrow vs. lend)**
+
+* What it does: borrow asset to short on one venue vs. long on another.
+* Prereqs: borrow rates API; liquidation avoidance; alerts.
+* First live: very small borrow; strict timeboxed trade.
+* No-go: borrow APR > expected edge; margin health < threshold.
+
+15. **Hedged Market Making (perp hedge for spot inventory)**
+
+* What it does: quote spot; delta hedge in perp.
+* Prereqs: cross-venue latency checks; hedge slippage modeled.
+* First live: one symbol, one level per side; tiny hedge.
+* No-go: hedge error > cap; repeated hedge rejects.
+
+# Phase 4 — Options (only if/when venue supports and approvals in place)
+
+16. **Covered Calls / Cash-Secured Puts**
+
+* What it does: yield on inventory with defined risk.
+* Prereqs: options API, greeks, assignment handling, settlement calendar.
+* First live: 1DTE–7DTE far OTM, one contract equivalent.
+* No-go: implied vol regime change beyond guardrails.
+
+17. **Event Vol Plays (straddle/strangle)**
+
+* What it does: long vol around known events with capped spend.
+* Prereqs: IV surfaces, slippage tests, exit playbook.
+* First live: single micro structure; pre-placed GTC exits.
+* No-go: spreads too wide; IV crush model missing.
+
+---
+
+## Commissioning order (strict single-file line)
+
+1. AI Momentum → 2) Triangular Arb → 3) Cross-Exchange Spot Arb (inventory-only) →
+2. Wide-Spread Market Making → 5) Mean Reversion → 6) TWAP/VWAP →
+3. Basket Rebalance → 8) Statistical Arb → **(then and only then)** Margin/Perps (12–15) → Options (16–17).
+
+---
+
+## Per-strategy go-live checklist (applies to all)
+
+* **Fees & limits loaded** for all legs/venues; **edge > all costs** by your configured margin.
+* **Post-only probe** succeeded (or exchange explicitly lacks it and you accept taker).
+* **Micro trade** completed (US$1 equivalent), fills + ledger exported to evidence.
+* **Kill-switch** cancels all orders and sets `TRADING_DISABLED` flag.
+* **Circuit breakers**: max daily loss, max orders/min, max cancels/min, max inventory drift.
+* **Manual arm**: typed confirmation phrase before first live enable.
+* **Logging**: JSON evidence written to `~/logs/lyra_commissioning/<strategy>/<ts>.json`.
+
+---
+
+## Switchboard (minimal config skeleton)
+
+Drop this next to your launcher so you can enable **one** strategy at a time:
+
+```yaml
+# strategies.yaml
+global:
+  trading_disabled_flag: /tmp/LYRA_TRADING_DISABLED
+  min_edge_bps: 25         # refuse below this net edge
+  max_daily_loss_pct: 0.5
+  micro_notional_usd: 1.0
+
+ai_momentum:
+  enabled: false
+  symbols: ["BTC/USDT"]
+  timeframe: "1h"
+  post_only: true
+
+triangular_arb:
+  enabled: false
+  exchange: "binance"
+  triangles:
+    - ["BTC/USDT","ETH/USDT","ETH/BTC"]
+  min_edge_bps: 40
+
+xex_spot_arb:
+  enabled: false
+  venues: ["binance","okx"]
+  symbols: ["BTC/USDT"]
+  inventory_mode: "pre_funded"   # no withdrawals phase-in
+
+market_making_wide:
+  enabled: false
+  exchange: "binance"
+  symbol: "BTC/USDT"
+  post_only: true
+  max_inventory_usd: 50
+
+# margin/perp sections remain disabled until Phase 3
+cash_and_carry:
+  enabled: false
+  spot_exchange: "binance"
+  perp_exchange: "okx"
+  symbol: "BTC/USDT"
+  target_delta: 0
+```
+
+---
+
+### What I recommend enabling next
+
+Given your current environment (spot first):
+**Start with AI Momentum** (Phase 1 #1), then **Triangular Arb** (#4). They’re both self-contained, fee-aware, and don’t require transfers or margin. After those two prove out at micro size with real funds and complete evidence logs, we move to **Cross-Exchange Spot Arb (inventory-only)**.
+
+If you want, I’ll generate the exact `commissioning_*` scripts for **Triangular Arb** and **Cross-Exchange Spot Arb** (including the net-edge math and evidence files) so you can paste-run them next.

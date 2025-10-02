@@ -1,0 +1,150 @@
+FROM alpine:3.20
+
+LABEL maintainer="Ultimate Lyra Trading System" \
+      version="4.0.0-lyra-ultimate" \
+      description="Ngrok Ultimate Container - Auto-Restart + Manus Integration" \
+      io.lyra.mode="production_ready" \
+      io.lyra.compliance="ISO_27001_ATO" \
+      io.lyra.auto-restart="enabled" \
+      io.lyra.manus-integration="verified"
+
+ARG NGROK_VERSION=3.12.0
+ARG TARGETARCH=amd64
+
+# Install system dependencies
+RUN apk add --no-cache \
+    curl \
+    unzip \
+    bash \
+    jq \
+    python3 \
+    py3-pip \
+    py3-requests \
+    py3-yaml \
+    py3-aiohttp \
+    supervisor \
+    nginx \
+    openssl \
+    ca-certificates \
+    tzdata \
+    procps \
+    htop \
+    net-tools \
+    && rm -rf /var/cache/apk/*
+
+# Install ngrok
+RUN curl -sSL https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-v3-stable-linux-${TARGETARCH}.zip -o ngrok.zip && \
+    unzip ngrok.zip && rm ngrok.zip && \
+    chmod +x ngrok && mv ngrok /usr/local/bin/ && \
+    ngrok version
+
+WORKDIR /app
+
+# Copy application files
+COPY requirements.txt ./
+COPY tunnel_manager.py ./
+COPY ngrok_config.yml ./
+COPY start_ngrok.sh ./
+COPY safe_tunnel_policies.py ./
+COPY manus_verification.py ./
+COPY auto_ngrok_manager.py ./
+COPY supervisord.conf ./
+COPY nginx.conf ./
+
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt && \
+    pip3 install --no-cache-dir \
+    flask \
+    gunicorn \
+    psutil \
+    docker \
+    prometheus-client \
+    structlog
+
+# Create application directories
+RUN mkdir -p /app/logs /app/config /app/data /app/scripts /var/log/supervisor
+
+# Create non-root user
+RUN adduser -D -s /bin/bash lyra_user && \
+    addgroup lyra_user wheel && \
+    chown -R lyra_user:lyra_user /app && \
+    chmod +x start_ngrok.sh && \
+    chmod +x auto_ngrok_manager.py
+
+# Copy enhanced scripts
+COPY scripts/ /app/scripts/
+RUN chmod +x /app/scripts/*.sh
+
+# Setup supervisor configuration
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Setup nginx for reverse proxy
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Create startup script with enhanced capabilities
+RUN cat > /app/enhanced_startup.sh << 'EOF'
+#!/bin/bash
+set -e
+
+echo "🚀 Starting Ultimate Lyra Ngrok Container..."
+
+# Environment validation
+if [ -z "$NGROK_AUTHTOKEN" ]; then
+    echo "❌ NGROK_AUTHTOKEN not set"
+    exit 1
+fi
+
+# Configure ngrok
+ngrok config add-authtoken $NGROK_AUTHTOKEN
+
+# Setup logging
+mkdir -p /app/logs
+touch /app/logs/ngrok.log /app/logs/auto_manager.log /app/logs/manus.log
+
+# Start supervisor (manages all processes)
+exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
+EOF
+
+RUN chmod +x /app/enhanced_startup.sh
+
+# Health check script
+RUN cat > /app/health_check.sh << 'EOF'
+#!/bin/bash
+
+# Check ngrok API
+if ! curl -s http://localhost:4040/api/tunnels > /dev/null; then
+    echo "❌ Ngrok API not responding"
+    exit 1
+fi
+
+# Check tunnel count
+TUNNEL_COUNT=$(curl -s http://localhost:4040/api/tunnels | jq '.tunnels | length')
+if [ "$TUNNEL_COUNT" -lt 1 ]; then
+    echo "❌ No active tunnels"
+    exit 1
+fi
+
+# Check auto manager
+if ! pgrep -f auto_ngrok_manager > /dev/null; then
+    echo "❌ Auto manager not running"
+    exit 1
+fi
+
+echo "✅ All systems healthy"
+exit 0
+EOF
+
+RUN chmod +x /app/health_check.sh
+
+# Switch to non-root user
+USER lyra_user
+
+# Enhanced health check
+HEALTHCHECK --interval=30s --timeout=15s --start-period=120s --retries=5 \
+  CMD /app/health_check.sh
+
+# Expose all required ports
+EXPOSE 4040 8081 8000 3000 8086 9090 8080
+
+# Use enhanced startup
+CMD ["/app/enhanced_startup.sh"]

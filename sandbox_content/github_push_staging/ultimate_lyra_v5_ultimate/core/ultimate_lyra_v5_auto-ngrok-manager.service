@@ -1,0 +1,27 @@
+[Unit]
+Description=Auto Ngrok Manager - Monitors and restarts ngrok tunnel and ingest gateway
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=halvolyra
+Group=halvolyra
+WorkingDirectory=/home/halvolyra/ultimate_lyra_systems
+Environment=PATH=/home/halvolyra/ultimate_lyra_systems/venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/python3 /home/halvolyra/ultimate_lyra_systems/auto_ngrok_manager.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=auto-ngrok-manager
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=false
+ReadWritePaths=/home/halvolyra/ultimate_lyra_systems /tmp
+
+[Install]
+WantedBy=multi-user.target

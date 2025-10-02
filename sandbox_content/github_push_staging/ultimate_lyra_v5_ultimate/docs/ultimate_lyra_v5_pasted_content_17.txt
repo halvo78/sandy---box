@@ -1,0 +1,52 @@
+ngrok                                                    (Ctrl+C to quit)                                                                         🫶 Using ngrok for OSS? Request a community license: https://ngrok.com/r/                                                                         Session Status                online                                     Account                       Eli Halvorson (Plan: Pro)                  Version                       3.30.0                                     Region                        Asia Pacific (ap)                          Latency                       135ms                                      Web Interface                 http://127.0.0.1:4042                      Forwarding                    https://3ce37fa57d09.ngrok.app -> http://lo                                                                         Connections                   ttl     opn     rt1     rt5     p50     p90                              266     0       0.02    0.01    0.02    60.                                                                         HTTP Requests                                                            -------------                                                                                                                                     23:06:40.065 AEST GET  /health                   200 OK                  23:05:57.155 AEST GET  /health                   502 Bad Gateway         23:05:08.523 AEST GET  /health                   502 Bad Gateway         23:05:07.819 AEST GET  /health                   502 Bad Gateway         23:03:06.375 AEST GET  /health                                           22:59:38.722 AEST GET  /health                                           22:59:03.596 AEST POST /ingest/event                                     22:56:59.202 AEST GET  /health                                           22:23:56.074 AEST POST /ingest/event                                     22:22:55.085 AEST POST /ingest/event             halvolyra@HALVO-AI:~/ultimate_lyra_systems$ # Stop the current manager
+# Press Ctrl+C
+
+# Fix the shell issue in the auto manager
+cat > auto_ngrok_manager.py << 'EOF'
+#!/usr/bin/env python3
+import os
+import time
+import subprocess
+import requests
+import psutil
+import logging
+import signal
+import sys
+from datetime import datetime
+
+class AutoNgrokManager:
+    def __init__(self):
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+        self.logger = logging.getLogger(__name__)
+        self.ngrok_url = "https://3ce37fa57d09.ngrok.app"
+        self.local_port = 8081
+        self.check_interval = 30
+        self.restart_count = 0
+        self.max_restarts = 10
+        self.running = True
+        signal.signal(signal.SIGINT, self.signal_handler )
+
+    def signal_handler(self, signum, frame):
+        self.logger.info("Shutting down gracefully...")
+        self.running = False
+        sys.exit(0)
+
+    def kill_ingest_processes(self):
+        """Kill all ingest_gateway processes"""
+        try:
+            subprocess.run("pkill -f ingest_gateway", shell=True)
+            time.sleep(2)
+        except:
+            pass
+
+    def free_port(self, port):
+        """Free up port 8081"""
+chmod +x auto_ngrok_manager.py()o Ngrok Manager stopped")led")rt_count -
+halvolyra@HALVO-AI:~/ultimate_lyra_systems$ python3 auto_ngrok_manager.py
+2025-09-30 23:05:56,727 - 🚀 Starting Auto Ngrok Manager...
+2025-09-30 23:05:57,418 - Status: Local=False, Ngrok=False
+2025-09-30 23:05:57,419 - ❌ Local gateway down. Restart 1/10
+2025-09-30 23:05:57,419 - 🔄 Restarting ingest gateway...
+2025-09-30 23:06:09,506 - ✅ Ingest gateway started successfully
+2025-09-30 23:06:09,506 - ✅ Restart successful
+2025-09-30 23:06:40,229 - Status: Local=True, Ngrok=True

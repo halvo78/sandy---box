@@ -1,0 +1,309 @@
+Great question. The way we keep each venue strictly inside its allowed API “lane” (e.g., **Gate.io = spot-only, limit, post-only; no margin, no perp, no withdrawals**) is a combo of:
+
+1. **Static, human-approved policy (whitelist)**
+2. **Dynamic capability discovery (ccxt `describe()` + `load_markets()`)**
+3. **A locked “safe adapter” that refuses anything outside the whitelist**
+4. **Webhook & CLI guards** that reject non-whitelisted actions at the perimeter
+5. **Commissioning probes** that prove the key truly can’t do disallowed things
+
+Below is exactly how to put that in your system today.
+
+---
+
+# 1) Per-exchange policy (human-approved)
+
+Create a file `~/ultimate_lyra_systems/policies/exchanges.yaml`:
+
+```yaml
+# exchanges.yaml
+gateio:
+  allowed:
+    account_types: ["spot"]     # no margin, no swaps, no futures
+    actions: ["fetchTicker","fetchOrderBook","fetchOHLCV","createOrder","cancelOrder","fetchBalance"]
+    order_types: ["limit"]      # no market orders during commissioning
+    time_in_force: ["PO"]       # post-only (maker only)
+    symbols: ["BTC/USDT","ETH/USDT"]
+  forbidden:
+    actions: ["withdraw","borrow","repay","setLeverage","createOrderSwap","createOrderFutures"]
+    market_types: ["margin","swap","future","option"]
+  constraints:
+    post_only_required: true
+    max_notional_usd: 5
+    min_edge_bps: 25
+    cancel_on_fill_error: true
+
+binance:
+  allowed:
+    account_types: ["spot"]
+    actions: ["fetchTicker","fetchOrderBook","fetchOHLCV","createOrder","cancelOrder","fetchBalance"]
+    order_types: ["limit"]
+    time_in_force: ["GTC","PO"] # PO if supported
+    symbols: ["BTC/USDT"]
+  forbidden:
+    actions: ["withdraw","fapi/*","dapi/*","sapi/margin/*"]
+  constraints:
+    post_only_required: true
+    max_notional_usd: 5
+    min_edge_bps: 25
+```
+
+> This whitelist is the **source of truth**. We never act outside it, even if the key technically could.
+
+---
+
+# 2) Dynamic discovery (capability manifest)
+
+Use ccxt to *read* what the exchange says it supports. We compare it with the whitelist and store a manifest for audits.
+
+Create `discover_caps.py`:
+
+```python
+#!/usr/bin/env python3
+import os, json, ccxt, datetime
+from dotenv import load_dotenv
+load_dotenv()
+
+def discover(exchange_id: str, default_type: str="spot"):
+    cls = getattr(ccxt, exchange_id)
+    ex = cls({
+        'apiKey': os.getenv(f'{exchange_id.upper()}_KEY'),
+        'secret': os.getenv(f'{exchange_id.upper()}_SECRET'),
+        'enableRateLimit': True,
+        'options': {'defaultType': default_type}
+    })
+    desc = ex.describe()
+    markets = ex.load_markets()
+    market_types = {
+        'has_spot': any(m.get('spot') for m in markets.values()),
+        'has_swap': any(m.get('swap') for m in markets.values()),
+        'has_future': any(m.get('future') for m in markets.values()),
+        'has_margin': bool(desc.get('has', {}).get('margin', False)),
+    }
+    timeframes = list((desc.get('timeframes') or {}).keys())
+    order_types = desc.get('has', {})
+    has = desc.get('has', {})
+
+    manifest = {
+        'exchange': exchange_id,
+        'defaultType': default_type,
+        'urls': desc.get('urls', {}),
+        'rateLimit': desc.get('rateLimit'),
+        'has': has,
+        'timeframes': timeframes,
+        'market_types': market_types,
+        'precisionMode': desc.get('precisionMode'),
+        'created_at': datetime.datetime.utcnow().isoformat()
+    }
+    os.makedirs('manifests', exist_ok=True)
+    with open(f'manifests/{exchange_id}_manifest.json', 'w') as f:
+        json.dump(manifest, f, indent=2)
+    print(json.dumps(manifest, indent=2))
+
+if __name__ == "__main__":
+    # Example: Gate.io in spot mode
+    discover('gateio', 'spot')
+```
+
+Run it (in venv):
+`cd ~/ultimate_lyra_systems && python discover_caps.py`
+It writes `manifests/gateio_manifest.json` for your evidence pack.
+
+---
+
+# 3) The “Safe Adapter” (hard gate)
+
+All trading calls go through a single adapter that enforces policy + dynamic checks. Drop this in `safe_exchange_adapter.py`:
+
+```python
+#!/usr/bin/env python3
+import ccxt, os, json
+from typing import Dict, Any
+from dotenv import load_dotenv
+load_dotenv()
+
+class PolicyError(Exception): pass
+
+def _load_policy(exchange_id: str) -> Dict[str, Any]:
+    import yaml
+    with open(os.path.expanduser('~/ultimate_lyra_systems/policies/exchanges.yaml')) as f:
+        cfg = yaml.safe_load(f)
+    if exchange_id not in cfg: raise PolicyError(f"No policy for {exchange_id}")
+    return cfg[exchange_id]
+
+class SafeExchange:
+    def __init__(self, exchange_id: str, default_type: str="spot"):
+        self.exchange_id = exchange_id
+        self.policy = _load_policy(exchange_id)
+        cls = getattr(ccxt, exchange_id)
+        self.ex = cls({
+            'apiKey': os.getenv(f'{exchange_id.upper()}_KEY'),
+            'secret': os.getenv(f'{exchange_id.upper()}_SECRET'),
+            'enableRateLimit': True,
+            'options': {'defaultType': default_type}
+        })
+        self.markets = self.ex.load_markets()
+        self._assert_account_type_allowed(default_type)
+
+    # ---------- policy checks ----------
+    def _assert_allowed_action(self, action: str):
+        if action not in self.policy['allowed']['actions']:
+            raise PolicyError(f"Action forbidden by policy: {action}")
+
+    def _assert_account_type_allowed(self, acct_type: str):
+        if acct_type not in self.policy['allowed']['account_types']:
+            raise PolicyError(f"Account type not allowed: {acct_type}")
+
+    def _assert_symbol_allowed(self, symbol: str):
+        if symbol not in self.policy['allowed']['symbols']:
+            raise PolicyError(f"Symbol not allowed: {symbol}")
+
+    def _assert_spot_market(self, symbol: str):
+        m = self.markets.get(symbol)
+        if not m or not m.get('spot', False) or m.get('swap') or m.get('future'):
+            raise PolicyError(f"Symbol not a pure spot market: {symbol}")
+
+    def _assert_order_type(self, order_type: str):
+        if order_type.lower() not in [t.lower() for t in self.policy['allowed']['order_types']]:
+            raise PolicyError(f"Order type not allowed: {order_type}")
+
+    def _apply_post_only(self, params: Dict[str, Any]) -> Dict[str, Any]:
+        if self.policy['constraints'].get('post_only_required', False):
+            # ccxt Gate.io uses timeInForce: 'PO' for post-only
+            params = dict(params or {})
+            params.setdefault('timeInForce', 'PO')
+        return params
+
+    # ---------- public safe methods ----------
+    def fetch_ticker(self, symbol: str):
+        self._assert_allowed_action('fetchTicker'); self._assert_symbol_allowed(symbol)
+        return self.ex.fetch_ticker(symbol)
+
+    def fetch_order_book(self, symbol: str, limit=50):
+        self._assert_allowed_action('fetchOrderBook'); self._assert_symbol_allowed(symbol)
+        return self.ex.fetch_order_book(symbol, limit)
+
+    def fetch_ohlcv(self, symbol: str, timeframe='1h', limit=200):
+        self._assert_allowed_action('fetchOHLCV'); self._assert_symbol_allowed(symbol)
+        return self.ex.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+
+    def create_order(self, symbol: str, type_: str, side: str, amount, price=None, params=None):
+        self._assert_allowed_action('createOrder')
+        self._assert_symbol_allowed(symbol)
+        self._assert_spot_market(symbol)
+        self._assert_order_type(type_)
+        params = self._apply_post_only(params)
+        return self.ex.create_order(symbol, type_, side, amount, price, params or {})
+
+    def cancel_order(self, id_: str, symbol: str, params=None):
+        self._assert_allowed_action('cancelOrder'); self._assert_symbol_allowed(symbol)
+        return self.ex.cancel_order(id_, symbol, params or {})
+```
+
+Usage in your strategies (e.g., Gate.io strict spot):
+
+```python
+from safe_exchange_adapter import SafeExchange, PolicyError
+
+gate = SafeExchange('gateio', default_type='spot')
+
+try:
+    ob = gate.fetch_order_book('BTC/USDT', 50)
+    # Limit, post-only buy:
+    gate.create_order('BTC/USDT', 'limit', 'buy', amount=0.0001, price=ob['bids'][0][0] * 0.999, params={})
+except PolicyError as e:
+    # This is expected if something violates policy
+    print(f"BLOCKED by policy: {e}")
+```
+
+> If someone (or an AI agent) tries to place a market order, use a swap market, or set leverage—**PolicyError** stops it cold.
+
+---
+
+# 4) Perimeter guard for webhooks (reject at the door)
+
+Your FastAPI dashboard or inbound webhooks must also enforce the whitelist **before** calling any exchange code.
+
+Add an endpoint (snippet):
+
+```python
+# in dashboard.py (or separate microservice)
+from fastapi import FastAPI, HTTPException, Header
+from pydantic import BaseModel, Field
+from safe_exchange_adapter import SafeExchange, PolicyError
+
+class TradeRequest(BaseModel):
+    exchange: str = Field(..., pattern="^[a-z0-9_]+$")
+    symbol: str
+    side: str
+    order_type: str
+    amount: float
+    price: float | None = None
+
+ALLOWED_EXCHANGES = {"gateio"}  # narrow perimeter
+
+@app.post("/webhook/trade")
+def webhook_trade(payload: TradeRequest, x_lyra_sig: str = Header(default="")):
+    # 1) verify HMAC signature of payload + timestamp (left out for brevity)
+    # 2) perimeter-level allowlist
+    if payload.exchange not in ALLOWED_EXCHANGES:
+        raise HTTPException(403, "Exchange not allowed at perimeter")
+
+    try:
+        ex = SafeExchange(payload.exchange, default_type='spot')
+        result = ex.create_order(payload.symbol, payload.order_type, payload.side, payload.amount, payload.price, {})
+        return {"status": "accepted", "order": result}
+    except PolicyError as e:
+        raise HTTPException(403, f"Policy rejected: {e}")
+```
+
+> Now even if a webhook tries “sell market on SWAP”, it’s rejected **before** touching the exchange.
+
+---
+
+# 5) Commissioning probes (prove the key can’t do bad things)
+
+For each venue/key during go-live:
+
+* **Read-only sanity**: try a *forbidden* private endpoint (e.g., margin borrow info) and verify that it fails with 4xx. Record evidence (`~/logs/commissioning/perm_probes/<exchange>.json`).
+* **Market-type sanity**: iterate all markets from `load_markets()` and assert only `spot==True` symbols in your allowed list.
+* **Order-type sanity**: attempt a tiny **market order** with `dry-run` flag in adapter (adapter rejects before network) and **log the rejection** as expected behavior.
+* **Post-only confirm**: place a tiny limit with `timeInForce='PO'` a few ticks inside the book to validate “maker or reject”.
+
+You already have a `logs/` dir—make a commissioning script `commission_exchange.py` to run these checks and produce a JSON evidence file per venue.
+
+---
+
+# 6) Where the info lives (dev/github/OSS you can lean on)
+
+* **ccxt**: exposes `exchange.describe()`, `exchange.has`, `load_markets()` and per-exchange params (like Gate.io’s `timeInForce: 'PO'` for post-only). This is the *best programmatic source* to discover capabilities and params.
+* **Hummingbot connectors**: their per-exchange connectors encode what is supported (spot/perp, post-only behavior, precision). Even if you don’t run Hummingbot, inspecting the connector for Gate.io is a great cross-check when commissioning.
+* **Exchange API docs**: for exact post-only flag names, min notional, lot sizes, and any “account-type” headers.
+
+(Your system does not need to auto-scrape GitHub—**use ccxt discovery + your static policy** as the enforcement spine. Hummingbot/Docs are for human audit during commissioning.)
+
+---
+
+# 7) Extra hardening (recommended)
+
+* **Key scopes**: Generate keys with the minimum scopes (Spot Trade only; no withdrawal). Keep vault separation you added, but also keep a plain-text “scopes note” file in the evidence pack that you validated on the exchange UI.
+* **Kill-switch file**: `/tmp/LYRA_TRADING_DISABLED` checked at adapter entry—if present, **reject everything**.
+* **Circuit breakers** in the adapter: max orders/min, max cancels/min, max open orders, max inventory drift.
+* **“DefaultType” pinning**: Always set ccxt `options.defaultType = 'spot'` for spot-only exchanges; never rely on defaults.
+* **Symbol allowlist**: Refuse any symbol not explicitly listed in policy.
+
+---
+
+## TL;DR for Gate.io today
+
+* Configure `gateio` in `exchanges.yaml` with **spot-only + post-only**.
+* Use `SafeExchange('gateio','spot')` in strategies—this adapter **blocks** margin/swap/futures/market orders by design.
+* Run `discover_caps.py` → review `manifests/gateio_manifest.json`.
+* Run commissioning probes and save the logs to evidence.
+* Keep webhook/API layer rejecting anything not on the allowlist *before* it reaches the adapter.
+
+If you want, I can generate the two small Python utilities now:
+
+* `commission_exchange.py` (does the permission & post-only probes + logs evidence)
+* `policy_lint.py` (checks your YAML against ccxt `describe()` and flags contradictions)
+
+Say the word and I’ll drop them in ready to paste.

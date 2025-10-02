@@ -1,0 +1,17 @@
+apiVersion: v2
+name: lyra-trading-system
+description: Ultimate 100% Compliance Trading System
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - trading
+  - cryptocurrency
+  - ai
+  - compliance
+home: https://lyra-trading.com
+sources:
+  - https://github.com/lyra-trading/ultimate-system
+maintainers:
+  - name: Lyra Trading Team
+    email: your-email@example.com

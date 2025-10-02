@@ -1,0 +1,4961 @@
+# ULTIMATE CONTAINERIZED ECOSYSTEM - KUBERNETES MANIFESTS
+# Generated from AI consensus analysis
+# Total Services: 48+ | Total Replicas: 100+
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lyra-trading
+  labels:
+    name: lyra-trading
+    tier: production
+---
+# FOUNDATION INFRASTRUCTURE SERVICES
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: lyra-trading
+  labels:
+    app: database
+    tier: tier_1_core
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+        tier: tier_1_core
+    spec:
+      containers:
+      - name: database
+        image: lyra/database:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: SERVICE_NAME
+          value: "database"
+        - name: SERVICE_PORT
+          value: "5432"
+        - name: TIER
+          value: "tier_1_core"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5432
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5432
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database-service
+  namespace: lyra-trading
+  labels:
+    app: database
+    tier: tier_1_core
+spec:
+  selector:
+    app: database
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: lyra-trading
+  labels:
+    app: redis
+    tier: tier_1_core
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+        tier: tier_1_core
+    spec:
+      containers:
+      - name: redis
+        image: lyra/redis:latest
+        ports:
+        - containerPort: 6379
+        env:
+        - name: SERVICE_NAME
+          value: "redis"
+        - name: SERVICE_PORT
+          value: "6379"
+        - name: TIER
+          value: "tier_1_core"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 6379
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 6379
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: lyra-trading
+  labels:
+    app: redis
+    tier: tier_1_core
+spec:
+  selector:
+    app: redis
+  ports:
+  - protocol: TCP
+    port: 6379
+    targetPort: 6379
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: message_queue
+  namespace: lyra-trading
+  labels:
+    app: message_queue
+    tier: tier_1_core
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: message_queue
+  template:
+    metadata:
+      labels:
+        app: message_queue
+        tier: tier_1_core
+    spec:
+      containers:
+      - name: message_queue
+        image: lyra/message_queue:latest
+        ports:
+        - containerPort: 5672
+        env:
+        - name: SERVICE_NAME
+          value: "message_queue"
+        - name: SERVICE_PORT
+          value: "5672"
+        - name: TIER
+          value: "tier_1_core"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5672
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5672
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: message_queue-service
+  namespace: lyra-trading
+  labels:
+    app: message_queue
+    tier: tier_1_core
+spec:
+  selector:
+    app: message_queue
+  ports:
+  - protocol: TCP
+    port: 5672
+    targetPort: 5672
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config_manager
+  namespace: lyra-trading
+  labels:
+    app: config_manager
+    tier: tier_1_core
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: config_manager
+  template:
+    metadata:
+      labels:
+        app: config_manager
+        tier: tier_1_core
+    spec:
+      containers:
+      - name: config_manager
+        image: lyra/config_manager:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: SERVICE_NAME
+          value: "config_manager"
+        - name: SERVICE_PORT
+          value: "8000"
+        - name: TIER
+          value: "tier_1_core"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config_manager-service
+  namespace: lyra-trading
+  labels:
+    app: config_manager
+    tier: tier_1_core
+spec:
+  selector:
+    app: config_manager
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health_monitor
+  namespace: lyra-trading
+  labels:
+    app: health_monitor
+    tier: tier_1_core
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: health_monitor
+  template:
+    metadata:
+      labels:
+        app: health_monitor
+        tier: tier_1_core
+    spec:
+      containers:
+      - name: health_monitor
+        image: lyra/health_monitor:latest
+        ports:
+        - containerPort: 8001
+        env:
+        - name: SERVICE_NAME
+          value: "health_monitor"
+        - name: SERVICE_PORT
+          value: "8001"
+        - name: TIER
+          value: "tier_1_core"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8001
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: health_monitor-service
+  namespace: lyra-trading
+  labels:
+    app: health_monitor
+    tier: tier_1_core
+spec:
+  selector:
+    app: health_monitor
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 8001
+  type: ClusterIP
+---
+# 327+ AI MODELS WITH OPENROUTER INTEGRATION
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai_consensus
+  namespace: lyra-trading
+  labels:
+    app: ai_consensus
+    tier: tier_2_ai
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ai_consensus
+  template:
+    metadata:
+      labels:
+        app: ai_consensus
+        tier: tier_2_ai
+    spec:
+      containers:
+      - name: ai_consensus
+        image: lyra/ai_consensus:latest
+        ports:
+        - containerPort: 8090
+        env:
+        - name: SERVICE_NAME
+          value: "ai_consensus"
+        - name: SERVICE_PORT
+          value: "8090"
+        - name: TIER
+          value: "tier_2_ai"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8090
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8090
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai_consensus-service
+  namespace: lyra-trading
+  labels:
+    app: ai_consensus
+    tier: tier_2_ai
+spec:
+  selector:
+    app: ai_consensus
+  ports:
+  - protocol: TCP
+    port: 8090
+    targetPort: 8090
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model_router
+  namespace: lyra-trading
+  labels:
+    app: model_router
+    tier: tier_2_ai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: model_router
+  template:
+    metadata:
+      labels:
+        app: model_router
+        tier: tier_2_ai
+    spec:
+      containers:
+      - name: model_router
+        image: lyra/model_router:latest
+        ports:
+        - containerPort: 8091
+        env:
+        - name: SERVICE_NAME
+          value: "model_router"
+        - name: SERVICE_PORT
+          value: "8091"
+        - name: TIER
+          value: "tier_2_ai"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8091
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8091
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: model_router-service
+  namespace: lyra-trading
+  labels:
+    app: model_router
+    tier: tier_2_ai
+spec:
+  selector:
+    app: model_router
+  ports:
+  - protocol: TCP
+    port: 8091
+    targetPort: 8091
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prompt_manager
+  namespace: lyra-trading
+  labels:
+    app: prompt_manager
+    tier: tier_2_ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prompt_manager
+  template:
+    metadata:
+      labels:
+        app: prompt_manager
+        tier: tier_2_ai
+    spec:
+      containers:
+      - name: prompt_manager
+        image: lyra/prompt_manager:latest
+        ports:
+        - containerPort: 8092
+        env:
+        - name: SERVICE_NAME
+          value: "prompt_manager"
+        - name: SERVICE_PORT
+          value: "8092"
+        - name: TIER
+          value: "tier_2_ai"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8092
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8092
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prompt_manager-service
+  namespace: lyra-trading
+  labels:
+    app: prompt_manager
+    tier: tier_2_ai
+spec:
+  selector:
+    app: prompt_manager
+  ports:
+  - protocol: TCP
+    port: 8092
+    targetPort: 8092
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: response_analyzer
+  namespace: lyra-trading
+  labels:
+    app: response_analyzer
+    tier: tier_2_ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: response_analyzer
+  template:
+    metadata:
+      labels:
+        app: response_analyzer
+        tier: tier_2_ai
+    spec:
+      containers:
+      - name: response_analyzer
+        image: lyra/response_analyzer:latest
+        ports:
+        - containerPort: 8093
+        env:
+        - name: SERVICE_NAME
+          value: "response_analyzer"
+        - name: SERVICE_PORT
+          value: "8093"
+        - name: TIER
+          value: "tier_2_ai"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8093
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8093
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: response_analyzer-service
+  namespace: lyra-trading
+  labels:
+    app: response_analyzer
+    tier: tier_2_ai
+spec:
+  selector:
+    app: response_analyzer
+  ports:
+  - protocol: TCP
+    port: 8093
+    targetPort: 8093
+  type: ClusterIP
+---
+# ALL 12 EXCHANGES WITH UNIFIED API
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exchange_manager
+  namespace: lyra-trading
+  labels:
+    app: exchange_manager
+    tier: tier_3_exchanges
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: exchange_manager
+  template:
+    metadata:
+      labels:
+        app: exchange_manager
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: exchange_manager
+        image: lyra/exchange_manager:latest
+        ports:
+        - containerPort: 8100
+        env:
+        - name: SERVICE_NAME
+          value: "exchange_manager"
+        - name: SERVICE_PORT
+          value: "8100"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8100
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8100
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: exchange_manager-service
+  namespace: lyra-trading
+  labels:
+    app: exchange_manager
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: exchange_manager
+  ports:
+  - protocol: TCP
+    port: 8100
+    targetPort: 8100
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okx_service
+  namespace: lyra-trading
+  labels:
+    app: okx_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: okx_service
+  template:
+    metadata:
+      labels:
+        app: okx_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: okx_service
+        image: lyra/okx_service:latest
+        ports:
+        - containerPort: 8101
+        env:
+        - name: SERVICE_NAME
+          value: "okx_service"
+        - name: SERVICE_PORT
+          value: "8101"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8101
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8101
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: okx_service-service
+  namespace: lyra-trading
+  labels:
+    app: okx_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: okx_service
+  ports:
+  - protocol: TCP
+    port: 8101
+    targetPort: 8101
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binance_service
+  namespace: lyra-trading
+  labels:
+    app: binance_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: binance_service
+  template:
+    metadata:
+      labels:
+        app: binance_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: binance_service
+        image: lyra/binance_service:latest
+        ports:
+        - containerPort: 8102
+        env:
+        - name: SERVICE_NAME
+          value: "binance_service"
+        - name: SERVICE_PORT
+          value: "8102"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8102
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8102
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: binance_service-service
+  namespace: lyra-trading
+  labels:
+    app: binance_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: binance_service
+  ports:
+  - protocol: TCP
+    port: 8102
+    targetPort: 8102
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kraken_service
+  namespace: lyra-trading
+  labels:
+    app: kraken_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kraken_service
+  template:
+    metadata:
+      labels:
+        app: kraken_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: kraken_service
+        image: lyra/kraken_service:latest
+        ports:
+        - containerPort: 8103
+        env:
+        - name: SERVICE_NAME
+          value: "kraken_service"
+        - name: SERVICE_PORT
+          value: "8103"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8103
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8103
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kraken_service-service
+  namespace: lyra-trading
+  labels:
+    app: kraken_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: kraken_service
+  ports:
+  - protocol: TCP
+    port: 8103
+    targetPort: 8103
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateio_service
+  namespace: lyra-trading
+  labels:
+    app: gateio_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gateio_service
+  template:
+    metadata:
+      labels:
+        app: gateio_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: gateio_service
+        image: lyra/gateio_service:latest
+        ports:
+        - containerPort: 8104
+        env:
+        - name: SERVICE_NAME
+          value: "gateio_service"
+        - name: SERVICE_PORT
+          value: "8104"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8104
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8104
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateio_service-service
+  namespace: lyra-trading
+  labels:
+    app: gateio_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: gateio_service
+  ports:
+  - protocol: TCP
+    port: 8104
+    targetPort: 8104
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whitebit_service
+  namespace: lyra-trading
+  labels:
+    app: whitebit_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: whitebit_service
+  template:
+    metadata:
+      labels:
+        app: whitebit_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: whitebit_service
+        image: lyra/whitebit_service:latest
+        ports:
+        - containerPort: 8105
+        env:
+        - name: SERVICE_NAME
+          value: "whitebit_service"
+        - name: SERVICE_PORT
+          value: "8105"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8105
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8105
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whitebit_service-service
+  namespace: lyra-trading
+  labels:
+    app: whitebit_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: whitebit_service
+  ports:
+  - protocol: TCP
+    port: 8105
+    targetPort: 8105
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swyftx_service
+  namespace: lyra-trading
+  labels:
+    app: swyftx_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: swyftx_service
+  template:
+    metadata:
+      labels:
+        app: swyftx_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: swyftx_service
+        image: lyra/swyftx_service:latest
+        ports:
+        - containerPort: 8106
+        env:
+        - name: SERVICE_NAME
+          value: "swyftx_service"
+        - name: SERVICE_PORT
+          value: "8106"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8106
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8106
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: swyftx_service-service
+  namespace: lyra-trading
+  labels:
+    app: swyftx_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: swyftx_service
+  ports:
+  - protocol: TCP
+    port: 8106
+    targetPort: 8106
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: btcmarkets_service
+  namespace: lyra-trading
+  labels:
+    app: btcmarkets_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: btcmarkets_service
+  template:
+    metadata:
+      labels:
+        app: btcmarkets_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: btcmarkets_service
+        image: lyra/btcmarkets_service:latest
+        ports:
+        - containerPort: 8107
+        env:
+        - name: SERVICE_NAME
+          value: "btcmarkets_service"
+        - name: SERVICE_PORT
+          value: "8107"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8107
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8107
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: btcmarkets_service-service
+  namespace: lyra-trading
+  labels:
+    app: btcmarkets_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: btcmarkets_service
+  ports:
+  - protocol: TCP
+    port: 8107
+    targetPort: 8107
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coinbase_service
+  namespace: lyra-trading
+  labels:
+    app: coinbase_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coinbase_service
+  template:
+    metadata:
+      labels:
+        app: coinbase_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: coinbase_service
+        image: lyra/coinbase_service:latest
+        ports:
+        - containerPort: 8108
+        env:
+        - name: SERVICE_NAME
+          value: "coinbase_service"
+        - name: SERVICE_PORT
+          value: "8108"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8108
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8108
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: coinbase_service-service
+  namespace: lyra-trading
+  labels:
+    app: coinbase_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: coinbase_service
+  ports:
+  - protocol: TCP
+    port: 8108
+    targetPort: 8108
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitfinex_service
+  namespace: lyra-trading
+  labels:
+    app: bitfinex_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bitfinex_service
+  template:
+    metadata:
+      labels:
+        app: bitfinex_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: bitfinex_service
+        image: lyra/bitfinex_service:latest
+        ports:
+        - containerPort: 8109
+        env:
+        - name: SERVICE_NAME
+          value: "bitfinex_service"
+        - name: SERVICE_PORT
+          value: "8109"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8109
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8109
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bitfinex_service-service
+  namespace: lyra-trading
+  labels:
+    app: bitfinex_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: bitfinex_service
+  ports:
+  - protocol: TCP
+    port: 8109
+    targetPort: 8109
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: huobi_service
+  namespace: lyra-trading
+  labels:
+    app: huobi_service
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: huobi_service
+  template:
+    metadata:
+      labels:
+        app: huobi_service
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: huobi_service
+        image: lyra/huobi_service:latest
+        ports:
+        - containerPort: 8110
+        env:
+        - name: SERVICE_NAME
+          value: "huobi_service"
+        - name: SERVICE_PORT
+          value: "8110"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8110
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8110
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: huobi_service-service
+  namespace: lyra-trading
+  labels:
+    app: huobi_service
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: huobi_service
+  ports:
+  - protocol: TCP
+    port: 8110
+    targetPort: 8110
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: independent_reserve
+  namespace: lyra-trading
+  labels:
+    app: independent_reserve
+    tier: tier_3_exchanges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: independent_reserve
+  template:
+    metadata:
+      labels:
+        app: independent_reserve
+        tier: tier_3_exchanges
+    spec:
+      containers:
+      - name: independent_reserve
+        image: lyra/independent_reserve:latest
+        ports:
+        - containerPort: 8111
+        env:
+        - name: SERVICE_NAME
+          value: "independent_reserve"
+        - name: SERVICE_PORT
+          value: "8111"
+        - name: TIER
+          value: "tier_3_exchanges"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8111
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8111
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: independent_reserve-service
+  namespace: lyra-trading
+  labels:
+    app: independent_reserve
+    tier: tier_3_exchanges
+spec:
+  selector:
+    app: independent_reserve
+  ports:
+  - protocol: TCP
+    port: 8111
+    targetPort: 8111
+  type: ClusterIP
+---
+# ALL 17 TRADING STRATEGIES WITH EXECUTION ENGINES
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strategy_engine
+  namespace: lyra-trading
+  labels:
+    app: strategy_engine
+    tier: tier_4_strategies
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: strategy_engine
+  template:
+    metadata:
+      labels:
+        app: strategy_engine
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: strategy_engine
+        image: lyra/strategy_engine:latest
+        ports:
+        - containerPort: 8200
+        env:
+        - name: SERVICE_NAME
+          value: "strategy_engine"
+        - name: SERVICE_PORT
+          value: "8200"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8200
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8200
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: strategy_engine-service
+  namespace: lyra-trading
+  labels:
+    app: strategy_engine
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: strategy_engine
+  ports:
+  - protocol: TCP
+    port: 8200
+    targetPort: 8200
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai_momentum
+  namespace: lyra-trading
+  labels:
+    app: ai_momentum
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai_momentum
+  template:
+    metadata:
+      labels:
+        app: ai_momentum
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: ai_momentum
+        image: lyra/ai_momentum:latest
+        ports:
+        - containerPort: 8201
+        env:
+        - name: SERVICE_NAME
+          value: "ai_momentum"
+        - name: SERVICE_PORT
+          value: "8201"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8201
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8201
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai_momentum-service
+  namespace: lyra-trading
+  labels:
+    app: ai_momentum
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: ai_momentum
+  ports:
+  - protocol: TCP
+    port: 8201
+    targetPort: 8201
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cross_arbitrage
+  namespace: lyra-trading
+  labels:
+    app: cross_arbitrage
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cross_arbitrage
+  template:
+    metadata:
+      labels:
+        app: cross_arbitrage
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: cross_arbitrage
+        image: lyra/cross_arbitrage:latest
+        ports:
+        - containerPort: 8202
+        env:
+        - name: SERVICE_NAME
+          value: "cross_arbitrage"
+        - name: SERVICE_PORT
+          value: "8202"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8202
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8202
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cross_arbitrage-service
+  namespace: lyra-trading
+  labels:
+    app: cross_arbitrage
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: cross_arbitrage
+  ports:
+  - protocol: TCP
+    port: 8202
+    targetPort: 8202
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: market_making
+  namespace: lyra-trading
+  labels:
+    app: market_making
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: market_making
+  template:
+    metadata:
+      labels:
+        app: market_making
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: market_making
+        image: lyra/market_making:latest
+        ports:
+        - containerPort: 8203
+        env:
+        - name: SERVICE_NAME
+          value: "market_making"
+        - name: SERVICE_PORT
+          value: "8203"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8203
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8203
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: market_making-service
+  namespace: lyra-trading
+  labels:
+    app: market_making
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: market_making
+  ports:
+  - protocol: TCP
+    port: 8203
+    targetPort: 8203
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: triangular_arbitrage
+  namespace: lyra-trading
+  labels:
+    app: triangular_arbitrage
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: triangular_arbitrage
+  template:
+    metadata:
+      labels:
+        app: triangular_arbitrage
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: triangular_arbitrage
+        image: lyra/triangular_arbitrage:latest
+        ports:
+        - containerPort: 8204
+        env:
+        - name: SERVICE_NAME
+          value: "triangular_arbitrage"
+        - name: SERVICE_PORT
+          value: "8204"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8204
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8204
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: triangular_arbitrage-service
+  namespace: lyra-trading
+  labels:
+    app: triangular_arbitrage
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: triangular_arbitrage
+  ports:
+  - protocol: TCP
+    port: 8204
+    targetPort: 8204
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mean_reversion
+  namespace: lyra-trading
+  labels:
+    app: mean_reversion
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mean_reversion
+  template:
+    metadata:
+      labels:
+        app: mean_reversion
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: mean_reversion
+        image: lyra/mean_reversion:latest
+        ports:
+        - containerPort: 8205
+        env:
+        - name: SERVICE_NAME
+          value: "mean_reversion"
+        - name: SERVICE_PORT
+          value: "8205"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8205
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8205
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mean_reversion-service
+  namespace: lyra-trading
+  labels:
+    app: mean_reversion
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: mean_reversion
+  ports:
+  - protocol: TCP
+    port: 8205
+    targetPort: 8205
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twap_vwap
+  namespace: lyra-trading
+  labels:
+    app: twap_vwap
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: twap_vwap
+  template:
+    metadata:
+      labels:
+        app: twap_vwap
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: twap_vwap
+        image: lyra/twap_vwap:latest
+        ports:
+        - containerPort: 8206
+        env:
+        - name: SERVICE_NAME
+          value: "twap_vwap"
+        - name: SERVICE_PORT
+          value: "8206"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8206
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8206
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: twap_vwap-service
+  namespace: lyra-trading
+  labels:
+    app: twap_vwap
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: twap_vwap
+  ports:
+  - protocol: TCP
+    port: 8206
+    targetPort: 8206
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basket_rebalancing
+  namespace: lyra-trading
+  labels:
+    app: basket_rebalancing
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: basket_rebalancing
+  template:
+    metadata:
+      labels:
+        app: basket_rebalancing
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: basket_rebalancing
+        image: lyra/basket_rebalancing:latest
+        ports:
+        - containerPort: 8207
+        env:
+        - name: SERVICE_NAME
+          value: "basket_rebalancing"
+        - name: SERVICE_PORT
+          value: "8207"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8207
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8207
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: basket_rebalancing-service
+  namespace: lyra-trading
+  labels:
+    app: basket_rebalancing
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: basket_rebalancing
+  ports:
+  - protocol: TCP
+    port: 8207
+    targetPort: 8207
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistical_arbitrage
+  namespace: lyra-trading
+  labels:
+    app: statistical_arbitrage
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: statistical_arbitrage
+  template:
+    metadata:
+      labels:
+        app: statistical_arbitrage
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: statistical_arbitrage
+        image: lyra/statistical_arbitrage:latest
+        ports:
+        - containerPort: 8208
+        env:
+        - name: SERVICE_NAME
+          value: "statistical_arbitrage"
+        - name: SERVICE_PORT
+          value: "8208"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8208
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8208
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: statistical_arbitrage-service
+  namespace: lyra-trading
+  labels:
+    app: statistical_arbitrage
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: statistical_arbitrage
+  ports:
+  - protocol: TCP
+    port: 8208
+    targetPort: 8208
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dca_strategy
+  namespace: lyra-trading
+  labels:
+    app: dca_strategy
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dca_strategy
+  template:
+    metadata:
+      labels:
+        app: dca_strategy
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: dca_strategy
+        image: lyra/dca_strategy:latest
+        ports:
+        - containerPort: 8209
+        env:
+        - name: SERVICE_NAME
+          value: "dca_strategy"
+        - name: SERVICE_PORT
+          value: "8209"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8209
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8209
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dca_strategy-service
+  namespace: lyra-trading
+  labels:
+    app: dca_strategy
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: dca_strategy
+  ports:
+  - protocol: TCP
+    port: 8209
+    targetPort: 8209
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event_driven
+  namespace: lyra-trading
+  labels:
+    app: event_driven
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: event_driven
+  template:
+    metadata:
+      labels:
+        app: event_driven
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: event_driven
+        image: lyra/event_driven:latest
+        ports:
+        - containerPort: 8210
+        env:
+        - name: SERVICE_NAME
+          value: "event_driven"
+        - name: SERVICE_PORT
+          value: "8210"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8210
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8210
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event_driven-service
+  namespace: lyra-trading
+  labels:
+    app: event_driven
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: event_driven
+  ports:
+  - protocol: TCP
+    port: 8210
+    targetPort: 8210
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grid_trading
+  namespace: lyra-trading
+  labels:
+    app: grid_trading
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: grid_trading
+  template:
+    metadata:
+      labels:
+        app: grid_trading
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: grid_trading
+        image: lyra/grid_trading:latest
+        ports:
+        - containerPort: 8211
+        env:
+        - name: SERVICE_NAME
+          value: "grid_trading"
+        - name: SERVICE_PORT
+          value: "8211"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8211
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8211
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grid_trading-service
+  namespace: lyra-trading
+  labels:
+    app: grid_trading
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: grid_trading
+  ports:
+  - protocol: TCP
+    port: 8211
+    targetPort: 8211
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cash_carry
+  namespace: lyra-trading
+  labels:
+    app: cash_carry
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cash_carry
+  template:
+    metadata:
+      labels:
+        app: cash_carry
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: cash_carry
+        image: lyra/cash_carry:latest
+        ports:
+        - containerPort: 8212
+        env:
+        - name: SERVICE_NAME
+          value: "cash_carry"
+        - name: SERVICE_PORT
+          value: "8212"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8212
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8212
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cash_carry-service
+  namespace: lyra-trading
+  labels:
+    app: cash_carry
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: cash_carry
+  ports:
+  - protocol: TCP
+    port: 8212
+    targetPort: 8212
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: funding_rate
+  namespace: lyra-trading
+  labels:
+    app: funding_rate
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: funding_rate
+  template:
+    metadata:
+      labels:
+        app: funding_rate
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: funding_rate
+        image: lyra/funding_rate:latest
+        ports:
+        - containerPort: 8213
+        env:
+        - name: SERVICE_NAME
+          value: "funding_rate"
+        - name: SERVICE_PORT
+          value: "8213"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8213
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8213
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: funding_rate-service
+  namespace: lyra-trading
+  labels:
+    app: funding_rate
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: funding_rate
+  ports:
+  - protocol: TCP
+    port: 8213
+    targetPort: 8213
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: margin_arbitrage
+  namespace: lyra-trading
+  labels:
+    app: margin_arbitrage
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: margin_arbitrage
+  template:
+    metadata:
+      labels:
+        app: margin_arbitrage
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: margin_arbitrage
+        image: lyra/margin_arbitrage:latest
+        ports:
+        - containerPort: 8214
+        env:
+        - name: SERVICE_NAME
+          value: "margin_arbitrage"
+        - name: SERVICE_PORT
+          value: "8214"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8214
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8214
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: margin_arbitrage-service
+  namespace: lyra-trading
+  labels:
+    app: margin_arbitrage
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: margin_arbitrage
+  ports:
+  - protocol: TCP
+    port: 8214
+    targetPort: 8214
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hedged_making
+  namespace: lyra-trading
+  labels:
+    app: hedged_making
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hedged_making
+  template:
+    metadata:
+      labels:
+        app: hedged_making
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: hedged_making
+        image: lyra/hedged_making:latest
+        ports:
+        - containerPort: 8215
+        env:
+        - name: SERVICE_NAME
+          value: "hedged_making"
+        - name: SERVICE_PORT
+          value: "8215"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8215
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8215
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hedged_making-service
+  namespace: lyra-trading
+  labels:
+    app: hedged_making
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: hedged_making
+  ports:
+  - protocol: TCP
+    port: 8215
+    targetPort: 8215
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covered_calls
+  namespace: lyra-trading
+  labels:
+    app: covered_calls
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: covered_calls
+  template:
+    metadata:
+      labels:
+        app: covered_calls
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: covered_calls
+        image: lyra/covered_calls:latest
+        ports:
+        - containerPort: 8216
+        env:
+        - name: SERVICE_NAME
+          value: "covered_calls"
+        - name: SERVICE_PORT
+          value: "8216"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8216
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8216
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: covered_calls-service
+  namespace: lyra-trading
+  labels:
+    app: covered_calls
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: covered_calls
+  ports:
+  - protocol: TCP
+    port: 8216
+    targetPort: 8216
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volatility_plays
+  namespace: lyra-trading
+  labels:
+    app: volatility_plays
+    tier: tier_4_strategies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: volatility_plays
+  template:
+    metadata:
+      labels:
+        app: volatility_plays
+        tier: tier_4_strategies
+    spec:
+      containers:
+      - name: volatility_plays
+        image: lyra/volatility_plays:latest
+        ports:
+        - containerPort: 8217
+        env:
+        - name: SERVICE_NAME
+          value: "volatility_plays"
+        - name: SERVICE_PORT
+          value: "8217"
+        - name: TIER
+          value: "tier_4_strategies"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8217
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8217
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: volatility_plays-service
+  namespace: lyra-trading
+  labels:
+    app: volatility_plays
+    tier: tier_4_strategies
+spec:
+  selector:
+    app: volatility_plays
+  ports:
+  - protocol: TCP
+    port: 8217
+    targetPort: 8217
+  type: ClusterIP
+---
+# COMPREHENSIVE RISK MANAGEMENT AND SAFETY
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: risk_engine
+  namespace: lyra-trading
+  labels:
+    app: risk_engine
+    tier: tier_5_risk
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: risk_engine
+  template:
+    metadata:
+      labels:
+        app: risk_engine
+        tier: tier_5_risk
+    spec:
+      containers:
+      - name: risk_engine
+        image: lyra/risk_engine:latest
+        ports:
+        - containerPort: 8300
+        env:
+        - name: SERVICE_NAME
+          value: "risk_engine"
+        - name: SERVICE_PORT
+          value: "8300"
+        - name: TIER
+          value: "tier_5_risk"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8300
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8300
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: risk_engine-service
+  namespace: lyra-trading
+  labels:
+    app: risk_engine
+    tier: tier_5_risk
+spec:
+  selector:
+    app: risk_engine
+  ports:
+  - protocol: TCP
+    port: 8300
+    targetPort: 8300
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: position_manager
+  namespace: lyra-trading
+  labels:
+    app: position_manager
+    tier: tier_5_risk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: position_manager
+  template:
+    metadata:
+      labels:
+        app: position_manager
+        tier: tier_5_risk
+    spec:
+      containers:
+      - name: position_manager
+        image: lyra/position_manager:latest
+        ports:
+        - containerPort: 8301
+        env:
+        - name: SERVICE_NAME
+          value: "position_manager"
+        - name: SERVICE_PORT
+          value: "8301"
+        - name: TIER
+          value: "tier_5_risk"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8301
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8301
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: position_manager-service
+  namespace: lyra-trading
+  labels:
+    app: position_manager
+    tier: tier_5_risk
+spec:
+  selector:
+    app: position_manager
+  ports:
+  - protocol: TCP
+    port: 8301
+    targetPort: 8301
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stop_loss
+  namespace: lyra-trading
+  labels:
+    app: stop_loss
+    tier: tier_5_risk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stop_loss
+  template:
+    metadata:
+      labels:
+        app: stop_loss
+        tier: tier_5_risk
+    spec:
+      containers:
+      - name: stop_loss
+        image: lyra/stop_loss:latest
+        ports:
+        - containerPort: 8302
+        env:
+        - name: SERVICE_NAME
+          value: "stop_loss"
+        - name: SERVICE_PORT
+          value: "8302"
+        - name: TIER
+          value: "tier_5_risk"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8302
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8302
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stop_loss-service
+  namespace: lyra-trading
+  labels:
+    app: stop_loss
+    tier: tier_5_risk
+spec:
+  selector:
+    app: stop_loss
+  ports:
+  - protocol: TCP
+    port: 8302
+    targetPort: 8302
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drawdown_monitor
+  namespace: lyra-trading
+  labels:
+    app: drawdown_monitor
+    tier: tier_5_risk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: drawdown_monitor
+  template:
+    metadata:
+      labels:
+        app: drawdown_monitor
+        tier: tier_5_risk
+    spec:
+      containers:
+      - name: drawdown_monitor
+        image: lyra/drawdown_monitor:latest
+        ports:
+        - containerPort: 8303
+        env:
+        - name: SERVICE_NAME
+          value: "drawdown_monitor"
+        - name: SERVICE_PORT
+          value: "8303"
+        - name: TIER
+          value: "tier_5_risk"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8303
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8303
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: drawdown_monitor-service
+  namespace: lyra-trading
+  labels:
+    app: drawdown_monitor
+    tier: tier_5_risk
+spec:
+  selector:
+    app: drawdown_monitor
+  ports:
+  - protocol: TCP
+    port: 8303
+    targetPort: 8303
+  type: ClusterIP
+---
+# PROFESSIONAL MARKET MAKING INTEGRATION
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hummingbot_core
+  namespace: lyra-trading
+  labels:
+    app: hummingbot_core
+    tier: tier_6_hummingbot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hummingbot_core
+  template:
+    metadata:
+      labels:
+        app: hummingbot_core
+        tier: tier_6_hummingbot
+    spec:
+      containers:
+      - name: hummingbot_core
+        image: lyra/hummingbot_core:latest
+        ports:
+        - containerPort: 8400
+        env:
+        - name: SERVICE_NAME
+          value: "hummingbot_core"
+        - name: SERVICE_PORT
+          value: "8400"
+        - name: TIER
+          value: "tier_6_hummingbot"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8400
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8400
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hummingbot_core-service
+  namespace: lyra-trading
+  labels:
+    app: hummingbot_core
+    tier: tier_6_hummingbot
+spec:
+  selector:
+    app: hummingbot_core
+  ports:
+  - protocol: TCP
+    port: 8400
+    targetPort: 8400
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strategy_orchestrator
+  namespace: lyra-trading
+  labels:
+    app: strategy_orchestrator
+    tier: tier_6_hummingbot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: strategy_orchestrator
+  template:
+    metadata:
+      labels:
+        app: strategy_orchestrator
+        tier: tier_6_hummingbot
+    spec:
+      containers:
+      - name: strategy_orchestrator
+        image: lyra/strategy_orchestrator:latest
+        ports:
+        - containerPort: 8401
+        env:
+        - name: SERVICE_NAME
+          value: "strategy_orchestrator"
+        - name: SERVICE_PORT
+          value: "8401"
+        - name: TIER
+          value: "tier_6_hummingbot"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8401
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8401
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: strategy_orchestrator-service
+  namespace: lyra-trading
+  labels:
+    app: strategy_orchestrator
+    tier: tier_6_hummingbot
+spec:
+  selector:
+    app: strategy_orchestrator
+  ports:
+  - protocol: TCP
+    port: 8401
+    targetPort: 8401
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: performance_tracker
+  namespace: lyra-trading
+  labels:
+    app: performance_tracker
+    tier: tier_6_hummingbot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: performance_tracker
+  template:
+    metadata:
+      labels:
+        app: performance_tracker
+        tier: tier_6_hummingbot
+    spec:
+      containers:
+      - name: performance_tracker
+        image: lyra/performance_tracker:latest
+        ports:
+        - containerPort: 8402
+        env:
+        - name: SERVICE_NAME
+          value: "performance_tracker"
+        - name: SERVICE_PORT
+          value: "8402"
+        - name: TIER
+          value: "tier_6_hummingbot"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8402
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8402
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: performance_tracker-service
+  namespace: lyra-trading
+  labels:
+    app: performance_tracker
+    tier: tier_6_hummingbot
+spec:
+  selector:
+    app: performance_tracker
+  ports:
+  - protocol: TCP
+    port: 8402
+    targetPort: 8402
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hb_config_manager
+  namespace: lyra-trading
+  labels:
+    app: hb_config_manager
+    tier: tier_6_hummingbot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hb_config_manager
+  template:
+    metadata:
+      labels:
+        app: hb_config_manager
+        tier: tier_6_hummingbot
+    spec:
+      containers:
+      - name: hb_config_manager
+        image: lyra/hb_config_manager:latest
+        ports:
+        - containerPort: 8403
+        env:
+        - name: SERVICE_NAME
+          value: "hb_config_manager"
+        - name: SERVICE_PORT
+          value: "8403"
+        - name: TIER
+          value: "tier_6_hummingbot"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8403
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8403
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hb_config_manager-service
+  namespace: lyra-trading
+  labels:
+    app: hb_config_manager
+    tier: tier_6_hummingbot
+spec:
+  selector:
+    app: hb_config_manager
+  ports:
+  - protocol: TCP
+    port: 8403
+    targetPort: 8403
+  type: ClusterIP
+---
+# MILITARY-GRADE SECURITY AND VAULT MANAGEMENT
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault_manager
+  namespace: lyra-trading
+  labels:
+    app: vault_manager
+    tier: tier_7_security
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vault_manager
+  template:
+    metadata:
+      labels:
+        app: vault_manager
+        tier: tier_7_security
+    spec:
+      containers:
+      - name: vault_manager
+        image: lyra/vault_manager:latest
+        ports:
+        - containerPort: 8500
+        env:
+        - name: SERVICE_NAME
+          value: "vault_manager"
+        - name: SERVICE_PORT
+          value: "8500"
+        - name: TIER
+          value: "tier_7_security"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8500
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8500
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vault_manager-service
+  namespace: lyra-trading
+  labels:
+    app: vault_manager
+    tier: tier_7_security
+spec:
+  selector:
+    app: vault_manager
+  ports:
+  - protocol: TCP
+    port: 8500
+    targetPort: 8500
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: encryption_service
+  namespace: lyra-trading
+  labels:
+    app: encryption_service
+    tier: tier_7_security
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: encryption_service
+  template:
+    metadata:
+      labels:
+        app: encryption_service
+        tier: tier_7_security
+    spec:
+      containers:
+      - name: encryption_service
+        image: lyra/encryption_service:latest
+        ports:
+        - containerPort: 8501
+        env:
+        - name: SERVICE_NAME
+          value: "encryption_service"
+        - name: SERVICE_PORT
+          value: "8501"
+        - name: TIER
+          value: "tier_7_security"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8501
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8501
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: encryption_service-service
+  namespace: lyra-trading
+  labels:
+    app: encryption_service
+    tier: tier_7_security
+spec:
+  selector:
+    app: encryption_service
+  ports:
+  - protocol: TCP
+    port: 8501
+    targetPort: 8501
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: key_rotation
+  namespace: lyra-trading
+  labels:
+    app: key_rotation
+    tier: tier_7_security
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: key_rotation
+  template:
+    metadata:
+      labels:
+        app: key_rotation
+        tier: tier_7_security
+    spec:
+      containers:
+      - name: key_rotation
+        image: lyra/key_rotation:latest
+        ports:
+        - containerPort: 8502
+        env:
+        - name: SERVICE_NAME
+          value: "key_rotation"
+        - name: SERVICE_PORT
+          value: "8502"
+        - name: TIER
+          value: "tier_7_security"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8502
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8502
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: key_rotation-service
+  namespace: lyra-trading
+  labels:
+    app: key_rotation
+    tier: tier_7_security
+spec:
+  selector:
+    app: key_rotation
+  ports:
+  - protocol: TCP
+    port: 8502
+    targetPort: 8502
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit_logger
+  namespace: lyra-trading
+  labels:
+    app: audit_logger
+    tier: tier_7_security
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: audit_logger
+  template:
+    metadata:
+      labels:
+        app: audit_logger
+        tier: tier_7_security
+    spec:
+      containers:
+      - name: audit_logger
+        image: lyra/audit_logger:latest
+        ports:
+        - containerPort: 8503
+        env:
+        - name: SERVICE_NAME
+          value: "audit_logger"
+        - name: SERVICE_PORT
+          value: "8503"
+        - name: TIER
+          value: "tier_7_security"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8503
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8503
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit_logger-service
+  namespace: lyra-trading
+  labels:
+    app: audit_logger
+    tier: tier_7_security
+spec:
+  selector:
+    app: audit_logger
+  ports:
+  - protocol: TCP
+    port: 8503
+    targetPort: 8503
+  type: ClusterIP
+---
+# 100% AUSTRALIAN COMPLIANCE MONITORING
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ato_reporter
+  namespace: lyra-trading
+  labels:
+    app: ato_reporter
+    tier: tier_8_compliance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ato_reporter
+  template:
+    metadata:
+      labels:
+        app: ato_reporter
+        tier: tier_8_compliance
+    spec:
+      containers:
+      - name: ato_reporter
+        image: lyra/ato_reporter:latest
+        ports:
+        - containerPort: 8600
+        env:
+        - name: SERVICE_NAME
+          value: "ato_reporter"
+        - name: SERVICE_PORT
+          value: "8600"
+        - name: TIER
+          value: "tier_8_compliance"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8600
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8600
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ato_reporter-service
+  namespace: lyra-trading
+  labels:
+    app: ato_reporter
+    tier: tier_8_compliance
+spec:
+  selector:
+    app: ato_reporter
+  ports:
+  - protocol: TCP
+    port: 8600
+    targetPort: 8600
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gst_calculator
+  namespace: lyra-trading
+  labels:
+    app: gst_calculator
+    tier: tier_8_compliance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gst_calculator
+  template:
+    metadata:
+      labels:
+        app: gst_calculator
+        tier: tier_8_compliance
+    spec:
+      containers:
+      - name: gst_calculator
+        image: lyra/gst_calculator:latest
+        ports:
+        - containerPort: 8601
+        env:
+        - name: SERVICE_NAME
+          value: "gst_calculator"
+        - name: SERVICE_PORT
+          value: "8601"
+        - name: TIER
+          value: "tier_8_compliance"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8601
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8601
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gst_calculator-service
+  namespace: lyra-trading
+  labels:
+    app: gst_calculator
+    tier: tier_8_compliance
+spec:
+  selector:
+    app: gst_calculator
+  ports:
+  - protocol: TCP
+    port: 8601
+    targetPort: 8601
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit_trail
+  namespace: lyra-trading
+  labels:
+    app: audit_trail
+    tier: tier_8_compliance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: audit_trail
+  template:
+    metadata:
+      labels:
+        app: audit_trail
+        tier: tier_8_compliance
+    spec:
+      containers:
+      - name: audit_trail
+        image: lyra/audit_trail:latest
+        ports:
+        - containerPort: 8602
+        env:
+        - name: SERVICE_NAME
+          value: "audit_trail"
+        - name: SERVICE_PORT
+          value: "8602"
+        - name: TIER
+          value: "tier_8_compliance"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8602
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8602
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit_trail-service
+  namespace: lyra-trading
+  labels:
+    app: audit_trail
+    tier: tier_8_compliance
+spec:
+  selector:
+    app: audit_trail
+  ports:
+  - protocol: TCP
+    port: 8602
+    targetPort: 8602
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compliance_checker
+  namespace: lyra-trading
+  labels:
+    app: compliance_checker
+    tier: tier_8_compliance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: compliance_checker
+  template:
+    metadata:
+      labels:
+        app: compliance_checker
+        tier: tier_8_compliance
+    spec:
+      containers:
+      - name: compliance_checker
+        image: lyra/compliance_checker:latest
+        ports:
+        - containerPort: 8603
+        env:
+        - name: SERVICE_NAME
+          value: "compliance_checker"
+        - name: SERVICE_PORT
+          value: "8603"
+        - name: TIER
+          value: "tier_8_compliance"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8603
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8603
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: compliance_checker-service
+  namespace: lyra-trading
+  labels:
+    app: compliance_checker
+    tier: tier_8_compliance
+spec:
+  selector:
+    app: compliance_checker
+  ports:
+  - protocol: TCP
+    port: 8603
+    targetPort: 8603
+  type: ClusterIP
+---
+# PROFESSIONAL MONITORING AND ANALYTICS
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: lyra-trading
+  labels:
+    app: prometheus
+    tier: tier_9_monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+        tier: tier_9_monitoring
+    spec:
+      containers:
+      - name: prometheus
+        image: lyra/prometheus:latest
+        ports:
+        - containerPort: 9090
+        env:
+        - name: SERVICE_NAME
+          value: "prometheus"
+        - name: SERVICE_PORT
+          value: "9090"
+        - name: TIER
+          value: "tier_9_monitoring"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9090
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 9090
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  namespace: lyra-trading
+  labels:
+    app: prometheus
+    tier: tier_9_monitoring
+spec:
+  selector:
+    app: prometheus
+  ports:
+  - protocol: TCP
+    port: 9090
+    targetPort: 9090
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: lyra-trading
+  labels:
+    app: grafana
+    tier: tier_9_monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+        tier: tier_9_monitoring
+    spec:
+      containers:
+      - name: grafana
+        image: lyra/grafana:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: SERVICE_NAME
+          value: "grafana"
+        - name: SERVICE_PORT
+          value: "3000"
+        - name: TIER
+          value: "tier_9_monitoring"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+  namespace: lyra-trading
+  labels:
+    app: grafana
+    tier: tier_9_monitoring
+spec:
+  selector:
+    app: grafana
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loki
+  namespace: lyra-trading
+  labels:
+    app: loki
+    tier: tier_9_monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: loki
+  template:
+    metadata:
+      labels:
+        app: loki
+        tier: tier_9_monitoring
+    spec:
+      containers:
+      - name: loki
+        image: lyra/loki:latest
+        ports:
+        - containerPort: 3100
+        env:
+        - name: SERVICE_NAME
+          value: "loki"
+        - name: SERVICE_PORT
+          value: "3100"
+        - name: TIER
+          value: "tier_9_monitoring"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3100
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3100
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki-service
+  namespace: lyra-trading
+  labels:
+    app: loki
+    tier: tier_9_monitoring
+spec:
+  selector:
+    app: loki
+  ports:
+  - protocol: TCP
+    port: 3100
+    targetPort: 3100
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: lyra-trading
+  labels:
+    app: alertmanager
+    tier: tier_9_monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: alertmanager
+  template:
+    metadata:
+      labels:
+        app: alertmanager
+        tier: tier_9_monitoring
+    spec:
+      containers:
+      - name: alertmanager
+        image: lyra/alertmanager:latest
+        ports:
+        - containerPort: 9093
+        env:
+        - name: SERVICE_NAME
+          value: "alertmanager"
+        - name: SERVICE_PORT
+          value: "9093"
+        - name: TIER
+          value: "tier_9_monitoring"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9093
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 9093
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager-service
+  namespace: lyra-trading
+  labels:
+    app: alertmanager
+    tier: tier_9_monitoring
+spec:
+  selector:
+    app: alertmanager
+  ports:
+  - protocol: TCP
+    port: 9093
+    targetPort: 9093
+  type: ClusterIP
+---
+# PROFESSIONAL WEB INTERFACES AND DASHBOARDS
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main_dashboard
+  namespace: lyra-trading
+  labels:
+    app: main_dashboard
+    tier: tier_10_interface
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: main_dashboard
+  template:
+    metadata:
+      labels:
+        app: main_dashboard
+        tier: tier_10_interface
+    spec:
+      containers:
+      - name: main_dashboard
+        image: lyra/main_dashboard:latest
+        ports:
+        - containerPort: 8700
+        env:
+        - name: SERVICE_NAME
+          value: "main_dashboard"
+        - name: SERVICE_PORT
+          value: "8700"
+        - name: TIER
+          value: "tier_10_interface"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8700
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8700
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: main_dashboard-service
+  namespace: lyra-trading
+  labels:
+    app: main_dashboard
+    tier: tier_10_interface
+spec:
+  selector:
+    app: main_dashboard
+  ports:
+  - protocol: TCP
+    port: 8700
+    targetPort: 8700
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading_interface
+  namespace: lyra-trading
+  labels:
+    app: trading_interface
+    tier: tier_10_interface
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trading_interface
+  template:
+    metadata:
+      labels:
+        app: trading_interface
+        tier: tier_10_interface
+    spec:
+      containers:
+      - name: trading_interface
+        image: lyra/trading_interface:latest
+        ports:
+        - containerPort: 8701
+        env:
+        - name: SERVICE_NAME
+          value: "trading_interface"
+        - name: SERVICE_PORT
+          value: "8701"
+        - name: TIER
+          value: "tier_10_interface"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8701
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8701
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trading_interface-service
+  namespace: lyra-trading
+  labels:
+    app: trading_interface
+    tier: tier_10_interface
+spec:
+  selector:
+    app: trading_interface
+  ports:
+  - protocol: TCP
+    port: 8701
+    targetPort: 8701
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics_ui
+  namespace: lyra-trading
+  labels:
+    app: analytics_ui
+    tier: tier_10_interface
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: analytics_ui
+  template:
+    metadata:
+      labels:
+        app: analytics_ui
+        tier: tier_10_interface
+    spec:
+      containers:
+      - name: analytics_ui
+        image: lyra/analytics_ui:latest
+        ports:
+        - containerPort: 8702
+        env:
+        - name: SERVICE_NAME
+          value: "analytics_ui"
+        - name: SERVICE_PORT
+          value: "8702"
+        - name: TIER
+          value: "tier_10_interface"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8702
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8702
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics_ui-service
+  namespace: lyra-trading
+  labels:
+    app: analytics_ui
+    tier: tier_10_interface
+spec:
+  selector:
+    app: analytics_ui
+  ports:
+  - protocol: TCP
+    port: 8702
+    targetPort: 8702
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin_panel
+  namespace: lyra-trading
+  labels:
+    app: admin_panel
+    tier: tier_10_interface
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: admin_panel
+  template:
+    metadata:
+      labels:
+        app: admin_panel
+        tier: tier_10_interface
+    spec:
+      containers:
+      - name: admin_panel
+        image: lyra/admin_panel:latest
+        ports:
+        - containerPort: 8703
+        env:
+        - name: SERVICE_NAME
+          value: "admin_panel"
+        - name: SERVICE_PORT
+          value: "8703"
+        - name: TIER
+          value: "tier_10_interface"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8703
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8703
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin_panel-service
+  namespace: lyra-trading
+  labels:
+    app: admin_panel
+    tier: tier_10_interface
+spec:
+  selector:
+    app: admin_panel
+  ports:
+  - protocol: TCP
+    port: 8703
+    targetPort: 8703
+  type: ClusterIP
+---
+# ALERTS AND COMMUNICATION SYSTEMS
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram_bot
+  namespace: lyra-trading
+  labels:
+    app: telegram_bot
+    tier: tier_11_notifications
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: telegram_bot
+  template:
+    metadata:
+      labels:
+        app: telegram_bot
+        tier: tier_11_notifications
+    spec:
+      containers:
+      - name: telegram_bot
+        image: lyra/telegram_bot:latest
+        ports:
+        - containerPort: 8800
+        env:
+        - name: SERVICE_NAME
+          value: "telegram_bot"
+        - name: SERVICE_PORT
+          value: "8800"
+        - name: TIER
+          value: "tier_11_notifications"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8800
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8800
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegram_bot-service
+  namespace: lyra-trading
+  labels:
+    app: telegram_bot
+    tier: tier_11_notifications
+spec:
+  selector:
+    app: telegram_bot
+  ports:
+  - protocol: TCP
+    port: 8800
+    targetPort: 8800
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email_service
+  namespace: lyra-trading
+  labels:
+    app: email_service
+    tier: tier_11_notifications
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: email_service
+  template:
+    metadata:
+      labels:
+        app: email_service
+        tier: tier_11_notifications
+    spec:
+      containers:
+      - name: email_service
+        image: lyra/email_service:latest
+        ports:
+        - containerPort: 8801
+        env:
+        - name: SERVICE_NAME
+          value: "email_service"
+        - name: SERVICE_PORT
+          value: "8801"
+        - name: TIER
+          value: "tier_11_notifications"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8801
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8801
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: email_service-service
+  namespace: lyra-trading
+  labels:
+    app: email_service
+    tier: tier_11_notifications
+spec:
+  selector:
+    app: email_service
+  ports:
+  - protocol: TCP
+    port: 8801
+    targetPort: 8801
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sms_gateway
+  namespace: lyra-trading
+  labels:
+    app: sms_gateway
+    tier: tier_11_notifications
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sms_gateway
+  template:
+    metadata:
+      labels:
+        app: sms_gateway
+        tier: tier_11_notifications
+    spec:
+      containers:
+      - name: sms_gateway
+        image: lyra/sms_gateway:latest
+        ports:
+        - containerPort: 8802
+        env:
+        - name: SERVICE_NAME
+          value: "sms_gateway"
+        - name: SERVICE_PORT
+          value: "8802"
+        - name: TIER
+          value: "tier_11_notifications"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8802
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8802
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sms_gateway-service
+  namespace: lyra-trading
+  labels:
+    app: sms_gateway
+    tier: tier_11_notifications
+spec:
+  selector:
+    app: sms_gateway
+  ports:
+  - protocol: TCP
+    port: 8802
+    targetPort: 8802
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webhook_manager
+  namespace: lyra-trading
+  labels:
+    app: webhook_manager
+    tier: tier_11_notifications
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webhook_manager
+  template:
+    metadata:
+      labels:
+        app: webhook_manager
+        tier: tier_11_notifications
+    spec:
+      containers:
+      - name: webhook_manager
+        image: lyra/webhook_manager:latest
+        ports:
+        - containerPort: 8803
+        env:
+        - name: SERVICE_NAME
+          value: "webhook_manager"
+        - name: SERVICE_PORT
+          value: "8803"
+        - name: TIER
+          value: "tier_11_notifications"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8803
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8803
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webhook_manager-service
+  namespace: lyra-trading
+  labels:
+    app: webhook_manager
+    tier: tier_11_notifications
+spec:
+  selector:
+    app: webhook_manager
+  ports:
+  - protocol: TCP
+    port: 8803
+    targetPort: 8803
+  type: ClusterIP
+---
+# DATA MANAGEMENT AND ANALYTICS PIPELINE
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data_ingestion
+  namespace: lyra-trading
+  labels:
+    app: data_ingestion
+    tier: tier_12_data
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: data_ingestion
+  template:
+    metadata:
+      labels:
+        app: data_ingestion
+        tier: tier_12_data
+    spec:
+      containers:
+      - name: data_ingestion
+        image: lyra/data_ingestion:latest
+        ports:
+        - containerPort: 8900
+        env:
+        - name: SERVICE_NAME
+          value: "data_ingestion"
+        - name: SERVICE_PORT
+          value: "8900"
+        - name: TIER
+          value: "tier_12_data"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8900
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8900
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: data_ingestion-service
+  namespace: lyra-trading
+  labels:
+    app: data_ingestion
+    tier: tier_12_data
+spec:
+  selector:
+    app: data_ingestion
+  ports:
+  - protocol: TCP
+    port: 8900
+    targetPort: 8900
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data_processor
+  namespace: lyra-trading
+  labels:
+    app: data_processor
+    tier: tier_12_data
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: data_processor
+  template:
+    metadata:
+      labels:
+        app: data_processor
+        tier: tier_12_data
+    spec:
+      containers:
+      - name: data_processor
+        image: lyra/data_processor:latest
+        ports:
+        - containerPort: 8901
+        env:
+        - name: SERVICE_NAME
+          value: "data_processor"
+        - name: SERVICE_PORT
+          value: "8901"
+        - name: TIER
+          value: "tier_12_data"
+        resources:
+          requests:
+            memory: "0Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8901
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8901
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: data_processor-service
+  namespace: lyra-trading
+  labels:
+    app: data_processor
+    tier: tier_12_data
+spec:
+  selector:
+    app: data_processor
+  ports:
+  - protocol: TCP
+    port: 8901
+    targetPort: 8901
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics_engine
+  namespace: lyra-trading
+  labels:
+    app: analytics_engine
+    tier: tier_12_data
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: analytics_engine
+  template:
+    metadata:
+      labels:
+        app: analytics_engine
+        tier: tier_12_data
+    spec:
+      containers:
+      - name: analytics_engine
+        image: lyra/analytics_engine:latest
+        ports:
+        - containerPort: 8902
+        env:
+        - name: SERVICE_NAME
+          value: "analytics_engine"
+        - name: SERVICE_PORT
+          value: "8902"
+        - name: TIER
+          value: "tier_12_data"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8902
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8902
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics_engine-service
+  namespace: lyra-trading
+  labels:
+    app: analytics_engine
+    tier: tier_12_data
+spec:
+  selector:
+    app: analytics_engine
+  ports:
+  - protocol: TCP
+    port: 8902
+    targetPort: 8902
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backup_manager
+  namespace: lyra-trading
+  labels:
+    app: backup_manager
+    tier: tier_12_data
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backup_manager
+  template:
+    metadata:
+      labels:
+        app: backup_manager
+        tier: tier_12_data
+    spec:
+      containers:
+      - name: backup_manager
+        image: lyra/backup_manager:latest
+        ports:
+        - containerPort: 8903
+        env:
+        - name: SERVICE_NAME
+          value: "backup_manager"
+        - name: SERVICE_PORT
+          value: "8903"
+        - name: TIER
+          value: "tier_12_data"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "125m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8903
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8903
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backup_manager-service
+  namespace: lyra-trading
+  labels:
+    app: backup_manager
+    tier: tier_12_data
+spec:
+  selector:
+    app: backup_manager
+  ports:
+  - protocol: TCP
+    port: 8903
+    targetPort: 8903
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lyra-trading-ingress
+  namespace: lyra-trading
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - lyra-trading.com
+    secretName: lyra-trading-tls
+  rules:
+  - host: lyra-trading.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: main-dashboard-service
+            port:
+              number: 8700
+      - path: /api/ai
+        pathType: Prefix
+        backend:
+          service:
+            name: ai-consensus-service
+            port:
+              number: 8090
+      - path: /api/trading
+        pathType: Prefix
+        backend:
+          service:
+            name: strategy-engine-service
+            port:
+              number: 8200

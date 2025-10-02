@@ -1,0 +1,2467 @@
+version: '3.8'
+
+# ULTIMATE CONTAINERIZED ECOSYSTEM
+# Generated from AI consensus analysis
+# Total Services: 48+ | Total Replicas: 100+
+
+services:
+
+  # FOUNDATION INFRASTRUCTURE SERVICES
+  database:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.database
+    container_name: lyra_database
+    ports:
+      - "5432:5432"
+    environment:
+      - SERVICE_NAME=database
+      - SERVICE_PORT=5432
+      - TIER=tier_1_core
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5432/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  redis:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.redis
+    container_name: lyra_redis
+    ports:
+      - "6379:6379"
+    environment:
+      - SERVICE_NAME=redis
+      - SERVICE_PORT=6379
+      - TIER=tier_1_core
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6379/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  message_queue:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.message_queue
+    container_name: lyra_message_queue
+    ports:
+      - "5672:5672"
+    environment:
+      - SERVICE_NAME=message_queue
+      - SERVICE_PORT=5672
+      - TIER=tier_1_core
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5672/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  config_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.config_manager
+    container_name: lyra_config_manager
+    ports:
+      - "8000:8000"
+    environment:
+      - SERVICE_NAME=config_manager
+      - SERVICE_PORT=8000
+      - TIER=tier_1_core
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  health_monitor:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.health_monitor
+    container_name: lyra_health_monitor
+    ports:
+      - "8001:8001"
+    environment:
+      - SERVICE_NAME=health_monitor
+      - SERVICE_PORT=8001
+      - TIER=tier_1_core
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # 327+ AI MODELS WITH OPENROUTER INTEGRATION
+  ai_consensus:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.ai_consensus
+    container_name: lyra_ai_consensus
+    ports:
+      - "8090:8090"
+    environment:
+      - SERVICE_NAME=ai_consensus
+      - SERVICE_PORT=8090
+      - TIER=tier_2_ai
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8090/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: '1000m'
+          memory: 2Gi
+        reservations:
+          cpus: '500m'
+          memory: 1Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  model_router:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.model_router
+    container_name: lyra_model_router
+    ports:
+      - "8091:8091"
+    environment:
+      - SERVICE_NAME=model_router
+      - SERVICE_PORT=8091
+      - TIER=tier_2_ai
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8091/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  prompt_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.prompt_manager
+    container_name: lyra_prompt_manager
+    ports:
+      - "8092:8092"
+    environment:
+      - SERVICE_NAME=prompt_manager
+      - SERVICE_PORT=8092
+      - TIER=tier_2_ai
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8092/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  response_analyzer:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.response_analyzer
+    container_name: lyra_response_analyzer
+    ports:
+      - "8093:8093"
+    environment:
+      - SERVICE_NAME=response_analyzer
+      - SERVICE_PORT=8093
+      - TIER=tier_2_ai
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8093/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # ALL 12 EXCHANGES WITH UNIFIED API
+  exchange_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.exchange_manager
+    container_name: lyra_exchange_manager
+    ports:
+      - "8100:8100"
+    environment:
+      - SERVICE_NAME=exchange_manager
+      - SERVICE_PORT=8100
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8100/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  okx_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.okx_service
+    container_name: lyra_okx_service
+    ports:
+      - "8101:8101"
+    environment:
+      - SERVICE_NAME=okx_service
+      - SERVICE_PORT=8101
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8101/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  binance_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.binance_service
+    container_name: lyra_binance_service
+    ports:
+      - "8102:8102"
+    environment:
+      - SERVICE_NAME=binance_service
+      - SERVICE_PORT=8102
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8102/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  kraken_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.kraken_service
+    container_name: lyra_kraken_service
+    ports:
+      - "8103:8103"
+    environment:
+      - SERVICE_NAME=kraken_service
+      - SERVICE_PORT=8103
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8103/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  gateio_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.gateio_service
+    container_name: lyra_gateio_service
+    ports:
+      - "8104:8104"
+    environment:
+      - SERVICE_NAME=gateio_service
+      - SERVICE_PORT=8104
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8104/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  whitebit_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.whitebit_service
+    container_name: lyra_whitebit_service
+    ports:
+      - "8105:8105"
+    environment:
+      - SERVICE_NAME=whitebit_service
+      - SERVICE_PORT=8105
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8105/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  swyftx_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.swyftx_service
+    container_name: lyra_swyftx_service
+    ports:
+      - "8106:8106"
+    environment:
+      - SERVICE_NAME=swyftx_service
+      - SERVICE_PORT=8106
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8106/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  btcmarkets_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.btcmarkets_service
+    container_name: lyra_btcmarkets_service
+    ports:
+      - "8107:8107"
+    environment:
+      - SERVICE_NAME=btcmarkets_service
+      - SERVICE_PORT=8107
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8107/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  coinbase_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.coinbase_service
+    container_name: lyra_coinbase_service
+    ports:
+      - "8108:8108"
+    environment:
+      - SERVICE_NAME=coinbase_service
+      - SERVICE_PORT=8108
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8108/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  bitfinex_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.bitfinex_service
+    container_name: lyra_bitfinex_service
+    ports:
+      - "8109:8109"
+    environment:
+      - SERVICE_NAME=bitfinex_service
+      - SERVICE_PORT=8109
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8109/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  huobi_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.huobi_service
+    container_name: lyra_huobi_service
+    ports:
+      - "8110:8110"
+    environment:
+      - SERVICE_NAME=huobi_service
+      - SERVICE_PORT=8110
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8110/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  independent_reserve:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.independent_reserve
+    container_name: lyra_independent_reserve
+    ports:
+      - "8111:8111"
+    environment:
+      - SERVICE_NAME=independent_reserve
+      - SERVICE_PORT=8111
+      - TIER=tier_3_exchanges
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8111/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # ALL 17 TRADING STRATEGIES WITH EXECUTION ENGINES
+  strategy_engine:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.strategy_engine
+    container_name: lyra_strategy_engine
+    ports:
+      - "8200:8200"
+    environment:
+      - SERVICE_NAME=strategy_engine
+      - SERVICE_PORT=8200
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8200/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '1000m'
+          memory: 2Gi
+        reservations:
+          cpus: '500m'
+          memory: 1Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  ai_momentum:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.ai_momentum
+    container_name: lyra_ai_momentum
+    ports:
+      - "8201:8201"
+    environment:
+      - SERVICE_NAME=ai_momentum
+      - SERVICE_PORT=8201
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8201/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  cross_arbitrage:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.cross_arbitrage
+    container_name: lyra_cross_arbitrage
+    ports:
+      - "8202:8202"
+    environment:
+      - SERVICE_NAME=cross_arbitrage
+      - SERVICE_PORT=8202
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8202/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  market_making:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.market_making
+    container_name: lyra_market_making
+    ports:
+      - "8203:8203"
+    environment:
+      - SERVICE_NAME=market_making
+      - SERVICE_PORT=8203
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8203/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  triangular_arbitrage:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.triangular_arbitrage
+    container_name: lyra_triangular_arbitrage
+    ports:
+      - "8204:8204"
+    environment:
+      - SERVICE_NAME=triangular_arbitrage
+      - SERVICE_PORT=8204
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8204/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  mean_reversion:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.mean_reversion
+    container_name: lyra_mean_reversion
+    ports:
+      - "8205:8205"
+    environment:
+      - SERVICE_NAME=mean_reversion
+      - SERVICE_PORT=8205
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8205/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  twap_vwap:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.twap_vwap
+    container_name: lyra_twap_vwap
+    ports:
+      - "8206:8206"
+    environment:
+      - SERVICE_NAME=twap_vwap
+      - SERVICE_PORT=8206
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8206/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  basket_rebalancing:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.basket_rebalancing
+    container_name: lyra_basket_rebalancing
+    ports:
+      - "8207:8207"
+    environment:
+      - SERVICE_NAME=basket_rebalancing
+      - SERVICE_PORT=8207
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8207/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  statistical_arbitrage:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.statistical_arbitrage
+    container_name: lyra_statistical_arbitrage
+    ports:
+      - "8208:8208"
+    environment:
+      - SERVICE_NAME=statistical_arbitrage
+      - SERVICE_PORT=8208
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8208/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  dca_strategy:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.dca_strategy
+    container_name: lyra_dca_strategy
+    ports:
+      - "8209:8209"
+    environment:
+      - SERVICE_NAME=dca_strategy
+      - SERVICE_PORT=8209
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8209/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  event_driven:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.event_driven
+    container_name: lyra_event_driven
+    ports:
+      - "8210:8210"
+    environment:
+      - SERVICE_NAME=event_driven
+      - SERVICE_PORT=8210
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8210/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  grid_trading:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.grid_trading
+    container_name: lyra_grid_trading
+    ports:
+      - "8211:8211"
+    environment:
+      - SERVICE_NAME=grid_trading
+      - SERVICE_PORT=8211
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8211/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  cash_carry:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.cash_carry
+    container_name: lyra_cash_carry
+    ports:
+      - "8212:8212"
+    environment:
+      - SERVICE_NAME=cash_carry
+      - SERVICE_PORT=8212
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8212/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  funding_rate:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.funding_rate
+    container_name: lyra_funding_rate
+    ports:
+      - "8213:8213"
+    environment:
+      - SERVICE_NAME=funding_rate
+      - SERVICE_PORT=8213
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8213/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  margin_arbitrage:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.margin_arbitrage
+    container_name: lyra_margin_arbitrage
+    ports:
+      - "8214:8214"
+    environment:
+      - SERVICE_NAME=margin_arbitrage
+      - SERVICE_PORT=8214
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8214/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  hedged_making:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.hedged_making
+    container_name: lyra_hedged_making
+    ports:
+      - "8215:8215"
+    environment:
+      - SERVICE_NAME=hedged_making
+      - SERVICE_PORT=8215
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8215/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  covered_calls:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.covered_calls
+    container_name: lyra_covered_calls
+    ports:
+      - "8216:8216"
+    environment:
+      - SERVICE_NAME=covered_calls
+      - SERVICE_PORT=8216
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8216/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  volatility_plays:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.volatility_plays
+    container_name: lyra_volatility_plays
+    ports:
+      - "8217:8217"
+    environment:
+      - SERVICE_NAME=volatility_plays
+      - SERVICE_PORT=8217
+      - TIER=tier_4_strategies
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8217/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # COMPREHENSIVE RISK MANAGEMENT AND SAFETY
+  risk_engine:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.risk_engine
+    container_name: lyra_risk_engine
+    ports:
+      - "8300:8300"
+    environment:
+      - SERVICE_NAME=risk_engine
+      - SERVICE_PORT=8300
+      - TIER=tier_5_risk
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8300/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  position_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.position_manager
+    container_name: lyra_position_manager
+    ports:
+      - "8301:8301"
+    environment:
+      - SERVICE_NAME=position_manager
+      - SERVICE_PORT=8301
+      - TIER=tier_5_risk
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8301/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  stop_loss:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.stop_loss
+    container_name: lyra_stop_loss
+    ports:
+      - "8302:8302"
+    environment:
+      - SERVICE_NAME=stop_loss
+      - SERVICE_PORT=8302
+      - TIER=tier_5_risk
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8302/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  drawdown_monitor:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.drawdown_monitor
+    container_name: lyra_drawdown_monitor
+    ports:
+      - "8303:8303"
+    environment:
+      - SERVICE_NAME=drawdown_monitor
+      - SERVICE_PORT=8303
+      - TIER=tier_5_risk
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8303/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # PROFESSIONAL MARKET MAKING INTEGRATION
+  hummingbot_core:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.hummingbot_core
+    container_name: lyra_hummingbot_core
+    ports:
+      - "8400:8400"
+    environment:
+      - SERVICE_NAME=hummingbot_core
+      - SERVICE_PORT=8400
+      - TIER=tier_6_hummingbot
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8400/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  strategy_orchestrator:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.strategy_orchestrator
+    container_name: lyra_strategy_orchestrator
+    ports:
+      - "8401:8401"
+    environment:
+      - SERVICE_NAME=strategy_orchestrator
+      - SERVICE_PORT=8401
+      - TIER=tier_6_hummingbot
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8401/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  performance_tracker:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.performance_tracker
+    container_name: lyra_performance_tracker
+    ports:
+      - "8402:8402"
+    environment:
+      - SERVICE_NAME=performance_tracker
+      - SERVICE_PORT=8402
+      - TIER=tier_6_hummingbot
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8402/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  hb_config_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.hb_config_manager
+    container_name: lyra_hb_config_manager
+    ports:
+      - "8403:8403"
+    environment:
+      - SERVICE_NAME=hb_config_manager
+      - SERVICE_PORT=8403
+      - TIER=tier_6_hummingbot
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8403/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # MILITARY-GRADE SECURITY AND VAULT MANAGEMENT
+  vault_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.vault_manager
+    container_name: lyra_vault_manager
+    ports:
+      - "8500:8500"
+    environment:
+      - SERVICE_NAME=vault_manager
+      - SERVICE_PORT=8500
+      - TIER=tier_7_security
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  encryption_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.encryption_service
+    container_name: lyra_encryption_service
+    ports:
+      - "8501:8501"
+    environment:
+      - SERVICE_NAME=encryption_service
+      - SERVICE_PORT=8501
+      - TIER=tier_7_security
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  key_rotation:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.key_rotation
+    container_name: lyra_key_rotation
+    ports:
+      - "8502:8502"
+    environment:
+      - SERVICE_NAME=key_rotation
+      - SERVICE_PORT=8502
+      - TIER=tier_7_security
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8502/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  audit_logger:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.audit_logger
+    container_name: lyra_audit_logger
+    ports:
+      - "8503:8503"
+    environment:
+      - SERVICE_NAME=audit_logger
+      - SERVICE_PORT=8503
+      - TIER=tier_7_security
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8503/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # 100% AUSTRALIAN COMPLIANCE MONITORING
+  ato_reporter:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.ato_reporter
+    container_name: lyra_ato_reporter
+    ports:
+      - "8600:8600"
+    environment:
+      - SERVICE_NAME=ato_reporter
+      - SERVICE_PORT=8600
+      - TIER=tier_8_compliance
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8600/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  gst_calculator:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.gst_calculator
+    container_name: lyra_gst_calculator
+    ports:
+      - "8601:8601"
+    environment:
+      - SERVICE_NAME=gst_calculator
+      - SERVICE_PORT=8601
+      - TIER=tier_8_compliance
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8601/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  audit_trail:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.audit_trail
+    container_name: lyra_audit_trail
+    ports:
+      - "8602:8602"
+    environment:
+      - SERVICE_NAME=audit_trail
+      - SERVICE_PORT=8602
+      - TIER=tier_8_compliance
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8602/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  compliance_checker:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.compliance_checker
+    container_name: lyra_compliance_checker
+    ports:
+      - "8603:8603"
+    environment:
+      - SERVICE_NAME=compliance_checker
+      - SERVICE_PORT=8603
+      - TIER=tier_8_compliance
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8603/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # PROFESSIONAL MONITORING AND ANALYTICS
+  prometheus:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.prometheus
+    container_name: lyra_prometheus
+    ports:
+      - "9090:9090"
+    environment:
+      - SERVICE_NAME=prometheus
+      - SERVICE_PORT=9090
+      - TIER=tier_9_monitoring
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9090/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  grafana:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.grafana
+    container_name: lyra_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - SERVICE_NAME=grafana
+      - SERVICE_PORT=3000
+      - TIER=tier_9_monitoring
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  loki:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.loki
+    container_name: lyra_loki
+    ports:
+      - "3100:3100"
+    environment:
+      - SERVICE_NAME=loki
+      - SERVICE_PORT=3100
+      - TIER=tier_9_monitoring
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3100/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  alertmanager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.alertmanager
+    container_name: lyra_alertmanager
+    ports:
+      - "9093:9093"
+    environment:
+      - SERVICE_NAME=alertmanager
+      - SERVICE_PORT=9093
+      - TIER=tier_9_monitoring
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9093/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # PROFESSIONAL WEB INTERFACES AND DASHBOARDS
+  main_dashboard:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.main_dashboard
+    container_name: lyra_main_dashboard
+    ports:
+      - "8700:8700"
+    environment:
+      - SERVICE_NAME=main_dashboard
+      - SERVICE_PORT=8700
+      - TIER=tier_10_interface
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8700/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  trading_interface:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.trading_interface
+    container_name: lyra_trading_interface
+    ports:
+      - "8701:8701"
+    environment:
+      - SERVICE_NAME=trading_interface
+      - SERVICE_PORT=8701
+      - TIER=tier_10_interface
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8701/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  analytics_ui:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.analytics_ui
+    container_name: lyra_analytics_ui
+    ports:
+      - "8702:8702"
+    environment:
+      - SERVICE_NAME=analytics_ui
+      - SERVICE_PORT=8702
+      - TIER=tier_10_interface
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8702/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  admin_panel:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.admin_panel
+    container_name: lyra_admin_panel
+    ports:
+      - "8703:8703"
+    environment:
+      - SERVICE_NAME=admin_panel
+      - SERVICE_PORT=8703
+      - TIER=tier_10_interface
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8703/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # ALERTS AND COMMUNICATION SYSTEMS
+  telegram_bot:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.telegram_bot
+    container_name: lyra_telegram_bot
+    ports:
+      - "8800:8800"
+    environment:
+      - SERVICE_NAME=telegram_bot
+      - SERVICE_PORT=8800
+      - TIER=tier_11_notifications
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8800/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  email_service:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.email_service
+    container_name: lyra_email_service
+    ports:
+      - "8801:8801"
+    environment:
+      - SERVICE_NAME=email_service
+      - SERVICE_PORT=8801
+      - TIER=tier_11_notifications
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8801/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  sms_gateway:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.sms_gateway
+    container_name: lyra_sms_gateway
+    ports:
+      - "8802:8802"
+    environment:
+      - SERVICE_NAME=sms_gateway
+      - SERVICE_PORT=8802
+      - TIER=tier_11_notifications
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8802/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  webhook_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.webhook_manager
+    container_name: lyra_webhook_manager
+    ports:
+      - "8803:8803"
+    environment:
+      - SERVICE_NAME=webhook_manager
+      - SERVICE_PORT=8803
+      - TIER=tier_11_notifications
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8803/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '100m'
+          memory: 256Mi
+        reservations:
+          cpus: '50m'
+          memory: 128Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+  # DATA MANAGEMENT AND ANALYTICS PIPELINE
+  data_ingestion:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.data_ingestion
+    container_name: lyra_data_ingestion
+    ports:
+      - "8900:8900"
+    environment:
+      - SERVICE_NAME=data_ingestion
+      - SERVICE_PORT=8900
+      - TIER=tier_12_data
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8900/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  data_processor:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.data_processor
+    container_name: lyra_data_processor
+    ports:
+      - "8901:8901"
+    environment:
+      - SERVICE_NAME=data_processor
+      - SERVICE_PORT=8901
+      - TIER=tier_12_data
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8901/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 1Gi
+        reservations:
+          cpus: '250m'
+          memory: 0Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  analytics_engine:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.analytics_engine
+    container_name: lyra_analytics_engine
+    ports:
+      - "8902:8902"
+    environment:
+      - SERVICE_NAME=analytics_engine
+      - SERVICE_PORT=8902
+      - TIER=tier_12_data
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8902/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '1000m'
+          memory: 2Gi
+        reservations:
+          cpus: '500m'
+          memory: 1Gi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+  backup_manager:
+    build:
+      context: .
+      dockerfile: containers/Dockerfile.backup_manager
+    container_name: lyra_backup_manager
+    ports:
+      - "8903:8903"
+    environment:
+      - SERVICE_NAME=backup_manager
+      - SERVICE_PORT=8903
+      - TIER=tier_12_data
+      - DATABASE_URL=postgresql://lyra_user:${DB_PASSWORD}@database:5432/lyra_trading
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - lyra_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8903/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '250m'
+          memory: 512Mi
+        reservations:
+          cpus: '125m'
+          memory: 256Mi
+    restart: unless-stopped
+    depends_on:
+      - database
+      - redis
+
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  vault_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  loki_data:
+    driver: local
+
+networks:
+  lyra_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
