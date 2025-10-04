@@ -1,8 +1,0 @@
-flask
-flask-socketio
-redis
-prometheus-client
-pyjwt
-cryptography
-aiohttp
-gunicorn

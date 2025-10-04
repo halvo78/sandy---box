@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  openrouter-ai:
+    build: ../CONTAINERS/openrouter_ai
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    networks:
+      - lyra-network
+    restart: unless-stopped
+
+  portfolio-manager:
+    build: ../CONTAINERS/portfolio_manager
+    ports:
+      - "8081:8080"
+    depends_on:
+      - openrouter-ai
+    networks:
+      - lyra-network
+    restart: unless-stopped
+
+  risk-manager:
+    build: ../CONTAINERS/risk_manager
+    ports:
+      - "8082:8080"
+    depends_on:
+      - portfolio-manager
+    networks:
+      - lyra-network
+    restart: unless-stopped
+
+networks:
+  lyra-network:
+    driver: bridge
+
+volumes:
+  lyra-data:
+    driver: local
