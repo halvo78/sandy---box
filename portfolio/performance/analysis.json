@@ -1,0 +1,45 @@
+{
+  "total_portfolio_value": 210000.0,
+  "total_daily_pnl": 4644.115645115288,
+  "daily_return": 0.022114836405310898,
+  "sharpe_ratio": 28.61033542862982,
+  "max_drawdown": -0.07796624539365464,
+  "win_rate": 0,
+  "total_operations": 0,
+  "profitable_operations": 0,
+  "arbitrage_profits": 0.0,
+  "rebalancing_costs": 0.0,
+  "net_trading_profit": 0.0,
+  "exchange_performance": {
+    "binance": {
+      "value": 35000.0,
+      "daily_pnl": 631.5858997717994,
+      "return": 0.018045311422051413,
+      "sharpe": 1.4539850449829714
+    },
+    "coinbase": {
+      "value": 40000.0,
+      "daily_pnl": 98.04309183155974,
+      "return": 0.0024510772957889934,
+      "sharpe": 1.4034409439916256
+    },
+    "kraken": {
+      "value": 30000.0,
+      "daily_pnl": 1092.40931057597,
+      "return": 0.036413643685865665,
+      "sharpe": 1.6235142124227484
+    },
+    "kucoin": {
+      "value": 5000.0,
+      "daily_pnl": 206.02769350060322,
+      "return": 0.04120553870012064,
+      "sharpe": 1.2791523899925301
+    },
+    "bybit": {
+      "value": 100000.0,
+      "daily_pnl": 2616.049649435356,
+      "return": 0.02616049649435356,
+      "sharpe": 1.7640588277938458
+    }
+  }
+}

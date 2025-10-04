@@ -1,0 +1,66 @@
+[
+  {
+    "category": "defi_integration",
+    "innovation": "DeFi yield farming integration",
+    "market_potential": "VERY_HIGH",
+    "competitive_advantage": "HIGH",
+    "estimated_value": "$1M-10M",
+    "description": "Integrate DeFi protocols for yield farming and liquidity provision opportunities"
+  },
+  {
+    "category": "cross_chain_capabilities",
+    "innovation": "Cross-chain arbitrage",
+    "market_potential": "HIGH",
+    "competitive_advantage": "HIGH",
+    "estimated_value": "$500K-5M",
+    "description": "Enable arbitrage opportunities across different blockchain networks"
+  },
+  {
+    "category": "social_trading_features",
+    "innovation": "AI-powered social trading",
+    "market_potential": "HIGH",
+    "competitive_advantage": "MEDIUM",
+    "estimated_value": "$200K-2M",
+    "description": "Implement social trading features with AI-powered trader ranking and copy trading"
+  },
+  {
+    "category": "sentiment_analysis",
+    "innovation": "Advanced sentiment analysis",
+    "market_potential": "MEDIUM",
+    "competitive_advantage": "HIGH",
+    "estimated_value": "$100K-1M",
+    "description": "Implement advanced sentiment analysis using social media, news, and on-chain data"
+  },
+  {
+    "category": "institutional_services",
+    "innovation": "Prime brokerage services",
+    "market_potential": "VERY_HIGH",
+    "competitive_advantage": "MEDIUM",
+    "estimated_value": "$5M-50M",
+    "description": "Develop institutional-grade prime brokerage and custody services"
+  },
+  {
+    "category": "alternative_data_sources",
+    "innovation": "Alternative data integration",
+    "market_potential": "HIGH",
+    "competitive_advantage": "HIGH",
+    "estimated_value": "$300K-3M",
+    "description": "Integrate alternative data sources like satellite imagery, social media, and economic indicators"
+  },
+  {
+    "category": "educational_platforms",
+    "innovation": "AI-powered trading education",
+    "market_potential": "MEDIUM",
+    "competitive_advantage": "LOW",
+    "estimated_value": "$50K-500K",
+    "description": "Develop AI-powered educational platform for trading and investment education"
+  },
+  {
+    "category": "community_building",
+    "innovation": "Trading community platform",
+    "market_potential": "MEDIUM",
+    "competitive_advantage": "LOW",
+    "estimated_value": "$100K-1M",
+    "description": "Build community platform for traders with social features and knowledge sharing"
+  }
+]

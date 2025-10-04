@@ -1,0 +1,16 @@
+{
+  "total_portfolio_value": 210000.0,
+  "max_position_concentration": 0.3136904761904762,
+  "max_exchange_concentration": 0.47619047619047616,
+  "portfolio_var_95": -119.97500117708888,
+  "portfolio_volatility": 0.013790970173085476,
+  "correlation_risk": 0.7261154746885059,
+  "liquidity_risk": "LOW",
+  "counterparty_risk": "MEDIUM",
+  "risk_score": 23.153989324720143,
+  "risk_limits_status": {
+    "position_concentration": "FAIL",
+    "exchange_concentration": "PASS",
+    "correlation_limit": "PASS"
+  }
+}
