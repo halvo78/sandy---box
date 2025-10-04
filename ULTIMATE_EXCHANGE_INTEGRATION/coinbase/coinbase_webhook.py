@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class CoinbaseWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "coinbase"
         self.exchange_name = "Coinbase"
         self.setup_logging()

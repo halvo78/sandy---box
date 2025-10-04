@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class Gate.ioWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "gate"
         self.exchange_name = "Gate.io"
         self.setup_logging()

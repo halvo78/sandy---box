@@ -57,6 +57,7 @@ class ExchangeRegistry:
     """Single source of truth for exchange configurations"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchanges = {
             "BINANCE": ExchangeConfig(
                 name="BINANCE",
@@ -201,6 +202,7 @@ class PromotionGatekeeper:
     """Manages promotion from shadow to live trading"""
     
     def __init__(self, gate_config: PromotionGate):
+        """TODO: Add function documentation"""
         self.config = gate_config
         self.parity_history = []
         self.trade_history = []
@@ -312,6 +314,7 @@ class CreativeTestSuite:
     """10 creative tests to hit all weird edges"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.test_results = {}
     
     async def run_all_tests(self) -> Dict[str, bool]:
@@ -583,6 +586,7 @@ class DynamicUniverseBuilder:
     """Builds and maintains dynamic symbol universe"""
     
     def __init__(self, config: UniverseConfig):
+        """TODO: Add function documentation"""
         self.config = config
         self.symbol_stats = {}
         self.current_tiers = {"T1": [], "T2": [], "T3": []}
@@ -680,6 +684,7 @@ class SafeExecutionEngine:
     """Safer execution engine with strict controls"""
     
     def __init__(self, policy: ExecutionPolicy):
+        """TODO: Add function documentation"""
         self.policy = policy
         self.in_flight_orders = {}
         self.strategy_orders = {}
@@ -796,6 +801,7 @@ class EvidencePackager:
     """Creates board-ready evidence packages"""
     
     def __init__(self, run_id: str):
+        """TODO: Add function documentation"""
         self.run_id = run_id
         self.evidence = {
             "intents": [],
@@ -946,17 +952,17 @@ class EvidencePackager:
 
 async def run_ultimate_enhancement_demo():
     """Run the complete Ultimate Enhancement Package demonstration"""
-    print("🚀 ULTIMATE LYRA ECOSYSTEM - ENHANCEMENT PACKAGE")
-    print("=" * 80)
-    print("🔥 Pushing LYRA harder, smarter, and safer")
-    print("🎯 Spot-only, all coins, all venues with maximum safety")
-    print("📊 10 critical enhancements for institutional deployment")
-    print("=" * 80)
+    logging.info("🚀 ULTIMATE LYRA ECOSYSTEM - ENHANCEMENT PACKAGE")
+    logging.info("=" * 80)
+    logging.info("🔥 Pushing LYRA harder, smarter, and safer")
+    logging.info("🎯 Spot-only, all coins, all venues with maximum safety")
+    logging.info("📊 10 critical enhancements for institutional deployment")
+    logging.info("=" * 80)
     print()
     
     # 1. Exchange URL Hardening
-    print("1️⃣ EXCHANGE URL HARDENING WITH SANITY PROBES")
-    print("-" * 50)
+    logging.info("1️⃣ EXCHANGE URL HARDENING WITH SANITY PROBES")
+    logging.info("-" * 50)
     
     registry = ExchangeRegistry()
     probe_results = await registry.sanity_probe_all("sandbox")
@@ -964,12 +970,12 @@ async def run_ultimate_enhancement_demo():
     working_exchanges = sum(1 for result in probe_results.values() if result)
     total_exchanges = len(probe_results)
     
-    print(f"✅ Sanity probes complete: {working_exchanges}/{total_exchanges} exchanges operational")
+    logging.info(f"✅ Sanity probes complete: {working_exchanges}/{total_exchanges} exchanges operational")
     print()
     
     # 2. Shadow Parity + Promotion Gates
-    print("2️⃣ SHADOW PARITY + PROMOTION GATES")
-    print("-" * 50)
+    logging.info("2️⃣ SHADOW PARITY + PROMOTION GATES")
+    logging.info("-" * 50)
     
     gate_config = PromotionGate(
         require_parity_hours=0.1,  # Reduced for demo
@@ -988,14 +994,14 @@ async def run_ultimate_enhancement_demo():
     
     eligible, reasons = gatekeeper.check_promotion_eligibility()
     
-    print(f"🚪 Promotion eligibility: {'✅ ELIGIBLE' if eligible else '❌ NOT ELIGIBLE'}")
+    logging.info(f"🚪 Promotion eligibility: {'✅ ELIGIBLE' if eligible else '❌ NOT ELIGIBLE'}")
     for reason in reasons[:3]:  # Show first 3 reasons
-        print(f"   {reason}")
+        logging.info(f"   {reason}")
     print()
     
     # 3. Creative Edge-Case Tests
-    print("3️⃣ CREATIVE EDGE-CASE TESTS")
-    print("-" * 50)
+    logging.info("3️⃣ CREATIVE EDGE-CASE TESTS")
+    logging.info("-" * 50)
     
     test_suite = CreativeTestSuite()
     test_results = await test_suite.run_all_tests()
@@ -1003,12 +1009,12 @@ async def run_ultimate_enhancement_demo():
     passed_tests = sum(1 for result in test_results.values() if result)
     total_tests = len(test_results)
     
-    print(f"🧪 Creative tests complete: {passed_tests}/{total_tests} tests passed")
+    logging.info(f"🧪 Creative tests complete: {passed_tests}/{total_tests} tests passed")
     print()
     
     # 4. Dynamic Universe Builder
-    print("4️⃣ ALL-COINS DYNAMIC TIERING")
-    print("-" * 50)
+    logging.info("4️⃣ ALL-COINS DYNAMIC TIERING")
+    logging.info("-" * 50)
     
     universe_config = UniverseConfig(
         quotes=["USDT", "USDC"],
@@ -1041,15 +1047,15 @@ async def run_ultimate_enhancement_demo():
     
     tiers = universe_builder.build_universe()
     
-    print(f"📊 Universe built:")
+    logging.info(f"📊 Universe built:")
     for tier, symbols in tiers.items():
-        print(f"   {tier}: {len(symbols)} symbols - {symbols[:3]}{'...' if len(symbols) > 3 else ''}")
-    print(f"🔥 Hotlist: {len(universe_builder.hotlist)} symbols")
+        logging.info(f"   {tier}: {len(symbols)} symbols - {symbols[:3]}{'...' if len(symbols) > 3 else ''}")
+    logging.info(f"🔥 Hotlist: {len(universe_builder.hotlist)} symbols")
     print()
     
     # 5. Safe Execution Engine
-    print("5️⃣ SAFER MAX-INTENSITY EXECUTION")
-    print("-" * 50)
+    logging.info("5️⃣ SAFER MAX-INTENSITY EXECUTION")
+    logging.info("-" * 50)
     
     execution_policy = ExecutionPolicy()
     execution_engine = SafeExecutionEngine(execution_policy)
@@ -1066,14 +1072,14 @@ async def run_ultimate_enhancement_demo():
     
     result = await execution_engine.execute_intent(test_intent)
     
-    print(f"⚡ Execution result: {result['status']}")
-    print(f"   Order type: {result.get('type', 'N/A')}")
-    print(f"   In-flight orders: {len(execution_engine.in_flight_orders)}")
+    logging.info(f"⚡ Execution result: {result['status']}")
+    logging.info(f"   Order type: {result.get('type', 'N/A')}")
+    logging.info(f"   In-flight orders: {len(execution_engine.in_flight_orders)}")
     print()
     
     # 6. Evidence Package
-    print("6️⃣ BOARD-READY EVIDENCE PACKAGE")
-    print("-" * 50)
+    logging.info("6️⃣ BOARD-READY EVIDENCE PACKAGE")
+    logging.info("-" * 50)
     
     run_id = f"enhancement_demo_{int(time.time())}"
     evidence_packager = EvidencePackager(run_id)
@@ -1091,30 +1097,30 @@ async def run_ultimate_enhancement_demo():
     manifest = evidence_packager.generate_evidence_manifest()
     verdict = evidence_packager.generate_verdict("HYBRID", "Optimal balance of speed and safety")
     
-    print(f"📋 Evidence manifest generated:")
-    print(f"   Run ID: {manifest['run_id']}")
-    print(f"   System Hash: {manifest['system_hash'][:16]}...")
-    print(f"   Evidence Counts: {manifest['evidence_counts']}")
+    logging.info(f"📋 Evidence manifest generated:")
+    logging.info(f"   Run ID: {manifest['run_id']}")
+    logging.info(f"   System Hash: {manifest['system_hash'][:16]}...")
+    logging.info(f"   Evidence Counts: {manifest['evidence_counts']}")
     print()
     
-    print("📄 Verdict generated:")
-    print(verdict.split('\n')[6])  # Show winner line
+    logging.info("📄 Verdict generated:")
+    logging.info(verdict.split('\n')[6])  # Show winner line
     print()
     
     # Summary
-    print("🎉 ULTIMATE ENHANCEMENT PACKAGE COMPLETE!")
-    print("=" * 80)
-    print("✅ Exchange URL hardening with sanity probes")
-    print("✅ Shadow parity validation and promotion gates")
-    print("✅ 10 creative edge-case tests for robustness")
-    print("✅ Dynamic all-coins tiering without flooding")
-    print("✅ Safer max-intensity execution with strict controls")
-    print("✅ Board-ready evidence packages with verdicts")
-    print("=" * 80)
-    print("🚀 LYRA is now harder, smarter, and safer!")
-    print("🎯 Ready for spot-only, all coins, all venues operation")
-    print("🏆 Institutional-grade deployment certification achieved")
-    print("=" * 80)
+    logging.info("🎉 ULTIMATE ENHANCEMENT PACKAGE COMPLETE!")
+    logging.info("=" * 80)
+    logging.info("✅ Exchange URL hardening with sanity probes")
+    logging.info("✅ Shadow parity validation and promotion gates")
+    logging.info("✅ 10 creative edge-case tests for robustness")
+    logging.info("✅ Dynamic all-coins tiering without flooding")
+    logging.info("✅ Safer max-intensity execution with strict controls")
+    logging.info("✅ Board-ready evidence packages with verdicts")
+    logging.info("=" * 80)
+    logging.info("🚀 LYRA is now harder, smarter, and safer!")
+    logging.info("🎯 Ready for spot-only, all coins, all venues operation")
+    logging.info("🏆 Institutional-grade deployment certification achieved")
+    logging.info("=" * 80)
     
     return {
         "sanity_probes": probe_results,

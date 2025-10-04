@@ -1,0 +1,74 @@
+{
+  "search_timestamp": "2025-10-04T00:59:25.963862",
+  "sources_searched": [
+    "github_repositories",
+    "notion_content",
+    "asana_projects",
+    "supabase_data",
+    "airtable_bases",
+    "cloudflare_workers",
+    "webflow_sites",
+    "serena_code",
+    "local_files",
+    "ai_analysis"
+  ],
+  "total_components_found": 1,
+  "high_value_components": 0,
+  "integration_summary": {
+    "github_repositories": {
+      "total_found": 1,
+      "high_value": 0,
+      "status": "searched"
+    },
+    "notion_content": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "asana_projects": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "supabase_data": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "airtable_bases": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "cloudflare_workers": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "webflow_sites": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "serena_code": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "local_files": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    },
+    "ai_analysis": {
+      "total_found": 0,
+      "high_value": 0,
+      "status": "no_results"
+    }
+  },
+  "recommendations": [
+    "Expand search criteria",
+    "Check authentication for external services",
+    "Manual review of found components"
+  ]
+}

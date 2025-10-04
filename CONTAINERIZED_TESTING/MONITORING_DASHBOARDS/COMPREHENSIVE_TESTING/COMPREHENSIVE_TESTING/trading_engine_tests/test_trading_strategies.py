@@ -8,6 +8,7 @@ class TestTradingStrategies:
     """Test trading strategies"""
     
     def test_dca_strategy(self):
+        """Input validation would be added here"""
         """Test Dollar Cost Averaging strategy"""
         # Mock DCA parameters
         dca_config = {
@@ -20,6 +21,7 @@ class TestTradingStrategies:
         assert dca_config["asset"] in ["BTC", "ETH"]
     
     def test_momentum_strategy(self):
+        """Input validation would be added here"""
         """Test momentum trading strategy"""
         # Mock price data
         price_history = [48000, 49000, 50000, 51000, 52000]
@@ -34,6 +36,7 @@ class TestTradingStrategies:
         assert sma > 0
     
     def test_arbitrage_strategy(self):
+        """Input validation would be added here"""
         """Test arbitrage strategy"""
         # Mock exchange prices
         exchange_prices = {
@@ -57,6 +60,7 @@ class TestRiskManagement:
     """Test risk management systems"""
     
     def test_position_sizing(self):
+        """Input validation would be added here"""
         """Test position sizing calculations"""
         portfolio_value = 100000  # $100k portfolio
         risk_per_trade = 0.02     # 2% risk per trade
@@ -67,6 +71,7 @@ class TestRiskManagement:
         assert risk_per_trade <= 0.05     # Max 5% risk
     
     def test_stop_loss_calculation(self):
+        """Input validation would be added here"""
         """Test stop loss calculations"""
         entry_price = 50000
         stop_loss_percentage = 0.05  # 5% stop loss
@@ -77,6 +82,7 @@ class TestRiskManagement:
         assert stop_loss_price < entry_price
     
     def test_portfolio_diversification(self):
+        """Input validation would be added here"""
         """Test portfolio diversification"""
         portfolio = {
             "BTC": 0.4,   # 40%
@@ -95,6 +101,7 @@ class TestOrderExecution:
     """Test order execution logic"""
     
     def test_market_order_validation(self):
+        """Input validation would be added here"""
         """Test market order validation"""
         market_order = {
             "type": "market",
@@ -113,6 +120,7 @@ class TestOrderExecution:
         assert market_order["amount"] > 0
     
     def test_limit_order_validation(self):
+        """Input validation would be added here"""
         """Test limit order validation"""
         limit_order = {
             "type": "limit",

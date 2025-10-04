@@ -132,6 +132,7 @@ class BaseController:
     """Base class for all controllers"""
     
     def __init__(self, controller_type: ControllerType):
+        """Input validation would be added here"""
         self.controller_type = controller_type
         self.decisions_made = []
         self.start_time = time.time()
@@ -162,6 +163,7 @@ class CentralController(BaseController):
     """Single AI making all decisions"""
     
     def __init__(self):
+        """Input validation would be added here"""
         super().__init__(ControllerType.CENTRAL)
         self.ai_model = "GPT-4"  # Simulated
         self.confidence_threshold = 0.7
@@ -214,6 +216,7 @@ class FederatedController(BaseController):
     """Multiple AIs with consensus"""
     
     def __init__(self):
+        """Input validation would be added here"""
         super().__init__(ControllerType.FEDERATED)
         self.ai_models = ["GPT-4", "Claude-3", "Gemini"]
         self.consensus_threshold = 0.6
@@ -292,6 +295,7 @@ class HybridController(BaseController):
     """Adaptive switching between methods"""
     
     def __init__(self):
+        """Input validation would be added here"""
         super().__init__(ControllerType.HYBRID)
         self.central_controller = CentralController()
         self.federated_controller = FederatedController()
@@ -339,6 +343,7 @@ class HumanInLoopController(BaseController):
     """AI with human oversight"""
     
     def __init__(self):
+        """Input validation would be added here"""
         super().__init__(ControllerType.HUMAN_IN_LOOP)
         self.ai_controller = CentralController()
         self.human_override_threshold = 0.8
@@ -379,6 +384,7 @@ class EnsembleController(BaseController):
     """Weighted combination of multiple AIs"""
     
     def __init__(self):
+        """Input validation would be added here"""
         super().__init__(ControllerType.ENSEMBLE)
         self.controllers = [
             CentralController(),
@@ -434,6 +440,7 @@ class MarketSimulator:
     """Simulates market conditions for testing"""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.base_price = 50000.0
         self.current_price = self.base_price
         self.time_step = 0
@@ -441,6 +448,7 @@ class MarketSimulator:
         self.trend = 0.0
     
     def generate_market_tick(self, condition: MarketCondition = None) -> MarketTick:
+        """Input validation would be added here"""
         """Generate realistic market tick"""
         self.time_step += 1
         
@@ -493,6 +501,7 @@ class StatisticalAnalyzer:
     
     @staticmethod
     def compare_controllers(controller_a_metrics: List[PerformanceMetrics], 
+        """TODO: Add function documentation"""
                           controller_b_metrics: List[PerformanceMetrics],
                           metric_name: str) -> ComparisonResult:
         """Compare two controllers on a specific metric"""
@@ -553,6 +562,7 @@ class ControlComparisonHarness:
     """Main harness for comparing control methods"""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.controllers = {
             ControllerType.CENTRAL: CentralController,
             ControllerType.FEDERATED: FederatedController,
@@ -645,12 +655,12 @@ class ControlComparisonHarness:
     
     async def run_comprehensive_comparison(self, runs_per_controller: int = 10) -> HarnessResult:
         """Run comprehensive comparison of all controllers"""
-        print("🧪 ULTIMATE LYRA ECOSYSTEM - CONTROL COMPARISON HARNESS")
-        print("=" * 80)
-        print("🎯 Testing all control methods with statistical rigor")
-        print("📊 Irrefutable proof of the best control system")
-        print("🔬 N=30 runs per controller with paired statistical tests")
-        print("=" * 80)
+        logging.info("🧪 ULTIMATE LYRA ECOSYSTEM - CONTROL COMPARISON HARNESS")
+        logging.info("=" * 80)
+        logging.info("🎯 Testing all control methods with statistical rigor")
+        logging.info("📊 Irrefutable proof of the best control system")
+        logging.info("🔬 N=30 runs per controller with paired statistical tests")
+        logging.info("=" * 80)
         print()
         
         all_metrics = {}
@@ -662,11 +672,11 @@ class ControlComparisonHarness:
         
         # Run experiments
         for controller_type, controller_class in self.controllers.items():
-            print(f"🔬 TESTING {controller_type.value} CONTROLLER...")
+            logging.info(f"🔬 TESTING {controller_type.value} CONTROLLER...")
             all_metrics[controller_type.value] = []
             
             for condition in market_conditions:
-                print(f"   📊 Market Condition: {condition.value}")
+                logging.info(f"   📊 Market Condition: {condition.value}")
                 
                 for run in range(runs_per_controller):
                     # Reset market simulator for each run
@@ -677,13 +687,13 @@ class ControlComparisonHarness:
                     
                     completed += 1
                     progress = (completed / total_experiments) * 100
-                    print(f"      Run {run+1}/{runs_per_controller}: PnL {metrics.total_pnl:.2f}, "
+                    logging.info(f"      Run {run+1}/{runs_per_controller}: PnL {metrics.total_pnl:.2f}, "
                           f"Latency {metrics.avg_latency_ms:.1f}ms [{progress:.1f}%]")
             
             print()
         
         # Statistical analysis
-        print("📊 PERFORMING STATISTICAL ANALYSIS...")
+        logging.info("📊 PERFORMING STATISTICAL ANALYSIS...")
         comparisons = []
         metrics_to_compare = ["total_pnl", "sharpe_ratio", "win_rate", "avg_latency_ms", "risk_violations"]
         
@@ -753,6 +763,7 @@ class ControlComparisonHarness:
         return result
     
     def _generate_recommendations(self, all_metrics: Dict, comparisons: List[ComparisonResult], 
+        """TODO: Add function documentation"""
                                 safety_violations: Dict) -> List[str]:
         """Generate recommendations based on analysis"""
         recommendations = []
@@ -816,50 +827,50 @@ async def run_control_comparison_demo():
     # Run comprehensive comparison
     result = await harness.run_comprehensive_comparison(runs_per_controller=6)  # Reduced for demo
     
-    print("📊 CONTROL COMPARISON RESULTS")
-    print("=" * 80)
-    print(f"⏱️  Total Experiments: {result.total_runs}")
-    print(f"🎮 Controllers Tested: {', '.join(result.controllers_tested)}")
-    print(f"🌍 Market Conditions: {', '.join(result.market_conditions)}")
+    logging.info("📊 CONTROL COMPARISON RESULTS")
+    logging.info("=" * 80)
+    logging.info(f"⏱️  Total Experiments: {result.total_runs}")
+    logging.info(f"🎮 Controllers Tested: {', '.join(result.controllers_tested)}")
+    logging.info(f"🌍 Market Conditions: {', '.join(result.market_conditions)}")
     print()
     
-    print("📈 PERFORMANCE SUMMARY:")
+    logging.info("📈 PERFORMANCE SUMMARY:")
     for controller, stats in result.performance_summary.items():
-        print(f"   {controller}:")
-        print(f"      Average PnL: {stats['avg_pnl']:.2f}")
-        print(f"      Average Sharpe: {stats['avg_sharpe']:.2f}")
-        print(f"      Average Win Rate: {stats['avg_win_rate']:.2%}")
-        print(f"      Average Latency: {stats['avg_latency']:.1f}ms")
-        print(f"      Critical Violations: {stats['total_violations']}")
+        logging.info(f"   {controller}:")
+        logging.info(f"      Average PnL: {stats['avg_pnl']:.2f}")
+        logging.info(f"      Average Sharpe: {stats['avg_sharpe']:.2f}")
+        logging.info(f"      Average Win Rate: {stats['avg_win_rate']:.2%}")
+        logging.info(f"      Average Latency: {stats['avg_latency']:.1f}ms")
+        logging.info(f"      Critical Violations: {stats['total_violations']}")
         print()
     
-    print("🔬 STATISTICAL SIGNIFICANCE:")
+    logging.info("🔬 STATISTICAL SIGNIFICANCE:")
     significant_comparisons = [c for c in result.statistical_comparisons if c.significant]
-    print(f"   Significant Differences Found: {len(significant_comparisons)}")
+    logging.info(f"   Significant Differences Found: {len(significant_comparisons)}")
     
     for comp in significant_comparisons[:5]:  # Show first 5
-        print(f"   {comp.controller_a} vs {comp.controller_b} ({comp.metric}):")
-        print(f"      Winner: {comp.winner} (p={comp.p_value:.4f}, d={comp.cohens_d:.2f})")
+        logging.info(f"   {comp.controller_a} vs {comp.controller_b} ({comp.metric}):")
+        logging.info(f"      Winner: {comp.winner} (p={comp.p_value:.4f}, d={comp.cohens_d:.2f})")
     print()
     
-    print("💡 RECOMMENDATIONS:")
+    logging.info("💡 RECOMMENDATIONS:")
     for rec in result.recommendations:
-        print(f"   {rec}")
+        logging.info(f"   {rec}")
     print()
     
-    print("🏆 FINAL VERDICT:")
-    print(f"   Best Controller: {result.best_controller}")
-    print(f"   Confidence Score: {result.confidence_score:.1f}%")
-    print(f"   Safety Status: {'✅ SAFE' if result.safety_violations[result.best_controller] == 0 else '⚠️ REVIEW NEEDED'}")
+    logging.info("🏆 FINAL VERDICT:")
+    logging.info(f"   Best Controller: {result.best_controller}")
+    logging.info(f"   Confidence Score: {result.confidence_score:.1f}%")
+    logging.info(f"   Safety Status: {'✅ SAFE' if result.safety_violations[result.best_controller] == 0 else '⚠️ REVIEW NEEDED'}")
     print()
     
-    print("🎉 CONTROL COMPARISON COMPLETE!")
-    print("=" * 80)
-    print("🔬 Statistical rigor applied with N=30 runs per controller")
-    print("📊 Paired t-tests and effect size analysis completed")
-    print("🏆 Irrefutable proof of best control method achieved")
-    print("🛡️ Safety-first approach with zero-tolerance for critical violations")
-    print("=" * 80)
+    logging.info("🎉 CONTROL COMPARISON COMPLETE!")
+    logging.info("=" * 80)
+    logging.info("🔬 Statistical rigor applied with N=30 runs per controller")
+    logging.info("📊 Paired t-tests and effect size analysis completed")
+    logging.info("🏆 Irrefutable proof of best control method achieved")
+    logging.info("🛡️ Safety-first approach with zero-tolerance for critical violations")
+    logging.info("=" * 80)
     
     # Save results
     with open('control_comparison_results.json', 'w') as f:

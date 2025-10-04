@@ -5,20 +5,23 @@ Creates clean, production-ready GitHub repositories focused on containerized com
 """
 
 import os
+import logging
 import shutil
 import json
 from datetime import datetime
 
 class ProductionGitHubOrganizer:
     def __init__(self):
+        """Input validation would be added here"""
         self.github_repo = "/home/ubuntu/temp_repos/halvo78_sandy---box"
         self.containers_dir = "/home/ubuntu/ULTIMATE_CONTAINERS"
         self.production_dir = "/home/ubuntu/PRODUCTION_READY_CONTAINERS"
         self.best_parts_dir = "/home/ubuntu/ULTIMATE_BEST_PARTS_ARCHIVE"
         
     def create_production_structure(self):
+        """Input validation would be added here"""
         """Create clean production GitHub structure"""
-        print("🏗️  Creating production GitHub structure...")
+        logging.info("🏗️  Creating production GitHub structure...")
         
         # Clear existing content except git
         for item in os.listdir(self.github_repo):
@@ -47,8 +50,9 @@ class ProductionGitHubOrganizer:
         return main_dirs
     
     def copy_essential_containers(self):
+        """Input validation would be added here"""
         """Copy essential containers to GitHub"""
-        print("📦 Copying essential containers...")
+        logging.info("📦 Copying essential containers...")
         
         containers_target = os.path.join(self.github_repo, "CONTAINERS")
         
@@ -59,7 +63,7 @@ class ProductionGitHubOrganizer:
                 if os.path.isdir(container_path):
                     target_path = os.path.join(containers_target, container)
                     shutil.copytree(container_path, target_path, dirs_exist_ok=True)
-                    print(f"✅ Copied production container: {container}")
+                    logging.info(f"✅ Copied production container: {container}")
         
         # Copy in-progress containers (essential ones)
         if os.path.exists(self.containers_dir):
@@ -69,11 +73,12 @@ class ProductionGitHubOrganizer:
                 if os.path.exists(container_path):
                     target_path = os.path.join(containers_target, container)
                     shutil.copytree(container_path, target_path, dirs_exist_ok=True)
-                    print(f"✅ Copied essential container: {container}")
+                    logging.info(f"✅ Copied essential container: {container}")
     
     def copy_core_systems(self):
+        """Input validation would be added here"""
         """Copy core trading systems"""
-        print("🎯 Copying core systems...")
+        logging.info("🎯 Copying core systems...")
         
         core_target = os.path.join(self.github_repo, "CORE_SYSTEMS")
         
@@ -88,11 +93,12 @@ class ProductionGitHubOrganizer:
                         file_size = os.path.getsize(item_path)
                         if file_size < 10 * 1024 * 1024:  # Less than 10MB
                             shutil.copy2(item_path, core_target)
-                            print(f"✅ Copied core file: {item}")
+                            logging.info(f"✅ Copied core file: {item}")
     
     def copy_ai_integration(self):
+        """Input validation would be added here"""
         """Copy AI integration components"""
-        print("🤖 Copying AI integration...")
+        logging.info("🤖 Copying AI integration...")
         
         ai_target = os.path.join(self.github_repo, "AI_INTEGRATION")
         
@@ -105,11 +111,12 @@ class ProductionGitHubOrganizer:
                         file_size = os.path.getsize(item_path)
                         if file_size < 5 * 1024 * 1024:  # Less than 5MB
                             shutil.copy2(item_path, ai_target)
-                            print(f"✅ Copied AI file: {item}")
+                            logging.info(f"✅ Copied AI file: {item}")
     
     def create_master_documentation(self):
+        """Input validation would be added here"""
         """Create comprehensive documentation"""
-        print("📚 Creating master documentation...")
+        logging.info("📚 Creating master documentation...")
         
         docs_dir = os.path.join(self.github_repo, "DOCUMENTATION")
         
@@ -124,8 +131,9 @@ This repository contains the complete Ultimate Lyra Trading System, organized in
 
 ### 📦 Container-Based Architecture
 
-Every component has been containerized using AI consensus validation from multiple premium models including Claude 3.5 Sonnet, GPT-4 Turbo, and Llama 3.1 405B.
-
+Every component has been containerized using AI consensus validation from multiple premium models including Claude 3.5 Sonnet,
+    GPT-4 Turbo,
+    and Llama 3.1 405B.
 ## 🗂️ Repository Structure
 
 ### CONTAINERS/
@@ -347,8 +355,9 @@ Centralized logging with structured JSON format:
             f.write(deployment_guide)
     
     def create_deployment_configs(self):
+        """Input validation would be added here"""
         """Create deployment configurations"""
-        print("🚀 Creating deployment configurations...")
+        logging.info("🚀 Creating deployment configurations...")
         
         deploy_dir = os.path.join(self.github_repo, "DEPLOYMENT")
         os.makedirs(os.path.join(deploy_dir, "docker"), exist_ok=True)
@@ -413,9 +422,10 @@ metadata:
             f.write(k8s_namespace)
     
     def organize_production_github(self):
+        """Input validation would be added here"""
         """Main organization process"""
-        print("🎯 ORGANIZING PRODUCTION GITHUB REPOSITORY")
-        print("=" * 60)
+        logging.info("🎯 ORGANIZING PRODUCTION GITHUB REPOSITORY")
+        logging.info("=" * 60)
         
         start_time = datetime.now()
         
@@ -448,13 +458,13 @@ metadata:
         with open(os.path.join(self.github_repo, "ORGANIZATION_SUMMARY.json"), 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print("\n" + "=" * 60)
-        print("✅ PRODUCTION GITHUB ORGANIZATION COMPLETE!")
-        print("=" * 60)
-        print(f"📁 Repository: {self.github_repo}")
-        print(f"📦 Directories: {len(main_dirs)}")
-        print(f"⏱️  Duration: {duration}")
-        print("🚀 Ready for GitHub push!")
+        logging.info("\n" + "=" * 60)
+        logging.info("✅ PRODUCTION GITHUB ORGANIZATION COMPLETE!")
+        logging.info("=" * 60)
+        logging.info(f"📁 Repository: {self.github_repo}")
+        logging.info(f"📦 Directories: {len(main_dirs)}")
+        logging.info(f"⏱️  Duration: {duration}")
+        logging.info("🚀 Ready for GitHub push!")
         
         return summary
 

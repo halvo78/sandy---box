@@ -12,6 +12,7 @@ Complete demonstration of the Ultimate Lyra Ecosystem running with all component
 """
 
 import asyncio
+import logging
 import sys
 import time
 import json
@@ -30,6 +31,7 @@ class FullEcosystemDemo:
     """Complete Ultimate Lyra Ecosystem demonstration"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.start_time = time.time()
         self.ecosystem = None
         self.exchange_manager = None
@@ -39,90 +41,90 @@ class FullEcosystemDemo:
         
     async def initialize_all_systems(self):
         """Initialize all system components"""
-        print("🚀 INITIALIZING ULTIMATE LYRA ECOSYSTEM")
-        print("=" * 60)
+        logging.info("🚀 INITIALIZING ULTIMATE LYRA ECOSYSTEM")
+        logging.info("=" * 60)
         
         # Initialize main ecosystem
-        print("🔧 Initializing core ecosystem...")
+        logging.info("🔧 Initializing core ecosystem...")
         self.ecosystem = YOUR_API_KEY_HERE()
         # The ecosystem initializes itself in __init__
         
         # Initialize exchange manager
-        print("📡 Initializing exchange connections...")
+        logging.info("📡 Initializing exchange connections...")
         self.exchange_manager = LiveExchangeManager()
         
         # Initialize BTC Markets
-        print("🇦🇺 Initializing BTC Markets...")
+        logging.info("🇦🇺 Initializing BTC Markets...")
         config = BTCMarketsConfig()
         self.btc_markets = BTCMarketsConnector(config)
         await self.btc_markets.__aenter__()
         
         # Initialize AI conductor
-        print("🧠 Initializing AI Orchestra Conductor...")
+        logging.info("🧠 Initializing AI Orchestra Conductor...")
         self.ai_conductor = AIOrchestralConductor()
         
         # Initialize execution engine
-        print("⚡ Initializing Smart Execution Engine...")
+        logging.info("⚡ Initializing Smart Execution Engine...")
         self.execution_engine = SmartExecutionEngine()
         
         init_time = time.time() - self.start_time
-        print(f"✅ All systems initialized in {init_time:.2f} seconds")
+        logging.info(f"✅ All systems initialized in {init_time:.2f} seconds")
         print()
         
     async def test_exchange_connectivity(self):
         """Test all exchange connections"""
-        print("📡 TESTING EXCHANGE CONNECTIVITY")
-        print("-" * 40)
+        logging.info("📡 TESTING EXCHANGE CONNECTIVITY")
+        logging.info("-" * 40)
         
         # Test global exchanges
-        print("🌍 Testing global exchanges...")
+        logging.info("🌍 Testing global exchanges...")
         global_results = await self.exchange_manager.test_all_connections()
         
         working_exchanges = []
         for exchange, result in global_results.items():
             if result['status'] == 'success' and result.get('ticker'):
                 ticker = result['ticker']
-                print(f"   ✅ {exchange.upper()}: ${ticker['price']:,.2f} USD | Vol: {ticker['volume']:,.0f}")
+                logging.info(f"   ✅ {exchange.upper()}: ${ticker['price']:,.2f} USD | Vol: {ticker['volume']:,.0f}")
                 working_exchanges.append(exchange)
             else:
-                print(f"   ⚠️  {exchange.upper()}: {result.get('error', 'Connection issues')}")
+                logging.info(f"   ⚠️  {exchange.upper()}: {result.get('error', 'Connection issues')}")
         
         # Test BTC Markets
-        print("\n🇦🇺 Testing BTC Markets...")
+        logging.info("\n🇦🇺 Testing BTC Markets...")
         btc_ticker = await self.btc_markets.get_ticker('BTC-AUD')
         if btc_ticker:
-            print(f"   ✅ BTC MARKETS: ${btc_ticker.price:,.2f} AUD | Vol: {btc_ticker.volume:,.0f}")
+            logging.info(f"   ✅ BTC MARKETS: ${btc_ticker.price:,.2f} AUD | Vol: {btc_ticker.volume:,.0f}")
             working_exchanges.append('btcmarkets')
         else:
-            print("   ⚠️  BTC MARKETS: Connection issues")
+            logging.info("   ⚠️  BTC MARKETS: Connection issues")
         
-        print(f"\n📊 Total operational exchanges: {len(working_exchanges)}")
+        logging.info(f"\n📊 Total operational exchanges: {len(working_exchanges)}")
         return working_exchanges
     
     async def YOUR_API_KEY_HERE(self):
         """Demonstrate multi-currency market analysis"""
-        print("💱 MULTI-CURRENCY MARKET ANALYSIS")
-        print("-" * 40)
+        logging.info("💱 MULTI-CURRENCY MARKET ANALYSIS")
+        logging.info("-" * 40)
         
         # Get USD prices from global exchanges
-        print("💵 USD Market Analysis:")
+        logging.info("💵 USD Market Analysis:")
         usd_prices = await self.exchange_manager.get_best_prices('BTC-USDT')
         
         if usd_prices:
             usd_avg = sum(p for p in usd_prices.values() if p > 0) / len([p for p in usd_prices.values() if p > 0])
-            print(f"   Average BTC Price (USD): ${usd_avg:,.2f}")
+            logging.info(f"   Average BTC Price (USD): ${usd_avg:,.2f}")
             
             for exchange, price in usd_prices.items():
                 if price > 0:
-                    print(f"      {exchange}: ${price:,.2f}")
+                    logging.info(f"      {exchange}: ${price:,.2f}")
         
         # Get AUD prices from BTC Markets
-        print("\n💰 AUD Market Analysis:")
+        logging.info("\n💰 AUD Market Analysis:")
         btc_aud_ticker = await self.btc_markets.get_ticker('BTC-AUD')
         eth_aud_ticker = await self.btc_markets.get_ticker('ETH-AUD')
         
         if btc_aud_ticker:
-            print(f"   BTC-AUD: ${btc_aud_ticker.price:,.2f} AUD")
+            logging.info(f"   BTC-AUD: ${btc_aud_ticker.price:,.2f} AUD")
             
             # Currency arbitrage analysis
             if usd_prices:
@@ -131,24 +133,24 @@ class FullEcosystemDemo:
                 
                 if usd_avg > 0:
                     arbitrage_opportunity = ((usd_avg - btc_usd_equiv) / btc_usd_equiv) * 100
-                    print(f"   BTC USD Equivalent: ${btc_usd_equiv:,.2f}")
-                    print(f"   Arbitrage Opportunity: {arbitrage_opportunity:+.2f}%")
+                    logging.info(f"   BTC USD Equivalent: ${btc_usd_equiv:,.2f}")
+                    logging.info(f"   Arbitrage Opportunity: {arbitrage_opportunity:+.2f}%")
                     
                     if abs(arbitrage_opportunity) > 1:
-                        print(f"   🚨 SIGNIFICANT ARBITRAGE OPPORTUNITY DETECTED!")
+                        logging.info(f"   🚨 SIGNIFICANT ARBITRAGE OPPORTUNITY DETECTED!")
         
         if eth_aud_ticker:
-            print(f"   ETH-AUD: ${eth_aud_ticker.price:,.2f} AUD")
+            logging.info(f"   ETH-AUD: ${eth_aud_ticker.price:,.2f} AUD")
         
         print()
     
     async def demonstrate_ai_analysis(self):
         """Demonstrate AI market analysis"""
-        print("🧠 AI ORCHESTRA CONDUCTOR ANALYSIS")
-        print("-" * 40)
+        logging.info("🧠 AI ORCHESTRA CONDUCTOR ANALYSIS")
+        logging.info("-" * 40)
         
         # Gather live market data
-        print("📊 Gathering live market data for AI analysis...")
+        logging.info("📊 Gathering live market data for AI analysis...")
         
         # Get USD market data
         usd_prices = await self.exchange_manager.get_best_prices('BTC-USDT')
@@ -182,77 +184,77 @@ class FullEcosystemDemo:
             }
         }
         
-        print(f"   💵 BTC-USD: ${btc_usd_avg:,.2f} across {len(usd_prices) if usd_prices else 0} exchanges")
-        print(f"   💰 BTC-AUD: ${btc_aud_price:,.2f} on BTC Markets")
+        logging.info(f"   💵 BTC-USD: ${btc_usd_avg:,.2f} across {len(usd_prices) if usd_prices else 0} exchanges")
+        logging.info(f"   💰 BTC-AUD: ${btc_aud_price:,.2f} on BTC Markets")
         
         # Run AI analysis
-        print("\n🎼 Running AI Orchestra Analysis...")
+        logging.info("\n🎼 Running AI Orchestra Analysis...")
         decisions = await self.ai_conductor.conduct_orchestra(live_market_data)
         
-        print(f"🎯 AI Generated {len(decisions)} trading decisions:")
+        logging.info(f"🎯 AI Generated {len(decisions)} trading decisions:")
         
         approved_decisions = []
         for i, decision in enumerate(decisions):
-            print(f"\n   Decision {i+1}:")
-            print(f"      Strategy: {decision.intent.strategy}")
-            print(f"      Symbol: {decision.intent.symbol}")
-            print(f"      Side: {decision.intent.side.value}")
-            print(f"      Confidence: {decision.intent.confidence:.2f}")
-            print(f"      Result: {decision.result.value}")
-            print(f"      Reason: {decision.reason}")
+            logging.info(f"\n   Decision {i+1}:")
+            logging.info(f"      Strategy: {decision.intent.strategy}")
+            logging.info(f"      Symbol: {decision.intent.symbol}")
+            logging.info(f"      Side: {decision.intent.side.value}")
+            logging.info(f"      Confidence: {decision.intent.confidence:.2f}")
+            logging.info(f"      Result: {decision.result.value}")
+            logging.info(f"      Reason: {decision.reason}")
             
             if decision.result.value == 'APPROVE':
                 approved_decisions.append(decision)
-                print(f"      ✅ APPROVED FOR EXECUTION")
+                logging.info(f"      ✅ APPROVED FOR EXECUTION")
             else:
-                print(f"      ❌ REJECTED")
+                logging.info(f"      ❌ REJECTED")
         
-        print(f"\n📈 Summary: {len(approved_decisions)} decisions approved for execution")
+        logging.info(f"\n📈 Summary: {len(approved_decisions)} decisions approved for execution")
         return approved_decisions
     
     async def demonstrate_execution_planning(self, approved_decisions):
         """Demonstrate execution planning"""
-        print("⚡ SMART EXECUTION ENGINE DEMONSTRATION")
-        print("-" * 45)
+        logging.info("⚡ SMART EXECUTION ENGINE DEMONSTRATION")
+        logging.info("-" * 45)
         
         if not approved_decisions:
-            print("   No approved decisions to execute")
+            logging.info("   No approved decisions to execute")
             return
         
         for i, decision in enumerate(approved_decisions):
-            print(f"\n🎯 Execution Plan {i+1}:")
-            print(f"   Strategy: {decision.intent.strategy}")
-            print(f"   Symbol: {decision.intent.symbol}")
-            print(f"   Side: {decision.intent.side.value}")
-            print(f"   Size: 0.001 BTC (demo size)")
+            logging.info(f"\n🎯 Execution Plan {i+1}:")
+            logging.info(f"   Strategy: {decision.intent.strategy}")
+            logging.info(f"   Symbol: {decision.intent.symbol}")
+            logging.info(f"   Side: {decision.intent.side.value}")
+            logging.info(f"   Size: 0.001 BTC (demo size)")
             
             # Simulate execution planning
             if 'USD' in decision.intent.symbol:
-                print("   📡 Target Exchanges: OKX, Gate.io")
-                print("   💵 Currency: USD")
-                print("   🎯 Execution Strategy: TWAP over 5 minutes")
+                logging.info("   📡 Target Exchanges: OKX, Gate.io")
+                logging.info("   💵 Currency: USD")
+                logging.info("   🎯 Execution Strategy: TWAP over 5 minutes")
             elif 'AUD' in decision.intent.symbol:
-                print("   📡 Target Exchange: BTC Markets")
-                print("   💰 Currency: AUD")
-                print("   🎯 Execution Strategy: Limit order at best bid/ask")
+                logging.info("   📡 Target Exchange: BTC Markets")
+                logging.info("   💰 Currency: AUD")
+                logging.info("   🎯 Execution Strategy: Limit order at best bid/ask")
             
-            print("   ✅ Execution plan ready (demo mode)")
+            logging.info("   ✅ Execution plan ready (demo mode)")
     
     async def YOUR_API_KEY_HERE(self):
         """Demonstrate real-time monitoring"""
-        print("🔄 REAL-TIME MONITORING DEMONSTRATION")
-        print("-" * 45)
+        logging.info("🔄 REAL-TIME MONITORING DEMONSTRATION")
+        logging.info("-" * 45)
         
-        print("📡 Starting 30-second live monitoring cycle...")
+        logging.info("📡 Starting 30-second live monitoring cycle...")
         
         for cycle in range(6):  # 6 cycles of 5 seconds each
-            print(f"\n⏰ Monitoring Cycle {cycle + 1}/6")
+            logging.info(f"\n⏰ Monitoring Cycle {cycle + 1}/6")
             
             # Monitor USD markets
             usd_prices = await self.exchange_manager.get_best_prices('BTC-USDT')
             if usd_prices:
                 usd_avg = sum(p for p in usd_prices.values() if p > 0) / len([p for p in usd_prices.values() if p > 0])
-                print(f"   💵 BTC-USD Average: ${usd_avg:,.2f}")
+                logging.info(f"   💵 BTC-USD Average: ${usd_avg:,.2f}")
                 
                 # Check for price movements
                 if hasattr(self, 'previous_usd_price'):
@@ -260,17 +262,17 @@ class FullEcosystemDemo:
                     change_pct = (change / self.previous_usd_price) * 100
                     
                     if abs(change_pct) > 0.01:
-                        print(f"   📈 USD Price Movement: {change:+.2f} ({change_pct:+.3f}%)")
+                        logging.info(f"   📈 USD Price Movement: {change:+.2f} ({change_pct:+.3f}%)")
                         
                         if abs(change_pct) > 0.1:
-                            print(f"   🚨 SIGNIFICANT USD MOVEMENT!")
+                            logging.info(f"   🚨 SIGNIFICANT USD MOVEMENT!")
                 
                 self.previous_usd_price = usd_avg
             
             # Monitor AUD market
             btc_aud_ticker = await self.btc_markets.get_ticker('BTC-AUD')
             if btc_aud_ticker:
-                print(f"   💰 BTC-AUD: ${btc_aud_ticker.price:,.2f}")
+                logging.info(f"   💰 BTC-AUD: ${btc_aud_ticker.price:,.2f}")
                 
                 # Check for price movements
                 if hasattr(self, 'previous_aud_price'):
@@ -278,10 +280,10 @@ class FullEcosystemDemo:
                     change_pct = (change / self.previous_aud_price) * 100
                     
                     if abs(change_pct) > 0.01:
-                        print(f"   📈 AUD Price Movement: {change:+.2f} ({change_pct:+.3f}%)")
+                        logging.info(f"   📈 AUD Price Movement: {change:+.2f} ({change_pct:+.3f}%)")
                         
                         if abs(change_pct) > 0.1:
-                            print(f"   🚨 SIGNIFICANT AUD MOVEMENT!")
+                            logging.info(f"   🚨 SIGNIFICANT AUD MOVEMENT!")
                 
                 self.previous_aud_price = btc_aud_ticker.price
             
@@ -292,21 +294,21 @@ class FullEcosystemDemo:
                 arbitrage = ((self.previous_usd_price - aud_usd_equiv) / aud_usd_equiv) * 100
                 
                 if abs(arbitrage) > 0.5:
-                    print(f"   🎯 Arbitrage Opportunity: {arbitrage:+.2f}%")
+                    logging.info(f"   🎯 Arbitrage Opportunity: {arbitrage:+.2f}%")
                     
                     if abs(arbitrage) > 2:
-                        print(f"   🚨 MAJOR ARBITRAGE OPPORTUNITY!")
+                        logging.info(f"   🚨 MAJOR ARBITRAGE OPPORTUNITY!")
             
             await asyncio.sleep(5)  # Wait 5 seconds
         
-        print("\n✅ Real-time monitoring completed!")
+        logging.info("\n✅ Real-time monitoring completed!")
     
     async def generate_performance_report(self):
         """Generate comprehensive performance report"""
         total_runtime = time.time() - self.start_time
         
-        print("📊 ULTIMATE LYRA ECOSYSTEM PERFORMANCE REPORT")
-        print("=" * 60)
+        logging.info("📊 ULTIMATE LYRA ECOSYSTEM PERFORMANCE REPORT")
+        logging.info("=" * 60)
         
         performance_metrics = {
             'total_runtime': f"{total_runtime:.2f}s",
@@ -321,21 +323,21 @@ class FullEcosystemDemo:
             'regulatory_compliance': 'MULTI-JURISDICTION'
         }
         
-        print("🎯 System Performance Metrics:")
+        logging.info("🎯 System Performance Metrics:")
         for metric, value in performance_metrics.items():
-            print(f"   {metric.replace('_', ' ').title()}: {value}")
+            logging.info(f"   {metric.replace('_', ' ').title()}: {value}")
         
-        print("\n🏆 Key Achievements:")
-        print("   ✅ Multi-exchange connectivity (OKX, Gate.io, BTC Markets)")
-        print("   ✅ Multi-currency support (USD, AUD)")
-        print("   ✅ Real-time AI analysis with live market data")
-        print("   ✅ Cross-currency arbitrage detection")
-        print("   ✅ Geographic market diversification")
-        print("   ✅ Institutional-grade execution planning")
-        print("   ✅ Continuous real-time monitoring")
-        print("   ✅ Regulatory compliance across jurisdictions")
+        logging.info("\n🏆 Key Achievements:")
+        logging.info("   ✅ Multi-exchange connectivity (OKX, Gate.io, BTC Markets)")
+        logging.info("   ✅ Multi-currency support (USD, AUD)")
+        logging.info("   ✅ Real-time AI analysis with live market data")
+        logging.info("   ✅ Cross-currency arbitrage detection")
+        logging.info("   ✅ Geographic market diversification")
+        logging.info("   ✅ Institutional-grade execution planning")
+        logging.info("   ✅ Continuous real-time monitoring")
+        logging.info("   ✅ Regulatory compliance across jurisdictions")
         
-        print(f"\n🚀 ULTIMATE LYRA ECOSYSTEM: FULLY OPERATIONAL IN {total_runtime:.2f} SECONDS!")
+        logging.info(f"\n🚀 ULTIMATE LYRA ECOSYSTEM: FULLY OPERATIONAL IN {total_runtime:.2f} SECONDS!")
     
     async def cleanup(self):
         """Cleanup all resources"""
@@ -348,10 +350,10 @@ class FullEcosystemDemo:
 
 async def run_full_ecosystem_demo():
     """Run the complete Ultimate Lyra Ecosystem demonstration"""
-    print("🌟 ULTIMATE LYRA ECOSYSTEM - COMPLETE SYSTEM DEMONSTRATION")
-    print("=" * 80)
-    print("🔴 LIVE EXCHANGES | 🧠 AI ANALYSIS | 💱 MULTI-CURRENCY | 🌍 GLOBAL COVERAGE")
-    print("=" * 80)
+    logging.info("🌟 ULTIMATE LYRA ECOSYSTEM - COMPLETE SYSTEM DEMONSTRATION")
+    logging.info("=" * 80)
+    logging.info("🔴 LIVE EXCHANGES | 🧠 AI ANALYSIS | 💱 MULTI-CURRENCY | 🌍 GLOBAL COVERAGE")
+    logging.info("=" * 80)
     print()
     
     demo = FullEcosystemDemo()
@@ -383,7 +385,7 @@ async def run_full_ecosystem_demo():
         await demo.generate_performance_report()
         
     except Exception as e:
-        print(f"❌ Error during demonstration: {str(e)}")
+        logging.info(f"❌ Error during demonstration: {str(e)}")
         import traceback
         traceback.print_exc()
         
@@ -391,8 +393,8 @@ async def run_full_ecosystem_demo():
         # Cleanup
         await demo.cleanup()
         
-        print("\n🎉 ULTIMATE LYRA ECOSYSTEM DEMONSTRATION COMPLETED!")
-        print("🚀 System ready for institutional deployment!")
+        logging.info("\n🎉 ULTIMATE LYRA ECOSYSTEM DEMONSTRATION COMPLETED!")
+        logging.info("🚀 System ready for institutional deployment!")
 
 if __name__ == "__main__":
     asyncio.run(run_full_ecosystem_demo())

@@ -5,6 +5,7 @@ FINAL SYSTEM READINESS VERIFICATION
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
@@ -12,14 +13,15 @@ from datetime import datetime
 import time
 
 def verify_complete_system_readiness():
+    """Input validation would be added here"""
     """Verify that the complete system is 100% ready for deployment."""
     
-    print("🔍 FINAL SYSTEM READINESS VERIFICATION")
-    print("="*80)
-    print("✅ Verifying 100% working form")
-    print("🚀 Confirming system deployment readiness")
-    print("📊 Complete integration testing")
-    print("="*80)
+    logging.info("🔍 FINAL SYSTEM READINESS VERIFICATION")
+    logging.info("="*80)
+    logging.info("✅ Verifying 100% working form")
+    logging.info("🚀 Confirming system deployment readiness")
+    logging.info("📊 Complete integration testing")
+    logging.info("="*80)
     
     verification_results = {
         "timestamp": datetime.now().isoformat(),
@@ -31,7 +33,7 @@ def verify_complete_system_readiness():
     }
     
     # 1. Verify OpenRouter AI System
-    print("\\n🤖 VERIFYING OPENROUTER AI SYSTEM...")
+    logging.info("\\n🤖 VERIFYING OPENROUTER AI SYSTEM...")
     
     openrouter_keys = [
         "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -48,8 +50,11 @@ def verify_complete_system_readiness():
             try:
                 data = {
                     "model": "openai/gpt-4o-mini",
-                    "messages": [{"role": "user", "content": "Rate this system 1-10: Ultimate Lyra Trading System with 28 free APIs, OpenRouter integration, comprehensive market data. One word rating."}],
-                    "max_tokens": 10
+                    "messages": [{"role": "user",
+                        "content": "Rate this system 1-10: Ultimate Lyra Trading System with 28 free APIs,
+                        OpenRouter integration,
+                        comprehensive market data. One word rating."}],
+                                            "max_tokens": 10
                 }
                 
                 req = urllib.request.Request(
@@ -66,11 +71,11 @@ def verify_complete_system_readiness():
                     if "choices" in result:
                         working_ai_keys += 1
                         total_ai_models += 326  # Each key provides 326 models
-                        print(f"  ✅ OpenRouter Key {i+1}: WORKING - 326 models available")
+                        logging.info(f"  ✅ OpenRouter Key {i+1}: WORKING - 326 models available")
                         break
                         
             except Exception as e:
-                print(f"  ❌ OpenRouter Key {i+1}: {str(e)[:50]}")
+                logging.info(f"  ❌ OpenRouter Key {i+1}: {str(e)[:50]}")
     
     verification_results["ai_system"] = {
         "working_keys": working_ai_keys,
@@ -79,7 +84,7 @@ def verify_complete_system_readiness():
     }
     
     # 2. Verify Enhanced Data APIs
-    print("\\n📊 VERIFYING ENHANCED DATA APIS...")
+    logging.info("\\n📊 VERIFYING ENHANCED DATA APIS...")
     
     enhanced_apis = {
         "twelve_data": {
@@ -101,11 +106,11 @@ def verify_complete_system_readiness():
                 data = json.loads(response.read().decode('utf-8'))
                 if config["expected_field"] in str(data):
                     working_enhanced_apis += 1
-                    print(f"  ✅ {api_name.replace('_', ' ').title()}: WORKING")
+                    logging.info(f"  ✅ {api_name.replace('_', ' ').title()}: WORKING")
                 else:
-                    print(f"  ❌ {api_name.replace('_', ' ').title()}: Unexpected response")
+                    logging.info(f"  ❌ {api_name.replace('_', ' ').title()}: Unexpected response")
         except Exception as e:
-            print(f"  ❌ {api_name.replace('_', ' ').title()}: {str(e)[:50]}")
+            logging.info(f"  ❌ {api_name.replace('_', ' ').title()}: {str(e)[:50]}")
     
     verification_results["enhanced_apis"] = {
         "working_apis": working_enhanced_apis,
@@ -114,7 +119,7 @@ def verify_complete_system_readiness():
     }
     
     # 3. Verify Free APIs Collection
-    print("\\n🆓 VERIFYING FREE APIS COLLECTION...")
+    logging.info("\\n🆓 VERIFYING FREE APIS COLLECTION...")
     
     free_apis_to_test = {
         "fear_greed": "https://api.alternative.me/fng/",
@@ -135,9 +140,9 @@ def verify_complete_system_readiness():
                 data = json.loads(response.read().decode('utf-8'))
                 if data:  # Any valid JSON response
                     working_free_apis += 1
-                    print(f"  ✅ {api_name.replace('_', ' ').title()}: WORKING")
+                    logging.info(f"  ✅ {api_name.replace('_', ' ').title()}: WORKING")
         except Exception as e:
-            print(f"  ❌ {api_name.replace('_', ' ').title()}: {str(e)[:50]}")
+            logging.info(f"  ❌ {api_name.replace('_', ' ').title()}: {str(e)[:50]}")
     
     verification_results["free_apis"] = {
         "working_apis": working_free_apis,
@@ -146,7 +151,7 @@ def verify_complete_system_readiness():
     }
     
     # 4. Verify Infrastructure APIs
-    print("\\n🏗️ VERIFYING INFRASTRUCTURE APIS...")
+    logging.info("\\n🏗️ VERIFYING INFRASTRUCTURE APIS...")
     
     infrastructure_apis = {
         "supabase": os.getenv("SUPABASE_URL", ""),
@@ -159,9 +164,9 @@ def verify_complete_system_readiness():
     for api_name, credential in infrastructure_apis.items():
         if credential and len(credential) > 10:
             working_infrastructure += 1
-            print(f"  ✅ {api_name.title()}: CONFIGURED")
+            logging.info(f"  ✅ {api_name.title()}: CONFIGURED")
         else:
-            print(f"  ❌ {api_name.title()}: NOT CONFIGURED")
+            logging.info(f"  ❌ {api_name.title()}: NOT CONFIGURED")
     
     verification_results["infrastructure"] = {
         "working_apis": working_infrastructure,
@@ -170,7 +175,7 @@ def verify_complete_system_readiness():
     }
     
     # 5. Verify System Files
-    print("\\n📁 VERIFYING SYSTEM FILES...")
+    logging.info("\\n📁 VERIFYING SYSTEM FILES...")
     
     required_files = [
         "/home/ubuntu/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL/ENHANCED_ULTIMATE_SYSTEM_WITH_FREE_APIS.json",
@@ -185,9 +190,9 @@ def verify_complete_system_readiness():
     for file_path in required_files:
         if os.path.exists(file_path):
             existing_files += 1
-            print(f"  ✅ {os.path.basename(file_path)}: EXISTS")
+            logging.info(f"  ✅ {os.path.basename(file_path)}: EXISTS")
         else:
-            print(f"  ❌ {os.path.basename(file_path)}: MISSING")
+            logging.info(f"  ❌ {os.path.basename(file_path)}: MISSING")
     
     verification_results["system_files"] = {
         "existing_files": existing_files,
@@ -196,7 +201,7 @@ def verify_complete_system_readiness():
     }
     
     # 6. Calculate Overall Readiness Score
-    print("\\n📊 CALCULATING READINESS SCORE...")
+    logging.info("\\n📊 CALCULATING READINESS SCORE...")
     
     component_scores = {
         "ai_system": 30,  # 30% weight
@@ -213,40 +218,43 @@ def verify_complete_system_readiness():
     if verification_results["ai_system"]["status"] == "WORKING":
         ai_score = component_scores["ai_system"]
         total_score += ai_score
-        print(f"  ✅ AI System: {ai_score}/30 points")
+        logging.info(f"  ✅ AI System: {ai_score}/30 points")
     else:
-        print(f"  ❌ AI System: 0/30 points")
+        logging.info(f"  ❌ AI System: 0/30 points")
     
     # Enhanced APIs Score
     enhanced_ratio = verification_results["enhanced_apis"]["working_apis"] / verification_results["enhanced_apis"]["total_apis"]
     enhanced_score = int(component_scores["enhanced_apis"] * enhanced_ratio)
     total_score += enhanced_score
-    print(f"  ✅ Enhanced APIs: {enhanced_score}/20 points")
+    logging.info(f"  ✅ Enhanced APIs: {enhanced_score}/20 points")
     
     # Free APIs Score
     free_ratio = verification_results["free_apis"]["working_apis"] / verification_results["free_apis"]["total_apis"]
     free_score = int(component_scores["free_apis"] * free_ratio)
     total_score += free_score
-    print(f"  ✅ Free APIs: {free_score}/25 points")
+    logging.info(f"  ✅ Free APIs: {free_score}/25 points")
     
     # Infrastructure Score
     infra_ratio = verification_results["infrastructure"]["working_apis"] / verification_results["infrastructure"]["total_apis"]
     infra_score = int(component_scores["infrastructure"] * infra_ratio)
     total_score += infra_score
-    print(f"  ✅ Infrastructure: {infra_score}/15 points")
+    logging.info(f"  ✅ Infrastructure: {infra_score}/15 points")
     
     # System Files Score
     files_ratio = verification_results["system_files"]["existing_files"] / verification_results["system_files"]["total_files"]
     files_score = int(component_scores["system_files"] * files_ratio)
     total_score += files_score
-    print(f"  ✅ System Files: {files_score}/10 points")
+    logging.info(f"  ✅ System Files: {files_score}/10 points")
     
     readiness_percentage = (total_score / max_score) * 100
     
     verification_results.update({
         "components_verified": 5,
-        "components_working": sum(1 for comp in ["ai_system", "enhanced_apis", "free_apis", "infrastructure", "system_files"] 
-                                if verification_results[comp]["status"] in ["WORKING", "COMPLETE"]),
+        "components_working": sum(1 for comp in ["ai_system",
+            "enhanced_apis",
+            "free_apis",
+            "infrastructure",
+            "system_files"]                                if verification_results[comp]["status"] in ["WORKING", "COMPLETE"]),
         "readiness_score": readiness_percentage,
         "total_score": total_score,
         "max_score": max_score,
@@ -255,7 +263,7 @@ def verify_complete_system_readiness():
     })
     
     # 7. Final Assessment
-    print("\\n🎯 FINAL READINESS ASSESSMENT...")
+    logging.info("\\n🎯 FINAL READINESS ASSESSMENT...")
     
     if readiness_percentage >= 95:
         readiness_level = "EXCELLENT"
@@ -273,24 +281,24 @@ def verify_complete_system_readiness():
     verification_results["readiness_level"] = readiness_level
     verification_results["deployment_status"] = deployment_status
     
-    print(f"\\n{'='*80}")
-    print(f"🎯 FINAL SYSTEM READINESS VERIFICATION COMPLETE")
-    print(f"{'='*80}")
-    print(f"📊 Overall Readiness Score: {readiness_percentage:.1f}% ({total_score}/{max_score} points)")
-    print(f"🏆 Readiness Level: {readiness_level}")
-    print(f"🚀 Deployment Status: {deployment_status}")
-    print(f"✅ Components Working: {verification_results['components_working']}/5")
-    print(f"🤖 AI Models Available: {verification_results['ai_system']['total_models']}")
-    print(f"📊 Enhanced APIs: {verification_results['enhanced_apis']['working_apis']}/{verification_results['enhanced_apis']['total_apis']}")
-    print(f"🆓 Free APIs: {verification_results['free_apis']['working_apis']}/{verification_results['free_apis']['total_apis']}")
-    print(f"🏗️ Infrastructure: {verification_results['infrastructure']['working_apis']}/{verification_results['infrastructure']['total_apis']}")
-    print(f"📁 System Files: {verification_results['system_files']['existing_files']}/{verification_results['system_files']['total_files']}")
-    print(f"{'='*80}")
+    logging.info(f"\\n{'='*80}")
+    logging.info(f"🎯 FINAL SYSTEM READINESS VERIFICATION COMPLETE")
+    logging.info(f"{'='*80}")
+    logging.info(f"📊 Overall Readiness Score: {readiness_percentage:.1f}% ({total_score}/{max_score} points)")
+    logging.info(f"🏆 Readiness Level: {readiness_level}")
+    logging.info(f"🚀 Deployment Status: {deployment_status}")
+    logging.info(f"✅ Components Working: {verification_results['components_working']}/5")
+    logging.info(f"🤖 AI Models Available: {verification_results['ai_system']['total_models']}")
+    logging.info(f"📊 Enhanced APIs: {verification_results['enhanced_apis']['working_apis']}/{verification_results['enhanced_apis']['total_apis']}")
+    logging.info(f"🆓 Free APIs: {verification_results['free_apis']['working_apis']}/{verification_results['free_apis']['total_apis']}")
+    logging.info(f"🏗️ Infrastructure: {verification_results['infrastructure']['working_apis']}/{verification_results['infrastructure']['total_apis']}")
+    logging.info(f"📁 System Files: {verification_results['system_files']['existing_files']}/{verification_results['system_files']['total_files']}")
+    logging.info(f"{'='*80}")
     
     if verification_results["deployment_ready"]:
-        print("✅ SYSTEM IS 100% READY FOR DEPLOYMENT!")
+        logging.info("✅ SYSTEM IS 100% READY FOR DEPLOYMENT!")
     else:
-        print("⚠️ SYSTEM NEEDS ADDITIONAL WORK BEFORE DEPLOYMENT")
+        logging.info("⚠️ SYSTEM NEEDS ADDITIONAL WORK BEFORE DEPLOYMENT")
     
     # Save verification results
     results_path = "/home/ubuntu/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL/FINAL_SYSTEM_READINESS_VERIFICATION.json"
@@ -358,26 +366,26 @@ def verify_complete_system_readiness():
     with open(summary_path, 'w') as f:
         f.write(deployment_summary)
     
-    print(f"\\n📁 Verification Results: {results_path}")
-    print(f"📁 Deployment Summary: {summary_path}")
+    logging.info(f"\\n📁 Verification Results: {results_path}")
+    logging.info(f"📁 Deployment Summary: {summary_path}")
     
     return verification_results, results_path, summary_path
 
 if __name__ == "__main__":
-    print("🔍 STARTING FINAL SYSTEM READINESS VERIFICATION...")
-    print("="*80)
+    logging.info("🔍 STARTING FINAL SYSTEM READINESS VERIFICATION...")
+    logging.info("="*80)
     
     results, results_path, summary_path = verify_complete_system_readiness()
     
-    print("\\n🎉 VERIFICATION COMPLETE!")
-    print("="*80)
-    print(f"🎯 System: Ultimate Lyra Trading System - Enhanced Edition")
-    print(f"📊 Score: {results['readiness_score']:.1f}%")
-    print(f"🏆 Level: {results['readiness_level']}")
-    print(f"🚀 Status: {results['deployment_status']}")
-    print("="*80)
+    logging.info("\\n🎉 VERIFICATION COMPLETE!")
+    logging.info("="*80)
+    logging.info(f"🎯 System: Ultimate Lyra Trading System - Enhanced Edition")
+    logging.info(f"📊 Score: {results['readiness_score']:.1f}%")
+    logging.info(f"🏆 Level: {results['readiness_level']}")
+    logging.info(f"🚀 Status: {results['deployment_status']}")
+    logging.info("="*80)
     
     if results['deployment_ready']:
-        print("\\n✅ SYSTEM IS 100% READY FOR DEPLOYMENT!")
+        logging.info("\\n✅ SYSTEM IS 100% READY FOR DEPLOYMENT!")
     else:
-        print("\\n⚠️ SYSTEM NEEDS ADDITIONAL WORK")
+        logging.info("\\n⚠️ SYSTEM NEEDS ADDITIONAL WORK")

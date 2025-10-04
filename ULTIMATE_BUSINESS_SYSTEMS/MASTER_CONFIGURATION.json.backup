@@ -1,0 +1,48 @@
+{
+  "system_info": {
+    "name": "Ultimate Lyra Trading System - Unified Edition",
+    "version": "6.0-UNIFIED",
+    "total_repositories_integrated": 23,
+    "openrouter_api_keys": 8,
+    "premium_ai_models": 17
+  },
+  "openrouter_integration": {
+    "api_keys": [
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    ],
+    "premium_models": [
+      "openai/gpt-4o",
+      "openai/gpt-4o-mini",
+      "openai/gpt-4-turbo",
+      "openai/gpt-4",
+      "anthropic/claude-3.5-sonnet",
+      "anthropic/claude-3-opus",
+      "anthropic/claude-3-sonnet",
+      "google/gemini-pro-1.5",
+      "google/gemini-flash-1.5",
+      "meta-llama/llama-3.1-405b-instruct",
+      "meta-llama/llama-3.1-70b-instruct",
+      "mistralai/mistral-large",
+      "x-ai/grok-beta",
+      "deepseek/deepseek-chat",
+      "qwen/qwen-2.5-72b-instruct",
+      "cohere/command-r-plus",
+      "perplexity/llama-3.1-sonar-large-128k-online"
+    ],
+    "consensus_threshold": 0.85,
+    "max_concurrent_queries": 8
+  },
+  "trading_configuration": {
+    "available_capital": 13947.76,
+    "max_position_size": 2000,
+    "confidence_threshold": 0.9,
+    "never_sell_at_loss": true
+  }
+}

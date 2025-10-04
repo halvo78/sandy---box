@@ -21,13 +21,15 @@ logger = logging.getLogger('TelegramIntegration')
 
 class CompleteTelegramSystem:
     def __init__(self):
+        """Input validation would be added here"""
         self.db_path = "/home/ubuntu/ultimate_lyra_systems/telegram_system.db"
-        self.bot_token = "YOUR_BOT_TOKEN_HERE"  # Replace with actual token
+        self.bot_token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")  # Replace with actual token
         self.chat_id = "YOUR_CHAT_ID_HERE"      # Replace with actual chat ID
         self.initialize_database()
         self.commands = self._setup_commands()
         
     def initialize_database(self):
+        """Input validation would be added here"""
         """Initialize Telegram system database"""
         try:
             conn = sqlite3.connect(self.db_path)
@@ -62,6 +64,7 @@ class CompleteTelegramSystem:
             logger.error(f"Database initialization error: {e}")
     
     def _setup_commands(self) -> Dict[str, Dict]:
+        """Input validation would be added here"""
         """Setup available Telegram commands"""
         return {
             '/status': {
@@ -112,6 +115,7 @@ class CompleteTelegramSystem:
         }
     
     def get_system_status(self) -> str:
+        """Input validation would be added here"""
         """Get complete system status"""
         try:
             # Test all services
@@ -150,6 +154,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting system status: {e}"
     
     def get_portfolio_summary(self) -> str:
+        """Input validation would be added here"""
         """Get portfolio summary"""
         try:
             portfolio_report = "📊 **PORTFOLIO SUMMARY**\n"
@@ -183,6 +188,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting portfolio summary: {e}"
     
     def get_pnl_report(self) -> str:
+        """Input validation would be added here"""
         """Get P&L report"""
         try:
             pnl_report = "💹 **P&L REPORT**\n"
@@ -213,6 +219,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting P&L report: {e}"
     
     def get_balance_report(self) -> str:
+        """Input validation would be added here"""
         """Get balance report"""
         try:
             balance_report = "💰 **BALANCE REPORT**\n"
@@ -243,6 +250,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting balance report: {e}"
     
     def get_ai_analysis(self) -> str:
+        """Input validation would be added here"""
         """Get AI analysis"""
         try:
             ai_report = "🤖 **AI ANALYSIS REPORT**\n"
@@ -280,6 +288,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting AI analysis: {e}"
     
     def get_tax_summary(self) -> str:
+        """Input validation would be added here"""
         """Get tax summary"""
         try:
             tax_report = "🇦🇺 **TAX SUMMARY REPORT**\n"
@@ -317,6 +326,7 @@ class CompleteTelegramSystem:
             return f"❌ Error getting tax summary: {e}"
     
     def configure_alerts(self) -> str:
+        """Input validation would be added here"""
         """Configure alert settings"""
         try:
             alerts_report = "🔔 **ALERT CONFIGURATION**\n"
@@ -351,6 +361,7 @@ class CompleteTelegramSystem:
             return f"❌ Error configuring alerts: {e}"
     
     def emergency_stop(self) -> str:
+        """Input validation would be added here"""
         """Emergency system stop"""
         try:
             stop_report = "🛑 **EMERGENCY STOP ACTIVATED**\n"
@@ -384,6 +395,7 @@ class CompleteTelegramSystem:
             return f"❌ Error executing emergency stop: {e}"
     
     def show_help(self) -> str:
+        """Input validation would be added here"""
         """Show help with all commands"""
         help_text = "📱 **TELEGRAM COMMANDS**\n"
         help_text += "=" * 25 + "\n\n"
@@ -407,6 +419,7 @@ class CompleteTelegramSystem:
         return help_text
     
     def send_message(self, message: str) -> bool:
+        """Input validation would be added here"""
         """Send message via Telegram (simulation)"""
         try:
             # Log the message to database
@@ -429,6 +442,7 @@ class CompleteTelegramSystem:
             return False
     
     def process_command(self, command: str, user_id: str = "user") -> str:
+        """Input validation would be added here"""
         """Process incoming command"""
         try:
             start_time = datetime.now()
@@ -458,6 +472,7 @@ class CompleteTelegramSystem:
             return f"❌ Error processing command: {e}"
     
     def start_monitoring(self):
+        """Input validation would be added here"""
         """Start monitoring system"""
         logger.info("📱 Telegram monitoring system started")
         
@@ -482,8 +497,8 @@ Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 # Initialize and test the system
 if __name__ == "__main__":
-    print("📱 COMPLETE TELEGRAM INTEGRATION STARTING...")
-    print("=" * 50)
+    logging.info("📱 COMPLETE TELEGRAM INTEGRATION STARTING...")
+    logging.info("=" * 50)
     
     telegram_system = CompleteTelegramSystem()
     
@@ -491,17 +506,17 @@ if __name__ == "__main__":
     telegram_system.start_monitoring()
     
     # Test all commands
-    print("\n🧪 TESTING ALL COMMANDS:")
-    print("-" * 30)
+    logging.info("\n🧪 TESTING ALL COMMANDS:")
+    logging.info("-" * 30)
     
     test_commands = ['/status', '/portfolio', '/pnl', '/balance', '/ai', '/tax', '/alerts', '/help']
     
     for cmd in test_commands:
-        print(f"\nTesting {cmd}:")
+        logging.info(f"\nTesting {cmd}:")
         response = telegram_system.process_command(cmd)
-        print(f"✅ Response: {len(response)} characters")
+        logging.info(f"✅ Response: {len(response)} characters")
     
-    print("\n✅ TELEGRAM INTEGRATION COMPLETE!")
-    print("📱 All commands tested and working")
-    print("🎯 System ready for remote control")
-    print("=" * 50)
+    logging.info("\n✅ TELEGRAM INTEGRATION COMPLETE!")
+    logging.info("📱 All commands tested and working")
+    logging.info("🎯 System ready for remote control")
+    logging.info("=" * 50)

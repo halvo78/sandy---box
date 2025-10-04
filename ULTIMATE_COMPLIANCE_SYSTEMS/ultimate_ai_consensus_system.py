@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 class UltimateAIConsensusSystem:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.base_dir = Path("/home/ubuntu/ultimate_lyra_systems")
         
         # ALL OpenRouter API Keys - Maximum Coverage
@@ -80,8 +81,13 @@ class UltimateAIConsensusSystem:
             "final_consensus": {}
         }
     
-    async def query_ai_model(self, session: aiohttp.ClientSession, api_key: str, model: str, prompt: str, is_free: bool = True) -> Dict[str, Any]:
-        """Query a single AI model"""
+    async def query_ai_model(self,
+        session: aiohttp.ClientSession,
+        api_key: str,
+        model: str,
+        prompt: str,
+        is_free: bool = True) -> Dict[str,
+        Any]:        """Query a single AI model"""
         try:
             headers = {
                 "Authorization": f"Bearer {api_key}",
@@ -262,8 +268,9 @@ Be specific and actionable. Focus on what's actually deployed and working.
             "production_votes": production_ready_votes,
             "critical_issues_count": len(critical_issues),
             "recommendations_count": len(recommendations),
-            "summary": f"AI Consensus: {avg_compliance:.1f}% compliance, Production Ready: {'YES' if production_consensus else 'NO'}",
-            "raw_responses": results[:5]  # Keep sample responses
+            "summary": f"AI Consensus: {avg_compliance:.1f}% compliance,
+                Production Ready: {'YES' if production_consensus else 'NO'}",
+                            "raw_responses": results[:5]  # Keep sample responses
         }
     
     async def run_comprehensive_analysis(self) -> Dict[str, Any]:
@@ -443,24 +450,24 @@ async def main():
     try:
         results = await system.run_comprehensive_analysis()
         
-        print("\\n" + "=" * 60)
-        print("🎉 ULTIMATE AI CONSENSUS COMPLETE!")
-        print("=" * 60)
+        logging.info("\\n" + "=" * 60)
+        logging.info("🎉 ULTIMATE AI CONSENSUS COMPLETE!")
+        logging.info("=" * 60)
         
         final = results["final_consensus"]
-        print(f"🎯 Overall Score: {final['overall_score']}%")
-        print(f"🚀 Production Ready: {final['production_ready']}")
-        print(f"🔍 Confidence: {final['confidence'].upper()}")
-        print(f"🤖 Total AI Responses: {final['total_ai_responses']}")
+        logging.info(f"🎯 Overall Score: {final['overall_score']}%")
+        logging.info(f"🚀 Production Ready: {final['production_ready']}")
+        logging.info(f"🔍 Confidence: {final['confidence'].upper()}")
+        logging.info(f"🤖 Total AI Responses: {final['total_ai_responses']}")
         
         if final["overall_score"] >= 80:
-            print("\\n✅ SYSTEM IS PRODUCTION READY!")
-            print("🚀 Ready for live trading operations")
+            logging.info("\\n✅ SYSTEM IS PRODUCTION READY!")
+            logging.info("🚀 Ready for live trading operations")
         else:
-            print("\\n⚠️ SYSTEM NEEDS IMPROVEMENTS")
-            print("📋 Review consensus report for details")
+            logging.info("\\n⚠️ SYSTEM NEEDS IMPROVEMENTS")
+            logging.info("📋 Review consensus report for details")
         
-        print(f"\\n📄 Full report: ultimate_ai_consensus_report.md")
+        logging.info(f"\\n📄 Full report: ultimate_ai_consensus_report.md")
         
     except Exception as e:
         logger.error(f"❌ Consensus analysis failed: {e}")

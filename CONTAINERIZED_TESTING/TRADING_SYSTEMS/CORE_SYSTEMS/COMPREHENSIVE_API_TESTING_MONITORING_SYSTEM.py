@@ -5,6 +5,7 @@ Tests all paid APIs, checks rate limits, monitors usage, and provides control me
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
@@ -209,16 +210,16 @@ class ComprehensiveAPITestingSystem:
         self.rate_limiters = {}
         self.monitoring_active = False
         
-        print("🔍 COMPREHENSIVE API TESTING, MONITORING & RATE CONTROL SYSTEM")
-        print("="*80)
-        print("🎯 Goal: Test, monitor, and control all paid API usage")
-        print(f"🔑 Paid APIs: {len(self.paid_apis)} configured")
-        print("📊 Features: Connection testing, rate limiting, usage monitoring, cost tracking")
-        print("="*80)
+        logging.info("🔍 COMPREHENSIVE API TESTING, MONITORING & RATE CONTROL SYSTEM")
+        logging.info("="*80)
+        logging.info("🎯 Goal: Test, monitor, and control all paid API usage")
+        logging.info(f"🔑 Paid APIs: {len(self.paid_apis)} configured")
+        logging.info("📊 Features: Connection testing, rate limiting, usage monitoring, cost tracking")
+        logging.info("="*80)
     
     def test_api_connection(self, api_name, api_config):
         """Test connection to a specific API."""
-        print(f"🔌 Testing {api_name.upper()} API connection...")
+        logging.info(f"🔌 Testing {api_name.upper()} API connection...")
         
         if not api_config["api_key"]:
             return {
@@ -345,7 +346,7 @@ class ComprehensiveAPITestingSystem:
     
     def test_all_apis(self):
         """Test all configured paid APIs."""
-        print("🔌 Testing all paid API connections...")
+        logging.info("🔌 Testing all paid API connections...")
         
         test_results = []
         
@@ -365,18 +366,18 @@ class ComprehensiveAPITestingSystem:
                     response_time = result.get("response_time", 0)
                     
                     if status == "SUCCESS":
-                        print(f"  ✅ {api_name.upper()}: Connected ({response_time}s)")
+                        logging.info(f"  ✅ {api_name.upper()}: Connected ({response_time}s)")
                     elif status == "CONFIGURED":
-                        print(f"  ⚙️ {api_name.upper()}: Configured (not tested)")
+                        logging.info(f"  ⚙️ {api_name.upper()}: Configured (not tested)")
                     elif status == "AUTH_FAILED":
-                        print(f"  🔑 {api_name.upper()}: Authentication failed")
+                        logging.info(f"  🔑 {api_name.upper()}: Authentication failed")
                     elif status == "RATE_LIMITED":
-                        print(f"  ⏱️ {api_name.upper()}: Rate limited")
+                        logging.info(f"  ⏱️ {api_name.upper()}: Rate limited")
                     else:
-                        print(f"  ❌ {api_name.upper()}: Failed - {result.get('error', 'Unknown error')}")
+                        logging.info(f"  ❌ {api_name.upper()}: Failed - {result.get('error', 'Unknown error')}")
                         
                 except Exception as e:
-                    print(f"  ❌ {api_name.upper()}: Test failed - {e}")
+                    logging.info(f"  ❌ {api_name.upper()}: Test failed - {e}")
         
         return test_results
     
@@ -470,7 +471,7 @@ class ComprehensiveAPITestingSystem:
     
     def generate_api_monitoring_report(self, test_results):
         """Generate comprehensive API monitoring and control report."""
-        print("📋 Generating API monitoring and control report...")
+        logging.info("📋 Generating API monitoring and control report...")
         
         # Get usage statistics
         usage_stats = self.get_usage_statistics()
@@ -619,15 +620,15 @@ Each API has configured rate limits to prevent overuse and cost overruns:
         with open(json_path, 'w') as f:
             json.dump(usage_data, f, indent=2, default=str)
         
-        print(f"  ✅ Monitoring report saved to {report_path}")
-        print(f"  ✅ Usage data saved to {json_path}")
+        logging.info(f"  ✅ Monitoring report saved to {report_path}")
+        logging.info(f"  ✅ Usage data saved to {json_path}")
         
         return report_path, json_path
     
     def run_comprehensive_api_testing(self):
         """Run the complete API testing, monitoring, and control system."""
-        print("🔍 Starting Comprehensive API Testing & Monitoring...")
-        print("="*80)
+        logging.info("🔍 Starting Comprehensive API Testing & Monitoring...")
+        logging.info("="*80)
         
         start_time = datetime.now()
         
@@ -648,16 +649,16 @@ Each API has configured rate limits to prevent overuse and cost overruns:
         successful_tests = len([r for r in test_results if r["status"] == "SUCCESS"])
         success_rate = (successful_tests / len(test_results)) * 100 if test_results else 0
         
-        print("\\n" + "="*80)
-        print("🎉 COMPREHENSIVE API TESTING & MONITORING COMPLETE!")
-        print("="*80)
-        print(f"⏱️ Testing Duration: {duration:.1f} seconds")
-        print(f"🔑 APIs Tested: {len(test_results)}")
-        print(f"✅ Successful Connections: {successful_tests}")
-        print(f"📊 Success Rate: {success_rate:.1f}%")
-        print(f"⚙️ Rate Limiters Configured: {len(self.rate_limiters)}")
-        print(f"📋 Reports Generated: 2 files")
-        print("="*80)
+        logging.info("\\n" + "="*80)
+        logging.info("🎉 COMPREHENSIVE API TESTING & MONITORING COMPLETE!")
+        logging.info("="*80)
+        logging.info(f"⏱️ Testing Duration: {duration:.1f} seconds")
+        logging.info(f"🔑 APIs Tested: {len(test_results)}")
+        logging.info(f"✅ Successful Connections: {successful_tests}")
+        logging.info(f"📊 Success Rate: {success_rate:.1f}%")
+        logging.info(f"⚙️ Rate Limiters Configured: {len(self.rate_limiters)}")
+        logging.info(f"📋 Reports Generated: 2 files")
+        logging.info("="*80)
         
         return test_results, report_path, json_path
 
@@ -668,8 +669,8 @@ if __name__ == "__main__":
     successful_tests = len([r for r in test_results if r["status"] == "SUCCESS"])
     success_rate = (successful_tests / len(test_results)) * 100 if test_results else 0
     
-    print(f"\\n🎯 Comprehensive API Testing Complete!")
-    print(f"✅ Success Rate: {success_rate:.1f}%")
-    print(f"📊 {successful_tests}/{len(test_results)} APIs working")
-    print(f"📁 Reports ready for download!")
-    print(f"🎉 ALL PAID APIS TESTED, MONITORED & CONTROLLED!")
+    logging.info(f"\\n🎯 Comprehensive API Testing Complete!")
+    logging.info(f"✅ Success Rate: {success_rate:.1f}%")
+    logging.info(f"📊 {successful_tests}/{len(test_results)} APIs working")
+    logging.info(f"📁 Reports ready for download!")
+    logging.info(f"🎉 ALL PAID APIS TESTED, MONITORED & CONTROLLED!")

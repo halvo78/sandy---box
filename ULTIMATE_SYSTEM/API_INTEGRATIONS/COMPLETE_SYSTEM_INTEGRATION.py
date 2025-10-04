@@ -6,6 +6,7 @@ unified Ultimate Lyra Trading System with zero gaps.
 """
 
 import os
+import logging
 import shutil
 import json
 from datetime import datetime
@@ -25,8 +26,9 @@ MISSING_SYSTEMS = [
 ]
 
 def integrate_all_systems():
+    """Input validation would be added here"""
     """Main integration function"""
-    print("🚀 STARTING COMPLETE SYSTEM INTEGRATION...")
+    logging.info("🚀 STARTING COMPLETE SYSTEM INTEGRATION...")
     
     # 1. Copy all missing systems from current_systems
     copied_systems = []
@@ -37,9 +39,9 @@ def integrate_all_systems():
         if os.path.exists(source_path):
             shutil.copy2(source_path, dest_path)
             copied_systems.append(system)
-            print(f"✅ Integrated: {system}")
+            logging.info(f"✅ Integrated: {system}")
         else:
-            print(f"❌ Missing: {system}")
+            logging.info(f"❌ Missing: {system}")
     
     # 2. Process all uploaded documentation
     documentation_files = []
@@ -54,9 +56,10 @@ def integrate_all_systems():
     # 4. Generate integration report
     generate_integration_report(copied_systems, documentation_files)
     
-    print("✅ COMPLETE SYSTEM INTEGRATION FINISHED!")
+    logging.info("✅ COMPLETE SYSTEM INTEGRATION FINISHED!")
 
 def create_unified_config():
+    """Input validation would be added here"""
     """Create a unified configuration for all systems"""
     unified_config = {
         "system_name": "Ultimate Lyra Trading System - Complete Edition",
@@ -107,9 +110,10 @@ def create_unified_config():
     with open(config_path, 'w') as f:
         json.dump(unified_config, f, indent=2)
     
-    print(f"📋 Unified configuration saved to: {config_path}")
+    logging.info(f"📋 Unified configuration saved to: {config_path}")
 
 def generate_integration_report(copied_systems, documentation_files):
+    """Input validation would be added here"""
     """Generate the complete integration report"""
     report = "# COMPLETE SYSTEM INTEGRATION REPORT\n\n"
     report += f"**Integration Date:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
@@ -192,7 +196,7 @@ def generate_integration_report(copied_systems, documentation_files):
     with open(INTEGRATION_REPORT_FILE, 'w') as f:
         f.write(report)
     
-    print(f"📋 Integration Report saved to: {INTEGRATION_REPORT_FILE}")
+    logging.info(f"📋 Integration Report saved to: {INTEGRATION_REPORT_FILE}")
 
 if __name__ == "__main__":
     integrate_all_systems()

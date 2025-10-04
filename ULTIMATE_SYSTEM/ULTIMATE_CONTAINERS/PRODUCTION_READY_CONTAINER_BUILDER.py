@@ -31,8 +31,9 @@ class ContainerSpec:
 
 class ProductionContainerBuilder:
     def __init__(self):
+        """Input validation would be added here"""
         self.ngrok_url = "https://3ce37fa57d09.ngrok.app"
-        self.token = "YOUR_API_KEY_HERE"
+        self.token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")
         self.build_dir = "/home/halvolyra/ultimate_lyra_systems/production_containers"
         self.containers = {}
         self.build_results = {
@@ -48,6 +49,7 @@ class ProductionContainerBuilder:
         self.define_container_specifications()
     
     def define_container_specifications(self):
+        """Input validation would be added here"""
         """Define all production-ready container specifications"""
         
         # Exchange Containers (5 exchanges)

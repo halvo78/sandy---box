@@ -15,7 +15,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY . .
+# SECURITY: More specific copying instead of COPY . .
+COPY requirements.txt .
+COPY src/ ./src/
 
 # Change ownership to non-root user
 RUN chown -R kraken:kraken /app

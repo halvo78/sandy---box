@@ -87,6 +87,7 @@ class SystemDiscovery:
 
 class UltimateComprehensiveDiscoverySystem:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.db_path = "/home/ubuntu/ultimate_lyra_systems/ultimate_discovery.db"
         self.discovery_results: Optional[SystemDiscovery] = None
         self.openrouter_keys = []
@@ -275,8 +276,22 @@ class UltimateComprehensiveDiscoverySystem:
             for directory in search_directories:
                 try:
                     result = subprocess.run(
-                        ["find", directory, "-type", "f", "-name", "*.py", "-o", "-name", "*.json", "-o", "-name", "*.db", "-o", "-name", "*.log"],
-                        capture_output=True, text=True, timeout=30
+                        ["find",
+                            directory,
+                            "-type",
+                            "f",
+                            "-name",
+                            "*.py",
+                            "-o",
+                            "-name",
+                            "*.json",
+                            "-o",
+                            "-name",
+                            "*.db",
+                            "-o",
+                            "-name",
+                            "*.log"],
+                                                    capture_output=True, text=True, timeout=30
                     )
                     
                     if result.returncode == 0:
@@ -315,8 +330,14 @@ class UltimateComprehensiveDiscoverySystem:
                 # Search for Python files
                 try:
                     result = subprocess.run(
-                        ["find", "/home/ubuntu/ultimate_lyra_systems", "-name", f"*{exchange_name}*", "-o", "-name", "*exchange*"],
-                        capture_output=True, text=True, timeout=10
+                        ["find",
+                            "/home/ubuntu/ultimate_lyra_systems",
+                            "-name",
+                            f"*{exchange_name}*",
+                            "-o",
+                            "-name",
+                            "*exchange*"],
+                                                    capture_output=True, text=True, timeout=10
                     )
                     
                     if result.returncode == 0:
@@ -496,8 +517,10 @@ class UltimateComprehensiveDiscoverySystem:
                 if result.returncode == 0:
                     lines = result.stdout.split('\n')
                     for line in lines:
-                        if 'python3' in line and any(keyword in line.lower() for keyword in ['ultimate', 'exchange', 'portfolio', 'trading']):
-                            # Extract service name
+                        if 'python3' in line and any(keyword in line.lower() for keyword in ['ultimate',
+                            'exchange',
+                            'portfolio',
+                            'trading']):                            # Extract service name
                             if 'ULTIMATE' in line:
                                 service_name = line.split('ULTIMATE')[1].split('.py')[0].strip('_')
                                 active_services.append(f"ULTIMATE{service_name}")
@@ -650,8 +673,16 @@ class UltimateComprehensiveDiscoverySystem:
             for query in search_queries:
                 try:
                     result = subprocess.run(
-                        ["manus-mcp-cli", "tool", "call", "search", "--server", "notion", "--input", f'{{"query": "{query}", "limit": 3}}'],
-                        capture_output=True, text=True, timeout=30
+                        ["manus-mcp-cli",
+                            "tool",
+                            "call",
+                            "search",
+                            "--server",
+                            "notion",
+                            "--input",
+                            f'{{"query": "{query}",
+                            "limit": 3}}'],
+                                                    capture_output=True, text=True, timeout=30
                     )
                     
                     if result.returncode == 0:
@@ -740,8 +771,10 @@ class UltimateComprehensiveDiscoverySystem:
                             'messages': [
                                 {
                                     'role': 'user',
-                                    'content': 'Analyze this cryptocurrency portfolio for optimization: BTC 40%, ETH 30%, SOL 20%, USDT 10%. Provide one specific recommendation.'
-                                }
+                                    'content': 'Analyze this cryptocurrency portfolio for optimization: BTC 40%,
+                                        ETH 30%,
+                                        SOL 20%,
+                                        USDT 10%. Provide one specific recommendation.'                                }
                             ],
                             'max_tokens': 150,
                             'temperature': 0.7
@@ -973,13 +1006,13 @@ class UltimateComprehensiveDiscoverySystem:
 async def main():
     """Main function to run ultimate comprehensive discovery"""
     try:
-        print("🔍 ULTIMATE COMPREHENSIVE DISCOVERY SYSTEM")
-        print("=" * 60)
-        print("🎯 Systematic discovery of all exchange work, APIs, vault data, and system files")
-        print("🤖 OpenRouter AI consensus testing with all available models")
-        print("🏦 Complete exchange system reconstruction and validation")
-        print("🔑 Comprehensive API credential discovery and integration")
-        print("=" * 60)
+        logging.info("🔍 ULTIMATE COMPREHENSIVE DISCOVERY SYSTEM")
+        logging.info("=" * 60)
+        logging.info("🎯 Systematic discovery of all exchange work, APIs, vault data, and system files")
+        logging.info("🤖 OpenRouter AI consensus testing with all available models")
+        logging.info("🏦 Complete exchange system reconstruction and validation")
+        logging.info("🔑 Comprehensive API credential discovery and integration")
+        logging.info("=" * 60)
         
         # Initialize discovery system
         discovery_system = UltimateComprehensiveDiscoverySystem()
@@ -992,17 +1025,17 @@ async def main():
         
         # Generate and display report
         report = discovery_system.generate_discovery_report()
-        print("\n" + report)
+        logging.info("\n" + report)
         
-        print("\n🤖 OPENROUTER TESTING RESULTS")
-        print("=" * 60)
-        print(f"Total Keys Tested: {openrouter_results.get('total_keys', 0)}")
-        print(f"Working Keys: {openrouter_results.get('working_keys', 0)}")
-        print(f"Success Rate: {openrouter_results.get('consensus_results', {}).get('success_rate', 0):.1f}%")
+        logging.info("\n🤖 OPENROUTER TESTING RESULTS")
+        logging.info("=" * 60)
+        logging.info(f"Total Keys Tested: {openrouter_results.get('total_keys', 0)}")
+        logging.info(f"Working Keys: {openrouter_results.get('working_keys', 0)}")
+        logging.info(f"Success Rate: {openrouter_results.get('consensus_results', {}).get('success_rate', 0):.1f}%")
         
         if openrouter_results.get('best_performing_key'):
             best_key = openrouter_results['best_performing_key']
-            print(f"Best Performing Key: #{best_key['key_index']} ({best_key['working_model_count']} models)")
+            logging.info(f"Best Performing Key: #{best_key['key_index']} ({best_key['working_model_count']} models)")
         
         return {
             'discovery_results': discovery_results,
@@ -1011,7 +1044,7 @@ async def main():
         }
         
     except Exception as e:
-        print(f"❌ DISCOVERY ERROR: {e}")
+        logging.info(f"❌ DISCOVERY ERROR: {e}")
         return None
 
 if __name__ == "__main__":

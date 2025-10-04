@@ -7,6 +7,7 @@ Sets up public access to all components of the system
 """
 
 import subprocess
+import logging
 import time
 import json
 import requests
@@ -15,6 +16,7 @@ from datetime import datetime
 
 class NgrokCompleteSetup:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.services = {
             8080: "Production Dashboard",
             8082: "OKX Exchange Service", 
@@ -34,8 +36,8 @@ class NgrokCompleteSetup:
             response = requests.get("http://localhost:4040/api/tunnels", timeout=5)
             if response.status_code == 200:
                 tunnels = response.json()
-                print("✅ Ngrok is already running!")
-                print(f"📊 Found {len(tunnels.get('tunnels', []))} existing tunnels")
+                logging.info("✅ Ngrok is already running!")
+                logging.info(f"📊 Found {len(tunnels.get('tunnels', []))} existing tunnels")
                 return True
         except:
             pass
@@ -43,31 +45,31 @@ class NgrokCompleteSetup:
     
     def verify_services(self):
         """Verify all services are running"""
-        print("🔍 VERIFYING ALL SERVICES...")
-        print("=" * 40)
+        logging.info("🔍 VERIFYING ALL SERVICES...")
+        logging.info("=" * 40)
         
         running_services = {}
         for port, name in self.services.items():
             try:
                 response = requests.get(f"http://localhost:{port}/health", timeout=3)
                 if response.status_code == 200:
-                    print(f"✅ {name} (Port {port}): OPERATIONAL")
+                    logging.info(f"✅ {name} (Port {port}): OPERATIONAL")
                     running_services[port] = name
                 else:
-                    print(f"⚠️ {name} (Port {port}): HTTP {response.status_code}")
+                    logging.info(f"⚠️ {name} (Port {port}): HTTP {response.status_code}")
             except:
                 try:
                     # Try basic connection for non-health endpoints
                     response = requests.get(f"http://localhost:{port}/", timeout=3)
                     if response.status_code == 200:
-                        print(f"✅ {name} (Port {port}): OPERATIONAL (no health endpoint)")
+                        logging.info(f"✅ {name} (Port {port}): OPERATIONAL (no health endpoint)")
                         running_services[port] = name
                     else:
-                        print(f"⚠️ {name} (Port {port}): HTTP {response.status_code}")
+                        logging.info(f"⚠️ {name} (Port {port}): HTTP {response.status_code}")
                 except:
-                    print(f"❌ {name} (Port {port}): OFFLINE")
+                    logging.info(f"❌ {name} (Port {port}): OFFLINE")
         
-        print(f"\n📊 SUMMARY: {len(running_services)}/{len(self.services)} services operational")
+        logging.info(f"\n📊 SUMMARY: {len(running_services)}/{len(self.services)} services operational")
         return running_services
     
     def create_ngrok_config(self):
@@ -123,17 +125,17 @@ tunnels:
         with open(config_path, 'w') as f:
             f.write(config_content.strip())
         
-        print(f"✅ Ngrok configuration created at {config_path}")
+        logging.info(f"✅ Ngrok configuration created at {config_path}")
         return config_path
     
     def setup_public_access(self):
         """Set up public access for all services"""
-        print("🌐 SETTING UP PUBLIC ACCESS...")
-        print("=" * 40)
+        logging.info("🌐 SETTING UP PUBLIC ACCESS...")
+        logging.info("=" * 40)
         
         # Check if ngrok is already running
         if self.check_existing_ngrok():
-            print("🔄 Using existing ngrok tunnel")
+            logging.info("🔄 Using existing ngrok tunnel")
             self.display_access_urls()
             return True
         
@@ -141,10 +143,10 @@ tunnels:
         running_services = self.verify_services()
         
         if not running_services:
-            print("❌ No services are running! Please start services first.")
+            logging.info("❌ No services are running! Please start services first.")
             return False
         
-        print(f"\n🚀 Setting up public access for {len(running_services)} services...")
+        logging.info(f"\n🚀 Setting up public access for {len(running_services)} services...")
         
         # Create access URLs based on existing domain
         access_urls = {}
@@ -168,8 +170,8 @@ tunnels:
     
     def display_access_urls(self):
         """Display all access URLs"""
-        print("\n🌐 PUBLIC ACCESS URLS")
-        print("=" * 50)
+        logging.info("\n🌐 PUBLIC ACCESS URLS")
+        logging.info("=" * 50)
         
         if not self.ngrok_tunnels:
             # Create default URLs based on existing setup
@@ -179,21 +181,21 @@ tunnels:
                 else:
                     public_url = f"https://{self.base_domain}:{port}"
                 
-                print(f"🔗 {name}")
-                print(f"   Local:  http://localhost:{port}")
-                print(f"   Public: {public_url}")
+                logging.info(f"🔗 {name}")
+                logging.info(f"   Local:  http://localhost:{port}")
+                logging.info(f"   Public: {public_url}")
                 print()
         else:
             for port, info in self.ngrok_tunnels.items():
-                print(f"🔗 {info['name']}")
-                print(f"   Local:  {info['local_url']}")
-                print(f"   Public: {info['public_url']}")
+                logging.info(f"🔗 {info['name']}")
+                logging.info(f"   Local:  {info['local_url']}")
+                logging.info(f"   Public: {info['public_url']}")
                 print()
     
     def test_public_access(self):
         """Test public access to all services"""
-        print("🧪 TESTING PUBLIC ACCESS...")
-        print("=" * 40)
+        logging.info("🧪 TESTING PUBLIC ACCESS...")
+        logging.info("=" * 40)
         
         test_results = {}
         for port, name in self.services.items():
@@ -202,17 +204,17 @@ tunnels:
             try:
                 response = requests.get(public_url, timeout=10)
                 if response.status_code == 200:
-                    print(f"✅ {name}: PUBLIC ACCESS OK")
+                    logging.info(f"✅ {name}: PUBLIC ACCESS OK")
                     test_results[port] = "SUCCESS"
                 else:
-                    print(f"⚠️ {name}: HTTP {response.status_code}")
+                    logging.info(f"⚠️ {name}: HTTP {response.status_code}")
                     test_results[port] = f"HTTP {response.status_code}"
             except Exception as e:
-                print(f"❌ {name}: {str(e)[:50]}...")
+                logging.info(f"❌ {name}: {str(e)[:50]}...")
                 test_results[port] = "FAILED"
         
         success_count = sum(1 for result in test_results.values() if result == "SUCCESS")
-        print(f"\n📊 PUBLIC ACCESS SUMMARY: {success_count}/{len(self.services)} services accessible")
+        logging.info(f"\n📊 PUBLIC ACCESS SUMMARY: {success_count}/{len(self.services)} services accessible")
         
         return test_results
     
@@ -323,7 +325,7 @@ tunnels:
         with open(dashboard_path, 'w') as f:
             f.write(dashboard_html)
         
-        print(f"✅ Public access dashboard created: {dashboard_path}")
+        logging.info(f"✅ Public access dashboard created: {dashboard_path}")
         return dashboard_path
     
     def generate_access_report(self):
@@ -390,18 +392,19 @@ All services are mobile-responsive and can be accessed from any device using the
         with open(report_path, 'w') as f:
             f.write(report)
         
-        print(f"✅ Access report generated: {report_path}")
+        logging.info(f"✅ Access report generated: {report_path}")
         return report_path
 
 def main():
-    print("🌐 NGROK COMPLETE SETUP STARTING...")
-    print("=" * 50)
+    """TODO: Add function documentation"""
+    logging.info("🌐 NGROK COMPLETE SETUP STARTING...")
+    logging.info("=" * 50)
     
     setup = NgrokCompleteSetup()
     
     # Set up public access
     if setup.setup_public_access():
-        print("\n✅ PUBLIC ACCESS SETUP COMPLETE!")
+        logging.info("\n✅ PUBLIC ACCESS SETUP COMPLETE!")
         
         # Test public access
         setup.test_public_access()
@@ -412,17 +415,17 @@ def main():
         # Generate access report
         setup.generate_access_report()
         
-        print("\n🎉 NGROK SETUP COMPLETE!")
-        print("=" * 50)
-        print("🌐 Your Ultimate Portfolio System is now publicly accessible!")
-        print(f"📊 Main Dashboard: https://{setup.base_domain}")
-        print(f"🏦 Real Exchange Portfolio: https://{setup.base_domain}:8105")
-        print("📱 All services are mobile-responsive")
-        print("=" * 50)
+        logging.info("\n🎉 NGROK SETUP COMPLETE!")
+        logging.info("=" * 50)
+        logging.info("🌐 Your Ultimate Portfolio System is now publicly accessible!")
+        logging.info(f"📊 Main Dashboard: https://{setup.base_domain}")
+        logging.info(f"🏦 Real Exchange Portfolio: https://{setup.base_domain}:8105")
+        logging.info("📱 All services are mobile-responsive")
+        logging.info("=" * 50)
         
     else:
-        print("❌ PUBLIC ACCESS SETUP FAILED!")
-        print("Please ensure services are running and try again.")
+        logging.info("❌ PUBLIC ACCESS SETUP FAILED!")
+        logging.info("Please ensure services are running and try again.")
 
 if __name__ == "__main__":
     main()

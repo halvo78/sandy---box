@@ -6,6 +6,7 @@ to compile EVERY API key and connection available (excluding exchanges).
 """
 
 import os
+import logging
 import json
 import re
 import glob
@@ -172,16 +173,16 @@ class CompleteAPIKeyDiscoverySystem:
             ]
         }
         
-        print("🔍 COMPLETE API KEY DISCOVERY SYSTEM")
-        print("="*70)
-        print("🎯 Goal: Discover ALL API keys from ALL sources (excluding exchanges)")
-        print("📊 Sources: Environment, GitHub repos, configuration files")
-        print("🔑 Patterns: 25+ API types with comprehensive pattern matching")
-        print("="*70)
+        logging.info("🔍 COMPLETE API KEY DISCOVERY SYSTEM")
+        logging.info("="*70)
+        logging.info("🎯 Goal: Discover ALL API keys from ALL sources (excluding exchanges)")
+        logging.info("📊 Sources: Environment, GitHub repos, configuration files")
+        logging.info("🔑 Patterns: 25+ API types with comprehensive pattern matching")
+        logging.info("="*70)
     
     def scan_environment_variables(self):
         """Scan all environment variables for API keys."""
-        print("🔍 Scanning environment variables for API keys...")
+        logging.info("🔍 Scanning environment variables for API keys...")
         
         env_apis = {}
         
@@ -210,13 +211,13 @@ class CompleteAPIKeyDiscoverySystem:
                         break
         
         self.discovered_apis["environment_apis"] = env_apis
-        print(f"  ✅ Found {len(env_apis)} API keys in environment variables")
+        logging.info(f"  ✅ Found {len(env_apis)} API keys in environment variables")
         
         return env_apis
     
     def scan_github_repositories(self):
         """Scan all GitHub repositories for API keys and configurations."""
-        print("🔍 Scanning GitHub repositories for API keys...")
+        logging.info("🔍 Scanning GitHub repositories for API keys...")
         
         github_apis = {}
         
@@ -272,13 +273,13 @@ class CompleteAPIKeyDiscoverySystem:
                             continue
         
         self.discovered_apis["github_apis"] = github_apis
-        print(f"  ✅ Found {len(github_apis)} API references in GitHub repositories")
+        logging.info(f"  ✅ Found {len(github_apis)} API references in GitHub repositories")
         
         return github_apis
     
     def scan_configuration_files(self):
         """Scan configuration files for API keys."""
-        print("🔍 Scanning configuration files for API keys...")
+        logging.info("🔍 Scanning configuration files for API keys...")
         
         config_apis = {}
         
@@ -333,13 +334,13 @@ class CompleteAPIKeyDiscoverySystem:
                     continue
         
         self.discovered_apis["configuration_apis"] = config_apis
-        print(f"  ✅ Found {len(config_apis)} API keys in configuration files")
+        logging.info(f"  ✅ Found {len(config_apis)} API keys in configuration files")
         
         return config_apis
     
     def extract_openrouter_keys(self):
         """Extract all OpenRouter API keys for special handling."""
-        print("🔍 Extracting OpenRouter API keys...")
+        logging.info("🔍 Extracting OpenRouter API keys...")
         
         openrouter_keys = []
         
@@ -381,13 +382,13 @@ class CompleteAPIKeyDiscoverySystem:
                 })
         
         self.discovered_apis["openrouter_keys"] = openrouter_keys
-        print(f"  ✅ Found {len(openrouter_keys)} OpenRouter API keys")
+        logging.info(f"  ✅ Found {len(openrouter_keys)} OpenRouter API keys")
         
         return openrouter_keys
     
     def categorize_apis_by_type(self):
         """Categorize all discovered APIs by their type and purpose."""
-        print("📊 Categorizing APIs by type and purpose...")
+        logging.info("📊 Categorizing APIs by type and purpose...")
         
         # Combine all discovered APIs
         all_apis = {
@@ -416,13 +417,13 @@ class CompleteAPIKeyDiscoverySystem:
                     category_apis[api_key] = api_info
             
             self.discovered_apis[category] = category_apis
-            print(f"  📂 {category.replace('_', ' ').title()}: {len(category_apis)} APIs")
+            logging.info(f"  📂 {category.replace('_', ' ').title()}: {len(category_apis)} APIs")
         
         return categories
     
     def generate_system_ready_api_configuration(self):
         """Generate API configuration in format ready for system utilization."""
-        print("⚙️ Generating system-ready API configuration...")
+        logging.info("⚙️ Generating system-ready API configuration...")
         
         # Create comprehensive API configuration
         api_config = {
@@ -571,7 +572,7 @@ class CompleteAPIKeyDiscoverySystem:
     
     def generate_api_utilization_files(self, api_config):
         """Generate files ready for API utilization in the system."""
-        print("📁 Generating API utilization files...")
+        logging.info("📁 Generating API utilization files...")
         
         # Generate Python configuration file
         python_config = f'''#!/usr/bin/env python3
@@ -687,10 +688,10 @@ def get_all_api_keys():
     }}
 
 if __name__ == "__main__":
-    print("🔑 Complete API Configuration Loaded")
-    print(f"📊 Total APIs: {api_config["metadata"]["total_apis"]}")
-    print(f"🤖 OpenRouter Keys: {{len(api_config.openrouter_keys)}}")
-    print(f"✅ Working APIs: {{len(api_config.get_all_working_apis())}}")
+    logging.info("🔑 Complete API Configuration Loaded")
+    logging.info(f"📊 Total APIs: {api_config["metadata"]["total_apis"]}")
+    logging.info(f"🤖 OpenRouter Keys: {{len(api_config.openrouter_keys)}}")
+    logging.info(f"✅ Working APIs: {{len(api_config.get_all_working_apis())}}")
 '''
         
         # Save Python configuration
@@ -714,16 +715,16 @@ if __name__ == "__main__":
         with open(env_file_path, 'w') as f:
             f.write(env_content)
         
-        print(f"  ✅ Python configuration: {python_config_path}")
-        print(f"  ✅ JSON configuration: {json_config_path}")
-        print(f"  ✅ Environment file: {env_file_path}")
+        logging.info(f"  ✅ Python configuration: {python_config_path}")
+        logging.info(f"  ✅ JSON configuration: {json_config_path}")
+        logging.info(f"  ✅ Environment file: {env_file_path}")
         
         return python_config_path, json_config_path, env_file_path
     
     def run_complete_api_discovery(self):
         """Run the complete API key discovery process."""
-        print("🔍 Starting Complete API Key Discovery...")
-        print("="*70)
+        logging.info("🔍 Starting Complete API Key Discovery...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -741,24 +742,24 @@ if __name__ == "__main__":
         
         for step_name, step_function in discovery_steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 
                 if step_name == "Generate System-Ready Configuration":
                     api_config = step_function()
                 else:
                     step_function()
                 
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
                 
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
                 return False
         
         # Generate utilization files
         if api_config:
-            print(f"\\n🔄 Generate API Utilization Files...")
+            logging.info(f"\\n🔄 Generate API Utilization Files...")
             python_path, json_path, env_path = self.generate_api_utilization_files(api_config)
-            print(f"  ✅ Generate API Utilization Files completed")
+            logging.info(f"  ✅ Generate API Utilization Files completed")
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
@@ -770,17 +771,17 @@ if __name__ == "__main__":
         total_openrouter_keys = len(self.discovered_apis["openrouter_keys"])
         total_apis = api_config["metadata"]["total_apis"] if api_config else 0
         
-        print("\\n" + "="*70)
-        print("🎉 COMPLETE API KEY DISCOVERY COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Discovery Duration: {duration:.1f} seconds")
-        print(f"🔑 Environment APIs: {total_env_apis}")
-        print(f"📁 GitHub APIs: {total_github_apis}")
-        print(f"⚙️ Configuration APIs: {total_config_apis}")
-        print(f"🤖 OpenRouter Keys: {total_openrouter_keys}")
-        print(f"📊 Total Ready APIs: {total_apis}")
-        print(f"📁 Files Generated: 3 utilization files")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 COMPLETE API KEY DISCOVERY COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Discovery Duration: {duration:.1f} seconds")
+        logging.info(f"🔑 Environment APIs: {total_env_apis}")
+        logging.info(f"📁 GitHub APIs: {total_github_apis}")
+        logging.info(f"⚙️ Configuration APIs: {total_config_apis}")
+        logging.info(f"🤖 OpenRouter Keys: {total_openrouter_keys}")
+        logging.info(f"📊 Total Ready APIs: {total_apis}")
+        logging.info(f"📁 Files Generated: 3 utilization files")
+        logging.info("="*70)
         
         return True
 
@@ -790,9 +791,9 @@ if __name__ == "__main__":
     
     if success:
         total_apis = len(discoverer.discovered_apis["environment_apis"])
-        print(f"\\n🎯 Complete API Discovery Successful!")
-        print(f"🔑 {total_apis} APIs ready for system utilization")
-        print(f"📁 Configuration files generated and ready!")
-        print(f"🎉 ALL APIS COMPILED AND READY FOR USE!")
+        logging.info(f"\\n🎯 Complete API Discovery Successful!")
+        logging.info(f"🔑 {total_apis} APIs ready for system utilization")
+        logging.info(f"📁 Configuration files generated and ready!")
+        logging.info(f"🎉 ALL APIS COMPILED AND READY FOR USE!")
     else:
-        print(f"\\n❌ Complete API discovery failed!")
+        logging.info(f"\\n❌ Complete API discovery failed!")

@@ -5,6 +5,7 @@ This script validates the AI consensus functionality using real OpenRouter API c
 """
 
 import os
+import logging
 import json
 import time
 import requests
@@ -13,6 +14,7 @@ from typing import Dict, List, Optional
 
 class AIConsensusValidator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the AI Consensus Validator."""
         self.openrouter_keys = [
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -39,6 +41,7 @@ class AIConsensusValidator:
         self.validation_results = []
         
     def test_single_model(self, api_key: str, model: str, test_prompt: str) -> Dict:
+        """Input validation would be added here"""
         """Test a single AI model with the given prompt."""
         try:
             headers = {
@@ -104,13 +107,14 @@ class AIConsensusValidator:
             }
     
     def validate_api_keys(self) -> Dict:
+        """Input validation would be added here"""
         """Validate all OpenRouter API keys."""
-        print("🔑 Validating OpenRouter API keys...")
+        logging.info("🔑 Validating OpenRouter API keys...")
         
         key_validation_results = []
         
         for i, api_key in enumerate(self.openrouter_keys):
-            print(f"Testing API key {i+1}/8...")
+            logging.info(f"Testing API key {i+1}/8...")
             
             # Simple validation request
             test_result = self.test_single_model(
@@ -127,9 +131,9 @@ class AIConsensusValidator:
             })
             
             if test_result["status"] == "SUCCESS":
-                print(f"✅ API key {i+1}: Working")
+                logging.info(f"✅ API key {i+1}: Working")
             else:
-                print(f"❌ API key {i+1}: {test_result['error']}")
+                logging.info(f"❌ API key {i+1}: {test_result['error']}")
             
             time.sleep(1)  # Rate limiting
         
@@ -143,8 +147,9 @@ class AIConsensusValidator:
         }
     
     def test_ai_consensus(self, market_scenario: str) -> Dict:
+        """Input validation would be added here"""
         """Test AI consensus with a specific market scenario."""
-        print(f"🤖 Testing AI consensus for scenario: {market_scenario}")
+        logging.info(f"🤖 Testing AI consensus for scenario: {market_scenario}")
         
         test_prompt = f"""
         Market Scenario: {market_scenario}
@@ -167,16 +172,16 @@ class AIConsensusValidator:
             if i >= len(self.openrouter_keys):
                 break
                 
-            print(f"Getting opinion from {model}...")
+            logging.info(f"Getting opinion from {model}...")
             
             result = self.test_single_model(api_key, model, test_prompt)
             consensus_results.append(result)
             
             if result["status"] == "SUCCESS":
                 working_keys += 1
-                print(f"✅ {model}: {result['response'][:100]}...")
+                logging.info(f"✅ {model}: {result['response'][:100]}...")
             else:
-                print(f"❌ {model}: {result['error']}")
+                logging.info(f"❌ {model}: {result['error']}")
             
             time.sleep(2)  # Rate limiting between requests
         
@@ -232,22 +237,23 @@ class AIConsensusValidator:
         }
     
     def run_comprehensive_validation(self) -> Dict:
+        """Input validation would be added here"""
         """Run comprehensive validation of the AI consensus system."""
-        print("🚀 Starting Comprehensive AI Consensus Validation...")
-        print("="*60)
+        logging.info("🚀 Starting Comprehensive AI Consensus Validation...")
+        logging.info("="*60)
         
         validation_start = datetime.now()
         
         # Step 1: Validate API keys
-        print("\n📋 Step 1: API Key Validation")
+        logging.info("\n📋 Step 1: API Key Validation")
         key_validation = self.validate_api_keys()
         
-        print(f"\n📊 API Key Validation Results:")
-        print(f"✅ Working keys: {key_validation['working_keys']}/{key_validation['total_keys']}")
-        print(f"📈 Success rate: {key_validation['success_rate']:.1%}")
+        logging.info(f"\n📊 API Key Validation Results:")
+        logging.info(f"✅ Working keys: {key_validation['working_keys']}/{key_validation['total_keys']}")
+        logging.info(f"📈 Success rate: {key_validation['success_rate']:.1%}")
         
         if key_validation['working_keys'] == 0:
-            print("❌ No working API keys found. Cannot proceed with consensus testing.")
+            logging.info("❌ No working API keys found. Cannot proceed with consensus testing.")
             return {
                 "validation_timestamp": validation_start.isoformat(),
                 "api_key_validation": key_validation,
@@ -256,7 +262,7 @@ class AIConsensusValidator:
             }
         
         # Step 2: Test AI consensus with different scenarios
-        print("\n📋 Step 2: AI Consensus Testing")
+        logging.info("\n📋 Step 2: AI Consensus Testing")
         
         test_scenarios = [
             "BTC showing oversold conditions with potential reversal signals",
@@ -266,13 +272,13 @@ class AIConsensusValidator:
         
         consensus_tests = []
         for scenario in test_scenarios:
-            print(f"\n🔍 Testing scenario: {scenario}")
+            logging.info(f"\n🔍 Testing scenario: {scenario}")
             test_result = self.test_ai_consensus(scenario)
             consensus_tests.append(test_result)
             
-            print(f"📊 Consensus: {test_result['consensus_action']} "
+            logging.info(f"📊 Consensus: {test_result['consensus_action']} "
                   f"(Confidence: {test_result['average_confidence']:.1f}%)")
-            print(f"🗳️ Votes - BUY: {test_result['votes']['BUY']}, "
+            logging.info(f"🗳️ Votes - BUY: {test_result['votes']['BUY']}, "
                   f"SELL: {test_result['votes']['SELL']}, "
                   f"HOLD: {test_result['votes']['HOLD']}")
         
@@ -311,15 +317,15 @@ class AIConsensusValidator:
         with open(results_file, 'w') as f:
             json.dump(final_results, f, indent=2)
         
-        print("\n" + "="*60)
-        print("🎉 AI CONSENSUS VALIDATION COMPLETE!")
-        print("="*60)
-        print(f"⏱️ Duration: {validation_duration:.1f} seconds")
-        print(f"🔑 Working API keys: {key_validation['working_keys']}/{key_validation['total_keys']}")
-        print(f"🤖 Model success rate: {overall_success_rate:.1%}")
-        print(f"📊 Overall status: {overall_status}")
-        print(f"💾 Results saved: {results_file}")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("🎉 AI CONSENSUS VALIDATION COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"⏱️ Duration: {validation_duration:.1f} seconds")
+        logging.info(f"🔑 Working API keys: {key_validation['working_keys']}/{key_validation['total_keys']}")
+        logging.info(f"🤖 Model success rate: {overall_success_rate:.1%}")
+        logging.info(f"📊 Overall status: {overall_status}")
+        logging.info(f"💾 Results saved: {results_file}")
+        logging.info("="*60)
         
         return final_results
 

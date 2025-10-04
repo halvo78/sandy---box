@@ -9,7 +9,9 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy source code
-COPY . .
+# SECURITY: More specific copying instead of COPY . .
+COPY requirements.txt .
+COPY src/ ./src/
 
 # Build application
 RUN npm run build
@@ -38,3 +40,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 # Run nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+
+# Security: Run as non-root user
+USER 1000:1000

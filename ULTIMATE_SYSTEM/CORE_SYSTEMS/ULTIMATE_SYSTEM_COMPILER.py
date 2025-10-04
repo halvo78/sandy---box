@@ -6,6 +6,7 @@ production-ready Ultimate Lyra Trading System.
 """
 
 import os
+import logging
 import json
 import shutil
 from datetime import datetime
@@ -16,15 +17,16 @@ COMPILED_SYSTEM_DIR = "/home/ubuntu/ULTIMATE_LYRA_DEFINITIVE_SYSTEM/"
 COMPILATION_REPORT_FILE = "/home/ubuntu/ultimate_lyra_v5/ULTIMATE_COMPILATION_REPORT.md"
 
 def compile_ultimate_system():
+    """Input validation would be added here"""
     """Main compilation function"""
-    print("🚀 STARTING ULTIMATE SYSTEM COMPILATION...")
+    logging.info("🚀 STARTING ULTIMATE SYSTEM COMPILATION...")
     
     # 1. Load success components
     try:
         with open(SUCCESS_COMPONENTS_FILE, 'r') as f:
             success_components = json.load(f)
     except FileNotFoundError:
-        print("❌ CRITICAL ERROR: Success components file not found.")
+        logging.info("❌ CRITICAL ERROR: Success components file not found.")
         return
     
     # 2. Create definitive system directory
@@ -64,13 +66,13 @@ def compile_ultimate_system():
                         shutil.copytree(source_path, dest_path)
                     
                     compilation_stats[category]["copied"] += 1
-                    print(f"✅ Copied: {component['name']}")
+                    logging.info(f"✅ Copied: {component['name']}")
                 else:
                     compilation_stats[category]["failed"] += 1
-                    print(f"❌ Missing: {component['name']}")
+                    logging.info(f"❌ Missing: {component['name']}")
             except Exception as e:
                 compilation_stats[category]["failed"] += 1
-                print(f"❌ Error copying {component['name']}: {e}")
+                logging.info(f"❌ Error copying {component['name']}: {e}")
     
     # 5. Create master configuration
     create_master_configuration(success_components)
@@ -81,9 +83,10 @@ def compile_ultimate_system():
     # 7. Generate compilation report
     generate_compilation_report(compilation_stats, success_components)
     
-    print("✅ ULTIMATE SYSTEM COMPILATION COMPLETE!")
+    logging.info("✅ ULTIMATE SYSTEM COMPILATION COMPLETE!")
 
 def create_master_configuration(components):
+    """Input validation would be added here"""
     """Create the master configuration for the definitive system"""
     master_config = {
         "system_name": "Ultimate Lyra Trading System - Definitive Edition",
@@ -142,9 +145,10 @@ def create_master_configuration(components):
     with open(config_path, 'w') as f:
         json.dump(master_config, f, indent=2)
     
-    print(f"📋 Master configuration saved to: {config_path}")
+    logging.info(f"📋 Master configuration saved to: {config_path}")
 
 def create_startup_script():
+    """Input validation would be added here"""
     """Create the startup script for the definitive system"""
     startup_script = """#!/bin/bash
 # ULTIMATE LYRA TRADING SYSTEM - DEFINITIVE STARTUP SCRIPT
@@ -197,9 +201,10 @@ wait
     
     # Make executable
     os.chmod(startup_path, 0o755)
-    print(f"🚀 Startup script created: {startup_path}")
+    logging.info(f"🚀 Startup script created: {startup_path}")
 
 def generate_compilation_report(stats, components):
+    """Input validation would be added here"""
     """Generate the ultimate compilation report"""
     report = "# ULTIMATE SYSTEM COMPILATION REPORT\n\n"
     report += f"**Compilation Date:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
@@ -257,7 +262,7 @@ def generate_compilation_report(stats, components):
     with open(COMPILATION_REPORT_FILE, 'w') as f:
         f.write(report)
     
-    print(f"📋 Ultimate Compilation Report saved to: {COMPILATION_REPORT_FILE}")
+    logging.info(f"📋 Ultimate Compilation Report saved to: {COMPILATION_REPORT_FILE}")
 
 if __name__ == "__main__":
     compile_ultimate_system()

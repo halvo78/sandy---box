@@ -5,6 +5,7 @@ Removes duplicates and keeps only the best working version of each API
 """
 
 import json
+import logging
 import os
 from datetime import datetime
 from collections import defaultdict
@@ -35,15 +36,15 @@ class APIDeduplicationSystem:
             "datadog": 5, "sentry": 5, "new_relic": 5
         }
         
-        print("🔧 API DEDUPLICATION SYSTEM")
-        print("="*60)
-        print("🎯 Goal: Remove duplicates, keep only working versions")
-        print("📊 Priority: Environment > Hardcoded > Free > File references")
-        print("="*60)
+        logging.info("🔧 API DEDUPLICATION SYSTEM")
+        logging.info("="*60)
+        logging.info("🎯 Goal: Remove duplicates, keep only working versions")
+        logging.info("📊 Priority: Environment > Hardcoded > Free > File references")
+        logging.info("="*60)
     
     def load_master_api_list(self):
         """Load the master API list for deduplication."""
-        print("📂 Loading master API list...")
+        logging.info("📂 Loading master API list...")
         
         json_path = os.path.join(self.repo_dir, "ULTIMATE_API_MASTER_LIST.json")
         
@@ -51,16 +52,16 @@ class APIDeduplicationSystem:
             with open(json_path, 'r') as f:
                 data = json.load(f)
             
-            print(f"  ✅ Loaded {data['metadata']['total_apis']} APIs from master list")
+            logging.info(f"  ✅ Loaded {data['metadata']['total_apis']} APIs from master list")
             return data
             
         except Exception as e:
-            print(f"  ❌ Failed to load master list: {e}")
+            logging.info(f"  ❌ Failed to load master list: {e}")
             return None
     
     def deduplicate_apis(self, master_data):
         """Remove duplicates and keep only the best version of each API."""
-        print("🔧 Deduplicating APIs...")
+        logging.info("🔧 Deduplicating APIs...")
         
         # Group APIs by type and value
         api_groups = defaultdict(list)
@@ -82,7 +83,7 @@ class APIDeduplicationSystem:
                     "info": api_info
                 })
         
-        print(f"  📊 Found {len(api_groups)} unique API groups")
+        logging.info(f"  📊 Found {len(api_groups)} unique API groups")
         
         # Select best version from each group
         deduplicated_apis = {}
@@ -90,6 +91,7 @@ class APIDeduplicationSystem:
         for group_key, api_list in api_groups.items():
             # Sort by priority (source priority + ready status + value length)
             def get_priority(api):
+                """TODO: Add function documentation"""
                 source_score = self.source_priority.get(api["info"].get("source", ""), 0)
                 ready_score = 5 if api["info"].get("ready_for_use", False) else 0
                 type_score = self.api_type_priority.get(api["info"].get("api_type", ""), 0)
@@ -122,14 +124,14 @@ class APIDeduplicationSystem:
                 "duplicates_removed": len(api_list) - 1
             }
         
-        print(f"  ✅ Deduplicated to {len(deduplicated_apis)} unique APIs")
-        print(f"  🗑️ Removed {master_data['metadata']['total_apis'] - len(deduplicated_apis)} duplicates")
+        logging.info(f"  ✅ Deduplicated to {len(deduplicated_apis)} unique APIs")
+        logging.info(f"  🗑️ Removed {master_data['metadata']['total_apis'] - len(deduplicated_apis)} duplicates")
         
         return deduplicated_apis
     
     def categorize_deduplicated_apis(self, deduplicated_apis):
         """Categorize the deduplicated APIs."""
-        print("📊 Categorizing deduplicated APIs...")
+        logging.info("📊 Categorizing deduplicated APIs...")
         
         categories = {
             "ai_ml_apis": {},
@@ -195,13 +197,13 @@ class APIDeduplicationSystem:
         # Print category summary
         for category, apis in categories.items():
             if apis:
-                print(f"  📂 {category.replace('_', ' ').title()}: {len(apis)} APIs")
+                logging.info(f"  📂 {category.replace('_', ' ').title()}: {len(apis)} APIs")
         
         return categories
     
     def generate_clean_api_configuration(self, categorized_apis):
         """Generate clean, deduplicated API configuration files."""
-        print("📁 Generating clean API configuration files...")
+        logging.info("📁 Generating clean API configuration files...")
         
         total_apis = sum(len(apis) for apis in categorized_apis.values())
         
@@ -312,11 +314,11 @@ if __name__ == "__main__":
     total_apis = len(clean_api_config.ai_ml_apis)
     openrouter_keys = len(clean_api_config.get_openrouter_keys())
     
-    print("🔑 Clean Deduplicated API Configuration Loaded")
-    print(f"📊 Total Unique APIs: {total_apis}")
-    print(f"✅ Working APIs: {working_apis}")
-    print(f"🤖 OpenRouter Keys: {openrouter_keys}")
-    print("🎯 Ready for system utilization!")
+    logging.info("🔑 Clean Deduplicated API Configuration Loaded")
+    logging.info(f"📊 Total Unique APIs: {total_apis}")
+    logging.info(f"✅ Working APIs: {working_apis}")
+    logging.info(f"🤖 OpenRouter Keys: {openrouter_keys}")
+    logging.info("🎯 Ready for system utilization!")
 '''
         
         # Save Python configuration
@@ -360,15 +362,15 @@ if __name__ == "__main__":
         with open(env_path, 'w') as f:
             f.write(env_content)
         
-        print(f"  ✅ Python config: {python_path}")
-        print(f"  ✅ JSON config: {json_path}")
-        print(f"  ✅ Environment file: {env_path}")
+        logging.info(f"  ✅ Python config: {python_path}")
+        logging.info(f"  ✅ JSON config: {json_path}")
+        logging.info(f"  ✅ Environment file: {env_path}")
         
         return python_path, json_path, env_path, total_apis
     
     def generate_deduplication_report(self, original_count, final_count, categorized_apis):
         """Generate a deduplication report."""
-        print("📋 Generating deduplication report...")
+        logging.info("📋 Generating deduplication report...")
         
         working_apis = sum(1 for apis in categorized_apis.values() 
                           for api in apis.values() if api["ready_for_use"])
@@ -436,14 +438,14 @@ All duplicates have been removed while preserving the highest quality version of
         with open(report_path, 'w') as f:
             f.write(report_content)
         
-        print(f"  ✅ Deduplication report: {report_path}")
+        logging.info(f"  ✅ Deduplication report: {report_path}")
         
         return report_path
     
     def run_deduplication(self):
         """Run the complete API deduplication process."""
-        print("🔧 Starting API Deduplication Process...")
-        print("="*60)
+        logging.info("🔧 Starting API Deduplication Process...")
+        logging.info("="*60)
         
         start_time = datetime.now()
         
@@ -472,16 +474,16 @@ All duplicates have been removed while preserving the highest quality version of
         working_apis = sum(1 for apis in categorized_apis.values() 
                           for api in apis.values() if api["ready_for_use"])
         
-        print("\\n" + "="*60)
-        print("🎉 API DEDUPLICATION COMPLETE!")
-        print("="*60)
-        print(f"⏱️ Processing Duration: {duration:.1f} seconds")
-        print(f"📊 Original APIs: {original_count}")
-        print(f"🔧 Deduplicated APIs: {final_count}")
-        print(f"🗑️ Duplicates Removed: {original_count - final_count}")
-        print(f"✅ Working APIs: {working_apis}")
-        print(f"📁 Files Generated: 4")
-        print("="*60)
+        logging.info("\\n" + "="*60)
+        logging.info("🎉 API DEDUPLICATION COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"⏱️ Processing Duration: {duration:.1f} seconds")
+        logging.info(f"📊 Original APIs: {original_count}")
+        logging.info(f"🔧 Deduplicated APIs: {final_count}")
+        logging.info(f"🗑️ Duplicates Removed: {original_count - final_count}")
+        logging.info(f"✅ Working APIs: {working_apis}")
+        logging.info(f"📁 Files Generated: 4")
+        logging.info("="*60)
         
         return True
 
@@ -490,9 +492,9 @@ if __name__ == "__main__":
     success = deduplicator.run_deduplication()
     
     if success:
-        print(f"\\n🎯 API Deduplication Successful!")
-        print(f"🔧 Clean, optimized API configuration ready!")
-        print(f"✅ Only working versions preserved!")
-        print(f"🎉 CLEANEST API COLLECTION EVER CREATED!")
+        logging.info(f"\\n🎯 API Deduplication Successful!")
+        logging.info(f"🔧 Clean, optimized API configuration ready!")
+        logging.info(f"✅ Only working versions preserved!")
+        logging.info(f"🎉 CLEANEST API COLLECTION EVER CREATED!")
     else:
-        print(f"\\n❌ API deduplication failed!")
+        logging.info(f"\\n❌ API deduplication failed!")

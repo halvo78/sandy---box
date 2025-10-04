@@ -1,0 +1,401 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T02:32:16.847593",
+    "working_keys": 4,
+    "total_models": 52,
+    "unlimited_access": true,
+    "commissioning_mode": true
+  },
+  "api_keys": [
+    {
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dec6712c",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "status": "\u2705 WORKING",
+      "models_available": 326,
+      "unlimited": true
+    },
+    {
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d0adb755",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "status": "\u2705 WORKING",
+      "models_available": 326,
+      "unlimited": false
+    },
+    {
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d38580de",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "status": "\u2705 WORKING",
+      "models_available": 326,
+      "unlimited": false
+    },
+    {
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...fb3636b8",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "status": "\u2705 WORKING",
+      "models_available": 326,
+      "unlimited": false
+    }
+  ],
+  "models": {
+    "premium_models": {
+      "openai/gpt-4o": {
+        "provider": "OpenAI",
+        "type": "chat",
+        "context": 128000,
+        "cost": "high"
+      },
+      "openai/gpt-4o-mini": {
+        "provider": "OpenAI",
+        "type": "chat",
+        "context": 128000,
+        "cost": "low"
+      },
+      "openai/gpt-4-turbo": {
+        "provider": "OpenAI",
+        "type": "chat",
+        "context": 128000,
+        "cost": "high"
+      },
+      "openai/gpt-4": {
+        "provider": "OpenAI",
+        "type": "chat",
+        "context": 8192,
+        "cost": "high"
+      },
+      "openai/gpt-3.5-turbo": {
+        "provider": "OpenAI",
+        "type": "chat",
+        "context": 16385,
+        "cost": "low"
+      },
+      "anthropic/claude-3.5-sonnet": {
+        "provider": "Anthropic",
+        "type": "chat",
+        "context": 200000,
+        "cost": "high"
+      },
+      "anthropic/claude-3-opus": {
+        "provider": "Anthropic",
+        "type": "chat",
+        "context": 200000,
+        "cost": "high"
+      },
+      "anthropic/claude-3-sonnet": {
+        "provider": "Anthropic",
+        "type": "chat",
+        "context": 200000,
+        "cost": "medium"
+      },
+      "anthropic/claude-3-haiku": {
+        "provider": "Anthropic",
+        "type": "chat",
+        "context": 200000,
+        "cost": "low"
+      },
+      "google/gemini-pro-1.5": {
+        "provider": "Google",
+        "type": "chat",
+        "context": 2000000,
+        "cost": "medium"
+      },
+      "google/gemini-flash-1.5": {
+        "provider": "Google",
+        "type": "chat",
+        "context": 1000000,
+        "cost": "low"
+      },
+      "google/gemini-pro": {
+        "provider": "Google",
+        "type": "chat",
+        "context": 32768,
+        "cost": "medium"
+      },
+      "meta-llama/llama-3.1-405b-instruct": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 131072,
+        "cost": "high"
+      },
+      "meta-llama/llama-3.1-70b-instruct": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 131072,
+        "cost": "medium"
+      },
+      "meta-llama/llama-3.1-8b-instruct": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 131072,
+        "cost": "low"
+      },
+      "meta-llama/llama-3-70b-instruct": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 8192,
+        "cost": "medium"
+      },
+      "mistralai/mistral-large": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 128000,
+        "cost": "high"
+      },
+      "mistralai/mistral-medium": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 32768,
+        "cost": "medium"
+      },
+      "mistralai/mistral-small": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 32768,
+        "cost": "low"
+      },
+      "mistralai/mixtral-8x7b-instruct": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 32768,
+        "cost": "medium"
+      },
+      "mistralai/mixtral-8x22b-instruct": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 65536,
+        "cost": "high"
+      },
+      "cohere/command-r-plus": {
+        "provider": "Cohere",
+        "type": "chat",
+        "context": 128000,
+        "cost": "high"
+      },
+      "cohere/command-r": {
+        "provider": "Cohere",
+        "type": "chat",
+        "context": 128000,
+        "cost": "medium"
+      },
+      "cohere/command": {
+        "provider": "Cohere",
+        "type": "chat",
+        "context": 4096,
+        "cost": "medium"
+      },
+      "perplexity/llama-3.1-sonar-large-128k-online": {
+        "provider": "Perplexity",
+        "type": "chat",
+        "context": 127072,
+        "cost": "high"
+      },
+      "perplexity/llama-3.1-sonar-small-128k-online": {
+        "provider": "Perplexity",
+        "type": "chat",
+        "context": 127072,
+        "cost": "medium"
+      },
+      "perplexity/llama-3.1-sonar-large-128k-chat": {
+        "provider": "Perplexity",
+        "type": "chat",
+        "context": 131072,
+        "cost": "high"
+      },
+      "x-ai/grok-beta": {
+        "provider": "xAI",
+        "type": "chat",
+        "context": 131072,
+        "cost": "high"
+      },
+      "deepseek/deepseek-chat": {
+        "provider": "DeepSeek",
+        "type": "chat",
+        "context": 32768,
+        "cost": "low"
+      },
+      "deepseek/deepseek-coder": {
+        "provider": "DeepSeek",
+        "type": "chat",
+        "context": 16384,
+        "cost": "low"
+      },
+      "qwen/qwen-2-72b-instruct": {
+        "provider": "Qwen",
+        "type": "chat",
+        "context": 32768,
+        "cost": "medium"
+      },
+      "qwen/qwen-2-7b-instruct": {
+        "provider": "Qwen",
+        "type": "chat",
+        "context": 32768,
+        "cost": "low"
+      }
+    },
+    "free_models": {
+      "openai/gpt-3.5-turbo-instruct": {
+        "provider": "OpenAI",
+        "type": "completion",
+        "context": 4096,
+        "cost": "free"
+      },
+      "meta-llama/llama-3-8b-instruct:free": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 8192,
+        "cost": "free"
+      },
+      "meta-llama/llama-3.1-8b-instruct:free": {
+        "provider": "Meta",
+        "type": "chat",
+        "context": 131072,
+        "cost": "free"
+      },
+      "mistralai/mistral-7b-instruct:free": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 32768,
+        "cost": "free"
+      },
+      "mistralai/mixtral-8x7b-instruct:free": {
+        "provider": "Mistral",
+        "type": "chat",
+        "context": 32768,
+        "cost": "free"
+      },
+      "google/gemma-7b-it:free": {
+        "provider": "Google",
+        "type": "chat",
+        "context": 8192,
+        "cost": "free"
+      },
+      "google/gemma-2-9b-it:free": {
+        "provider": "Google",
+        "type": "chat",
+        "context": 8192,
+        "cost": "free"
+      },
+      "huggingfaceh4/zephyr-7b-beta:free": {
+        "provider": "Hugging Face",
+        "type": "chat",
+        "context": 32768,
+        "cost": "free"
+      },
+      "microsoft/wizardlm-2-8x22b:free": {
+        "provider": "Microsoft",
+        "type": "chat",
+        "context": 65536,
+        "cost": "free"
+      },
+      "anthropic/claude-instant-1": {
+        "provider": "Anthropic",
+        "type": "chat",
+        "context": 100000,
+        "cost": "free"
+      },
+      "nousresearch/nous-capybara-7b:free": {
+        "provider": "Nous Research",
+        "type": "chat",
+        "context": 8192,
+        "cost": "free"
+      },
+      "openchat/openchat-7b:free": {
+        "provider": "OpenChat",
+        "type": "chat",
+        "context": 8192,
+        "cost": "free"
+      },
+      "gryphe/mythomist-7b:free": {
+        "provider": "Gryphe",
+        "type": "chat",
+        "context": 32768,
+        "cost": "free"
+      }
+    },
+    "specialized_models": {
+      "codellama/codellama-34b-instruct": {
+        "provider": "Meta",
+        "type": "code",
+        "context": 16384,
+        "cost": "medium"
+      },
+      "codellama/codellama-13b-instruct": {
+        "provider": "Meta",
+        "type": "code",
+        "context": 16384,
+        "cost": "low"
+      },
+      "codellama/codellama-7b-instruct": {
+        "provider": "Meta",
+        "type": "code",
+        "context": 16384,
+        "cost": "low"
+      },
+      "microsoft/wizardmath-70b": {
+        "provider": "Microsoft",
+        "type": "math",
+        "context": 8192,
+        "cost": "medium"
+      },
+      "google/gemma-2-27b-it": {
+        "provider": "Google",
+        "type": "reasoning",
+        "context": 8192,
+        "cost": "medium"
+      },
+      "anthropic/claude-3-haiku:beta": {
+        "provider": "Anthropic",
+        "type": "creative",
+        "context": 200000,
+        "cost": "low"
+      },
+      "mistralai/mistral-7b-instruct:nitro": {
+        "provider": "Mistral",
+        "type": "creative",
+        "context": 32768,
+        "cost": "low"
+      }
+    }
+  },
+  "configuration": {
+    "base_url": "https://openrouter.ai/api/v1",
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "generation": "/generation"
+    },
+    "headers": {
+      "Authorization": "Bearer {api_key}",
+      "Content-Type": "application/json",
+      "HTTP-Referer": "https://ultimate-lyra-trading.com",
+      "X-Title": "Ultimate Lyra Trading System"
+    },
+    "rate_limits": {
+      "commissioning": "unlimited",
+      "production": "varies by model"
+    }
+  },
+  "consensus_strategy": {
+    "primary_models": [
+      "openai/gpt-4o",
+      "anthropic/claude-3.5-sonnet",
+      "meta-llama/llama-3.1-405b-instruct",
+      "mistralai/mistral-large",
+      "google/gemini-pro-1.5"
+    ],
+    "fallback_models": [
+      "openai/gpt-4o-mini",
+      "anthropic/claude-3-haiku",
+      "meta-llama/llama-3.1-70b-instruct",
+      "mistralai/mixtral-8x22b-instruct",
+      "google/gemini-flash-1.5"
+    ],
+    "free_models": [
+      "meta-llama/llama-3.1-8b-instruct:free",
+      "mistralai/mistral-7b-instruct:free",
+      "google/gemma-2-9b-it:free"
+    ],
+    "consensus_method": "weighted_voting",
+    "confidence_threshold": 0.7,
+    "max_models_per_decision": 5
+  }
+}

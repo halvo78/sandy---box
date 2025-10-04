@@ -5,6 +5,7 @@ Deploy existing containers and services without complex builds
 """
 
 import os
+import logging
 import sys
 import json
 import subprocess
@@ -13,6 +14,7 @@ from pathlib import Path
 
 class SimplifiedDeployment:
     def __init__(self):
+        """Input validation would be added here"""
         self.base_dir = Path("/home/ubuntu/ultimate_lyra_systems")
         self.deployment_status = {
             "timestamp": datetime.now().isoformat(),
@@ -22,8 +24,9 @@ class SimplifiedDeployment:
         }
     
     def create_simple_docker_compose(self):
+        """Input validation would be added here"""
         """Create simplified docker-compose with existing images"""
-        print("🐳 Creating simplified Docker Compose...")
+        logging.info("🐳 Creating simplified Docker Compose...")
         
         compose_config = """version: '3.8'
 
@@ -128,11 +131,12 @@ services:
         with open(self.base_dir / "production_containers" / "docker-compose-simple.yml", "w") as f:
             f.write(compose_config)
         
-        print("✅ Simplified Docker Compose created")
+        logging.info("✅ Simplified Docker Compose created")
     
     def create_monitoring_config(self):
+        """Input validation would be added here"""
         """Create basic monitoring configuration"""
-        print("📊 Creating monitoring configuration...")
+        logging.info("📊 Creating monitoring configuration...")
         
         monitoring_dir = self.base_dir / "monitoring"
         monitoring_dir.mkdir(exist_ok=True)
@@ -156,11 +160,12 @@ scrape_configs:
         with open(monitoring_dir / "prometheus.yml", "w") as f:
             f.write(prometheus_config)
         
-        print("✅ Monitoring configuration created")
+        logging.info("✅ Monitoring configuration created")
     
     def create_dashboard(self):
+        """Input validation would be added here"""
         """Create simple web dashboard"""
-        print("🌐 Creating web dashboard...")
+        logging.info("🌐 Creating web dashboard...")
         
         dashboard_dir = self.base_dir / "dashboard"
         dashboard_dir.mkdir(exist_ok=True)
@@ -371,11 +376,12 @@ scrape_configs:
         with open(dashboard_dir / "index.html", "w") as f:
             f.write(dashboard_html)
         
-        print("✅ Web dashboard created")
+        logging.info("✅ Web dashboard created")
     
     def deploy_services(self):
+        """Input validation would be added here"""
         """Deploy the simplified services"""
-        print("🚀 Deploying services...")
+        logging.info("🚀 Deploying services...")
         
         try:
             os.chdir(self.base_dir / "production_containers")
@@ -389,7 +395,7 @@ scrape_configs:
             )
             
             if result.returncode == 0:
-                print("✅ Services deployed successfully")
+                logging.info("✅ Services deployed successfully")
                 self.deployment_status["services_deployed"] = {
                     "redis": "running",
                     "prometheus": "running", 
@@ -399,16 +405,17 @@ scrape_configs:
                 }
                 return True
             else:
-                print(f"❌ Deployment failed: {result.stderr}")
+                logging.info(f"❌ Deployment failed: {result.stderr}")
                 return False
                 
         except Exception as e:
-            print(f"❌ Deployment error: {e}")
+            logging.info(f"❌ Deployment error: {e}")
             return False
     
     def verify_deployment(self):
+        """Input validation would be added here"""
         """Verify services are running"""
-        print("🔍 Verifying deployment...")
+        logging.info("🔍 Verifying deployment...")
         
         try:
             result = subprocess.run(
@@ -419,30 +426,31 @@ scrape_configs:
             )
             
             if result.returncode == 0:
-                print("📊 Container Status:")
-                print(result.stdout)
+                logging.info("📊 Container Status:")
+                logging.info(result.stdout)
                 
                 # Count running containers
                 running_containers = len([line for line in result.stdout.split('\\n') if 'lyra-' in line])
                 
                 if running_containers >= 4:
-                    print(f"✅ {running_containers} containers running successfully")
+                    logging.info(f"✅ {running_containers} containers running successfully")
                     self.deployment_status["compliance_status"] = "passed"
                     return True
                 else:
-                    print(f"⚠️ Only {running_containers} containers running")
+                    logging.info(f"⚠️ Only {running_containers} containers running")
                     return False
             else:
-                print("❌ Failed to check container status")
+                logging.info("❌ Failed to check container status")
                 return False
                 
         except Exception as e:
-            print(f"❌ Verification error: {e}")
+            logging.info(f"❌ Verification error: {e}")
             return False
     
     def create_management_scripts(self):
+        """Input validation would be added here"""
         """Create management scripts"""
-        print("📝 Creating management scripts...")
+        logging.info("📝 Creating management scripts...")
         
         # Status script
         status_script = """#!/bin/bash
@@ -487,12 +495,13 @@ echo "✅ System stopped"
         
         os.chmod(self.base_dir / "stop.sh", 0o755)
         
-        print("✅ Management scripts created")
+        logging.info("✅ Management scripts created")
     
     def deploy(self):
+        """Input validation would be added here"""
         """Execute simplified deployment"""
-        print("🚀 STARTING SIMPLIFIED LYRA DEPLOYMENT")
-        print("=" * 50)
+        logging.info("🚀 STARTING SIMPLIFIED LYRA DEPLOYMENT")
+        logging.info("=" * 50)
         
         try:
             self.create_simple_docker_compose()
@@ -502,31 +511,31 @@ echo "✅ System stopped"
             
             if self.deploy_services():
                 if self.verify_deployment():
-                    print("\\n🎉 DEPLOYMENT SUCCESSFUL!")
-                    print("=" * 30)
-                    print("✅ Core services running")
-                    print("✅ Monitoring stack active")
-                    print("✅ Dashboard accessible")
-                    print("✅ System ready for configuration")
-                    print("\\n🔗 Access your system:")
-                    print("   Dashboard: http://localhost:8080")
-                    print("   Prometheus: http://localhost:9090")
-                    print("   Grafana: http://localhost:3000")
-                    print("   Vault: http://localhost:8200")
-                    print("\\n📋 Management commands:")
-                    print("   Status: ./status-simple.sh")
-                    print("   Stop: ./stop.sh")
+                    logging.info("\\n🎉 DEPLOYMENT SUCCESSFUL!")
+                    logging.info("=" * 30)
+                    logging.info("✅ Core services running")
+                    logging.info("✅ Monitoring stack active")
+                    logging.info("✅ Dashboard accessible")
+                    logging.info("✅ System ready for configuration")
+                    logging.info("\\n🔗 Access your system:")
+                    logging.info("   Dashboard: http://localhost:8080")
+                    logging.info("   Prometheus: http://localhost:9090")
+                    logging.info("   Grafana: http://localhost:3000")
+                    logging.info("   Vault: http://localhost:8200")
+                    logging.info("\\n📋 Management commands:")
+                    logging.info("   Status: ./status-simple.sh")
+                    logging.info("   Stop: ./stop.sh")
                     return True
                 else:
-                    print("\\n⚠️ DEPLOYMENT PARTIALLY SUCCESSFUL")
-                    print("Some services may need manual configuration")
+                    logging.info("\\n⚠️ DEPLOYMENT PARTIALLY SUCCESSFUL")
+                    logging.info("Some services may need manual configuration")
                     return False
             else:
-                print("\\n❌ DEPLOYMENT FAILED")
+                logging.info("\\n❌ DEPLOYMENT FAILED")
                 return False
                 
         except Exception as e:
-            print(f"\\n❌ Deployment failed: {e}")
+            logging.info(f"\\n❌ Deployment failed: {e}")
             return False
 
 if __name__ == "__main__":

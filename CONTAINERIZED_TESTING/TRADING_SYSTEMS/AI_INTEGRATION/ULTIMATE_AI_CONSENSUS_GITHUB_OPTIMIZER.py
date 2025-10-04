@@ -9,6 +9,7 @@ Uses ALL 8 OpenRouter API keys and 17+ premium AI models to:
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
@@ -71,10 +72,10 @@ class UltimateAIConsensusOptimizer:
         self.analysis_results = []
         self.consensus_recommendations = {}
         
-        print("🚀 Ultimate AI Consensus GitHub Optimizer - Initialized")
-        print(f"🔑 API Keys: {len(self.api_keys)}")
-        print(f"🤖 Premium Models: {len(self.premium_models)}")
-        print("="*70)
+        logging.info("🚀 Ultimate AI Consensus GitHub Optimizer - Initialized")
+        logging.info(f"🔑 API Keys: {len(self.api_keys)}")
+        logging.info(f"🤖 Premium Models: {len(self.premium_models)}")
+        logging.info("="*70)
     
     def analyze_file_with_ai(self, file_path, api_key, model):
         """Analyze a single file with a specific AI model."""
@@ -93,8 +94,10 @@ class UltimateAIConsensusOptimizer:
             Type: {file_type}
             Content Preview: {content[:2000]}
             
-            As an expert in cryptocurrency trading systems, AI, and software architecture, analyze this file and provide:
-            
+            As an expert in cryptocurrency trading systems,
+                AI,
+                and software architecture,
+                analyze this file and provide:            
             1. VALUE ASSESSMENT (1-10): How valuable is this file for a production trading system?
             2. CAPABILITIES: What specific capabilities does this file provide?
             3. OPTIMIZATION: How can this file be improved or optimized?
@@ -119,8 +122,10 @@ class UltimateAIConsensusOptimizer:
             data = {
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": "You are an expert cryptocurrency trading system architect and AI specialist. Provide detailed, actionable analysis for production trading systems."},
-                    {"role": "user", "content": prompt}
+                    {"role": "system",
+                        "content": "You are an expert cryptocurrency trading system architect and AI specialist. Provide detailed,
+                        actionable analysis for production trading systems."},
+                                            {"role": "user", "content": prompt}
                 ],
                 "max_tokens": 1000,
                 "temperature": 0.3
@@ -175,7 +180,7 @@ class UltimateAIConsensusOptimizer:
     
     def get_ai_consensus_for_files(self, file_list):
         """Get AI consensus analysis for a list of files."""
-        print(f"🧠 Getting AI consensus for {len(file_list)} files...")
+        logging.info(f"🧠 Getting AI consensus for {len(file_list)} files...")
         
         all_analyses = []
         
@@ -199,17 +204,17 @@ class UltimateAIConsensusOptimizer:
                     result = future.result(timeout=45)
                     if result["status"] == "SUCCESS":
                         all_analyses.append(result)
-                        print(f"  ✅ {model}: Analyzed {os.path.basename(file_path)}")
+                        logging.info(f"  ✅ {model}: Analyzed {os.path.basename(file_path)}")
                     else:
-                        print(f"  ❌ {model}: {result.get('error', 'Unknown error')}")
+                        logging.info(f"  ❌ {model}: {result.get('error', 'Unknown error')}")
                 except Exception as e:
-                    print(f"  ⚠️ {model}: Timeout or error - {e}")
+                    logging.info(f"  ⚠️ {model}: Timeout or error - {e}")
         
         return all_analyses
     
     def analyze_github_repository(self):
         """Analyze the entire GitHub repository with AI consensus."""
-        print("🔍 Analyzing GitHub repository with AI consensus...")
+        logging.info("🔍 Analyzing GitHub repository with AI consensus...")
         
         # Get all Python files (most important for trading system)
         python_files = []
@@ -227,8 +232,9 @@ class UltimateAIConsensusOptimizer:
                 elif file.endswith('.md'):
                     doc_files.append(file_path)
         
-        print(f"📊 Found {len(python_files)} Python files, {len(config_files)} config files, {len(doc_files)} docs")
-        
+        logging.info(f"📊 Found {len(python_files)} Python files,
+            {len(config_files)} config files,
+            {len(doc_files)} docs")        
         # Analyze key files with AI consensus
         key_files = python_files[:20] + config_files[:10] + doc_files[:10]  # Top 40 files
         
@@ -238,7 +244,7 @@ class UltimateAIConsensusOptimizer:
     
     def generate_consensus_recommendations(self, analyses):
         """Generate consensus recommendations from all AI analyses."""
-        print("🎯 Generating AI consensus recommendations...")
+        logging.info("🎯 Generating AI consensus recommendations...")
         
         # Aggregate all recommendations
         all_capabilities = []
@@ -312,7 +318,7 @@ class UltimateAIConsensusOptimizer:
     
     def create_optimized_system_config(self, consensus):
         """Create optimized system configuration based on AI consensus."""
-        print("⚙️ Creating optimized system configuration...")
+        logging.info("⚙️ Creating optimized system configuration...")
         
         optimized_config = {
             "system_info": {
@@ -368,12 +374,12 @@ class UltimateAIConsensusOptimizer:
         with open(config_path, 'w') as f:
             json.dump(optimized_config, f, indent=2)
         
-        print("  ✅ AI-optimized configuration created")
+        logging.info("  ✅ AI-optimized configuration created")
         return optimized_config
     
     def create_consensus_report(self, consensus, optimized_config):
         """Create comprehensive AI consensus report."""
-        print("📋 Creating AI consensus optimization report...")
+        logging.info("📋 Creating AI consensus optimization report...")
         
         report = f"""# Ultimate AI Consensus Optimization Report
 
@@ -459,8 +465,9 @@ class UltimateAIConsensusOptimizer:
 
 ## 🎉 Final Status
 
-**The Ultimate Lyra Trading System has been optimized using AI consensus from the world's best models. The system is now production-ready with enhanced AI capabilities, optimized performance, and maximum security.**
-
+**The Ultimate Lyra Trading System has been optimized using AI consensus from the world's best models. The system is now production-ready with enhanced AI capabilities,
+    optimized performance,
+    and maximum security.**
 ---
 
 **AI Consensus Optimization Complete**  
@@ -473,13 +480,13 @@ class UltimateAIConsensusOptimizer:
         with open(report_path, 'w') as f:
             f.write(report)
         
-        print("  ✅ AI consensus report created")
+        logging.info("  ✅ AI consensus report created")
         return report_path
     
     def run_ultimate_optimization(self):
         """Run the complete AI consensus optimization process."""
-        print("🚀 Starting Ultimate AI Consensus GitHub Optimization...")
-        print("="*70)
+        logging.info("🚀 Starting Ultimate AI Consensus GitHub Optimization...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -510,18 +517,18 @@ class UltimateAIConsensusOptimizer:
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("\n" + "="*70)
-        print("🎉 ULTIMATE AI CONSENSUS OPTIMIZATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Optimization Duration: {duration:.1f} seconds")
-        print(f"🤖 AI Models Used: {len(self.premium_models)}")
-        print(f"🔑 API Keys Utilized: {len(self.api_keys)}")
-        print(f"📁 Files Analyzed: {consensus['total_files_analyzed']}")
-        print(f"📊 Average Value Score: {consensus['average_value_score']:.2f}/10")
-        print(f"🎯 Assessment: {consensus['consensus_assessment']}")
-        print(f"📋 Report: {report_path}")
-        print("🚀 STATUS: AI-OPTIMIZED AND PRODUCTION READY!")
-        print("="*70)
+        logging.info("\n" + "="*70)
+        logging.info("🎉 ULTIMATE AI CONSENSUS OPTIMIZATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Optimization Duration: {duration:.1f} seconds")
+        logging.info(f"🤖 AI Models Used: {len(self.premium_models)}")
+        logging.info(f"🔑 API Keys Utilized: {len(self.api_keys)}")
+        logging.info(f"📁 Files Analyzed: {consensus['total_files_analyzed']}")
+        logging.info(f"📊 Average Value Score: {consensus['average_value_score']:.2f}/10")
+        logging.info(f"🎯 Assessment: {consensus['consensus_assessment']}")
+        logging.info(f"📋 Report: {report_path}")
+        logging.info("🚀 STATUS: AI-OPTIMIZED AND PRODUCTION READY!")
+        logging.info("="*70)
         
         return {
             "status": "SUCCESS",
@@ -536,8 +543,8 @@ if __name__ == "__main__":
     result = optimizer.run_ultimate_optimization()
     
     if result["status"] == "SUCCESS":
-        print(f"\n🎯 AI Consensus Optimization Complete!")
-        print(f"📊 Value Score: {result['consensus']['average_value_score']:.2f}/10")
-        print(f"🚀 The Ultimate Lyra Trading System is now AI-optimized and production-ready!")
+        logging.info(f"\n🎯 AI Consensus Optimization Complete!")
+        logging.info(f"📊 Value Score: {result['consensus']['average_value_score']:.2f}/10")
+        logging.info(f"🚀 The Ultimate Lyra Trading System is now AI-optimized and production-ready!")
     else:
-        print(f"\n❌ Optimization failed: {result.get('error', 'Unknown error')}")
+        logging.info(f"\n❌ Optimization failed: {result.get('error', 'Unknown error')}")

@@ -5,6 +5,7 @@ Every single component gets its own perfect container with 100% AI validation
 """
 
 import os
+import logging
 import json
 import shutil
 import subprocess
@@ -18,6 +19,7 @@ import time
 
 class UltimateAIConsensusContainerizer:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.openrouter_keys = [
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # XAI Code
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Grok 4
@@ -173,7 +175,7 @@ class UltimateAIConsensusContainerizer:
 
     def get_ai_consensus(self, prompt, container_name, min_models=8):
         """Get AI consensus from multiple models"""
-        print(f"🤖 Getting AI consensus for {container_name}...")
+        logging.info(f"🤖 Getting AI consensus for {container_name}...")
         
         responses = []
         successful_responses = []
@@ -189,12 +191,12 @@ class UltimateAIConsensusContainerizer:
                 
                 if result["success"]:
                     successful_responses.append(result)
-                    print(f"✅ {result['model']}: Success")
+                    logging.info(f"✅ {result['model']}: Success")
                 else:
-                    print(f"❌ {result['model']}: {result['error']}")
+                    logging.info(f"❌ {result['model']}: {result['error']}")
         
         if len(successful_responses) < min_models:
-            print(f"⚠️  Only {len(successful_responses)} successful responses, need {min_models}")
+            logging.info(f"⚠️  Only {len(successful_responses)} successful responses, need {min_models}")
             return {
                 "consensus_reached": False,
                 "confidence": len(successful_responses) / len(self.ai_models),
@@ -251,7 +253,7 @@ class UltimateAIConsensusContainerizer:
 
     def create_container_specification(self, container_name, container_type, category):
         """Create detailed container specification using AI consensus"""
-        print(f"📋 Creating specification for {container_name}...")
+        logging.info(f"📋 Creating specification for {container_name}...")
         
         spec_prompt = f"""
         Create a comprehensive container specification for: {container_name}
@@ -286,7 +288,7 @@ class UltimateAIConsensusContainerizer:
         consensus = self.get_ai_consensus(spec_prompt, container_name)
         
         if consensus["consensus_reached"]:
-            print(f"✅ Specification approved for {container_name} (confidence: {consensus['confidence']:.2f})")
+            logging.info(f"✅ Specification approved for {container_name} (confidence: {consensus['confidence']:.2f})")
             return {
                 "approved": True,
                 "specification": consensus,
@@ -295,7 +297,7 @@ class UltimateAIConsensusContainerizer:
                 "type": container_type
             }
         else:
-            print(f"❌ Specification needs improvement for {container_name}")
+            logging.info(f"❌ Specification needs improvement for {container_name}")
             return {
                 "approved": False,
                 "specification": consensus,
@@ -311,7 +313,7 @@ class UltimateAIConsensusContainerizer:
         container_dir = os.path.join(self.containers_dir, container_name)
         os.makedirs(container_dir, exist_ok=True)
         
-        print(f"🏗️  Building container files for {container_name}...")
+        logging.info(f"🏗️  Building container files for {container_name}...")
         
         # Extract specification content from AI responses
         spec_content = ""
@@ -493,7 +495,7 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
 
     def test_container(self, container_dir, container_name):
         """Test container using AI consensus validation"""
-        print(f"🧪 Testing container {container_name}...")
+        logging.info(f"🧪 Testing container {container_name}...")
         
         # Read all container files for analysis
         container_files = {}
@@ -545,7 +547,7 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
 
     def improve_container(self, container_dir, container_name, test_results):
         """Improve container based on AI feedback"""
-        print(f"🔧 Improving container {container_name}...")
+        logging.info(f"🔧 Improving container {container_name}...")
         
         if not test_results["test_results"].get("improvements"):
             return True
@@ -575,16 +577,16 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                         file_path = os.path.join(container_dir, file_name)
                         with open(file_path, 'w') as f:
                             f.write(content)
-                    print(f"✅ Applied improvement: {improvement[:50]}...")
+                    logging.info(f"✅ Applied improvement: {improvement[:50]}...")
                 except:
-                    print(f"❌ Failed to apply improvement: {improvement[:50]}...")
+                    logging.info(f"❌ Failed to apply improvement: {improvement[:50]}...")
         
         return True
 
     def containerize_everything(self):
         """Main process: containerize everything with AI consensus"""
-        print("🚀 STARTING ULTIMATE AI CONSENSUS CONTAINERIZATION")
-        print("=" * 80)
+        logging.info("🚀 STARTING ULTIMATE AI CONSENSUS CONTAINERIZATION")
+        logging.info("=" * 80)
         
         os.makedirs(self.containers_dir, exist_ok=True)
         os.makedirs(self.production_dir, exist_ok=True)
@@ -604,11 +606,11 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
         
         # Process each container category
         for category, containers in self.container_types.items():
-            print(f"\n📦 PROCESSING CATEGORY: {category}")
-            print("-" * 50)
+            logging.info(f"\n📦 PROCESSING CATEGORY: {category}")
+            logging.info("-" * 50)
             
             for container_name, container_type in containers.items():
-                print(f"\n🔄 Processing: {container_name}")
+                logging.info(f"\n🔄 Processing: {container_name}")
                 processed_containers += 1
                 
                 # Step 1: Create specification with AI consensus
@@ -617,7 +619,7 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                 )
                 
                 if not specification["approved"]:
-                    print(f"❌ Specification rejected for {container_name}")
+                    logging.info(f"❌ Specification rejected for {container_name}")
                     results["failed"].append(container_name)
                     continue
                 
@@ -628,13 +630,13 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                 iteration = 0
                 while iteration < self.max_iterations:
                     iteration += 1
-                    print(f"🔄 Test iteration {iteration} for {container_name}")
+                    logging.info(f"🔄 Test iteration {iteration} for {container_name}")
                     
                     # Test container
                     test_results = self.test_container(container_dir, container_name)
                     
                     if test_results["passed"]:
-                        print(f"✅ Container {container_name} passed all tests!")
+                        logging.info(f"✅ Container {container_name} passed all tests!")
                         
                         # Move to production
                         production_path = os.path.join(self.production_dir, container_name)
@@ -652,13 +654,13 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                         production_ready += 1
                         break
                     else:
-                        print(f"🔧 Container {container_name} needs improvement (iteration {iteration})")
+                        logging.info(f"🔧 Container {container_name} needs improvement (iteration {iteration})")
                         
                         # Apply improvements
                         self.improve_container(container_dir, container_name, test_results)
                         
                         if iteration == self.max_iterations:
-                            print(f"⚠️  Container {container_name} reached max iterations")
+                            logging.info(f"⚠️  Container {container_name} reached max iterations")
                             results["needs_improvement"].append({
                                 "name": container_name,
                                 "category": category,
@@ -673,8 +675,8 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                     "status": "production_ready" if test_results["passed"] else "needs_improvement"
                 }
                 
-                print(f"📊 Progress: {processed_containers}/{total_containers} containers processed")
-                print(f"✅ Production ready: {production_ready}")
+                logging.info(f"📊 Progress: {processed_containers}/{total_containers} containers processed")
+                logging.info(f"✅ Production ready: {production_ready}")
         
         # Generate final summary
         results["end_time"] = datetime.now().isoformat()
@@ -692,21 +694,21 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
         # Create master Kubernetes deployment
         self.create_master_kubernetes()
         
-        print("\n" + "=" * 80)
-        print("🎉 ULTIMATE CONTAINERIZATION COMPLETE!")
-        print("=" * 80)
-        print(f"📦 Total Containers: {total_containers}")
-        print(f"✅ Production Ready: {production_ready}")
-        print(f"🔧 Need Improvement: {len(results['needs_improvement'])}")
-        print(f"❌ Failed: {len(results['failed'])}")
-        print(f"📈 Success Rate: {results['success_rate']:.1%}")
-        print(f"📁 Production Directory: {self.production_dir}")
+        logging.info("\n" + "=" * 80)
+        logging.info("🎉 ULTIMATE CONTAINERIZATION COMPLETE!")
+        logging.info("=" * 80)
+        logging.info(f"📦 Total Containers: {total_containers}")
+        logging.info(f"✅ Production Ready: {production_ready}")
+        logging.info(f"🔧 Need Improvement: {len(results['needs_improvement'])}")
+        logging.info(f"❌ Failed: {len(results['failed'])}")
+        logging.info(f"📈 Success Rate: {results['success_rate']:.1%}")
+        logging.info(f"📁 Production Directory: {self.production_dir}")
         
         return results
 
     def create_master_compose(self):
         """Create master docker-compose.yml for all production containers"""
-        print("🐳 Creating master docker-compose.yml...")
+        logging.info("🐳 Creating master docker-compose.yml...")
         
         compose_content = {
             "version": "3.8",
@@ -735,17 +737,17 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                                 service_config["networks"] = ["lyra_network"]
                                 compose_content["services"][f"{container_dir}_{service_name}"] = service_config
                     except:
-                        print(f"⚠️  Could not parse compose file for {container_dir}")
+                        logging.info(f"⚠️  Could not parse compose file for {container_dir}")
         
         # Save master compose
         with open(os.path.join(self.production_dir, "docker-compose.yml"), 'w') as f:
             yaml.dump(compose_content, f, default_flow_style=False)
         
-        print(f"✅ Master docker-compose.yml created with {len(compose_content['services'])} services")
+        logging.info(f"✅ Master docker-compose.yml created with {len(compose_content['services'])} services")
 
     def create_master_kubernetes(self):
         """Create master Kubernetes deployment for all containers"""
-        print("☸️  Creating master Kubernetes deployment...")
+        logging.info("☸️  Creating master Kubernetes deployment...")
         
         k8s_content = []
         
@@ -776,13 +778,13 @@ This container integrates with other components in the Ultimate Lyra Trading Sys
                                 resource["metadata"]["namespace"] = "lyra-trading-system"
                                 k8s_content.append(resource)
                     except:
-                        print(f"⚠️  Could not parse Kubernetes file for {container_dir}")
+                        logging.info(f"⚠️  Could not parse Kubernetes file for {container_dir}")
         
         # Save master Kubernetes file
         with open(os.path.join(self.production_dir, "kubernetes-all.yml"), 'w') as f:
             yaml.dump_all(k8s_content, f, default_flow_style=False)
         
-        print(f"✅ Master Kubernetes deployment created with {len(k8s_content)} resources")
+        logging.info(f"✅ Master Kubernetes deployment created with {len(k8s_content)} resources")
 
 if __name__ == "__main__":
     containerizer = UltimateAIConsensusContainerizer()

@@ -17,6 +17,7 @@ Goal: Create the ultimate, most comprehensive trading system possible
 """
 
 import os
+import logging
 import json
 import subprocess
 import urllib.request
@@ -58,15 +59,15 @@ class UltimateComprehensiveSearchAmalgamator:
             "mistralai/mistral-large"
         ]
         
-        print("🔍 Ultimate Comprehensive Search & Amalgamation System")
-        print("="*70)
-        print("🎯 Goal: Find and integrate the most capable components from ALL sources")
-        print("📊 Sources: GitHub, Notion, Asana, Supabase, Airtable, Cloudflare, Webflow, Serena")
-        print("="*70)
+        logging.info("🔍 Ultimate Comprehensive Search & Amalgamation System")
+        logging.info("="*70)
+        logging.info("🎯 Goal: Find and integrate the most capable components from ALL sources")
+        logging.info("📊 Sources: GitHub, Notion, Asana, Supabase, Airtable, Cloudflare, Webflow, Serena")
+        logging.info("="*70)
     
     def search_github_repositories(self):
         """Search all accessible GitHub repositories for trading-related content."""
-        print("🔍 Searching GitHub repositories...")
+        logging.info("🔍 Searching GitHub repositories...")
         
         try:
             # Get list of all repositories
@@ -75,21 +76,21 @@ class UltimateComprehensiveSearchAmalgamator:
             
             if result.returncode == 0:
                 repos = result.stdout.strip().split('\\n')
-                print(f"  📊 Found {len(repos)} repositories")
+                logging.info(f"  📊 Found {len(repos)} repositories")
                 
                 for repo in repos[:10]:  # Limit to first 10 for performance
                     if repo.strip():
                         repo_name = repo.split()[0]
-                        print(f"  📦 Analyzing repository: {repo_name}")
+                        logging.info(f"  📦 Analyzing repository: {repo_name}")
                         
                         # Clone or check repository
                         self.analyze_github_repo(repo_name)
                         
             else:
-                print(f"  ❌ GitHub search failed: {result.stderr}")
+                logging.info(f"  ❌ GitHub search failed: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ GitHub search error: {e}")
+            logging.info(f"  ❌ GitHub search error: {e}")
     
     def analyze_github_repo(self, repo_name):
         """Analyze a specific GitHub repository for valuable components."""
@@ -103,7 +104,7 @@ class UltimateComprehensiveSearchAmalgamator:
                                       capture_output=True, text=True)
                 
                 if result.returncode != 0:
-                    print(f"    ⚠️ Could not clone {repo_name}")
+                    logging.info(f"    ⚠️ Could not clone {repo_name}")
                     return
             
             # Analyze repository content
@@ -129,10 +130,10 @@ class UltimateComprehensiveSearchAmalgamator:
                     "valuable_files": valuable_files,
                     "total_files": len(valuable_files)
                 })
-                print(f"    ✅ Found {len(valuable_files)} valuable files in {repo_name}")
+                logging.info(f"    ✅ Found {len(valuable_files)} valuable files in {repo_name}")
             
         except Exception as e:
-            print(f"    ❌ Error analyzing {repo_name}: {e}")
+            logging.info(f"    ❌ Error analyzing {repo_name}: {e}")
     
     def is_trading_related_file(self, file_path):
         """Check if a file contains trading-related content."""
@@ -151,7 +152,7 @@ class UltimateComprehensiveSearchAmalgamator:
     
     def search_notion_content(self):
         """Search Notion workspace for trading-related content."""
-        print("📝 Searching Notion workspace...")
+        logging.info("📝 Searching Notion workspace...")
         
         try:
             # List all pages in Notion
@@ -162,16 +163,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 notion_data = json.loads(result.stdout)
                 self.search_results["notion_content"] = notion_data
-                print(f"  ✅ Found Notion content: {len(notion_data)} items")
+                logging.info(f"  ✅ Found Notion content: {len(notion_data)} items")
             else:
-                print(f"  ⚠️ Notion search: {result.stderr}")
+                logging.info(f"  ⚠️ Notion search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Notion search error: {e}")
+            logging.info(f"  ❌ Notion search error: {e}")
     
     def search_asana_projects(self):
         """Search Asana projects for trading-related tasks."""
-        print("📋 Searching Asana projects...")
+        logging.info("📋 Searching Asana projects...")
         
         try:
             # Search for trading-related projects
@@ -182,16 +183,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 asana_data = json.loads(result.stdout)
                 self.search_results["asana_projects"] = asana_data
-                print(f"  ✅ Found Asana projects: {len(asana_data)} items")
+                logging.info(f"  ✅ Found Asana projects: {len(asana_data)} items")
             else:
-                print(f"  ⚠️ Asana search: {result.stderr}")
+                logging.info(f"  ⚠️ Asana search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Asana search error: {e}")
+            logging.info(f"  ❌ Asana search error: {e}")
     
     def search_supabase_data(self):
         """Search Supabase databases for trading-related data."""
-        print("🗄️ Searching Supabase databases...")
+        logging.info("🗄️ Searching Supabase databases...")
         
         try:
             # List databases and tables
@@ -202,16 +203,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 supabase_data = json.loads(result.stdout)
                 self.search_results["supabase_data"] = supabase_data
-                print(f"  ✅ Found Supabase data: {len(supabase_data)} items")
+                logging.info(f"  ✅ Found Supabase data: {len(supabase_data)} items")
             else:
-                print(f"  ⚠️ Supabase search: {result.stderr}")
+                logging.info(f"  ⚠️ Supabase search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Supabase search error: {e}")
+            logging.info(f"  ❌ Supabase search error: {e}")
     
     def search_airtable_bases(self):
         """Search Airtable bases for trading-related data."""
-        print("📊 Searching Airtable bases...")
+        logging.info("📊 Searching Airtable bases...")
         
         try:
             # List bases
@@ -222,16 +223,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 airtable_data = json.loads(result.stdout)
                 self.search_results["airtable_bases"] = airtable_data
-                print(f"  ✅ Found Airtable bases: {len(airtable_data)} items")
+                logging.info(f"  ✅ Found Airtable bases: {len(airtable_data)} items")
             else:
-                print(f"  ⚠️ Airtable search: {result.stderr}")
+                logging.info(f"  ⚠️ Airtable search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Airtable search error: {e}")
+            logging.info(f"  ❌ Airtable search error: {e}")
     
     def search_cloudflare_workers(self):
         """Search Cloudflare Workers for trading-related functions."""
-        print("☁️ Searching Cloudflare Workers...")
+        logging.info("☁️ Searching Cloudflare Workers...")
         
         try:
             # List workers
@@ -242,16 +243,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 cloudflare_data = json.loads(result.stdout)
                 self.search_results["cloudflare_workers"] = cloudflare_data
-                print(f"  ✅ Found Cloudflare Workers: {len(cloudflare_data)} items")
+                logging.info(f"  ✅ Found Cloudflare Workers: {len(cloudflare_data)} items")
             else:
-                print(f"  ⚠️ Cloudflare search: {result.stderr}")
+                logging.info(f"  ⚠️ Cloudflare search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Cloudflare search error: {e}")
+            logging.info(f"  ❌ Cloudflare search error: {e}")
     
     def search_webflow_sites(self):
         """Search Webflow sites for trading-related content."""
-        print("🌐 Searching Webflow sites...")
+        logging.info("🌐 Searching Webflow sites...")
         
         try:
             # List sites
@@ -262,16 +263,16 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 webflow_data = json.loads(result.stdout)
                 self.search_results["webflow_sites"] = webflow_data
-                print(f"  ✅ Found Webflow sites: {len(webflow_data)} items")
+                logging.info(f"  ✅ Found Webflow sites: {len(webflow_data)} items")
             else:
-                print(f"  ⚠️ Webflow search: {result.stderr}")
+                logging.info(f"  ⚠️ Webflow search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Webflow search error: {e}")
+            logging.info(f"  ❌ Webflow search error: {e}")
     
     def search_serena_code(self):
         """Search Serena code repositories for trading-related code."""
-        print("💻 Searching Serena code repositories...")
+        logging.info("💻 Searching Serena code repositories...")
         
         try:
             # Search for trading-related code
@@ -282,12 +283,12 @@ class UltimateComprehensiveSearchAmalgamator:
             if result.returncode == 0:
                 serena_data = json.loads(result.stdout)
                 self.search_results["serena_code"] = serena_data
-                print(f"  ✅ Found Serena code: {len(serena_data)} items")
+                logging.info(f"  ✅ Found Serena code: {len(serena_data)} items")
             else:
-                print(f"  ⚠️ Serena search: {result.stderr}")
+                logging.info(f"  ⚠️ Serena search: {result.stderr}")
                 
         except Exception as e:
-            print(f"  ❌ Serena search error: {e}")
+            logging.info(f"  ❌ Serena search error: {e}")
     
     def analyze_with_ai_consensus(self, content, source_type):
         """Analyze content with AI consensus to determine value and capabilities."""
@@ -363,19 +364,19 @@ class UltimateComprehensiveSearchAmalgamator:
                         }
                         
         except Exception as e:
-            print(f"  ⚠️ AI analysis error: {e}")
+            logging.info(f"  ⚠️ AI analysis error: {e}")
             return None
     
     def amalgamate_best_components(self):
         """Amalgamate the best components from all sources into the GitHub repository."""
-        print("🔧 Amalgamating best components...")
+        logging.info("🔧 Amalgamating best components...")
         
         high_value_components = []
         
         # Analyze all search results with AI
         for source_type, results in self.search_results.items():
             if results:
-                print(f"  🧠 Analyzing {source_type} with AI...")
+                logging.info(f"  🧠 Analyzing {source_type} with AI...")
                 
                 for item in results[:5]:  # Limit for performance
                     ai_analysis = self.analyze_with_ai_consensus(item, source_type)
@@ -387,7 +388,7 @@ class UltimateComprehensiveSearchAmalgamator:
                             "analysis": ai_analysis
                         })
         
-        print(f"  ✅ Identified {len(high_value_components)} high-value components")
+        logging.info(f"  ✅ Identified {len(high_value_components)} high-value components")
         
         # Integrate high-value components
         for component in high_value_components:
@@ -425,14 +426,14 @@ class UltimateComprehensiveSearchAmalgamator:
             with open(component_file, 'w') as f:
                 json.dump(component, f, indent=2)
             
-            print(f"    ✅ Integrated {source} component into {target_dir}")
+            logging.info(f"    ✅ Integrated {source} component into {target_dir}")
             
         except Exception as e:
-            print(f"    ❌ Integration error: {e}")
+            logging.info(f"    ❌ Integration error: {e}")
     
     def create_comprehensive_summary(self, high_value_components):
         """Create a comprehensive summary of all found and integrated components."""
-        print("📋 Creating comprehensive summary...")
+        logging.info("📋 Creating comprehensive summary...")
         
         summary = {
             "search_timestamp": datetime.now().isoformat(),
@@ -471,13 +472,13 @@ class UltimateComprehensiveSearchAmalgamator:
         with open(summary_path, 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print(f"  ✅ Summary saved to {summary_path}")
+        logging.info(f"  ✅ Summary saved to {summary_path}")
         return summary
     
     def run_comprehensive_search(self):
         """Run the complete comprehensive search and amalgamation process."""
-        print("🚀 Starting Comprehensive Search & Amalgamation...")
-        print("="*70)
+        logging.info("🚀 Starting Comprehensive Search & Amalgamation...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -495,31 +496,31 @@ class UltimateComprehensiveSearchAmalgamator:
         
         for search_name, search_function in search_functions:
             try:
-                print(f"\\n🔍 {search_name}...")
+                logging.info(f"\\n🔍 {search_name}...")
                 search_function()
             except Exception as e:
-                print(f"  ❌ {search_name} failed: {e}")
+                logging.info(f"  ❌ {search_name} failed: {e}")
         
         # Amalgamate best components
-        print("\\n🔧 Amalgamating Components...")
+        logging.info("\\n🔧 Amalgamating Components...")
         high_value_components = self.amalgamate_best_components()
         
         # Create summary
-        print("\\n📋 Creating Summary...")
+        logging.info("\\n📋 Creating Summary...")
         summary = self.create_comprehensive_summary(high_value_components)
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("\\n" + "="*70)
-        print("🎉 COMPREHENSIVE SEARCH & AMALGAMATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Duration: {duration:.1f} seconds")
-        print(f"🔍 Sources Searched: {len(search_functions)}")
-        print(f"📊 Total Components Found: {summary['total_components_found']}")
-        print(f"⭐ High-Value Components: {summary['high_value_components']}")
-        print(f"🚀 Status: ULTIMATE SYSTEM READY!")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 COMPREHENSIVE SEARCH & AMALGAMATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Duration: {duration:.1f} seconds")
+        logging.info(f"🔍 Sources Searched: {len(search_functions)}")
+        logging.info(f"📊 Total Components Found: {summary['total_components_found']}")
+        logging.info(f"⭐ High-Value Components: {summary['high_value_components']}")
+        logging.info(f"🚀 Status: ULTIMATE SYSTEM READY!")
+        logging.info("="*70)
         
         return summary
 
@@ -527,7 +528,7 @@ if __name__ == "__main__":
     amalgamator = UltimateComprehensiveSearchAmalgamator()
     result = amalgamator.run_comprehensive_search()
     
-    print(f"\\n🎯 Comprehensive Search Complete!")
-    print(f"📊 Found {result['total_components_found']} total components")
-    print(f"⭐ Integrated {result['high_value_components']} high-value components")
-    print(f"🚀 The Ultimate Lyra Trading System is now the most comprehensive possible!")
+    logging.info(f"\\n🎯 Comprehensive Search Complete!")
+    logging.info(f"📊 Found {result['total_components_found']} total components")
+    logging.info(f"⭐ Integrated {result['high_value_components']} high-value components")
+    logging.info(f"🚀 The Ultimate Lyra Trading System is now the most comprehensive possible!")

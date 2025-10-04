@@ -5,6 +5,7 @@ This script validates exchange connections and real market data access.
 """
 
 import json
+import logging
 import urllib.request
 import urllib.parse
 from datetime import datetime
@@ -12,6 +13,7 @@ import time
 
 class ExchangeIntegrationValidator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the Exchange Integration Validator."""
         
         # OKX API configuration (from knowledge base)
@@ -28,8 +30,12 @@ class ExchangeIntegrationValidator:
         self.market_data_apis = [
             {
                 "name": "CoinGecko",
-                "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,cardano,polkadot&vs_currencies=usd",
-                "type": "free"
+                "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,
+                    ethereum,
+                    solana,
+                    cardano,
+                    polkadot&vs_currencies=usd",
+                                    "type": "free"
             },
             {
                 "name": "CryptoCompare",
@@ -38,14 +44,19 @@ class ExchangeIntegrationValidator:
             },
             {
                 "name": "Binance Public",
-                "url": "https://api.binance.com/api/v3/ticker/price?symbols=[\"BTCUSDT\",\"ETHUSDT\",\"SOLUSDT\",\"ADAUSDT\",\"DOTUSDT\"]",
-                "type": "free"
+                "url": "https://api.binance.com/api/v3/ticker/price?symbols=[\"BTCUSDT\",
+                    \"ETHUSDT\",
+                    \"SOLUSDT\",
+                    \"ADAUSDT\",
+                    \"DOTUSDT\"]",
+                                    "type": "free"
             }
         ]
         
         self.trading_pairs = ["BTC/USDT", "ETH/USDT", "SOL/USDT", "ADA/USDT", "DOT/USDT"]
         
     def test_market_data_api(self, api_config):
+        """Input validation would be added here"""
         """Test a market data API endpoint."""
         try:
             req = urllib.request.Request(
@@ -78,8 +89,9 @@ class ExchangeIntegrationValidator:
             }
     
     def validate_okx_credentials(self):
+        """Input validation would be added here"""
         """Validate OKX API credentials (simulation)."""
-        print("🔑 Validating OKX API credentials...")
+        logging.info("🔑 Validating OKX API credentials...")
         
         # Since we can't make authenticated requests without proper signing,
         # we'll simulate the validation based on the known working credentials
@@ -93,23 +105,24 @@ class ExchangeIntegrationValidator:
             "trading_enabled": True
         }
         
-        print(f"✅ OKX API Key: {self.okx_config['api_key'][:20]}...")
-        print(f"📊 Portfolio Value: ${okx_validation['portfolio_value']}")
-        print(f"🔐 Permissions: {okx_validation['permissions']}")
-        print(f"🌍 Region: {okx_validation['region']}")
-        print(f"🎯 Trading Enabled: {okx_validation['trading_enabled']}")
+        logging.info(f"✅ OKX API Key: {self.okx_config['api_key'][:20]}...")
+        logging.info(f"📊 Portfolio Value: ${okx_validation['portfolio_value']}")
+        logging.info(f"🔐 Permissions: {okx_validation['permissions']}")
+        logging.info(f"🌍 Region: {okx_validation['region']}")
+        logging.info(f"🎯 Trading Enabled: {okx_validation['trading_enabled']}")
         
         return okx_validation
     
     def validate_market_data_sources(self):
+        """Input validation would be added here"""
         """Validate all market data sources."""
-        print("📊 Validating market data sources...")
+        logging.info("📊 Validating market data sources...")
         
         validation_results = []
         working_apis = 0
         
         for api_config in self.market_data_apis:
-            print(f"🔍 Testing {api_config['name']}...")
+            logging.info(f"🔍 Testing {api_config['name']}...")
             
             result = self.test_market_data_api(api_config)
             
@@ -123,7 +136,7 @@ class ExchangeIntegrationValidator:
             }
             
             if result["status"] == "SUCCESS":
-                print(f"✅ {api_config['name']}: Working")
+                logging.info(f"✅ {api_config['name']}: Working")
                 working_apis += 1
                 
                 # Extract price data for validation
@@ -134,10 +147,10 @@ class ExchangeIntegrationValidator:
                         "BTC": btc_price,
                         "ETH": eth_price
                     }
-                    print(f"   📈 BTC: ${btc_price:,.2f}, ETH: ${eth_price:,.2f}")
+                    logging.info(f"   📈 BTC: ${btc_price:,.2f}, ETH: ${eth_price:,.2f}")
                     
             else:
-                print(f"❌ {api_config['name']}: {result['error']}")
+                logging.info(f"❌ {api_config['name']}: {result['error']}")
             
             validation_results.append(validation_result)
             time.sleep(1)  # Rate limiting
@@ -150,8 +163,9 @@ class ExchangeIntegrationValidator:
         }
     
     def simulate_real_time_data_feed(self):
+        """Input validation would be added here"""
         """Simulate real-time market data feed."""
-        print("📡 Testing real-time data feed simulation...")
+        logging.info("📡 Testing real-time data feed simulation...")
         
         # Get current market data
         coingecko_result = self.test_market_data_api(self.market_data_apis[0])
@@ -189,9 +203,9 @@ class ExchangeIntegrationValidator:
                         "trend": "sideways"
                     }
             
-            print(f"✅ Real-time feed simulation: {len(simulated_feed['pairs'])} pairs")
+            logging.info(f"✅ Real-time feed simulation: {len(simulated_feed['pairs'])} pairs")
             for pair, data in simulated_feed["pairs"].items():
-                print(f"   📊 {pair}: ${data['price']:,.2f} (RSI: {data['rsi']})")
+                logging.info(f"   📊 {pair}: ${data['price']:,.2f} (RSI: {data['rsi']})")
             
             return {
                 "status": "SUCCESS",
@@ -206,8 +220,9 @@ class ExchangeIntegrationValidator:
             }
     
     def validate_trading_infrastructure(self):
+        """Input validation would be added here"""
         """Validate trading infrastructure components."""
-        print("🏗️ Validating trading infrastructure...")
+        logging.info("🏗️ Validating trading infrastructure...")
         
         infrastructure_checks = {
             "portfolio_management": {
@@ -238,35 +253,36 @@ class ExchangeIntegrationValidator:
         }
         
         for component, details in infrastructure_checks.items():
-            print(f"✅ {component.replace('_', ' ').title()}: {details['status']}")
+            logging.info(f"✅ {component.replace('_', ' ').title()}: {details['status']}")
         
         return infrastructure_checks
     
     def run_comprehensive_validation(self):
+        """Input validation would be added here"""
         """Run comprehensive exchange integration validation."""
-        print("🚀 Starting Comprehensive Exchange Integration Validation...")
-        print("="*60)
+        logging.info("🚀 Starting Comprehensive Exchange Integration Validation...")
+        logging.info("="*60)
         
         validation_start = datetime.now()
         
         # Step 1: Validate OKX credentials
-        print("\n📋 Step 1: OKX API Validation")
+        logging.info("\n📋 Step 1: OKX API Validation")
         okx_validation = self.validate_okx_credentials()
         
         # Step 2: Validate market data sources
-        print(f"\n📋 Step 2: Market Data Sources Validation")
+        logging.info(f"\n📋 Step 2: Market Data Sources Validation")
         market_data_validation = self.validate_market_data_sources()
         
-        print(f"\n📊 Market Data Validation Results:")
-        print(f"✅ Working APIs: {market_data_validation['working_apis']}/{market_data_validation['total_apis']}")
-        print(f"📈 Success rate: {market_data_validation['success_rate']:.1%}")
+        logging.info(f"\n📊 Market Data Validation Results:")
+        logging.info(f"✅ Working APIs: {market_data_validation['working_apis']}/{market_data_validation['total_apis']}")
+        logging.info(f"📈 Success rate: {market_data_validation['success_rate']:.1%}")
         
         # Step 3: Test real-time data feed
-        print(f"\n📋 Step 3: Real-Time Data Feed Test")
+        logging.info(f"\n📋 Step 3: Real-Time Data Feed Test")
         feed_test = self.simulate_real_time_data_feed()
         
         # Step 4: Validate trading infrastructure
-        print(f"\n📋 Step 4: Trading Infrastructure Validation")
+        logging.info(f"\n📋 Step 4: Trading Infrastructure Validation")
         infrastructure_validation = self.validate_trading_infrastructure()
         
         validation_end = datetime.now()
@@ -302,17 +318,17 @@ class ExchangeIntegrationValidator:
         with open(results_file, 'w') as f:
             json.dump(final_results, f, indent=2)
         
-        print("\n" + "="*60)
-        print("🎉 EXCHANGE INTEGRATION VALIDATION COMPLETE!")
-        print("="*60)
-        print(f"⏱️ Duration: {validation_duration:.1f} seconds")
-        print(f"🔑 OKX Status: {okx_validation['status']}")
-        print(f"📊 Market Data APIs: {market_data_validation['working_apis']}/{market_data_validation['total_apis']}")
-        print(f"📡 Real-time Feed: {feed_test['status']}")
-        print(f"🎯 Overall Status: {overall_status}")
-        print(f"💰 Trading Ready: {final_results['trading_ready']}")
-        print(f"💾 Results saved: {results_file}")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("🎉 EXCHANGE INTEGRATION VALIDATION COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"⏱️ Duration: {validation_duration:.1f} seconds")
+        logging.info(f"🔑 OKX Status: {okx_validation['status']}")
+        logging.info(f"📊 Market Data APIs: {market_data_validation['working_apis']}/{market_data_validation['total_apis']}")
+        logging.info(f"📡 Real-time Feed: {feed_test['status']}")
+        logging.info(f"🎯 Overall Status: {overall_status}")
+        logging.info(f"💰 Trading Ready: {final_results['trading_ready']}")
+        logging.info(f"💾 Results saved: {results_file}")
+        logging.info("="*60)
         
         return final_results
 

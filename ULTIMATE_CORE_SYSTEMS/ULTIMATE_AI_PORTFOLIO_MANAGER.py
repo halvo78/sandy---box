@@ -94,6 +94,7 @@ class UltimateAIPortfolioManager:
     """
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.start_time = datetime.now()
         
         # OpenRouter API keys for AI analysis
@@ -592,6 +593,7 @@ class UltimateAIPortfolioManager:
         
         @self.app.route('/')
         def dashboard():
+            """TODO: Add function documentation"""
             return render_template_string('''
 <!DOCTYPE html>
 <html>
@@ -600,9 +602,12 @@ class UltimateAIPortfolioManager:
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .metric { display: inline-block; margin: 10px 20px 10px 0; }
+        .header { background: linear-gradient(135deg,
+            #667eea 0%,
+            #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }        .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,
+            0,
+            0,
+            0.1); }        .metric { display: inline-block; margin: 10px 20px 10px 0; }
         .metric-value { font-size: 24px; font-weight: bold; color: #667eea; }
         .metric-label { font-size: 14px; color: #666; }
         .status-good { color: #28a745; }
@@ -698,6 +703,7 @@ class UltimateAIPortfolioManager:
         
         @self.app.route('/api/portfolio')
         def get_portfolio():
+            """TODO: Add function documentation"""
             metrics = self.calculate_portfolio_metrics()
             return jsonify({
                 'portfolio': {symbol: asdict(asset) for symbol, asset in self.portfolio.items()},
@@ -708,16 +714,19 @@ class UltimateAIPortfolioManager:
         
         @self.app.route('/api/optimize')
         def optimize():
+            """TODO: Add function documentation"""
             result = self.optimize_portfolio()
             return jsonify(result)
         
         @self.app.route('/api/opportunities')
         def opportunities():
+            """TODO: Add function documentation"""
             result = self.get_market_opportunities()
             return jsonify(result)
         
         @self.app.route('/api/risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
         def risk_analysis():
+            """TODO: Add function documentation"""
             current_data = {
                 'positions': {symbol: asdict(asset) for symbol, asset in self.portfolio.items()},
                 'cash_balance': self.cash_balance,
@@ -729,6 +738,7 @@ class UltimateAIPortfolioManager:
         
         @self.app.route('/api/rebalance', methods=['POST'])
         def rebalance():
+            """TODO: Add function documentation"""
             optimization = self.optimize_portfolio()
             
             # Execute rebalancing (simplified for demo)
@@ -817,50 +827,50 @@ class UltimateAIPortfolioManager:
 
 def main():
     """Main function to run the Ultimate AI Portfolio Manager"""
-    print("🎯 ULTIMATE AI-CONTROLLED PORTFOLIO MANAGER")
-    print("=" * 70)
-    print("🤖 AI-Powered Portfolio Optimization")
-    print("📊 Real-Time Risk Management")
-    print("🔍 Market Opportunity Detection")
-    print("⚖️ Automated Rebalancing")
-    print("📈 Performance Analytics")
-    print("🎯 Tax-Optimized Trading")
+    logging.info("🎯 ULTIMATE AI-CONTROLLED PORTFOLIO MANAGER")
+    logging.info("=" * 70)
+    logging.info("🤖 AI-Powered Portfolio Optimization")
+    logging.info("📊 Real-Time Risk Management")
+    logging.info("🔍 Market Opportunity Detection")
+    logging.info("⚖️ Automated Rebalancing")
+    logging.info("📈 Performance Analytics")
+    logging.info("🎯 Tax-Optimized Trading")
     print()
     
     try:
         # Initialize the AI portfolio manager
         portfolio_manager = UltimateAIPortfolioManager()
         
-        print("✅ AI Portfolio Manager initialized successfully!")
-        print(f"💰 Starting Balance: ${portfolio_manager.cash_balance:,.2f}")
-        print(f"🤖 AI Models Available: {len(portfolio_manager.ai_models)}")
-        print(f"🔑 OpenRouter Keys: {len(portfolio_manager.openrouter_keys)}")
+        logging.info("✅ AI Portfolio Manager initialized successfully!")
+        logging.info(f"💰 Starting Balance: ${portfolio_manager.cash_balance:,.2f}")
+        logging.info(f"🤖 AI Models Available: {len(portfolio_manager.ai_models)}")
+        logging.info(f"🔑 OpenRouter Keys: {len(portfolio_manager.openrouter_keys)}")
         print()
         
-        print("🚀 Starting AI Portfolio Manager Web Interface...")
-        print("📊 Dashboard: http://localhost:8100")
-        print("🌐 Public Access: https://3ce37fa57d09.ngrok.app:8100")
+        logging.info("🚀 Starting AI Portfolio Manager Web Interface...")
+        logging.info("📊 Dashboard: http://localhost:8100")
+        logging.info("🌐 Public Access: https://3ce37fa57d09.ngrok.app:8100")
         print()
-        print("🎯 Features Active:")
-        print("   ✅ AI-Powered Optimization")
-        print("   ✅ Real-Time Risk Analysis") 
-        print("   ✅ Market Opportunity Detection")
-        print("   ✅ Automated Rebalancing")
-        print("   ✅ Multi-Exchange Support")
-        print("   ✅ Tax-Optimized Trading")
-        print("   ✅ Performance Analytics")
-        print("   ✅ Predictive Modeling")
+        logging.info("🎯 Features Active:")
+        logging.info("   ✅ AI-Powered Optimization")
+        logging.info("   ✅ Real-Time Risk Analysis") 
+        logging.info("   ✅ Market Opportunity Detection")
+        logging.info("   ✅ Automated Rebalancing")
+        logging.info("   ✅ Multi-Exchange Support")
+        logging.info("   ✅ Tax-Optimized Trading")
+        logging.info("   ✅ Performance Analytics")
+        logging.info("   ✅ Predictive Modeling")
         print()
         
         # Run the portfolio manager
         portfolio_manager.run_ai_portfolio_manager()
         
     except KeyboardInterrupt:
-        print("\n🛑 AI Portfolio Manager stopped by user")
+        logging.info("\n🛑 AI Portfolio Manager stopped by user")
     
     except Exception as e:
         logger.error(f"❌ Critical error: {e}")
-        print(f"❌ Critical error: {e}")
+        logging.info(f"❌ Critical error: {e}")
 
 if __name__ == "__main__":
     main()

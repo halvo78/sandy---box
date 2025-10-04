@@ -60,7 +60,7 @@ class YOUR_API_KEY_HERE:
     
     def __init__(self):
         """Initialize the complete ecosystem with all components."""
-        print("🚀 Initializing Ultimate Lyra Ecosystem - Absolutely Final Complete System...")
+        logging.info("🚀 Initializing Ultimate Lyra Ecosystem - Absolutely Final Complete System...")
         
         # System metadata
         self.system_info = {
@@ -89,11 +89,11 @@ class YOUR_API_KEY_HERE:
         self.performance_metrics = {}
         self.system_health = {}
         
-        print("✅ Ultimate Lyra Ecosystem - Absolutely Final Complete System initialized!")
+        logging.info("✅ Ultimate Lyra Ecosystem - Absolutely Final Complete System initialized!")
         
     def _initialize_security_layer(self):
         """Initialize institutional-grade security components."""
-        print("🔒 Initializing Security Layer...")
+        logging.info("🔒 Initializing Security Layer...")
         
         self.vault_manager = VaultManager()
         self.compliance_manager = ComplianceManager()
@@ -102,11 +102,11 @@ class YOUR_API_KEY_HERE:
         # Migrate environment variables to vault
         self._migrate_secrets_to_vault()
         
-        print("✅ Security Layer ready - Vault, Compliance, PenTest active")
+        logging.info("✅ Security Layer ready - Vault, Compliance, PenTest active")
         
     def _initialize_ai_layer(self):
         """Initialize advanced AI and strategy components."""
-        print("🧠 Initializing AI Layer...")
+        logging.info("🧠 Initializing AI Layer...")
         
         self.model_retraining_engine = ModelRetrainingEngine()
         self.alpha_decay_tracker = AlphaDecayTracker()
@@ -123,11 +123,11 @@ class YOUR_API_KEY_HERE:
         # Initialize AI models
         self.ai_models = self._load_ai_models()
         
-        print("✅ AI Layer ready - 19 AI models, Learning, Explainability active")
+        logging.info("✅ AI Layer ready - 19 AI models, Learning, Explainability active")
         
     def _initialize_trading_layer(self):
         """Initialize advanced trading infrastructure."""
-        print("⚡ Initializing Trading Layer...")
+        logging.info("⚡ Initializing Trading Layer...")
         
         self.smart_order_router = SmartOrderRouter()
         self.execution_algorithms = AdvancedExecutionAlgorithms()
@@ -137,33 +137,33 @@ class YOUR_API_KEY_HERE:
         # Initialize exchange connections
         self.exchanges = self._initialize_exchanges()
         
-        print("✅ Trading Layer ready - Smart Routing, Advanced Execution, Risk Management active")
+        logging.info("✅ Trading Layer ready - Smart Routing, Advanced Execution, Risk Management active")
         
     def _initialize_monitoring_layer(self):
         """Initialize comprehensive monitoring and operations."""
-        print("📊 Initializing Monitoring Layer...")
+        logging.info("📊 Initializing Monitoring Layer...")
         
         self.structured_logging = StructuredLoggingSystem()
         self.trade_replay = TradeReplaySystem()
         self.failover_system = FailoverSystem()
         self.stress_testing = StressTesting()
         
-        print("✅ Monitoring Layer ready - Structured Logging, Replay, Failover, Stress Testing active")
+        logging.info("✅ Monitoring Layer ready - Structured Logging, Replay, Failover, Stress Testing active")
         
     def _initialize_business_layer(self):
         """Initialize business and corporate integration."""
-        print("🏢 Initializing Business Layer...")
+        logging.info("🏢 Initializing Business Layer...")
         
         self.tax_accounting = TaxAccountingSystem()
         self.corporate_banking = CorporateBankingIntegration()
         self.insurance_risk_management = InsuranceRiskManagement()
         self.business_intelligence = BusinessIntelligence()
         
-        print("✅ Business Layer ready - Tax, Banking, Insurance, BI active")
+        logging.info("✅ Business Layer ready - Tax, Banking, Insurance, BI active")
         
     def _initialize_core_systems(self):
         """Initialize core trading and management systems."""
-        print("⚙️ Initializing Core Systems...")
+        logging.info("⚙️ Initializing Core Systems...")
         
         # Trading strategies
         self.trading_strategies = {
@@ -193,7 +193,7 @@ class YOUR_API_KEY_HERE:
             "take_profit_percentage": 0.04 # 4% take profit
         }
         
-        print("✅ Core Systems ready - Strategies, Portfolio, Risk Management active")
+        logging.info("✅ Core Systems ready - Strategies, Portfolio, Risk Management active")
         
     def _migrate_secrets_to_vault(self):
         """Migrate all API keys and secrets to vault system."""
@@ -211,7 +211,7 @@ class YOUR_API_KEY_HERE:
                         self.vault_manager.store_secret(key, value, {"migrated_from_env": True})
                         migrated_count += 1
                         
-            print(f"🔒 Migrated {migrated_count} secrets to vault")
+            logging.info(f"🔒 Migrated {migrated_count} secrets to vault")
             
     def _load_ai_models(self):
         """Load and initialize all AI models."""
@@ -237,7 +237,7 @@ class YOUR_API_KEY_HERE:
             "feature_engineer": {"type": "ml", "algorithm": "automl", "status": "loaded"}
         }
         
-        print(f"🧠 Loaded {len(ai_models)} AI models")
+        logging.info(f"🧠 Loaded {len(ai_models)} AI models")
         return ai_models
         
     def _initialize_exchanges(self):
@@ -255,12 +255,12 @@ class YOUR_API_KEY_HERE:
             "kucoin": {"status": "connected", "latency": 76, "success_rate": 0.997}
         }
         
-        print(f"⚡ Connected to {len(exchanges)} exchanges")
+        logging.info(f"⚡ Connected to {len(exchanges)} exchanges")
         return exchanges
         
     async def start_system(self):
         """Start the complete ecosystem."""
-        print("🚀 Starting Ultimate Lyra Ecosystem...")
+        logging.info("🚀 Starting Ultimate Lyra Ecosystem...")
         
         self.is_running = True
         
@@ -276,7 +276,7 @@ class YOUR_API_KEY_HERE:
             asyncio.create_task(self._failover_monitoring_loop())
         ]
         
-        print("✅ All system loops started - Ultimate Lyra Ecosystem fully operational!")
+        logging.info("✅ All system loops started - Ultimate Lyra Ecosystem fully operational!")
         
         # Wait for all tasks
         await asyncio.gather(*tasks)
@@ -617,7 +617,7 @@ class YOUR_API_KEY_HERE:
         
     async def stop_system(self):
         """Stop the ecosystem gracefully."""
-        print("🛑 Stopping Ultimate Lyra Ecosystem...")
+        logging.info("🛑 Stopping Ultimate Lyra Ecosystem...")
         
         self.is_running = False
         
@@ -627,7 +627,7 @@ class YOUR_API_KEY_HERE:
         with open(state_file, 'w') as f:
             json.dump(final_state, f, indent=2)
             
-        print("✅ Ultimate Lyra Ecosystem stopped gracefully")
+        logging.info("✅ Ultimate Lyra Ecosystem stopped gracefully")
 
 # Main execution
 async def main():
@@ -638,27 +638,27 @@ async def main():
     # Run commissioning tests (if available)
     if lyra_ecosystem.ai_commissioning_tool:
         commissioning_results = lyra_ecosystem.ai_commissioning_tool.run_full_commissioning()
-        print(f"🎯 Commissioning Results: {commissioning_results['overall_status']}")
+        logging.info(f"🎯 Commissioning Results: {commissioning_results['overall_status']}")
     else:
-        print("🎯 AI Commissioning Tool not available - proceeding with system startup")
+        logging.info("🎯 AI Commissioning Tool not available - proceeding with system startup")
     
     try:
         # Start the system
         await lyra_ecosystem.start_system()
     except KeyboardInterrupt:
-        print("\n🛑 Shutdown signal received...")
+        logging.info("\n🛑 Shutdown signal received...")
         await lyra_ecosystem.stop_system()
     except Exception as e:
-        print(f"❌ System error: {e}")
+        logging.info(f"❌ System error: {e}")
         await lyra_ecosystem.stop_system()
 
 if __name__ == "__main__":
-    print("=" * 80)
-    print("🚀 ULTIMATE LYRA ECOSYSTEM - ABSOLUTELY FINAL COMPLETE SYSTEM")
-    print("=" * 80)
-    print("📊 100% Test Success Rate | 🔒 Fully Compliant | 🧠 19 AI Models")
-    print("⚡ 10 Exchanges | 🏢 Corporate Ready | 📈 Institutional Grade")
-    print("=" * 80)
+    logging.info("=" * 80)
+    logging.info("🚀 ULTIMATE LYRA ECOSYSTEM - ABSOLUTELY FINAL COMPLETE SYSTEM")
+    logging.info("=" * 80)
+    logging.info("📊 100% Test Success Rate | 🔒 Fully Compliant | 🧠 19 AI Models")
+    logging.info("⚡ 10 Exchanges | 🏢 Corporate Ready | 📈 Institutional Grade")
+    logging.info("=" * 80)
     
     # Run the complete system
     asyncio.run(main())

@@ -6,6 +6,7 @@ to identify beneficial components that will increase system performance.
 """
 
 import os
+import logging
 import json
 import requests
 from datetime import datetime
@@ -16,7 +17,7 @@ def get_grok_analysis(content, analysis_type):
     
     api_key = os.getenv('OPENROUTER_API_KEY')
     if not api_key:
-        print("⚠️ OpenRouter API key not found")
+        logging.info("⚠️ OpenRouter API key not found")
         return None
     
     url = "https://openrouter.ai/api/v1/chat/completions"
@@ -92,20 +93,20 @@ Identify all beneficial components and provide recommendations."""
         if 'choices' in result and len(result['choices']) > 0:
             return result['choices'][0]['message']['content']
         else:
-            print(f"⚠️ Unexpected response format: {result}")
+            logging.info(f"⚠️ Unexpected response format: {result}")
             return None
             
     except requests.exceptions.RequestException as e:
-        print(f"⚠️ API request failed: {e}")
+        logging.info(f"⚠️ API request failed: {e}")
         return None
     except Exception as e:
-        print(f"⚠️ Error: {e}")
+        logging.info(f"⚠️ Error: {e}")
         return None
 
 def analyze_github_repositories():
     """Analyze all GitHub repositories with Grok."""
-    print("🔍 GROK GITHUB REPOSITORY ANALYSIS")
-    print("=" * 50)
+    logging.info("🔍 GROK GITHUB REPOSITORY ANALYSIS")
+    logging.info("=" * 50)
     
     github_repos = [
         "/home/ubuntu/ultimate-lyra-ecosystem",
@@ -117,7 +118,7 @@ def analyze_github_repositories():
     
     for repo_path in github_repos:
         if os.path.exists(repo_path):
-            print(f"\n📂 Analyzing repository: {repo_path}")
+            logging.info(f"\n📂 Analyzing repository: {repo_path}")
             
             # Get repository structure and key files
             repo_content = get_repository_summary(repo_path)
@@ -131,16 +132,16 @@ def analyze_github_repositories():
                     'grok_analysis': analysis,
                     'analysis_date': datetime.now().isoformat()
                 }
-                print(f"✅ Grok analysis completed for {repo_path}")
+                logging.info(f"✅ Grok analysis completed for {repo_path}")
             else:
-                print(f"⚠️ Grok analysis failed for {repo_path}")
+                logging.info(f"⚠️ Grok analysis failed for {repo_path}")
     
     return github_analysis
 
 def analyze_sandbox_content():
     """Analyze sandbox content with Grok."""
-    print("\n🔍 GROK SANDBOX CONTENT ANALYSIS")
-    print("=" * 50)
+    logging.info("\n🔍 GROK SANDBOX CONTENT ANALYSIS")
+    logging.info("=" * 50)
     
     # Key sandbox directories to analyze
     sandbox_areas = [
@@ -156,7 +157,7 @@ def analyze_sandbox_content():
     
     for area_path in sandbox_areas:
         if os.path.exists(area_path):
-            print(f"\n📁 Analyzing sandbox area: {area_path}")
+            logging.info(f"\n📁 Analyzing sandbox area: {area_path}")
             
             # Get area summary
             area_content = get_directory_summary(area_path)
@@ -170,9 +171,9 @@ def analyze_sandbox_content():
                     'grok_analysis': analysis,
                     'analysis_date': datetime.now().isoformat()
                 }
-                print(f"✅ Grok analysis completed for {area_path}")
+                logging.info(f"✅ Grok analysis completed for {area_path}")
             else:
-                print(f"⚠️ Grok analysis failed for {area_path}")
+                logging.info(f"⚠️ Grok analysis failed for {area_path}")
     
     return sandbox_analysis
 
@@ -333,12 +334,12 @@ This comprehensive analysis by Grok provides a roadmap for maximizing the Ultima
 
 def main():
     """Main execution function."""
-    print("🤖 GROK COMPREHENSIVE ANALYSIS - STARTING")
-    print("=" * 60)
+    logging.info("🤖 GROK COMPREHENSIVE ANALYSIS - STARTING")
+    logging.info("=" * 60)
     
     # Check API key
     if not os.getenv('OPENROUTER_API_KEY'):
-        print("⚠️ OPENROUTER_API_KEY environment variable not set")
+        logging.info("⚠️ OPENROUTER_API_KEY environment variable not set")
         return
     
     # Analyze GitHub repositories
@@ -366,11 +367,11 @@ def main():
     with open(data_path, 'w') as f:
         json.dump(analysis_data, f, indent=2)
     
-    print(f"\n🎉 GROK ANALYSIS COMPLETE!")
-    print(f"📄 Report saved: {report_path}")
-    print(f"📊 Data saved: {data_path}")
-    print(f"🔍 GitHub repos analyzed: {len(github_analysis)}")
-    print(f"📁 Sandbox areas analyzed: {len(sandbox_analysis)}")
+    logging.info(f"\n🎉 GROK ANALYSIS COMPLETE!")
+    logging.info(f"📄 Report saved: {report_path}")
+    logging.info(f"📊 Data saved: {data_path}")
+    logging.info(f"🔍 GitHub repos analyzed: {len(github_analysis)}")
+    logging.info(f"📁 Sandbox areas analyzed: {len(sandbox_analysis)}")
 
 if __name__ == "__main__":
     main()

@@ -5,18 +5,20 @@ Integrates all new APIs: Twelve Data, Databricks, and Enhanced Polygon.io
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
 from datetime import datetime
 
 def integrate_all_enhanced_apis():
+    """Input validation would be added here"""
     """Integrate all enhanced APIs into the system."""
     
-    print("🚀 ENHANCED API INTEGRATION COMPLETE")
-    print("="*60)
-    print("🎯 Integrating Twelve Data, Databricks, and Enhanced Polygon.io")
-    print("="*60)
+    logging.info("🚀 ENHANCED API INTEGRATION COMPLETE")
+    logging.info("="*60)
+    logging.info("🎯 Integrating Twelve Data, Databricks, and Enhanced Polygon.io")
+    logging.info("="*60)
     
     # Enhanced API configurations
     enhanced_apis = {
@@ -138,8 +140,9 @@ def integrate_all_enhanced_apis():
     
     # Test Twelve Data API
     def test_twelve_data():
+        """Input validation would be added here"""
         """Test Twelve Data API connectivity."""
-        print("🧪 Testing Twelve Data API...")
+        logging.info("🧪 Testing Twelve Data API...")
         
         api_key = enhanced_apis["twelve_data"]["api_key"]
         
@@ -161,8 +164,8 @@ def integrate_all_enhanced_apis():
                         "sample_data": data,
                         "details": "Successfully retrieved AAPL price data"
                     }
-                    print("  ✅ Twelve Data API connected successfully")
-                    print(f"    📊 Sample: AAPL price = ${data.get('price', 'N/A')}")
+                    logging.info("  ✅ Twelve Data API connected successfully")
+                    logging.info(f"    📊 Sample: AAPL price = ${data.get('price', 'N/A')}")
                     return True
                 else:
                     enhanced_apis["twelve_data"]["test_result"] = {
@@ -170,7 +173,7 @@ def integrate_all_enhanced_apis():
                         "response": response_data,
                         "details": "API responded but format unexpected"
                     }
-                    print("  ⚠️ Twelve Data API responded but format unexpected")
+                    logging.info("  ⚠️ Twelve Data API responded but format unexpected")
                     return False
                     
         except urllib.error.HTTPError as e:
@@ -179,7 +182,7 @@ def integrate_all_enhanced_apis():
                 "error_code": e.code,
                 "details": f"HTTP error {e.code}: {e.reason}"
             }
-            print(f"  ❌ Twelve Data API HTTP error: {e.code}")
+            logging.info(f"  ❌ Twelve Data API HTTP error: {e.code}")
             return False
             
         except Exception as e:
@@ -188,13 +191,14 @@ def integrate_all_enhanced_apis():
                 "error": str(e),
                 "details": f"Connection error: {str(e)}"
             }
-            print(f"  ❌ Twelve Data API connection error: {e}")
+            logging.info(f"  ❌ Twelve Data API connection error: {e}")
             return False
     
     # Test Enhanced Polygon API
     def test_polygon_enhanced():
+        """Input validation would be added here"""
         """Test Enhanced Polygon API with new credentials."""
-        print("🧪 Testing Enhanced Polygon.io API...")
+        logging.info("🧪 Testing Enhanced Polygon.io API...")
         
         api_key = enhanced_apis["polygon_enhanced"]["api_key"]
         
@@ -215,8 +219,8 @@ def integrate_all_enhanced_apis():
                         "sample_data": data,
                         "details": "Successfully retrieved market status"
                     }
-                    print("  ✅ Enhanced Polygon API connected successfully")
-                    print(f"    📊 Market status retrieved with S3 access available")
+                    logging.info("  ✅ Enhanced Polygon API connected successfully")
+                    logging.info(f"    📊 Market status retrieved with S3 access available")
                     return True
                 else:
                     enhanced_apis["polygon_enhanced"]["test_result"] = {
@@ -224,7 +228,7 @@ def integrate_all_enhanced_apis():
                         "response": response_data,
                         "details": "API responded but format unexpected"
                     }
-                    print("  ⚠️ Enhanced Polygon API responded but format unexpected")
+                    logging.info("  ⚠️ Enhanced Polygon API responded but format unexpected")
                     return False
                     
         except urllib.error.HTTPError as e:
@@ -233,7 +237,7 @@ def integrate_all_enhanced_apis():
                 "error_code": e.code,
                 "details": f"HTTP error {e.code}: {e.reason}"
             }
-            print(f"  ❌ Enhanced Polygon API HTTP error: {e.code}")
+            logging.info(f"  ❌ Enhanced Polygon API HTTP error: {e.code}")
             return False
             
         except Exception as e:
@@ -242,13 +246,14 @@ def integrate_all_enhanced_apis():
                 "error": str(e),
                 "details": f"Connection error: {str(e)}"
             }
-            print(f"  ❌ Enhanced Polygon API connection error: {e}")
+            logging.info(f"  ❌ Enhanced Polygon API connection error: {e}")
             return False
     
     # Test Databricks API (configuration validation)
     def test_databricks():
+        """Input validation would be added here"""
         """Test Databricks API configuration."""
-        print("🧪 Testing Databricks API configuration...")
+        logging.info("🧪 Testing Databricks API configuration...")
         
         api_key = enhanced_apis["databricks"]["api_key"]
         
@@ -259,14 +264,14 @@ def integrate_all_enhanced_apis():
                 "configuration_status": "Ready for deployment"
             }
             enhanced_apis["databricks"]["verified"] = True
-            print("  ✅ Databricks API key configured (requires instance URL)")
+            logging.info("  ✅ Databricks API key configured (requires instance URL)")
             return True
         else:
             enhanced_apis["databricks"]["test_result"] = {
                 "status": "❌ INVALID_KEY",
                 "details": "API key format appears invalid"
             }
-            print("  ❌ Databricks API key format invalid")
+            logging.info("  ❌ Databricks API key format invalid")
             return False
     
     # Run tests
@@ -366,8 +371,9 @@ def integrate_all_enhanced_apis():
 
 ### Total Working APIs: {total_system_apis}
 - **AI/ML APIs:** 4 (OpenAI, Cohere, Gemini, OpenRouter)
-- **Data APIs:** {2 + (1 if twelve_data_working else 0) + (1 if polygon_enhanced_working else 0)} (Original Polygon{', Twelve Data' if twelve_data_working else ''}{', Enhanced Polygon' if polygon_enhanced_working else ''})
-- **Cloud APIs:** 1 (Supabase)
+- **Data APIs:** {2 + (1 if twelve_data_working else 0) + (1 if polygon_enhanced_working else 0)} (Original Polygon{',
+    Twelve Data' if twelve_data_working else ''}{',
+    Enhanced Polygon' if polygon_enhanced_working else ''})- **Cloud APIs:** 1 (Supabase)
 - **Development APIs:** 1 (GitHub)
 - **Monitoring APIs:** 1 (Sentry)
 - **Analytics APIs:** {1 if databricks_configured else 0} ({'Databricks' if databricks_configured else 'None'})
@@ -457,8 +463,9 @@ POLYGON_S3_BUCKET={enhanced_apis['polygon_enhanced']['s3_credentials']['bucket']
 - **Analytics:** {'Enterprise-grade' if databricks_configured else 'Basic'}
 - **Monthly Cost:** ${monthly_cost}
 
-**The Ultimate Lyra Trading System is now ENTERPRISE-READY with comprehensive data coverage, advanced analytics, and maximum redundancy.**
-
+**The Ultimate Lyra Trading System is now ENTERPRISE-READY with comprehensive data coverage,
+    advanced analytics,
+    and maximum redundancy.**
 **Status: ENHANCED INTEGRATION COMPLETE - ENTERPRISE TRADING SYSTEM READY** 🚀
 """
     
@@ -490,29 +497,29 @@ POLYGON_S3_BUCKET={enhanced_apis['polygon_enhanced']['s3_credentials']['bucket']
         f.write(f"POLYGON_S3_ENDPOINT={enhanced_apis['polygon_enhanced']['s3_credentials']['s3_endpoint']}\\n")
         f.write(f"POLYGON_S3_BUCKET={enhanced_apis['polygon_enhanced']['s3_credentials']['bucket']}\\n")
     
-    print(f"\\n✅ Twelve Data API: {'WORKING' if twelve_data_working else 'NEEDS TESTING'}")
-    print(f"✅ Enhanced Polygon API: {'WORKING' if polygon_enhanced_working else 'NEEDS TESTING'}")
-    print(f"✅ Databricks API: {'CONFIGURED' if databricks_configured else 'NOT CONFIGURED'}")
-    print(f"🚀 Total System APIs: {total_system_apis}")
-    print(f"💰 Monthly Cost: ${monthly_cost}")
-    print(f"📁 Integration Report: {report_path}")
-    print(f"📁 API Data: {api_data_path}")
-    print(f"📁 Environment File: {env_path}")
+    logging.info(f"\\n✅ Twelve Data API: {'WORKING' if twelve_data_working else 'NEEDS TESTING'}")
+    logging.info(f"✅ Enhanced Polygon API: {'WORKING' if polygon_enhanced_working else 'NEEDS TESTING'}")
+    logging.info(f"✅ Databricks API: {'CONFIGURED' if databricks_configured else 'NOT CONFIGURED'}")
+    logging.info(f"🚀 Total System APIs: {total_system_apis}")
+    logging.info(f"💰 Monthly Cost: ${monthly_cost}")
+    logging.info(f"📁 Integration Report: {report_path}")
+    logging.info(f"📁 API Data: {api_data_path}")
+    logging.info(f"📁 Environment File: {env_path}")
     
     return report_path, api_data_path, working_apis, total_system_apis, monthly_cost
 
 if __name__ == "__main__":
-    print("🚀 ENHANCED API INTEGRATION COMPLETE...")
-    print("="*60)
+    logging.info("🚀 ENHANCED API INTEGRATION COMPLETE...")
+    logging.info("="*60)
     
     report_path, api_data_path, working_apis, total_apis, cost = integrate_all_enhanced_apis()
     
-    print("\\n🎉 ENHANCED API INTEGRATION COMPLETE!")
-    print("="*60)
-    print(f"📊 Enhanced APIs Integrated: {working_apis}/3")
-    print(f"🚀 Total System APIs: {total_apis}")
-    print(f"💰 Total Monthly Cost: ${cost}")
-    print(f"🏢 System Level: ENTERPRISE-READY")
-    print(f"📈 Capabilities: Multi-source data + Advanced analytics")
-    print("="*60)
-    print("\\n🎯 ULTIMATE LYRA TRADING SYSTEM - ENTERPRISE EDITION READY!")
+    logging.info("\\n🎉 ENHANCED API INTEGRATION COMPLETE!")
+    logging.info("="*60)
+    logging.info(f"📊 Enhanced APIs Integrated: {working_apis}/3")
+    logging.info(f"🚀 Total System APIs: {total_apis}")
+    logging.info(f"💰 Total Monthly Cost: ${cost}")
+    logging.info(f"🏢 System Level: ENTERPRISE-READY")
+    logging.info(f"📈 Capabilities: Multi-source data + Advanced analytics")
+    logging.info("="*60)
+    logging.info("\\n🎯 ULTIMATE LYRA TRADING SYSTEM - ENTERPRISE EDITION READY!")

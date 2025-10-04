@@ -27,6 +27,7 @@ class VaultManager:
     """Enterprise-grade vault system for secure key management."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.vault_path = "/home/ubuntu/ULTIMATE_LYRA_ECOSYSTEM_FINAL_SEGMENTED/security/vault"
         self.audit_path = "/home/ubuntu/ULTIMATE_LYRA_ECOSYSTEM_FINAL_SEGMENTED/security/audit"
         self.master_key = self._generate_master_key()
@@ -133,6 +134,7 @@ class ComplianceManager:
     """Manages compliance requirements for regulated trading."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.compliance_path = "/home/ubuntu/ULTIMATE_LYRA_ECOSYSTEM_FINAL_SEGMENTED/security/compliance"
         os.makedirs(self.compliance_path, mode=0o700, exist_ok=True)
         
@@ -219,6 +221,7 @@ class PenetrationTestManager:
     """Automated penetration testing and security validation."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.test_results_path = "/home/ubuntu/ULTIMATE_LYRA_ECOSYSTEM_FINAL_SEGMENTED/security/pentest"
         os.makedirs(self.test_results_path, mode=0o700, exist_ok=True)
         
@@ -287,10 +290,10 @@ def migrate_env_to_vault():
                 key, value = line.strip().split('=', 1)
                 if any(sensitive in key.upper() for sensitive in ['API_KEY', 'SECRET', 'PASSWORD', 'TOKEN']):
                     vault_manager.store_secret(key, value, {"migrated_from_env": True})
-                    print(f"Migrated {key} to vault")
+                    logging.info(f"Migrated {key} to vault")
 
 if __name__ == "__main__":
-    print("🔒 Initializing Institutional Security & Compliance System...")
+    logging.info("🔒 Initializing Institutional Security & Compliance System...")
     
     # Generate compliance reports
     kyc_report = compliance_manager.generate_kyc_report()
@@ -299,7 +302,7 @@ if __name__ == "__main__":
     # Run security scan
     security_scan = pentest_manager.run_security_scan()
     
-    print(f"✅ KYC Report generated: {kyc_report['report_id']}")
-    print(f"✅ GDPR Report generated: {gdpr_report['report_id']}")
-    print(f"✅ Security Scan completed: {security_scan['scan_id']}")
-    print("🔒 Institutional Security & Compliance System ready!")
+    logging.info(f"✅ KYC Report generated: {kyc_report['report_id']}")
+    logging.info(f"✅ GDPR Report generated: {gdpr_report['report_id']}")
+    logging.info(f"✅ Security Scan completed: {security_scan['scan_id']}")
+    logging.info("🔒 Institutional Security & Compliance System ready!")

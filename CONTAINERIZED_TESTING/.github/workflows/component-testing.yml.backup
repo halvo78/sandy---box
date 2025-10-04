@@ -1,0 +1,156 @@
+jobs:
+  aggregate-results:
+    needs:
+    - test-trading-systems
+    - test-api-integrations
+    - test-monitoring-dashboards
+    - test-deployment-systems
+    - test-documentation
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download all test results
+      uses: actions/download-artifact@v3
+    - name: Generate comprehensive report
+      run: python scripts/generate-comprehensive-report.py
+    - name: Upload comprehensive report
+      uses: actions/upload-artifact@v3
+      with:
+        name: comprehensive-test-report
+        path: comprehensive-report.html
+  test-api-integrations:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up python environment
+      uses: actions/setup-python@v4
+      with:
+        node-version: null
+        python-version: '3.11'
+    - name: Build API_INTEGRATIONS container
+      run: docker build -t sandy-box-api-integrations ./API_INTEGRATIONS
+    - name: Run API_INTEGRATIONS tests
+      run: docker run --rm -v ${{ github.workspace }}/test-results:/app/test-results
+        sandy-box-api-integrations
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: api-integrations-test-results
+        path: test-results/
+    strategy:
+      matrix:
+        test-type:
+        - unit
+        - integration
+        - api
+  test-deployment-systems:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up docker environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: null
+        python-version: null
+    - name: Build DEPLOYMENT_SYSTEMS container
+      run: docker build -t sandy-box-deployment-systems ./DEPLOYMENT_SYSTEMS
+    - name: Run DEPLOYMENT_SYSTEMS tests
+      run: docker run --rm -v ${{ github.workspace }}/test-results:/app/test-results
+        sandy-box-deployment-systems
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: deployment-systems-test-results
+        path: test-results/
+    strategy:
+      matrix:
+        test-type:
+        - deployment
+        - infrastructure
+        - security
+  test-documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up markdown environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: null
+        python-version: null
+    - name: Build DOCUMENTATION container
+      run: docker build -t sandy-box-documentation ./DOCUMENTATION
+    - name: Run DOCUMENTATION tests
+      run: docker run --rm -v ${{ github.workspace }}/test-results:/app/test-results
+        sandy-box-documentation
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation-test-results
+        path: test-results/
+    strategy:
+      matrix:
+        test-type:
+        - documentation
+        - links
+        - accuracy
+  test-monitoring-dashboards:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up javascript environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        python-version: null
+    - name: Build MONITORING_DASHBOARDS container
+      run: docker build -t sandy-box-monitoring-dashboards ./MONITORING_DASHBOARDS
+    - name: Run MONITORING_DASHBOARDS tests
+      run: docker run --rm -v ${{ github.workspace }}/test-results:/app/test-results
+        sandy-box-monitoring-dashboards
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: monitoring-dashboards-test-results
+        path: test-results/
+    strategy:
+      matrix:
+        test-type:
+        - unit
+        - e2e
+        - performance
+  test-trading-systems:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up python environment
+      uses: actions/setup-python@v4
+      with:
+        node-version: null
+        python-version: '3.11'
+    - name: Build TRADING_SYSTEMS container
+      run: docker build -t sandy-box-trading-systems ./TRADING_SYSTEMS
+    - name: Run TRADING_SYSTEMS tests
+      run: docker run --rm -v ${{ github.workspace }}/test-results:/app/test-results
+        sandy-box-trading-systems
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: trading-systems-test-results
+        path: test-results/
+    strategy:
+      matrix:
+        test-type:
+        - unit
+        - integration
+        - performance
+name: Ultimate Sandy-Box Component Testing
+'on':
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+    - develop
+  schedule:
+  - cron: 0 2 * * *

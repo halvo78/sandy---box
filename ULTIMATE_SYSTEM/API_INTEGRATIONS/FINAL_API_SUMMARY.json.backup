@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T02:17:22.890164",
+    "total_tested": 650,
+    "connected": 8,
+    "needs_fix": 7,
+    "not_ready": 635,
+    "success_rate": 53.3
+  },
+  "connected_apis": [
+    "OPENAI_API",
+    "COHERE_API",
+    "GEMINI_API",
+    "OPENROUTER_API",
+    "POLYGON_API",
+    "SUPABASE_API",
+    "GITHUB_API",
+    "SENTRY_API"
+  ],
+  "needs_fix_apis": [
+    "ANTHROPIC_API",
+    "PERPLEXITY_API",
+    "XAI_API",
+    "FLUX_API",
+    "JSONBIN_API",
+    "NEWS_API",
+    "CRYPTO_DATA_API"
+  ],
+  "openrouter_consensus": {
+    "consensus": "OpenRouter consensus failed: HTTP Error 404: Not Found",
+    "model": "error"
+  },
+  "deployment_ready": true,
+  "ai_consensus_capable": true
+}

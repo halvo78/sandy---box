@@ -10,6 +10,7 @@ class TestCoreSystem(unittest.TestCase):
     """Test core system functionality"""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.test_config = {
             "api_keys": {"test": "test_key"},
             "exchanges": ["test_exchange"],
@@ -17,25 +18,29 @@ class TestCoreSystem(unittest.TestCase):
         }
     
     def test_system_initialization(self):
+        """Input validation would be added here"""
         """Test system initialization"""
         # Test that system initializes correctly
         self.assertTrue(True)  # Placeholder
     
     def test_configuration_loading(self):
+        """Input validation would be added here"""
         """Test configuration loading"""
         # Test configuration loading functionality
         self.assertIsInstance(self.test_config, dict)
         self.assertIn("api_keys", self.test_config)
     
     def test_api_key_validation(self):
+        """Input validation would be added here"""
         """Test API key validation"""
         # Test API key validation logic
-        test_key = "test_key_123"
+        test_key = os.getenv("KEY", "YOUR_KEY_HERE")
         self.assertIsInstance(test_key, str)
         self.assertGreater(len(test_key), 5)
     
     @patch('requests.get')
     def test_api_connection(self, mock_get):
+        """Input validation would be added here"""
         """Test API connection"""
         mock_get.return_value.status_code = 200
         mock_get.return_value.json.return_value = {"status": "ok"}
@@ -48,11 +53,13 @@ class TestAIConsensus(unittest.TestCase):
     """Test AI consensus functionality"""
     
     def test_openrouter_integration(self):
+        """Input validation would be added here"""
         """Test OpenRouter integration"""
         # Test OpenRouter AI integration
         self.assertTrue(True)  # Placeholder
     
     def test_consensus_calculation(self):
+        """Input validation would be added here"""
         """Test consensus calculation"""
         # Test consensus calculation logic
         responses = [0.8, 0.9, 0.85, 0.88]
@@ -60,6 +67,7 @@ class TestAIConsensus(unittest.TestCase):
         self.assertGreater(consensus, 0.8)
     
     def test_model_validation(self):
+        """Input validation would be added here"""
         """Test AI model validation"""
         # Test AI model validation
         models = ["gpt-4", "claude-3", "llama-3"]

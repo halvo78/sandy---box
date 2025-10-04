@@ -75,6 +75,7 @@ class YOUR_API_KEY_HERE:
     """
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.start_time = datetime.now()
         self.compliance_db = "/home/ubuntu/ultimate_lyra_systems/forensic_compliance.db"
         self.openrouter_keys = self._load_openrouter_keys()
@@ -316,8 +317,9 @@ class YOUR_API_KEY_HERE:
         # Store in database
         self._store_ai_consensus(consensus_results)
         
-        logger.info(f"🎯 AI Consensus complete: {consensus_score:.2%} response rate, {consensus_analysis.get('confidence', 0):.2%} confidence")
-        
+        logger.info(f"🎯 AI Consensus complete: {consensus_score:.2%} response rate,
+            {consensus_analysis.get('confidence',
+            0):.2%} confidence")        
         return consensus_results
     
     def _query_ai_model(self, model: str, query: str, context: Dict[str, Any], role: str) -> Optional[Dict[str, Any]]:
@@ -543,8 +545,9 @@ Focus on validating and synthesizing AI consensus.
             "response_rate": len(responses) / len(self.best_ai_models),
             "average_score": sum(scores) / len(scores) if scores else 0.0,
             "risk_consensus": max(set(risk_levels), key=risk_levels.count) if risk_levels else "UNKNOWN",
-            "recommendation_consensus": max(set(recommendations), key=recommendations.count) if recommendations else "NEUTRAL",
-            "confidence": min(1.0, len(responses) / len(self.best_ai_models) * 0.8 + (sum(scores) / len(scores) / 10 * 0.2 if scores else 0))
+            "recommendation_consensus": max(set(recommendations),
+                key=recommendations.count) if recommendations else "NEUTRAL",
+                            "confidence": min(1.0, len(responses) / len(self.best_ai_models) * 0.8 + (sum(scores) / len(scores) / 10 * 0.2 if scores else 0))
         }
         
         # Determine final recommendation
@@ -652,8 +655,9 @@ Focus on validating and synthesizing AI consensus.
                 if failed_exchanges:
                     # Get AI consensus on exchange failures
                     consensus = self.get_ai_consensus(
-                        f"Exchange connection failures detected: {', '.join(failed_exchanges)}. Assess impact and recommend actions.",
-                        {"exchange_status": exchange_status}
+                        f"Exchange connection failures detected: {',
+                            '.join(failed_exchanges)}. Assess impact and recommend actions.",
+                                                    {"exchange_status": exchange_status}
                     )
                     
                     self._log_compliance_event(
@@ -805,8 +809,10 @@ Focus on validating and synthesizing AI consensus.
                 system_status = self._get_current_system_status()
                 
                 consensus = self.get_ai_consensus(
-                    "Perform comprehensive system analysis. Assess overall health, identify optimization opportunities, and recommend improvements.",
-                    {"full_system_status": system_status}
+                    "Perform comprehensive system analysis. Assess overall health,
+                        identify optimization opportunities,
+                        and recommend improvements.",
+                                            {"full_system_status": system_status}
                 )
                 
                 self._log_compliance_event(
@@ -834,8 +840,9 @@ Focus on validating and synthesizing AI consensus.
         try:
             # Analyze AI consensus for remediation recommendations
             if consensus.get("confidence", 0) > 0.7:
-                final_recommendation = consensus.get("consensus_analysis", {}).get("final_recommendation", "HOLD_OR_INVESTIGATE")
-                
+                final_recommendation = consensus.get("consensus_analysis",
+                    {}).get("final_recommendation",
+                    "HOLD_OR_INVESTIGATE")                
                 if final_recommendation == "PROCEED":
                     if issue_type == "SYSTEM_HEALTH":
                         remediation_actions = self._remediate_system_health(issues)
@@ -1062,6 +1069,7 @@ Focus on validating and synthesizing AI consensus.
         }
     
     def _log_compliance_event(self, event_type: str, component: str, description: str, 
+        """TODO: Add function documentation"""
                             severity: str, status: str, ai_consensus: Dict[str, Any] = None):
         """Log a compliance event to the forensic database"""
         try:
@@ -1278,6 +1286,7 @@ Focus on validating and synthesizing AI consensus.
         }
     
     def _generate_recommendations(self, events: List[Tuple], health_data: List[Tuple], 
+        """TODO: Add function documentation"""
                                 consensus_data: List[Tuple]) -> List[str]:
         """Generate recommendations based on forensic analysis"""
         recommendations = []
@@ -1321,8 +1330,8 @@ Focus on validating and synthesizing AI consensus.
 
 def main():
     """Main function to start the AI Forensic Compliance Commissioner"""
-    print("🔍 Starting AI Forensic Compliance Commissioner...")
-    print("=" * 60)
+    logging.info("🔍 Starting AI Forensic Compliance Commissioner...")
+    logging.info("=" * 60)
     
     try:
         # Create logs directory
@@ -1331,28 +1340,28 @@ def main():
         # Initialize the commissioner
         commissioner = YOUR_API_KEY_HERE()
         
-        print("✅ AI Forensic Compliance Commissioner is now active!")
-        print("📊 Monitoring all system activities with AI oversight")
-        print("🤖 Using 8 best AI models for consensus validation")
-        print("🔒 Forensic-level compliance tracking enabled")
-        print("🔧 Automatic remediation active")
+        logging.info("✅ AI Forensic Compliance Commissioner is now active!")
+        logging.info("📊 Monitoring all system activities with AI oversight")
+        logging.info("🤖 Using 8 best AI models for consensus validation")
+        logging.info("🔒 Forensic-level compliance tracking enabled")
+        logging.info("🔧 Automatic remediation active")
         print()
-        print("Commands:")
-        print("- Press Ctrl+C to stop monitoring")
-        print("- Check logs at: /home/ubuntu/ultimate_lyra_systems/logs/forensic_commissioner.log")
-        print("- Database at: /home/ubuntu/ultimate_lyra_systems/forensic_compliance.db")
+        logging.info("Commands:")
+        logging.info("- Press Ctrl+C to stop monitoring")
+        logging.info("- Check logs at: /home/ubuntu/ultimate_lyra_systems/logs/forensic_commissioner.log")
+        logging.info("- Database at: /home/ubuntu/ultimate_lyra_systems/forensic_compliance.db")
         print()
         
         # Test AI consensus
-        print("🧪 Testing AI consensus system...")
+        logging.info("🧪 Testing AI consensus system...")
         test_consensus = commissioner.get_ai_consensus(
             "Perform initial system assessment. Confirm all AI models are operational and provide system readiness score (1-10)."
         )
         
-        print(f"✅ AI Consensus Test Complete:")
-        print(f"   - Response Rate: {test_consensus['consensus_score']:.2%}")
-        print(f"   - Confidence: {test_consensus['confidence']:.2%}")
-        print(f"   - Models Responding: {test_consensus['responding_models']}/{test_consensus['total_models']}")
+        logging.info(f"✅ AI Consensus Test Complete:")
+        logging.info(f"   - Response Rate: {test_consensus['consensus_score']:.2%}")
+        logging.info(f"   - Confidence: {test_consensus['confidence']:.2%}")
+        logging.info(f"   - Models Responding: {test_consensus['responding_models']}/{test_consensus['total_models']}")
         print()
         
         # Keep running
@@ -1362,26 +1371,26 @@ def main():
                 # Generate periodic status update
                 if datetime.now().minute % 15 == 0:  # Every 15 minutes
                     uptime = (datetime.now() - commissioner.start_time).total_seconds() / 3600
-                    print(f"📊 Status Update - Uptime: {uptime:.1f}h | Monitoring: {'Active' if commissioner.monitoring_active else 'Inactive'}")
+                    logging.info(f"📊 Status Update - Uptime: {uptime:.1f}h | Monitoring: {'Active' if commissioner.monitoring_active else 'Inactive'}")
         
         except KeyboardInterrupt:
-            print("\n🛑 Stopping AI Forensic Compliance Commissioner...")
+            logging.info("\n🛑 Stopping AI Forensic Compliance Commissioner...")
             commissioner.stop_monitoring()
             
             # Generate final report
-            print("📊 Generating final forensic report...")
+            logging.info("📊 Generating final forensic report...")
             final_report = commissioner.generate_forensic_report(24)
             
             report_file = f"/home/ubuntu/ultimate_lyra_systems/forensic_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
             with open(report_file, 'w') as f:
                 json.dump(final_report, f, indent=2)
             
-            print(f"✅ Final forensic report saved: {report_file}")
-            print("🔍 AI Forensic Compliance Commissioner stopped")
+            logging.info(f"✅ Final forensic report saved: {report_file}")
+            logging.info("🔍 AI Forensic Compliance Commissioner stopped")
     
     except Exception as e:
         logger.error(f"❌ Critical error in AI Forensic Compliance Commissioner: {e}")
-        print(f"❌ Critical error: {e}")
+        logging.info(f"❌ Critical error: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

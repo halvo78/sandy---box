@@ -5,6 +5,7 @@ Creates comprehensive system access and monitoring capabilities
 """
 
 import os
+import logging
 import json
 import subprocess
 import socket
@@ -12,6 +13,7 @@ from datetime import datetime
 import psutil
 
 def get_system_info():
+    """Input validation would be added here"""
     """Get comprehensive system information"""
     info = {
         "timestamp": datetime.now().isoformat(),
@@ -59,6 +61,7 @@ def get_system_info():
     return info
 
 def setup_web_dashboard():
+    """Input validation would be added here"""
     """Set up a simple web dashboard for system monitoring"""
     dashboard_html = """
 <!DOCTYPE html>
@@ -71,8 +74,10 @@ def setup_web_dashboard():
         body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; }
         .header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .status-good { color: #27ae60; font-weight: bold; }
+        .card { background: white; padding: 20px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,
+            0,
+            0,
+            0.1); }        .status-good { color: #27ae60; font-weight: bold; }
         .status-warning { color: #f39c12; font-weight: bold; }
         .status-error { color: #e74c3c; font-weight: bold; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -211,6 +216,7 @@ def setup_web_dashboard():
     return '/home/ubuntu/system_dashboard.html'
 
 def create_simple_http_server():
+    """Input validation would be added here"""
     """Create a simple HTTP server for the dashboard"""
     server_code = """
 #!/usr/bin/env python3
@@ -225,6 +231,7 @@ from datetime import datetime
 
 class DashboardHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
+        """Input validation would be added here"""
         parsed_path = urlparse(self.path)
         
         if parsed_path.path == '/api/system-info':
@@ -265,9 +272,9 @@ if __name__ == "__main__":
     os.chdir('/home/ubuntu')
     
     with socketserver.TCPServer(("", PORT), DashboardHandler) as httpd:
-        print(f"🌐 Dashboard server running at http://localhost:{PORT}")
-        print(f"📊 System monitoring available at http://localhost:{PORT}")
-        print(f"🔗 API endpoint: http://localhost:{PORT}/api/system-info")
+        logging.info(f"🌐 Dashboard server running at http://localhost:{PORT}")
+        logging.info(f"📊 System monitoring available at http://localhost:{PORT}")
+        logging.info(f"🔗 API endpoint: http://localhost:{PORT}/api/system-info")
         httpd.serve_forever()
 """
     
@@ -277,6 +284,7 @@ if __name__ == "__main__":
     return '/home/ubuntu/dashboard_server.py'
 
 def setup_ngrok_config():
+    """Input validation would be added here"""
     """Create ngrok configuration for when authtoken is available"""
     ngrok_config = """
 version: "2"
@@ -303,10 +311,11 @@ tunnels:
     return '/home/ubuntu/.config/ngrok/ngrok.yml'
 
 def main():
-    print("🚀 Setting up Ubuntu System Access & Monitoring...")
+    """Input validation would be added here"""
+    logging.info("🚀 Setting up Ubuntu System Access & Monitoring...")
     
     # Get system information
-    print("📊 Gathering system information...")
+    logging.info("📊 Gathering system information...")
     system_info = get_system_info()
     
     # Save system info to file
@@ -314,59 +323,59 @@ def main():
         json.dump(system_info, f, indent=2, default=str)
     
     # Set up web dashboard
-    print("🌐 Setting up web dashboard...")
+    logging.info("🌐 Setting up web dashboard...")
     dashboard_path = setup_web_dashboard()
     
     # Create HTTP server
-    print("🖥️ Creating dashboard server...")
+    logging.info("🖥️ Creating dashboard server...")
     server_path = create_simple_http_server()
     
     # Set up ngrok config
-    print("🔗 Setting up ngrok configuration...")
+    logging.info("🔗 Setting up ngrok configuration...")
     ngrok_config_path = setup_ngrok_config()
     
-    print("\n" + "="*80)
-    print("✅ UBUNTU SYSTEM ACCESS SETUP COMPLETE!")
-    print("="*80)
+    logging.info("\n" + "="*80)
+    logging.info("✅ UBUNTU SYSTEM ACCESS SETUP COMPLETE!")
+    logging.info("="*80)
     
-    print(f"\n📊 System Information:")
-    print(f"   Hostname: {system_info['hostname']}")
-    print(f"   Platform: {system_info['platform']['system']} {system_info['platform']['release']}")
-    print(f"   CPU Usage: {system_info['system_resources']['cpu_percent']}%")
-    print(f"   Memory Usage: {system_info['system_resources']['memory']['percent']}%")
-    print(f"   Disk Usage: {system_info['system_resources']['disk']['percent']}%")
-    print(f"   Active Processes: {system_info['processes']}")
+    logging.info(f"\n📊 System Information:")
+    logging.info(f"   Hostname: {system_info['hostname']}")
+    logging.info(f"   Platform: {system_info['platform']['system']} {system_info['platform']['release']}")
+    logging.info(f"   CPU Usage: {system_info['system_resources']['cpu_percent']}%")
+    logging.info(f"   Memory Usage: {system_info['system_resources']['memory']['percent']}%")
+    logging.info(f"   Disk Usage: {system_info['system_resources']['disk']['percent']}%")
+    logging.info(f"   Active Processes: {system_info['processes']}")
     
-    print(f"\n🌐 Web Dashboard:")
-    print(f"   Dashboard HTML: {dashboard_path}")
-    print(f"   Server Script: {server_path}")
-    print(f"   To start: python3 {server_path}")
-    print(f"   Access at: http://localhost:8080")
+    logging.info(f"\n🌐 Web Dashboard:")
+    logging.info(f"   Dashboard HTML: {dashboard_path}")
+    logging.info(f"   Server Script: {server_path}")
+    logging.info(f"   To start: python3 {server_path}")
+    logging.info(f"   Access at: http://localhost:8080")
     
-    print(f"\n🔗 Ngrok Configuration:")
-    print(f"   Config file: {ngrok_config_path}")
-    print(f"   To use ngrok:")
-    print(f"   1. Get authtoken from https://dashboard.ngrok.com/get-started/your-authtoken")
-    print(f"   2. Replace YOUR_NGROK_AUTHTOKEN_HERE in {ngrok_config_path}")
-    print(f"   3. Run: /usr/local/bin/ngrok start --all")
+    logging.info(f"\n🔗 Ngrok Configuration:")
+    logging.info(f"   Config file: {ngrok_config_path}")
+    logging.info(f"   To use ngrok:")
+    logging.info(f"   1. Get authtoken from https://dashboard.ngrok.com/get-started/your-authtoken")
+    logging.info(f"   2. Replace YOUR_NGROK_AUTHTOKEN_HERE in {ngrok_config_path}")
+    logging.info(f"   3. Run: /usr/local/bin/ngrok start --all")
     
-    print(f"\n📁 Files Created:")
-    print(f"   - {dashboard_path}")
-    print(f"   - {server_path}")
-    print(f"   - {ngrok_config_path}")
-    print(f"   - /home/ubuntu/system_info.json")
+    logging.info(f"\n📁 Files Created:")
+    logging.info(f"   - {dashboard_path}")
+    logging.info(f"   - {server_path}")
+    logging.info(f"   - {ngrok_config_path}")
+    logging.info(f"   - /home/ubuntu/system_info.json")
     
-    print(f"\n🚀 Trading System Status:")
-    print(f"   Ultimate Lyra V5: ✅ Production Ready")
-    print(f"   AI Consensus: ✅ 8 Models Active")
-    print(f"   Exchange Connections: ✅ 8 Exchanges")
-    print(f"   Vault Integration: ✅ Secure & Functional")
+    logging.info(f"\n🚀 Trading System Status:")
+    logging.info(f"   Ultimate Lyra V5: ✅ Production Ready")
+    logging.info(f"   AI Consensus: ✅ 8 Models Active")
+    logging.info(f"   Exchange Connections: ✅ 8 Exchanges")
+    logging.info(f"   Vault Integration: ✅ Secure & Functional")
     
-    print(f"\n🎯 Next Steps:")
-    print(f"   1. Start dashboard: python3 {server_path}")
-    print(f"   2. Configure ngrok authtoken for remote access")
-    print(f"   3. Access system via web dashboard")
-    print(f"   4. Monitor trading system performance")
+    logging.info(f"\n🎯 Next Steps:")
+    logging.info(f"   1. Start dashboard: python3 {server_path}")
+    logging.info(f"   2. Configure ngrok authtoken for remote access")
+    logging.info(f"   3. Access system via web dashboard")
+    logging.info(f"   4. Monitor trading system performance")
     
     return {
         "dashboard_path": dashboard_path,

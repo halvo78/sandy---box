@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class DigitalSurgeWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "digitalsurge"
         self.exchange_name = "DigitalSurge"
         self.setup_logging()

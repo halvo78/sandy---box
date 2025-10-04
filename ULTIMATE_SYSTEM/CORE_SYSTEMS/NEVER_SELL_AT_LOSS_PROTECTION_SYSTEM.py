@@ -81,6 +81,7 @@ class NeverSellAtLossProtectionSystem:
     """
     
     def __init__(self, db_path: str = "lyra_positions.db"):
+        """TODO: Add function documentation"""
         self.db_path = db_path
         self.positions: Dict[str, Position] = {}  # symbol_exchange -> Position
         self.trades: List[Trade] = []
@@ -208,6 +209,7 @@ class NeverSellAtLossProtectionSystem:
         logger.info(f"Loaded {len(self.positions)} positions from database")
     
     def validate_buy_order(self, symbol: str, exchange: str, quantity: Decimal, 
+        """TODO: Add function documentation"""
                           price: Decimal, is_maker: bool = True) -> Dict:
         """
         Validate a buy order before execution.
@@ -262,6 +264,7 @@ class NeverSellAtLossProtectionSystem:
             }
     
     def record_buy_trade(self, order_id: str, symbol: str, exchange: str,
+        """TODO: Add function documentation"""
                         quantity: Decimal, price: Decimal, fee: Decimal,
                         fee_currency: str, is_maker: bool = True) -> bool:
         """
@@ -335,6 +338,7 @@ class NeverSellAtLossProtectionSystem:
             return False
     
     def validate_sell_order(self, symbol: str, exchange: str, quantity: Decimal,
+        """TODO: Add function documentation"""
                            current_price: Decimal, is_maker: bool = True) -> Dict:
         """
         Validate a sell order to ensure it will NEVER result in a loss.
@@ -449,6 +453,7 @@ class NeverSellAtLossProtectionSystem:
             }
     
     def record_sell_trade(self, order_id: str, symbol: str, exchange: str,
+        """TODO: Add function documentation"""
                          quantity: Decimal, price: Decimal, fee: Decimal,
                          fee_currency: str, is_maker: bool = True) -> bool:
         """
@@ -706,6 +711,7 @@ class NeverSellAtLossProtectionSystem:
         conn.close()
     
     def _save_inventory_discrepancy(self, exchange: str, symbol: str, 
+        """TODO: Add function documentation"""
                                    system_balance: Decimal, exchange_balance: Decimal,
                                    difference: Decimal):
         """Save inventory discrepancy to database."""
@@ -725,21 +731,21 @@ class NeverSellAtLossProtectionSystem:
 
 def demonstrate_protection_system():
     """Demonstrate the Never-Sell-At-Loss Protection System."""
-    print("🛡️  ULTIMATE LYRA ECOSYSTEM - NEVER-SELL-AT-LOSS PROTECTION SYSTEM")
-    print("=" * 80)
+    logging.info("🛡️  ULTIMATE LYRA ECOSYSTEM - NEVER-SELL-AT-LOSS PROTECTION SYSTEM")
+    logging.info("=" * 80)
     
     # Initialize protection system
     protection = NeverSellAtLossProtectionSystem()
     
-    print("\n📋 PROTECTION SYSTEM FEATURES:")
-    print("✅ NEVER sells coins not bought by the system")
-    print("✅ NEVER sells at a loss (including all fees and slippage)")
-    print("✅ SPOT ONLY trading (no margin, futures, derivatives)")
-    print("✅ Complete inventory tracking and reconciliation")
-    print("✅ Profit crystallization only when guaranteed")
+    logging.info("\n📋 PROTECTION SYSTEM FEATURES:")
+    logging.info("✅ NEVER sells coins not bought by the system")
+    logging.info("✅ NEVER sells at a loss (including all fees and slippage)")
+    logging.info("✅ SPOT ONLY trading (no margin, futures, derivatives)")
+    logging.info("✅ Complete inventory tracking and reconciliation")
+    logging.info("✅ Profit crystallization only when guaranteed")
     
     # Demonstrate buy validation
-    print("\n🔍 BUY ORDER VALIDATION:")
+    logging.info("\n🔍 BUY ORDER VALIDATION:")
     buy_validation = protection.validate_buy_order(
         symbol="BTCUSDT",
         exchange="binance",
@@ -749,12 +755,12 @@ def demonstrate_protection_system():
     )
     
     if buy_validation['valid']:
-        print(f"✅ BUY VALIDATED: {buy_validation['quantity']} {buy_validation['symbol']}")
-        print(f"   Price: ${buy_validation['price']}")
-        print(f"   Gross Amount: ${buy_validation['gross_amount']}")
-        print(f"   Fee: ${buy_validation['fee']} ({buy_validation['fee_rate']:.4f})")
-        print(f"   Net Cost: ${buy_validation['net_cost']}")
-        print(f"   Trading Type: {buy_validation['trading_type']}")
+        logging.info(f"✅ BUY VALIDATED: {buy_validation['quantity']} {buy_validation['symbol']}")
+        logging.info(f"   Price: ${buy_validation['price']}")
+        logging.info(f"   Gross Amount: ${buy_validation['gross_amount']}")
+        logging.info(f"   Fee: ${buy_validation['fee']} ({buy_validation['fee_rate']:.4f})")
+        logging.info(f"   Net Cost: ${buy_validation['net_cost']}")
+        logging.info(f"   Trading Type: {buy_validation['trading_type']}")
         
         # Record the buy trade
         protection.record_buy_trade(
@@ -769,7 +775,7 @@ def demonstrate_protection_system():
         )
     
     # Demonstrate sell validation (profitable)
-    print("\n🔍 SELL ORDER VALIDATION (Profitable):")
+    logging.info("\n🔍 SELL ORDER VALIDATION (Profitable):")
     sell_validation = protection.validate_sell_order(
         symbol="BTCUSDT",
         exchange="binance",
@@ -779,19 +785,19 @@ def demonstrate_protection_system():
     )
     
     if sell_validation['valid']:
-        print(f"✅ SELL VALIDATED: {sell_validation['quantity']} {sell_validation['symbol']}")
-        print(f"   Current Price: ${sell_validation['current_price']}")
-        print(f"   Min Profitable Price: ${sell_validation['min_profitable_price']}")
-        print(f"   Cost Basis: ${sell_validation['cost_basis']}")
-        print(f"   Expected Profit: ${sell_validation['guaranteed_profit']}")
-        print(f"   Profit Margin: {sell_validation['profit_margin']:.4f}")
-        print(f"   Protection Status: {sell_validation['protection_status']}")
+        logging.info(f"✅ SELL VALIDATED: {sell_validation['quantity']} {sell_validation['symbol']}")
+        logging.info(f"   Current Price: ${sell_validation['current_price']}")
+        logging.info(f"   Min Profitable Price: ${sell_validation['min_profitable_price']}")
+        logging.info(f"   Cost Basis: ${sell_validation['cost_basis']}")
+        logging.info(f"   Expected Profit: ${sell_validation['guaranteed_profit']}")
+        logging.info(f"   Profit Margin: {sell_validation['profit_margin']:.4f}")
+        logging.info(f"   Protection Status: {sell_validation['protection_status']}")
     else:
-        print(f"❌ SELL REJECTED: {sell_validation['reason']}")
-        print(f"   Protection Triggered: {sell_validation['protection_triggered']}")
+        logging.info(f"❌ SELL REJECTED: {sell_validation['reason']}")
+        logging.info(f"   Protection Triggered: {sell_validation['protection_triggered']}")
     
     # Demonstrate sell validation (loss prevention)
-    print("\n🔍 SELL ORDER VALIDATION (Loss Prevention):")
+    logging.info("\n🔍 SELL ORDER VALIDATION (Loss Prevention):")
     loss_sell_validation = protection.validate_sell_order(
         symbol="BTCUSDT",
         exchange="binance",
@@ -801,53 +807,53 @@ def demonstrate_protection_system():
     )
     
     if not loss_sell_validation['valid']:
-        print(f"🛡️  LOSS PROTECTION TRIGGERED!")
-        print(f"   Reason: {loss_sell_validation['reason']}")
-        print(f"   Current Price: ${loss_sell_validation['current_price']}")
-        print(f"   Min Profitable Price: ${loss_sell_validation['min_profitable_price']}")
-        print(f"   Expected Loss: ${loss_sell_validation['expected_loss']}")
-        print(f"   Protection: {loss_sell_validation['protection_triggered']}")
+        logging.info(f"🛡️  LOSS PROTECTION TRIGGERED!")
+        logging.info(f"   Reason: {loss_sell_validation['reason']}")
+        logging.info(f"   Current Price: ${loss_sell_validation['current_price']}")
+        logging.info(f"   Min Profitable Price: ${loss_sell_validation['min_profitable_price']}")
+        logging.info(f"   Expected Loss: ${loss_sell_validation['expected_loss']}")
+        logging.info(f"   Protection: {loss_sell_validation['protection_triggered']}")
     
     # Demonstrate position summary
-    print("\n📊 POSITION SUMMARY:")
+    logging.info("\n📊 POSITION SUMMARY:")
     summary = protection.get_position_summary()
-    print(f"   Total Positions: {summary['total_positions']}")
-    print(f"   Total Realized P&L: ${summary['total_realized_pnl']}")
+    logging.info(f"   Total Positions: {summary['total_positions']}")
+    logging.info(f"   Total Realized P&L: ${summary['total_realized_pnl']}")
     
     for position in summary['positions']:
-        print(f"   📈 {position['symbol']} on {position['exchange']}:")
-        print(f"      Quantity: {position['quantity']}")
-        print(f"      Avg Cost Basis: ${position['avg_cost_basis']}")
-        print(f"      Total Cost: ${position['total_cost']}")
-        print(f"      Realized P&L: ${position['realized_pnl']}")
+        logging.info(f"   📈 {position['symbol']} on {position['exchange']}:")
+        logging.info(f"      Quantity: {position['quantity']}")
+        logging.info(f"      Avg Cost Basis: ${position['avg_cost_basis']}")
+        logging.info(f"      Total Cost: ${position['total_cost']}")
+        logging.info(f"      Realized P&L: ${position['realized_pnl']}")
     
     # Demonstrate inventory reconciliation
-    print("\n🔍 INVENTORY RECONCILIATION:")
+    logging.info("\n🔍 INVENTORY RECONCILIATION:")
     mock_exchange_balances = {
         "BTCUSDT": Decimal('0.1'),  # Matches our position
         "ETHUSDT": Decimal('0.5')   # We don't have this position
     }
     
     reconciliation = protection.reconcile_inventory("binance", mock_exchange_balances)
-    print(f"   Exchange: {reconciliation['exchange']}")
-    print(f"   Reconciled: {reconciliation['reconciled']}")
-    print(f"   Total Discrepancies: {reconciliation['total_discrepancies']}")
+    logging.info(f"   Exchange: {reconciliation['exchange']}")
+    logging.info(f"   Reconciled: {reconciliation['reconciled']}")
+    logging.info(f"   Total Discrepancies: {reconciliation['total_discrepancies']}")
     
     for discrepancy in reconciliation['discrepancies']:
-        print(f"   ⚠️  {discrepancy['symbol']}:")
-        print(f"      System Balance: {discrepancy['system_balance']}")
-        print(f"      Exchange Balance: {discrepancy['exchange_balance']}")
-        print(f"      Difference: {discrepancy['difference']}")
-        print(f"      Severity: {discrepancy['severity']}")
+        logging.info(f"   ⚠️  {discrepancy['symbol']}:")
+        logging.info(f"      System Balance: {discrepancy['system_balance']}")
+        logging.info(f"      Exchange Balance: {discrepancy['exchange_balance']}")
+        logging.info(f"      Difference: {discrepancy['difference']}")
+        logging.info(f"      Severity: {discrepancy['severity']}")
         if 'note' in discrepancy:
-            print(f"      Note: {discrepancy['note']}")
+            logging.info(f"      Note: {discrepancy['note']}")
     
-    print("\n🎯 PROTECTION SYSTEM SUMMARY:")
-    print("✅ Complete peace of mind - NEVER sells coins not bought")
-    print("✅ NEVER sells at a loss - all fees and slippage accounted")
-    print("✅ SPOT ONLY trading - no derivatives or margin")
-    print("✅ Complete inventory tracking and reconciliation")
-    print("✅ Guaranteed profit crystallization only")
+    logging.info("\n🎯 PROTECTION SYSTEM SUMMARY:")
+    logging.info("✅ Complete peace of mind - NEVER sells coins not bought")
+    logging.info("✅ NEVER sells at a loss - all fees and slippage accounted")
+    logging.info("✅ SPOT ONLY trading - no derivatives or margin")
+    logging.info("✅ Complete inventory tracking and reconciliation")
+    logging.info("✅ Guaranteed profit crystallization only")
     
     return protection
 
@@ -855,5 +861,5 @@ if __name__ == "__main__":
     # Run demonstration
     protection_system = demonstrate_protection_system()
     
-    print("\n🚀 NEVER-SELL-AT-LOSS PROTECTION SYSTEM READY!")
-    print("🛡️  Your trading system now has COMPLETE PROTECTION against losses!")
+    logging.info("\n🚀 NEVER-SELL-AT-LOSS PROTECTION SYSTEM READY!")
+    logging.info("🛡️  Your trading system now has COMPLETE PROTECTION against losses!")

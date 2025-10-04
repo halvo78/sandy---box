@@ -7,6 +7,7 @@ Following OneDrive-safe practices with Git LFS for large files
 """
 
 import os
+import logging
 import subprocess
 import shutil
 import json
@@ -15,6 +16,7 @@ from pathlib import Path
 
 class UltimateLyraFilesPush:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.lyra_files_repo = "/home/ubuntu/lyra-files"
         self.source_systems = [
             "/home/ubuntu/ultimate_lyra_v5_ultimate",
@@ -29,7 +31,7 @@ class UltimateLyraFilesPush:
         
     def setup_git_lfs(self):
         """Setup Git LFS for large files as per user requirements"""
-        print("🔧 Setting up Git LFS for large files...")
+        logging.info("🔧 Setting up Git LFS for large files...")
         
         # Install LFS
         subprocess.run(["git", "lfs", "install"], check=True)
@@ -47,11 +49,11 @@ class UltimateLyraFilesPush:
         # Add .gitattributes
         subprocess.run(["git", "add", ".gitattributes"], check=False)
         
-        print("✅ Git LFS configured for large files")
+        logging.info("✅ Git LFS configured for large files")
     
     def create_gitignore(self):
         """Create comprehensive .gitignore for sensitive files"""
-        print("🔐 Creating .gitignore for sensitive files...")
+        logging.info("🔐 Creating .gitignore for sensitive files...")
         
         gitignore_content = """# Lyra AU Compliance - Don't Push Secrets
 *.env
@@ -128,11 +130,11 @@ ato_reports/*
         with open(gitignore_path, 'w') as f:
             f.write(gitignore_content)
         
-        print("✅ .gitignore created for sensitive files")
+        logging.info("✅ .gitignore created for sensitive files")
     
     def organize_content(self):
         """Organize all Ultimate Lyra content into proper structure"""
-        print("📁 Organizing Ultimate Lyra content...")
+        logging.info("📁 Organizing Ultimate Lyra content...")
         
         # Create organized structure
         structure = {
@@ -161,7 +163,7 @@ ato_reports/*
         for source_path in self.source_systems:
             if os.path.exists(source_path):
                 source_name = os.path.basename(source_path)
-                print(f"📦 Processing {source_name}...")
+                logging.info(f"📦 Processing {source_name}...")
                 
                 if source_name == "ultimate_lyra_v5_ultimate":
                     # Main system - distribute to appropriate folders
@@ -178,7 +180,7 @@ ato_reports/*
                     target_dir = os.path.join(self.lyra_files_repo, "core", source_name)
                     self._safe_copy(source_path, target_dir)
         
-        print("✅ Content organized into proper structure")
+        logging.info("✅ Content organized into proper structure")
     
     def _distribute_ultimate_system(self, source_path):
         """Distribute ultimate system files to appropriate directories"""
@@ -242,7 +244,7 @@ ato_reports/*
                 if not os.path.exists(target):
                     shutil.copy2(source, target)
         except Exception as e:
-            print(f"⚠️ Copy warning for {source}: {e}")
+            logging.info(f"⚠️ Copy warning for {source}: {e}")
     
     def create_comprehensive_readme(self):
         """Create comprehensive README for lyra-files repository"""
@@ -254,8 +256,12 @@ ato_reports/*
 
 ## 🎯 Repository Overview
 
-This repository contains the **COMPLETE Ultimate Lyra Trading System** - every file, system, component, and integration that has been built, tested, and validated across all development sessions.
-
+This repository contains the **COMPLETE Ultimate Lyra Trading System** - every file,
+    system,
+    component,
+    and integration that has been built,
+    tested,
+    and validated across all development sessions.
 ## 📁 Repository Structure
 
 ```
@@ -545,8 +551,11 @@ chmod +x scripts/deployment/master_deploy.sh
 
 ## 🏆 Achievement Summary
 
-This repository represents the culmination of intensive development work to create the most comprehensive, compliant, and capable trading system for the Australian market. Every component has been tested, validated, and approved for production use.
-
+This repository represents the culmination of intensive development work to create the most comprehensive,
+    compliant,
+    and capable trading system for the Australian market. Every component has been tested,
+    validated,
+    and approved for production use.
 ### **Key Achievements:**
 - ✅ **Complete System Integration** - All components unified
 - ✅ **Australian Compliance** - Full ATO/GST/ABN integration
@@ -580,11 +589,11 @@ This repository represents the culmination of intensive development work to crea
         with open(readme_path, 'w') as f:
             f.write(readme_content)
         
-        print("✅ Comprehensive README created")
+        logging.info("✅ Comprehensive README created")
     
     def remove_large_files(self):
         """Remove files larger than 100MB that aren't tracked by LFS"""
-        print("🔍 Checking for large files (>100MB)...")
+        logging.info("🔍 Checking for large files (>100MB)...")
         
         large_files = []
         for root, dirs, files in os.walk(self.lyra_files_repo):
@@ -617,19 +626,19 @@ This repository represents the culmination of intensive development work to crea
             if rel_path not in lfs_files:
                 try:
                     os.remove(file_path)
-                    print(f"🗑️ Removed large file: {rel_path} ({size/(1024*1024):.1f}MB)")
+                    logging.info(f"🗑️ Removed large file: {rel_path} ({size/(1024*1024):.1f}MB)")
                     removed_count += 1
                 except:
                     pass
         
         if removed_count > 0:
-            print(f"✅ Removed {removed_count} large files not tracked by LFS")
+            logging.info(f"✅ Removed {removed_count} large files not tracked by LFS")
         else:
-            print("✅ No large files to remove (all tracked by LFS or under 100MB)")
+            logging.info("✅ No large files to remove (all tracked by LFS or under 100MB)")
     
     def commit_and_push(self):
         """Commit all changes and push to GitHub"""
-        print("📤 Committing and pushing to GitHub...")
+        logging.info("📤 Committing and pushing to GitHub...")
         
         # Add all files
         subprocess.run(["git", "add", "."], check=True)
@@ -639,7 +648,7 @@ This repository represents the culmination of intensive development work to crea
                               capture_output=True, text=True, check=True)
         
         if not result.stdout.strip():
-            print("✅ No changes to commit - repository is up to date")
+            logging.info("✅ No changes to commit - repository is up to date")
             return True
         
         # Commit changes
@@ -650,10 +659,10 @@ This repository represents the culmination of intensive development work to crea
         try:
             result = subprocess.run(["git", "push", "origin", "main"], 
                                   capture_output=True, text=True, check=True)
-            print("✅ Successfully pushed to GitHub!")
+            logging.info("✅ Successfully pushed to GitHub!")
             return True
         except subprocess.CalledProcessError as e:
-            print(f"❌ Push failed: {e.stderr}")
+            logging.info(f"❌ Push failed: {e.stderr}")
             return False
     
     def create_deployment_summary(self):
@@ -673,12 +682,12 @@ This repository represents the culmination of intensive development work to crea
         with open(summary_path, 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print(f"✅ Deployment summary created: {summary_path}")
+        logging.info(f"✅ Deployment summary created: {summary_path}")
     
     def run_complete_push(self):
         """Run complete push process"""
-        print("🚀 STARTING ULTIMATE LYRA FILES PUSH")
-        print("=" * 60)
+        logging.info("🚀 STARTING ULTIMATE LYRA FILES PUSH")
+        logging.info("=" * 60)
         
         try:
             # Step 1: Setup Git LFS
@@ -703,25 +712,25 @@ This repository represents the culmination of intensive development work to crea
             success = self.commit_and_push()
             
             # Step 8: Final summary
-            print("\n📊 PUSH SUMMARY")
-            print("=" * 40)
-            print(f"📁 Repository: {self.lyra_files_repo}")
-            print(f"🌐 GitHub URL: https://github.com/halvo78/lyra-files")
-            print(f"📦 Systems Integrated: {len(self.source_systems)}")
-            print(f"🔧 Git LFS: Configured for large files")
-            print(f"🔐 Security: .gitignore created for sensitive files")
-            print(f"📚 Documentation: Comprehensive README created")
-            print(f"✅ Status: {'SUCCESS' if success else 'FAILED'}")
+            logging.info("\n📊 PUSH SUMMARY")
+            logging.info("=" * 40)
+            logging.info(f"📁 Repository: {self.lyra_files_repo}")
+            logging.info(f"🌐 GitHub URL: https://github.com/halvo78/lyra-files")
+            logging.info(f"📦 Systems Integrated: {len(self.source_systems)}")
+            logging.info(f"🔧 Git LFS: Configured for large files")
+            logging.info(f"🔐 Security: .gitignore created for sensitive files")
+            logging.info(f"📚 Documentation: Comprehensive README created")
+            logging.info(f"✅ Status: {'SUCCESS' if success else 'FAILED'}")
             
             if success:
-                print("\n🎉 ULTIMATE LYRA FILES PUSH COMPLETE!")
-                print("🌐 Repository URL: https://github.com/halvo78/lyra-files")
-                print("📋 Ready for cloning and deployment")
+                logging.info("\n🎉 ULTIMATE LYRA FILES PUSH COMPLETE!")
+                logging.info("🌐 Repository URL: https://github.com/halvo78/lyra-files")
+                logging.info("📋 Ready for cloning and deployment")
             
             return success
             
         except Exception as e:
-            print(f"❌ Error during push process: {e}")
+            logging.info(f"❌ Error during push process: {e}")
             return False
 
 def main():

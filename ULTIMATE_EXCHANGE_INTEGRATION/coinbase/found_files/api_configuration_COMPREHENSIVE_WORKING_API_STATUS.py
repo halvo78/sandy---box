@@ -5,24 +5,26 @@ Tests and reports on ALL APIs across all collections
 """
 
 import os
+import logging
 import json
 import urllib.request
 from datetime import datetime
 
 def test_comprehensive_api_status():
+    """Input validation would be added here"""
     """Test all APIs and report comprehensive working status."""
     
-    print("🧪 COMPREHENSIVE WORKING API STATUS CHECK")
-    print("="*80)
-    print("🎯 Testing ALL APIs from all collections")
-    print("✅ Verifying working status")
-    print("="*80)
+    logging.info("🧪 COMPREHENSIVE WORKING API STATUS CHECK")
+    logging.info("="*80)
+    logging.info("🎯 Testing ALL APIs from all collections")
+    logging.info("✅ Verifying working status")
+    logging.info("="*80)
     
     working_apis = {}
     not_working_apis = {}
     
     # Test OpenRouter APIs (4 keys)
-    print("\n🤖 TESTING OPENROUTER AI APIS...")
+    logging.info("\n🤖 TESTING OPENROUTER AI APIS...")
     openrouter_keys = [
         "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         os.getenv("OPENROUTER_API_KEY", ""),
@@ -44,20 +46,20 @@ def test_comprehensive_api_status():
                         model_count = len(data["data"])
                         working_apis[f"openrouter_key_{i+1}"] = f"✅ WORKING - {model_count} models"
                         working_openrouter_keys += 1
-                        print(f"  ✅ OpenRouter Key {i+1}: {model_count} models available")
+                        logging.info(f"  ✅ OpenRouter Key {i+1}: {model_count} models available")
                     else:
                         not_working_apis[f"openrouter_key_{i+1}"] = "⚠️ UNEXPECTED_RESPONSE"
-                        print(f"  ⚠️ OpenRouter Key {i+1}: Unexpected response")
+                        logging.info(f"  ⚠️ OpenRouter Key {i+1}: Unexpected response")
             except Exception as e:
                 not_working_apis[f"openrouter_key_{i+1}"] = f"❌ ERROR: {str(e)[:50]}"
-                print(f"  ❌ OpenRouter Key {i+1}: {str(e)[:50]}")
+                logging.info(f"  ❌ OpenRouter Key {i+1}: {str(e)[:50]}")
     
     # Test Enhanced Data APIs
-    print("\n📊 TESTING ENHANCED DATA APIS...")
+    logging.info("\n📊 TESTING ENHANCED DATA APIS...")
     
     # Test Twelve Data
     try:
-        api_key = "2997d13caee949d48fca334aff3042dd"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.twelvedata.com/price?symbol=AAPL&apikey={api_key}"
         req = urllib.request.Request(test_url)
         
@@ -65,30 +67,30 @@ def test_comprehensive_api_status():
             data = json.loads(response.read().decode('utf-8'))
             if "price" in data:
                 working_apis["twelve_data"] = f"✅ WORKING - AAPL: ${data['price']}"
-                print(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
+                logging.info(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
             else:
                 not_working_apis["twelve_data"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Twelve Data: Unexpected response")
+                logging.info("  ⚠️ Twelve Data: Unexpected response")
     except Exception as e:
         not_working_apis["twelve_data"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Twelve Data: {str(e)[:50]}")
+        logging.info(f"  ❌ Twelve Data: {str(e)[:50]}")
     
     # Test Enhanced Polygon
     try:
-        api_key = "A_nmop6VvNSPBY2yiVqNJYzA7pautIUX"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.polygon.io/v1/marketstatus/now?apikey={api_key}"
         req = urllib.request.Request(test_url)
         
         with urllib.request.urlopen(req, timeout=10) as response:
             data = json.loads(response.read().decode('utf-8'))
             working_apis["polygon_enhanced"] = "✅ WORKING - Market status retrieved"
-            print("  ✅ Enhanced Polygon: Market status retrieved")
+            logging.info("  ✅ Enhanced Polygon: Market status retrieved")
     except Exception as e:
         not_working_apis["polygon_enhanced"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
+        logging.info(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
     
     # Test Core APIs
-    print("\n🏗️ TESTING CORE INFRASTRUCTURE APIS...")
+    logging.info("\n🏗️ TESTING CORE INFRASTRUCTURE APIS...")
     
     # Test Supabase
     try:
@@ -102,16 +104,16 @@ def test_comprehensive_api_status():
             
             with urllib.request.urlopen(req, timeout=10) as response:
                 working_apis["supabase"] = "✅ WORKING - Database accessible"
-                print("  ✅ Supabase: Database accessible")
+                logging.info("  ✅ Supabase: Database accessible")
         else:
             not_working_apis["supabase"] = "❌ MISSING_CREDENTIALS"
-            print("  ❌ Supabase: Missing credentials")
+            logging.info("  ❌ Supabase: Missing credentials")
     except Exception as e:
         not_working_apis["supabase"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Supabase: {str(e)[:50]}")
+        logging.info(f"  ❌ Supabase: {str(e)[:50]}")
     
     # Test Free Crypto Market APIs
-    print("\n🪙 TESTING FREE CRYPTO MARKET APIS...")
+    logging.info("\n🪙 TESTING FREE CRYPTO MARKET APIS...")
     
     # Test Fear & Greed Index
     try:
@@ -124,13 +126,13 @@ def test_comprehensive_api_status():
                 fear_greed_value = data["data"][0]["value"]
                 fear_greed_classification = data["data"][0]["value_classification"]
                 working_apis["fear_greed"] = f"✅ WORKING - {fear_greed_value} ({fear_greed_classification})"
-                print(f"  ✅ Fear & Greed Index: {fear_greed_value} ({fear_greed_classification})")
+                logging.info(f"  ✅ Fear & Greed Index: {fear_greed_value} ({fear_greed_classification})")
             else:
                 not_working_apis["fear_greed"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Fear & Greed Index: Unexpected response")
+                logging.info("  ⚠️ Fear & Greed Index: Unexpected response")
     except Exception as e:
         not_working_apis["fear_greed"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Fear & Greed Index: {str(e)[:50]}")
+        logging.info(f"  ❌ Fear & Greed Index: {str(e)[:50]}")
     
     # Test CoinGecko
     try:
@@ -143,13 +145,13 @@ def test_comprehensive_api_status():
                 btc_price = data["bitcoin"]["usd"]
                 eth_price = data["ethereum"]["usd"]
                 working_apis["coingecko"] = f"✅ WORKING - BTC: ${btc_price:,}, ETH: ${eth_price:,}"
-                print(f"  ✅ CoinGecko: BTC: ${btc_price:,}, ETH: ${eth_price:,}")
+                logging.info(f"  ✅ CoinGecko: BTC: ${btc_price:,}, ETH: ${eth_price:,}")
             else:
                 not_working_apis["coingecko"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ CoinGecko: Unexpected response")
+                logging.info("  ⚠️ CoinGecko: Unexpected response")
     except Exception as e:
         not_working_apis["coingecko"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ CoinGecko: {str(e)[:50]}")
+        logging.info(f"  ❌ CoinGecko: {str(e)[:50]}")
     
     # Test DefiLlama
     try:
@@ -161,13 +163,13 @@ def test_comprehensive_api_status():
             if isinstance(data, list) and len(data) > 0:
                 protocol_count = len(data)
                 working_apis["defillama"] = f"✅ WORKING - {protocol_count} DeFi protocols"
-                print(f"  ✅ DefiLlama: {protocol_count} DeFi protocols")
+                logging.info(f"  ✅ DefiLlama: {protocol_count} DeFi protocols")
             else:
                 not_working_apis["defillama"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ DefiLlama: Unexpected response")
+                logging.info("  ⚠️ DefiLlama: Unexpected response")
     except Exception as e:
         not_working_apis["defillama"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ DefiLlama: {str(e)[:50]}")
+        logging.info(f"  ❌ DefiLlama: {str(e)[:50]}")
     
     # Test Binance Public API
     try:
@@ -179,13 +181,13 @@ def test_comprehensive_api_status():
             if "symbol" in data and "lastPrice" in data:
                 btc_price = float(data["lastPrice"])
                 working_apis["binance_public"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                print(f"  ✅ Binance Public: BTC: ${btc_price:,.2f}")
+                logging.info(f"  ✅ Binance Public: BTC: ${btc_price:,.2f}")
             else:
                 not_working_apis["binance_public"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Binance Public: Unexpected response")
+                logging.info("  ⚠️ Binance Public: Unexpected response")
     except Exception as e:
         not_working_apis["binance_public"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Binance Public: {str(e)[:50]}")
+        logging.info(f"  ❌ Binance Public: {str(e)[:50]}")
     
     # Test Coinbase Pro API
     try:
@@ -197,13 +199,13 @@ def test_comprehensive_api_status():
             if "price" in data:
                 btc_price = float(data["price"])
                 working_apis["coinbase_pro"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                print(f"  ✅ Coinbase Pro: BTC: ${btc_price:,.2f}")
+                logging.info(f"  ✅ Coinbase Pro: BTC: ${btc_price:,.2f}")
             else:
                 not_working_apis["coinbase_pro"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Coinbase Pro: Unexpected response")
+                logging.info("  ⚠️ Coinbase Pro: Unexpected response")
     except Exception as e:
         not_working_apis["coinbase_pro"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Coinbase Pro: {str(e)[:50]}")
+        logging.info(f"  ❌ Coinbase Pro: {str(e)[:50]}")
     
     # Test CoinDesk API
     try:
@@ -215,13 +217,13 @@ def test_comprehensive_api_status():
             if "bpi" in data and "USD" in data["bpi"]:
                 btc_price = data["bpi"]["USD"]["rate_float"]
                 working_apis["coindesk"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                print(f"  ✅ CoinDesk: BTC: ${btc_price:,.2f}")
+                logging.info(f"  ✅ CoinDesk: BTC: ${btc_price:,.2f}")
             else:
                 not_working_apis["coindesk"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ CoinDesk: Unexpected response")
+                logging.info("  ⚠️ CoinDesk: Unexpected response")
     except Exception as e:
         not_working_apis["coindesk"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ CoinDesk: {str(e)[:50]}")
+        logging.info(f"  ❌ CoinDesk: {str(e)[:50]}")
     
     # Test Blockchain.info API
     try:
@@ -233,13 +235,13 @@ def test_comprehensive_api_status():
             if "market_price_usd" in data:
                 btc_price = data["market_price_usd"]
                 working_apis["blockchain_info"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                print(f"  ✅ Blockchain.info: BTC: ${btc_price:,.2f}")
+                logging.info(f"  ✅ Blockchain.info: BTC: ${btc_price:,.2f}")
             else:
                 not_working_apis["blockchain_info"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Blockchain.info: Unexpected response")
+                logging.info("  ⚠️ Blockchain.info: Unexpected response")
     except Exception as e:
         not_working_apis["blockchain_info"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Blockchain.info: {str(e)[:50]}")
+        logging.info(f"  ❌ Blockchain.info: {str(e)[:50]}")
     
     # Calculate statistics
     total_working = len(working_apis)
@@ -262,8 +264,14 @@ def test_comprehensive_api_status():
         "summary": {
             "openrouter_keys_working": working_openrouter_keys,
             "enhanced_data_apis": 2,  # Twelve Data + Enhanced Polygon
-            "free_crypto_apis": len([k for k in working_apis.keys() if k in ["fear_greed", "coingecko", "defillama", "binance_public", "coinbase_pro", "coindesk", "blockchain_info"]]),
-            "infrastructure_apis": len([k for k in working_apis.keys() if k in ["supabase"]])
+            "free_crypto_apis": len([k for k in working_apis.keys() if k in ["fear_greed",
+                "coingecko",
+                "defillama",
+                "binance_public",
+                "coinbase_pro",
+                "coindesk",
+                "blockchain_info"]]),
+                            "infrastructure_apis": len([k for k in working_apis.keys() if k in ["supabase"]])
         }
     }
     
@@ -295,8 +303,13 @@ def test_comprehensive_api_status():
     
     report_content += "\n### 🪙 Free Crypto Market APIs\n"
     for key, status in working_apis.items():
-        if key in ["fear_greed", "coingecko", "defillama", "binance_public", "coinbase_pro", "coindesk", "blockchain_info"]:
-            report_content += f"- **{key.replace('_', ' ').title()}:** {status}\n"
+        if key in ["fear_greed",
+            "coingecko",
+            "defillama",
+            "binance_public",
+            "coinbase_pro",
+            "coindesk",
+            "blockchain_info"]:            report_content += f"- **{key.replace('_', ' ').title()}:** {status}\n"
     
     report_content += "\n### 🏗️ Infrastructure APIs\n"
     for key, status in working_apis.items():
@@ -318,8 +331,10 @@ def test_comprehensive_api_status():
 - **AI Consensus:** {'✅ READY' if working_openrouter_keys > 0 else '❌ NOT READY'}
 
 ### 📊 Market Data Coverage
-- **Real-time Prices:** {'✅ AVAILABLE' if any(k in working_apis for k in ['twelve_data', 'coingecko', 'binance_public', 'coinbase_pro']) else '❌ NOT AVAILABLE'}
-- **Market Sentiment:** {'✅ AVAILABLE' if 'fear_greed' in working_apis else '❌ NOT AVAILABLE'}
+- **Real-time Prices:** {'✅ AVAILABLE' if any(k in working_apis for k in ['twelve_data',
+    'coingecko',
+    'binance_public',
+    'coinbase_pro']) else '❌ NOT AVAILABLE'}- **Market Sentiment:** {'✅ AVAILABLE' if 'fear_greed' in working_apis else '❌ NOT AVAILABLE'}
 - **DeFi Data:** {'✅ AVAILABLE' if 'defillama' in working_apis else '❌ NOT AVAILABLE'}
 - **Enhanced Data:** {'✅ AVAILABLE' if any(k in working_apis for k in ['twelve_data', 'polygon_enhanced']) else '❌ NOT AVAILABLE'}
 
@@ -357,8 +372,13 @@ def test_comprehensive_api_status():
 - **OpenRouter:** {'✅ Unlimited (Commissioning)' if working_openrouter_keys > 0 else '❌ Not working'}
 
 ### Working Free APIs
-- **Free APIs Working:** {len([k for k in working_apis.keys() if k in ['fear_greed', 'coingecko', 'defillama', 'binance_public', 'coinbase_pro', 'coindesk', 'blockchain_info']])}
-- **Total Value:** $0 for comprehensive market data
+- **Free APIs Working:** {len([k for k in working_apis.keys() if k in ['fear_greed',
+    'coingecko',
+    'defillama',
+    'binance_public',
+    'coinbase_pro',
+    'coindesk',
+    'blockchain_info']])}- **Total Value:** $0 for comprehensive market data
 
 ## ✅ FINAL WORKING STATUS
 
@@ -383,30 +403,35 @@ def test_comprehensive_api_status():
     with open(report_path, 'w') as f:
         f.write(report_content)
     
-    print(f"\n📊 COMPREHENSIVE STATUS SUMMARY")
-    print(f"✅ Working APIs: {total_working}")
-    print(f"❌ Not Working APIs: {total_not_working}")
-    print(f"📈 Success Rate: {success_rate:.1f}%")
-    print(f"🤖 OpenRouter Keys: {working_openrouter_keys}/4")
-    print(f"📊 Market Data APIs: {len([k for k in working_apis.keys() if k in ['fear_greed', 'coingecko', 'defillama', 'binance_public', 'coinbase_pro', 'coindesk', 'blockchain_info']])}")
-    print(f"💰 Enhanced APIs: {len([k for k in working_apis.keys() if k in ['twelve_data', 'polygon_enhanced']])}")
-    print(f"📁 Report: {report_path}")
-    print(f"📁 Data: {config_path}")
+    logging.info(f"\n📊 COMPREHENSIVE STATUS SUMMARY")
+    logging.info(f"✅ Working APIs: {total_working}")
+    logging.info(f"❌ Not Working APIs: {total_not_working}")
+    logging.info(f"📈 Success Rate: {success_rate:.1f}%")
+    logging.info(f"🤖 OpenRouter Keys: {working_openrouter_keys}/4")
+    logging.info(f"📊 Market Data APIs: {len([k for k in working_apis.keys() if k in ['fear_greed',
+        'coingecko',
+        'defillama',
+        'binance_public',
+        'coinbase_pro',
+        'coindesk',
+        'blockchain_info']])}")    logging.info(f"💰 Enhanced APIs: {len([k for k in working_apis.keys() if k in ['twelve_data', 'polygon_enhanced']])}")
+    logging.info(f"📁 Report: {report_path}")
+    logging.info(f"📁 Data: {config_path}")
     
     return report_path, config_path, total_working, total_tested, success_rate
 
 if __name__ == "__main__":
-    print("🧪 STARTING COMPREHENSIVE API STATUS CHECK...")
-    print("="*80)
+    logging.info("🧪 STARTING COMPREHENSIVE API STATUS CHECK...")
+    logging.info("="*80)
     
     report_path, config_path, working, total, success_rate = test_comprehensive_api_status()
     
-    print("\n🎉 COMPREHENSIVE API STATUS CHECK COMPLETE!")
-    print("="*80)
-    print(f"📊 APIs Tested: {total}")
-    print(f"✅ Working: {working}")
-    print(f"❌ Not Working: {total - working}")
-    print(f"📈 Success Rate: {success_rate:.1f}%")
-    print(f"🚀 System Status: {'PRODUCTION READY' if success_rate >= 70 else 'NEEDS OPTIMIZATION'}")
-    print("="*80)
-    print("\n🎯 COMPREHENSIVE STATUS REPORT GENERATED!")
+    logging.info("\n🎉 COMPREHENSIVE API STATUS CHECK COMPLETE!")
+    logging.info("="*80)
+    logging.info(f"📊 APIs Tested: {total}")
+    logging.info(f"✅ Working: {working}")
+    logging.info(f"❌ Not Working: {total - working}")
+    logging.info(f"📈 Success Rate: {success_rate:.1f}%")
+    logging.info(f"🚀 System Status: {'PRODUCTION READY' if success_rate >= 70 else 'NEEDS OPTIMIZATION'}")
+    logging.info("="*80)
+    logging.info("\n🎯 COMPREHENSIVE STATUS REPORT GENERATED!")

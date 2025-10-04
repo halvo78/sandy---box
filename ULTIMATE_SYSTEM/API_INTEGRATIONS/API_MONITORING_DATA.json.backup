@@ -1,0 +1,702 @@
+{
+  "test_results": [
+    {
+      "api_name": "anthropic",
+      "status": "HTTP_ERROR",
+      "error": "HTTP 400: Bad Request",
+      "response_code": 400,
+      "response_time": 0.068,
+      "rate_limit_info": null
+    },
+    {
+      "api_name": "gemini",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 0.068,
+      "rate_limit_info": {},
+      "configured_limits": {
+        "requests_per_minute": 1500,
+        "tokens_per_minute": 32000,
+        "requests_per_day": 50000
+      },
+      "pricing": {
+        "gemini_1_5_pro": {
+          "input": 0.00125,
+          "output": 0.005
+        },
+        "gemini_1_5_flash": {
+          "input": 7.5e-05,
+          "output": 0.0003
+        }
+      }
+    },
+    {
+      "api_name": "perplexity",
+      "status": "AUTH_FAILED",
+      "error": "Invalid API key or authentication failed",
+      "response_code": 401,
+      "response_time": 0.038,
+      "rate_limit_info": null
+    },
+    {
+      "api_name": "flux",
+      "status": "CONFIGURED",
+      "message": "API key configured (image generation not tested)",
+      "response_time": 0,
+      "rate_limit_info": {
+        "requests_per_minute": 10,
+        "images_per_day": 100
+      }
+    },
+    {
+      "api_name": "cohere",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 0.116,
+      "rate_limit_info": {
+        "x-endpoint-monthly-call-limit": "1000",
+        "x-trial-endpoint-call-limit": "40",
+        "x-trial-endpoint-call-remaining": "39"
+      },
+      "configured_limits": {
+        "requests_per_minute": 1000,
+        "tokens_per_minute": 100000,
+        "requests_per_day": 10000
+      },
+      "pricing": {
+        "command_r_plus": {
+          "input": 0.003,
+          "output": 0.015
+        },
+        "command_r": {
+          "input": 0.0005,
+          "output": 0.0015
+        }
+      }
+    },
+    {
+      "api_name": "xai_grok",
+      "status": "HTTP_ERROR",
+      "error": "HTTP 400: Bad Request",
+      "response_code": 400,
+      "response_time": 0.058,
+      "rate_limit_info": null
+    },
+    {
+      "api_name": "polygon",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 0.121,
+      "rate_limit_info": {},
+      "configured_limits": {
+        "requests_per_minute": 5,
+        "requests_per_day": 1000
+      },
+      "pricing": {
+        "starter": "$99/month",
+        "developer": "$399/month"
+      }
+    },
+    {
+      "api_name": "openrouter",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 0.267,
+      "rate_limit_info": {},
+      "configured_limits": {
+        "requests_per_minute": 200,
+        "tokens_per_minute": 20000,
+        "requests_per_day": 1000
+      },
+      "pricing": {
+        "variable": "Pay per model used",
+        "range": "$0.0001 - $0.08 per 1K tokens"
+      }
+    },
+    {
+      "api_name": "jsonbin",
+      "status": "HTTP_ERROR",
+      "error": "HTTP 404: Not Found",
+      "response_code": 404,
+      "response_time": 0.354,
+      "rate_limit_info": null
+    },
+    {
+      "api_name": "supabase",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 1.752,
+      "rate_limit_info": {},
+      "configured_limits": {
+        "requests_per_minute": 100,
+        "requests_per_day": 50000
+      },
+      "pricing": {
+        "pro": "$25/month",
+        "team": "$599/month"
+      }
+    },
+    {
+      "api_name": "openai",
+      "status": "SUCCESS",
+      "response_code": 200,
+      "response_time": 2.074,
+      "rate_limit_info": {},
+      "configured_limits": {
+        "requests_per_minute": 3500,
+        "tokens_per_minute": 90000,
+        "requests_per_day": 10000
+      },
+      "pricing": {
+        "gpt_4o": {
+          "input": 0.0025,
+          "output": 0.01
+        },
+        "gpt_4o_mini": {
+          "input": 0.00015,
+          "output": 0.0006
+        }
+      }
+    }
+  ],
+  "usage_statistics": {
+    "total_requests": 6,
+    "total_tokens": 0,
+    "total_costs": 0,
+    "total_rate_limit_hits": 0,
+    "api_breakdown": {
+      "openai": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557034.1413295,
+        "current_limits": {
+          "requests_per_minute": 3500,
+          "tokens_per_minute": 90000,
+          "requests_per_day": 10000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656693,
+          "day_reset_time": 1759643432.0656705,
+          "last_request_time": 0
+        }
+      },
+      "anthropic": {
+        "requests": 0,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 0.0,
+        "current_limits": {
+          "requests_per_minute": 1000,
+          "tokens_per_minute": 40000,
+          "requests_per_day": 5000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656726,
+          "day_reset_time": 1759643432.0656726,
+          "last_request_time": 0
+        }
+      },
+      "cohere": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557032.1848676,
+        "current_limits": {
+          "requests_per_minute": 1000,
+          "tokens_per_minute": 100000,
+          "requests_per_day": 10000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.065674,
+          "day_reset_time": 1759643432.0656743,
+          "last_request_time": 0
+        }
+      },
+      "gemini": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557032.1365414,
+        "current_limits": {
+          "requests_per_minute": 1500,
+          "tokens_per_minute": 32000,
+          "requests_per_day": 50000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656753,
+          "day_reset_time": 1759643432.0656755,
+          "last_request_time": 0
+        }
+      },
+      "openrouter": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557032.3360105,
+        "current_limits": {
+          "requests_per_minute": 200,
+          "tokens_per_minute": 20000,
+          "requests_per_day": 1000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656765,
+          "day_reset_time": 1759643432.0656767,
+          "last_request_time": 0
+        }
+      },
+      "perplexity": {
+        "requests": 0,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 0.0,
+        "current_limits": {
+          "requests_per_minute": 50,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 500,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656774,
+          "day_reset_time": 1759643432.0656776,
+          "last_request_time": 0
+        }
+      },
+      "xai_grok": {
+        "requests": 0,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 0.0,
+        "current_limits": {
+          "requests_per_minute": 100,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 1000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656803,
+          "day_reset_time": 1759643432.0656803,
+          "last_request_time": 0
+        }
+      },
+      "flux": {
+        "requests": 0,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 0.0,
+        "current_limits": {
+          "requests_per_minute": 10,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 1000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656857,
+          "day_reset_time": 1759643432.065686,
+          "last_request_time": 0
+        }
+      },
+      "polygon": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557032.2963874,
+        "current_limits": {
+          "requests_per_minute": 5,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 1000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656872,
+          "day_reset_time": 1759643432.0656872,
+          "last_request_time": 0
+        }
+      },
+      "supabase": {
+        "requests": 1,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 1759557033.9370527,
+        "current_limits": {
+          "requests_per_minute": 100,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 50000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656881,
+          "day_reset_time": 1759643432.0656884,
+          "last_request_time": 0
+        }
+      },
+      "jsonbin": {
+        "requests": 0,
+        "tokens": 0,
+        "cost": 0.0,
+        "rate_limit_hits": 0,
+        "last_used": 0.0,
+        "current_limits": {
+          "requests_per_minute": 60,
+          "tokens_per_minute": 10000,
+          "requests_per_day": 10000,
+          "current_minute_requests": 0,
+          "current_minute_tokens": 0,
+          "current_day_requests": 0,
+          "minute_reset_time": 1759557092.0656888,
+          "day_reset_time": 1759643432.065689,
+          "last_request_time": 0
+        }
+      }
+    }
+  },
+  "rate_limiters": {
+    "openai": {
+      "requests_per_minute": 3500,
+      "tokens_per_minute": 90000,
+      "requests_per_day": 10000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656693,
+      "day_reset_time": 1759643432.0656705,
+      "last_request_time": 0
+    },
+    "anthropic": {
+      "requests_per_minute": 1000,
+      "tokens_per_minute": 40000,
+      "requests_per_day": 5000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656726,
+      "day_reset_time": 1759643432.0656726,
+      "last_request_time": 0
+    },
+    "cohere": {
+      "requests_per_minute": 1000,
+      "tokens_per_minute": 100000,
+      "requests_per_day": 10000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.065674,
+      "day_reset_time": 1759643432.0656743,
+      "last_request_time": 0
+    },
+    "gemini": {
+      "requests_per_minute": 1500,
+      "tokens_per_minute": 32000,
+      "requests_per_day": 50000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656753,
+      "day_reset_time": 1759643432.0656755,
+      "last_request_time": 0
+    },
+    "openrouter": {
+      "requests_per_minute": 200,
+      "tokens_per_minute": 20000,
+      "requests_per_day": 1000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656765,
+      "day_reset_time": 1759643432.0656767,
+      "last_request_time": 0
+    },
+    "perplexity": {
+      "requests_per_minute": 50,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 500,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656774,
+      "day_reset_time": 1759643432.0656776,
+      "last_request_time": 0
+    },
+    "xai_grok": {
+      "requests_per_minute": 100,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 1000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656803,
+      "day_reset_time": 1759643432.0656803,
+      "last_request_time": 0
+    },
+    "flux": {
+      "requests_per_minute": 10,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 1000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656857,
+      "day_reset_time": 1759643432.065686,
+      "last_request_time": 0
+    },
+    "polygon": {
+      "requests_per_minute": 5,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 1000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656872,
+      "day_reset_time": 1759643432.0656872,
+      "last_request_time": 0
+    },
+    "supabase": {
+      "requests_per_minute": 100,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 50000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656881,
+      "day_reset_time": 1759643432.0656884,
+      "last_request_time": 0
+    },
+    "jsonbin": {
+      "requests_per_minute": 60,
+      "tokens_per_minute": 10000,
+      "requests_per_day": 10000,
+      "current_minute_requests": 0,
+      "current_minute_tokens": 0,
+      "current_day_requests": 0,
+      "minute_reset_time": 1759557092.0656888,
+      "day_reset_time": 1759643432.065689,
+      "last_request_time": 0
+    }
+  },
+  "api_configurations": {
+    "openai": {
+      "api_key": "YOUR_API_KEY_HERE",
+      "base_url": "https://api.openai.com/v1",
+      "test_endpoint": "/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 3500,
+        "tokens_per_minute": 90000,
+        "requests_per_day": 10000
+      },
+      "pricing": {
+        "gpt_4o": {
+          "input": 0.0025,
+          "output": 0.01
+        },
+        "gpt_4o_mini": {
+          "input": 0.00015,
+          "output": 0.0006
+        }
+      }
+    },
+    "anthropic": {
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "base_url": "https://api.anthropic.com/v1",
+      "test_endpoint": "/messages",
+      "auth_header": "x-api-key",
+      "auth_format": "{key}",
+      "rate_limits": {
+        "requests_per_minute": 1000,
+        "tokens_per_minute": 40000,
+        "requests_per_day": 5000
+      },
+      "pricing": {
+        "claude_3_5_sonnet": {
+          "input": 0.003,
+          "output": 0.015
+        },
+        "claude_3_haiku": {
+          "input": 0.00025,
+          "output": 0.00125
+        }
+      }
+    },
+    "cohere": {
+      "api_key": "YOUR_API_KEY_HERE",
+      "base_url": "https://api.cohere.ai/v1",
+      "test_endpoint": "/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 1000,
+        "tokens_per_minute": 100000,
+        "requests_per_day": 10000
+      },
+      "pricing": {
+        "command_r_plus": {
+          "input": 0.003,
+          "output": 0.015
+        },
+        "command_r": {
+          "input": 0.0005,
+          "output": 0.0015
+        }
+      }
+    },
+    "gemini": {
+      "api_key": "YOUR_API_KEY_HERE",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "test_endpoint": "/models",
+      "auth_header": "x-goog-api-key",
+      "auth_format": "{key}",
+      "rate_limits": {
+        "requests_per_minute": 1500,
+        "tokens_per_minute": 32000,
+        "requests_per_day": 50000
+      },
+      "pricing": {
+        "gemini_1_5_pro": {
+          "input": 0.00125,
+          "output": 0.005
+        },
+        "gemini_1_5_flash": {
+          "input": 7.5e-05,
+          "output": 0.0003
+        }
+      }
+    },
+    "openrouter": {
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "base_url": "https://openrouter.ai/api/v1",
+      "test_endpoint": "/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 200,
+        "tokens_per_minute": 20000,
+        "requests_per_day": 1000
+      },
+      "pricing": {
+        "variable": "Pay per model used",
+        "range": "$0.0001 - $0.08 per 1K tokens"
+      }
+    },
+    "perplexity": {
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "base_url": "https://api.perplexity.ai",
+      "test_endpoint": "/chat/completions",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 50,
+        "tokens_per_minute": 10000,
+        "requests_per_day": 500
+      },
+      "pricing": {
+        "sonar_small": {
+          "input": 0.0002,
+          "output": 0.0002
+        },
+        "sonar_medium": {
+          "input": 0.0006,
+          "output": 0.0006
+        }
+      }
+    },
+    "xai_grok": {
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "base_url": "https://api.x.ai/v1",
+      "test_endpoint": "/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 100,
+        "tokens_per_minute": 10000,
+        "requests_per_day": 1000
+      },
+      "pricing": {
+        "grok_beta": {
+          "input": 0.005,
+          "output": 0.015
+        }
+      }
+    },
+    "flux": {
+      "api_key": "YOUR_API_KEY_HERE",
+      "base_url": "https://api.bfl.ai",
+      "test_endpoint": "/v1/flux-pro-1.1",
+      "auth_header": "x-key",
+      "auth_format": "{key}",
+      "rate_limits": {
+        "requests_per_minute": 10,
+        "images_per_day": 100
+      },
+      "pricing": {
+        "flux_pro": {
+          "per_image": 0.055
+        },
+        "flux_dev": {
+          "per_image": 0.025
+        }
+      }
+    },
+    "polygon": {
+      "api_key": "YOUR_API_KEY_HERE",
+      "base_url": "https://api.polygon.io/v3",
+      "test_endpoint": "/reference/tickers",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}",
+      "rate_limits": {
+        "requests_per_minute": 5,
+        "requests_per_day": 1000
+      },
+      "pricing": {
+        "starter": "$99/month",
+        "developer": "$399/month"
+      }
+    },
+    "supabase": {
+      "api_key": "YOUR_API_KEY_HERE.YOUR_API_KEY_HERE.YOUR_API_KEY_HERE",
+      "base_url": "https://YOUR_PROJECT.supabase.co",
+      "test_endpoint": "/rest/v1/",
+      "auth_header": "apikey",
+      "auth_format": "{key}",
+      "rate_limits": {
+        "requests_per_minute": 100,
+        "requests_per_day": 50000
+      },
+      "pricing": {
+        "pro": "$25/month",
+        "team": "$599/month"
+      }
+    },
+    "jsonbin": {
+      "api_key": "$2a$10$dzvGoAif8Xn/PPOvaNGi.ey1fMgrFgiFhR95NdOBDnlWTILzrwTL.",
+      "base_url": "https://api.jsonbin.io/v3",
+      "test_endpoint": "/b",
+      "auth_header": "X-Master-Key",
+      "auth_format": "{key}",
+      "rate_limits": {
+        "requests_per_minute": 60,
+        "requests_per_day": 10000
+      },
+      "pricing": {
+        "pro": "$5/month",
+        "business": "$25/month"
+      }
+    }
+  },
+  "timestamp": "2025-10-04T01:50:34.142946"
+}

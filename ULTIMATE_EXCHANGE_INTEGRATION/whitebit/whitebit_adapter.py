@@ -17,6 +17,7 @@ import json
 
 class WhiteBITAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "whitebit"
         self.exchange_name = "WhiteBIT"
         self.region = "Global"
@@ -116,6 +117,6 @@ adapter = WhiteBITAdapter()
 if __name__ == "__main__":
     success = adapter.initialize()
     if success:
-        print(f"✅ {adapter.exchange_name} adapter ready")
+        logging.info(f"✅ {adapter.exchange_name} adapter ready")
     else:
-        print(f"❌ {adapter.exchange_name} adapter failed")
+        logging.info(f"❌ {adapter.exchange_name} adapter failed")

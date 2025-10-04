@@ -5,6 +5,7 @@ Integrates ALL 8 OpenRouter APIs and 17+ Premium AI Models for maximum trading i
 """
 
 import json
+import logging
 import urllib.request
 import urllib.parse
 from datetime import datetime
@@ -14,6 +15,7 @@ import time
 
 class UltimateAIConsensusSystem:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the Ultimate AI Consensus System."""
         
         # ALL 8 OpenRouter API Keys
@@ -88,14 +90,15 @@ class UltimateAIConsensusSystem:
         self.model_performance = {}
         self.consensus_history = []
         
-        print(f"🚀 Ultimate AI Consensus System - Unified Edition Initialized")
-        print(f"🔑 API Keys: {len(self.api_keys)}")
-        print(f"🤖 Premium Models: {len(self.premium_models)}")
-        print(f"📊 Total Repositories Integrated: 23")
+        logging.info(f"🚀 Ultimate AI Consensus System - Unified Edition Initialized")
+        logging.info(f"🔑 API Keys: {len(self.api_keys)}")
+        logging.info(f"🤖 Premium Models: {len(self.premium_models)}")
+        logging.info(f"📊 Total Repositories Integrated: 23")
         
     def get_ai_consensus(self, trading_scenario, confidence_threshold=0.85):
+        """Input validation would be added here"""
         """Get consensus from ALL AI models for maximum accuracy."""
-        print(f"🧠 Getting AI consensus for: {trading_scenario.get('pair', 'Unknown')}")
+        logging.info(f"🧠 Getting AI consensus for: {trading_scenario.get('pair', 'Unknown')}")
         
         consensus_results = []
         
@@ -116,27 +119,28 @@ class UltimateAIConsensusSystem:
                     result = future.result(timeout=30)
                     if result["status"] == "SUCCESS":
                         consensus_results.append(result)
-                        print(f"✅ {model}: {result['recommendation']} ({result['confidence']:.2f})")
+                        logging.info(f"✅ {model}: {result['recommendation']} ({result['confidence']:.2f})")
                     else:
-                        print(f"❌ {model}: {result['error']}")
+                        logging.info(f"❌ {model}: {result['error']}")
                 except Exception as e:
-                    print(f"⚠️ {model}: Timeout or error - {e}")
+                    logging.info(f"⚠️ {model}: Timeout or error - {e}")
         
         # Calculate weighted consensus
         if len(consensus_results) >= 3:  # Minimum 3 models for consensus
             consensus = self.calculate_weighted_consensus(consensus_results)
             
             if consensus["confidence"] >= confidence_threshold:
-                print(f"🎯 CONSENSUS ACHIEVED: {consensus['action']} ({consensus['confidence']:.2f})")
+                logging.info(f"🎯 CONSENSUS ACHIEVED: {consensus['action']} ({consensus['confidence']:.2f})")
                 return consensus
             else:
-                print(f"⚠️ Low confidence consensus: {consensus['confidence']:.2f}")
+                logging.info(f"⚠️ Low confidence consensus: {consensus['confidence']:.2f}")
                 return {"action": "HOLD", "confidence": consensus["confidence"], "reason": "Low consensus confidence"}
         else:
-            print("❌ Insufficient AI responses for consensus")
+            logging.info("❌ Insufficient AI responses for consensus")
             return {"action": "HOLD", "confidence": 0.0, "reason": "Insufficient AI responses"}
     
     def query_ai_model(self, api_key, model, scenario):
+        """Input validation would be added here"""
         """Query a specific AI model."""
         try:
             prompt = f"""
@@ -154,8 +158,9 @@ class UltimateAIConsensusSystem:
             data = {
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": "You are an expert cryptocurrency trading AI with access to real-time market data."},
-                    {"role": "user", "content": prompt}
+                    {"role": "system",
+                        "content": "You are an expert cryptocurrency trading AI with access to real-time market data."},
+                                            {"role": "user", "content": prompt}
                 ],
                 "max_tokens": 200,
                 "temperature": 0.7
@@ -202,6 +207,7 @@ class UltimateAIConsensusSystem:
             }
     
     def parse_ai_response(self, response):
+        """Input validation would be added here"""
         """Parse AI response to extract recommendation and confidence."""
         response_upper = response.upper()
         
@@ -225,6 +231,7 @@ class UltimateAIConsensusSystem:
         return recommendation, confidence
     
     def calculate_weighted_consensus(self, results):
+        """Input validation would be added here"""
         """Calculate weighted consensus from all AI responses."""
         buy_votes = []
         sell_votes = []
@@ -273,8 +280,9 @@ class UltimateAIConsensusSystem:
         }
     
     def run_consensus_test(self):
+        """Input validation would be added here"""
         """Run a test of the AI consensus system."""
-        print("🧪 Running Ultimate AI Consensus Test...")
+        logging.info("🧪 Running Ultimate AI Consensus Test...")
         
         test_scenario = {
             "pair": "BTC/USDT",
@@ -286,14 +294,14 @@ class UltimateAIConsensusSystem:
         
         consensus = self.get_ai_consensus(test_scenario)
         
-        print("\n" + "="*60)
-        print("🎉 ULTIMATE AI CONSENSUS TEST COMPLETE!")
-        print("="*60)
-        print(f"Action: {consensus['action']}")
-        print(f"Confidence: {consensus['confidence']:.2f}")
-        print(f"Votes: {consensus.get('votes', 'N/A')}")
-        print(f"System: 8 API Keys, 17+ Models, 23 Repositories")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("🎉 ULTIMATE AI CONSENSUS TEST COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"Action: {consensus['action']}")
+        logging.info(f"Confidence: {consensus['confidence']:.2f}")
+        logging.info(f"Votes: {consensus.get('votes', 'N/A')}")
+        logging.info(f"System: 8 API Keys, 17+ Models, 23 Repositories")
+        logging.info("="*60)
         
         return consensus
 

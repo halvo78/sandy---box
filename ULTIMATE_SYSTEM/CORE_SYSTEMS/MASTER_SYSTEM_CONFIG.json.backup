@@ -1,0 +1,69 @@
+{
+  "system_info": {
+    "name": "Ultimate Lyra Trading System - GitHub Final Edition",
+    "version": "7.0-GITHUB-UNIFIED",
+    "integration_date": "2025-10-04T00:47:34.883012",
+    "total_files": 203,
+    "sources_integrated": 4
+  },
+  "openrouter_integration": {
+    "api_keys": [
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    ],
+    "premium_models": [
+      "openai/gpt-4o",
+      "openai/gpt-4o-mini",
+      "openai/gpt-4-turbo",
+      "anthropic/claude-3.5-sonnet",
+      "anthropic/claude-3-opus",
+      "google/gemini-pro-1.5",
+      "meta-llama/llama-3.1-405b-instruct",
+      "mistralai/mistral-large",
+      "x-ai/grok-beta",
+      "deepseek/deepseek-chat",
+      "qwen/qwen-2.5-72b-instruct",
+      "cohere/command-r-plus",
+      "perplexity/llama-3.1-sonar-large-128k-online"
+    ],
+    "consensus_threshold": 0.85,
+    "max_concurrent_queries": 8
+  },
+  "trading_configuration": {
+    "available_capital": 13947.76,
+    "max_position_size": 2000,
+    "confidence_threshold": 0.9,
+    "never_sell_at_loss": true,
+    "supported_exchanges": [
+      "OKX",
+      "Binance",
+      "Coinbase",
+      "Gate.io",
+      "WhiteBIT",
+      "BTCMarkets",
+      "CoinJar",
+      "CoinSpot",
+      "Independent Reserve",
+      "Digital Surge",
+      "Swyftx"
+    ]
+  },
+  "system_components": {
+    "ai_consensus": true,
+    "multi_exchange_trading": true,
+    "high_frequency_trading": true,
+    "compliance_system": true,
+    "dashboard_control": true,
+    "ubuntu_deployment": true,
+    "validation_testing": true,
+    "security_systems": true,
+    "monitoring_systems": true,
+    "recovery_tools": true
+  }
+}

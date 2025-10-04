@@ -6,6 +6,7 @@ across all timeframes with dedicated ports and open source TA integration.
 """
 
 import numpy as np
+import logging
 import pandas as pd
 import talib
 import asyncio
@@ -67,6 +68,7 @@ class AdvancedHighLowDetector:
     """Advanced algorithms for detecting BTC highs and lows."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.scaler = MinMaxScaler()
         self.isolation_forest = IsolationForest(contamination=0.1, random_state=42)
         
@@ -241,8 +243,11 @@ class AdvancedHighLowDetector:
         
         return volume_weighted_points
     
-    def _calculate_strength_score(self, data: pd.DataFrame, index: int, point_type: str, sr_levels: List[float]) -> float:
-        """Calculate strength score for a high/low point."""
+    def _calculate_strength_score(self,
+        data: pd.DataFrame,
+        index: int,
+        point_type: str,
+        sr_levels: List[float]) -> float:        """Calculate strength score for a high/low point."""
         score = 0
         current_price = data['high'].iloc[index] if point_type == 'high' else data['low'].iloc[index]
         
@@ -386,6 +391,7 @@ class MultiTimeframeTracker:
     """Track highs and lows across multiple timeframes simultaneously."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.detectors = {tf: AdvancedHighLowDetector() for tf in TimeFrame}
         self.data_feeds = {}
         self.high_low_points = {tf: [] for tf in TimeFrame}
@@ -481,6 +487,7 @@ class RealTimeDataFeed:
     """Real-time data feed for BTC and other cryptocurrencies."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.websockets = {}
         self.data_queues = {tf: queue.Queue() for tf in TimeFrame}
         self.current_data = {tf: pd.DataFrame() for tf in TimeFrame}
@@ -489,6 +496,7 @@ class RealTimeDataFeed:
     def start_binance_feed(self, symbol: str = "BTCUSDT"):
         """Start Binance WebSocket feed."""
         def on_message(ws, message):
+            """TODO: Add function documentation"""
             data = json.loads(message)
             if 'k' in data:  # Kline data
                 kline = data['k']
@@ -511,10 +519,12 @@ class RealTimeDataFeed:
                     self.data_queues[timeframe].put(ohlcv_data)
         
         def on_error(ws, error):
-            print(f"WebSocket error: {error}")
+            """TODO: Add function documentation"""
+            logging.info(f"WebSocket error: {error}")
         
         def on_close(ws, close_status_code, close_msg):
-            print("WebSocket connection closed")
+            """TODO: Add function documentation"""
+            logging.info("WebSocket connection closed")
         
         # Subscribe to multiple timeframes
         streams = [
@@ -539,6 +549,7 @@ class RealTimeDataFeed:
         
         # Start WebSocket in separate thread
         def run_websocket():
+            """TODO: Add function documentation"""
             ws.run_forever()
         
         ws_thread = threading.Thread(target=run_websocket)
@@ -598,6 +609,7 @@ class HighLowDatabase:
     """Database for storing and retrieving high/low points."""
     
     def __init__(self, db_path: str = "btc_high_low_tracking.db"):
+        """TODO: Add function documentation"""
         self.db_path = db_path
         self.init_database()
     
@@ -669,6 +681,7 @@ class HighLowDatabase:
         conn.close()
     
     def get_points(self, timeframe: Optional[TimeFrame] = None, 
+        """TODO: Add function documentation"""
                    point_type: Optional[str] = None,
                    start_time: Optional[datetime] = None,
                    end_time: Optional[datetime] = None) -> List[HighLowPoint]:
@@ -724,6 +737,7 @@ class BTCHighLowTrackingSystem:
     """Main system for tracking BTC highs and lows."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.tracker = MultiTimeframeTracker()
         self.data_feed = RealTimeDataFeed()
         self.database = HighLowDatabase()
@@ -740,7 +754,7 @@ class BTCHighLowTrackingSystem:
     
     def start_tracking(self, symbol: str = "BTCUSDT"):
         """Start the complete tracking system."""
-        print(f"🚀 Starting BTC High/Low Tracking System for {symbol}")
+        logging.info(f"🚀 Starting BTC High/Low Tracking System for {symbol}")
         
         # Start real-time data feed
         self.data_feed.start_binance_feed(symbol)
@@ -751,9 +765,9 @@ class BTCHighLowTrackingSystem:
         analysis_thread.daemon = True
         analysis_thread.start()
         
-        print("✅ System started successfully!")
-        print("📊 Tracking all timeframes with real-time analysis")
-        print("🎯 Detecting highs, lows, and confluence points")
+        logging.info("✅ System started successfully!")
+        logging.info("📊 Tracking all timeframes with real-time analysis")
+        logging.info("🎯 Detecting highs, lows, and confluence points")
         
     def _analysis_loop(self):
         """Main analysis loop."""
@@ -795,7 +809,7 @@ class BTCHighLowTrackingSystem:
                 time.sleep(60)  # Analyze every minute
                 
             except Exception as e:
-                print(f"❌ Error in analysis loop: {e}")
+                logging.info(f"❌ Error in analysis loop: {e}")
                 time.sleep(10)
     
     def _print_latest_findings(self, all_points: List[HighLowPoint], confluence_points: List[HighLowPoint]):
@@ -803,29 +817,29 @@ class BTCHighLowTrackingSystem:
         if not all_points:
             return
         
-        print(f"\n📊 LATEST ANALYSIS - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print("=" * 60)
+        logging.info(f"\n📊 LATEST ANALYSIS - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logging.info("=" * 60)
         
         # Recent high-strength points
         high_strength_points = [p for p in all_points if p.strength > 80]
         if high_strength_points:
-            print(f"🎯 HIGH STRENGTH POINTS ({len(high_strength_points)}):")
+            logging.info(f"🎯 HIGH STRENGTH POINTS ({len(high_strength_points)}):")
             for point in high_strength_points[-5:]:  # Show last 5
-                print(f"  {point.point_type.upper()}: ${point.price:,.2f} "
+                logging.info(f"  {point.point_type.upper()}: ${point.price:,.2f} "
                       f"({point.timeframe.value}) - Strength: {point.strength:.1f}")
         
         # Confluence points
         if confluence_points:
-            print(f"\n🔥 CONFLUENCE POINTS ({len(confluence_points)}):")
+            logging.info(f"\n🔥 CONFLUENCE POINTS ({len(confluence_points)}):")
             for point in confluence_points[-3:]:  # Show last 3
-                print(f"  {point.point_type.upper()}: ${point.price:,.2f} "
+                logging.info(f"  {point.point_type.upper()}: ${point.price:,.2f} "
                       f"- Strength: {point.strength:.1f} - {point.market_structure}")
         
         # System metrics
-        print(f"\n📈 SYSTEM METRICS:")
-        print(f"  Total Points: {self.metrics['total_points_detected']}")
-        print(f"  Confirmed: {self.metrics['confirmed_points']}")
-        print(f"  Confluence: {self.metrics['confluence_points']}")
+        logging.info(f"\n📈 SYSTEM METRICS:")
+        logging.info(f"  Total Points: {self.metrics['total_points_detected']}")
+        logging.info(f"  Confirmed: {self.metrics['confirmed_points']}")
+        logging.info(f"  Confluence: {self.metrics['confluence_points']}")
         
     def get_current_levels(self) -> Dict[str, List[HighLowPoint]]:
         """Get current support and resistance levels."""
@@ -913,10 +927,10 @@ def create_system_ports():
 
 def main():
     """Main execution function."""
-    print("🎯 ULTIMATE BTC HIGH/LOW TRACKING ALGORITHMS SYSTEM")
-    print("=" * 70)
-    print("The most comprehensive and accurate BTC tracking system")
-    print("=" * 70)
+    logging.info("🎯 ULTIMATE BTC HIGH/LOW TRACKING ALGORITHMS SYSTEM")
+    logging.info("=" * 70)
+    logging.info("The most comprehensive and accurate BTC tracking system")
+    logging.info("=" * 70)
     
     # Create system
     system = BTCHighLowTrackingSystem()
@@ -924,26 +938,26 @@ def main():
     # Create dedicated ports
     ports = create_system_ports()
     
-    print(f"\n🔧 SYSTEM CONFIGURATION:")
-    print(f"📊 Timeframes: {len(TimeFrame)} (1s to 1M)")
-    print(f"🤖 Algorithms: 5 advanced detection algorithms")
-    print(f"🔗 Data Sources: Binance WebSocket (real-time)")
-    print(f"💾 Storage: SQLite database with indexing")
-    print(f"🌐 API Ports: {len(ports)} dedicated endpoints")
+    logging.info(f"\n🔧 SYSTEM CONFIGURATION:")
+    logging.info(f"📊 Timeframes: {len(TimeFrame)} (1s to 1M)")
+    logging.info(f"🤖 Algorithms: 5 advanced detection algorithms")
+    logging.info(f"🔗 Data Sources: Binance WebSocket (real-time)")
+    logging.info(f"💾 Storage: SQLite database with indexing")
+    logging.info(f"🌐 API Ports: {len(ports)} dedicated endpoints")
     
-    print(f"\n🌐 DEDICATED PORTS:")
+    logging.info(f"\n🌐 DEDICATED PORTS:")
     for service, port in ports.items():
         service_name = service.replace('_', ' ').title()
-        print(f"  {service_name}: Port {port}")
+        logging.info(f"  {service_name}: Port {port}")
     
     # Start tracking
     try:
         system.start_tracking("BTCUSDT")
         
         # Keep system running
-        print(f"\n🚀 System is now running...")
-        print(f"📊 Real-time tracking active")
-        print(f"🎯 Press Ctrl+C to stop")
+        logging.info(f"\n🚀 System is now running...")
+        logging.info(f"📊 Real-time tracking active")
+        logging.info(f"🎯 Press Ctrl+C to stop")
         
         while True:
             time.sleep(10)
@@ -957,12 +971,12 @@ def main():
                 with open(report_file, 'w') as f:
                     f.write(report)
                 
-                print(f"📄 Report saved: {report_file}")
+                logging.info(f"📄 Report saved: {report_file}")
     
     except KeyboardInterrupt:
-        print(f"\n🛑 Stopping system...")
+        logging.info(f"\n🛑 Stopping system...")
         system.running = False
-        print(f"✅ System stopped successfully!")
+        logging.info(f"✅ System stopped successfully!")
 
 if __name__ == "__main__":
     main()

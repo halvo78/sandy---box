@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class OKXWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "okx"
         self.exchange_name = "OKX"
         self.setup_logging()

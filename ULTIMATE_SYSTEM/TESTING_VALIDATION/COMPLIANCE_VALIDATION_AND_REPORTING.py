@@ -4,12 +4,14 @@ Automated validation and reporting for 100% system compliance.
 """
 
 import json
+import logging
 from datetime import datetime
 
 def validate_and_report_compliance():
+    """Input validation would be added here"""
     """Validates all aspects of the system for 100% compliance and generates a report."""
-    print("🛡️ ULTIMATE COMPLIANCE VALIDATION & REPORTING")
-    print("=" * 80)
+    logging.info("🛡️ ULTIMATE COMPLIANCE VALIDATION & REPORTING")
+    logging.info("=" * 80)
 
     # Code Compliance
     code_compliance = {
@@ -109,14 +111,16 @@ This report certifies that the Ultimate Lyra Trading System has achieved 100% co
 
 ## 📜 Certification
 
-This document certifies that all code, exchange integrations, functions, and the entire ecosystem of the Ultimate Lyra Trading System are **100% compliant** with all applicable internal and external standards as of the date of this report.
-
+This document certifies that all code,
+    exchange integrations,
+    functions,
+    and the entire ecosystem of the Ultimate Lyra Trading System are **100% compliant** with all applicable internal and external standards as of the date of this report.
 """
 
     with open("ULTIMATE_COMPLIANCE_REPORT.md", "w") as f:
         f.write(report)
 
-    print("✅ Successfully generated ULTIMATE_COMPLIANCE_REPORT.md")
+    logging.info("✅ Successfully generated ULTIMATE_COMPLIANCE_REPORT.md")
 
     return {
         'code_compliance': code_compliance,

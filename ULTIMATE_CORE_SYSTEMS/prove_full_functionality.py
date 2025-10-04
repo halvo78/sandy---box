@@ -39,6 +39,7 @@ class FullFunctionalityProof:
     """Prove the entire Ultimate Lyra Ecosystem is functioning at maximum capacity"""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.start_time = time.time()
         self.working_exchanges = []
         self.opportunities_detected = []
@@ -51,17 +52,17 @@ class FullFunctionalityProof:
         self.btc_markets = None
         self.ai_conductor = None
         
-        print("🚀 ULTIMATE LYRA ECOSYSTEM - FULL FUNCTIONALITY PROOF")
-        print("=" * 70)
-        print("🎯 PROVING EVERY COMPONENT WORKS AT MAXIMUM CAPACITY")
-        print("💰 Using ONLY working exchanges with REAL market data")
-        print("🔄 Demonstrating REAL opportunity detection and AI decisions")
-        print("=" * 70)
+        logging.info("🚀 ULTIMATE LYRA ECOSYSTEM - FULL FUNCTIONALITY PROOF")
+        logging.info("=" * 70)
+        logging.info("🎯 PROVING EVERY COMPONENT WORKS AT MAXIMUM CAPACITY")
+        logging.info("💰 Using ONLY working exchanges with REAL market data")
+        logging.info("🔄 Demonstrating REAL opportunity detection and AI decisions")
+        logging.info("=" * 70)
         print()
     
     async def initialize_working_exchanges(self):
         """Initialize only the working exchanges"""
-        print("📡 INITIALIZING WORKING EXCHANGES...")
+        logging.info("📡 INITIALIZING WORKING EXCHANGES...")
         
         # Initialize exchange manager
         self.exchange_manager = LiveExchangeManager()
@@ -71,17 +72,17 @@ class FullFunctionalityProof:
             okx_paper_ticker = await self.exchange_manager.get_ticker('okx_paper', 'BTC-USDT')
             if okx_paper_ticker and okx_paper_ticker > 0:
                 self.working_exchanges.append('okx_paper')
-                print(f"   ✅ OKX Paper: BTC at ${okx_paper_ticker:,.2f}")
+                logging.info(f"   ✅ OKX Paper: BTC at ${okx_paper_ticker:,.2f}")
         except Exception as e:
-            print(f"   ❌ OKX Paper failed: {e}")
+            logging.info(f"   ❌ OKX Paper failed: {e}")
         
         try:
             okx_demo_ticker = await self.exchange_manager.get_ticker('okx_demo', 'BTC-USDT')
             if okx_demo_ticker and okx_demo_ticker > 0:
                 self.working_exchanges.append('okx_demo')
-                print(f"   ✅ OKX Demo: BTC at ${okx_demo_ticker:,.2f}")
+                logging.info(f"   ✅ OKX Demo: BTC at ${okx_demo_ticker:,.2f}")
         except Exception as e:
-            print(f"   ❌ OKX Demo failed: {e}")
+            logging.info(f"   ❌ OKX Demo failed: {e}")
         
         # Initialize BTC Markets
         try:
@@ -92,24 +93,24 @@ class FullFunctionalityProof:
             btc_aud_ticker = await self.btc_markets.get_ticker('BTC-AUD')
             if btc_aud_ticker and btc_aud_ticker.price > 0:
                 self.working_exchanges.append('btcmarkets')
-                print(f"   ✅ BTC Markets: BTC at ${btc_aud_ticker.price:,.2f} AUD")
+                logging.info(f"   ✅ BTC Markets: BTC at ${btc_aud_ticker.price:,.2f} AUD")
         except Exception as e:
-            print(f"   ❌ BTC Markets failed: {e}")
+            logging.info(f"   ❌ BTC Markets failed: {e}")
         
-        print(f"\n📊 WORKING EXCHANGES: {len(self.working_exchanges)}")
+        logging.info(f"\n📊 WORKING EXCHANGES: {len(self.working_exchanges)}")
         for exchange in self.working_exchanges:
-            print(f"   🟢 {exchange}")
+            logging.info(f"   🟢 {exchange}")
         print()
     
     async def YOUR_API_KEY_HERE(self):
         """Prove real opportunity detection with live market data"""
-        print("🎯 PROVING REAL OPPORTUNITY DETECTION...")
+        logging.info("🎯 PROVING REAL OPPORTUNITY DETECTION...")
         
         symbols = ['BTC-USDT', 'ETH-USDT', 'ADA-USDT', 'SOL-USDT']
         opportunities_found = 0
         
         for symbol in symbols:
-            print(f"   🔍 Analyzing {symbol}...")
+            logging.info(f"   🔍 Analyzing {symbol}...")
             
             # Get real prices from working exchanges
             prices = {}
@@ -120,9 +121,9 @@ class FullFunctionalityProof:
                         price = await self.exchange_manager.get_ticker(exchange, symbol)
                         if price and price > 0:
                             prices[exchange] = price
-                            print(f"      📈 {exchange}: ${price:,.2f}")
+                            logging.info(f"      📈 {exchange}: ${price:,.2f}")
                     except Exception as e:
-                        print(f"      ❌ {exchange} error: {e}")
+                        logging.info(f"      ❌ {exchange} error: {e}")
             
             # Analyze for opportunities
             if len(prices) >= 2:
@@ -144,25 +145,25 @@ class FullFunctionalityProof:
                     }
                     self.opportunities_detected.append(opportunity)
                     
-                    print(f"      🎯 OPPORTUNITY DETECTED!")
-                    print(f"         💰 Spread: {spread_pct:.3f}%")
-                    print(f"         📊 Profit Potential: {opportunity['potential_profit']:.3f}%")
-                    print(f"         🔄 Buy at ${min_price:,.2f} → Sell at ${max_price:,.2f}")
+                    logging.info(f"      🎯 OPPORTUNITY DETECTED!")
+                    logging.info(f"         💰 Spread: {spread_pct:.3f}%")
+                    logging.info(f"         📊 Profit Potential: {opportunity['potential_profit']:.3f}%")
+                    logging.info(f"         🔄 Buy at ${min_price:,.2f} → Sell at ${max_price:,.2f}")
             
             await asyncio.sleep(0.1)  # Rate limiting
         
-        print(f"\n📊 OPPORTUNITY DETECTION RESULTS:")
-        print(f"   🎯 Symbols Analyzed: {len(symbols)}")
-        print(f"   💰 Opportunities Found: {opportunities_found}")
-        print(f"   📈 Success Rate: {(opportunities_found/len(symbols)*100):.1f}%")
+        logging.info(f"\n📊 OPPORTUNITY DETECTION RESULTS:")
+        logging.info(f"   🎯 Symbols Analyzed: {len(symbols)}")
+        logging.info(f"   💰 Opportunities Found: {opportunities_found}")
+        logging.info(f"   📈 Success Rate: {(opportunities_found/len(symbols)*100):.1f}%")
         print()
     
     async def prove_cross_currency_arbitrage(self):
         """Prove cross-currency arbitrage detection between USD and AUD"""
-        print("🌍 PROVING CROSS-CURRENCY ARBITRAGE DETECTION...")
+        logging.info("🌍 PROVING CROSS-CURRENCY ARBITRAGE DETECTION...")
         
         if 'btcmarkets' not in self.working_exchanges:
-            print("   ❌ BTC Markets not available for cross-currency analysis")
+            logging.info("   ❌ BTC Markets not available for cross-currency analysis")
             return
         
         try:
@@ -191,10 +192,10 @@ class FullFunctionalityProof:
                 # Calculate arbitrage opportunity
                 arbitrage_pct = ((btc_usd_avg - btc_usd_from_aud) / btc_usd_from_aud) * 100
                 
-                print(f"   📊 BTC-AUD Price: ${btc_aud_price:,.2f} AUD")
-                print(f"   📊 BTC-USD Average: ${btc_usd_avg:,.2f} USD")
-                print(f"   📊 BTC-USD from AUD: ${btc_usd_from_aud:,.2f} USD")
-                print(f"   💰 Currency Arbitrage: {arbitrage_pct:.3f}%")
+                logging.info(f"   📊 BTC-AUD Price: ${btc_aud_price:,.2f} AUD")
+                logging.info(f"   📊 BTC-USD Average: ${btc_usd_avg:,.2f} USD")
+                logging.info(f"   📊 BTC-USD from AUD: ${btc_usd_from_aud:,.2f} USD")
+                logging.info(f"   💰 Currency Arbitrage: {arbitrage_pct:.3f}%")
                 
                 if abs(arbitrage_pct) > 0.1:
                     arbitrage_opportunity = {
@@ -208,18 +209,18 @@ class FullFunctionalityProof:
                     }
                     self.arbitrage_opportunities.append(arbitrage_opportunity)
                     
-                    print(f"   🎯 CROSS-CURRENCY ARBITRAGE DETECTED!")
-                    print(f"      💰 Profit Potential: {arbitrage_opportunity['potential_profit']:.3f}%")
-                    print(f"      🔄 Strategy: {arbitrage_opportunity['direction']}")
+                    logging.info(f"   🎯 CROSS-CURRENCY ARBITRAGE DETECTED!")
+                    logging.info(f"      💰 Profit Potential: {arbitrage_opportunity['potential_profit']:.3f}%")
+                    logging.info(f"      🔄 Strategy: {arbitrage_opportunity['direction']}")
         
         except Exception as e:
-            print(f"   ❌ Cross-currency analysis error: {e}")
+            logging.info(f"   ❌ Cross-currency analysis error: {e}")
         
         print()
     
     async def prove_ai_decision_making(self):
         """Prove AI decision making with real market data"""
-        print("🧠 PROVING AI DECISION MAKING...")
+        logging.info("🧠 PROVING AI DECISION MAKING...")
         
         # Initialize AI conductor
         self.ai_conductor = AIOrchestralConductor()
@@ -255,12 +256,12 @@ class FullFunctionalityProof:
                     'spread': max(prices.values()) - min(prices.values()) if len(prices) > 1 else 0
                 }
                 
-                print(f"   📊 {symbol}: ${avg_price:,.2f} (RSI: {market_data[symbol]['rsi']:.1f})")
+                logging.info(f"   📊 {symbol}: ${avg_price:,.2f} (RSI: {market_data[symbol]['rsi']:.1f})")
         
         # Run AI analysis
         if market_data:
             try:
-                print("   🎼 Running AI Orchestra Conductor...")
+                logging.info("   🎼 Running AI Orchestra Conductor...")
                 decisions = await self.ai_conductor.conduct_orchestra(market_data)
                 
                 for decision in decisions:
@@ -274,27 +275,27 @@ class FullFunctionalityProof:
                         'timestamp': datetime.utcnow().isoformat()
                     })
                     
-                    print(f"   🎯 AI DECISION: {decision.intent.symbol}")
-                    print(f"      📈 Strategy: {decision.intent.strategy}")
-                    print(f"      🔄 Action: {decision.intent.side.value}")
-                    print(f"      🎲 Confidence: {decision.intent.confidence:.2f}")
-                    print(f"      ✅ Result: {decision.result.value}")
-                    print(f"      💭 Reason: {decision.reason}")
+                    logging.info(f"   🎯 AI DECISION: {decision.intent.symbol}")
+                    logging.info(f"      📈 Strategy: {decision.intent.strategy}")
+                    logging.info(f"      🔄 Action: {decision.intent.side.value}")
+                    logging.info(f"      🎲 Confidence: {decision.intent.confidence:.2f}")
+                    logging.info(f"      ✅ Result: {decision.result.value}")
+                    logging.info(f"      💭 Reason: {decision.reason}")
                     print()
                 
-                print(f"📊 AI DECISION MAKING RESULTS:")
-                print(f"   🧠 Symbols Analyzed: {len(market_data)}")
-                print(f"   🎯 Decisions Generated: {len(decisions)}")
-                print(f"   📈 AI Success Rate: 100% (All decisions generated)")
+                logging.info(f"📊 AI DECISION MAKING RESULTS:")
+                logging.info(f"   🧠 Symbols Analyzed: {len(market_data)}")
+                logging.info(f"   🎯 Decisions Generated: {len(decisions)}")
+                logging.info(f"   📈 AI Success Rate: 100% (All decisions generated)")
                 
             except Exception as e:
-                print(f"   ❌ AI analysis error: {e}")
+                logging.info(f"   ❌ AI analysis error: {e}")
         
         print()
     
     async def prove_system_integration(self):
         """Prove all systems work together seamlessly"""
-        print("🔧 PROVING COMPLETE SYSTEM INTEGRATION...")
+        logging.info("🔧 PROVING COMPLETE SYSTEM INTEGRATION...")
         
         integration_tests = [
             "Exchange connectivity",
@@ -330,24 +331,24 @@ class FullFunctionalityProof:
                 result = True
             
             status = "✅ PASS" if result else "❌ FAIL"
-            print(f"   {status} {test}")
+            logging.info(f"   {status} {test}")
             
             if result:
                 passed_tests += 1
         
         integration_score = (passed_tests / len(integration_tests)) * 100
         
-        print(f"\n📊 SYSTEM INTEGRATION RESULTS:")
-        print(f"   🧪 Tests Executed: {len(integration_tests)}")
-        print(f"   ✅ Tests Passed: {passed_tests}")
-        print(f"   📈 Integration Score: {integration_score:.1f}%")
+        logging.info(f"\n📊 SYSTEM INTEGRATION RESULTS:")
+        logging.info(f"   🧪 Tests Executed: {len(integration_tests)}")
+        logging.info(f"   ✅ Tests Passed: {passed_tests}")
+        logging.info(f"   📈 Integration Score: {integration_score:.1f}%")
         print()
     
     async def generate_proof_report(self):
         """Generate comprehensive proof report"""
         total_runtime = time.time() - self.start_time
         
-        print("📋 GENERATING COMPREHENSIVE PROOF REPORT...")
+        logging.info("📋 GENERATING COMPREHENSIVE PROOF REPORT...")
         
         proof_report = {
             "proof_timestamp": datetime.utcnow().isoformat(),
@@ -375,18 +376,18 @@ class FullFunctionalityProof:
         with open('full_functionality_proof.json', 'w') as f:
             json.dump(proof_report, f, indent=2)
         
-        print("🎉 FULL FUNCTIONALITY PROOF COMPLETE!")
-        print("=" * 70)
-        print(f"⏱️  Total Runtime: {total_runtime:.2f} seconds")
-        print(f"📡 Working Exchanges: {len(self.working_exchanges)}")
-        print(f"🎯 Opportunities Detected: {len(self.opportunities_detected)}")
-        print(f"🌍 Arbitrage Opportunities: {len(self.arbitrage_opportunities)}")
-        print(f"🧠 AI Decisions: {len(self.ai_decisions)}")
-        print("=" * 70)
-        print("✅ ULTIMATE LYRA ECOSYSTEM: 100% FUNCTIONAL")
-        print("🚀 ALL SYSTEMS OPERATIONAL AT MAXIMUM CAPACITY")
-        print("💰 READY FOR LIVE TRADING WITH CONFIDENCE")
-        print("=" * 70)
+        logging.info("🎉 FULL FUNCTIONALITY PROOF COMPLETE!")
+        logging.info("=" * 70)
+        logging.info(f"⏱️  Total Runtime: {total_runtime:.2f} seconds")
+        logging.info(f"📡 Working Exchanges: {len(self.working_exchanges)}")
+        logging.info(f"🎯 Opportunities Detected: {len(self.opportunities_detected)}")
+        logging.info(f"🌍 Arbitrage Opportunities: {len(self.arbitrage_opportunities)}")
+        logging.info(f"🧠 AI Decisions: {len(self.ai_decisions)}")
+        logging.info("=" * 70)
+        logging.info("✅ ULTIMATE LYRA ECOSYSTEM: 100% FUNCTIONAL")
+        logging.info("🚀 ALL SYSTEMS OPERATIONAL AT MAXIMUM CAPACITY")
+        logging.info("💰 READY FOR LIVE TRADING WITH CONFIDENCE")
+        logging.info("=" * 70)
         
         return proof_report
     
@@ -421,7 +422,7 @@ async def run_full_functionality_proof():
         return report
         
     except Exception as e:
-        print(f"❌ Error during functionality proof: {str(e)}")
+        logging.info(f"❌ Error during functionality proof: {str(e)}")
         import traceback
         traceback.print_exc()
         

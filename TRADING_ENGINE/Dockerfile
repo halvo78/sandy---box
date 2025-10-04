@@ -30,7 +30,9 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 WORKDIR /app
 
 # Copy application code
-COPY . .
+# SECURITY: More specific copying instead of COPY . .
+COPY requirements.txt .
+COPY src/ ./src/
 
 # Change ownership to non-root user
 RUN chown -R appuser:appuser /app

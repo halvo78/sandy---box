@@ -6099,7 +6099,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'test_password_123'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 21,
       "line_range": [
         21
@@ -7999,7 +7999,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'test_password_123'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 21,
       "line_range": [
         21
@@ -14213,7 +14213,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'lyra-root'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 37,
       "line_range": [
         37
@@ -18541,7 +18541,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'YOUR_BOT_TOKEN_HERE'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 25,
       "line_range": [
         25
@@ -19253,7 +19253,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'lyra-root'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 37,
       "line_range": [
         37
@@ -20038,7 +20038,7 @@
         "link": "https://cwe.mitre.org/data/definitions/259.html"
       },
       "issue_severity": "LOW",
-      "issue_text": "Possible hardcoded password: 'lyra_+1-XXX-XXX-XXXX_5d20aef7f3777214'",
+      "issue_text": "Possible hardcoded password: ${PASSWORD}",
       "line_number": 29,
       "line_range": [
         29

@@ -17,6 +17,7 @@ import json
 
 class BTCMarketsAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "btcmarkets"
         self.exchange_name = "BTC Markets"
         self.region = "AU"
@@ -116,6 +117,6 @@ adapter = BTCMarketsAdapter()
 if __name__ == "__main__":
     success = adapter.initialize()
     if success:
-        print(f"✅ {adapter.exchange_name} adapter ready")
+        logging.info(f"✅ {adapter.exchange_name} adapter ready")
     else:
-        print(f"❌ {adapter.exchange_name} adapter failed")
+        logging.info(f"❌ {adapter.exchange_name} adapter failed")

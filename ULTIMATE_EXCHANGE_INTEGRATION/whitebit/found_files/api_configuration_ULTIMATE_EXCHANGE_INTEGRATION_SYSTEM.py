@@ -18,6 +18,7 @@ from typing import Dict, List, Any, Optional
 
 class UltimateExchangeIntegrator:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.sandy_box_path = "/home/ubuntu/temp_repos/halvo78_sandy---box"
         self.all_repos_path = "/home/ubuntu/ALL_REPOS_ANALYSIS"
         self.integration_results = {}
@@ -127,7 +128,7 @@ class UltimateExchangeIntegrator:
     
     def scan_all_repositories_for_exchanges(self) -> Dict[str, Any]:
         """Scan ALL repositories for exchange-related code and configurations"""
-        print("🔍 SCANNING ALL REPOSITORIES FOR EXCHANGE WORK...")
+        logging.info("🔍 SCANNING ALL REPOSITORIES FOR EXCHANGE WORK...")
         
         exchange_findings = {}
         total_files_scanned = 0
@@ -183,9 +184,9 @@ class UltimateExchangeIntegrator:
                     except Exception as e:
                         continue
         
-        print(f"  📊 Scanned {total_files_scanned:,} files")
-        print(f"  🎯 Found {exchange_files_found:,} exchange-related files")
-        print(f"  🏦 Exchanges with content: {len(exchange_findings)}")
+        logging.info(f"  📊 Scanned {total_files_scanned:,} files")
+        logging.info(f"  🎯 Found {exchange_files_found:,} exchange-related files")
+        logging.info(f"  🏦 Exchanges with content: {len(exchange_findings)}")
         
         return {
             'total_files_scanned': total_files_scanned,
@@ -248,7 +249,7 @@ class UltimateExchangeIntegrator:
     
     def create_comprehensive_exchange_integration(self, findings: Dict[str, Any]) -> Dict[str, Any]:
         """Create comprehensive exchange integration for sandy-box"""
-        print("🏗️ CREATING COMPREHENSIVE EXCHANGE INTEGRATION...")
+        logging.info("🏗️ CREATING COMPREHENSIVE EXCHANGE INTEGRATION...")
         
         # Create exchange integration directory
         exchange_dir = os.path.join(self.sandy_box_path, "ULTIMATE_EXCHANGE_INTEGRATION")
@@ -268,7 +269,7 @@ class UltimateExchangeIntegrator:
         
         # Create individual exchange configurations
         for exchange_id, exchange_info in self.target_exchanges.items():
-            print(f"  🏦 Integrating {exchange_info['name']}...")
+            logging.info(f"  🏦 Integrating {exchange_info['name']}...")
             
             exchange_specific_dir = os.path.join(exchange_dir, exchange_id)
             os.makedirs(exchange_specific_dir, exist_ok=True)
@@ -301,7 +302,7 @@ class UltimateExchangeIntegrator:
                 )
             
             integration_summary['exchanges_integrated'] += 1
-            print(f"    ✅ {exchange_info['name']} integration complete")
+            logging.info(f"    ✅ {exchange_info['name']} integration complete")
         
         # Create docker-compose for all exchanges
         self.create_exchange_docker_compose(exchange_dir)
@@ -311,7 +312,7 @@ class UltimateExchangeIntegrator:
         self.create_exchange_documentation(exchange_dir, integration_summary)
         integration_summary['files_created'] += 1
         
-        print(f"  ✅ Integration complete: {integration_summary['exchanges_integrated']} exchanges")
+        logging.info(f"  ✅ Integration complete: {integration_summary['exchanges_integrated']} exchanges")
         
         return integration_summary
     
@@ -334,6 +335,7 @@ import json
 
 class UnifiedExchangeAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchanges = {}
         self.supported_exchanges = [
             'btcmarkets', 'coinbase', 'binance', 'whitebit', 
@@ -479,10 +481,10 @@ adapter = UnifiedExchangeAdapter()
 if __name__ == "__main__":
     # Initialize all exchanges
     results = adapter.initialize_all_exchanges()
-    print("Exchange Initialization Results:")
+    logging.info("Exchange Initialization Results:")
     for exchange_id, success in results.items():
         status = "✅" if success else "❌"
-        print(f"  {status} {exchange_id}")
+        logging.info(f"  {status} {exchange_id}")
 '''
         
         adapter_path = os.path.join(exchange_dir, "unified_exchange_adapter.py")
@@ -510,6 +512,7 @@ import json
 
 class {exchange_info['name'].replace(' ', '')}Adapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "{exchange_id}"
         self.exchange_name = "{exchange_info['name']}"
         self.region = "{exchange_info['region']}"
@@ -609,9 +612,9 @@ adapter = {exchange_info['name'].replace(' ', '')}Adapter()
 if __name__ == "__main__":
     success = adapter.initialize()
     if success:
-        print(f"✅ {{adapter.exchange_name}} adapter ready")
+        logging.info(f"✅ {{adapter.exchange_name}} adapter ready")
     else:
-        print(f"❌ {{adapter.exchange_name}} adapter failed")
+        logging.info(f"❌ {{adapter.exchange_name}} adapter failed")
 '''
         
         adapter_path = os.path.join(exchange_dir, f"{exchange_id}_adapter.py")
@@ -677,7 +680,7 @@ EXPOSE 8000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \\
-    CMD python -c "import {exchange_id}_adapter; print('healthy')" || exit 1
+    CMD python -c "import {exchange_id}_adapter; logging.info('healthy')" || exit 1
 
 # Run application
 CMD ["python", "{exchange_id}_adapter.py"]
@@ -719,6 +722,7 @@ app = Flask(__name__)
 
 class {exchange_info['name'].replace(' ', '')}WebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "{exchange_id}"
         self.exchange_name = "{exchange_info['name']}"
         self.setup_logging()
@@ -852,6 +856,7 @@ import json
 
 class {exchange_info['name'].replace(' ', '')}TradingStrategy:
     def __init__(self, adapter):
+        """TODO: Add function documentation"""
         self.adapter = adapter
         self.exchange_id = "{exchange_id}"
         self.exchange_name = "{exchange_info['name']}"
@@ -1013,11 +1018,12 @@ class {exchange_info['name'].replace(' ', '')}TradingStrategy:
 
 # Strategy factory
 def create_strategy(adapter):
+    """TODO: Add function documentation"""
     return {exchange_info['name'].replace(' ', '')}TradingStrategy(adapter)
 
 if __name__ == "__main__":
     # Example usage
-    print(f"{{exchange_info['name']}} Trading Strategy Ready")
+    logging.info(f"{{exchange_info['name']}} Trading Strategy Ready")
 '''
         
         strategy_path = os.path.join(exchange_dir, f"{exchange_id}_strategy.py")
@@ -1160,8 +1166,8 @@ Complete integration of all target exchanges into the sandy-box ecosystem.
 cp .env.example .env
 
 # Configure API keys for each exchange
-export BTCMARKETS_API_KEY="your_btcmarkets_key"
-export BTCMARKETS_SECRET="your_btcmarkets_secret"
+export BTCMARKETS_api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
+export BTCMARKETS_secret = os.getenv("SECRET", "YOUR_SECRET_HERE")
 # ... repeat for all exchanges
 ```
 
@@ -1333,7 +1339,7 @@ For issues and questions:
     
     async def run_ai_consensus_validation(self, integration_summary: Dict) -> Dict[str, Any]:
         """Run AI consensus validation for exchange integration"""
-        print("🤖 RUNNING AI CONSENSUS VALIDATION...")
+        logging.info("🤖 RUNNING AI CONSENSUS VALIDATION...")
         
         validation_prompt = f"""
         🚀 ULTIMATE EXCHANGE INTEGRATION VALIDATION
@@ -1521,29 +1527,29 @@ For issues and questions:
     
     async def run_ultimate_exchange_integration(self):
         """Run the complete exchange integration process"""
-        print("🚀 STARTING ULTIMATE EXCHANGE INTEGRATION")
-        print("=" * 100)
-        print("🎯 MISSION: INTEGRATE ALL EXCHANGES WITH 100% PRODUCTION READINESS")
-        print(f"🏦 TARGET EXCHANGES: {len(self.target_exchanges)}")
-        print("🤖 AI CONSENSUS VALIDATION: ALL MODELS")
-        print("=" * 100)
+        logging.info("🚀 STARTING ULTIMATE EXCHANGE INTEGRATION")
+        logging.info("=" * 100)
+        logging.info("🎯 MISSION: INTEGRATE ALL EXCHANGES WITH 100% PRODUCTION READINESS")
+        logging.info(f"🏦 TARGET EXCHANGES: {len(self.target_exchanges)}")
+        logging.info("🤖 AI CONSENSUS VALIDATION: ALL MODELS")
+        logging.info("=" * 100)
         
         start_time = datetime.now()
         
         # Phase 1: Scan all repositories for exchange work
-        print("\n🔍 PHASE 1: SCANNING ALL REPOSITORIES FOR EXCHANGE WORK")
+        logging.info("\n🔍 PHASE 1: SCANNING ALL REPOSITORIES FOR EXCHANGE WORK")
         findings = self.scan_all_repositories_for_exchanges()
         
         # Phase 2: Create comprehensive integration
-        print("\n🏗️ PHASE 2: CREATING COMPREHENSIVE EXCHANGE INTEGRATION")
+        logging.info("\n🏗️ PHASE 2: CREATING COMPREHENSIVE EXCHANGE INTEGRATION")
         integration_summary = self.create_comprehensive_exchange_integration(findings)
         
         # Phase 3: AI consensus validation
-        print("\n🤖 PHASE 3: AI CONSENSUS VALIDATION")
+        logging.info("\n🤖 PHASE 3: AI CONSENSUS VALIDATION")
         consensus = await self.run_ai_consensus_validation(integration_summary)
         
         # Phase 4: Generate final report
-        print("\n📋 PHASE 4: GENERATING FINAL INTEGRATION REPORT")
+        logging.info("\n📋 PHASE 4: GENERATING FINAL INTEGRATION REPORT")
         
         final_report = {
             'integration_timestamp': start_time.isoformat(),
@@ -1563,15 +1569,15 @@ For issues and questions:
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("=" * 100)
-        print("🎉 ULTIMATE EXCHANGE INTEGRATION COMPLETED!")
-        print(f"🏦 Exchanges Integrated: {integration_summary['exchanges_integrated']}")
-        print(f"📊 Overall Score: {consensus['overall_score']:.1f}/100")
-        print(f"🚀 Production Ready: {'YES' if consensus['production_ready'] else 'NO'}")
-        print(f"👥 Dev Team Approved: {'YES' if consensus['dev_team_approved'] else 'NO'}")
-        print(f"🎯 Commissioning Ready: {'YES' if consensus['commissioning_ready'] else 'NO'}")
-        print(f"⏱️ Duration: {duration:.1f} seconds")
-        print("=" * 100)
+        logging.info("=" * 100)
+        logging.info("🎉 ULTIMATE EXCHANGE INTEGRATION COMPLETED!")
+        logging.info(f"🏦 Exchanges Integrated: {integration_summary['exchanges_integrated']}")
+        logging.info(f"📊 Overall Score: {consensus['overall_score']:.1f}/100")
+        logging.info(f"🚀 Production Ready: {'YES' if consensus['production_ready'] else 'NO'}")
+        logging.info(f"👥 Dev Team Approved: {'YES' if consensus['dev_team_approved'] else 'NO'}")
+        logging.info(f"🎯 Commissioning Ready: {'YES' if consensus['commissioning_ready'] else 'NO'}")
+        logging.info(f"⏱️ Duration: {duration:.1f} seconds")
+        logging.info("=" * 100)
         
         return final_report
     
@@ -1624,14 +1630,14 @@ async def main():
     
     # Check sandy-box repository
     if not os.path.exists(integrator.sandy_box_path):
-        print(f"❌ Sandy-box repository not found at {integrator.sandy_box_path}")
+        logging.info(f"❌ Sandy-box repository not found at {integrator.sandy_box_path}")
         return
     
     # Run ultimate exchange integration
     report = await integrator.run_ultimate_exchange_integration()
     
-    print(f"\n🎯 ULTIMATE EXCHANGE INTEGRATION COMPLETE!")
-    print(f"📊 Status: {report['overall_status']}")
+    logging.info(f"\n🎯 ULTIMATE EXCHANGE INTEGRATION COMPLETE!")
+    logging.info(f"📊 Status: {report['overall_status']}")
 
 if __name__ == "__main__":
     asyncio.run(main())

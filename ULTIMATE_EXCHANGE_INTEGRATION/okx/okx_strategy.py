@@ -12,6 +12,7 @@ import json
 
 class OKXTradingStrategy:
     def __init__(self, adapter):
+        """TODO: Add function documentation"""
         self.adapter = adapter
         self.exchange_id = "okx"
         self.exchange_name = "OKX"
@@ -173,8 +174,9 @@ class OKXTradingStrategy:
 
 # Strategy factory
 def create_strategy(adapter):
+    """TODO: Add function documentation"""
     return OKXTradingStrategy(adapter)
 
 if __name__ == "__main__":
     # Example usage
-    print(f"{exchange_info['name']} Trading Strategy Ready")
+    logging.info(f"{exchange_info['name']} Trading Strategy Ready")

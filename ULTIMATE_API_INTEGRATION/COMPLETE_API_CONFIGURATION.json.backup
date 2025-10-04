@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T02:00:43.741629",
+    "total_apis": 18,
+    "categories": 5
+  },
+  "apis": {
+    "ai_ml_apis": {
+      "XAI_API_KEY": {
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "ANTHROPIC_API_KEY": {
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "GEMINI_API_KEY": {
+        "value": "YOUR_API_KEY_HERE",
+        "masked": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "OPENAI_API_KEY": {
+        "value": "YOUR_API_KEY_HERE",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "SONAR_API_KEY": {
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "COHERE_API_KEY": {
+        "value": "YOUR_API_KEY_HERE",
+        "masked": "I0ILAgJ2...HOSt",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "BFL_API_KEY": {
+        "value": "YOUR_API_KEY_HERE",
+        "masked": "3e7cb6d8...11ec",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "OPENROUTER_API_KEY": {
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
+        "source": "environment",
+        "ready_for_use": true
+      }
+    },
+    "data_apis": {
+      "POLYGON_API_KEY": {
+        "value": "YOUR_API_KEY_HERE",
+        "masked": "A_nmop6V...tIUX",
+        "source": "environment",
+        "ready_for_use": true
+      }
+    },
+    "cloud_apis": {
+      "SUPABASE_URL": {
+        "value": "https://YOUR_PROJECT.supabase.co",
+        "masked": "https://...e.co",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "SUPABASE_KEY": {
+        "value": "YOUR_API_KEY_HERE.YOUR_API_KEY_HERE.YOUR_API_KEY_HERE",
+        "masked": "eyJhbGci...kcKk",
+        "source": "environment",
+        "ready_for_use": true
+      }
+    },
+    "communication_apis": {},
+    "development_apis": {
+      "GH_TOKEN": {
+        "value": "ghu_YOUR_GITHUB_TOKEN_HERE",
+        "masked": "ghu_AXA3...qP5B",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "SENTRY_DSN": {
+        "value": "https://YOUR_API_KEY_HERE@sentry.butterflyotel.online/9",
+        "masked": "https://...ne/9",
+        "source": "environment",
+        "ready_for_use": true
+      }
+    },
+    "monitoring_apis": {},
+    "other_apis": {
+      "JSONBIN_API_KEY": {
+        "value": "$2a$10$dzvGoAif8Xn/PPOvaNGi.ey1fMgrFgiFhR95NdOBDnlWTILzrwTL.",
+        "masked": "$2a$10$d...wTL.",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "OPENAI_BASE_URL": {
+        "value": "https://api.openai.com/v1",
+        "masked": "https://...m/v1",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "RUNTIME_API_HOST": {
+        "value": "https://api.manus.im",
+        "masked": "https://...s.im",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "YOUR_API_KEY_HERE": {
+        "value": "/healthz",
+        "masked": "***",
+        "source": "environment",
+        "ready_for_use": true
+      },
+      "OPENAI_API_BASE": {
+        "value": "",
+        "masked": "***",
+        "source": "environment",
+        "ready_for_use": true
+      }
+    }
+  }
+}

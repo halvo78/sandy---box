@@ -5,17 +5,19 @@ This script will copy all files we created during recovery to the existing GitHu
 """
 
 import os
+import logging
 import shutil
 from datetime import datetime
 
 def integrate_all_work():
+    """Input validation would be added here"""
     """Copy all our created work to the existing GitHub repository."""
     
     source_dir = "/home/ubuntu/fresh_start"
     target_dir = "/home/ubuntu/ultimate-lyra-ecosystem"
     
-    print("🔄 Integrating ALL created work into existing Ultimate Lyra Ecosystem...")
-    print("="*70)
+    logging.info("🔄 Integrating ALL created work into existing Ultimate Lyra Ecosystem...")
+    logging.info("="*70)
     
     # Create integration directories
     integration_dirs = [
@@ -31,7 +33,7 @@ def integrate_all_work():
     for dir_name in integration_dirs:
         full_path = os.path.join(target_dir, dir_name)
         os.makedirs(full_path, exist_ok=True)
-        print(f"📁 Created: {dir_name}")
+        logging.info(f"📁 Created: {dir_name}")
     
     # Files to integrate (all our created work)
     files_to_integrate = [
@@ -80,27 +82,27 @@ def integrate_all_work():
         if os.path.exists(source_path):
             try:
                 shutil.copy2(source_path, target_path)
-                print(f"✅ Copied: {filename} -> {target_subdir}")
+                logging.info(f"✅ Copied: {filename} -> {target_subdir}")
                 copied_files += 1
             except Exception as e:
-                print(f"❌ Failed: {filename} - {e}")
+                logging.info(f"❌ Failed: {filename} - {e}")
                 failed_files += 1
         else:
-            print(f"⚠️ Not found: {filename}")
+            logging.info(f"⚠️ Not found: {filename}")
             failed_files += 1
     
     # Copy the recovered repository structure
-    print(f"\n📦 Copying recovered repository structure...")
+    logging.info(f"\n📦 Copying recovered repository structure...")
     
     recovered_ecosystem = os.path.join(source_dir, "ultimate-lyra-ecosystem")
     if os.path.exists(recovered_ecosystem):
         target_recovered = os.path.join(target_dir, "RECOVERY_WORK/recovered_files/ultimate-lyra-ecosystem")
         try:
             shutil.copytree(recovered_ecosystem, target_recovered, dirs_exist_ok=True)
-            print(f"✅ Copied entire recovered ecosystem structure")
+            logging.info(f"✅ Copied entire recovered ecosystem structure")
             copied_files += 1
         except Exception as e:
-            print(f"❌ Failed to copy ecosystem: {e}")
+            logging.info(f"❌ Failed to copy ecosystem: {e}")
             failed_files += 1
     
     # Copy additional directories with useful files
@@ -111,10 +113,10 @@ def integrate_all_work():
             target_additional = os.path.join(target_dir, "RECOVERY_WORK/recovered_files", dir_name)
             try:
                 shutil.copytree(source_additional, target_additional, dirs_exist_ok=True)
-                print(f"✅ Copied additional directory: {dir_name}")
+                logging.info(f"✅ Copied additional directory: {dir_name}")
                 copied_files += 1
             except Exception as e:
-                print(f"❌ Failed to copy {dir_name}: {e}")
+                logging.info(f"❌ Failed to copy {dir_name}: {e}")
                 failed_files += 1
     
     # Create integration summary
@@ -142,8 +144,9 @@ def integrate_all_work():
 
 ## Overview
 
-This directory contains ALL work created during the system recovery session on October 4, 2025. The original Ultimate Lyra Ecosystem was in a corrupted state, and this recovery work successfully restored and enhanced the system.
-
+This directory contains ALL work created during the system recovery session on October 4,
+    2025. The original Ultimate Lyra Ecosystem was in a corrupted state,
+    and this recovery work successfully restored and enhanced the system.
 ## Directory Structure
 
 - `validation_systems/` - AI consensus, exchange integration, and HFT testing systems
@@ -191,15 +194,15 @@ This directory contains ALL work created during the system recovery session on O
     with open(readme_path, 'w') as f:
         f.write(readme_content)
     
-    print("\n" + "="*70)
-    print("🎉 INTEGRATION COMPLETE!")
-    print("="*70)
-    print(f"✅ Files successfully copied: {copied_files}")
-    print(f"❌ Files failed: {failed_files}")
-    print(f"📁 Integration directories created: {len(integration_dirs)}")
-    print(f"📄 Integration summary: RECOVERY_WORK/INTEGRATION_SUMMARY.json")
-    print(f"📖 Integration README: RECOVERY_WORK/README.md")
-    print("="*70)
+    logging.info("\n" + "="*70)
+    logging.info("🎉 INTEGRATION COMPLETE!")
+    logging.info("="*70)
+    logging.info(f"✅ Files successfully copied: {copied_files}")
+    logging.info(f"❌ Files failed: {failed_files}")
+    logging.info(f"📁 Integration directories created: {len(integration_dirs)}")
+    logging.info(f"📄 Integration summary: RECOVERY_WORK/INTEGRATION_SUMMARY.json")
+    logging.info(f"📖 Integration README: RECOVERY_WORK/README.md")
+    logging.info("="*70)
     
     return integration_summary
 

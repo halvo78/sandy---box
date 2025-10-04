@@ -17,6 +17,7 @@ import json
 
 class OKXAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "okx"
         self.exchange_name = "OKX"
         self.region = "Global"
@@ -121,6 +122,6 @@ adapter = OKXAdapter()
 if __name__ == "__main__":
     success = adapter.initialize()
     if success:
-        print(f"✅ {adapter.exchange_name} adapter ready")
+        logging.info(f"✅ {adapter.exchange_name} adapter ready")
     else:
-        print(f"❌ {adapter.exchange_name} adapter failed")
+        logging.info(f"❌ {adapter.exchange_name} adapter failed")

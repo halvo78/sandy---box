@@ -14,3 +14,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 
 # Default command
 CMD ["sh", "-c", "echo 'Component ready for testing'"]
+
+
+# Security: Run as non-root user
+USER 1000:1000

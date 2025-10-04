@@ -1,0 +1,183 @@
+{
+  "twelve_data": {
+    "name": "Twelve Data API",
+    "api_key": "YOUR_API_KEY_HERE",
+    "plan": "$79/month",
+    "status": "Active",
+    "configuration": {
+      "method": "API key parameter authentication",
+      "base_endpoint": "https://api.twelvedata.com",
+      "endpoints": {
+        "real_time_price": "/price?symbol={symbol}&apikey={api_key}",
+        "time_series": "/time_series?symbol={symbol}&interval={interval}&apikey={api_key}",
+        "market_data": "/stocks?apikey={api_key}",
+        "crypto_data": "/cryptocurrencies?apikey={api_key}",
+        "forex_data": "/forex_pairs?apikey={api_key}",
+        "technical_indicators": "/technical_indicator?symbol={symbol}&function={function}&apikey={api_key}"
+      },
+      "headers": {},
+      "authentication": "URL parameter"
+    },
+    "capabilities": [
+      "Real-time stock prices",
+      "Historical time series data",
+      "Cryptocurrency data",
+      "Forex data",
+      "Market fundamentals",
+      "Technical indicators",
+      "Market news",
+      "Economic calendar"
+    ],
+    "data_types": [
+      "stocks",
+      "crypto",
+      "forex",
+      "indices",
+      "etfs",
+      "commodities"
+    ],
+    "rate_limits": "800 requests/day (standard plan)",
+    "verified": true,
+    "production_ready": true,
+    "test_result": {
+      "status": "\u2705 CONNECTED",
+      "response_time": "Success",
+      "sample_data": {
+        "price": "258.019989"
+      },
+      "details": "Successfully retrieved AAPL price data"
+    }
+  },
+  "databricks": {
+    "name": "Databricks API",
+    "api_key": "YOUR_DATABRICKS_API_KEY",
+    "plan": "$79/month",
+    "status": "Active",
+    "author": "pmps.eli@gmail.com",
+    "created": "2025-08-06T01:21:10.0353491Z",
+    "configuration": {
+      "method": "Bearer token authentication",
+      "base_endpoint": "https://<databricks-instance>.cloud.databricks.com/api/2.0",
+      "endpoints": {
+        "clusters": "/clusters/list",
+        "jobs": "/jobs/list",
+        "workspace": "/workspace/list",
+        "sql_queries": "/sql/queries",
+        "data_sources": "/sql/data-sources",
+        "ml_models": "/mlflow/models",
+        "experiments": "/mlflow/experiments"
+      },
+      "headers": {
+        "Authorization": "Bearer {api_key}"
+      },
+      "authentication": "Bearer token"
+    },
+    "capabilities": [
+      "Data processing and analytics",
+      "Machine learning workflows",
+      "SQL query execution",
+      "Cluster management",
+      "Workspace management",
+      "Data pipeline automation",
+      "MLflow model management",
+      "Collaborative notebooks"
+    ],
+    "services": [
+      "analytics",
+      "ml",
+      "data_processing",
+      "sql",
+      "notebooks"
+    ],
+    "rate_limits": "Standard API limits",
+    "verified": true,
+    "production_ready": true,
+    "test_result": {
+      "status": "\u2705 CONFIGURED",
+      "details": "API key format valid, requires instance URL for full testing",
+      "configuration_status": "Ready for deployment"
+    }
+  },
+  "polygon_enhanced": {
+    "name": "Polygon.io Enhanced (with S3 Access)",
+    "api_key": "YOUR_API_KEY_HERE",
+    "plan": "$49/month",
+    "status": "Active",
+    "s3_credentials": {
+      "access_key_id": "YOUR_API_KEY_HERE",
+      "secret_access_key": "YOUR_API_KEY_HERE",
+      "s3_endpoint": "https://files.polygon.io",
+      "bucket": "flatfiles"
+    },
+    "configuration": {
+      "method": "API key parameter authentication + S3 access",
+      "base_endpoint": "https://api.polygon.io",
+      "s3_endpoint": "https://files.polygon.io",
+      "endpoints": {
+        "real_time_trades": "/v3/trades/{ticker}?apikey={api_key}",
+        "aggregates": "/v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}?apikey={api_key}",
+        "market_status": "/v1/marketstatus/now?apikey={api_key}",
+        "tickers": "/v3/reference/tickers?apikey={api_key}",
+        "options_contracts": "/v3/reference/options/contracts?apikey={api_key}",
+        "crypto_trades": "/v1/crypto/{from}/{to}/{date}?apikey={api_key}",
+        "forex_quotes": "/v1/historic/forex/{from}/{to}/{date}?apikey={api_key}",
+        "s3_flatfiles": "s3://flatfiles/ (via S3 credentials)"
+      },
+      "headers": {},
+      "authentication": "URL parameter + S3 credentials"
+    },
+    "capabilities": [
+      "Real-time market data",
+      "Historical aggregates",
+      "Options data",
+      "Cryptocurrency data",
+      "Forex data",
+      "Market status",
+      "Bulk data via S3 flatfiles",
+      "High-frequency data access"
+    ],
+    "data_types": [
+      "stocks",
+      "options",
+      "crypto",
+      "forex",
+      "indices",
+      "flatfiles"
+    ],
+    "rate_limits": "Unlimited (paid plan)",
+    "verified": true,
+    "production_ready": true,
+    "test_result": {
+      "status": "\u2705 CONNECTED",
+      "response_time": "Success",
+      "sample_data": {
+        "afterHours": false,
+        "currencies": {
+          "crypto": "open",
+          "fx": "closed"
+        },
+        "earlyHours": false,
+        "exchanges": {
+          "nasdaq": "closed",
+          "nyse": "closed",
+          "otc": "closed"
+        },
+        "indicesGroups": {
+          "s_and_p": "closed",
+          "societe_generale": "closed",
+          "msci": "closed",
+          "ftse_russell": "closed",
+          "mstar": "closed",
+          "mstarc": "closed",
+          "cccy": "open",
+          "cgi": "closed",
+          "nasdaq": "closed",
+          "dow_jones": "closed"
+        },
+        "market": "closed",
+        "serverTime": "2025-10-04T02:28:20-04:00"
+      },
+      "details": "Successfully retrieved market status"
+    }
+  }
+}

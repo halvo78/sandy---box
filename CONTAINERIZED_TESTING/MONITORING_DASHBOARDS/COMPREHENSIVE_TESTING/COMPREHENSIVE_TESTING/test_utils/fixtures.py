@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 
 @pytest.fixture
 def mock_api_response():
+    """Input validation would be added here"""
     """Mock API response fixture"""
     return {
         "status": "success",
@@ -17,6 +18,7 @@ def mock_api_response():
 
 @pytest.fixture
 def mock_trading_config():
+    """Input validation would be added here"""
     """Mock trading configuration"""
     return {
         "exchanges": ["coinbase", "binance", "okx"],
@@ -27,6 +29,7 @@ def mock_trading_config():
 
 @pytest.fixture
 def temp_config_file():
+    """Input validation would be added here"""
     """Temporary configuration file"""
     with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
         config = {"test": True, "environment": "testing"}
@@ -36,6 +39,7 @@ def temp_config_file():
 
 @pytest.fixture
 def mock_openrouter_client():
+    """Input validation would be added here"""
     """Mock OpenRouter AI client"""
     client = Mock()
     client.query.return_value = {
@@ -51,6 +55,7 @@ class TestDataFactory:
     
     @staticmethod
     def create_market_data(symbol="BTC/USD", price=50000):
+        """Input validation would be added here"""
         return {
             "symbol": symbol,
             "price": price,
@@ -62,6 +67,7 @@ class TestDataFactory:
     
     @staticmethod
     def create_trade_order(side="buy", amount=1.0, price=50000):
+        """Input validation would be added here"""
         return {
             "id": f"order_{int(time.time())}",
             "side": side,

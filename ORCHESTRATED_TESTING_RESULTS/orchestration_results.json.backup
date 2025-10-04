@@ -1,0 +1,186 @@
+{
+  "orchestration_report": {
+    "orchestration_timestamp": "2025-10-04T07:20:28.783108",
+    "total_systems_deployed": 7,
+    "successful_systems": 5,
+    "failed_systems": 2,
+    "success_rate": 71.42857142857143,
+    "total_duration_seconds": 1019.2849409999999,
+    "total_duration_minutes": 16.98808235,
+    "systems_by_priority": {
+      "critical": {
+        "count": 1,
+        "successful": 1,
+        "systems": [
+          "security_scanning"
+        ]
+      },
+      "high": {
+        "count": 3,
+        "successful": 1,
+        "systems": [
+          "ai_consensus_testing",
+          "enhanced_perfection_testing",
+          "static_analysis"
+        ]
+      },
+      "medium": {
+        "count": 3,
+        "successful": 3,
+        "systems": [
+          "containerized_testing",
+          "performance_testing",
+          "code_quality_analysis"
+        ]
+      }
+    },
+    "performance_metrics": {
+      "fastest_system": "security_scanning",
+      "slowest_system": "enhanced_perfection_testing",
+      "average_duration_seconds": 145.6121344285714
+    },
+    "recommendations": [
+      "Investigate and fix 2 failed systems: ai_consensus_testing, enhanced_perfection_testing",
+      "Optimize performance of slow systems: ai_consensus_testing, enhanced_perfection_testing",
+      "Overall success rate is below 80% - comprehensive system review needed"
+    ]
+  },
+  "detailed_results": {
+    "security_scanning": {
+      "system": "security_scanning",
+      "description": "Security vulnerability scanning",
+      "priority": "CRITICAL",
+      "start_time": "2025-10-04T07:09:24.561434",
+      "status": "COMPLETED",
+      "command_results": [
+        {
+          "command": "gitleaks detect --source . --report-format json --report-path gitleaks_results.json",
+          "return_code": 127,
+          "stdout": "",
+          "stderr": "/bin/sh: 1: gitleaks: not found\n"
+        },
+        {
+          "command": "trivy fs . --format json --output trivy_results.json",
+          "return_code": 127,
+          "stdout": "",
+          "stderr": "/bin/sh: 1: trivy: not found\n"
+        }
+      ],
+      "end_time": "2025-10-04T07:09:24.563731",
+      "duration_seconds": 0.002297
+    },
+    "ai_consensus_testing": {
+      "system": "ai_consensus_testing",
+      "description": "21 AI models consensus testing",
+      "priority": "HIGH",
+      "start_time": "2025-10-04T07:09:24.563846",
+      "status": "TIMEOUT",
+      "error": "System timed out after 300 seconds",
+      "end_time": "2025-10-04T07:14:24.667147",
+      "duration_seconds": 300.103301
+    },
+    "enhanced_perfection_testing": {
+      "system": "enhanced_perfection_testing",
+      "description": "25 AI models perfection testing",
+      "priority": "HIGH",
+      "start_time": "2025-10-04T07:09:24.564454",
+      "status": "TIMEOUT",
+      "error": "System timed out after 600 seconds",
+      "end_time": "2025-10-04T07:19:24.617023",
+      "duration_seconds": 600.052569
+    },
+    "static_analysis": {
+      "system": "static_analysis",
+      "description": "Comprehensive static analysis",
+      "priority": "HIGH",
+      "start_time": "2025-10-04T07:09:24.565003",
+      "status": "COMPLETED",
+      "command_results": [
+        {
+          "command": "bandit -r . -f json -o static_analysis_results.json",
+          "return_code": 1,
+          "stdout": "Working... \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 100% 0:00:12\n",
+          "stderr": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[json]\tINFO\tJSON output written to file: static_analysis_results.json\n"
+        },
+        {
+          "command": "safety check --json --output safety_results.json",
+          "return_code": 2,
+          "stdout": "",
+          "stderr": "Usage: safety check [OPTIONS]\nTry 'safety check --help' for help.\n\nError: Invalid value for '--output' / '-o': 'safety_results.json' is not one of 'screen', 'text', 'json', 'bare', 'html'.\n"
+        },
+        {
+          "command": "semgrep --config=auto . --json --output semgrep_results.json",
+          "return_code": 0,
+          "stdout": "",
+          "stderr": "               \n               \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Scan Status \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n  Scanning 1353 files tracked by git with 1062 Code rules:\n                                                                                                                        \n  Language      Rules   Files          Origin      Rules                                                                \n \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500        \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500                                                              "
+        }
+      ],
+      "end_time": "2025-10-04T07:10:16.082425",
+      "duration_seconds": 51.517422
+    },
+    "containerized_testing": {
+      "system": "containerized_testing",
+      "description": "Containerized component testing",
+      "priority": "MEDIUM",
+      "start_time": "2025-10-04T07:19:24.617190",
+      "status": "COMPLETED",
+      "return_code": 0,
+      "stdout": "\ud83d\udd0d ANALYZING REPOSITORY COMPONENTS...\n\u2705 TRADING_SYSTEMS: 24 files in 2 paths\n\u2705 API_INTEGRATIONS: 4 files in 1 paths\n\u26a0\ufe0f  SECURITY_VAULT: No files found\n\u2705 MONITORING_DASHBOARDS: 51 files in 1 paths\n\u2705 DEPLOYMENT_SYSTEMS: 6 files in 2 paths\n\u26a0\ufe0f  COMPLIANCE_SYSTEMS: No files found\n\u2705 DOCUMENTATION: 1 files in 1 paths\n\ud83d\udcca Found 5 components to containerize\n\ud83c\udfd7\ufe0f SETTING UP CONTAINERIZED TESTING FRAMEWORK...\n\u2705 TRADING_SYSTEMS: Containerized testing setup complete\n\u2705 API_INTEGRATIONS: Containerized testing setup complete\n\u2705 MONITORING_DASHBOARDS: Containerized testing setup complete\n\u2705 DEPLOYMENT_SYSTEMS: Containerized testing setup complete\n\u2705 DOCUMENTATION: Containerized testing setup complete\n\u2705 Containerized testing framework created at: /home/ubuntu/temp_repos/halvo78_sandy---box/CONTAINERIZED_TESTING\n\ud83c\udf89 CONTAINERIZED TESTING FRAMEWORK COMPLETE!\n\ud83d\udcc1 Components: 5\n\ud83d\udcc4 Files organized: 86\n\ud83d\udccb Summary saved: /home/ubuntu/temp_repos/halvo78_sandy---box/CONTAINERIZED_TESTING/containerized-testing-summary.json\n",
+      "stderr": null,
+      "end_time": "2025-10-04T07:19:24.748470",
+      "duration_seconds": 0.13128
+    },
+    "performance_testing": {
+      "system": "performance_testing",
+      "description": "Performance and benchmark testing",
+      "priority": "MEDIUM",
+      "start_time": "2025-10-04T07:19:24.618142",
+      "status": "COMPLETED",
+      "command_results": [
+        {
+          "command": "python -m pytest --benchmark-only --benchmark-json=benchmark_results.json",
+          "return_code": 2,
+          "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0\nbenchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0, benchmark-5.1.0, xdist-3.8.0\nasyncio: mode=Mode.STRICT, debug=Fa",
+          "stderr": "/usr/local/lib/python3.11/dist-packages/pytest_benchmark/logger.py:39: PytestBenchmarkWarning: Not saving anything, no benchmarks have been run!\n  warner(PytestBenchmarkWarning(text))\n"
+        },
+        {
+          "command": "python -m cProfile -o performance_profile.prof -m pytest",
+          "return_code": 0,
+          "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0\nbenchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0, benchmark-5.1.0, xdist-3.8.0\nasyncio: mode=Mode.STRICT, debug=Fa",
+          "stderr": null
+        }
+      ],
+      "end_time": "2025-10-04T07:19:27.932104",
+      "duration_seconds": 3.313962
+    },
+    "code_quality_analysis": {
+      "system": "code_quality_analysis",
+      "description": "Code quality and style analysis",
+      "priority": "MEDIUM",
+      "start_time": "2025-10-04T07:19:24.618856",
+      "status": "COMPLETED",
+      "command_results": [
+        {
+          "command": "flake8 . --output-file=flake8_results.txt",
+          "return_code": 1,
+          "stdout": "",
+          "stderr": null
+        },
+        {
+          "command": "mypy . --json-report mypy_results",
+          "return_code": 2,
+          "stdout": "",
+          "stderr": "usage: mypy [-h] [-v] [-V] [more options; see below]\n            [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\nmypy: error: unrecognized arguments: --json-report mypy_results\n"
+        },
+        {
+          "command": "pylint . --output-format=json > pylint_results.json",
+          "status": "TIMEOUT",
+          "error": "Command timed out"
+        }
+      ],
+      "end_time": "2025-10-04T07:20:28.782966",
+      "duration_seconds": 64.16411
+    }
+  },
+  "timestamp": "2025-10-04T07:20:28.783270"
+}

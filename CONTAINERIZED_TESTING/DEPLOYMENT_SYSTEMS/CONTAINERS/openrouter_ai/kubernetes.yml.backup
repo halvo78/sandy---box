@@ -1,0 +1,95 @@
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openrouter-ai-config
+data:
+  OPENROUTER_AI_PORT: "8080"
+  MARKET_DATA_SOURCE: "https://example.com/market-data"
+  AI_MODEL_PATH: "/app/model.h5"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: openrouter-ai-secret
+type: Opaque
+data:
+  # Example: echo -n 'sensitive-data' | base64
+  sensitive-key: c2Vuc2l0aXZlLWRhdGE=
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openrouter-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openrouter-ai
+  template:
+    metadata:
+      labels:
+        app: openrouter-ai
+    spec:
+      containers:
+      - name: openrouter-ai
+        image: openrouter-ai:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: openrouter-ai-config
+        - secretRef:
+            name: openrouter-ai-secret
+        volumeMounts:
+        - name: model-volume
+          mountPath: /app/model.h5
+          readOnly: true
+        - name: logs-volume
+          mountPath: /var/log/openrouter_ai
+          readOnly: false
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 3000
+          fsGroup: 2000
+      volumes:
+      - name: model-volume
+        emptyDir: {}
+      - name: logs-volume
+        emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openrouter-ai-service
+spec:
+  selector:
+    app: openrouter-ai
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+```

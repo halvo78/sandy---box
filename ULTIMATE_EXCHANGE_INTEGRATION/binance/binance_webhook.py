@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class BinanceWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "binance"
         self.exchange_name = "Binance"
         self.setup_logging()

@@ -6,25 +6,27 @@ Removes redundant individual AI API integrations
 """
 
 import os
+import logging
 import json
 import urllib.request
 from datetime import datetime
 
 def create_clean_openrouter_unified_system():
+    """Input validation would be added here"""
     """Create a clean unified system using OpenRouter for all AI models."""
     
-    print("🧹 CLEAN OPENROUTER UNIFIED API SYSTEM")
-    print("="*70)
-    print("🎯 Using OpenRouter for ALL AI models")
-    print("🚀 Streamlined and efficient configuration")
-    print("="*70)
+    logging.info("🧹 CLEAN OPENROUTER UNIFIED API SYSTEM")
+    logging.info("="*70)
+    logging.info("🎯 Using OpenRouter for ALL AI models")
+    logging.info("🚀 Streamlined and efficient configuration")
+    logging.info("="*70)
     
     # Test key APIs
     test_results = {}
     
     # Test Twelve Data
     try:
-        api_key = "2997d13caee949d48fca334aff3042dd"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.twelvedata.com/price?symbol=AAPL&apikey={api_key}"
         req = urllib.request.Request(test_url)
         
@@ -32,31 +34,31 @@ def create_clean_openrouter_unified_system():
             data = json.loads(response.read().decode('utf-8'))
             if "price" in data:
                 test_results["twelve_data"] = f"✅ WORKING - AAPL: ${data['price']}"
-                print(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
+                logging.info(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
             else:
                 test_results["twelve_data"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Twelve Data: Unexpected response")
+                logging.info("  ⚠️ Twelve Data: Unexpected response")
     except Exception as e:
         test_results["twelve_data"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Twelve Data: {str(e)[:50]}")
+        logging.info(f"  ❌ Twelve Data: {str(e)[:50]}")
     
     # Test Enhanced Polygon
     try:
-        api_key = "A_nmop6VvNSPBY2yiVqNJYzA7pautIUX"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.polygon.io/v1/marketstatus/now?apikey={api_key}"
         req = urllib.request.Request(test_url)
         
         with urllib.request.urlopen(req, timeout=10) as response:
             data = json.loads(response.read().decode('utf-8'))
             test_results["polygon_enhanced"] = "✅ WORKING - Market status retrieved"
-            print("  ✅ Enhanced Polygon: Market status retrieved")
+            logging.info("  ✅ Enhanced Polygon: Market status retrieved")
     except Exception as e:
         test_results["polygon_enhanced"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
+        logging.info(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
     
     # Test Primary OpenRouter Key
     try:
-        api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = "https://openrouter.ai/api/v1/models"
         req = urllib.request.Request(test_url)
         req.add_header("Authorization", f"Bearer {api_key}")
@@ -66,13 +68,13 @@ def create_clean_openrouter_unified_system():
             if "data" in data:
                 model_count = len(data["data"])
                 test_results["openrouter_primary"] = f"✅ WORKING - {model_count} models"
-                print(f"  ✅ OpenRouter Primary: {model_count} models available")
+                logging.info(f"  ✅ OpenRouter Primary: {model_count} models available")
             else:
                 test_results["openrouter_primary"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ OpenRouter Primary: Unexpected response")
+                logging.info("  ⚠️ OpenRouter Primary: Unexpected response")
     except Exception as e:
         test_results["openrouter_primary"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ OpenRouter Primary: {str(e)[:50]}")
+        logging.info(f"  ❌ OpenRouter Primary: {str(e)[:50]}")
     
     # Create clean unified configuration
     clean_unified_config = {
@@ -392,12 +394,14 @@ def create_clean_openrouter_unified_system():
 - ✅ **Maximum Intelligence** (52 models, 1,304 instances)
 - ✅ **Enterprise Ready** (production deployment ready)
 
-**The Ultimate Lyra Trading System now features a clean, streamlined architecture using OpenRouter for ALL AI models, eliminating redundancy while maintaining maximum intelligence and enterprise capabilities.**
-
+**The Ultimate Lyra Trading System now features a clean,
+    streamlined architecture using OpenRouter for ALL AI models,
+    eliminating redundancy while maintaining maximum intelligence and enterprise capabilities.**
 **Status: CLEAN OPENROUTER UNIFIED SYSTEM COMPLETE** 🧹🚀
 
-**This represents the most efficient, streamlined, and cost-effective configuration while maintaining maximum AI intelligence and enterprise capabilities.**
-"""
+**This represents the most efficient,
+    streamlined,
+    and cost-effective configuration while maintaining maximum AI intelligence and enterprise capabilities.**"""
     
     # Save files
     repo_dir = "/home/ubuntu/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL"
@@ -431,35 +435,35 @@ def create_clean_openrouter_unified_system():
         f.write(f"GH_TOKEN={os.getenv('GH_TOKEN', '')}\n")
         f.write(f"SENTRY_DSN={os.getenv('SENTRY_DSN', '')}\n")
     
-    print(f"\n🧹 System Cleaned and Streamlined")
-    print(f"🤖 OpenRouter Keys: 4 (ALL AI models)")
-    print(f"📊 Data APIs: 2")
-    print(f"🔬 Analytics APIs: 1")
-    print(f"🏗️ Infrastructure APIs: 4")
-    print(f"🚀 Total APIs: 10 (streamlined)")
-    print(f"✅ Working APIs: 7")
-    print(f"📈 Success Rate: 70%")
-    print(f"💰 Monthly Cost: $207")
-    print(f"📁 Configuration: {config_path}")
-    print(f"📁 Report: {report_path}")
-    print(f"📁 Environment: {env_path}")
+    logging.info(f"\n🧹 System Cleaned and Streamlined")
+    logging.info(f"🤖 OpenRouter Keys: 4 (ALL AI models)")
+    logging.info(f"📊 Data APIs: 2")
+    logging.info(f"🔬 Analytics APIs: 1")
+    logging.info(f"🏗️ Infrastructure APIs: 4")
+    logging.info(f"🚀 Total APIs: 10 (streamlined)")
+    logging.info(f"✅ Working APIs: 7")
+    logging.info(f"📈 Success Rate: 70%")
+    logging.info(f"💰 Monthly Cost: $207")
+    logging.info(f"📁 Configuration: {config_path}")
+    logging.info(f"📁 Report: {report_path}")
+    logging.info(f"📁 Environment: {env_path}")
     
     return report_path, config_path, 7, 10
 
 if __name__ == "__main__":
-    print("🧹 CREATING CLEAN OPENROUTER UNIFIED SYSTEM...")
-    print("="*70)
+    logging.info("🧹 CREATING CLEAN OPENROUTER UNIFIED SYSTEM...")
+    logging.info("="*70)
     
     report_path, config_path, working_apis, total_apis = create_clean_openrouter_unified_system()
     
-    print("\n🎉 CLEAN OPENROUTER UNIFIED SYSTEM COMPLETE!")
-    print("="*70)
-    print(f"🧹 System Architecture: STREAMLINED")
-    print(f"🤖 AI Integration: UNIFIED (OpenRouter Only)")
-    print(f"📊 Working APIs: {working_apis}/{total_apis}")
-    print(f"🔑 AI Models: 52 unique models")
-    print(f"🚀 Model Instances: 1,304 total")
-    print(f"💰 Cost Optimized: Single AI billing")
-    print(f"🏢 System Level: ENTERPRISE-READY")
-    print("="*70)
-    print("\n🎯 CLEAN, EFFICIENT, MAXIMUM AI INTELLIGENCE!")
+    logging.info("\n🎉 CLEAN OPENROUTER UNIFIED SYSTEM COMPLETE!")
+    logging.info("="*70)
+    logging.info(f"🧹 System Architecture: STREAMLINED")
+    logging.info(f"🤖 AI Integration: UNIFIED (OpenRouter Only)")
+    logging.info(f"📊 Working APIs: {working_apis}/{total_apis}")
+    logging.info(f"🔑 AI Models: 52 unique models")
+    logging.info(f"🚀 Model Instances: 1,304 total")
+    logging.info(f"💰 Cost Optimized: Single AI billing")
+    logging.info(f"🏢 System Level: ENTERPRISE-READY")
+    logging.info("="*70)
+    logging.info("\n🎯 CLEAN, EFFICIENT, MAXIMUM AI INTELLIGENCE!")

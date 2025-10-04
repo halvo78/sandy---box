@@ -5,6 +5,7 @@ Comprehensive testing orchestration for Ultimate Lyra Trading System
 """
 
 import os
+import logging
 import sys
 import subprocess
 import json
@@ -14,6 +15,7 @@ import argparse
 
 class MasterTestRunner:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.test_dir = os.path.dirname(os.path.abspath(__file__))
         self.results = {
             "test_session": f"session_{int(time.time())}",
@@ -25,11 +27,11 @@ class MasterTestRunner:
     
     def run_test_category(self, category):
         """Run tests for a specific category"""
-        print(f"🧪 Running {category} tests...")
+        logging.info(f"🧪 Running {category} tests...")
         
         category_dir = os.path.join(self.test_dir, category)
         if not os.path.exists(category_dir):
-            print(f"⚠️  Category {category} not found")
+            logging.info(f"⚠️  Category {category} not found")
             return False
         
         try:
@@ -51,16 +53,16 @@ class MasterTestRunner:
             }
             
             if result.returncode == 0:
-                print(f"✅ {category} tests PASSED")
+                logging.info(f"✅ {category} tests PASSED")
             else:
-                print(f"❌ {category} tests FAILED")
+                logging.info(f"❌ {category} tests FAILED")
                 if result.stderr:
-                    print(f"Error: {result.stderr}")
+                    logging.info(f"Error: {result.stderr}")
             
             return result.returncode == 0
             
         except Exception as e:
-            print(f"❌ Error running {category} tests: {e}")
+            logging.info(f"❌ Error running {category} tests: {e}")
             self.results["test_categories"][category] = {
                 "status": "ERROR",
                 "error": str(e)
@@ -69,8 +71,8 @@ class MasterTestRunner:
     
     def run_all_tests(self):
         """Run all test categories"""
-        print("🚀 STARTING COMPREHENSIVE TEST SUITE")
-        print("=" * 60)
+        logging.info("🚀 STARTING COMPREHENSIVE TEST SUITE")
+        logging.info("=" * 60)
         
         categories = [
             "unit_tests",
@@ -105,18 +107,18 @@ class MasterTestRunner:
         with open("comprehensive_test_results.json", "w") as f:
             json.dump(self.results, f, indent=2)
         
-        print("\n" + "=" * 60)
-        print("🎉 COMPREHENSIVE TESTING COMPLETE")
-        print("=" * 60)
-        print(f"📊 Categories Passed: {passed_categories}/{total_categories}")
-        print(f"📈 Success Rate: {self.results['summary']['success_rate']:.1f}%")
-        print(f"📋 Results saved to: comprehensive_test_results.json")
+        logging.info("\n" + "=" * 60)
+        logging.info("🎉 COMPREHENSIVE TESTING COMPLETE")
+        logging.info("=" * 60)
+        logging.info(f"📊 Categories Passed: {passed_categories}/{total_categories}")
+        logging.info(f"📈 Success Rate: {self.results['summary']['success_rate']:.1f}%")
+        logging.info(f"📋 Results saved to: comprehensive_test_results.json")
         
         return self.results["overall_status"] == "PASSED"
     
     def run_quick_tests(self):
         """Run quick smoke tests"""
-        print("⚡ RUNNING QUICK SMOKE TESTS")
+        logging.info("⚡ RUNNING QUICK SMOKE TESTS")
         
         # Run only fast tests
         cmd = [
@@ -130,6 +132,7 @@ class MasterTestRunner:
         return result.returncode == 0
 
 def main():
+    """TODO: Add function documentation"""
     parser = argparse.ArgumentParser(description="Ultimate Lyra Trading System Test Runner")
     parser.add_argument("--category", help="Run specific test category")
     parser.add_argument("--quick", action="store_true", help="Run quick smoke tests only")

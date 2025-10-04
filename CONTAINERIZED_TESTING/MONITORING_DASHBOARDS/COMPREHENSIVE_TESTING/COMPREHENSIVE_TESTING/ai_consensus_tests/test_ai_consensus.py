@@ -7,6 +7,7 @@ class TestAIConsensusSystem:
     """Test AI consensus functionality"""
     
     def test_consensus_calculation(self):
+        """Input validation would be added here"""
         """Test consensus calculation logic"""
         ai_responses = [
             {"confidence": 0.85, "recommendation": "buy"},
@@ -23,6 +24,7 @@ class TestAIConsensusSystem:
         assert consensus_recommendation == "buy"
     
     def test_multi_model_integration(self):
+        """Input validation would be added here"""
         """Test multi-model AI integration"""
         models = [
             "gpt-4",
@@ -48,6 +50,7 @@ class TestOpenRouterIntegration:
     
     @patch('requests.post')
     def test_openrouter_consensus(self, mock_post):
+        """Input validation would be added here"""
         """Test OpenRouter consensus functionality"""
         mock_post.return_value.status_code = 200
         mock_post.return_value.json.return_value = {

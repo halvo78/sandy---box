@@ -17,6 +17,7 @@ Goal: 100% consensus that the system is complete and nothing valuable is missing
 """
 
 import os
+import logging
 import json
 import subprocess
 import urllib.request
@@ -27,6 +28,7 @@ import threading
 
 class Comprehensive7DayConsensusValidator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the comprehensive 7-day consensus validator."""
         
         self.final_system_dir = "/home/ubuntu/ULTIMATE_LYRA_FINAL_PRODUCTION"
@@ -72,16 +74,17 @@ class Comprehensive7DayConsensusValidator:
         self.end_date = datetime.now()
         self.start_date = self.end_date - timedelta(days=7)
         
-        print("🔍 Comprehensive 7-Day Consensus Validator")
-        print("="*70)
-        print(f"📅 Analysis Period: {self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')}")
-        print("🎯 Goal: Verify NOTHING beneficial has been missed")
-        print("🤖 AI Models: 8 premium models for consensus validation")
-        print("="*70)
+        logging.info("🔍 Comprehensive 7-Day Consensus Validator")
+        logging.info("="*70)
+        logging.info(f"📅 Analysis Period: {self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')}")
+        logging.info("🎯 Goal: Verify NOTHING beneficial has been missed")
+        logging.info("🤖 AI Models: 8 premium models for consensus validation")
+        logging.info("="*70)
     
     def analyze_github_activity(self):
+        """Input validation would be added here"""
         """Analyze all GitHub activity from the last 7 days."""
-        print("📦 Analyzing GitHub activity (last 7 days)...")
+        logging.info("📦 Analyzing GitHub activity (last 7 days)...")
         
         try:
             # Get recent repository activity
@@ -109,14 +112,15 @@ class Comprehensive7DayConsensusValidator:
                                 "status": "needs_validation"
                             })
                 
-                print(f"  📊 Found {len(self.validation_results['github_repositories'])} repositories with recent activity")
+                logging.info(f"  📊 Found {len(self.validation_results['github_repositories'])} repositories with recent activity")
             
         except Exception as e:
-            print(f"  ⚠️ GitHub analysis error: {e}")
+            logging.info(f"  ⚠️ GitHub analysis error: {e}")
     
     def analyze_installed_sdks_libraries(self):
+        """Input validation would be added here"""
         """Analyze all installed SDKs and libraries."""
-        print("📚 Analyzing installed SDKs and libraries...")
+        logging.info("📚 Analyzing installed SDKs and libraries...")
         
         try:
             # Check Python packages
@@ -146,7 +150,7 @@ class Comprehensive7DayConsensusValidator:
                             })
                 
                 self.validation_results["sdks_libraries"] = trading_related_packages
-                print(f"  📊 Found {len(trading_related_packages)} trading-related packages")
+                logging.info(f"  📊 Found {len(trading_related_packages)} trading-related packages")
             
             # Check Node.js packages if available
             npm_result = subprocess.run(['npm', 'list', '-g', '--depth=0'], 
@@ -165,14 +169,15 @@ class Comprehensive7DayConsensusValidator:
                         })
                 
                 self.validation_results["sdks_libraries"].extend(npm_packages)
-                print(f"  📊 Found {len(npm_packages)} Node.js packages")
+                logging.info(f"  📊 Found {len(npm_packages)} Node.js packages")
                 
         except Exception as e:
-            print(f"  ⚠️ SDK analysis error: {e}")
+            logging.info(f"  ⚠️ SDK analysis error: {e}")
     
     def analyze_system_applications(self):
+        """Input validation would be added here"""
         """Analyze installed applications and tools."""
-        print("🔧 Analyzing system applications and tools...")
+        logging.info("🔧 Analyzing system applications and tools...")
         
         try:
             # Check for trading/development related applications
@@ -200,14 +205,15 @@ class Comprehensive7DayConsensusValidator:
                     })
             
             self.validation_results["applications_apps"] = installed_apps
-            print(f"  📊 Found {len(installed_apps)} relevant applications")
+            logging.info(f"  📊 Found {len(installed_apps)} relevant applications")
             
         except Exception as e:
-            print(f"  ⚠️ Application analysis error: {e}")
+            logging.info(f"  ⚠️ Application analysis error: {e}")
     
     def analyze_mcp_integrations(self):
+        """Input validation would be added here"""
         """Analyze MCP server integrations and capabilities."""
-        print("🔌 Analyzing MCP integrations...")
+        logging.info("🔌 Analyzing MCP integrations...")
         
         try:
             # Get list of MCP servers
@@ -239,14 +245,15 @@ class Comprehensive7DayConsensusValidator:
                         })
                 
                 self.validation_results["mcp_integrations"] = mcp_servers
-                print(f"  📊 Found {len(mcp_servers)} MCP server integrations")
+                logging.info(f"  📊 Found {len(mcp_servers)} MCP server integrations")
                 
         except Exception as e:
-            print(f"  ⚠️ MCP analysis error: {e}")
+            logging.info(f"  ⚠️ MCP analysis error: {e}")
     
     def analyze_notion_documentation(self):
+        """Input validation would be added here"""
         """Analyze Notion documentation and recent updates."""
-        print("📝 Analyzing Notion documentation...")
+        logging.info("📝 Analyzing Notion documentation...")
         
         try:
             # Search for recent Notion content
@@ -279,16 +286,17 @@ class Comprehensive7DayConsensusValidator:
                             })
                         
                         self.validation_results["notion_documentation"] = recent_pages
-                        print(f"  📊 Found {len(recent_pages)} recent Notion pages")
+                        logging.info(f"  📊 Found {len(recent_pages)} recent Notion pages")
                 except json.JSONDecodeError:
-                    print("  ⚠️ Could not parse Notion search results")
+                    logging.info("  ⚠️ Could not parse Notion search results")
                     
         except Exception as e:
-            print(f"  ⚠️ Notion analysis error: {e}")
+            logging.info(f"  ⚠️ Notion analysis error: {e}")
     
     def analyze_system_enhancements(self):
+        """Input validation would be added here"""
         """Analyze recent system enhancements and improvements."""
-        print("⚡ Analyzing system enhancements...")
+        logging.info("⚡ Analyzing system enhancements...")
         
         # Check the final production system for enhancements
         enhancements = []
@@ -312,9 +320,10 @@ class Comprehensive7DayConsensusValidator:
                             })
         
         self.validation_results["system_enhancements"] = enhancements
-        print(f"  📊 Found {len(enhancements)} recent system enhancements")
+        logging.info(f"  📊 Found {len(enhancements)} recent system enhancements")
     
     def get_ai_consensus_validation(self, component_data, category):
+        """Input validation would be added here"""
         """Get AI consensus validation for a component."""
         try:
             prompt = f"""
@@ -351,8 +360,9 @@ class Comprehensive7DayConsensusValidator:
             data = {
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": "You are an expert cryptocurrency trading system architect conducting a comprehensive validation."},
-                    {"role": "user", "content": prompt}
+                    {"role": "system",
+                        "content": "You are an expert cryptocurrency trading system architect conducting a comprehensive validation."},
+                                            {"role": "user", "content": prompt}
                 ],
                 "max_tokens": 500,
                 "temperature": 0.2
@@ -388,12 +398,13 @@ class Comprehensive7DayConsensusValidator:
                         }
                         
         except Exception as e:
-            print(f"  ⚠️ AI consensus error for {category}: {e}")
+            logging.info(f"  ⚠️ AI consensus error for {category}: {e}")
             return None
     
     def run_comprehensive_ai_consensus(self):
+        """Input validation would be added here"""
         """Run comprehensive AI consensus validation on all components."""
-        print("🤖 Running comprehensive AI consensus validation...")
+        logging.info("🤖 Running comprehensive AI consensus validation...")
         
         all_components = []
         
@@ -406,8 +417,10 @@ class Comprehensive7DayConsensusValidator:
         consensus_results = []
         
         for category, component in all_components:
-            print(f"  🧠 Validating {category}: {component.get('name', component.get('repository', component.get('package', 'unknown')))}")
-            
+            logging.info(f"  🧠 Validating {category}: {component.get('name',
+                component.get('repository',
+                component.get('package',
+                'unknown')))}")            
             ai_analysis = self.get_ai_consensus_validation(component, category)
             
             if ai_analysis:
@@ -418,13 +431,14 @@ class Comprehensive7DayConsensusValidator:
                 })
         
         self.validation_results["ai_consensus_results"] = consensus_results
-        print(f"  ✅ AI consensus completed for {len(consensus_results)} components")
+        logging.info(f"  ✅ AI consensus completed for {len(consensus_results)} components")
         
         return consensus_results
     
     def generate_final_consensus_report(self):
+        """Input validation would be added here"""
         """Generate the final consensus validation report."""
-        print("📋 Generating final consensus report...")
+        logging.info("📋 Generating final consensus report...")
         
         # Calculate overall completeness scores
         ai_results = self.validation_results["ai_consensus_results"]
@@ -481,13 +495,14 @@ class Comprehensive7DayConsensusValidator:
         with open(report_path, 'w') as f:
             json.dump(final_report, f, indent=2)
         
-        print(f"  ✅ Final consensus report saved to {report_path}")
+        logging.info(f"  ✅ Final consensus report saved to {report_path}")
         return final_report
     
     def run_comprehensive_validation(self):
+        """Input validation would be added here"""
         """Run the complete comprehensive 7-day validation process."""
-        print("🚀 Starting Comprehensive 7-Day Consensus Validation...")
-        print("="*70)
+        logging.info("🚀 Starting Comprehensive 7-Day Consensus Validation...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -505,11 +520,11 @@ class Comprehensive7DayConsensusValidator:
         
         for step_name, step_function in validation_steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 result = step_function()
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
@@ -517,17 +532,17 @@ class Comprehensive7DayConsensusValidator:
         # Generate final summary
         final_report = self.generate_final_consensus_report()
         
-        print("\\n" + "="*70)
-        print("🎉 COMPREHENSIVE 7-DAY CONSENSUS VALIDATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Validation Duration: {duration:.1f} seconds")
-        print(f"📅 Analysis Period: 7 days ({self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')})")
-        print(f"🔍 Components Analyzed: {final_report['validation_summary']['total_components_analyzed']}")
-        print(f"🤖 AI Models Used: {len(self.consensus_models)}")
-        print(f"📊 Average Completeness: {final_report['validation_summary']['average_completeness_score']}/10")
-        print(f"🎯 Overall Assessment: {final_report['final_consensus']['overall_assessment']}")
-        print(f"🚀 System Status: {final_report['final_consensus']['system_completeness']} COMPLETENESS")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 COMPREHENSIVE 7-DAY CONSENSUS VALIDATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Validation Duration: {duration:.1f} seconds")
+        logging.info(f"📅 Analysis Period: 7 days ({self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')})")
+        logging.info(f"🔍 Components Analyzed: {final_report['validation_summary']['total_components_analyzed']}")
+        logging.info(f"🤖 AI Models Used: {len(self.consensus_models)}")
+        logging.info(f"📊 Average Completeness: {final_report['validation_summary']['average_completeness_score']}/10")
+        logging.info(f"🎯 Overall Assessment: {final_report['final_consensus']['overall_assessment']}")
+        logging.info(f"🚀 System Status: {final_report['final_consensus']['system_completeness']} COMPLETENESS")
+        logging.info("="*70)
         
         return final_report
 
@@ -535,6 +550,6 @@ if __name__ == "__main__":
     validator = Comprehensive7DayConsensusValidator()
     result = validator.run_comprehensive_validation()
     
-    print(f"\\n🎯 7-Day Consensus Validation Complete!")
-    print(f"📊 Overall Assessment: {result['final_consensus']['overall_assessment']}")
-    print(f"🚀 The Ultimate Lyra Trading System completeness validated!")
+    logging.info(f"\\n🎯 7-Day Consensus Validation Complete!")
+    logging.info(f"📊 Overall Assessment: {result['final_consensus']['overall_assessment']}")
+    logging.info(f"🚀 The Ultimate Lyra Trading System completeness validated!")

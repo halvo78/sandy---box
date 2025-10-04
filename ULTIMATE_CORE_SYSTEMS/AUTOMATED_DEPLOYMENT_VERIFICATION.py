@@ -5,6 +5,7 @@ Comprehensive verification script for Ubuntu deployment
 """
 
 import os
+import logging
 import sys
 import subprocess
 import json
@@ -15,6 +16,7 @@ import importlib.util
 
 class DeploymentVerifier:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.results = {
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
             "system_info": {},
@@ -28,7 +30,7 @@ class DeploymentVerifier:
     def log(self, message, level="INFO"):
         """Log message with timestamp"""
         timestamp = time.strftime("%H:%M:%S")
-        print(f"[{timestamp}] {level}: {message}")
+        logging.info(f"[{timestamp}] {level}: {message}")
         
     def run_command(self, command, capture_output=True):
         """Run shell command and return result"""
@@ -464,8 +466,12 @@ class DeploymentVerifier:
         
         for key, value in self.results["verification_results"].items():
             if not key.endswith("_total"):
-                total_key = key.replace("_present", "_total").replace("_active", "_total").replace("_configured", "_total").replace("_ready", "_total").replace("_complete", "_total")
-                total = self.results["verification_results"].get(total_key, "N/A")
+                total_key = key.replace("_present",
+                    "_total").replace("_active",
+                    "_total").replace("_configured",
+                    "_total").replace("_ready",
+                    "_total").replace("_complete",
+                    "_total")                total = self.results["verification_results"].get(total_key, "N/A")
                 percentage = round((value / total * 100), 1) if isinstance(total, int) and total > 0 else 0
                 status = "✅" if percentage >= 90 else "⚠️" if percentage >= 70 else "❌"
                 report += f"{status} {key.replace('_', ' ').title()}: {value}/{total} ({percentage}%)\n"
@@ -582,7 +588,7 @@ class DeploymentVerifier:
             self.save_results()
             
             # Print summary report
-            print(self.generate_report())
+            logging.info(self.generate_report())
             
             return self.results["overall_status"] in ["EXCELLENT", "GOOD"]
             
@@ -598,10 +604,10 @@ def main():
     success = verifier.run_full_verification()
     
     if success:
-        print("\n🎉 Deployment verification successful! System is ready for the next phase.")
+        logging.info("\n🎉 Deployment verification successful! System is ready for the next phase.")
         sys.exit(0)
     else:
-        print("\n❌ Deployment verification failed. Please address issues before proceeding.")
+        logging.info("\n❌ Deployment verification failed. Please address issues before proceeding.")
         sys.exit(1)
 
 if __name__ == "__main__":

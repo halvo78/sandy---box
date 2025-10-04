@@ -5,6 +5,7 @@ Since AI consensus failed, we'll do manual analysis based on file patterns and c
 """
 
 import os
+import logging
 import json
 from datetime import datetime
 
@@ -134,7 +135,7 @@ def execute_file_recovery(recovery_plan):
     failed_count = 0
     
     # Copy critical files
-    print("🔥 Recovering CRITICAL files...")
+    logging.info("🔥 Recovering CRITICAL files...")
     for file_info in recovery_plan['critical_files']:
         if file_info['accessible'] and file_info['size'] > 0:
             try:
@@ -145,14 +146,14 @@ def execute_file_recovery(recovery_plan):
                 with open(source, 'rb') as src, open(dest, 'wb') as dst:
                     dst.write(src.read())
                 
-                print(f"✅ Recovered: {filename}")
+                logging.info(f"✅ Recovered: {filename}")
                 recovered_count += 1
             except Exception as e:
-                print(f"❌ Failed to recover {filename}: {e}")
+                logging.info(f"❌ Failed to recover {filename}: {e}")
                 failed_count += 1
     
     # Copy useful files
-    print("📁 Recovering USEFUL files...")
+    logging.info("📁 Recovering USEFUL files...")
     for file_info in recovery_plan['useful_files']:
         if file_info['accessible'] and file_info['size'] > 0:
             try:
@@ -163,32 +164,32 @@ def execute_file_recovery(recovery_plan):
                 with open(source, 'rb') as src, open(dest, 'wb') as dst:
                     dst.write(src.read())
                 
-                print(f"✅ Recovered: {filename}")
+                logging.info(f"✅ Recovered: {filename}")
                 recovered_count += 1
             except Exception as e:
-                print(f"❌ Failed to recover {filename}: {e}")
+                logging.info(f"❌ Failed to recover {filename}: {e}")
                 failed_count += 1
     
-    print(f"\n📊 Recovery Summary:")
-    print(f"✅ Successfully recovered: {recovered_count} files")
-    print(f"❌ Failed to recover: {failed_count} files")
+    logging.info(f"\n📊 Recovery Summary:")
+    logging.info(f"✅ Successfully recovered: {recovered_count} files")
+    logging.info(f"❌ Failed to recover: {failed_count} files")
     
     return recovered_count, failed_count
 
 if __name__ == "__main__":
-    print("🔍 Starting Manual System Analysis...")
+    logging.info("🔍 Starting Manual System Analysis...")
     
     # Create recovery plan
     recovery_plan = create_recovery_plan()
     
-    print(f"📊 Analysis Results:")
-    print(f"🔥 Critical files: {len(recovery_plan['critical_files'])}")
-    print(f"📁 Useful files: {len(recovery_plan['useful_files'])}")
-    print(f"💀 Corrupted files: {len(recovery_plan['corrupted_files'])}")
-    print(f"🗑️ Useless files: {len(recovery_plan['useless_files'])}")
+    logging.info(f"📊 Analysis Results:")
+    logging.info(f"🔥 Critical files: {len(recovery_plan['critical_files'])}")
+    logging.info(f"📁 Useful files: {len(recovery_plan['useful_files'])}")
+    logging.info(f"💀 Corrupted files: {len(recovery_plan['corrupted_files'])}")
+    logging.info(f"🗑️ Useless files: {len(recovery_plan['useless_files'])}")
     
     # Execute recovery
-    print("\n🚀 Starting File Recovery...")
+    logging.info("\n🚀 Starting File Recovery...")
     recovered, failed = execute_file_recovery(recovery_plan)
     
-    print("\n🎉 Manual Analysis and Recovery Complete!")
+    logging.info("\n🎉 Manual Analysis and Recovery Complete!")

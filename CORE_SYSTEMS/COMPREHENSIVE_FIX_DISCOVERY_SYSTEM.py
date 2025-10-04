@@ -5,6 +5,7 @@ Finds all fixes, solutions, and working configurations from all our work
 """
 
 import os
+import logging
 import json
 import re
 import glob
@@ -90,16 +91,16 @@ class ComprehensiveFixDiscovery:
             ]
         }
         
-        print("🔍 COMPREHENSIVE FIX DISCOVERY SYSTEM")
-        print("="*60)
-        print("🎯 Goal: Find ALL fixes, solutions, and working configurations")
-        print("📊 Sources: All files, reports, configurations, and implementations")
-        print("🔧 Focus: Every time we had what was needed for each component")
-        print("="*60)
+        logging.info("🔍 COMPREHENSIVE FIX DISCOVERY SYSTEM")
+        logging.info("="*60)
+        logging.info("🎯 Goal: Find ALL fixes, solutions, and working configurations")
+        logging.info("📊 Sources: All files, reports, configurations, and implementations")
+        logging.info("🔧 Focus: Every time we had what was needed for each component")
+        logging.info("="*60)
     
     def scan_all_files_for_fixes(self):
         """Scan all files for fixes and working solutions."""
-        print("🔍 Scanning all files for fixes and solutions...")
+        logging.info("🔍 Scanning all files for fixes and solutions...")
         
         # File types to scan
         file_extensions = [
@@ -183,14 +184,14 @@ class ComprehensiveFixDiscovery:
                         except Exception:
                             continue
         
-        print(f"  ✅ Found {fixes_found} general fixes and solutions")
-        print(f"  ✅ Found {len(self.discovered_fixes['api_fixes'])} API-specific fixes")
+        logging.info(f"  ✅ Found {fixes_found} general fixes and solutions")
+        logging.info(f"  ✅ Found {len(self.discovered_fixes['api_fixes'])} API-specific fixes")
         
         return fixes_found
     
     def extract_working_configurations(self):
         """Extract all working configurations from our files."""
-        print("⚙️ Extracting working configurations...")
+        logging.info("⚙️ Extracting working configurations...")
         
         working_configs = {}
         
@@ -249,13 +250,13 @@ class ComprehensiveFixDiscovery:
                     continue
         
         self.discovered_fixes["working_configurations"] = working_configs
-        print(f"  ✅ Extracted {len(working_configs)} working configurations")
+        logging.info(f"  ✅ Extracted {len(working_configs)} working configurations")
         
         return working_configs
     
     def identify_proven_methods(self):
         """Identify proven methods and successful approaches."""
-        print("🎯 Identifying proven methods and successful approaches...")
+        logging.info("🎯 Identifying proven methods and successful approaches...")
         
         proven_methods = {}
         
@@ -367,13 +368,13 @@ class ComprehensiveFixDiscovery:
         proven_methods.update(system_methods)
         
         self.discovered_fixes["proven_methods"] = proven_methods
-        print(f"  ✅ Identified {len(proven_methods)} proven methods")
+        logging.info(f"  ✅ Identified {len(proven_methods)} proven methods")
         
         return proven_methods
     
     def compile_deployment_solutions(self):
         """Compile all deployment solutions and ready configurations."""
-        print("🚀 Compiling deployment solutions...")
+        logging.info("🚀 Compiling deployment solutions...")
         
         deployment_solutions = {
             "immediate_deployment": {
@@ -432,13 +433,13 @@ class ComprehensiveFixDiscovery:
         }
         
         self.discovered_fixes["deployment_solutions"] = deployment_solutions
-        print(f"  ✅ Compiled {len(deployment_solutions)} deployment solutions")
+        logging.info(f"  ✅ Compiled {len(deployment_solutions)} deployment solutions")
         
         return deployment_solutions
     
     def generate_comprehensive_fix_report(self):
         """Generate comprehensive report of all fixes and solutions."""
-        print("📋 Generating comprehensive fix and solution report...")
+        logging.info("📋 Generating comprehensive fix and solution report...")
         
         total_fixes = sum(len(category) for category in self.discovered_fixes.values())
         
@@ -448,8 +449,9 @@ class ComprehensiveFixDiscovery:
 
 ## 🎯 EXECUTIVE SUMMARY
 
-This report documents **ALL fixes, solutions, and working configurations** discovered throughout our comprehensive work on the Ultimate Lyra Trading System. Every time we had exactly what was needed for each component is documented here.
-
+This report documents **ALL fixes,
+    solutions,
+    and working configurations** discovered throughout our comprehensive work on the Ultimate Lyra Trading System. Every time we had exactly what was needed for each component is documented here.
 **Total Discoveries:** {total_fixes} fixes, solutions, and working configurations
 
 ## ✅ WORKING API CONFIGURATIONS
@@ -624,8 +626,9 @@ The Ultimate Lyra Trading System is **READY FOR IMMEDIATE DEPLOYMENT** with all 
 
 **Status: ALL FIXES DOCUMENTED - PRODUCTION READY** ✅
 
-Every working solution, fix, and configuration has been identified and is ready for immediate use in the live trading system.
-"""
+Every working solution,
+    fix,
+    and configuration has been identified and is ready for immediate use in the live trading system."""
         
         # Save comprehensive report
         report_path = os.path.join(self.repo_dir, "COMPREHENSIVE_FIX_DISCOVERY_REPORT.md")
@@ -637,15 +640,15 @@ Every working solution, fix, and configuration has been identified and is ready 
         with open(json_path, 'w') as f:
             json.dump(self.discovered_fixes, f, indent=2, default=str)
         
-        print(f"  ✅ Comprehensive report: {report_path}")
-        print(f"  ✅ JSON data: {json_path}")
+        logging.info(f"  ✅ Comprehensive report: {report_path}")
+        logging.info(f"  ✅ JSON data: {json_path}")
         
         return report_path, json_path, total_fixes
     
     def run_comprehensive_discovery(self):
         """Run the complete fix discovery process."""
-        print("🔍 Starting Comprehensive Fix Discovery...")
-        print("="*60)
+        logging.info("🔍 Starting Comprehensive Fix Discovery...")
+        logging.info("="*60)
         
         start_time = datetime.now()
         
@@ -661,7 +664,7 @@ Every working solution, fix, and configuration has been identified and is ready 
         total_discoveries = 0
         
         for step_name, step_function in steps:
-            print(f"\\n🔄 {step_name}...")
+            logging.info(f"\\n🔄 {step_name}...")
             
             try:
                 if step_name == "Comprehensive Report":
@@ -671,23 +674,23 @@ Every working solution, fix, and configuration has been identified and is ready 
                     if isinstance(result, int):
                         total_discoveries += result
                 
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
                 
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("\\n" + "="*60)
-        print("🎉 COMPREHENSIVE FIX DISCOVERY COMPLETE!")
-        print("="*60)
-        print(f"⏱️ Discovery Duration: {duration:.1f} seconds")
-        print(f"🔧 Total Fixes Found: {total_discoveries}")
-        print(f"✅ Working APIs: 8")
-        print(f"🎯 Production Ready: YES")
-        print(f"📁 Reports Generated: 2")
-        print("="*60)
+        logging.info("\\n" + "="*60)
+        logging.info("🎉 COMPREHENSIVE FIX DISCOVERY COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"⏱️ Discovery Duration: {duration:.1f} seconds")
+        logging.info(f"🔧 Total Fixes Found: {total_discoveries}")
+        logging.info(f"✅ Working APIs: 8")
+        logging.info(f"🎯 Production Ready: YES")
+        logging.info(f"📁 Reports Generated: 2")
+        logging.info("="*60)
         
         return total_discoveries
 
@@ -695,7 +698,7 @@ if __name__ == "__main__":
     discoverer = ComprehensiveFixDiscovery()
     total_discoveries = discoverer.run_comprehensive_discovery()
     
-    print(f"\\n🎯 Comprehensive Fix Discovery Complete!")
-    print(f"🔧 {total_discoveries} fixes and solutions documented")
-    print(f"✅ All working configurations identified")
-    print(f"🎉 EVERY FIX AND SOLUTION FOUND!")
+    logging.info(f"\\n🎯 Comprehensive Fix Discovery Complete!")
+    logging.info(f"🔧 {total_discoveries} fixes and solutions documented")
+    logging.info(f"✅ All working configurations identified")
+    logging.info(f"🎉 EVERY FIX AND SOLUTION FOUND!")

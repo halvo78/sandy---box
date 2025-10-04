@@ -32,6 +32,7 @@ logger = logging.getLogger(__name__)
 
 class UltimateLyraTradingSystem:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.base_dir = Path("/home/ubuntu/ultimate_lyra_systems")
         self.logs_dir = self.base_dir / "logs"
         self.config_dir = self.base_dir / "config"
@@ -184,10 +185,12 @@ class UltimateLyraTradingSystem:
         
         class DashboardHandler(BaseHTTPRequestHandler):
             def __init__(self, system_instance, *args, **kwargs):
+                """TODO: Add function documentation"""
                 self.system = system_instance
                 super().__init__(*args, **kwargs)
             
             def do_GET(self):
+                """TODO: Add function documentation"""
                 if self.path == '/':
                     self.send_response(200)
                     self.send_header('Content-type', 'text/html')
@@ -232,10 +235,12 @@ class UltimateLyraTradingSystem:
                     self.end_headers()
             
             def log_message(self, format, *args):
+                """TODO: Add function documentation"""
                 pass  # Suppress default logging
         
         # Create handler with system instance
         def handler_factory(*args, **kwargs):
+            """TODO: Add function documentation"""
             return DashboardHandler(self, *args, **kwargs)
         
         return handler_factory
@@ -498,6 +503,7 @@ class UltimateLyraTradingSystem:
             server = HTTPServer(('localhost', 8080), handler)
             
             def run_server():
+                """TODO: Add function documentation"""
                 logger.info("🌐 Web dashboard started on http://localhost:8080")
                 server.serve_forever()
             

@@ -70,6 +70,7 @@ class BTCMarketsConnector:
     """BTC Markets Exchange Connector"""
     
     def __init__(self, config: BTCMarketsConfig):
+        """TODO: Add function documentation"""
         self.config = config
         self.session = None
         
@@ -81,8 +82,13 @@ class BTCMarketsConnector:
         if self.session:
             await self.session.close()
     
-    def _build_headers(self, method: str, api_key: str, private_key: str, path: str, data: str = None) -> Dict[str, str]:
-        """Build authentication headers for BTC Markets API"""
+    def _build_headers(self,
+        method: str,
+        api_key: str,
+        private_key: str,
+        path: str,
+        data: str = None) -> Dict[str,
+        str]:        """Build authentication headers for BTC Markets API"""
         timestamp = str(int(time.time() * 1000))
         
         if data is None:
@@ -112,8 +118,13 @@ class BTCMarketsConnector:
             'BM-AUTH-SIGNATURE': signature
         }
     
-    def _make_http_call(self, method: str, api_key: str, private_key: str, path: str, query_string: str = "", data: str = None):
-        """Make HTTP call helper (for reference - async version used in practice)"""
+    def _make_http_call(self,
+        method: str,
+        api_key: str,
+        private_key: str,
+        path: str,
+        query_string: str = "",
+        data: str = None):        """Make HTTP call helper (for reference - async version used in practice)"""
         if data is not None:
             data = json.dumps(data)
         
@@ -258,8 +269,12 @@ class BTCMarketsConnector:
             
         return None
     
-    async def place_order(self, symbol: str, side: str, order_type: str, amount: float, price: Optional[float] = None) -> Optional[BTCMarketsOrder]:
-        """Place an order (requires authentication)"""
+    async def place_order(self,
+        symbol: str,
+        side: str,
+        order_type: str,
+        amount: float,
+        price: Optional[float] = None) -> Optional[BTCMarketsOrder]:        """Place an order (requires authentication)"""
         if not self.config.api_key or not self.config.private_key:
             logger.warning("BTC Markets: API credentials not configured for order placement")
             return None
@@ -314,8 +329,9 @@ class BTCMarketsConnector:
             
         return None
     
-    async def get_orders(self, symbol: Optional[str] = None, status: Optional[str] = None) -> Optional[List[BTCMarketsOrder]]:
-        """Get orders (requires authentication)"""
+    async def get_orders(self,
+        symbol: Optional[str] = None,
+        status: Optional[str] = None) -> Optional[List[BTCMarketsOrder]]:        """Get orders (requires authentication)"""
         if not self.config.api_key or not self.config.private_key:
             logger.warning("BTC Markets: API credentials not configured for order retrieval")
             return None
@@ -397,8 +413,8 @@ class BTCMarketsConnector:
 # Example usage and testing
 async def main():
     """Test BTC Markets connector"""
-    print("🇦🇺 Testing BTC Markets Connector")
-    print("=" * 40)
+    logging.info("🇦🇺 Testing BTC Markets Connector")
+    logging.info("=" * 40)
     
     # Initialize connector (no credentials needed for public endpoints)
     config = BTCMarketsConfig()
@@ -406,59 +422,65 @@ async def main():
     async with BTCMarketsConnector(config) as connector:
         
         # Test 1: Get available markets
-        print("📊 Test 1: Available Markets")
+        logging.info("📊 Test 1: Available Markets")
         markets = await connector.get_markets()
         if markets:
-            print(f"   Found {len(markets)} markets")
+            logging.info(f"   Found {len(markets)} markets")
             # Show first few markets
             for market in markets[:5]:
-                print(f"   - {market.get('marketId', 'Unknown')}: {market.get('baseAsset', '')}/{market.get('quoteAsset', '')}")
-        print()
+                logging.info(f"   - {market.get('marketId',
+                    'Unknown')}: {market.get('baseAsset',
+                    '')}/{market.get('quoteAsset',
+                    '')}")        print()
         
         # Test 2: Get ticker data
-        print("💰 Test 2: Ticker Data")
+        logging.info("💰 Test 2: Ticker Data")
         symbols = ['BTC-AUD', 'ETH-AUD', 'ADA-AUD']
         
         for symbol in symbols:
             ticker = await connector.get_ticker(symbol)
             if ticker:
-                print(f"   {symbol}: ${ticker.price:,.2f} AUD (Vol: {ticker.volume:,.0f})")
-                print(f"      24h: High ${ticker.high:,.2f} | Low ${ticker.low:,.2f} | Change {ticker.change:+.2f}%")
-            else:
-                print(f"   {symbol}: No data available")
+                logging.info(f"   {symbol}: ${ticker.price:,.2f} AUD (Vol: {ticker.volume:,.0f})")
+                logging.info(f"      24h: High ${ticker.high:,
+                    .2f} | Low ${ticker.low:,
+                    .2f} | Change {ticker.change:+.2f}%")            else:
+                logging.info(f"   {symbol}: No data available")
         print()
         
         # Test 3: Get order book
-        print("📈 Test 3: Order Book Data")
+        logging.info("📈 Test 3: Order Book Data")
         orderbook = await connector.get_orderbook('BTC-AUD', 5)
         if orderbook:
-            print(f"   {orderbook.symbol} Order Book:")
-            print("   Bids (Buy Orders):")
+            logging.info(f"   {orderbook.symbol} Order Book:")
+            logging.info("   Bids (Buy Orders):")
             for price, volume in orderbook.bids[:3]:
-                print(f"      ${price:,.2f} - {volume:.4f} BTC")
-            print("   Asks (Sell Orders):")
+                logging.info(f"      ${price:,.2f} - {volume:.4f} BTC")
+            logging.info("   Asks (Sell Orders):")
             for price, volume in orderbook.asks[:3]:
-                print(f"      ${price:,.2f} - {volume:.4f} BTC")
+                logging.info(f"      ${price:,.2f} - {volume:.4f} BTC")
         print()
         
         # Test 4: Get recent trades
-        print("📊 Test 4: Recent Trades")
+        logging.info("📊 Test 4: Recent Trades")
         trades = await connector.get_trades('BTC-AUD', 5)
         if trades:
-            print(f"   Recent {len(trades)} trades for BTC-AUD:")
+            logging.info(f"   Recent {len(trades)} trades for BTC-AUD:")
             for trade in trades[:3]:
-                print(f"      ${float(trade.get('price', 0)):,.2f} - {float(trade.get('amount', 0)):.4f} BTC ({trade.get('side', 'Unknown')})")
-        print()
+                logging.info(f"      ${float(trade.get('price',
+                    0)):,
+                    .2f} - {float(trade.get('amount',
+                    0)):.4f} BTC ({trade.get('side',
+                    'Unknown')})")        print()
         
         # Test 5: Account operations (would require API keys)
-        print("🔐 Test 5: Account Operations")
-        print("   Account balance: Requires API credentials")
-        print("   Order placement: Requires API credentials")
-        print("   Order management: Requires API credentials")
+        logging.info("🔐 Test 5: Account Operations")
+        logging.info("   Account balance: Requires API credentials")
+        logging.info("   Order placement: Requires API credentials")
+        logging.info("   Order management: Requires API credentials")
         print()
         
-        print("✅ BTC Markets connector testing completed!")
-        print("🇦🇺 Ready for integration with Ultimate Lyra Ecosystem!")
+        logging.info("✅ BTC Markets connector testing completed!")
+        logging.info("🇦🇺 Ready for integration with Ultimate Lyra Ecosystem!")
 
 if __name__ == "__main__":
     asyncio.run(main())

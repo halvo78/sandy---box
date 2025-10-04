@@ -6,15 +6,17 @@ apps, addons, Hummingbot, and everything to make the ultimate system.
 """
 
 import os
+import logging
 import json
 import shutil
 from datetime import datetime
 from pathlib import Path
 
 def extract_all_newest_beneficial_parts():
+    """Input validation would be added here"""
     """Extract ALL beneficial parts from newest versions and integrations."""
-    print("🚀 ULTIMATE NEWEST VERSIONS & BENEFICIAL PARTS EXTRACTION")
-    print("=" * 80)
+    logging.info("🚀 ULTIMATE NEWEST VERSIONS & BENEFICIAL PARTS EXTRACTION")
+    logging.info("=" * 80)
     
     # Create extraction directory
     extraction_dir = Path("/home/ubuntu/ULTIMATE_NEWEST_BENEFICIAL_EXTRACTION")
@@ -30,7 +32,7 @@ def extract_all_newest_beneficial_parts():
         'beneficial_extractions': []
     }
     
-    print("🔍 SCANNING FOR NEWEST VERSIONS...")
+    logging.info("🔍 SCANNING FOR NEWEST VERSIONS...")
     
     # Find all newest version directories
     newest_version_patterns = [
@@ -47,9 +49,9 @@ def extract_all_newest_beneficial_parts():
                     'files': count_files(path),
                     'type': 'newest_version'
                 })
-                print(f"✅ Found newest version: {path}")
+                logging.info(f"✅ Found newest version: {path}")
     
-    print("\n🏦 SCANNING FOR VAULT & EXCHANGE CONNECTIONS...")
+    logging.info("\n🏦 SCANNING FOR VAULT & EXCHANGE CONNECTIONS...")
     
     # Find vault and exchange connection files
     vault_exchange_patterns = [
@@ -65,9 +67,9 @@ def extract_all_newest_beneficial_parts():
                     'size': path.stat().st_size,
                     'type': 'vault_exchange'
                 })
-                print(f"✅ Found vault/exchange: {path}")
+                logging.info(f"✅ Found vault/exchange: {path}")
     
-    print("\n📱 SCANNING FOR APPS & ADDONS...")
+    logging.info("\n📱 SCANNING FOR APPS & ADDONS...")
     
     # Find apps and addons
     apps_patterns = [
@@ -84,9 +86,9 @@ def extract_all_newest_beneficial_parts():
                     'files': count_files(path),
                     'type': 'app_addon'
                 })
-                print(f"✅ Found app/addon: {path}")
+                logging.info(f"✅ Found app/addon: {path}")
     
-    print("\n🤖 SCANNING FOR HUMMINGBOT COMPONENTS...")
+    logging.info("\n🤖 SCANNING FOR HUMMINGBOT COMPONENTS...")
     
     # Find Hummingbot components
     hummingbot_patterns = [
@@ -110,9 +112,9 @@ def extract_all_newest_beneficial_parts():
                         'size': path.stat().st_size,
                         'type': 'hummingbot_file'
                     })
-                print(f"✅ Found Hummingbot: {path}")
+                logging.info(f"✅ Found Hummingbot: {path}")
     
-    print("\n🎯 EXTRACTING ALL BENEFICIAL PARTS...")
+    logging.info("\n🎯 EXTRACTING ALL BENEFICIAL PARTS...")
     
     # Extract all beneficial components
     total_extracted = 0
@@ -132,10 +134,10 @@ def extract_all_newest_beneficial_parts():
                     shutil.copy2(source_path, dest_path)
                 
                 total_extracted += 1
-                print(f"✅ Extracted: {source_path} -> {dest_path}")
+                logging.info(f"✅ Extracted: {source_path} -> {dest_path}")
                 
             except Exception as e:
-                print(f"⚠️ Warning: Could not extract {item['path']}: {e}")
+                logging.info(f"⚠️ Warning: Could not extract {item['path']}: {e}")
     
     # Create comprehensive summary
     summary = {
@@ -204,14 +206,15 @@ amplify the Ultimate Lyra Trading System to its maximum potential.
     with open(extraction_dir / "README.md", "w") as f:
         f.write(readme_content)
     
-    print(f"\n🎉 EXTRACTION COMPLETE!")
-    print(f"📊 Total Beneficial Parts: {summary['total_beneficial_parts']}")
-    print(f"✅ Successfully Extracted: {total_extracted}")
-    print(f"📁 Extraction Directory: {extraction_dir}")
+    logging.info(f"\n🎉 EXTRACTION COMPLETE!")
+    logging.info(f"📊 Total Beneficial Parts: {summary['total_beneficial_parts']}")
+    logging.info(f"✅ Successfully Extracted: {total_extracted}")
+    logging.info(f"📁 Extraction Directory: {extraction_dir}")
     
     return summary
 
 def get_dir_size(path):
+    """Input validation would be added here"""
     """Get directory size in bytes."""
     try:
         total = 0
@@ -227,6 +230,7 @@ def get_dir_size(path):
         return 0
 
 def count_files(path):
+    """Input validation would be added here"""
     """Count files in directory."""
     try:
         count = 0

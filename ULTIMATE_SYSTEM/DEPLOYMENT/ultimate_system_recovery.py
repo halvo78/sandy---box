@@ -11,6 +11,7 @@ from datetime import datetime
 
 class UltimateSystemRecovery:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.base_dir = "/home/ubuntu/fresh_start"
         self.github_ecosystem_dir = f"{self.base_dir}/ultimate-lyra-ecosystem"
         self.github_files_dir = f"{self.base_dir}/files-for-build"
@@ -43,7 +44,7 @@ class UltimateSystemRecovery:
         
     def create_github_structure(self):
         """Create the GitHub repository structure."""
-        print("🏗️ Creating GitHub repository structure...")
+        logging.info("🏗️ Creating GitHub repository structure...")
         
         # Create main directories
         os.makedirs(self.github_ecosystem_dir, exist_ok=True)
@@ -75,11 +76,11 @@ class UltimateSystemRecovery:
         for dir_name in files_dirs:
             os.makedirs(f"{self.github_files_dir}/{dir_name}", exist_ok=True)
             
-        print("✅ GitHub structure created")
+        logging.info("✅ GitHub structure created")
         
     def recover_working_files(self):
         """Recover all working files from the system."""
-        print("🔄 Recovering working files...")
+        logging.info("🔄 Recovering working files...")
         
         recovered_count = 0
         failed_count = 0
@@ -102,14 +103,14 @@ class UltimateSystemRecovery:
                     
                     dest_path = f"{dest_dir}/{filename}"
                     shutil.copy2(file_path, dest_path)
-                    print(f"✅ Recovered: {filename}")
+                    logging.info(f"✅ Recovered: {filename}")
                     recovered_count += 1
                     
                 except Exception as e:
-                    print(f"❌ Failed to recover {filename}: {e}")
+                    logging.info(f"❌ Failed to recover {filename}: {e}")
                     failed_count += 1
             else:
-                print(f"❌ File not found: {file_path}")
+                logging.info(f"❌ File not found: {file_path}")
                 failed_count += 1
         
         # Recover documentation files
@@ -119,19 +120,19 @@ class UltimateSystemRecovery:
                     filename = os.path.basename(file_path)
                     dest_path = f"{self.github_ecosystem_dir}/documentation/{filename}"
                     shutil.copy2(file_path, dest_path)
-                    print(f"✅ Recovered doc: {filename}")
+                    logging.info(f"✅ Recovered doc: {filename}")
                     recovered_count += 1
                     
                 except Exception as e:
-                    print(f"❌ Failed to recover doc {filename}: {e}")
+                    logging.info(f"❌ Failed to recover doc {filename}: {e}")
                     failed_count += 1
         
-        print(f"📊 Recovery Summary: {recovered_count} recovered, {failed_count} failed")
+        logging.info(f"📊 Recovery Summary: {recovered_count} recovered, {failed_count} failed")
         return recovered_count, failed_count
         
     def create_comprehensive_system(self):
         """Create a comprehensive trading system from recovered components."""
-        print("🚀 Creating comprehensive trading system...")
+        logging.info("🚀 Creating comprehensive trading system...")
         
         system_code = '''#!/usr/bin/env python3
 """
@@ -184,9 +185,9 @@ class UltimateLyraTradingSystem:
         self.setup_database()
         self.portfolio_balance = 13947.76  # Available capital
         
-        print(f"🚀 Ultimate Lyra Trading System v{self.version} Initialized")
-        print(f"💰 Available Capital: ${self.portfolio_balance:,.2f}")
-        print(f"🎯 AI Consensus Models: {len(self.openrouter_keys)} active")
+        logging.info(f"🚀 Ultimate Lyra Trading System v{self.version} Initialized")
+        logging.info(f"💰 Available Capital: ${self.portfolio_balance:,.2f}")
+        logging.info(f"🎯 AI Consensus Models: {len(self.openrouter_keys)} active")
         
     def setup_logging(self):
         """Setup comprehensive logging."""
@@ -448,18 +449,18 @@ if __name__ == "__main__":
     
     # Print system status
     status = system.get_system_status()
-    print("\\n" + "="*60)
-    print("ULTIMATE LYRA TRADING SYSTEM - STATUS REPORT")
-    print("="*60)
+    logging.info("\\n" + "="*60)
+    logging.info("ULTIMATE LYRA TRADING SYSTEM - STATUS REPORT")
+    logging.info("="*60)
     for key, value in status.items():
-        print(f"{key.upper().replace('_', ' ')}: {value}")
-    print("="*60)
+        logging.info(f"{key.upper().replace('_', ' ')}: {value}")
+    logging.info("="*60)
     
     # Start trading loop
     try:
         system.run_trading_loop()
     except KeyboardInterrupt:
-        print("\\n🛑 System shutdown requested")
+        logging.info("\\n🛑 System shutdown requested")
 '''
         
         # Save the comprehensive system
@@ -467,7 +468,7 @@ if __name__ == "__main__":
         with open(system_path, 'w') as f:
             f.write(system_code)
             
-        print(f"✅ Comprehensive system created: {system_path}")
+        logging.info(f"✅ Comprehensive system created: {system_path}")
         
     def create_readme_files(self):
         """Create comprehensive README files for both repositories."""
@@ -476,8 +477,10 @@ if __name__ == "__main__":
         ecosystem_readme = '''# Ultimate Lyra Trading System Ecosystem
 
 ## Overview
-The Ultimate Lyra Trading System is an advanced, AI-powered cryptocurrency trading platform that integrates multiple AI models for consensus-driven decision making, real-time market analysis, and automated trading execution.
-
+The Ultimate Lyra Trading System is an advanced,
+    AI-powered cryptocurrency trading platform that integrates multiple AI models for consensus-driven decision making,
+    real-time market analysis,
+    and automated trading execution.
 ## Key Features
 - **AI Consensus Engine**: 8 OpenRouter API keys providing access to multiple premium AI models
 - **Real Exchange Integration**: Direct connection to OKX and other major exchanges
@@ -526,8 +529,10 @@ MIT License - See LICENSE file for details
         files_readme = '''# Files for Build - Ultimate Lyra Trading System
 
 ## Overview
-This repository contains configuration files, deployment scripts, utilities, and supporting documentation for the Ultimate Lyra Trading System.
-
+This repository contains configuration files,
+    deployment scripts,
+    utilities,
+    and supporting documentation for the Ultimate Lyra Trading System.
 ## Contents
 ```
 ├── configurations/      # System configuration files and templates
@@ -556,7 +561,7 @@ This repository works in conjunction with the main `ultimate-lyra-ecosystem` rep
         with open(f"{self.github_files_dir}/README.md", 'w') as f:
             f.write(files_readme)
             
-        print("✅ README files created")
+        logging.info("✅ README files created")
         
     def create_deployment_summary(self):
         """Create a comprehensive deployment summary."""
@@ -601,12 +606,12 @@ This repository works in conjunction with the main `ultimate-lyra-ecosystem` rep
         with open(summary_path, 'w') as f:
             json.dump(summary, f, indent=2)
             
-        print(f"✅ Deployment summary created: {summary_path}")
+        logging.info(f"✅ Deployment summary created: {summary_path}")
         return summary
         
     def run_recovery(self):
         """Execute the complete system recovery process."""
-        print("🚀 Starting Ultimate System Recovery...")
+        logging.info("🚀 Starting Ultimate System Recovery...")
         
         # Create GitHub structure
         self.create_github_structure()
@@ -623,16 +628,16 @@ This repository works in conjunction with the main `ultimate-lyra-ecosystem` rep
         # Create deployment summary
         summary = self.create_deployment_summary()
         
-        print("\n" + "="*60)
-        print("🎉 ULTIMATE SYSTEM RECOVERY COMPLETE!")
-        print("="*60)
-        print(f"✅ Files recovered: {recovered}")
-        print(f"❌ Files failed: {failed}")
-        print(f"📁 GitHub ecosystem: {self.github_ecosystem_dir}")
-        print(f"📁 GitHub files: {self.github_files_dir}")
-        print(f"🤖 AI models integrated: {summary['ai_models_integrated']}")
-        print(f"🔑 OpenRouter keys: {summary['openrouter_keys_configured']}")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("🎉 ULTIMATE SYSTEM RECOVERY COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"✅ Files recovered: {recovered}")
+        logging.info(f"❌ Files failed: {failed}")
+        logging.info(f"📁 GitHub ecosystem: {self.github_ecosystem_dir}")
+        logging.info(f"📁 GitHub files: {self.github_files_dir}")
+        logging.info(f"🤖 AI models integrated: {summary['ai_models_integrated']}")
+        logging.info(f"🔑 OpenRouter keys: {summary['openrouter_keys_configured']}")
+        logging.info("="*60)
         
         return summary
 

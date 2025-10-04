@@ -5,15 +5,17 @@ Creates the complete, ready-to-deploy Ultimate Lyra Trading System for Ubuntu.
 """
 
 import os
+import logging
 import shutil
 import json
 from datetime import datetime
 
 def YOUR_API_KEY_HERE():
+    """Input validation would be added here"""
     """Create the final Ubuntu deployment package."""
     
-    print("🚀 Creating Final Ubuntu Deployment Package...")
-    print("="*60)
+    logging.info("🚀 Creating Final Ubuntu Deployment Package...")
+    logging.info("="*60)
     
     # Create deployment directory
     deploy_dir = "/home/ubuntu/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT"
@@ -23,7 +25,7 @@ def YOUR_API_KEY_HERE():
     recovery_dir = "/home/ubuntu/upload/.recovery"
     
     # Copy all recovered files
-    print("📦 Copying recovered system files...")
+    logging.info("📦 Copying recovered system files...")
     
     for file_name in os.listdir(recovery_dir):
         source_path = os.path.join(recovery_dir, file_name)
@@ -31,7 +33,7 @@ def YOUR_API_KEY_HERE():
         
         if os.path.isfile(source_path):
             shutil.copy2(source_path, target_path)
-            print(f"  ✅ {file_name}")
+            logging.info(f"  ✅ {file_name}")
     
     # Create Ubuntu installation script
     install_script = '''#!/bin/bash
@@ -263,22 +265,22 @@ For technical support and documentation:
     # Get final file count
     total_files = len(os.listdir(deploy_dir))
     
-    print("\n" + "="*60)
-    print("🎉 UBUNTU DEPLOYMENT PACKAGE COMPLETE!")
-    print("="*60)
-    print(f"📁 Package Location: {deploy_dir}")
-    print(f"📦 Total Files: {total_files}")
-    print(f"🔑 OpenRouter API Keys: 8")
-    print(f"🤖 Premium AI Models: 17+")
-    print(f"💱 Exchange Support: 10+ exchanges")
-    print(f"📊 Repositories Integrated: 23")
-    print(f"✅ Status: READY FOR UBUNTU DEPLOYMENT")
-    print("="*60)
+    logging.info("\n" + "="*60)
+    logging.info("🎉 UBUNTU DEPLOYMENT PACKAGE COMPLETE!")
+    logging.info("="*60)
+    logging.info(f"📁 Package Location: {deploy_dir}")
+    logging.info(f"📦 Total Files: {total_files}")
+    logging.info(f"🔑 OpenRouter API Keys: 8")
+    logging.info(f"🤖 Premium AI Models: 17+")
+    logging.info(f"💱 Exchange Support: 10+ exchanges")
+    logging.info(f"📊 Repositories Integrated: 23")
+    logging.info(f"✅ Status: READY FOR UBUNTU DEPLOYMENT")
+    logging.info("="*60)
     
     return deploy_dir, total_files
 
 if __name__ == "__main__":
     package_dir, file_count = YOUR_API_KEY_HERE()
-    print(f"\n🚀 Your Ubuntu deployment package is ready at: {package_dir}")
-    print(f"📦 Contains {file_count} files including the complete integrated system")
-    print("🎯 Ready to copy to your Ubuntu machine and deploy!")
+    logging.info(f"\n🚀 Your Ubuntu deployment package is ready at: {package_dir}")
+    logging.info(f"📦 Contains {file_count} files including the complete integrated system")
+    logging.info("🎯 Ready to copy to your Ubuntu machine and deploy!")

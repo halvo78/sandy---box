@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class KrakenProWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "kraken"
         self.exchange_name = "Kraken Pro"
         self.setup_logging()

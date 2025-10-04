@@ -17,6 +17,7 @@ import json
 
 class Gate.ioAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "gate"
         self.exchange_name = "Gate.io"
         self.region = "Global"
@@ -116,6 +117,6 @@ adapter = Gate.ioAdapter()
 if __name__ == "__main__":
     success = adapter.initialize()
     if success:
-        print(f"✅ {adapter.exchange_name} adapter ready")
+        logging.info(f"✅ {adapter.exchange_name} adapter ready")
     else:
-        print(f"❌ {adapter.exchange_name} adapter failed")
+        logging.info(f"❌ {adapter.exchange_name} adapter failed")

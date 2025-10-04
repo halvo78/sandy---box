@@ -44,6 +44,7 @@ class CommissioningTestSuite:
     """Comprehensive commissioning test suite"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.test_results = {
             "test_suite": "Commissioning Test Suite",
             "start_time": datetime.utcnow().isoformat(),
@@ -249,7 +250,7 @@ class CommissioningTestSuite:
             import hmac
             import hashlib
             
-            test_key = "test_secret_key"
+            test_key = os.getenv("KEY", "YOUR_KEY_HERE")
             test_message = "symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.1&timestamp=1234567890"
             
             # Generate signature
@@ -421,8 +422,9 @@ class CommissioningTestSuite:
                 return True, f"Price validation passed for {len(test_prices)} test cases", latency
             else:
                 failed_count = sum(1 for r in validation_results if not r)
-                return False, f"{failed_count}/{len(test_prices)} validation tests failed", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"{failed_count}/{len(test_prices)} validation tests failed",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Price feed validation failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -462,8 +464,9 @@ class CommissioningTestSuite:
                     latency = (time.time() - start_time) * 1000
                     return True, f"Loaded {loaded_models} AI models successfully", latency
                 else:
-                    return False, f"Only {loaded_models}/{expected_models} models loaded", (time.time() - start_time) * 1000
-            else:
+                    return False,
+                        f"Only {loaded_models}/{expected_models} models loaded",
+                        (time.time() - start_time) * 1000            else:
                 return False, "No AI models loaded", (time.time() - start_time) * 1000
                 
         except Exception as e:
@@ -606,8 +609,10 @@ class CommissioningTestSuite:
                 latency = (time.time() - start_time) * 1000
                 return True, "Confidence threshold check working correctly", latency
             else:
-                return False, f"Unexpected results: high={high_conf_result.result.value}, low={low_conf_result.result.value}", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"Unexpected results: high={high_conf_result.result.value},
+                    low={low_conf_result.result.value}",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Confidence threshold test failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -658,6 +663,7 @@ class CommissioningTestSuite:
             
             # Test normal operation
             def successful_operation():
+                """TODO: Add function documentation"""
                 return "success"
             
             result1 = breaker.call(successful_operation)
@@ -666,6 +672,7 @@ class CommissioningTestSuite:
             
             # Test failure handling
             def failing_operation():
+                """TODO: Add function documentation"""
                 raise Exception("Test failure")
             
             failure_count = 0
@@ -695,12 +702,15 @@ class CommissioningTestSuite:
                         latency = (time.time() - start_time) * 1000
                         return True, f"Circuit breaker working correctly (failed {failure_count} times)", latency
                     else:
-                        return False, f"Circuit breaker recovery failed: state={breaker.state}", (time.time() - start_time) * 1000
-                except Exception as e:
+                        return False,
+                            f"Circuit breaker recovery failed: state={breaker.state}",
+                            (time.time() - start_time) * 1000                except Exception as e:
                     return False, f"Circuit breaker recovery call failed: {str(e)}", (time.time() - start_time) * 1000
             else:
-                return False, f"Circuit breaker should be OPEN after failures, but state is {breaker.state}", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"Circuit breaker should be OPEN after failures,
+                    but state is {breaker.state}",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Circuit breaker test failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -796,8 +806,10 @@ class CommissioningTestSuite:
                     latency = (time.time() - start_time) * 1000
                     return True, f"TWAP algorithm created {len(orders)} orders (total: {total_size})", latency
                 else:
-                    return False, f"TWAP size mismatch: expected {plan.total_size}, got {total_size}", (time.time() - start_time) * 1000
-            else:
+                    return False,
+                        f"TWAP size mismatch: expected {plan.total_size},
+                        got {total_size}",
+                        (time.time() - start_time) * 1000            else:
                 return False, "TWAP algorithm generated no orders", (time.time() - start_time) * 1000
                 
         except Exception as e:
@@ -883,8 +895,9 @@ class CommissioningTestSuite:
                 return True, f"Position size validation passed for {len(test_cases)} cases", latency
             else:
                 failed_count = sum(1 for r in validation_results if not r)
-                return False, f"{failed_count}/{len(test_cases)} validation tests failed", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"{failed_count}/{len(test_cases)} validation tests failed",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Position size validation failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -924,8 +937,9 @@ class CommissioningTestSuite:
             else:
                 # Restore original portfolio state
                 self.conductor.admission_controller.portfolio_state = original_portfolio
-                return False, f"Drawdown protection failed: {result.result.value} - {result.reason}", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"Drawdown protection failed: {result.result.value} - {result.reason}",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Drawdown protection test failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -955,8 +969,12 @@ class CommissioningTestSuite:
             
             # Test 1: Intent generation latency
             intent_start = time.time()
-            test_market_data = {"BTCUSDT": {"price": 45000, "volume": 1000000, "rsi": 50, "macd": 0, "volatility": 0.02, "sentiment": 0.5}}
-            await self.conductor.conduct_orchestra(test_market_data)
+            test_market_data = {"BTCUSDT": {"price": 45000,
+                "volume": 1000000,
+                "rsi": 50,
+                "macd": 0,
+                "volatility": 0.02,
+                "sentiment": 0.5}}            await self.conductor.conduct_orchestra(test_market_data)
             latencies["intent_generation"] = (time.time() - intent_start) * 1000
             
             # Test 2: Order routing latency
@@ -999,8 +1017,12 @@ class CommissioningTestSuite:
         try:
             # Test concurrent intent processing
             num_concurrent = 10
-            test_market_data = {"BTCUSDT": {"price": 45000, "volume": 1000000, "rsi": 50, "macd": 0, "volatility": 0.02, "sentiment": 0.5}}
-            
+            test_market_data = {"BTCUSDT": {"price": 45000,
+                "volume": 1000000,
+                "rsi": 50,
+                "macd": 0,
+                "volatility": 0.02,
+                "sentiment": 0.5}}            
             # Create concurrent tasks
             tasks = []
             for i in range(num_concurrent):
@@ -1017,8 +1039,9 @@ class CommissioningTestSuite:
             throughput = successful / total_time  # operations per second
             
             if successful >= num_concurrent * 0.8:  # 80% success rate
-                return True, f"Throughput test passed: {successful}/{num_concurrent} successful ({throughput:.1f} ops/sec)", total_time * 1000
-            else:
+                return True,
+                    f"Throughput test passed: {successful}/{num_concurrent} successful ({throughput:.1f} ops/sec)",
+                    total_time * 1000            else:
                 return False, f"Low throughput: {successful}/{num_concurrent} successful", total_time * 1000
                 
         except Exception as e:
@@ -1056,8 +1079,9 @@ class CommissioningTestSuite:
                 latency = (time.time() - start_time) * 1000
                 return True, f"Component restart successful ({len(self.conductor.ai_models)} models reloaded)", latency
             else:
-                return False, f"Model reload failed: {len(self.conductor.ai_models)}/{len(original_models)}", (time.time() - start_time) * 1000
-                
+                return False,
+                    f"Model reload failed: {len(self.conductor.ai_models)}/{len(original_models)}",
+                    (time.time() - start_time) * 1000                
         except Exception as e:
             return False, f"Component restart test failed: {str(e)}", (time.time() - start_time) * 1000
     
@@ -1187,12 +1211,12 @@ async def main():
     test_suite = CommissioningTestSuite()
     results = await test_suite.run_all_tests()
     
-    print(f"\n🎉 Commissioning Complete!")
+    logging.info(f"\n🎉 Commissioning Complete!")
     if 'success_rate' in results:
-        print(f"Success Rate: {results['success_rate']:.1f}%")
-        print(f"Status: {results['overall_status']}")
+        logging.info(f"Success Rate: {results['success_rate']:.1f}%")
+        logging.info(f"Status: {results['overall_status']}")
     else:
-        print(f"Error: {results.get('error', 'Unknown error')}")
+        logging.info(f"Error: {results.get('error', 'Unknown error')}")
 
 if __name__ == "__main__":
     asyncio.run(main())

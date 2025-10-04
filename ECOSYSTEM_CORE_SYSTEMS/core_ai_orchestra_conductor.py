@@ -51,6 +51,7 @@ class Intent:
     urgency: str = "normal"  # low, normal, high
     
     def to_dict(self) -> Dict:
+        """TODO: Add function documentation"""
         return asdict(self)
 
 @dataclass
@@ -64,6 +65,7 @@ class AdmissionDecision:
     child_orders: List[Dict] = None
     
     def __post_init__(self):
+        """TODO: Add function documentation"""
         if self.child_orders is None:
             self.child_orders = []
 
@@ -71,6 +73,7 @@ class TokenBucket:
     """Rate limiter using token bucket algorithm"""
     
     def __init__(self, capacity: int, refill_rate: float):
+        """TODO: Add function documentation"""
         self.capacity = capacity
         self.tokens = capacity
         self.refill_rate = refill_rate  # tokens per second
@@ -104,6 +107,7 @@ class CircuitBreaker:
     """Circuit breaker for strategy protection"""
     
     def __init__(self, failure_threshold: int = 5, recovery_timeout: int = 60):
+        """TODO: Add function documentation"""
         self.failure_threshold = failure_threshold
         self.recovery_timeout = recovery_timeout
         self.failure_count = 0
@@ -150,6 +154,7 @@ class PolicyEngine:
     """Configurable policy engine for trading rules"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.policies = {
             "min_confidence": {
                 "SMC_X": 0.75,
@@ -202,6 +207,7 @@ class AdmissionController:
     """Admission control gate - prevents exchange flooding and ensures safety"""
     
     def __init__(self, policy_engine: PolicyEngine):
+        """TODO: Add function documentation"""
         self.policy_engine = policy_engine
         self.rate_limiters = {}
         self.circuit_breakers = {}
@@ -447,6 +453,7 @@ class AIOrchestralConductor:
     """
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.policy_engine = PolicyEngine()
         self.admission_controller = AdmissionController(self.policy_engine)
         self.ai_models = self._load_ai_models()
@@ -823,31 +830,31 @@ async def main():
         }
     }
     
-    print("🎼 Testing AI Orchestra Conductor")
-    print("=" * 50)
+    logging.info("🎼 Testing AI Orchestra Conductor")
+    logging.info("=" * 50)
     
     decisions = await conductor.conduct_orchestra(test_market_data)
     
     for decision in decisions:
-        print(f"\n📊 Intent: {decision.intent.strategy} {decision.intent.side.value} {decision.intent.symbol}")
-        print(f"   Confidence: {decision.intent.confidence:.2f}")
-        print(f"   Size: {decision.intent.size_hint:.4f}")
-        print(f"   Decision: {decision.result.value}")
-        print(f"   Reason: {decision.reason}")
-        print(f"   Reasoning: {decision.intent.reasoning}")
+        logging.info(f"\n📊 Intent: {decision.intent.strategy} {decision.intent.side.value} {decision.intent.symbol}")
+        logging.info(f"   Confidence: {decision.intent.confidence:.2f}")
+        logging.info(f"   Size: {decision.intent.size_hint:.4f}")
+        logging.info(f"   Decision: {decision.result.value}")
+        logging.info(f"   Reason: {decision.reason}")
+        logging.info(f"   Reasoning: {decision.intent.reasoning}")
         
         if decision.child_orders:
-            print(f"   Child Orders: {len(decision.child_orders)}")
+            logging.info(f"   Child Orders: {len(decision.child_orders)}")
     
-    print(f"\n📈 Performance Metrics:")
+    logging.info(f"\n📈 Performance Metrics:")
     for key, value in conductor.performance_metrics.items():
-        print(f"   {key}: {value}")
+        logging.info(f"   {key}: {value}")
     
-    print(f"\n🎯 System Status:")
+    logging.info(f"\n🎯 System Status:")
     status = conductor.get_status()
     for key, value in status.items():
         if key not in ["rate_limiter_status", "circuit_breaker_status"]:
-            print(f"   {key}: {value}")
+            logging.info(f"   {key}: {value}")
 
 if __name__ == "__main__":
     asyncio.run(main())

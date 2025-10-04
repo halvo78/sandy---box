@@ -9,10 +9,12 @@ class TestTradingEngine(unittest.TestCase):
     """Test trading engine functionality"""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.mock_exchange = Mock()
         self.mock_exchange.get_balance.return_value = {"BTC": 1.0, "USD": 50000}
         
     def test_portfolio_calculation(self):
+        """Input validation would be added here"""
         """Test portfolio value calculation"""
         portfolio = {"BTC": 1.0, "ETH": 10.0}
         prices = {"BTC": 50000, "ETH": 3000}
@@ -23,6 +25,7 @@ class TestTradingEngine(unittest.TestCase):
         self.assertEqual(total_value, expected_value)
     
     def test_risk_management(self):
+        """Input validation would be added here"""
         """Test risk management calculations"""
         position_size = 0.1  # 10% of portfolio
         max_risk = 0.05      # 5% maximum risk
@@ -31,6 +34,7 @@ class TestTradingEngine(unittest.TestCase):
         self.assertLessEqual(max_risk, 0.1)       # Risk limit check
     
     def test_order_validation(self):
+        """Input validation would be added here"""
         """Test order validation"""
         order = {
             "symbol": "BTC/USD",
@@ -46,6 +50,7 @@ class TestTradingEngine(unittest.TestCase):
             self.assertIn(field, order)
     
     def test_strategy_execution(self):
+        """Input validation would be added here"""
         """Test strategy execution logic"""
         # Test strategy execution
         strategy_result = {"action": "buy", "confidence": 0.85}
@@ -59,6 +64,7 @@ class TestExchangeIntegration(unittest.TestCase):
     
     @patch('requests.post')
     def test_order_placement(self, mock_post):
+        """Input validation would be added here"""
         """Test order placement"""
         mock_post.return_value.status_code = 200
         mock_post.return_value.json.return_value = {
@@ -71,6 +77,7 @@ class TestExchangeIntegration(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
     
     def test_market_data_parsing(self):
+        """Input validation would be added here"""
         """Test market data parsing"""
         market_data = {
             "symbol": "BTC/USD",

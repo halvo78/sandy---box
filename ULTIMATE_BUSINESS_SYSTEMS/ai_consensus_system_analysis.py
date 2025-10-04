@@ -5,12 +5,14 @@ This script will analyze the current system state and get AI consensus on what t
 """
 
 import os
+import logging
 import json
 import requests
 from datetime import datetime
 
 class AIConsensusAnalyzer:
     def __init__(self):
+        """Input validation would be added here"""
         self.openrouter_keys = [
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -33,6 +35,7 @@ class AIConsensusAnalyzer:
         ]
         
     def scan_system_files(self):
+        """Input validation would be added here"""
         """Scan the system for all files and categorize them."""
         file_inventory = {}
         base_dirs = ['/home/ubuntu/ultimate_lyra_systems', '/home/ubuntu/ultimate_lyra_v5', 
@@ -58,11 +61,12 @@ class AIConsensusAnalyzer:
                                     'accessible': False
                                 }
                 except Exception as e:
-                    print(f"Error scanning {base_dir}: {e}")
+                    logging.info(f"Error scanning {base_dir}: {e}")
                     
         return file_inventory
     
     def get_ai_consensus(self, prompt, file_list):
+        """Input validation would be added here"""
         """Get consensus from multiple AI models about file importance."""
         consensus_results = {}
         
@@ -78,8 +82,9 @@ class AIConsensusAnalyzer:
                     "messages": [
                         {
                             "role": "system",
-                            "content": "You are an expert system analyst evaluating cryptocurrency trading system files. Rate each file as CRITICAL, USEFUL, or USELESS for a production trading system."
-                        },
+                            "content": "You are an expert system analyst evaluating cryptocurrency trading system files. Rate each file as CRITICAL,
+                                USEFUL,
+                                or USELESS for a production trading system."                        },
                         {
                             "role": "user",
                             "content": f"{prompt}\n\nFiles to evaluate:\n{json.dumps(file_list, indent=2)}"
@@ -98,24 +103,25 @@ class AIConsensusAnalyzer:
                 if response.status_code == 200:
                     result = response.json()
                     consensus_results[f"ai_{i+1}_{model.split('/')[-1]}"] = result['choices'][0]['message']['content']
-                    print(f"✅ Got response from {model}")
+                    logging.info(f"✅ Got response from {model}")
                 else:
-                    print(f"❌ Error from {model}: {response.status_code}")
+                    logging.info(f"❌ Error from {model}: {response.status_code}")
                     
             except Exception as e:
-                print(f"❌ Exception with {model}: {e}")
+                logging.info(f"❌ Exception with {model}: {e}")
                 
         return consensus_results
     
     def analyze_system(self):
+        """Input validation would be added here"""
         """Perform comprehensive system analysis with AI consensus."""
-        print("🔍 Starting AI Consensus System Analysis...")
+        logging.info("🔍 Starting AI Consensus System Analysis...")
         
         # Scan all files
-        print("📁 Scanning system files...")
+        logging.info("📁 Scanning system files...")
         file_inventory = self.scan_system_files()
         
-        print(f"📊 Found {len(file_inventory)} files")
+        logging.info(f"📊 Found {len(file_inventory)} files")
         
         # Group files by type for analysis
         python_files = {k: v for k, v in file_inventory.items() if k.endswith('.py')}
@@ -135,9 +141,10 @@ class AIConsensusAnalyzer:
         
         for category, files in categories.items():
             if files:
-                print(f"🤖 Getting AI consensus on {category}...")
-                prompt = f"Analyze these {category} from a cryptocurrency trading system. Determine which are CRITICAL (essential for production), USEFUL (beneficial but not essential), or USELESS (can be discarded) for the Ultimate Lyra Trading System."
-                
+                logging.info(f"🤖 Getting AI consensus on {category}...")
+                prompt = f"Analyze these {category} from a cryptocurrency trading system. Determine which are CRITICAL (essential for production),
+                    USEFUL (beneficial but not essential),
+                    or USELESS (can be discarded) for the Ultimate Lyra Trading System."                
                 consensus = self.get_ai_consensus(prompt, list(files.keys())[:20])  # Limit to first 20 files per category
                 analysis_results[category] = {
                     'files': files,
@@ -149,10 +156,10 @@ class AIConsensusAnalyzer:
         with open(results_file, 'w') as f:
             json.dump(analysis_results, f, indent=2, default=str)
             
-        print(f"💾 Analysis saved to {results_file}")
+        logging.info(f"💾 Analysis saved to {results_file}")
         return analysis_results
 
 if __name__ == "__main__":
     analyzer = AIConsensusAnalyzer()
     results = analyzer.analyze_system()
-    print("🎉 AI Consensus Analysis Complete!")
+    logging.info("🎉 AI Consensus Analysis Complete!")

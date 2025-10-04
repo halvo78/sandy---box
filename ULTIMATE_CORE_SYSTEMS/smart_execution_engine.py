@@ -71,6 +71,7 @@ class Order:
     fees: float = 0.0
     
     def __post_init__(self):
+        """TODO: Add function documentation"""
         if self.created_at is None:
             self.created_at = datetime.utcnow().isoformat()
         self.updated_at = self.created_at
@@ -93,6 +94,7 @@ class ExecutionPlan:
     urgency: str = "normal"  # low, normal, high
     
     def __post_init__(self):
+        """TODO: Add function documentation"""
         if not self.child_orders:
             self.child_orders = []
 
@@ -100,12 +102,14 @@ class MarketData:
     """Market data container for execution decisions"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.order_books = {}
         self.trade_data = {}
         self.volume_profiles = {}
         self.last_update = {}
     
     def update_order_book(self, symbol: str, bids: List[Tuple[float, float]], 
+        """TODO: Add function documentation"""
                          asks: List[Tuple[float, float]]):
         """Update order book data"""
         self.order_books[symbol] = {
@@ -182,6 +186,7 @@ class TWAPExecutor:
     """Time-Weighted Average Price execution algorithm"""
     
     def __init__(self, market_data: MarketData):
+        """TODO: Add function documentation"""
         self.market_data = market_data
     
     async def execute(self, plan: ExecutionPlan) -> List[Order]:
@@ -250,6 +255,7 @@ class TWAPExecutor:
         return min(base_slices, max_slices_by_duration)
     
     def _adjust_slice_size(self, plan: ExecutionPlan, base_size: float, 
+        """TODO: Add function documentation"""
                           slice_index: int, total_slices: int) -> float:
         """Adjust slice size based on market conditions"""
         # Start with base size
@@ -277,6 +283,7 @@ class VWAPExecutor:
     """Volume-Weighted Average Price execution algorithm"""
     
     def __init__(self, market_data: MarketData):
+        """TODO: Add function documentation"""
         self.market_data = market_data
     
     async def execute(self, plan: ExecutionPlan) -> List[Order]:
@@ -334,6 +341,7 @@ class VWAPExecutor:
         ]
     
     def _adjust_vwap_size(self, plan: ExecutionPlan, base_size: float, 
+        """TODO: Add function documentation"""
                          volume_weight: float) -> float:
         """Adjust VWAP slice size based on current market conditions"""
         adjusted_size = base_size
@@ -360,6 +368,7 @@ class IcebergExecutor:
     """Iceberg order execution - hides large order size"""
     
     def __init__(self, market_data: MarketData):
+        """TODO: Add function documentation"""
         self.market_data = market_data
     
     async def execute(self, plan: ExecutionPlan) -> List[Order]:
@@ -451,6 +460,7 @@ class IcebergExecutor:
         return round(limit_price, 8)
     
     def _adjust_visible_size(self, plan: ExecutionPlan, current_visible: float, 
+        """TODO: Add function documentation"""
                            order_count: int) -> float:
         """Adjust visible size based on execution progress"""
         # Gradually increase visible size as we progress
@@ -471,6 +481,7 @@ class SmartOrderRouter:
     """Smart Order Router - selects best execution venue"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_configs = {
             "binance": {
                 "fees": {"maker": 0.001, "taker": 0.001},
@@ -499,6 +510,7 @@ class SmartOrderRouter:
         }
     
     def select_best_venue(self, symbol: str, side: str, size: float, 
+        """TODO: Add function documentation"""
                          urgency: str = "normal") -> str:
         """Select the best execution venue"""
         scores = {}
@@ -513,6 +525,7 @@ class SmartOrderRouter:
         return best_venue
     
     def _calculate_venue_score(self, exchange: str, config: Dict, symbol: str, 
+        """TODO: Add function documentation"""
                               side: str, size: float, urgency: str) -> float:
         """Calculate venue score based on multiple factors"""
         score = 0.0
@@ -545,6 +558,7 @@ class SmartExecutionEngine:
     """Main execution engine that coordinates all execution algorithms"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.market_data = MarketData()
         self.order_router = SmartOrderRouter()
         self.twap_executor = TWAPExecutor(self.market_data)
@@ -792,35 +806,35 @@ async def main():
         }
     ]
     
-    print("🚀 Testing Smart Execution Engine")
-    print("=" * 50)
+    logging.info("🚀 Testing Smart Execution Engine")
+    logging.info("=" * 50)
     
     # Create execution plan
     plan = await engine.create_execution_plan(test_child_orders, algorithm="auto")
-    print(f"\n📋 Execution Plan Created:")
-    print(f"   Algorithm: {plan.algorithm.value}")
-    print(f"   Exchange: {plan.exchange}")
-    print(f"   Total Size: {plan.total_size}")
-    print(f"   Symbol: {plan.symbol}")
+    logging.info(f"\n📋 Execution Plan Created:")
+    logging.info(f"   Algorithm: {plan.algorithm.value}")
+    logging.info(f"   Exchange: {plan.exchange}")
+    logging.info(f"   Total Size: {plan.total_size}")
+    logging.info(f"   Symbol: {plan.symbol}")
     
     # Execute plan
     orders = await engine.execute_plan(plan)
-    print(f"\n📤 Orders Executed: {len(orders)}")
+    logging.info(f"\n📤 Orders Executed: {len(orders)}")
     
     for order in orders:
-        print(f"   Order {order.id}: {order.status.value}")
+        logging.info(f"   Order {order.id}: {order.status.value}")
         if order.status == OrderStatus.FILLED:
-            print(f"      Filled: {order.filled_size} at {order.avg_fill_price:.2f}")
-            print(f"      Fees: {order.fees:.4f}")
+            logging.info(f"      Filled: {order.filled_size} at {order.avg_fill_price:.2f}")
+            logging.info(f"      Fees: {order.fees:.4f}")
     
     # Performance summary
-    print(f"\n📊 Performance Summary:")
+    logging.info(f"\n📊 Performance Summary:")
     summary = engine.get_performance_summary()
     for key, value in summary.items():
         if isinstance(value, float):
-            print(f"   {key}: {value:.4f}")
+            logging.info(f"   {key}: {value:.4f}")
         else:
-            print(f"   {key}: {value}")
+            logging.info(f"   {key}: {value}")
 
 if __name__ == "__main__":
     asyncio.run(main())

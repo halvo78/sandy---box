@@ -5,6 +5,7 @@ Safely extracts all beneficial parts while handling I/O errors.
 """
 
 import os
+import logging
 import json
 import shutil
 from datetime import datetime
@@ -68,8 +69,8 @@ def safe_scan_directory(base_path, patterns, skip_dirs=None):
 
 def extract_beneficial_parts():
     """Extract all beneficial parts safely."""
-    print("🚀 ROBUST BENEFICIAL PARTS EXTRACTION")
-    print("=" * 60)
+    logging.info("🚀 ROBUST BENEFICIAL PARTS EXTRACTION")
+    logging.info("=" * 60)
     
     base_path = "/home/ubuntu"
     extraction_dir = os.path.join(base_path, "ULTIMATE_BENEFICIAL_EXTRACTION")
@@ -106,7 +107,7 @@ def extract_beneficial_parts():
     }
     
     for category, patterns in search_categories.items():
-        print(f"\n🔍 Scanning for {category}...")
+        logging.info(f"\n🔍 Scanning for {category}...")
         
         # Create category directory
         category_dir = os.path.join(extraction_dir, category)
@@ -131,7 +132,7 @@ def extract_beneficial_parts():
                 if item['type'] == 'directory':
                     if not os.path.exists(dest_path):
                         shutil.copytree(source_path, dest_path, ignore_errors=True)
-                        print(f"✅ Extracted directory: {source_path}")
+                        logging.info(f"✅ Extracted directory: {source_path}")
                         extraction_summary['categories'][category]['extracted'] += 1
                         extraction_summary['categories'][category]['items'].append({
                             'source': source_path,
@@ -141,7 +142,7 @@ def extract_beneficial_parts():
                 else:
                     if not os.path.exists(dest_path):
                         shutil.copy2(source_path, dest_path)
-                        print(f"✅ Extracted file: {source_path}")
+                        logging.info(f"✅ Extracted file: {source_path}")
                         extraction_summary['categories'][category]['extracted'] += 1
                         extraction_summary['categories'][category]['items'].append({
                             'source': source_path,
@@ -150,7 +151,7 @@ def extract_beneficial_parts():
                         })
                         
             except Exception as e:
-                print(f"⚠️ Could not extract {item['path']}: {e}")
+                logging.info(f"⚠️ Could not extract {item['path']}: {e}")
         
         extraction_summary['total_items'] += extraction_summary['categories'][category]['found']
         extraction_summary['extracted_items'] += extraction_summary['categories'][category]['extracted']
@@ -209,10 +210,10 @@ Integrate these beneficial parts into the Ultimate Lyra Trading System for maxim
     with open(readme_file, 'w') as f:
         f.write(readme_content)
     
-    print(f"\n🎉 EXTRACTION COMPLETE!")
-    print(f"📊 Total Items Found: {extraction_summary['total_items']}")
-    print(f"✅ Successfully Extracted: {extraction_summary['extracted_items']}")
-    print(f"📁 Extraction Directory: {extraction_dir}")
+    logging.info(f"\n🎉 EXTRACTION COMPLETE!")
+    logging.info(f"📊 Total Items Found: {extraction_summary['total_items']}")
+    logging.info(f"✅ Successfully Extracted: {extraction_summary['extracted_items']}")
+    logging.info(f"📁 Extraction Directory: {extraction_dir}")
     
     return extraction_summary
 

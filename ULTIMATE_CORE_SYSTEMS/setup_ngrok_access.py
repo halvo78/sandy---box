@@ -5,6 +5,7 @@ This script will create a web dashboard and set up ngrok tunneling for remote ac
 """
 
 import os
+import logging
 import json
 import subprocess
 from datetime import datetime
@@ -251,18 +252,29 @@ def api_status():
 def api_trades():
     """API endpoint for recent trades."""
     trades = [
-        {"pair": "BTC/USDT", "action": "BUY", "amount": 1394.776, "confidence": 0.92, "timestamp": datetime.now().isoformat()},
-        {"pair": "ETH/USDT", "action": "BUY", "amount": 1394.776, "confidence": 0.92, "timestamp": datetime.now().isoformat()},
-        {"pair": "SOL/USDT", "action": "BUY", "amount": 1394.776, "confidence": 0.92, "timestamp": datetime.now().isoformat()}
-    ]
+        {"pair": "BTC/USDT",
+            "action": "BUY",
+            "amount": 1394.776,
+            "confidence": 0.92,
+            "timestamp": datetime.now().isoformat()},
+                    {"pair": "ETH/USDT",
+            "action": "BUY",
+            "amount": 1394.776,
+            "confidence": 0.92,
+            "timestamp": datetime.now().isoformat()},
+                    {"pair": "SOL/USDT",
+            "action": "BUY",
+            "amount": 1394.776,
+            "confidence": 0.92,
+            "timestamp": datetime.now().isoformat()}    ]
     return jsonify(trades)
 
 if __name__ == '__main__':
-    print("🌐 Starting Ultimate Lyra Trading System Dashboard...")
-    print("📊 Dashboard will be available at: http://localhost:5000")
-    print("🔗 API endpoints:")
-    print("   - /api/status")
-    print("   - /api/trades")
+    logging.info("🌐 Starting Ultimate Lyra Trading System Dashboard...")
+    logging.info("📊 Dashboard will be available at: http://localhost:5000")
+    logging.info("🔗 API endpoints:")
+    logging.info("   - /api/status")
+    logging.info("   - /api/trades")
     app.run(host='0.0.0.0', port=5000, debug=False)
 '''
     
@@ -270,7 +282,7 @@ if __name__ == '__main__':
     with open(dashboard_path, 'w') as f:
         f.write(dashboard_code)
         
-    print(f"✅ Web dashboard created: {dashboard_path}")
+    logging.info(f"✅ Web dashboard created: {dashboard_path}")
     return dashboard_path
 
 def create_ngrok_setup():
@@ -327,12 +339,12 @@ Once ngrok is running, you can:
     with open(instructions_path, 'w') as f:
         f.write(ngrok_instructions)
         
-    print(f"✅ Ngrok setup instructions created: {instructions_path}")
+    logging.info(f"✅ Ngrok setup instructions created: {instructions_path}")
     return instructions_path
 
 def main():
     """Main setup function."""
-    print("🌐 Setting up Ngrok Access for Ultimate Lyra Trading System...")
+    logging.info("🌐 Setting up Ngrok Access for Ultimate Lyra Trading System...")
     
     # Create web dashboard
     dashboard_path = create_web_dashboard()
@@ -361,17 +373,17 @@ def main():
     with open(summary_path, 'w') as f:
         json.dump(summary, f, indent=2)
     
-    print("\n" + "="*60)
-    print("🎉 NGROK ACCESS SETUP COMPLETE!")
-    print("="*60)
-    print(f"🌐 Dashboard: {dashboard_path}")
-    print(f"📋 Instructions: {instructions_path}")
-    print(f"📊 Summary: {summary_path}")
-    print("\n🚀 To start the system:")
-    print("1. python3 ultimate_dashboard.py")
-    print("2. ngrok http 5000 (in new terminal)")
-    print("3. Access via ngrok URL")
-    print("="*60)
+    logging.info("\n" + "="*60)
+    logging.info("🎉 NGROK ACCESS SETUP COMPLETE!")
+    logging.info("="*60)
+    logging.info(f"🌐 Dashboard: {dashboard_path}")
+    logging.info(f"📋 Instructions: {instructions_path}")
+    logging.info(f"📊 Summary: {summary_path}")
+    logging.info("\n🚀 To start the system:")
+    logging.info("1. python3 ultimate_dashboard.py")
+    logging.info("2. ngrok http 5000 (in new terminal)")
+    logging.info("3. Access via ngrok URL")
+    logging.info("="*60)
 
 if __name__ == "__main__":
     main()

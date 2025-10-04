@@ -1,6 +1,7 @@
 # SUPREME AI OVERLORD - ECOSYSTEM COMMISSIONING & COMPLIANCE AI
 
 import json
+import logging
 import os
 import subprocess
 import time
@@ -9,6 +10,7 @@ class SupremeAIOverlord:
     """An AI assistant to commission, test, and ensure compliance of the Ultimate Lyra Ecosystem."""
 
     def __init__(self):
+        """TODO: Add function documentation"""
         self.name = "Supreme AI Overlord"
         self.version = "2.0"
         self.status = "AWAITING_COMMAND"
@@ -16,7 +18,8 @@ class SupremeAIOverlord:
         self.reports = {}
 
     def _display_header(self):
-        print("""
+        """TODO: Add function documentation"""
+        logging.info("""
         [35m
         ██████╗ ██╗   ██╗██████╗ ██████╗ ███████╗███╗   ███╗███████╗
         ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝████╗ ████║██╔════╝
@@ -42,15 +45,15 @@ class SupremeAIOverlord:
         ]
         
         for i, (title, step_func) in enumerate(steps):
-            print(f"\n[36m[STEP {i+1}/{len(steps)}] {title}...[0m")
+            logging.info(f"\n[36m[STEP {i+1}/{len(steps)}] {title}...[0m")
             success, report = step_func()
             if not success:
-                print(f"\n[31m✗ COMMISSIONING FAILED at: {title}[0m")
+                logging.info(f"\n[31m✗ COMMISSIONING FAILED at: {title}[0m")
                 self.status = "FAILED"
                 self._display_final_report(success)
                 return
             self.reports[title] = report
-            print(f"[32m✓ Success[0m")
+            logging.info(f"[32m✓ Success[0m")
             time.sleep(1)
 
         self.status = "COMMISSIONED_SUCCESSFULLY"
@@ -60,8 +63,7 @@ class SupremeAIOverlord:
         """Verifies the integrity of all core components."""
         files_to_check = {
             "core/main.py": "ULTIMATE LYRA ECOSYSTEM - ENHANCED WITH GITHUB COMPONENTS",
-            "config/.env": "GATE_API_KEY=",
-            "scripts/deploy.sh": "# Ultimate Lyra Ecosystem - Supreme System Deployment Script"
+            "config/.env": "GATE_api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")scripts/deploy.sh": "# Ultimate Lyra Ecosystem - Supreme System Deployment Script"
         }
         for file, marker in files_to_check.items():
             path = os.path.join(self.root_dir, file)
@@ -140,20 +142,21 @@ class SupremeAIOverlord:
         return True, "Simulated test run passed. All diagnostics nominal."
 
     def _display_final_report(self, success):
-        print("\n" + "="*50)
+        """TODO: Add function documentation"""
+        logging.info("\n" + "="*50)
         if success:
-            print("\n[32m✅  COMMISSIONING COMPLETE: SYSTEM IS 100% COMPLIANT AND READY FOR DEPLOYMENT [0m")
+            logging.info("\n[32m✅  COMMISSIONING COMPLETE: SYSTEM IS 100% COMPLIANT AND READY FOR DEPLOYMENT [0m")
         else:
-            print("\n[31m❌  COMMISSIONING FAILED: PLEASE REVIEW THE ERRORS. [0m")
-        print("="*50)
-        print("\n[1mFinal Report:[0m")
+            logging.info("\n[31m❌  COMMISSIONING FAILED: PLEASE REVIEW THE ERRORS. [0m")
+        logging.info("="*50)
+        logging.info("\n[1mFinal Report:[0m")
         for title, report_data in self.reports.items():
-            print(f"\n[4m{title}[0m")
+            logging.info(f"\n[4m{title}[0m")
             if isinstance(report_data, dict):
-                print(json.dumps(report_data, indent=2))
+                logging.info(json.dumps(report_data, indent=2))
             else:
-                print(report_data)
-        print("\n" + "="*50)
+                logging.info(report_data)
+        logging.info("\n" + "="*50)
 
 if __name__ == "__main__":
     overlord = SupremeAIOverlord()

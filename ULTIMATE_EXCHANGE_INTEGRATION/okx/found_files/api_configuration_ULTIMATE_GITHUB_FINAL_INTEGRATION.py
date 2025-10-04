@@ -12,6 +12,7 @@ Result: The definitive Ultimate Lyra Trading System
 """
 
 import os
+import logging
 import shutil
 import json
 from datetime import datetime
@@ -40,12 +41,12 @@ class UltimateGitHubIntegrator:
             "integration_timestamp": datetime.now().isoformat()
         }
         
-        print("🚀 Ultimate GitHub Final Integration - Combining Everything")
-        print("="*70)
+        logging.info("🚀 Ultimate GitHub Final Integration - Combining Everything")
+        logging.info("="*70)
         
     def create_unified_structure(self):
         """Create the unified GitHub repository structure."""
-        print("🏗️ Creating unified GitHub repository structure...")
+        logging.info("🏗️ Creating unified GitHub repository structure...")
         
         # Remove existing directory if it exists
         if os.path.exists(self.final_github_dir):
@@ -75,16 +76,16 @@ class UltimateGitHubIntegrator:
         for subdir in subdirs:
             os.makedirs(os.path.join(self.final_github_dir, subdir), exist_ok=True)
         
-        print(f"  ✅ Created {len(subdirs)} organized subdirectories")
+        logging.info(f"  ✅ Created {len(subdirs)} organized subdirectories")
         return True
     
     def integrate_existing_github(self):
         """Integrate the existing GitHub repository (278 files)."""
-        print("📦 Integrating existing GitHub repository...")
+        logging.info("📦 Integrating existing GitHub repository...")
         
         source_dir = self.sources["existing_github"]
         if not os.path.exists(source_dir):
-            print("  ⚠️ Existing GitHub repository not found")
+            logging.info("  ⚠️ Existing GitHub repository not found")
             return False
         
         files_copied = 0
@@ -130,16 +131,16 @@ class UltimateGitHubIntegrator:
         
         self.integration_stats["total_files"] += files_copied
         self.integration_stats["sources_integrated"] += 1
-        print(f"  ✅ Integrated {files_copied} files from existing GitHub repository")
+        logging.info(f"  ✅ Integrated {files_copied} files from existing GitHub repository")
         return True
     
     def integrate_our_work_session(self):
         """Integrate our work session files (27 files)."""
-        print("🔧 Integrating our work session...")
+        logging.info("🔧 Integrating our work session...")
         
         source_dir = self.sources["our_work_session"]
         if not os.path.exists(source_dir):
-            print("  ⚠️ Work session files not found")
+            logging.info("  ⚠️ Work session files not found")
             return False
         
         files_copied = 0
@@ -175,16 +176,16 @@ class UltimateGitHubIntegrator:
         
         self.integration_stats["total_files"] += files_copied
         self.integration_stats["sources_integrated"] += 1
-        print(f"  ✅ Integrated {files_copied} files from our work session")
+        logging.info(f"  ✅ Integrated {files_copied} files from our work session")
         return True
     
     def integrate_ai_compliance(self):
         """Integrate AI Compliance System (87 files)."""
-        print("🤖 Integrating AI Compliance System...")
+        logging.info("🤖 Integrating AI Compliance System...")
         
         source_dir = self.sources["ai_compliance"]
         if not os.path.exists(source_dir):
-            print("  ⚠️ AI Compliance System not found")
+            logging.info("  ⚠️ AI Compliance System not found")
             return False
         
         files_copied = 0
@@ -208,16 +209,16 @@ class UltimateGitHubIntegrator:
         
         self.integration_stats["total_files"] += files_copied
         self.integration_stats["sources_integrated"] += 1
-        print(f"  ✅ Integrated {files_copied} files from AI Compliance System")
+        logging.info(f"  ✅ Integrated {files_copied} files from AI Compliance System")
         return True
     
     def integrate_dashboard_control(self):
         """Integrate Dashboard/Control/ATO System (65 files)."""
-        print("📊 Integrating Dashboard/Control/ATO System...")
+        logging.info("📊 Integrating Dashboard/Control/ATO System...")
         
         source_dir = self.sources["dashboard_control"]
         if not os.path.exists(source_dir):
-            print("  ⚠️ Dashboard/Control/ATO System not found")
+            logging.info("  ⚠️ Dashboard/Control/ATO System not found")
             return False
         
         files_copied = 0
@@ -252,16 +253,16 @@ class UltimateGitHubIntegrator:
         
         self.integration_stats["total_files"] += files_copied
         self.integration_stats["sources_integrated"] += 1
-        print(f"  ✅ Integrated {files_copied} files from Dashboard/Control/ATO System")
+        logging.info(f"  ✅ Integrated {files_copied} files from Dashboard/Control/ATO System")
         return True
     
     def integrate_deployment_package(self):
         """Integrate the Ubuntu deployment package."""
-        print("🚀 Integrating Ubuntu deployment package...")
+        logging.info("🚀 Integrating Ubuntu deployment package...")
         
         source_dir = self.sources["deployment_package"]
         if not os.path.exists(source_dir):
-            print("  ⚠️ Deployment package not found")
+            logging.info("  ⚠️ Deployment package not found")
             return False
         
         files_copied = 0
@@ -281,12 +282,12 @@ class UltimateGitHubIntegrator:
         
         self.integration_stats["total_files"] += files_copied
         self.integration_stats["sources_integrated"] += 1
-        print(f"  ✅ Integrated {files_copied} files from deployment package")
+        logging.info(f"  ✅ Integrated {files_copied} files from deployment package")
         return True
     
     def create_master_configuration(self):
         """Create the master configuration for the unified system."""
-        print("⚙️ Creating master configuration...")
+        logging.info("⚙️ Creating master configuration...")
         
         master_config = {
             "system_info": {
@@ -347,12 +348,12 @@ class UltimateGitHubIntegrator:
         with open(config_path, 'w') as f:
             json.dump(master_config, f, indent=2)
         
-        print("  ✅ Master configuration created")
+        logging.info("  ✅ Master configuration created")
         return True
     
     def create_github_readme(self):
         """Create the main README for the GitHub repository."""
-        print("📚 Creating GitHub README...")
+        logging.info("📚 Creating GitHub README...")
         
         readme_content = f'''# Ultimate Lyra Trading System - GitHub Final Edition
 
@@ -534,12 +535,12 @@ For technical support:
         with open(readme_path, 'w') as f:
             f.write(readme_content)
         
-        print("  ✅ GitHub README created")
+        logging.info("  ✅ GitHub README created")
         return True
     
     def create_integration_summary(self):
         """Create a summary of the integration process."""
-        print("📋 Creating integration summary...")
+        logging.info("📋 Creating integration summary...")
         
         summary = {
             "integration_summary": {
@@ -577,13 +578,13 @@ For technical support:
         with open(summary_path, 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print("  ✅ Integration summary created")
+        logging.info("  ✅ Integration summary created")
         return True
     
     def run_complete_integration(self):
         """Run the complete GitHub integration process."""
-        print("🚀 Starting Complete GitHub Integration...")
-        print("="*70)
+        logging.info("🚀 Starting Complete GitHub Integration...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -602,32 +603,32 @@ For technical support:
         
         for step_name, step_function in steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 success = step_function()
                 if success:
-                    print(f"  ✅ {step_name} completed successfully")
+                    logging.info(f"  ✅ {step_name} completed successfully")
                 else:
-                    print(f"  ⚠️ {step_name} completed with warnings")
+                    logging.info(f"  ⚠️ {step_name} completed with warnings")
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("\\n" + "="*70)
-        print("🎉 ULTIMATE GITHUB INTEGRATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Integration Duration: {duration:.1f} seconds")
-        print(f"📁 Final Directory: {self.final_github_dir}")
-        print(f"📦 Total Files: {self.integration_stats['total_files']}")
-        print(f"🔗 Sources Integrated: {self.integration_stats['sources_integrated']}")
-        print(f"🚀 Status: Ready for GitHub deployment")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 ULTIMATE GITHUB INTEGRATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Integration Duration: {duration:.1f} seconds")
+        logging.info(f"📁 Final Directory: {self.final_github_dir}")
+        logging.info(f"📦 Total Files: {self.integration_stats['total_files']}")
+        logging.info(f"🔗 Sources Integrated: {self.integration_stats['sources_integrated']}")
+        logging.info(f"🚀 Status: Ready for GitHub deployment")
+        logging.info("="*70)
         
         return self.final_github_dir
 
 if __name__ == "__main__":
     integrator = UltimateGitHubIntegrator()
     final_dir = integrator.run_complete_integration()
-    print(f"\\n🎯 Your complete GitHub repository is ready at: {final_dir}")
-    print("📦 Ready to push to GitHub: halvo78/ultimate-lyra-ecosystem")
+    logging.info(f"\\n🎯 Your complete GitHub repository is ready at: {final_dir}")
+    logging.info("📦 Ready to push to GitHub: halvo78/ultimate-lyra-ecosystem")

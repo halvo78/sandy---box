@@ -1,0 +1,112 @@
+networks:
+  sandy-box-network:
+    driver: bridge
+services:
+  api-integrations:
+    build:
+      context: ./API_INTEGRATIONS
+      dockerfile: Dockerfile
+    container_name: sandy-box-api-integrations
+    environment:
+    - COMPONENT_NAME=API_INTEGRATIONS
+    - TEST_MODE=comprehensive
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - echo
+      - healthy
+      timeout: 10s
+    networks:
+    - sandy-box-network
+    volumes:
+    - test-results:/app/test-results
+    - ./API_INTEGRATIONS:/app
+  deployment-systems:
+    build:
+      context: ./DEPLOYMENT_SYSTEMS
+      dockerfile: Dockerfile
+    container_name: sandy-box-deployment-systems
+    environment:
+    - COMPONENT_NAME=DEPLOYMENT_SYSTEMS
+    - TEST_MODE=comprehensive
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - echo
+      - healthy
+      timeout: 10s
+    networks:
+    - sandy-box-network
+    volumes:
+    - test-results:/app/test-results
+    - ./DEPLOYMENT_SYSTEMS:/app
+  documentation:
+    build:
+      context: ./DOCUMENTATION
+      dockerfile: Dockerfile
+    container_name: sandy-box-documentation
+    environment:
+    - COMPONENT_NAME=DOCUMENTATION
+    - TEST_MODE=comprehensive
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - echo
+      - healthy
+      timeout: 10s
+    networks:
+    - sandy-box-network
+    volumes:
+    - test-results:/app/test-results
+    - ./DOCUMENTATION:/app
+  monitoring-dashboards:
+    build:
+      context: ./MONITORING_DASHBOARDS
+      dockerfile: Dockerfile
+    container_name: sandy-box-monitoring-dashboards
+    environment:
+    - COMPONENT_NAME=MONITORING_DASHBOARDS
+    - TEST_MODE=comprehensive
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - echo
+      - healthy
+      timeout: 10s
+    networks:
+    - sandy-box-network
+    volumes:
+    - test-results:/app/test-results
+    - ./MONITORING_DASHBOARDS:/app
+  trading-systems:
+    build:
+      context: ./TRADING_SYSTEMS
+      dockerfile: Dockerfile
+    container_name: sandy-box-trading-systems
+    environment:
+    - COMPONENT_NAME=TRADING_SYSTEMS
+    - TEST_MODE=comprehensive
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - echo
+      - healthy
+      timeout: 10s
+    networks:
+    - sandy-box-network
+    volumes:
+    - test-results:/app/test-results
+    - ./TRADING_SYSTEMS:/app
+version: '3.8'
+volumes:
+  test-results: {}

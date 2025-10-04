@@ -6,6 +6,7 @@ from GitHub, sandbox, and all other sources with OpenRouter confirmation.
 """
 
 import os
+import logging
 import json
 import urllib.request
 import concurrent.futures
@@ -14,6 +15,7 @@ import subprocess
 
 class UltimateAPIDiscoverySystem:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the ultimate API discovery system."""
         
         self.repo_dir = "/home/ubuntu/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL"
@@ -252,17 +254,18 @@ class UltimateAPIDiscoverySystem:
             "total_count": 0
         }
         
-        print("🔍 ULTIMATE API DISCOVERY SYSTEM")
-        print("="*70)
-        print("🎯 Goal: Discover ALL APIs ever available (excluding exchanges)")
-        print("📊 Categories: Paid APIs, Free APIs, Connectors, GitHub APIs")
-        print("🔑 API Keys: Scanning environment and configuration files")
-        print("🤖 Validation: OpenRouter consensus confirmation")
-        print("="*70)
+        logging.info("🔍 ULTIMATE API DISCOVERY SYSTEM")
+        logging.info("="*70)
+        logging.info("🎯 Goal: Discover ALL APIs ever available (excluding exchanges)")
+        logging.info("📊 Categories: Paid APIs, Free APIs, Connectors, GitHub APIs")
+        logging.info("🔑 API Keys: Scanning environment and configuration files")
+        logging.info("🤖 Validation: OpenRouter consensus confirmation")
+        logging.info("="*70)
     
     def scan_environment_apis(self):
+        """Input validation would be added here"""
         """Scan environment variables for API keys and configurations."""
-        print("🔍 Scanning environment for API configurations...")
+        logging.info("🔍 Scanning environment for API configurations...")
         
         env_apis = {}
         
@@ -316,13 +319,14 @@ class UltimateAPIDiscoverySystem:
                 }
         
         self.discovered_apis["environment_apis"] = env_apis
-        print(f"  ✅ Found {len(env_apis)} environment API configurations")
+        logging.info(f"  ✅ Found {len(env_apis)} environment API configurations")
         
         return env_apis
     
     def scan_repository_for_apis(self):
+        """Input validation would be added here"""
         """Scan repository files for API references and configurations."""
-        print("🔍 Scanning repository for API references...")
+        logging.info("🔍 Scanning repository for API references...")
         
         repo_apis = {}
         api_files = []
@@ -362,14 +366,15 @@ class UltimateAPIDiscoverySystem:
                         continue
         
         self.discovered_apis["github_apis"] = repo_apis
-        print(f"  ✅ Found API references in {len(api_files)} files")
-        print(f"  📊 Total API patterns found: {len(repo_apis)}")
+        logging.info(f"  ✅ Found API references in {len(api_files)} files")
+        logging.info(f"  📊 Total API patterns found: {len(repo_apis)}")
         
         return repo_apis
     
     def scan_sandbox_apis(self):
+        """Input validation would be added here"""
         """Scan sandbox environment for available APIs and tools."""
-        print("🔍 Scanning sandbox for available APIs and tools...")
+        logging.info("🔍 Scanning sandbox for available APIs and tools...")
         
         sandbox_apis = {}
         
@@ -389,10 +394,10 @@ class UltimateAPIDiscoverySystem:
                         api_packages.append(package.strip())
                 
                 sandbox_apis["python_packages"] = api_packages
-                print(f"  ✅ Found {len(api_packages)} API-related Python packages")
+                logging.info(f"  ✅ Found {len(api_packages)} API-related Python packages")
                 
         except Exception as e:
-            print(f"  ⚠️ Could not scan Python packages: {e}")
+            logging.info(f"  ⚠️ Could not scan Python packages: {e}")
         
         # Check for Node.js packages
         try:
@@ -407,10 +412,10 @@ class UltimateAPIDiscoverySystem:
                             npm_packages.append(line.strip())
                     
                     sandbox_apis["npm_packages"] = npm_packages
-                    print(f"  ✅ Found {len(npm_packages)} API-related NPM packages")
+                    logging.info(f"  ✅ Found {len(npm_packages)} API-related NPM packages")
                     
         except Exception as e:
-            print(f"  ⚠️ Could not scan NPM packages: {e}")
+            logging.info(f"  ⚠️ Could not scan NPM packages: {e}")
         
         # Check for system tools and utilities
         system_tools = []
@@ -428,12 +433,13 @@ class UltimateAPIDiscoverySystem:
                 continue
         
         sandbox_apis["system_tools"] = system_tools
-        print(f"  ✅ Found {len(system_tools)} API-capable system tools")
+        logging.info(f"  ✅ Found {len(system_tools)} API-capable system tools")
         
         self.discovered_apis["sandbox_apis"] = sandbox_apis
         return sandbox_apis
     
     def get_ai_api_consensus(self, model, api_key, api_summary):
+        """Input validation would be added here"""
         """Get AI consensus on API completeness from a specific model."""
         try:
             prompt = f"""
@@ -483,8 +489,9 @@ class UltimateAPIDiscoverySystem:
             data = {
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": "You are the world's most advanced AI expert validating comprehensive API discovery."},
-                    {"role": "user", "content": prompt}
+                    {"role": "system",
+                        "content": "You are the world's most advanced AI expert validating comprehensive API discovery."},
+                                            {"role": "user", "content": prompt}
                 ],
                 "max_tokens": 800,
                 "temperature": 0.1
@@ -538,8 +545,9 @@ class UltimateAPIDiscoverySystem:
             }
     
     def run_openrouter_api_consensus(self):
+        """Input validation would be added here"""
         """Run OpenRouter consensus validation on API discovery."""
-        print("🤖 Running OpenRouter API consensus validation...")
+        logging.info("🤖 Running OpenRouter API consensus validation...")
         
         # Create API summary for consensus
         api_summary = {
@@ -583,16 +591,17 @@ class UltimateAPIDiscoverySystem:
                     
                     verdict = result.get("consensus_verdict", "UNKNOWN")
                     score = result.get("api_completeness_score", 0)
-                    print(f"  🧠 {model}: {verdict} ({score}/10)")
+                    logging.info(f"  🧠 {model}: {verdict} ({score}/10)")
                     
                 except Exception as e:
-                    print(f"  ❌ {model}: Analysis failed - {e}")
+                    logging.info(f"  ❌ {model}: Analysis failed - {e}")
         
         return consensus_results
     
     def generate_ultimate_api_collection_file(self):
+        """Input validation would be added here"""
         """Generate the ultimate API collection file for download."""
-        print("📋 Generating ultimate API collection file...")
+        logging.info("📋 Generating ultimate API collection file...")
         
         # Calculate totals
         total_paid = sum(len(apis["paid"]) for apis in self.api_categories.values())
@@ -627,8 +636,9 @@ class UltimateAPIDiscoverySystem:
         
         # Add environment APIs
         for api_name, api_info in self.discovered_apis.get("environment_apis", {}).items():
-            api_collection_content += f"- **{api_name}:** {api_info.get('api_name', 'Unknown API')} - {api_info.get('status', 'configured')}\n"
-        
+            api_collection_content += f"- **{api_name}:** {api_info.get('api_name',
+                'Unknown API')} - {api_info.get('status',
+                'configured')}\n"        
         api_collection_content += "\n## 💰 PAID APIS BY CATEGORY\n\n"
         
         # Add all paid APIs by category
@@ -718,15 +728,16 @@ All APIs listed are integration-ready and can be used for:
         with open(json_file_path, 'w') as f:
             json.dump(self.discovered_apis, f, indent=2)
         
-        print(f"  ✅ API collection saved to {api_file_path}")
-        print(f"  ✅ JSON data saved to {json_file_path}")
+        logging.info(f"  ✅ API collection saved to {api_file_path}")
+        logging.info(f"  ✅ JSON data saved to {json_file_path}")
         
         return api_file_path, json_file_path
     
     def run_ultimate_api_discovery(self):
+        """Input validation would be added here"""
         """Run the complete ultimate API discovery process."""
-        print("🔍 Starting Ultimate API Discovery...")
-        print("="*70)
+        logging.info("🔍 Starting Ultimate API Discovery...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -743,17 +754,17 @@ All APIs listed are integration-ready and can be used for:
         
         for step_name, step_function in discovery_steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 
                 if step_name == "Run OpenRouter API Consensus":
                     consensus_results = step_function()
                 else:
                     result = step_function()
                 
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
                 
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
                 return False
         
         end_time = datetime.now()
@@ -776,18 +787,18 @@ All APIs listed are integration-ready and can be used for:
             avg_score = 0
             most_common_verdict = "UNKNOWN"
         
-        print("\\n" + "="*70)
-        print("🎉 ULTIMATE API DISCOVERY COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Discovery Duration: {duration:.1f} seconds")
-        print(f"📊 Total APIs Discovered: {total_apis}")
-        print(f"💰 Paid APIs: {total_paid}")
-        print(f"🆓 Free APIs: {total_free}")
-        print(f"📂 API Categories: {len(self.api_categories)}")
-        print(f"🔑 Environment APIs: {len(self.discovered_apis.get('environment_apis', {}))}")
-        print(f"🤖 AI Consensus Score: {avg_score:.1f}/10")
-        print(f"🏆 AI Consensus Verdict: {most_common_verdict}")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 ULTIMATE API DISCOVERY COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Discovery Duration: {duration:.1f} seconds")
+        logging.info(f"📊 Total APIs Discovered: {total_apis}")
+        logging.info(f"💰 Paid APIs: {total_paid}")
+        logging.info(f"🆓 Free APIs: {total_free}")
+        logging.info(f"📂 API Categories: {len(self.api_categories)}")
+        logging.info(f"🔑 Environment APIs: {len(self.discovered_apis.get('environment_apis', {}))}")
+        logging.info(f"🤖 AI Consensus Score: {avg_score:.1f}/10")
+        logging.info(f"🏆 AI Consensus Verdict: {most_common_verdict}")
+        logging.info("="*70)
         
         return True
 
@@ -797,9 +808,9 @@ if __name__ == "__main__":
     
     if success:
         total_apis = discoverer.discovered_apis["total_count"]
-        print(f"\\n🎯 Ultimate API Discovery Complete!")
-        print(f"📊 Total APIs: {total_apis}")
-        print(f"📁 Files ready for download!")
-        print(f"🎉 ALL APIs EVER AVAILABLE - COMPREHENSIVE COLLECTION READY!")
+        logging.info(f"\\n🎯 Ultimate API Discovery Complete!")
+        logging.info(f"📊 Total APIs: {total_apis}")
+        logging.info(f"📁 Files ready for download!")
+        logging.info(f"🎉 ALL APIs EVER AVAILABLE - COMPREHENSIVE COLLECTION READY!")
     else:
-        print(f"\\n❌ Ultimate API discovery failed!")
+        logging.info(f"\\n❌ Ultimate API discovery failed!")

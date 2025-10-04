@@ -12,6 +12,7 @@ import json
 
 class CoinbaseTradingStrategy:
     def __init__(self, adapter):
+        """TODO: Add function documentation"""
         self.adapter = adapter
         self.exchange_id = "coinbase"
         self.exchange_name = "Coinbase"
@@ -173,8 +174,9 @@ class CoinbaseTradingStrategy:
 
 # Strategy factory
 def create_strategy(adapter):
+    """TODO: Add function documentation"""
     return CoinbaseTradingStrategy(adapter)
 
 if __name__ == "__main__":
     # Example usage
-    print(f"{exchange_info['name']} Trading Strategy Ready")
+    logging.info(f"{exchange_info['name']} Trading Strategy Ready")

@@ -15,6 +15,7 @@ Goal: Create the ultimate, finalized GitHub repository ready for production depl
 """
 
 import os
+import logging
 import json
 import shutil
 import subprocess
@@ -57,15 +58,15 @@ class FinalGitHubRepositoryFinalizer:
             "production_ready": False
         }
         
-        print("🎯 Final GitHub Repository Finalizer")
-        print("="*60)
-        print("🚀 Goal: Create the ultimate, production-ready GitHub repository")
-        print("📊 Integrating: 521 infrastructure + 308 system + 288 production components")
-        print("="*60)
+        logging.info("🎯 Final GitHub Repository Finalizer")
+        logging.info("="*60)
+        logging.info("🚀 Goal: Create the ultimate, production-ready GitHub repository")
+        logging.info("📊 Integrating: 521 infrastructure + 308 system + 288 production components")
+        logging.info("="*60)
     
     def create_final_repository_structure(self):
         """Create the final repository structure."""
-        print("🏗️ Creating final repository structure...")
+        logging.info("🏗️ Creating final repository structure...")
         
         # Remove existing directory if it exists
         if os.path.exists(self.final_repo_dir):
@@ -89,18 +90,18 @@ class FinalGitHubRepositoryFinalizer:
             
             self.finalization_stats["directories_created"] += 1
         
-        print(f"  ✅ Created {len(self.repo_structure)} main directories")
+        logging.info(f"  ✅ Created {len(self.repo_structure)} main directories")
         return True
     
     def integrate_production_components(self):
         """Integrate all production components into the final repository."""
-        print("📦 Integrating production components...")
+        logging.info("📦 Integrating production components...")
         
         files_integrated = 0
         
         for source_dir in self.source_dirs:
             if os.path.exists(source_dir):
-                print(f"  🔄 Processing {source_dir}...")
+                logging.info(f"  🔄 Processing {source_dir}...")
                 
                 for root, dirs, files in os.walk(source_dir):
                     for file in files:
@@ -119,10 +120,10 @@ class FinalGitHubRepositoryFinalizer:
                                 shutil.copy2(source_file, target_path)
                                 files_integrated += 1
                             except Exception as e:
-                                print(f"    ⚠️ Could not copy {file}: {e}")
+                                logging.info(f"    ⚠️ Could not copy {file}: {e}")
         
         self.finalization_stats["total_files_processed"] = files_integrated
-        print(f"  ✅ Integrated {files_integrated} production components")
+        logging.info(f"  ✅ Integrated {files_integrated} production components")
         return files_integrated
     
     def determine_target_directory(self, file_path, filename):
@@ -168,12 +169,19 @@ class FinalGitHubRepositoryFinalizer:
             return "BUILD_DEPLOYMENT"
         
         # Documentation files
-        if any(keyword in filename_lower for keyword in ['readme', 'doc', 'guide', 'tutorial']) or filename.endswith('.md'):
-            return "DOCUMENTATION"
+        if any(keyword in filename_lower for keyword in ['readme',
+            'doc',
+            'guide',
+            'tutorial']) or filename.endswith('.md'):            return "DOCUMENTATION"
         
         # Configuration files
-        if any(keyword in filename_lower for keyword in ['config', 'settings', 'env']) or filename.endswith(('.json', '.yml', '.yaml', '.toml', '.ini')):
-            return "CONFIGURATION"
+        if any(keyword in filename_lower for keyword in ['config',
+            'settings',
+            'env']) or filename.endswith(('.json',
+            '.yml',
+            '.yaml',
+            '.toml',
+            '.ini')):            return "CONFIGURATION"
         
         # Utilities and tools
         if any(keyword in filename_lower for keyword in ['util', 'tool', 'helper', 'script']):
@@ -196,7 +204,7 @@ class FinalGitHubRepositoryFinalizer:
     
     def create_main_readme(self):
         """Create the main repository README."""
-        print("📝 Creating main repository README...")
+        logging.info("📝 Creating main repository README...")
         
         readme_content = f"""# 🚀 Ultimate Lyra Trading System - Final Production Repository
 
@@ -376,12 +384,12 @@ This software is for educational and research purposes. Cryptocurrency trading i
         with open(readme_path, 'w') as f:
             f.write(readme_content)
         
-        print("  ✅ Main README created")
+        logging.info("  ✅ Main README created")
         return True
     
     def create_production_configuration(self):
         """Create production configuration files."""
-        print("⚙️ Creating production configuration...")
+        logging.info("⚙️ Creating production configuration...")
         
         # Master configuration template
         master_config = {
@@ -453,12 +461,12 @@ This software is for educational and research purposes. Cryptocurrency trading i
         with open(example_config_path, 'w') as f:
             json.dump(example_config, f, indent=2)
         
-        print("  ✅ Production configuration created")
+        logging.info("  ✅ Production configuration created")
         return True
     
     def create_deployment_scripts(self):
         """Create deployment scripts."""
-        print("🚀 Creating deployment scripts...")
+        logging.info("🚀 Creating deployment scripts...")
         
         # Ubuntu installation script
         install_script = """#!/bin/bash
@@ -522,12 +530,12 @@ echo "3. Monitor: tail -f logs/system.log"
         # Make executable
         os.chmod(install_path, 0o755)
         
-        print("  ✅ Deployment scripts created")
+        logging.info("  ✅ Deployment scripts created")
         return True
     
     def validate_final_repository(self):
         """Validate the final repository structure and completeness."""
-        print("✅ Validating final repository...")
+        logging.info("✅ Validating final repository...")
         
         validation_results = {
             "structure_valid": True,
@@ -571,15 +579,15 @@ echo "3. Monitor: tail -f logs/system.log"
         self.finalization_stats["validation_passed"] = validation_results["validation_passed"]
         self.finalization_stats["production_ready"] = validation_results["validation_passed"]
         
-        print(f"  📊 Files: {validation_results['files_count']}")
-        print(f"  📁 Directories: {validation_results['directories_count']}")
-        print(f"  ✅ Validation: {'PASSED' if validation_results['validation_passed'] else 'FAILED'}")
+        logging.info(f"  📊 Files: {validation_results['files_count']}")
+        logging.info(f"  📁 Directories: {validation_results['directories_count']}")
+        logging.info(f"  ✅ Validation: {'PASSED' if validation_results['validation_passed'] else 'FAILED'}")
         
         return validation_results
     
     def create_finalization_summary(self):
         """Create the finalization summary report."""
-        print("📋 Creating finalization summary...")
+        logging.info("📋 Creating finalization summary...")
         
         summary = {
             "finalization_info": {
@@ -612,13 +620,13 @@ echo "3. Monitor: tail -f logs/system.log"
         with open(summary_path, 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print(f"  ✅ Finalization summary saved to {summary_path}")
+        logging.info(f"  ✅ Finalization summary saved to {summary_path}")
         return summary
     
     def run_final_repository_finalization(self):
         """Run the complete final repository finalization process."""
-        print("🎯 Starting Final GitHub Repository Finalization...")
-        print("="*60)
+        logging.info("🎯 Starting Final GitHub Repository Finalization...")
+        logging.info("="*60)
         
         start_time = datetime.now()
         
@@ -635,26 +643,26 @@ echo "3. Monitor: tail -f logs/system.log"
         
         for step_name, step_function in finalization_steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 result = step_function()
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
                 return False
         
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("\\n" + "="*60)
-        print("🎉 FINAL GITHUB REPOSITORY FINALIZATION COMPLETE!")
-        print("="*60)
-        print(f"⏱️ Finalization Duration: {duration:.1f} seconds")
-        print(f"📁 Repository Path: {self.final_repo_dir}")
-        print(f"📊 Total Files: {self.finalization_stats['total_files_processed']}")
-        print(f"🏗️ Directories Created: {self.finalization_stats['directories_created']}")
-        print(f"✅ Validation: {'PASSED' if self.finalization_stats['validation_passed'] else 'FAILED'}")
-        print(f"🚀 Production Ready: {'YES' if self.finalization_stats['production_ready'] else 'NO'}")
-        print("="*60)
+        logging.info("\\n" + "="*60)
+        logging.info("🎉 FINAL GITHUB REPOSITORY FINALIZATION COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"⏱️ Finalization Duration: {duration:.1f} seconds")
+        logging.info(f"📁 Repository Path: {self.final_repo_dir}")
+        logging.info(f"📊 Total Files: {self.finalization_stats['total_files_processed']}")
+        logging.info(f"🏗️ Directories Created: {self.finalization_stats['directories_created']}")
+        logging.info(f"✅ Validation: {'PASSED' if self.finalization_stats['validation_passed'] else 'FAILED'}")
+        logging.info(f"🚀 Production Ready: {'YES' if self.finalization_stats['production_ready'] else 'NO'}")
+        logging.info("="*60)
         
         return self.finalization_stats["production_ready"]
 
@@ -663,9 +671,9 @@ if __name__ == "__main__":
     success = finalizer.run_final_repository_finalization()
     
     if success:
-        print(f"\\n🎯 GitHub Repository Finalization Complete!")
-        print(f"📁 Final Repository: {finalizer.final_repo_dir}")
-        print(f"🚀 Status: PRODUCTION READY FOR GITHUB DEPLOYMENT!")
+        logging.info(f"\\n🎯 GitHub Repository Finalization Complete!")
+        logging.info(f"📁 Final Repository: {finalizer.final_repo_dir}")
+        logging.info(f"🚀 Status: PRODUCTION READY FOR GITHUB DEPLOYMENT!")
     else:
-        print(f"\\n❌ GitHub Repository Finalization Failed!")
-        print(f"🔧 Please check the logs and retry.")
+        logging.info(f"\\n❌ GitHub Repository Finalization Failed!")
+        logging.info(f"🔧 Please check the logs and retry.")

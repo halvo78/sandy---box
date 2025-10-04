@@ -68,6 +68,7 @@ class UltimateAIDashboardDiscoverySystem:
     """
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.start_time = datetime.now()
         
         # All OpenRouter API keys (8 keys total)
@@ -443,6 +444,7 @@ class UltimateAIDashboardDiscoverySystem:
         return analysis_results
     
     def _query_openrouter_model(self, model_id: str, query: str, context: Dict[str, Any], 
+        """TODO: Add function documentation"""
                                api_key: str, model_name: str) -> Optional[Dict[str, Any]]:
         """Query a specific OpenRouter model for dashboard analysis"""
         try:
@@ -455,8 +457,10 @@ class UltimateAIDashboardDiscoverySystem:
             
             # Create specialized prompt for dashboard analysis
             system_prompt = f"""You are the {model_name} model in the Ultimate Lyra Trading System's dashboard discovery and integration system. 
-            Your role is to analyze open source trading dashboards, evaluate their quality, assess integration potential, and provide recommendations.
-            Focus on practical trading applications, real-time capabilities, and production readiness."""
+            Your role is to analyze open source trading dashboards,
+                evaluate their quality,
+                assess integration potential,
+                and provide recommendations.            Focus on practical trading applications, real-time capabilities, and production readiness."""
             
             payload = {
                 "model": model_id,
@@ -816,78 +820,84 @@ class UltimateAIDashboardDiscoverySystem:
 
 def main():
     """Main execution function"""
-    print("🎯 ULTIMATE AI-POWERED DASHBOARD DISCOVERY SYSTEM")
-    print("=" * 70)
-    print("🤖 Using ALL OpenRouter AI Models for 100x Better Results")
-    print("🔍 Discovering Best Open Source Trading Dashboards")
-    print("📊 ISO Financial Compliance Ready")
-    print("⚡ Real-Time Data Integration")
+    logging.info("🎯 ULTIMATE AI-POWERED DASHBOARD DISCOVERY SYSTEM")
+    logging.info("=" * 70)
+    logging.info("🤖 Using ALL OpenRouter AI Models for 100x Better Results")
+    logging.info("🔍 Discovering Best Open Source Trading Dashboards")
+    logging.info("📊 ISO Financial Compliance Ready")
+    logging.info("⚡ Real-Time Data Integration")
     print()
     
     try:
         # Initialize the ultimate system
         discovery_system = UltimateAIDashboardDiscoverySystem()
         
-        print("✅ System initialized successfully!")
-        print(f"🤖 AI Models Available: {len(discovery_system.all_ai_models)}")
-        print(f"🔑 OpenRouter Keys: {len(discovery_system.openrouter_keys)}")
-        print(f"🔍 Search Categories: {len(discovery_system.dashboard_categories)}")
+        logging.info("✅ System initialized successfully!")
+        logging.info(f"🤖 AI Models Available: {len(discovery_system.all_ai_models)}")
+        logging.info(f"🔑 OpenRouter Keys: {len(discovery_system.openrouter_keys)}")
+        logging.info(f"🔍 Search Categories: {len(discovery_system.dashboard_categories)}")
         print()
         
         # Execute Phase 1 with full AI consensus
-        print("🚀 EXECUTING PHASE 1 WITH ULTIMATE AI CONSENSUS...")
-        print("=" * 70)
+        logging.info("🚀 EXECUTING PHASE 1 WITH ULTIMATE AI CONSENSUS...")
+        logging.info("=" * 70)
         
         phase1_results = discovery_system.execute_phase_1_with_ai_consensus()
         
         # Display results
-        print(f"\n🎯 PHASE 1 RESULTS:")
-        print(f"   Status: {phase1_results['final_status']}")
-        print(f"   Duration: {phase1_results.get('duration_minutes', 0):.1f} minutes")
-        print(f"   AI Models Used: {phase1_results['ai_models_deployed']}")
-        print(f"   Steps Completed: {len(phase1_results['steps_completed'])}")
+        logging.info(f"\n🎯 PHASE 1 RESULTS:")
+        logging.info(f"   Status: {phase1_results['final_status']}")
+        logging.info(f"   Duration: {phase1_results.get('duration_minutes', 0):.1f} minutes")
+        logging.info(f"   AI Models Used: {phase1_results['ai_models_deployed']}")
+        logging.info(f"   Steps Completed: {len(phase1_results['steps_completed'])}")
         
         if 'dashboard_integration' in phase1_results and phase1_results['dashboard_integration']:
             integration = phase1_results['dashboard_integration']
-            print(f"\n📊 DASHBOARD INTEGRATION PLAN:")
-            print(f"   Total Dashboards Analyzed: {integration.get('total_dashboards_analyzed', 0)}")
-            print(f"   Excellent Quality: {integration.get('categories', {}).get('excellent_quality', {}).get('count', 0)}")
-            print(f"   Real-Time Capable: {integration.get('categories', {}).get('real_time_capable', {}).get('count', 0)}")
-            print(f"   Compliance Ready: {integration.get('categories', {}).get('compliance_ready', {}).get('count', 0)}")
-        
+            logging.info(f"\n📊 DASHBOARD INTEGRATION PLAN:")
+            logging.info(f"   Total Dashboards Analyzed: {integration.get('total_dashboards_analyzed', 0)}")
+            logging.info(f"   Excellent Quality: {integration.get('categories',
+                {}).get('excellent_quality',
+                {}).get('count',
+                0)}")            logging.info(f"   Real-Time Capable: {integration.get('categories',
+                {}).get('real_time_capable',
+                {}).get('count',
+                0)}")            logging.info(f"   Compliance Ready: {integration.get('categories',
+                {}).get('compliance_ready',
+                {}).get('count',
+                0)}")        
         if 'ai_consensus_results' in phase1_results and phase1_results['ai_consensus_results']:
             consensus = phase1_results['ai_consensus_results']
-            print(f"\n🤖 AI CONSENSUS RESULTS:")
-            print(f"   Response Rate: {consensus.get('response_rate', 0):.2%}")
-            print(f"   Average Score: {consensus.get('analysis_summary', {}).get('average_score', 0):.1f}/10")
-            print(f"   Recommendation: {consensus.get('analysis_summary', {}).get('recommendation', 'Unknown')}")
+            logging.info(f"\n🤖 AI CONSENSUS RESULTS:")
+            logging.info(f"   Response Rate: {consensus.get('response_rate', 0):.2%}")
+            logging.info(f"   Average Score: {consensus.get('analysis_summary', {}).get('average_score', 0):.1f}/10")
+            logging.info(f"   Recommendation: {consensus.get('analysis_summary', {}).get('recommendation', 'Unknown')}")
         
         # Save results
         results_file = f"/home/ubuntu/ultimate_lyra_systems/phase1_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(results_file, 'w') as f:
             json.dump(phase1_results, f, indent=2)
         
-        print(f"\n📁 Results saved to: {results_file}")
+        logging.info(f"\n📁 Results saved to: {results_file}")
         
         if phase1_results['final_status'] == "COMPLETED_SUCCESSFULLY":
-            print("\n🎉 PHASE 1 COMPLETED SUCCESSFULLY!")
-            print("🚀 System ready for Phase 2: Exchange Integration")
-            print("\n📋 Next Steps:")
-            print("   1. Review dashboard integration plan")
-            print("   2. Prepare exchange API credentials")
-            print("   3. Execute Phase 2 when ready")
-            print("\n🔧 Phase 2 Command:")
-            print("   python3 PHASE_2_EXCHANGE_INTEGRATION.py --with-dashboards")
+            logging.info("\n🎉 PHASE 1 COMPLETED SUCCESSFULLY!")
+            logging.info("🚀 System ready for Phase 2: Exchange Integration")
+            logging.info("\n📋 Next Steps:")
+            logging.info("   1. Review dashboard integration plan")
+            logging.info("   2. Prepare exchange API credentials")
+            logging.info("   3. Execute Phase 2 when ready")
+            logging.info("\n🔧 Phase 2 Command:")
+            logging.info("   python3 PHASE_2_EXCHANGE_INTEGRATION.py --with-dashboards")
         else:
-            print(f"\n⚠️ PHASE 1 STATUS: {phase1_results['final_status']}")
-            print("🔧 Review results and address any issues before proceeding")
+            logging.info(f"\n⚠️ PHASE 1 STATUS: {phase1_results['final_status']}")
+            logging.info("🔧 Review results and address any issues before proceeding")
     
     except KeyboardInterrupt:
-        print("\n🛑 Discovery system stopped by user")
+        logging.info("\n🛑 Discovery system stopped by user")
     
     except Exception as e:
         logger.error(f"❌ Critical error: {e}")
-        print(f"❌ Critical error: {e}")
+        logging.info(f"❌ Critical error: {e}")
 
 if __name__ == "__main__":
     main()

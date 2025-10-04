@@ -8,6 +8,7 @@ with containerized exchange connections and ironclad security.
 """
 
 import os
+import logging
 import json
 import time
 import hashlib
@@ -32,14 +33,15 @@ class SecureLiveTransitionSystem:
     """
     
     def __init__(self, base_path: str = "/home/ubuntu/YOUR_API_KEY_HERE"):
+        """TODO: Add function documentation"""
         self.base_path = Path(base_path)
         self.vault_url = "http://localhost:8200"
-        self.vault_token = "lyra-root"
+        self.vault_token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")
         self.validation_results: List[ValidationResult] = []
         
     def setup_secure_infrastructure(self) -> bool:
         """Set up secure infrastructure with Vault and Docker."""
-        print("🔧 Setting up secure infrastructure...")
+        logging.info("🔧 Setting up secure infrastructure...")
         
         # Create directory structure
         self._create_directory_structure()
@@ -53,7 +55,7 @@ class SecureLiveTransitionSystem:
         # Create validation scripts
         self._create_validation_scripts()
         
-        print("✅ Secure infrastructure setup complete!")
+        logging.info("✅ Secure infrastructure setup complete!")
         return True
     
     def _create_directory_structure(self):
@@ -323,6 +325,7 @@ import sys
 from pathlib import Path
 
 def verify_release():
+    """TODO: Add function documentation"""
     \"\"\"Verify all files are present and uncorrupted.\"\"\"
     base_path = Path("/home/ubuntu/YOUR_API_KEY_HERE")
     
@@ -349,10 +352,10 @@ def verify_release():
             missing_files.append(expected_file)
     
     if missing_files:
-        print(f"❌ Missing files: {missing_files}")
+        logging.info(f"❌ Missing files: {missing_files}")
         sys.exit(1)
     
-    print("✅ All required files present and verified")
+    logging.info("✅ All required files present and verified")
     return True
 
 if __name__ == "__main__":
@@ -370,9 +373,10 @@ import sys
 import requests
 
 def check_env_matrix():
+    """TODO: Add function documentation"""
     \"\"\"Check all required environment variables and secrets.\"\"\"
     vault_url = "http://localhost:8200"
-    vault_token = "lyra-root"
+    vault_token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")
     
     required_secrets = [
         "secret/exchanges/binance",
@@ -394,10 +398,10 @@ def check_env_matrix():
             missing_secrets.append(f"{secret_path} (error: {e})")
     
     if missing_secrets:
-        print(f"❌ Missing secrets: {missing_secrets}")
+        logging.info(f"❌ Missing secrets: {missing_secrets}")
         sys.exit(1)
     
-    print("✅ All required secrets present in Vault")
+    logging.info("✅ All required secrets present in Vault")
     return True
 
 if __name__ == "__main__":
@@ -414,9 +418,10 @@ import sys
 import requests
 
 def check_secrets_shape():
+    """TODO: Add function documentation"""
     \"\"\"Verify secrets have correct structure.\"\"\"
     vault_url = "http://localhost:8200"
-    vault_token = "lyra-root"
+    vault_token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")
     headers = {"X-Vault-Token": vault_token}
     
     exchanges = ["binance", "okx", "gate", "whitebit", "btcmarkets"]
@@ -429,19 +434,19 @@ def check_secrets_shape():
                 data = response.json()["data"]["data"]
                 missing_fields = [field for field in required_fields if field not in data]
                 if missing_fields:
-                    print(f"❌ {exchange} missing fields: {missing_fields}")
+                    logging.info(f"❌ {exchange} missing fields: {missing_fields}")
                     sys.exit(1)
                 if data.get("mode") not in ["LIVE", "SANDBOX", "PAPER"]:
-                    print(f"❌ {exchange} invalid mode: {data.get('mode')}")
+                    logging.info(f"❌ {exchange} invalid mode: {data.get('mode')}")
                     sys.exit(1)
             else:
-                print(f"❌ Cannot access {exchange} secrets")
+                logging.info(f"❌ Cannot access {exchange} secrets")
                 sys.exit(1)
         except Exception as e:
-            print(f"❌ Error checking {exchange}: {e}")
+            logging.info(f"❌ Error checking {exchange}: {e}")
             sys.exit(1)
     
-    print("✅ All secrets have correct structure")
+    logging.info("✅ All secrets have correct structure")
     return True
 
 if __name__ == "__main__":
@@ -463,7 +468,7 @@ if __name__ == "__main__":
             credentials: Dict with exchange names as keys and credential dicts as values
                         Example: {"binance": {"api_key": "...", "api_secret": "...", "mode": "LIVE"}}
         """
-        print("🔐 Storing live credentials in Vault...")
+        logging.info("🔐 Storing live credentials in Vault...")
         
         # Start Vault if not running
         self._ensure_vault_running()
@@ -483,16 +488,16 @@ if __name__ == "__main__":
                 )
                 
                 if response.status_code == 200:
-                    print(f"✅ {exchange} credentials stored securely")
+                    logging.info(f"✅ {exchange} credentials stored securely")
                 else:
-                    print(f"❌ Failed to store {exchange} credentials: {response.text}")
+                    logging.info(f"❌ Failed to store {exchange} credentials: {response.text}")
                     return False
                     
             except Exception as e:
-                print(f"❌ Error storing {exchange} credentials: {e}")
+                logging.info(f"❌ Error storing {exchange} credentials: {e}")
                 return False
         
-        print("✅ All live credentials stored securely!")
+        logging.info("✅ All live credentials stored securely!")
         return True
     
     def _ensure_vault_running(self):
@@ -505,7 +510,7 @@ if __name__ == "__main__":
             pass
         
         # Start Vault
-        print("🚀 Starting Vault...")
+        logging.info("🚀 Starting Vault...")
         subprocess.run([
             "docker", "compose", "-f", 
             str(self.base_path / "infra" / "docker-compose.vault.yml"), 
@@ -517,7 +522,7 @@ if __name__ == "__main__":
             try:
                 response = requests.get(f"{self.vault_url}/v1/sys/health")
                 if response.status_code == 200:
-                    print("✅ Vault is ready!")
+                    logging.info("✅ Vault is ready!")
                     return True
             except:
                 pass
@@ -527,7 +532,7 @@ if __name__ == "__main__":
     
     def run_pre_flight_validation(self) -> bool:
         """Run all pre-flight validation checks."""
-        print("🛫 Running pre-flight validation...")
+        logging.info("🛫 Running pre-flight validation...")
         
         validations = [
             ("BOM & Hash Check", self._validate_bom_hash),
@@ -544,18 +549,18 @@ if __name__ == "__main__":
                 result = validator()
                 self.validation_results.append(result)
                 if result.passed:
-                    print(f"✅ {name}: PASSED ({result.score:.1f}%)")
+                    logging.info(f"✅ {name}: PASSED ({result.score:.1f}%)")
                 else:
-                    print(f"❌ {name}: FAILED - {result.details}")
+                    logging.info(f"❌ {name}: FAILED - {result.details}")
                     all_passed = False
             except Exception as e:
-                print(f"❌ {name}: ERROR - {e}")
+                logging.info(f"❌ {name}: ERROR - {e}")
                 all_passed = False
         
         if all_passed:
-            print("🎉 ALL PRE-FLIGHT VALIDATIONS PASSED - READY FOR LIVE TRADING!")
+            logging.info("🎉 ALL PRE-FLIGHT VALIDATIONS PASSED - READY FOR LIVE TRADING!")
         else:
-            print("🚫 PRE-FLIGHT VALIDATION FAILED - LIVE TRADING BLOCKED")
+            logging.info("🚫 PRE-FLIGHT VALIDATION FAILED - LIVE TRADING BLOCKED")
         
         return all_passed
     
@@ -647,11 +652,12 @@ if __name__ == "__main__":
         if health_percentage == 100:
             return ValidationResult(True, "System Health", f"All services healthy", health_percentage)
         else:
-            return ValidationResult(False, "System Health", f"Only {healthy_services}/{total_services} services healthy")
-    
+            return ValidationResult(False,
+                "System Health",
+                f"Only {healthy_services}/{total_services} services healthy")    
     def deploy_live_system(self) -> bool:
         """Deploy the complete live trading system."""
-        print("🚀 Deploying live trading system...")
+        logging.info("🚀 Deploying live trading system...")
         
         try:
             # Build and start all services
@@ -662,37 +668,37 @@ if __name__ == "__main__":
             ], check=True)
             
             # Wait for services to be ready
-            print("⏳ Waiting for services to be ready...")
+            logging.info("⏳ Waiting for services to be ready...")
             time.sleep(30)
             
-            print("✅ Live system deployed successfully!")
+            logging.info("✅ Live system deployed successfully!")
             return True
             
         except subprocess.CalledProcessError as e:
-            print(f"❌ Deployment failed: {e}")
+            logging.info(f"❌ Deployment failed: {e}")
             return False
     
     def enable_live_trading(self) -> bool:
         """Enable live trading after all validations pass."""
-        print("🎯 Enabling live trading...")
+        logging.info("🎯 Enabling live trading...")
         
         try:
             # Enable execution in admission service
             response = requests.post("http://localhost:8002/enable_execution")
             if response.status_code == 200:
-                print("✅ Live trading enabled successfully!")
+                logging.info("✅ Live trading enabled successfully!")
                 return True
             else:
-                print(f"❌ Failed to enable live trading: {response.text}")
+                logging.info(f"❌ Failed to enable live trading: {response.text}")
                 return False
                 
         except Exception as e:
-            print(f"❌ Error enabling live trading: {e}")
+            logging.info(f"❌ Error enabling live trading: {e}")
             return False
     
     def emergency_disable(self) -> bool:
         """Emergency disable of live trading."""
-        print("🚨 EMERGENCY DISABLE - Stopping live trading...")
+        logging.info("🚨 EMERGENCY DISABLE - Stopping live trading...")
         
         try:
             # Disable execution
@@ -705,16 +711,16 @@ if __name__ == "__main__":
                 "down"
             ])
             
-            print("✅ Live trading disabled and system stopped")
+            logging.info("✅ Live trading disabled and system stopped")
             return True
             
         except Exception as e:
-            print(f"❌ Emergency disable failed: {e}")
+            logging.info(f"❌ Emergency disable failed: {e}")
             return False
     
     def generate_evidence_pack(self) -> str:
         """Generate comprehensive evidence pack for audit."""
-        print("📋 Generating evidence pack...")
+        logging.info("📋 Generating evidence pack...")
         
         evidence = {
             "timestamp": time.time(),
@@ -736,7 +742,7 @@ if __name__ == "__main__":
         with open(evidence_file, "w") as f:
             json.dump(evidence, f, indent=2)
         
-        print(f"✅ Evidence pack generated: {evidence_file}")
+        logging.info(f"✅ Evidence pack generated: {evidence_file}")
         return str(evidence_file)
     
     def _calculate_system_hash(self) -> str:
@@ -752,42 +758,47 @@ if __name__ == "__main__":
 
 def main():
     """Main execution function for secure live transition."""
-    print("🎯 ULTIMATE LYRA ECOSYSTEM - SECURE LIVE TRANSITION")
-    print("=" * 60)
+    logging.info("🎯 ULTIMATE LYRA ECOSYSTEM - SECURE LIVE TRANSITION")
+    logging.info("=" * 60)
     
     # Initialize transition system
     transition = SecureLiveTransitionSystem()
     
     # Setup secure infrastructure
     if not transition.setup_secure_infrastructure():
-        print("❌ Failed to setup secure infrastructure")
+        logging.info("❌ Failed to setup secure infrastructure")
         return False
     
-    print("\n📋 READY FOR CREDENTIAL INPUT")
-    print("Use the following commands to store your live API keys:")
-    print("\nexport VAULT_ADDR=http://localhost:8200")
-    print("export VAULT_TOKEN=lyra-root")
-    print("\n# Store live credentials (replace with your actual keys):")
-    print('vault kv put secret/exchanges/binance api_key="YOUR_BINANCE_API_KEY" api_secret="YOUR_BINANCE_SECRET" mode="LIVE"')
-    print('vault kv put secret/exchanges/okx api_key="YOUR_OKX_API_KEY" api_secret="YOUR_OKX_SECRET" passphrase="YOUR_PASSPHRASE" mode="LIVE"')
-    print('vault kv put secret/exchanges/gate api_key="YOUR_GATE_API_KEY" api_secret="YOUR_GATE_SECRET" mode="LIVE"')
-    print('vault kv put secret/exchanges/whitebit api_key="YOUR_WHITEBIT_API_KEY" api_secret="YOUR_WHITEBIT_SECRET" mode="LIVE"')
-    print('vault kv put secret/exchanges/btcmarkets api_key="YOUR_BTCMARKETS_API_KEY" api_secret="YOUR_BTCMARKETS_SECRET" mode="LIVE"')
+    logging.info("\n📋 READY FOR CREDENTIAL INPUT")
+    logging.info("Use the following commands to store your live API keys:")
+    logging.info("\nexport VAULT_ADDR=http://localhost:8200")
+    logging.info("export VAULT_TOKEN=lyra-root")
+    logging.info("\n# Store live credentials (replace with your actual keys):")
+    logging.info('vault kv put secret/exchanges/binance api_key = os.getenv("API_KEY",
+        "YOUR_API_KEY_HERE") api_secret = os.getenv("SECRET",
+        "YOUR_SECRET_HERE") mode="LIVE"')    logging.info('vault kv put secret/exchanges/okx api_key = os.getenv("API_KEY",
+        "YOUR_API_KEY_HERE") api_secret = os.getenv("SECRET",
+        "YOUR_SECRET_HERE") passphrase="YOUR_PASSPHRASE" mode="LIVE"')    logging.info('vault kv put secret/exchanges/gate api_key = os.getenv("API_KEY",
+        "YOUR_API_KEY_HERE") api_secret = os.getenv("SECRET",
+        "YOUR_SECRET_HERE") mode="LIVE"')    logging.info('vault kv put secret/exchanges/whitebit api_key = os.getenv("API_KEY",
+        "YOUR_API_KEY_HERE") api_secret = os.getenv("SECRET",
+        "YOUR_SECRET_HERE") mode="LIVE"')    logging.info('vault kv put secret/exchanges/btcmarkets api_key = os.getenv("API_KEY",
+        "YOUR_API_KEY_HERE") api_secret = os.getenv("SECRET",
+        "YOUR_SECRET_HERE") mode="LIVE"')    
+    logging.info("\n🔧 DEPLOYMENT COMMANDS:")
+    logging.info("# 1. Deploy the system:")
+    logging.info("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --deploy")
+    logging.info("\n# 2. Run validation:")
+    logging.info("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --validate")
+    logging.info("\n# 3. Enable live trading (only after 100% validation):")
+    logging.info("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --enable")
+    logging.info("\n# 4. Emergency disable:")
+    logging.info("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --emergency-disable")
     
-    print("\n🔧 DEPLOYMENT COMMANDS:")
-    print("# 1. Deploy the system:")
-    print("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --deploy")
-    print("\n# 2. Run validation:")
-    print("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --validate")
-    print("\n# 3. Enable live trading (only after 100% validation):")
-    print("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --enable")
-    print("\n# 4. Emergency disable:")
-    print("python3 SECURE_LIVE_TRANSITION_SYSTEM.py --emergency-disable")
-    
-    print("\n✅ SECURE LIVE TRANSITION SYSTEM READY!")
-    print("🔐 All credentials will be stored securely in Vault")
-    print("🐳 All exchanges will be containerized for safety")
-    print("✅ 100% validation required before live trading")
+    logging.info("\n✅ SECURE LIVE TRANSITION SYSTEM READY!")
+    logging.info("🔐 All credentials will be stored securely in Vault")
+    logging.info("🐳 All exchanges will be containerized for safety")
+    logging.info("✅ 100% validation required before live trading")
     
     return True
 
@@ -806,7 +817,7 @@ if __name__ == "__main__":
             if transition.run_pre_flight_validation():
                 transition.enable_live_trading()
             else:
-                print("❌ Validation failed - live trading blocked")
+                logging.info("❌ Validation failed - live trading blocked")
         elif sys.argv[1] == "--emergency-disable":
             transition.emergency_disable()
     else:

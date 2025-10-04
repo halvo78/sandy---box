@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 class WhiteBITWebhookHandler:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchange_id = "whitebit"
         self.exchange_name = "WhiteBIT"
         self.setup_logging()

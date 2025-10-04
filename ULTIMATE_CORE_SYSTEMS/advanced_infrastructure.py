@@ -25,6 +25,7 @@ class SmartOrderRouter:
     """Smart order routing for optimal execution across multiple exchanges."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchanges = {}
         self.routing_data_path = "/home/ubuntu/YOUR_API_KEY_HERE/trading/routing_data"
         os.makedirs(self.routing_data_path, exist_ok=True)
@@ -171,6 +172,7 @@ class AdvancedExecutionAlgorithms:
     """Advanced execution algorithms for institutional trading."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.execution_data_path = "/home/ubuntu/YOUR_API_KEY_HERE/trading/execution_data"
         os.makedirs(self.execution_data_path, exist_ok=True)
         
@@ -324,6 +326,7 @@ class PortfolioRiskManager:
     """Advanced portfolio-level risk management."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.risk_data_path = "/home/ubuntu/YOUR_API_KEY_HERE/trading/risk_data"
         os.makedirs(self.risk_data_path, exist_ok=True)
         self.portfolio_positions = {}
@@ -470,6 +473,7 @@ class CircuitBreakerSystem:
     """Circuit breaker system for risk management."""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.breaker_data_path = "/home/ubuntu/YOUR_API_KEY_HERE/trading/circuit_breakers"
         os.makedirs(self.breaker_data_path, exist_ok=True)
         
@@ -537,7 +541,7 @@ class CircuitBreakerSystem:
         with open(breaker_file, 'w') as f:
             json.dump(breaker_event, f, indent=2)
             
-        print(f"🚨 CIRCUIT BREAKER TRIGGERED: {breaker_name} - Trading halted")
+        logging.info(f"🚨 CIRCUIT BREAKER TRIGGERED: {breaker_name} - Trading halted")
         
         return breaker_event
         
@@ -569,7 +573,7 @@ class CircuitBreakerSystem:
             with open(reset_file, 'w') as f:
                 json.dump(reset_event, f, indent=2)
                 
-            print(f"✅ Circuit breaker reset: {breaker_name}")
+            logging.info(f"✅ Circuit breaker reset: {breaker_name}")
             return reset_event
             
         return None
@@ -581,9 +585,9 @@ portfolio_risk_manager = PortfolioRiskManager()
 circuit_breaker_system = CircuitBreakerSystem()
 
 if __name__ == "__main__":
-    print("⚡ Initializing Advanced Trading Infrastructure...")
-    print("✅ Smart Order Router ready")
-    print("✅ Advanced Execution Algorithms ready")
-    print("✅ Portfolio Risk Manager ready")
-    print("✅ Circuit Breaker System ready")
-    print("⚡ Advanced Trading Infrastructure fully operational!")
+    logging.info("⚡ Initializing Advanced Trading Infrastructure...")
+    logging.info("✅ Smart Order Router ready")
+    logging.info("✅ Advanced Execution Algorithms ready")
+    logging.info("✅ Portfolio Risk Manager ready")
+    logging.info("✅ Circuit Breaker System ready")
+    logging.info("⚡ Advanced Trading Infrastructure fully operational!")

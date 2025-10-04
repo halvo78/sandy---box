@@ -47,6 +47,7 @@ class P0PreFlightChecker:
     """
     
     def __init__(self, base_path: str = "/home/ubuntu/YOUR_API_KEY_HERE"):
+        """TODO: Add function documentation"""
         self.base_path = base_path
         self.results: List[P0CheckResult] = []
         self.precision_rules = self._load_precision_rules()
@@ -56,8 +57,8 @@ class P0PreFlightChecker:
         Run the complete P0 pre-flight checklist.
         ALL checks must pass for live trading authorization.
         """
-        print("🚀 P0 PRE-FLIGHT CHECKLIST - LIVE CANARY AUTHORIZATION")
-        print("=" * 70)
+        logging.info("🚀 P0 PRE-FLIGHT CHECKLIST - LIVE CANARY AUTHORIZATION")
+        logging.info("=" * 70)
         
         checks = [
             ("1. Private User-Streams Gauntlet", self._check_user_streams_gauntlet),
@@ -72,7 +73,7 @@ class P0PreFlightChecker:
         total_duration = 0
         
         for check_name, check_function in checks:
-            print(f"\n🔍 Running: {check_name}")
+            logging.info(f"\n🔍 Running: {check_name}")
             start_time = time.time()
             
             try:
@@ -84,9 +85,9 @@ class P0PreFlightChecker:
                 self.results.append(result)
                 
                 if result.passed and result.requirements_met:
-                    print(f"✅ PASSED: {check_name} ({result.score:.1f}%) - {result.details}")
+                    logging.info(f"✅ PASSED: {check_name} ({result.score:.1f}%) - {result.details}")
                 else:
-                    print(f"❌ FAILED: {check_name} - {result.details}")
+                    logging.info(f"❌ FAILED: {check_name} - {result.details}")
                     all_passed = False
                     
             except Exception as e:
@@ -100,18 +101,18 @@ class P0PreFlightChecker:
                     requirements_met=False
                 )
                 self.results.append(result)
-                print(f"❌ ERROR: {check_name} - {str(e)}")
+                logging.info(f"❌ ERROR: {check_name} - {str(e)}")
                 all_passed = False
         
         # Generate final report
         report = self._generate_final_report(all_passed, total_duration)
         
         if all_passed:
-            print("\n🎉 ALL P0 CHECKS PASSED - LIVE CANARY AUTHORIZED!")
-            print("🚀 System ready for live trading deployment")
+            logging.info("\n🎉 ALL P0 CHECKS PASSED - LIVE CANARY AUTHORIZED!")
+            logging.info("🚀 System ready for live trading deployment")
         else:
-            print("\n🚫 P0 CHECKS FAILED - LIVE TRADING BLOCKED")
-            print("⚠️  Fix all failed checks before attempting live deployment")
+            logging.info("\n🚫 P0 CHECKS FAILED - LIVE TRADING BLOCKED")
+            logging.info("⚠️  Fix all failed checks before attempting live deployment")
         
         return report
     
@@ -121,7 +122,7 @@ class P0PreFlightChecker:
         Prove ack/fill/cancel parity under disconnects, sequence gaps, and resubscribes.
         Pass if: 0 missed events; resync < 2s; checksum drift = 0.
         """
-        print("   Testing WebSocket resilience, sequence gaps, and resubscribes...")
+        logging.info("   Testing WebSocket resilience, sequence gaps, and resubscribes...")
         
         # Simulate user stream testing
         test_scenarios = [
@@ -174,7 +175,7 @@ class P0PreFlightChecker:
         Port the exact TWAP/VWAP/Iceberg logic into the Shadow Executor.
         Pass if: parity==1.0 for ≥ 2h across LIMIT/IOC, post-only/TIF, rounding.
         """
-        print("   Validating Shadow Executor parity with production algorithms...")
+        logging.info("   Validating Shadow Executor parity with production algorithms...")
         
         # Test different order types and algorithms
         algorithms = ["TWAP", "VWAP", "Iceberg"]
@@ -220,7 +221,7 @@ class P0PreFlightChecker:
         Single precision_rules.yaml → imported by ALL connectors + execution.
         Pass if: 0 pre-send rejections; 0 venue rejections for tick/lot/notional.
         """
-        print("   Validating precision rules enforcement across all connectors...")
+        logging.info("   Validating precision rules enforcement across all connectors...")
         
         # Check if precision rules file exists
         precision_file = os.path.join(self.base_path, "configs", "precision_rules.yaml")
@@ -279,7 +280,7 @@ class P0PreFlightChecker:
         Add venue penalties; prefer "second-best" price if best is rate-limited.
         Pass if: 0 orders blocked by empty bucket; improved realized edge vs baseline.
         """
-        print("   Testing Smart Order Routing with effective price calculations...")
+        logging.info("   Testing Smart Order Routing with effective price calculations...")
         
         # Simulate SOR testing with different venues
         venues = [
@@ -350,7 +351,7 @@ class P0PreFlightChecker:
         Hard per-venue/asset bands (±5%); auto-rebalance intents.
         Pass if: |inventory_drift| ≤ 5% during one-sided markets; no cap violations.
         """
-        print("   Testing inventory caps and rebalancing for spot-only trading...")
+        logging.info("   Testing inventory caps and rebalancing for spot-only trading...")
         
         # Simulate inventory testing across venues
         venues = ["binance", "okx", "gate", "whitebit", "btcmarkets"]
@@ -404,7 +405,7 @@ class P0PreFlightChecker:
         BOM/hash + probe green + env/secret shape + parity 2h + KPI thresholds.
         Gate enforced by Admission: enable_execution=false until all pass.
         """
-        print("   Validating all pre-flight machine gates...")
+        logging.info("   Validating all pre-flight machine gates...")
         
         gates = [
             ("BOM/Hash Check", self._check_bom_hash),
@@ -569,19 +570,19 @@ def main():
     checker = P0PreFlightChecker()
     report = checker.run_complete_p0_checklist()
     
-    print(f"\n📋 FINAL REPORT:")
-    print(f"   Overall Status: {report['overall_status']}")
-    print(f"   Live Trading Authorized: {report['live_trading_authorized']}")
-    print(f"   Checks Passed: {report['checks_passed']}/{report['checks_completed']}")
-    print(f"   Average Score: {report['average_score']:.1f}%")
-    print(f"   Total Duration: {report['total_duration_seconds']:.1f}s")
+    logging.info(f"\n📋 FINAL REPORT:")
+    logging.info(f"   Overall Status: {report['overall_status']}")
+    logging.info(f"   Live Trading Authorized: {report['live_trading_authorized']}")
+    logging.info(f"   Checks Passed: {report['checks_passed']}/{report['checks_completed']}")
+    logging.info(f"   Average Score: {report['average_score']:.1f}%")
+    logging.info(f"   Total Duration: {report['total_duration_seconds']:.1f}s")
     
     if report['live_trading_authorized']:
-        print("\n🎉 P0 PRE-FLIGHT COMPLETE - LIVE CANARY AUTHORIZED!")
-        print("🚀 System ready for live trading deployment")
+        logging.info("\n🎉 P0 PRE-FLIGHT COMPLETE - LIVE CANARY AUTHORIZED!")
+        logging.info("🚀 System ready for live trading deployment")
     else:
-        print("\n🚫 P0 PRE-FLIGHT FAILED - LIVE TRADING BLOCKED")
-        print("⚠️  Address all failed checks before live deployment")
+        logging.info("\n🚫 P0 PRE-FLIGHT FAILED - LIVE TRADING BLOCKED")
+        logging.info("⚠️  Address all failed checks before live deployment")
     
     return report
 

@@ -5,6 +5,7 @@ Ensures 100% compliance across all ngrok container components
 """
 
 import os
+import logging
 import sys
 import json
 import time
@@ -15,6 +16,7 @@ from typing import Dict, List, Optional
 
 class ComprehensiveComplianceVerifier:
     def __init__(self):
+        """Input validation would be added here"""
         self.results = {
             "timestamp": datetime.now().isoformat(),
             "version": "4.0.0-compliance",
@@ -26,11 +28,12 @@ class ComprehensiveComplianceVerifier:
         }
         
         self.ngrok_url = "https://3ce37fa57d09.ngrok.app"
-        self.token = "lyra_+1-XXX-XXX-XXXX_5d20aef7f3777214"
+        self.token = os.getenv("TOKEN", "YOUR_TOKEN_HERE")
         
     def check_auto_manager_compliance(self) -> Dict:
+        """Input validation would be added here"""
         """Verify Auto Ngrok Manager compliance"""
-        print("🔧 Checking Auto Ngrok Manager Compliance...")
+        logging.info("🔧 Checking Auto Ngrok Manager Compliance...")
         
         compliance_checks = {
             "service_running": False,
@@ -74,12 +77,13 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in compliance_checks.values() if v is True)
         total = len([k for k in compliance_checks.keys() if k != "error"])
         
-        print(f"  ✅ Auto Manager Compliance: {passed}/{total} checks passed")
+        logging.info(f"  ✅ Auto Manager Compliance: {passed}/{total} checks passed")
         return compliance_checks
     
     def check_ngrok_tunnel_compliance(self) -> Dict:
+        """Input validation would be added here"""
         """Verify ngrok tunnel compliance"""
-        print("🔗 Checking Ngrok Tunnel Compliance...")
+        logging.info("🔗 Checking Ngrok Tunnel Compliance...")
         
         tunnel_compliance = {
             "tunnel_active": False,
@@ -126,12 +130,13 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in tunnel_compliance.values() if v is True)
         total = len([k for k in tunnel_compliance.keys() if k != "error"])
         
-        print(f"  ✅ Tunnel Compliance: {passed}/{total} checks passed")
+        logging.info(f"  ✅ Tunnel Compliance: {passed}/{total} checks passed")
         return tunnel_compliance
     
     def check_container_compliance(self) -> Dict:
+        """Input validation would be added here"""
         """Verify container compliance"""
-        print("🐳 Checking Container Compliance...")
+        logging.info("🐳 Checking Container Compliance...")
         
         container_compliance = {
             "docker_available": False,
@@ -170,12 +175,13 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in container_compliance.values() if v is True)
         total = len([k for k in container_compliance.keys() if k != "error"])
         
-        print(f"  ✅ Container Compliance: {passed}/{total} checks passed")
+        logging.info(f"  ✅ Container Compliance: {passed}/{total} checks passed")
         return container_compliance
     
     def check_security_compliance(self) -> Dict:
+        """Input validation would be added here"""
         """Verify security compliance"""
-        print("🛡️ Checking Security Compliance...")
+        logging.info("🛡️ Checking Security Compliance...")
         
         security_compliance = {
             "token_authentication": False,
@@ -214,12 +220,13 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in security_compliance.values() if v is True)
         total = len([k for k in security_compliance.keys() if k != "error"])
         
-        print(f"  ✅ Security Compliance: {passed}/{total} checks passed")
+        logging.info(f"  ✅ Security Compliance: {passed}/{total} checks passed")
         return security_compliance
     
     def check_performance_compliance(self) -> Dict:
+        """Input validation would be added here"""
         """Verify performance compliance"""
-        print("⚡ Checking Performance Compliance...")
+        logging.info("⚡ Checking Performance Compliance...")
         
         performance_metrics = {
             "response_time_ms": 0,
@@ -270,12 +277,13 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in compliance_criteria.values() if v is True)
         total = len(compliance_criteria)
         
-        print(f"  ✅ Performance Compliance: {passed}/{total} criteria met")
+        logging.info(f"  ✅ Performance Compliance: {passed}/{total} criteria met")
         return performance_metrics
     
     def run_integration_tests(self) -> Dict:
+        """Input validation would be added here"""
         """Run comprehensive integration tests"""
-        print("🔄 Running Integration Tests...")
+        logging.info("🔄 Running Integration Tests...")
         
         integration_results = {
             "manus_verification": False,
@@ -342,14 +350,15 @@ class ComprehensiveComplianceVerifier:
         passed = sum(1 for v in integration_results.values() if v is True)
         total = len([k for k in integration_results.keys() if k != "error"])
         
-        print(f"  ✅ Integration Tests: {passed}/{total} tests passed")
+        logging.info(f"  ✅ Integration Tests: {passed}/{total} tests passed")
         return integration_results
     
     def generate_compliance_report(self) -> Dict:
+        """Input validation would be added here"""
         """Generate comprehensive compliance report"""
-        print("\n" + "="*60)
-        print("📊 COMPREHENSIVE COMPLIANCE VERIFICATION REPORT")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("📊 COMPREHENSIVE COMPLIANCE VERIFICATION REPORT")
+        logging.info("="*60)
         
         # Calculate overall compliance
         all_checks = []
@@ -381,40 +390,42 @@ class ComprehensiveComplianceVerifier:
         
         self.results["overall_compliance"] = compliance_percentage >= 80  # 80% threshold
         
-        print(f"🎯 Overall Compliance: {compliance_percentage:.1f}% ({passed_checks}/{total_checks})")
-        print(f"🔧 Auto Manager: {sum(1 for v in auto_checks.values() if v is True)}/{len([k for k in auto_checks.keys() if k != 'error'])}")
-        print(f"🔗 Ngrok Tunnel: {sum(1 for v in tunnel_checks.values() if v is True)}/{len([k for k in tunnel_checks.keys() if k != 'error'])}")
-        print(f"🐳 Container: {sum(1 for v in container_checks.values() if v is True)}/{len([k for k in container_checks.keys() if k != 'error'])}")
-        print(f"🛡️ Security: {sum(1 for v in security_checks.values() if v is True)}/{len([k for k in security_checks.keys() if k != 'error'])}")
-        print(f"🔄 Integration: {sum(1 for v in integration_checks.values() if v is True)}/{len([k for k in integration_checks.keys() if k != 'error'])}")
+        logging.info(f"🎯 Overall Compliance: {compliance_percentage:.1f}% ({passed_checks}/{total_checks})")
+        logging.info(f"🔧 Auto Manager: {sum(1 for v in auto_checks.values() if v is True)}/{len([k for k in auto_checks.keys() if k != 'error'])}")
+        logging.info(f"🔗 Ngrok Tunnel: {sum(1 for v in tunnel_checks.values() if v is True)}/{len([k for k in tunnel_checks.keys() if k != 'error'])}")
+        logging.info(f"🐳 Container: {sum(1 for v in container_checks.values() if v is True)}/{len([k for k in container_checks.keys() if k != 'error'])}")
+        logging.info(f"🛡️ Security: {sum(1 for v in security_checks.values() if v is True)}/{len([k for k in security_checks.keys() if k != 'error'])}")
+        logging.info(f"🔄 Integration: {sum(1 for v in integration_checks.values() if v is True)}/{len([k for k in integration_checks.keys() if k != 'error'])}")
         
         # Performance summary
         perf = self.results["performance_metrics"]
-        print(f"⚡ Response Time: {perf.get('response_time_ms', 0)}ms")
-        print(f"💾 Memory Usage: {perf.get('memory_usage_mb', 0)}MB")
-        print(f"💽 Disk Space: {perf.get('disk_space_gb', 0)}GB free")
+        logging.info(f"⚡ Response Time: {perf.get('response_time_ms', 0)}ms")
+        logging.info(f"💾 Memory Usage: {perf.get('memory_usage_mb', 0)}MB")
+        logging.info(f"💽 Disk Space: {perf.get('disk_space_gb', 0)}GB free")
         
         if self.results["overall_compliance"]:
-            print("\n🎉 COMPLIANCE VERIFICATION PASSED!")
-            print("✅ System is ready for production deployment")
+            logging.info("\n🎉 COMPLIANCE VERIFICATION PASSED!")
+            logging.info("✅ System is ready for production deployment")
         else:
-            print("\n⚠️  COMPLIANCE VERIFICATION NEEDS ATTENTION")
-            print("❌ Some checks failed - review and address issues")
+            logging.info("\n⚠️  COMPLIANCE VERIFICATION NEEDS ATTENTION")
+            logging.info("❌ Some checks failed - review and address issues")
         
         return self.results
     
     def save_report(self):
+        """Input validation would be added here"""
         """Save compliance report to file"""
         report_file = f"compliance_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(report_file, 'w') as f:
             json.dump(self.results, f, indent=2)
-        print(f"📄 Detailed report saved: {report_file}")
+        logging.info(f"📄 Detailed report saved: {report_file}")
         return report_file
     
     def run_full_compliance_check(self) -> bool:
+        """Input validation would be added here"""
         """Run complete compliance verification"""
-        print("🚀 Starting Comprehensive Compliance Verification...")
-        print("="*60)
+        logging.info("🚀 Starting Comprehensive Compliance Verification...")
+        logging.info("="*60)
         
         # Run all compliance checks
         self.check_auto_manager_compliance()
@@ -433,6 +444,7 @@ class ComprehensiveComplianceVerifier:
         return self.results["overall_compliance"]
 
 def main():
+    """Input validation would be added here"""
     """Main entry point"""
     verifier = ComprehensiveComplianceVerifier()
     
@@ -440,10 +452,10 @@ def main():
         # Quick health check
         try:
             resp = requests.get("https://3ce37fa57d09.ngrok.app/health", timeout=5)
-            print(f"✅ Quick Health Check: {resp.status_code}")
+            logging.info(f"✅ Quick Health Check: {resp.status_code}")
             return resp.status_code == 200
         except Exception as e:
-            print(f"❌ Quick Health Check Failed: {e}")
+            logging.info(f"❌ Quick Health Check Failed: {e}")
             return False
     else:
         # Full compliance verification

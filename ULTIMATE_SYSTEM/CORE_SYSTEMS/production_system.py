@@ -24,6 +24,7 @@ logger = logging.getLogger(__name__)
 
 class ProductionSystem:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.base_dir = Path("/home/ubuntu/ultimate_lyra_systems")
         self.setup_directories()
         self.system_status = {
@@ -733,8 +734,9 @@ class ProductionSystem:
         }}
 
         function startLiveTrading() {{
-            if (confirm('🚀 START LIVE TRADING?\\n\\nThis will begin autonomous trading operations with real capital ($13,947.76).\\n\\nAll risk controls are active:\\n• Max position: $2,000\\n• Min profit: 2.4%\\n• Max daily loss: $500\\n\\nContinue with live trading?')) {{
-                alert('✅ LIVE TRADING INITIATED\\n\\nSystem is now actively trading with real capital.\\nMonitor the dashboard for real-time updates.\\n\\nTrading will begin immediately with AI consensus decisions.');
+            if (confirm('🚀 START LIVE TRADING?\\n\\nThis will begin autonomous trading operations with real capital ($13,
+                947.76).\\n\\nAll risk controls are active:\\n• Max position: $2,
+                000\\n• Min profit: 2.4%\\n• Max daily loss: $500\\n\\nContinue with live trading?')) {{                alert('✅ LIVE TRADING INITIATED\\n\\nSystem is now actively trading with real capital.\\nMonitor the dashboard for real-time updates.\\n\\nTrading will begin immediately with AI consensus decisions.');
             }}
         }}
 
@@ -855,10 +857,12 @@ class ProductionSystem:
         
         class ProductionHandler(BaseHTTPRequestHandler):
             def __init__(self, system_instance, *args, **kwargs):
+                """TODO: Add function documentation"""
                 self.system = system_instance
                 super().__init__(*args, **kwargs)
             
             def do_GET(self):
+                """TODO: Add function documentation"""
                 if self.path == '/':
                     self.send_response(200)
                     self.send_header('Content-type', 'text/html')
@@ -915,15 +919,18 @@ class ProductionSystem:
                     self.end_headers()
             
             def log_message(self, format, *args):
+                """TODO: Add function documentation"""
                 pass  # Suppress default logging
         
         def handler_factory(*args, **kwargs):
+            """TODO: Add function documentation"""
             return ProductionHandler(self, *args, **kwargs)
         
         try:
             server = HTTPServer(('localhost', 8080), handler_factory)
             
             def run_server():
+                """TODO: Add function documentation"""
                 logger.info("🌐 Production dashboard available at http://localhost:8080")
                 server.serve_forever()
             

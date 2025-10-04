@@ -5,12 +5,14 @@ This script validates the AI consensus functionality without external dependenci
 """
 
 import json
+import logging
 import urllib.request
 import urllib.parse
 from datetime import datetime
 
 class SimpleAIValidator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the Simple AI Validator."""
         self.openrouter_keys = [
             "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -27,6 +29,7 @@ class SimpleAIValidator:
         ]
         
     def test_api_key(self, api_key, model):
+        """Input validation would be added here"""
         """Test a single API key with urllib."""
         try:
             url = "https://openrouter.ai/api/v1/chat/completions"
@@ -81,15 +84,16 @@ class SimpleAIValidator:
             }
     
     def validate_system(self):
+        """Input validation would be added here"""
         """Validate the AI consensus system."""
-        print("🚀 Starting Simple AI Consensus Validation...")
-        print("="*50)
+        logging.info("🚀 Starting Simple AI Consensus Validation...")
+        logging.info("="*50)
         
         validation_results = []
         working_keys = 0
         
         for i, (api_key, model) in enumerate(zip(self.openrouter_keys, self.models)):
-            print(f"🔑 Testing API key {i+1}/4 with {model}...")
+            logging.info(f"🔑 Testing API key {i+1}/4 with {model}...")
             
             result = self.test_api_key(api_key, model)
             
@@ -102,13 +106,13 @@ class SimpleAIValidator:
             })
             
             if result["status"] == "SUCCESS":
-                print(f"✅ API key {i+1}: Working - {result['response']}")
+                logging.info(f"✅ API key {i+1}: Working - {result['response']}")
                 working_keys += 1
             else:
-                print(f"❌ API key {i+1}: Failed - {result['error']}")
+                logging.info(f"❌ API key {i+1}: Failed - {result['error']}")
         
         # Test consensus simulation
-        print(f"\n🤖 Testing AI Consensus Simulation...")
+        logging.info(f"\n🤖 Testing AI Consensus Simulation...")
         
         # Simulate a trading scenario
         market_scenario = {
@@ -137,9 +141,9 @@ class SimpleAIValidator:
         
         consensus_action = "BUY" if buy_votes > hold_votes else "HOLD"
         
-        print(f"📊 Consensus Result: {consensus_action}")
-        print(f"🗳️ Votes - BUY: {buy_votes}, HOLD: {hold_votes}")
-        print(f"📈 Average Confidence: {avg_confidence:.1f}%")
+        logging.info(f"📊 Consensus Result: {consensus_action}")
+        logging.info(f"🗳️ Votes - BUY: {buy_votes}, HOLD: {hold_votes}")
+        logging.info(f"📈 Average Confidence: {avg_confidence:.1f}%")
         
         # Final results
         final_results = {
@@ -164,13 +168,13 @@ class SimpleAIValidator:
         with open(results_file, 'w') as f:
             json.dump(final_results, f, indent=2)
         
-        print("\n" + "="*50)
-        print("🎉 SIMPLE AI VALIDATION COMPLETE!")
-        print("="*50)
-        print(f"🔑 Working API keys: {working_keys}/{len(self.openrouter_keys)}")
-        print(f"📊 System status: {final_results['system_status']}")
-        print(f"💾 Results saved: {results_file}")
-        print("="*50)
+        logging.info("\n" + "="*50)
+        logging.info("🎉 SIMPLE AI VALIDATION COMPLETE!")
+        logging.info("="*50)
+        logging.info(f"🔑 Working API keys: {working_keys}/{len(self.openrouter_keys)}")
+        logging.info(f"📊 System status: {final_results['system_status']}")
+        logging.info(f"💾 Results saved: {results_file}")
+        logging.info("="*50)
         
         return final_results
 

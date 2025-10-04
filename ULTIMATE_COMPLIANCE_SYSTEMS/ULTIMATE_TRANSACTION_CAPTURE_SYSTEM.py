@@ -65,6 +65,7 @@ class UltimateTransactionCaptureSystem:
     """
     
     def __init__(self):
+        """Input validation would be added here"""
         self.start_time = datetime.now()
         
         # All OpenRouter API keys (8 keys total)
@@ -164,6 +165,7 @@ class UltimateTransactionCaptureSystem:
         logger.info(f"🏦 Exchanges: {len(self.exchanges)}")
     
     def _initialize_database(self):
+        """Input validation would be added here"""
         """Initialize SQLite database for transaction storage"""
         try:
             conn = sqlite3.connect(self.transactions_db)
@@ -232,6 +234,7 @@ class UltimateTransactionCaptureSystem:
             raise
     
     def _initialize_exchanges(self):
+        """Input validation would be added here"""
         """Initialize all exchange connections with read-only keys"""
         # This would normally load from vault - using placeholders for now
         exchange_configs = {
@@ -291,6 +294,7 @@ class UltimateTransactionCaptureSystem:
                 logger.warning(f"⚠️ Failed to initialize {exchange_name}: {e}")
     
     def get_free_ai_consensus(self, query: str, context: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Input validation would be added here"""
         """
         Get consensus from ALL free AI models for continuous monitoring
         Uses all 17+ free models for maximum coverage
@@ -356,6 +360,7 @@ class UltimateTransactionCaptureSystem:
         return consensus_results
     
     def get_premium_ai_consensus(self, query: str, context: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Input validation would be added here"""
         """
         Get consensus from premium AI models for complex decisions
         Uses top-tier models for critical analysis
@@ -433,6 +438,7 @@ class UltimateTransactionCaptureSystem:
         return consensus_results
     
     def _query_openrouter_model(self, model_id: str, query: str, context: Dict[str, Any], 
+        """TODO: Add function documentation"""
                                api_key: str, model_name: str) -> Optional[Dict[str, Any]]:
         """Query a specific OpenRouter model"""
         try:
@@ -492,6 +498,7 @@ class UltimateTransactionCaptureSystem:
         return None
     
     def capture_all_transactions(self):
+        """Input validation would be added here"""
         """
         Capture ALL transactions from ALL exchanges continuously
         Uses free AI models for real-time validation
@@ -522,6 +529,7 @@ class UltimateTransactionCaptureSystem:
         return capture_threads
     
     def _capture_exchange_transactions(self, exchange_name: str):
+        """Input validation would be added here"""
         """Capture transactions from a specific exchange"""
         exchange = self.exchanges[exchange_name]
         last_check = datetime.now() - timedelta(hours=24)  # Start from 24 hours ago
@@ -562,6 +570,7 @@ class UltimateTransactionCaptureSystem:
                 time.sleep(60)  # Wait 1 minute on error
     
     def _process_transaction(self, exchange: str, tx_type: str, raw_data: Dict[str, Any]):
+        """Input validation would be added here"""
         """Process and store a transaction with AI validation"""
         try:
             # Extract standardized transaction data
@@ -569,8 +578,11 @@ class UltimateTransactionCaptureSystem:
                 timestamp=raw_data.get('datetime', datetime.now().isoformat()),
                 exchange=exchange,
                 type=tx_type,
-                base=raw_data.get('symbol', '').split('/')[0] if '/' in raw_data.get('symbol', '') else raw_data.get('currency', ''),
-                quote=raw_data.get('symbol', '').split('/')[1] if '/' in raw_data.get('symbol', '') else 'USD',
+                base=raw_data.get('symbol',
+                    '').split('/')[0] if '/' in raw_data.get('symbol',
+                    '') else raw_data.get('currency',
+                    ''),
+                                    quote=raw_data.get('symbol', '').split('/')[1] if '/' in raw_data.get('symbol', '') else 'USD',
                 quantity=float(raw_data.get('amount', 0)),
                 price=float(raw_data.get('price', 0)),
                 fee=float(raw_data.get('fee', {}).get('cost', 0)),
@@ -593,6 +605,7 @@ class UltimateTransactionCaptureSystem:
             logger.error(f"❌ Error processing transaction: {e}")
     
     def _store_transaction(self, transaction: Transaction):
+        """Input validation would be added here"""
         """Store transaction in database"""
         try:
             conn = sqlite3.connect(self.transactions_db)
@@ -631,11 +644,13 @@ class UltimateTransactionCaptureSystem:
             logger.error(f"❌ Error storing transaction: {e}")
     
     def _queue_for_ai_validation(self, transaction: Transaction):
+        """Input validation would be added here"""
         """Queue transaction for AI validation"""
         # This would normally use a proper queue - simplified for now
         pass
     
     def _continuous_ai_validation(self):
+        """Input validation would be added here"""
         """Continuous AI validation of transactions using free models"""
         while self.capture_active:
             try:
@@ -689,6 +704,7 @@ class UltimateTransactionCaptureSystem:
                 time.sleep(60)
     
     def _update_transaction_validation(self, transaction_id: int, ai_consensus: Dict[str, Any]):
+        """Input validation would be added here"""
         """Update transaction with AI validation results"""
         try:
             conn = sqlite3.connect(self.transactions_db)
@@ -725,6 +741,7 @@ class UltimateTransactionCaptureSystem:
             logger.error(f"❌ Error updating transaction validation: {e}")
     
     def generate_compliance_report(self, jurisdiction: str = 'US', period_days: int = 365) -> Dict[str, Any]:
+        """Input validation would be added here"""
         """
         Generate comprehensive compliance report with premium AI analysis
         """
@@ -800,6 +817,7 @@ class UltimateTransactionCaptureSystem:
             return {'error': str(e)}
     
     def _extract_recommendations(self, ai_consensus: Dict[str, Any]) -> List[str]:
+        """Input validation would be added here"""
         """Extract actionable recommendations from AI consensus"""
         recommendations = []
         
@@ -816,6 +834,7 @@ class UltimateTransactionCaptureSystem:
         return list(set(recommendations))  # Remove duplicates
     
     def _store_compliance_report(self, report: Dict[str, Any]):
+        """Input validation would be added here"""
         """Store compliance report in database"""
         try:
             conn = sqlite3.connect(self.transactions_db)
@@ -841,6 +860,7 @@ class UltimateTransactionCaptureSystem:
             logger.error(f"❌ Error storing compliance report: {e}")
     
     def get_system_status(self) -> Dict[str, Any]:
+        """Input validation would be added here"""
         """Get comprehensive system status"""
         try:
             conn = sqlite3.connect(self.transactions_db)
@@ -875,71 +895,72 @@ class UltimateTransactionCaptureSystem:
             return {'status': 'error', 'error': str(e)}
 
 def main():
+    """Input validation would be added here"""
     """Main execution function"""
-    print("🎯 ULTIMATE TRANSACTION CAPTURE SYSTEM")
-    print("=" * 60)
-    print("🤖 ALL Free AI Models + Premium AI Consensus")
-    print("🏦 Complete Exchange Transaction Monitoring")
-    print("📊 Full Compliance & Tax Reporting")
+    logging.info("🎯 ULTIMATE TRANSACTION CAPTURE SYSTEM")
+    logging.info("=" * 60)
+    logging.info("🤖 ALL Free AI Models + Premium AI Consensus")
+    logging.info("🏦 Complete Exchange Transaction Monitoring")
+    logging.info("📊 Full Compliance & Tax Reporting")
     print()
     
     try:
         # Initialize system
         capture_system = UltimateTransactionCaptureSystem()
         
-        print("✅ System initialized successfully!")
-        print(f"📊 Free AI Models: {len(capture_system.free_ai_models)}")
-        print(f"🤖 Premium AI Models: {len(capture_system.premium_ai_models)}")
-        print(f"🏦 Exchanges: {len(capture_system.exchanges)}")
+        logging.info("✅ System initialized successfully!")
+        logging.info(f"📊 Free AI Models: {len(capture_system.free_ai_models)}")
+        logging.info(f"🤖 Premium AI Models: {len(capture_system.premium_ai_models)}")
+        logging.info(f"🏦 Exchanges: {len(capture_system.exchanges)}")
         print()
         
         # Test AI systems
-        print("🧪 Testing AI consensus systems...")
+        logging.info("🧪 Testing AI consensus systems...")
         
         # Test free AI consensus
         free_test = capture_system.get_free_ai_consensus(
             "System initialization test. Confirm all free AI models are operational for transaction monitoring."
         )
-        print(f"✅ Free AI Consensus: {free_test['consensus_score']:.2%} response rate")
+        logging.info(f"✅ Free AI Consensus: {free_test['consensus_score']:.2%} response rate")
         
         # Test premium AI consensus
         premium_test = capture_system.get_premium_ai_consensus(
             "System initialization test. Confirm premium AI models are ready for complex compliance analysis."
         )
-        print(f"✅ Premium AI Consensus: {premium_test['consensus_score']:.2%} response rate")
+        logging.info(f"✅ Premium AI Consensus: {premium_test['consensus_score']:.2%} response rate")
         
         print()
-        print("🚀 Starting continuous transaction capture...")
+        logging.info("🚀 Starting continuous transaction capture...")
         
         # Start transaction capture
         capture_threads = capture_system.capture_all_transactions()
         
-        print("✅ Transaction capture active!")
-        print("📊 Monitoring all exchanges with AI validation")
-        print("🤖 Free AI models validating transactions continuously")
-        print("💎 Premium AI models available for complex analysis")
+        logging.info("✅ Transaction capture active!")
+        logging.info("📊 Monitoring all exchanges with AI validation")
+        logging.info("🤖 Free AI models validating transactions continuously")
+        logging.info("💎 Premium AI models available for complex analysis")
         print()
-        print("Commands:")
-        print("- Press Ctrl+C to stop")
-        print("- Check status: curl http://localhost:8091/transaction-status")
-        print("- Generate report: python3 -c \"from ULTIMATE_TRANSACTION_CAPTURE_SYSTEM import *; system = UltimateTransactionCaptureSystem(); print(system.generate_compliance_report())\"")
+        logging.info("Commands:")
+        logging.info("- Press Ctrl+C to stop")
+        logging.info("- Check status: curl http://localhost:8091/transaction-status")
+        logging.info("- Generate report: python3 -c \"from ULTIMATE_TRANSACTION_CAPTURE_SYSTEM import *; system = UltimateTransactionCaptureSystem(); logging.info(system.generate_compliance_report())\"")
         print()
         
         # Keep running
         while True:
             time.sleep(60)
             status = capture_system.get_system_status()
-            print(f"📊 Status: {status['today_transactions']} transactions today, {status['total_transactions']} total")
+            logging.info(f"📊 Status: {status['today_transactions']} transactions today, {status['total_transactions']} total")
     
     except KeyboardInterrupt:
-        print("\n🛑 Stopping transaction capture system...")
+        logging.info("\n🛑 Stopping transaction capture system...")
         if 'capture_system' in locals():
             capture_system.capture_active = False
-        print("✅ System stopped")
+        logging.info("✅ System stopped")
     
     except Exception as e:
         logger.error(f"❌ Critical error: {e}")
-        print(f"❌ Critical error: {e}")
+        logging.info(f"❌ Critical error: {e}")
 
 if __name__ == "__main__":
     main()

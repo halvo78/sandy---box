@@ -30,36 +30,37 @@ class AITradingDecisionsDemo:
     """Demonstrate AI Orchestra Conductor making real trading decisions"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.start_time = time.time()
         self.exchange_manager = None
         self.ai_conductor = None
         self.live_prices = {}
         self.trading_decisions = []
         
-        print("🧠 ULTIMATE LYRA ECOSYSTEM - AI TRADING DECISIONS DEMO")
-        print("=" * 70)
-        print("🎼 Demonstrating AI Orchestra Conductor in action")
-        print("💰 Real market data → AI analysis → Trading decisions")
-        print("🚀 Fixed AI algorithms with optimized decision making")
-        print("=" * 70)
+        logging.info("🧠 ULTIMATE LYRA ECOSYSTEM - AI TRADING DECISIONS DEMO")
+        logging.info("=" * 70)
+        logging.info("🎼 Demonstrating AI Orchestra Conductor in action")
+        logging.info("💰 Real market data → AI analysis → Trading decisions")
+        logging.info("🚀 Fixed AI algorithms with optimized decision making")
+        logging.info("=" * 70)
         print()
     
     async def initialize_systems(self):
         """Initialize the exchange manager and AI conductor"""
-        print("🔧 INITIALIZING TRADING SYSTEMS...")
+        logging.info("🔧 INITIALIZING TRADING SYSTEMS...")
         
         # Initialize exchange manager
         self.exchange_manager = EnhancedLiveExchangeManager()
-        print("   ✅ Exchange Manager initialized")
+        logging.info("   ✅ Exchange Manager initialized")
         
         # Initialize AI conductor
         self.ai_conductor = AIOrchestralConductor()
-        print("   ✅ AI Orchestra Conductor initialized")
+        logging.info("   ✅ AI Orchestra Conductor initialized")
         print()
     
     async def gather_live_market_data(self):
         """Gather live market data from exchanges"""
-        print("📊 GATHERING LIVE MARKET DATA...")
+        logging.info("📊 GATHERING LIVE MARKET DATA...")
         
         # Test connections and get live prices
         results = await self.exchange_manager.test_all_connections_enhanced()
@@ -73,7 +74,7 @@ class AITradingDecisionsDemo:
                 
                 if price > 0:
                     self.live_prices[exchange] = price
-                    print(f"   📈 {exchange.upper()}: ${price:,.2f}")
+                    logging.info(f"   📈 {exchange.upper()}: ${price:,.2f}")
         
         # Create comprehensive market data for AI analysis
         symbols = ['BTC-USDT', 'ETH-USDT', 'ADA-USDT', 'SOL-USDT', 'DOGE-USDT']
@@ -106,23 +107,23 @@ class AITradingDecisionsDemo:
                 'spread': 0.1 + (i * 0.05)
             }
         
-        print(f"\n📊 MARKET DATA PREPARED:")
+        logging.info(f"\n📊 MARKET DATA PREPARED:")
         for symbol, data in market_data.items():
-            print(f"   {symbol}: ${data['price']:.4f} | RSI: {data['rsi']:.0f} | Sentiment: {data['sentiment']:.2f}")
+            logging.info(f"   {symbol}: ${data['price']:.4f} | RSI: {data['rsi']:.0f} | Sentiment: {data['sentiment']:.2f}")
         
         print()
         return market_data
     
     async def run_ai_analysis_cycles(self, market_data: Dict, cycles: int = 3):
         """Run multiple AI analysis cycles to show decision making"""
-        print(f"🎼 RUNNING {cycles} AI ANALYSIS CYCLES...")
+        logging.info(f"🎼 RUNNING {cycles} AI ANALYSIS CYCLES...")
         print()
         
         all_decisions = []
         
         for cycle in range(1, cycles + 1):
-            print(f"🔄 CYCLE {cycle}: AI ORCHESTRA CONDUCTOR ANALYSIS")
-            print("-" * 50)
+            logging.info(f"🔄 CYCLE {cycle}: AI ORCHESTRA CONDUCTOR ANALYSIS")
+            logging.info("-" * 50)
             
             # Modify market data slightly for each cycle to show different decisions
             cycle_market_data = {}
@@ -141,7 +142,7 @@ class AITradingDecisionsDemo:
             try:
                 decisions = await self.ai_conductor.conduct_orchestra(cycle_market_data)
                 
-                print(f"   🧠 AI Generated {len(decisions)} decisions:")
+                logging.info(f"   🧠 AI Generated {len(decisions)} decisions:")
                 
                 for i, decision in enumerate(decisions, 1):
                     decision_data = {
@@ -169,27 +170,27 @@ class AITradingDecisionsDemo:
                     # Display decision details
                     status_icon = "✅" if decision.result.value == "APPROVE" else "❌" if decision.result.value == "REJECT" else "⏳"
                     
-                    print(f"   {status_icon} Decision {i}: {decision.intent.symbol}")
-                    print(f"      🎯 Strategy: {decision.intent.strategy}")
-                    print(f"      🔄 Action: {decision.intent.side.value}")
-                    print(f"      📊 Confidence: {decision.intent.confidence:.2f}")
-                    print(f"      ✅ Result: {decision.result.value}")
-                    print(f"      💰 Size: {decision.intent.size_hint:.3f}")
-                    print(f"      📈 Market: RSI {decision_data['market_conditions']['rsi']:.0f}, Sentiment {decision_data['market_conditions']['sentiment']:.2f}")
-                    print(f"      💭 Reason: {decision.reason}")
+                    logging.info(f"   {status_icon} Decision {i}: {decision.intent.symbol}")
+                    logging.info(f"      🎯 Strategy: {decision.intent.strategy}")
+                    logging.info(f"      🔄 Action: {decision.intent.side.value}")
+                    logging.info(f"      📊 Confidence: {decision.intent.confidence:.2f}")
+                    logging.info(f"      ✅ Result: {decision.result.value}")
+                    logging.info(f"      💰 Size: {decision.intent.size_hint:.3f}")
+                    logging.info(f"      📈 Market: RSI {decision_data['market_conditions']['rsi']:.0f}, Sentiment {decision_data['market_conditions']['sentiment']:.2f}")
+                    logging.info(f"      💭 Reason: {decision.reason}")
                     print()
                 
                 if not decisions:
-                    print("   ⚠️  No decisions generated - market conditions too neutral")
+                    logging.info("   ⚠️  No decisions generated - market conditions too neutral")
                     print()
                 
             except Exception as e:
-                print(f"   ❌ Error in AI analysis: {e}")
+                logging.info(f"   ❌ Error in AI analysis: {e}")
                 print()
             
             # Wait between cycles
             if cycle < cycles:
-                print("   ⏱️  Waiting 2 seconds before next cycle...")
+                logging.info("   ⏱️  Waiting 2 seconds before next cycle...")
                 await asyncio.sleep(2)
                 print()
         
@@ -197,10 +198,10 @@ class AITradingDecisionsDemo:
     
     async def analyze_trading_performance(self):
         """Analyze the AI trading decisions and performance"""
-        print("📊 ANALYZING AI TRADING PERFORMANCE...")
+        logging.info("📊 ANALYZING AI TRADING PERFORMANCE...")
         
         if not self.trading_decisions:
-            print("   ⚠️  No trading decisions to analyze")
+            logging.info("   ⚠️  No trading decisions to analyze")
             return
         
         # Performance metrics
@@ -234,37 +235,37 @@ class AITradingDecisionsDemo:
         max_confidence = max(confidences) if confidences else 0
         min_confidence = min(confidences) if confidences else 0
         
-        print(f"   📈 PERFORMANCE SUMMARY:")
-        print(f"      Total Decisions: {total_decisions}")
-        print(f"      ✅ Approved: {approved_decisions} ({approval_rate:.1f}%)")
-        print(f"      ❌ Rejected: {rejected_decisions}")
-        print(f"      ⏳ Queued: {queued_decisions}")
+        logging.info(f"   📈 PERFORMANCE SUMMARY:")
+        logging.info(f"      Total Decisions: {total_decisions}")
+        logging.info(f"      ✅ Approved: {approved_decisions} ({approval_rate:.1f}%)")
+        logging.info(f"      ❌ Rejected: {rejected_decisions}")
+        logging.info(f"      ⏳ Queued: {queued_decisions}")
         print()
         
-        print(f"   🎯 STRATEGY BREAKDOWN:")
+        logging.info(f"   🎯 STRATEGY BREAKDOWN:")
         for strategy, stats in strategies.items():
             success_rate = (stats['approved'] / stats['count']) * 100 if stats['count'] > 0 else 0
-            print(f"      {strategy}: {stats['count']} decisions, {success_rate:.1f}% approved")
+            logging.info(f"      {strategy}: {stats['count']} decisions, {success_rate:.1f}% approved")
         print()
         
-        print(f"   🔄 ACTION BREAKDOWN:")
+        logging.info(f"   🔄 ACTION BREAKDOWN:")
         for action, count in actions.items():
             percentage = (count / total_decisions) * 100 if total_decisions > 0 else 0
-            print(f"      {action}: {count} ({percentage:.1f}%)")
+            logging.info(f"      {action}: {count} ({percentage:.1f}%)")
         print()
         
-        print(f"   🎲 CONFIDENCE ANALYSIS:")
-        print(f"      Average: {avg_confidence:.2f}")
-        print(f"      Range: {min_confidence:.2f} - {max_confidence:.2f}")
+        logging.info(f"   🎲 CONFIDENCE ANALYSIS:")
+        logging.info(f"      Average: {avg_confidence:.2f}")
+        logging.info(f"      Range: {min_confidence:.2f} - {max_confidence:.2f}")
         print()
         
         # Show most confident decisions
         confident_decisions = sorted(self.trading_decisions, key=lambda x: x['confidence'], reverse=True)[:3]
         
-        print(f"   🏆 TOP 3 MOST CONFIDENT DECISIONS:")
+        logging.info(f"   🏆 TOP 3 MOST CONFIDENT DECISIONS:")
         for i, decision in enumerate(confident_decisions, 1):
-            print(f"      {i}. {decision['symbol']} {decision['side']} - {decision['confidence']:.2f} confidence")
-            print(f"         Strategy: {decision['strategy']} | Result: {decision['result']}")
+            logging.info(f"      {i}. {decision['symbol']} {decision['side']} - {decision['confidence']:.2f} confidence")
+            logging.info(f"         Strategy: {decision['strategy']} | Result: {decision['result']}")
         print()
     
     async def save_results(self):
@@ -289,10 +290,10 @@ class AITradingDecisionsDemo:
         with open('ai_trading_decisions_results.json', 'w') as f:
             json.dump(results, f, indent=2)
         
-        print(f"💾 RESULTS SAVED:")
-        print(f"   📁 File: ai_trading_decisions_results.json")
-        print(f"   ⏱️  Runtime: {runtime:.2f} seconds")
-        print(f"   🧠 Total AI Decisions: {len(self.trading_decisions)}")
+        logging.info(f"💾 RESULTS SAVED:")
+        logging.info(f"   📁 File: ai_trading_decisions_results.json")
+        logging.info(f"   ⏱️  Runtime: {runtime:.2f} seconds")
+        logging.info(f"   🧠 Total AI Decisions: {len(self.trading_decisions)}")
         print()
         
         return results
@@ -317,17 +318,17 @@ async def run_ai_trading_demo():
         # Save results
         results = await demo.save_results()
         
-        print("🎉 AI TRADING DECISIONS DEMO COMPLETE!")
-        print("=" * 70)
-        print("🧠 AI Orchestra Conductor successfully demonstrated")
-        print("💰 Real trading decisions generated from live market data")
-        print("🚀 System ready for live trading deployment")
-        print("=" * 70)
+        logging.info("🎉 AI TRADING DECISIONS DEMO COMPLETE!")
+        logging.info("=" * 70)
+        logging.info("🧠 AI Orchestra Conductor successfully demonstrated")
+        logging.info("💰 Real trading decisions generated from live market data")
+        logging.info("🚀 System ready for live trading deployment")
+        logging.info("=" * 70)
         
         return results
         
     except Exception as e:
-        print(f"❌ Error during AI trading demo: {str(e)}")
+        logging.info(f"❌ Error during AI trading demo: {str(e)}")
         import traceback
         traceback.print_exc()
 

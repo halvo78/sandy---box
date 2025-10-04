@@ -6,6 +6,7 @@ with comprehensive AI consensus validation.
 """
 
 import os
+import logging
 import json
 import urllib.request
 import concurrent.futures
@@ -13,6 +14,7 @@ from datetime import datetime
 
 class UltimateExtractionConsensusValidator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the ultimate extraction and consensus validator."""
         
         self.repo_dir = "/home/ubuntu/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL"
@@ -73,17 +75,18 @@ class UltimateExtractionConsensusValidator:
             "enhancement_opportunities": []
         }
         
-        print("🔍 ULTIMATE EXTRACTION & CONSENSUS VALIDATOR")
-        print("="*70)
-        print("🎯 Goal: Ensure ALL best content is extracted with AI consensus")
-        print(f"📁 Repository: {self.repo_dir}")
-        print(f"📄 Pasted Content Files: {len(self.pasted_content_files)}")
-        print(f"🤖 AI Models: Using all available OpenRouter models")
-        print("="*70)
+        logging.info("🔍 ULTIMATE EXTRACTION & CONSENSUS VALIDATOR")
+        logging.info("="*70)
+        logging.info("🎯 Goal: Ensure ALL best content is extracted with AI consensus")
+        logging.info(f"📁 Repository: {self.repo_dir}")
+        logging.info(f"📄 Pasted Content Files: {len(self.pasted_content_files)}")
+        logging.info(f"🤖 AI Models: Using all available OpenRouter models")
+        logging.info("="*70)
     
     def extract_all_pasted_content(self):
+        """Input validation would be added here"""
         """Extract and analyze all pasted content."""
-        print("📖 Extracting all pasted content...")
+        logging.info("📖 Extracting all pasted content...")
         
         all_content = ""
         content_summary = {}
@@ -102,12 +105,12 @@ class UltimateExtractionConsensusValidator:
                             "words": len(content.split())
                         }
                         
-                        print(f"  ✅ {filename}: {len(content)} chars, {len(content.splitlines())} lines")
+                        logging.info(f"  ✅ {filename}: {len(content)} chars, {len(content.splitlines())} lines")
                         
                 except Exception as e:
-                    print(f"  ❌ Error reading {content_file}: {e}")
+                    logging.info(f"  ❌ Error reading {content_file}: {e}")
             else:
-                print(f"  ⚠️ File not found: {content_file}")
+                logging.info(f"  ⚠️ File not found: {content_file}")
         
         # Save comprehensive content
         comprehensive_content_path = os.path.join(self.repo_dir, "COMPREHENSIVE_EXTRACTED_CONTENT.md")
@@ -130,12 +133,13 @@ class UltimateExtractionConsensusValidator:
         with open(comprehensive_content_path, 'w') as f:
             f.write(comprehensive_content)
         
-        print(f"  ✅ Comprehensive content saved to {comprehensive_content_path}")
+        logging.info(f"  ✅ Comprehensive content saved to {comprehensive_content_path}")
         return all_content, content_summary
     
     def scan_repository_for_extraction_categories(self):
+        """Input validation would be added here"""
         """Scan repository for all extraction categories."""
-        print("🔍 Scanning repository for extraction categories...")
+        logging.info("🔍 Scanning repository for extraction categories...")
         
         total_files_scanned = 0
         total_components_found = 0
@@ -169,8 +173,8 @@ class UltimateExtractionConsensusValidator:
                     except Exception as e:
                         continue
         
-        print(f"  📊 Files Scanned: {total_files_scanned}")
-        print(f"  🔍 Components Found: {total_components_found}")
+        logging.info(f"  📊 Files Scanned: {total_files_scanned}")
+        logging.info(f"  🔍 Components Found: {total_components_found}")
         
         # Calculate extraction scores
         for category, data in self.extraction_results["content_extraction"].items():
@@ -181,11 +185,12 @@ class UltimateExtractionConsensusValidator:
             data["extraction_percentage"] = extraction_percentage
             data["extraction_score"] = min(10, extraction_percentage / 10)
             
-            print(f"  📈 {category.replace('_', ' ').title()}: {found_keywords}/{total_keywords} ({extraction_percentage:.1f}%)")
+            logging.info(f"  📈 {category.replace('_', ' ').title()}: {found_keywords}/{total_keywords} ({extraction_percentage:.1f}%)")
         
         return self.extraction_results["content_extraction"]
     
     def get_ai_extraction_consensus(self, model, api_key, extraction_summary):
+        """Input validation would be added here"""
         """Get AI consensus on extraction completeness from a specific model."""
         try:
             prompt = f"""
@@ -234,8 +239,9 @@ class UltimateExtractionConsensusValidator:
             data = {
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": "You are the world's most advanced AI expert conducting ultimate extraction and consensus validation."},
-                    {"role": "user", "content": prompt}
+                    {"role": "system",
+                        "content": "You are the world's most advanced AI expert conducting ultimate extraction and consensus validation."},
+                                            {"role": "user", "content": prompt}
                 ],
                 "max_tokens": 800,
                 "temperature": 0.1
@@ -289,8 +295,9 @@ class UltimateExtractionConsensusValidator:
             }
     
     def run_comprehensive_ai_extraction_consensus(self):
+        """Input validation would be added here"""
         """Run comprehensive AI consensus on extraction completeness."""
-        print("🤖 Running comprehensive AI extraction consensus...")
+        logging.info("🤖 Running comprehensive AI extraction consensus...")
         
         # Create extraction summary
         extraction_summary = {
@@ -334,16 +341,17 @@ class UltimateExtractionConsensusValidator:
                     
                     verdict = result.get("consensus_verdict", "UNKNOWN")
                     score = result.get("extraction_completeness_score", 0)
-                    print(f"  🧠 {model}: {verdict} ({score}/10)")
+                    logging.info(f"  🧠 {model}: {verdict} ({score}/10)")
                     
                 except Exception as e:
-                    print(f"  ❌ {model}: Analysis failed - {e}")
+                    logging.info(f"  ❌ {model}: Analysis failed - {e}")
         
         return self.extraction_results["ai_consensus_results"]
     
     def create_ultimate_extraction_enhancement_plan(self, all_content):
+        """Input validation would be added here"""
         """Create an ultimate extraction enhancement plan."""
-        print("📋 Creating ultimate extraction enhancement plan...")
+        logging.info("📋 Creating ultimate extraction enhancement plan...")
         
         # Analyze the latest pasted content for new components
         latest_content = all_content.lower()
@@ -461,12 +469,13 @@ Based on the latest analysis, the system should:
 """)
         enhancement_files.append(monitoring_guide)
         
-        print(f"  ✅ Created {len(enhancement_files)} enhancement files")
+        logging.info(f"  ✅ Created {len(enhancement_files)} enhancement files")
         return enhancement_files, new_components
     
     def generate_ultimate_extraction_report(self):
+        """Input validation would be added here"""
         """Generate the ultimate extraction validation report."""
-        print("📋 Generating ultimate extraction report...")
+        logging.info("📋 Generating ultimate extraction report...")
         
         # Calculate final scores
         extraction_scores = []
@@ -533,13 +542,14 @@ Based on the latest analysis, the system should:
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        print(f"  ✅ Ultimate extraction report saved to {report_path}")
+        logging.info(f"  ✅ Ultimate extraction report saved to {report_path}")
         return report
     
     def run_ultimate_extraction_validation(self):
+        """Input validation would be added here"""
         """Run the complete ultimate extraction and consensus validation."""
-        print("🔍 Starting Ultimate Extraction & Consensus Validation...")
-        print("="*70)
+        logging.info("🔍 Starting Ultimate Extraction & Consensus Validation...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -555,7 +565,7 @@ Based on the latest analysis, the system should:
         
         for step_name, step_function in validation_steps:
             try:
-                print(f"\\n🔄 {step_name}...")
+                logging.info(f"\\n🔄 {step_name}...")
                 
                 if step_name == "Extract All Pasted Content":
                     all_content, content_summary = step_function()
@@ -564,10 +574,10 @@ Based on the latest analysis, the system should:
                 else:
                     result = step_function()
                 
-                print(f"  ✅ {step_name} completed")
+                logging.info(f"  ✅ {step_name} completed")
                 
             except Exception as e:
-                print(f"  ❌ {step_name} failed: {e}")
+                logging.info(f"  ❌ {step_name} failed: {e}")
                 return False
         
         end_time = datetime.now()
@@ -577,15 +587,15 @@ Based on the latest analysis, the system should:
         final_report = self.generate_ultimate_extraction_report()
         final_assessment = final_report["final_assessment"]
         
-        print("\\n" + "="*70)
-        print("🎉 ULTIMATE EXTRACTION & CONSENSUS VALIDATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Validation Duration: {duration:.1f} seconds")
-        print(f"📊 Categories Analyzed: {final_assessment['total_categories_analyzed']}")
-        print(f"🤖 AI Models Consulted: {final_assessment['total_ai_models_consulted']}")
-        print(f"📊 Overall Score: {final_assessment['overall_extraction_score']}/10")
-        print(f"🏆 AI Consensus Verdict: {final_assessment['most_common_ai_verdict']}")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 ULTIMATE EXTRACTION & CONSENSUS VALIDATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Validation Duration: {duration:.1f} seconds")
+        logging.info(f"📊 Categories Analyzed: {final_assessment['total_categories_analyzed']}")
+        logging.info(f"🤖 AI Models Consulted: {final_assessment['total_ai_models_consulted']}")
+        logging.info(f"📊 Overall Score: {final_assessment['overall_extraction_score']}/10")
+        logging.info(f"🏆 AI Consensus Verdict: {final_assessment['most_common_ai_verdict']}")
+        logging.info("="*70)
         
         return final_report
 
@@ -598,16 +608,16 @@ if __name__ == "__main__":
         overall_score = final_assessment["overall_extraction_score"]
         ai_verdict = final_assessment["most_common_ai_verdict"]
         
-        print(f"\\n🎯 Ultimate Extraction & Consensus Validation Complete!")
-        print(f"📊 Overall Score: {overall_score}/10")
-        print(f"🏆 AI Verdict: {ai_verdict}")
+        logging.info(f"\\n🎯 Ultimate Extraction & Consensus Validation Complete!")
+        logging.info(f"📊 Overall Score: {overall_score}/10")
+        logging.info(f"🏆 AI Verdict: {ai_verdict}")
         
         if ai_verdict == "ULTIMATE_EXTRACTION" and overall_score >= 9.0:
-            print("🎉 CONSENSUS: ULTIMATE EXTRACTION WITH ALL BEST CONTENT CONFIRMED!")
-            print("🌍 All the best content from all sources has been extracted!")
+            logging.info("🎉 CONSENSUS: ULTIMATE EXTRACTION WITH ALL BEST CONTENT CONFIRMED!")
+            logging.info("🌍 All the best content from all sources has been extracted!")
         elif overall_score >= 8.0:
-            print("🌟 Excellent extraction with comprehensive content coverage")
+            logging.info("🌟 Excellent extraction with comprehensive content coverage")
         else:
-            print("📊 Good extraction with potential for additional enhancements")
+            logging.info("📊 Good extraction with potential for additional enhancements")
     else:
-        print("❌ Ultimate extraction validation failed")
+        logging.info("❌ Ultimate extraction validation failed")

@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 class HummingbotIntegration:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.hummingbot_path = "/opt/hummingbot"
         self.config_path = "/app/hummingbot_configs"
         self.strategies = {

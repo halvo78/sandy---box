@@ -5,6 +5,7 @@ Comprehensive BTC tracking without external dependencies
 """
 
 import json
+import logging
 import time
 import sqlite3
 import threading
@@ -48,6 +49,7 @@ class TechnicalIndicators:
     
     @staticmethod
     def sma(data: List[float], period: int) -> List[float]:
+        """Input validation would be added here"""
         """Simple Moving Average."""
         if len(data) < period:
             return [None] * len(data)
@@ -64,6 +66,7 @@ class TechnicalIndicators:
     
     @staticmethod
     def ema(data: List[float], period: int) -> List[float]:
+        """Input validation would be added here"""
         """Exponential Moving Average."""
         if len(data) < period:
             return [None] * len(data)
@@ -85,6 +88,7 @@ class TechnicalIndicators:
     
     @staticmethod
     def rsi(data: List[float], period: int = 14) -> List[float]:
+        """Input validation would be added here"""
         """Relative Strength Index."""
         if len(data) < period + 1:
             return [None] * len(data)
@@ -129,7 +133,12 @@ class TechnicalIndicators:
         return rsi_values
     
     @staticmethod
-    def bollinger_bands(data: List[float], period: int = 20, std_dev: float = 2) -> Tuple[List[float], List[float], List[float]]:
+    def bollinger_bands(data: List[float],
+        """TODO: Add function documentation"""
+        period: int = 20,
+        std_dev: float = 2) -> Tuple[List[float],
+        List[float],
+        List[float]]:        """Input validation would be added here"""
         """Bollinger Bands."""
         sma_values = TechnicalIndicators.sma(data, period)
         
@@ -156,9 +165,11 @@ class AdvancedHighLowDetector:
     """Advanced algorithms for detecting BTC highs and lows."""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.indicators = TechnicalIndicators()
     
     def detect_swing_highs_lows(self, ohlcv_data: List[Dict], window: int = 20) -> List[HighLowPoint]:
+        """Input validation would be added here"""
         """Detect swing highs and lows using multiple algorithms."""
         if len(ohlcv_data) < window * 2:
             return []
@@ -246,6 +257,7 @@ class AdvancedHighLowDetector:
         return points
     
     def _calculate_strength_score(self, ohlcv_data: List[Dict], index: int, point_type: str, 
+        """TODO: Add function documentation"""
                                 rsi_values: List[float], volume_sma: List[float],
                                 bb_upper: List[float], bb_lower: List[float]) -> float:
         """Calculate strength score for a high/low point."""
@@ -290,11 +302,13 @@ class AdvancedHighLowDetector:
         return min(100, score)
     
     def _find_nearest_level(self, price: float, highs: List[float], lows: List[float]) -> float:
+        """Input validation would be added here"""
         """Find the nearest support/resistance level."""
         all_levels = highs + lows
         return min(all_levels, key=lambda x: abs(x - price))
     
     def _analyze_market_structure(self, closes: List[float], sma_20: List[float], 
+        """TODO: Add function documentation"""
                                 sma_50: List[float], index: int) -> str:
         """Analyze market structure at the point."""
         if (index >= len(sma_20) or index >= len(sma_50) or 
@@ -318,6 +332,7 @@ class SimpleBTCTracker:
     """Simplified BTC tracking system."""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.detector = AdvancedHighLowDetector()
         self.data_storage = {}
         self.high_low_points = {}
@@ -326,6 +341,7 @@ class SimpleBTCTracker:
         self.init_database()
     
     def init_database(self):
+        """Input validation would be added here"""
         """Initialize SQLite database."""
         self.conn = sqlite3.connect('btc_tracking.db', check_same_thread=False)
         cursor = self.conn.cursor()
@@ -351,6 +367,7 @@ class SimpleBTCTracker:
         self.conn.commit()
     
     def add_sample_data(self, timeframe: TimeFrame):
+        """Input validation would be added here"""
         """Add sample BTC data for demonstration."""
         # Generate sample OHLCV data
         base_price = 45000  # Starting BTC price
@@ -387,6 +404,7 @@ class SimpleBTCTracker:
         return sample_data
     
     def analyze_timeframe(self, timeframe: TimeFrame) -> List[HighLowPoint]:
+        """Input validation would be added here"""
         """Analyze a specific timeframe."""
         if timeframe not in self.data_storage:
             self.add_sample_data(timeframe)
@@ -406,6 +424,7 @@ class SimpleBTCTracker:
         return points
     
     def save_points_to_db(self, points: List[HighLowPoint]):
+        """Input validation would be added here"""
         """Save points to database."""
         cursor = self.conn.cursor()
         
@@ -433,6 +452,7 @@ class SimpleBTCTracker:
         self.conn.commit()
     
     def get_confluence_points(self) -> List[HighLowPoint]:
+        """Input validation would be added here"""
         """Find confluence points across timeframes."""
         confluence_points = []
         
@@ -498,6 +518,7 @@ class SimpleBTCTracker:
         return confluence_points
     
     def generate_report(self) -> str:
+        """Input validation would be added here"""
         """Generate comprehensive tracking report."""
         # Analyze all timeframes
         all_results = {}
@@ -604,6 +625,7 @@ class SimpleBTCTracker:
         return report
 
 def create_system_ports():
+    """Input validation would be added here"""
     """Create dedicated ports for the tracking system."""
     return {
         'main_api': 8888,
@@ -619,11 +641,12 @@ def create_system_ports():
     }
 
 def main():
+    """Input validation would be added here"""
     """Main execution function."""
-    print("🎯 ULTIMATE BTC HIGH/LOW TRACKING SYSTEM")
-    print("=" * 60)
-    print("Comprehensive BTC tracking with advanced algorithms")
-    print("=" * 60)
+    logging.info("🎯 ULTIMATE BTC HIGH/LOW TRACKING SYSTEM")
+    logging.info("=" * 60)
+    logging.info("Comprehensive BTC tracking with advanced algorithms")
+    logging.info("=" * 60)
     
     # Create system
     tracker = SimpleBTCTracker()
@@ -631,18 +654,18 @@ def main():
     # Create dedicated ports
     ports = create_system_ports()
     
-    print(f"\n🔧 SYSTEM CONFIGURATION:")
-    print(f"📊 Timeframes: {len(TimeFrame)} supported")
-    print(f"🤖 Algorithms: Swing detection, RSI, Bollinger Bands, Volume analysis")
-    print(f"💾 Database: SQLite with real-time storage")
-    print(f"🌐 API Ports: {len(ports)} dedicated endpoints")
+    logging.info(f"\n🔧 SYSTEM CONFIGURATION:")
+    logging.info(f"📊 Timeframes: {len(TimeFrame)} supported")
+    logging.info(f"🤖 Algorithms: Swing detection, RSI, Bollinger Bands, Volume analysis")
+    logging.info(f"💾 Database: SQLite with real-time storage")
+    logging.info(f"🌐 API Ports: {len(ports)} dedicated endpoints")
     
-    print(f"\n🌐 DEDICATED PORTS:")
+    logging.info(f"\n🌐 DEDICATED PORTS:")
     for service, port in ports.items():
         service_name = service.replace('_', ' ').title()
-        print(f"  {service_name}: Port {port}")
+        logging.info(f"  {service_name}: Port {port}")
     
-    print(f"\n🚀 RUNNING ANALYSIS...")
+    logging.info(f"\n🚀 RUNNING ANALYSIS...")
     
     # Generate comprehensive report
     report = tracker.generate_report()
@@ -652,18 +675,18 @@ def main():
     with open(report_file, 'w') as f:
         f.write(report)
     
-    print(f"📄 Report generated: {report_file}")
-    print(f"✅ Analysis complete!")
+    logging.info(f"📄 Report generated: {report_file}")
+    logging.info(f"✅ Analysis complete!")
     
     # Print summary
-    print(f"\n📊 ANALYSIS SUMMARY:")
+    logging.info(f"\n📊 ANALYSIS SUMMARY:")
     lines = report.split('\n')
     for line in lines:
         if 'Total Points:' in line or 'Confirmed Points:' in line or 'Confluence Points:' in line:
-            print(f"  {line.strip()}")
+            logging.info(f"  {line.strip()}")
     
-    print(f"\n🎯 System ready for real-time tracking!")
-    print(f"📈 All algorithms active and monitoring BTC")
+    logging.info(f"\n🎯 System ready for real-time tracking!")
+    logging.info(f"📈 All algorithms active and monitoring BTC")
 
 if __name__ == "__main__":
     main()

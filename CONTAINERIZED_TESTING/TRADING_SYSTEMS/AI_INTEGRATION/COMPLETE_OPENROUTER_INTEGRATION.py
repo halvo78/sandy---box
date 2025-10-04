@@ -5,19 +5,21 @@ Configures ALL AI models (free and paid) through OpenRouter with unlimited commi
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
 from datetime import datetime
 
 def setup_complete_openrouter_integration():
+    """Input validation would be added here"""
     """Set up complete OpenRouter integration with all available models."""
     
-    print("🤖 COMPLETE OPENROUTER INTEGRATION")
-    print("="*60)
-    print("🎯 Configuring ALL AI models through OpenRouter")
-    print("🚀 Unlimited access during commissioning")
-    print("="*60)
+    logging.info("🤖 COMPLETE OPENROUTER INTEGRATION")
+    logging.info("="*60)
+    logging.info("🎯 Configuring ALL AI models through OpenRouter")
+    logging.info("🚀 Unlimited access during commissioning")
+    logging.info("="*60)
     
     # All OpenRouter API keys available
     openrouter_keys = [
@@ -30,7 +32,7 @@ def setup_complete_openrouter_integration():
     # Filter out empty keys
     active_keys = [key for key in openrouter_keys if key and key.startswith("sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")]
     
-    print(f"🔑 Active OpenRouter Keys: {len(active_keys)}")
+    logging.info(f"🔑 Active OpenRouter Keys: {len(active_keys)}")
     
     # Complete OpenRouter model catalog (as of latest update)
     openrouter_models = {
@@ -54,28 +56,49 @@ def setup_complete_openrouter_integration():
             "google/gemini-pro": {"provider": "Google", "type": "chat", "context": 32768, "cost": "medium"},
             
             # Meta Models
-            "meta-llama/llama-3.1-405b-instruct": {"provider": "Meta", "type": "chat", "context": 131072, "cost": "high"},
-            "meta-llama/llama-3.1-70b-instruct": {"provider": "Meta", "type": "chat", "context": 131072, "cost": "medium"},
-            "meta-llama/llama-3.1-8b-instruct": {"provider": "Meta", "type": "chat", "context": 131072, "cost": "low"},
+            "meta-llama/llama-3.1-405b-instruct": {"provider": "Meta",
+                "type": "chat",
+                "context": 131072,
+                "cost": "high"},
+                            "meta-llama/llama-3.1-70b-instruct": {"provider": "Meta",
+                "type": "chat",
+                "context": 131072,
+                "cost": "medium"},
+                            "meta-llama/llama-3.1-8b-instruct": {"provider": "Meta", "type": "chat", "context": 131072, "cost": "low"},
             "meta-llama/llama-3-70b-instruct": {"provider": "Meta", "type": "chat", "context": 8192, "cost": "medium"},
             
             # Mistral Models
             "mistralai/mistral-large": {"provider": "Mistral", "type": "chat", "context": 128000, "cost": "high"},
             "mistralai/mistral-medium": {"provider": "Mistral", "type": "chat", "context": 32768, "cost": "medium"},
             "mistralai/mistral-small": {"provider": "Mistral", "type": "chat", "context": 32768, "cost": "low"},
-            "mistralai/mixtral-8x7b-instruct": {"provider": "Mistral", "type": "chat", "context": 32768, "cost": "medium"},
-            "mistralai/mixtral-8x22b-instruct": {"provider": "Mistral", "type": "chat", "context": 65536, "cost": "high"},
-            
+            "mistralai/mixtral-8x7b-instruct": {"provider": "Mistral",
+                "type": "chat",
+                "context": 32768,
+                "cost": "medium"},
+                            "mistralai/mixtral-8x22b-instruct": {"provider": "Mistral",
+                "type": "chat",
+                "context": 65536,
+                "cost": "high"},
+                            
             # Cohere Models
             "cohere/command-r-plus": {"provider": "Cohere", "type": "chat", "context": 128000, "cost": "high"},
             "cohere/command-r": {"provider": "Cohere", "type": "chat", "context": 128000, "cost": "medium"},
             "cohere/command": {"provider": "Cohere", "type": "chat", "context": 4096, "cost": "medium"},
             
             # Perplexity Models
-            "perplexity/llama-3.1-sonar-large-128k-online": {"provider": "Perplexity", "type": "chat", "context": 127072, "cost": "high"},
-            "perplexity/llama-3.1-sonar-small-128k-online": {"provider": "Perplexity", "type": "chat", "context": 127072, "cost": "medium"},
-            "perplexity/llama-3.1-sonar-large-128k-chat": {"provider": "Perplexity", "type": "chat", "context": 131072, "cost": "high"},
-            
+            "perplexity/llama-3.1-sonar-large-128k-online": {"provider": "Perplexity",
+                "type": "chat",
+                "context": 127072,
+                "cost": "high"},
+                            "perplexity/llama-3.1-sonar-small-128k-online": {"provider": "Perplexity",
+                "type": "chat",
+                "context": 127072,
+                "cost": "medium"},
+                            "perplexity/llama-3.1-sonar-large-128k-chat": {"provider": "Perplexity",
+                "type": "chat",
+                "context": 131072,
+                "cost": "high"},
+                            
             # xAI Models
             "x-ai/grok-beta": {"provider": "xAI", "type": "chat", "context": 131072, "cost": "high"},
             
@@ -90,37 +113,64 @@ def setup_complete_openrouter_integration():
         
         "free_models": {
             # Free OpenAI Models
-            "openai/gpt-3.5-turbo-instruct": {"provider": "OpenAI", "type": "completion", "context": 4096, "cost": "free"},
-            
+            "openai/gpt-3.5-turbo-instruct": {"provider": "OpenAI",
+                "type": "completion",
+                "context": 4096,
+                "cost": "free"},
+                            
             # Free Meta Models
-            "meta-llama/llama-3-8b-instruct:free": {"provider": "Meta", "type": "chat", "context": 8192, "cost": "free"},
-            "meta-llama/llama-3.1-8b-instruct:free": {"provider": "Meta", "type": "chat", "context": 131072, "cost": "free"},
-            
+            "meta-llama/llama-3-8b-instruct:free": {"provider": "Meta",
+                "type": "chat",
+                "context": 8192,
+                "cost": "free"},
+                            "meta-llama/llama-3.1-8b-instruct:free": {"provider": "Meta",
+                "type": "chat",
+                "context": 131072,
+                "cost": "free"},
+                            
             # Free Mistral Models
-            "mistralai/mistral-7b-instruct:free": {"provider": "Mistral", "type": "chat", "context": 32768, "cost": "free"},
-            "mistralai/mixtral-8x7b-instruct:free": {"provider": "Mistral", "type": "chat", "context": 32768, "cost": "free"},
-            
+            "mistralai/mistral-7b-instruct:free": {"provider": "Mistral",
+                "type": "chat",
+                "context": 32768,
+                "cost": "free"},
+                            "mistralai/mixtral-8x7b-instruct:free": {"provider": "Mistral",
+                "type": "chat",
+                "context": 32768,
+                "cost": "free"},
+                            
             # Free Google Models
             "google/gemma-7b-it:free": {"provider": "Google", "type": "chat", "context": 8192, "cost": "free"},
             "google/gemma-2-9b-it:free": {"provider": "Google", "type": "chat", "context": 8192, "cost": "free"},
             
             # Free Hugging Face Models
-            "huggingfaceh4/zephyr-7b-beta:free": {"provider": "Hugging Face", "type": "chat", "context": 32768, "cost": "free"},
-            "microsoft/wizardlm-2-8x22b:free": {"provider": "Microsoft", "type": "chat", "context": 65536, "cost": "free"},
-            
+            "huggingfaceh4/zephyr-7b-beta:free": {"provider": "Hugging Face",
+                "type": "chat",
+                "context": 32768,
+                "cost": "free"},
+                            "microsoft/wizardlm-2-8x22b:free": {"provider": "Microsoft",
+                "type": "chat",
+                "context": 65536,
+                "cost": "free"},
+                            
             # Free Anthropic-style Models
             "anthropic/claude-instant-1": {"provider": "Anthropic", "type": "chat", "context": 100000, "cost": "free"},
             
             # Free Specialized Models
-            "nousresearch/nous-capybara-7b:free": {"provider": "Nous Research", "type": "chat", "context": 8192, "cost": "free"},
-            "openchat/openchat-7b:free": {"provider": "OpenChat", "type": "chat", "context": 8192, "cost": "free"},
+            "nousresearch/nous-capybara-7b:free": {"provider": "Nous Research",
+                "type": "chat",
+                "context": 8192,
+                "cost": "free"},
+                            "openchat/openchat-7b:free": {"provider": "OpenChat", "type": "chat", "context": 8192, "cost": "free"},
             "gryphe/mythomist-7b:free": {"provider": "Gryphe", "type": "chat", "context": 32768, "cost": "free"},
         },
         
         "specialized_models": {
             # Code Generation
-            "codellama/codellama-34b-instruct": {"provider": "Meta", "type": "code", "context": 16384, "cost": "medium"},
-            "codellama/codellama-13b-instruct": {"provider": "Meta", "type": "code", "context": 16384, "cost": "low"},
+            "codellama/codellama-34b-instruct": {"provider": "Meta",
+                "type": "code",
+                "context": 16384,
+                "cost": "medium"},
+                            "codellama/codellama-13b-instruct": {"provider": "Meta", "type": "code", "context": 16384, "cost": "low"},
             "codellama/codellama-7b-instruct": {"provider": "Meta", "type": "code", "context": 16384, "cost": "low"},
             
             # Math and Reasoning
@@ -128,20 +178,27 @@ def setup_complete_openrouter_integration():
             "google/gemma-2-27b-it": {"provider": "Google", "type": "reasoning", "context": 8192, "cost": "medium"},
             
             # Creative Writing
-            "anthropic/claude-3-haiku:beta": {"provider": "Anthropic", "type": "creative", "context": 200000, "cost": "low"},
-            "mistralai/mistral-7b-instruct:nitro": {"provider": "Mistral", "type": "creative", "context": 32768, "cost": "low"},
-        }
+            "anthropic/claude-3-haiku:beta": {"provider": "Anthropic",
+                "type": "creative",
+                "context": 200000,
+                "cost": "low"},
+                            "mistralai/mistral-7b-instruct:nitro": {"provider": "Mistral",
+                "type": "creative",
+                "context": 32768,
+                "cost": "low"},
+                        }
     }
     
     # Test OpenRouter connectivity with all keys
     def test_openrouter_keys():
+        """Input validation would be added here"""
         """Test all OpenRouter keys for connectivity."""
-        print("🧪 Testing OpenRouter API keys...")
+        logging.info("🧪 Testing OpenRouter API keys...")
         
         working_keys = []
         
         for i, api_key in enumerate(active_keys):
-            print(f"  Testing key {i+1}/{len(active_keys)}...")
+            logging.info(f"  Testing key {i+1}/{len(active_keys)}...")
             
             try:
                 # Test with models endpoint
@@ -162,15 +219,15 @@ def setup_complete_openrouter_integration():
                             "models_available": model_count,
                             "unlimited": "commissioning" in api_key or i == 0  # First key is the unlimited commissioning key
                         })
-                        print(f"    ✅ Key {i+1}: {model_count} models available")
+                        logging.info(f"    ✅ Key {i+1}: {model_count} models available")
                     else:
-                        print(f"    ⚠️ Key {i+1}: Unexpected response format")
+                        logging.info(f"    ⚠️ Key {i+1}: Unexpected response format")
                         
             except urllib.error.HTTPError as e:
-                print(f"    ❌ Key {i+1}: HTTP error {e.code}")
+                logging.info(f"    ❌ Key {i+1}: HTTP error {e.code}")
                 
             except Exception as e:
-                print(f"    ❌ Key {i+1}: Connection error")
+                logging.info(f"    ❌ Key {i+1}: Connection error")
         
         return working_keys
     
@@ -274,8 +331,9 @@ def setup_complete_openrouter_integration():
 """
     
     for model_id, model_info in openrouter_models["premium_models"].items():
-        report_content += f"- **{model_id}** - {model_info['provider']} ({model_info['context']:,} context, {model_info['cost']} cost)\\n"
-    
+        report_content += f"- **{model_id}** - {model_info['provider']} ({model_info['context']:,
+            } context,
+            {model_info['cost']} cost)\\n"    
     report_content += f"""
 
 #### 🆓 Free Models ({total_free} models)
@@ -407,29 +465,29 @@ OPENROUTER_PRIMARY_KEY={working_keys[0]["key"] if working_keys else "Not set"}
         for i, key_info in enumerate(working_keys):
             f.write(f"OPENROUTER_KEY_{i+1}={key_info['full_key']}\\n")
     
-    print(f"\\n✅ Working OpenRouter Keys: {len(working_keys)}")
-    print(f"🤖 Total Models Available: {total_models}")
-    print(f"💎 Premium Models: {total_premium}")
-    print(f"🆓 Free Models: {total_free}")
-    print(f"🎯 Specialized Models: {total_specialized}")
-    print(f"🚀 Unlimited Access: YES (Commissioning)")
-    print(f"📁 Configuration: {config_path}")
-    print(f"📁 Report: {report_path}")
-    print(f"📁 Environment: {env_path}")
+    logging.info(f"\\n✅ Working OpenRouter Keys: {len(working_keys)}")
+    logging.info(f"🤖 Total Models Available: {total_models}")
+    logging.info(f"💎 Premium Models: {total_premium}")
+    logging.info(f"🆓 Free Models: {total_free}")
+    logging.info(f"🎯 Specialized Models: {total_specialized}")
+    logging.info(f"🚀 Unlimited Access: YES (Commissioning)")
+    logging.info(f"📁 Configuration: {config_path}")
+    logging.info(f"📁 Report: {report_path}")
+    logging.info(f"📁 Environment: {env_path}")
     
     return report_path, config_path, len(working_keys), total_models
 
 if __name__ == "__main__":
-    print("🤖 COMPLETE OPENROUTER INTEGRATION...")
-    print("="*60)
+    logging.info("🤖 COMPLETE OPENROUTER INTEGRATION...")
+    logging.info("="*60)
     
     report_path, config_path, working_keys, total_models = setup_complete_openrouter_integration()
     
-    print("\\n🎉 COMPLETE OPENROUTER INTEGRATION SUCCESSFUL!")
-    print("="*60)
-    print(f"🔑 Working API Keys: {working_keys}")
-    print(f"🤖 Total AI Models: {total_models}")
-    print(f"🚀 Access Level: UNLIMITED (Commissioning)")
-    print(f"💡 AI Consensus: MAXIMUM INTELLIGENCE")
-    print("="*60)
-    print("\\n🎯 ALL AI MODELS AVAILABLE THROUGH OPENROUTER!")
+    logging.info("\\n🎉 COMPLETE OPENROUTER INTEGRATION SUCCESSFUL!")
+    logging.info("="*60)
+    logging.info(f"🔑 Working API Keys: {working_keys}")
+    logging.info(f"🤖 Total AI Models: {total_models}")
+    logging.info(f"🚀 Access Level: UNLIMITED (Commissioning)")
+    logging.info(f"💡 AI Consensus: MAXIMUM INTELLIGENCE")
+    logging.info("="*60)
+    logging.info("\\n🎯 ALL AI MODELS AVAILABLE THROUGH OPENROUTER!")

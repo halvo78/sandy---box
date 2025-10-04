@@ -35,6 +35,7 @@ logger = logging.getLogger('UltimateMultiSource')
 
 class UltimateMultiSourceSystem:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.db_path = "/home/ubuntu/ultimate_lyra_systems/ultimate_multi_source.db"
         
         # Initialize all available APIs
@@ -558,9 +559,13 @@ class UltimateMultiSourceSystem:
             
             # Aggregate assessments
             assessments = [r.get('overall_assessment', 'NEUTRAL') for r in ai_responses]
-            risk_scores = [r.get('risk_score', 5.0) for r in ai_responses if isinstance(r.get('risk_score'), (int, float))]
-            confidences = [r.get('confidence', 75.0) for r in ai_responses if isinstance(r.get('confidence'), (int, float))]
-            outlooks = [r.get('market_outlook', 'NEUTRAL') for r in ai_responses]
+            risk_scores = [r.get('risk_score',
+                5.0) for r in ai_responses if isinstance(r.get('risk_score'),
+                (int,
+                float))]            confidences = [r.get('confidence',
+                75.0) for r in ai_responses if isinstance(r.get('confidence'),
+                (int,
+                float))]            outlooks = [r.get('market_outlook', 'NEUTRAL') for r in ai_responses]
             
             # Calculate consensus
             consensus = {
@@ -759,6 +764,7 @@ class UltimateMultiSourceSystem:
     def start_background_updates(self):
         """Start background thread for continuous updates"""
         def update_loop():
+            """TODO: Add function documentation"""
             while True:
                 try:
                     # Run async update
@@ -832,8 +838,9 @@ ULTIMATE_MULTI_SOURCE_TEMPLATE = '''
             margin-bottom: 30px; text-align: center; backdrop-filter: blur(10px);
         }
         .header h1 { color: #667eea; font-size: 2.8em; margin-bottom: 10px; }
-        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .metric-card {
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit,
+            minmax(280px,
+            1fr)); gap: 20px; margin-bottom: 30px; }        .metric-card {
             background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px;
             text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s ease;
         }
@@ -860,8 +867,10 @@ ULTIMATE_MULTI_SOURCE_TEMPLATE = '''
         .positive { color: #28a745; }
         .negative { color: #dc3545; }
         .sources-list { font-size: 0.9em; color: #888; margin-top: 10px; }
-        .auto-refresh { position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; border-radius: 20px; }
-    </style>
+        .auto-refresh { position: fixed; top: 20px; right: 20px; background: rgba(0,
+            0,
+            0,
+            0.7); color: white; padding: 10px 15px; border-radius: 20px; }    </style>
     <script>
         setTimeout(() => location.reload(), 180000); // Auto-refresh every 3 minutes
     </script>
@@ -957,8 +966,10 @@ ULTIMATE_MULTI_SOURCE_TEMPLATE = '''
             {% endfor %}
         </div>
         
-        <div style="text-align: center; padding: 30px; background: rgba(255,255,255,0.95); border-radius: 15px; margin-top: 30px;">
-            <h3 style="color: #667eea; margin-bottom: 15px;">🎯 ULTIMATE MULTI-SOURCE PORTFOLIO SYSTEM</h3>
+        <div style="text-align: center; padding: 30px; background: rgba(255,
+            255,
+            255,
+            0.95); border-radius: 15px; margin-top: 30px;">            <h3 style="color: #667eea; margin-bottom: 15px;">🎯 ULTIMATE MULTI-SOURCE PORTFOLIO SYSTEM</h3>
             <p>Real-time multi-source data consensus with 8-model AI analysis</p>
             <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
                 Data Sources: CoinGecko + Polygon.io + CryptoCompare | AI: 8 OpenRouter Models | Last Updated: {{ timestamp }}
@@ -1018,21 +1029,21 @@ def health():
     })
 
 if __name__ == '__main__':
-    print("🎯 ULTIMATE MULTI-SOURCE API SYSTEM STARTING...")
-    print("=" * 70)
-    print("📊 Dashboard URL: http://localhost:8106")
-    print("🌐 Public URL: https://3ce37fa57d09.ngrok.app:8106")
-    print("✅ Features:")
-    print("   🔑 8 OpenRouter API keys for AI consensus")
-    print("   📊 Multi-source price data (CoinGecko + Polygon.io + CryptoCompare)")
-    print("   🤖 Real AI analysis with 327+ models")
-    print("   💰 Cross-validated portfolio calculations")
-    print("   📈 Real-time consensus pricing")
-    print("   🎯 Professional multi-source dashboard")
-    print("=" * 70)
+    logging.info("🎯 ULTIMATE MULTI-SOURCE API SYSTEM STARTING...")
+    logging.info("=" * 70)
+    logging.info("📊 Dashboard URL: http://localhost:8106")
+    logging.info("🌐 Public URL: https://3ce37fa57d09.ngrok.app:8106")
+    logging.info("✅ Features:")
+    logging.info("   🔑 8 OpenRouter API keys for AI consensus")
+    logging.info("   📊 Multi-source price data (CoinGecko + Polygon.io + CryptoCompare)")
+    logging.info("   🤖 Real AI analysis with 327+ models")
+    logging.info("   💰 Cross-validated portfolio calculations")
+    logging.info("   📈 Real-time consensus pricing")
+    logging.info("   🎯 Professional multi-source dashboard")
+    logging.info("=" * 70)
     
     try:
         app.run(host='0.0.0.0', port=8106, debug=False, threaded=True)
     except Exception as e:
         logger.error(f"Failed to start multi-source system: {e}")
-        print(f"❌ Error starting system: {e}")
+        logging.info(f"❌ Error starting system: {e}")

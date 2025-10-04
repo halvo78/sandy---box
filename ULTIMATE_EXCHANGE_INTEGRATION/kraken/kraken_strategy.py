@@ -12,6 +12,7 @@ import json
 
 class KrakenProTradingStrategy:
     def __init__(self, adapter):
+        """TODO: Add function documentation"""
         self.adapter = adapter
         self.exchange_id = "kraken"
         self.exchange_name = "Kraken Pro"
@@ -173,8 +174,9 @@ class KrakenProTradingStrategy:
 
 # Strategy factory
 def create_strategy(adapter):
+    """TODO: Add function documentation"""
     return KrakenProTradingStrategy(adapter)
 
 if __name__ == "__main__":
     # Example usage
-    print(f"{exchange_info['name']} Trading Strategy Ready")
+    logging.info(f"{exchange_info['name']} Trading Strategy Ready")

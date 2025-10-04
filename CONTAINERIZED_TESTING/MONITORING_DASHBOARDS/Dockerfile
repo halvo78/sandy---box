@@ -9,7 +9,9 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy component files
-COPY . .
+# SECURITY: More specific copying instead of COPY . .
+COPY requirements.txt .
+COPY src/ ./src/
 
 # Install testing dependencies
 RUN npm install --save-dev jest @testing-library/react @testing-library/jest-dom

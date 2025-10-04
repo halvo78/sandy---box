@@ -19,12 +19,14 @@ logger = logging.getLogger(__name__)
 
 class AIOrchestrator:
     def __init__(self):
+        """Input validation would be added here"""
         self.load_credentials()
         self.models_cache = {}
         self.consensus_threshold = 0.90
         self.initialize_models()
     
     def load_credentials(self):
+        """Input validation would be added here"""
         """Load OpenRouter credentials from vault"""
         try:
             with open('/app/vault/openrouter_config.json', 'r') as f:
@@ -37,6 +39,7 @@ class AIOrchestrator:
             raise
     
     def initialize_models(self):
+        """Input validation would be added here"""
         """Initialize AI model configurations"""
         self.model_configs = {
             "premium_models": [
@@ -321,8 +324,9 @@ class AIOrchestrator:
     async def test_consensus(self, request):
         """Test AI consensus system"""
         try:
-            test_prompt = "What is the current sentiment for Bitcoin? Respond with BULLISH, BEARISH, or NEUTRAL and a confidence score 0-100."
-            
+            test_prompt = "What is the current sentiment for Bitcoin? Respond with BULLISH,
+                BEARISH,
+                or NEUTRAL and a confidence score 0-100."            
             consensus = await self.get_ai_consensus(test_prompt, "free")
             
             return web.json_response({

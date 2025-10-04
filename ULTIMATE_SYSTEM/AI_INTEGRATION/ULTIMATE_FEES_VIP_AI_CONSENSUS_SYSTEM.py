@@ -6,6 +6,7 @@ analyzes all GitHub/sandbox systems, and utilizes OpenRouter AI consensus.
 """
 
 import os
+import logging
 import json
 import sqlite3
 from datetime import datetime
@@ -13,8 +14,8 @@ from pathlib import Path
 
 def create_ultimate_fees_database():
     """Create comprehensive fees and VIP tracking database."""
-    print("💰 CREATING ULTIMATE FEES DATABASE")
-    print("=" * 50)
+    logging.info("💰 CREATING ULTIMATE FEES DATABASE")
+    logging.info("=" * 50)
     
     db_path = "/home/ubuntu/ULTIMATE_FEES_VIP_TRACKING.db"
     conn = sqlite3.connect(db_path)
@@ -80,13 +81,13 @@ def create_ultimate_fees_database():
     ''')
     
     conn.commit()
-    print("✅ Ultimate fees database created successfully")
+    logging.info("✅ Ultimate fees database created successfully")
     return conn
 
 def extract_all_exchange_fees():
     """Extract ALL exchange fee information from systems."""
-    print("\n💱 EXTRACTING ALL EXCHANGE FEES")
-    print("=" * 50)
+    logging.info("\n💱 EXTRACTING ALL EXCHANGE FEES")
+    logging.info("=" * 50)
     
     # Comprehensive exchange fee data (2025 accurate rates)
     exchange_fees = {
@@ -212,8 +213,8 @@ def extract_all_exchange_fees():
 
 def analyze_github_sandbox_systems():
     """Analyze all GitHub and sandbox systems for fee optimization."""
-    print("\n🔍 ANALYZING GITHUB & SANDBOX SYSTEMS")
-    print("=" * 50)
+    logging.info("\n🔍 ANALYZING GITHUB & SANDBOX SYSTEMS")
+    logging.info("=" * 50)
     
     fee_related_files = []
     
@@ -239,7 +240,7 @@ def analyze_github_sandbox_systems():
                             'pattern': pattern,
                             'size': os.path.getsize(file_path)
                         })
-                        print(f"✅ Found fee-related file: {file}")
+                        logging.info(f"✅ Found fee-related file: {file}")
                         break
                     except:
                         pass
@@ -248,8 +249,8 @@ def analyze_github_sandbox_systems():
 
 def YOUR_API_KEY_HERE():
     """Generate AI consensus recommendations for fee optimization."""
-    print("\n🤖 GENERATING AI CONSENSUS RECOMMENDATIONS")
-    print("=" * 50)
+    logging.info("\n🤖 GENERATING AI CONSENSUS RECOMMENDATIONS")
+    logging.info("=" * 50)
     
     # Simulate AI consensus from multiple models
     ai_models = [
@@ -307,8 +308,8 @@ def YOUR_API_KEY_HERE():
 
 def create_fee_optimization_engine():
     """Create comprehensive fee optimization engine."""
-    print("\n⚡ CREATING FEE OPTIMIZATION ENGINE")
-    print("=" * 50)
+    logging.info("\n⚡ CREATING FEE OPTIMIZATION ENGINE")
+    logging.info("=" * 50)
     
     optimization_engine = {
         "real_time_monitoring": {
@@ -357,8 +358,8 @@ def create_fee_optimization_engine():
 
 def save_ultimate_fees_system(conn, exchange_fees, fee_files, ai_consensus, optimization_engine):
     """Save all data to the ultimate fees system."""
-    print("\n💾 SAVING ULTIMATE FEES SYSTEM")
-    print("=" * 50)
+    logging.info("\n💾 SAVING ULTIMATE FEES SYSTEM")
+    logging.info("=" * 50)
     
     cursor = conn.cursor()
     
@@ -494,18 +495,18 @@ def save_ultimate_fees_system(conn, exchange_fees, fee_files, ai_consensus, opti
     with open(report_path, 'w') as f:
         f.write(report)
     
-    print(f"✅ Ultimate fees system saved successfully")
-    print(f"📄 Report: {report_path}")
-    print(f"💾 Database: /home/ubuntu/ULTIMATE_FEES_VIP_TRACKING.db")
+    logging.info(f"✅ Ultimate fees system saved successfully")
+    logging.info(f"📄 Report: {report_path}")
+    logging.info(f"💾 Database: /home/ubuntu/ULTIMATE_FEES_VIP_TRACKING.db")
     
     return report_path
 
 def main():
     """Main execution function."""
-    print("🏆 ULTIMATE FEES & VIP TRACKING SYSTEM")
-    print("=" * 60)
-    print("Mission: Create the most accurate fee optimization system")
-    print("=" * 60)
+    logging.info("🏆 ULTIMATE FEES & VIP TRACKING SYSTEM")
+    logging.info("=" * 60)
+    logging.info("Mission: Create the most accurate fee optimization system")
+    logging.info("=" * 60)
     
     # Create database
     conn = create_ultimate_fees_database()
@@ -523,12 +524,12 @@ def main():
     
     conn.close()
     
-    print(f"\n🎉 ULTIMATE FEES SYSTEM COMPLETE!")
-    print(f"💱 Exchanges: {len(exchange_fees)}")
-    print(f"📁 Fee Files: {len(fee_files)}")
-    print(f"🤖 AI Recommendations: {len(ai_consensus)}")
-    print(f"📊 Report: {report_path}")
-    print(f"\n🏆 THE MOST ACCURATE FEE OPTIMIZATION SYSTEM IS READY!")
+    logging.info(f"\n🎉 ULTIMATE FEES SYSTEM COMPLETE!")
+    logging.info(f"💱 Exchanges: {len(exchange_fees)}")
+    logging.info(f"📁 Fee Files: {len(fee_files)}")
+    logging.info(f"🤖 AI Recommendations: {len(ai_consensus)}")
+    logging.info(f"📊 Report: {report_path}")
+    logging.info(f"\n🏆 THE MOST ACCURATE FEE OPTIMIZATION SYSTEM IS READY!")
 
 if __name__ == "__main__":
     main()

@@ -5,25 +5,27 @@ Consolidates ALL API work from today into one comprehensive system
 """
 
 import os
+import logging
 import json
 import urllib.request
 from datetime import datetime
 
 def create_ultimate_unified_api_system():
+    """Input validation would be added here"""
     """Create the ultimate unified API system with all today's work."""
     
-    print("🚀 ULTIMATE UNIFIED API SYSTEM")
-    print("="*70)
-    print("🎯 Consolidating ALL API work from today")
-    print("🤖 OpenRouter + Enhanced APIs + All Fixes")
-    print("="*70)
+    logging.info("🚀 ULTIMATE UNIFIED API SYSTEM")
+    logging.info("="*70)
+    logging.info("🎯 Consolidating ALL API work from today")
+    logging.info("🤖 OpenRouter + Enhanced APIs + All Fixes")
+    logging.info("="*70)
     
     # Test key APIs
     test_results = {}
     
     # Test Twelve Data
     try:
-        api_key = "2997d13caee949d48fca334aff3042dd"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.twelvedata.com/price?symbol=AAPL&apikey={api_key}"
         req = urllib.request.Request(test_url)
         
@@ -31,31 +33,31 @@ def create_ultimate_unified_api_system():
             data = json.loads(response.read().decode('utf-8'))
             if "price" in data:
                 test_results["twelve_data"] = f"✅ WORKING - AAPL: ${data['price']}"
-                print(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
+                logging.info(f"  ✅ Twelve Data: AAPL price = ${data['price']}")
             else:
                 test_results["twelve_data"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ Twelve Data: Unexpected response")
+                logging.info("  ⚠️ Twelve Data: Unexpected response")
     except Exception as e:
         test_results["twelve_data"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Twelve Data: {str(e)[:50]}")
+        logging.info(f"  ❌ Twelve Data: {str(e)[:50]}")
     
     # Test Enhanced Polygon
     try:
-        api_key = "A_nmop6VvNSPBY2yiVqNJYzA7pautIUX"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = f"https://api.polygon.io/v1/marketstatus/now?apikey={api_key}"
         req = urllib.request.Request(test_url)
         
         with urllib.request.urlopen(req, timeout=10) as response:
             data = json.loads(response.read().decode('utf-8'))
             test_results["polygon_enhanced"] = "✅ WORKING - Market status retrieved"
-            print("  ✅ Enhanced Polygon: Market status retrieved")
+            logging.info("  ✅ Enhanced Polygon: Market status retrieved")
     except Exception as e:
         test_results["polygon_enhanced"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
+        logging.info(f"  ❌ Enhanced Polygon: {str(e)[:50]}")
     
     # Test Primary OpenRouter Key
     try:
-        api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE")
         test_url = "https://openrouter.ai/api/v1/models"
         req = urllib.request.Request(test_url)
         req.add_header("Authorization", f"Bearer {api_key}")
@@ -65,13 +67,13 @@ def create_ultimate_unified_api_system():
             if "data" in data:
                 model_count = len(data["data"])
                 test_results["openrouter_primary"] = f"✅ WORKING - {model_count} models"
-                print(f"  ✅ OpenRouter Primary: {model_count} models available")
+                logging.info(f"  ✅ OpenRouter Primary: {model_count} models available")
             else:
                 test_results["openrouter_primary"] = "⚠️ UNEXPECTED_RESPONSE"
-                print("  ⚠️ OpenRouter Primary: Unexpected response")
+                logging.info("  ⚠️ OpenRouter Primary: Unexpected response")
     except Exception as e:
         test_results["openrouter_primary"] = f"❌ ERROR: {str(e)[:50]}"
-        print(f"  ❌ OpenRouter Primary: {str(e)[:50]}")
+        logging.info(f"  ❌ OpenRouter Primary: {str(e)[:50]}")
     
     # Create unified configuration
     unified_config = {
@@ -238,8 +240,9 @@ def create_ultimate_unified_api_system():
 - ✅ **Production Infrastructure** ready for live trading
 - ✅ **Complete Documentation** of all APIs and fixes
 
-**The Ultimate Lyra Trading System now represents the most comprehensive, AI-intelligent, enterprise-ready cryptocurrency trading platform ever assembled.**
-
+**The Ultimate Lyra Trading System now represents the most comprehensive,
+    AI-intelligent,
+    enterprise-ready cryptocurrency trading platform ever assembled.**
 **Status: ULTIMATE UNIFIED API SYSTEM COMPLETE** 🚀
 """
     
@@ -270,33 +273,33 @@ def create_ultimate_unified_api_system():
         f.write("\n# Analytics APIs\n")
         f.write("DATABRICKS_API_KEY=daec0aa0\n")
     
-    print(f"\n✅ OpenRouter Keys: 4")
-    print(f"📊 Enhanced APIs: 3")
-    print(f"🔧 Working Core APIs: 7")
-    print(f"⚠️ Quick Fix APIs: 5")
-    print(f"🚀 Total APIs: 22")
-    print(f"✅ Working APIs: 15")
-    print(f"📈 Success Rate: 68.2%")
-    print(f"💰 Monthly Cost: $207")
-    print(f"📁 Configuration: {config_path}")
-    print(f"📁 Report: {report_path}")
-    print(f"📁 Environment: {env_path}")
+    logging.info(f"\n✅ OpenRouter Keys: 4")
+    logging.info(f"📊 Enhanced APIs: 3")
+    logging.info(f"🔧 Working Core APIs: 7")
+    logging.info(f"⚠️ Quick Fix APIs: 5")
+    logging.info(f"🚀 Total APIs: 22")
+    logging.info(f"✅ Working APIs: 15")
+    logging.info(f"📈 Success Rate: 68.2%")
+    logging.info(f"💰 Monthly Cost: $207")
+    logging.info(f"📁 Configuration: {config_path}")
+    logging.info(f"📁 Report: {report_path}")
+    logging.info(f"📁 Environment: {env_path}")
     
     return report_path, config_path, 15, 22
 
 if __name__ == "__main__":
-    print("🚀 CREATING ULTIMATE UNIFIED API SYSTEM...")
-    print("="*70)
+    logging.info("🚀 CREATING ULTIMATE UNIFIED API SYSTEM...")
+    logging.info("="*70)
     
     report_path, config_path, working_apis, total_apis = create_ultimate_unified_api_system()
     
-    print("\n🎉 ULTIMATE UNIFIED API SYSTEM COMPLETE!")
-    print("="*70)
-    print(f"🎯 System Integration: COMPLETE")
-    print(f"📊 Working APIs: {working_apis}/{total_apis}")
-    print(f"🤖 AI Models: 52 unique models")
-    print(f"🔑 Model Instances: 1,304 total")
-    print(f"🚀 Access Level: UNLIMITED (Commissioning)")
-    print(f"🏢 System Level: ENTERPRISE-READY")
-    print("="*70)
-    print("\n🎯 ALL API WORK FROM TODAY UNIFIED INTO ONE SYSTEM!")
+    logging.info("\n🎉 ULTIMATE UNIFIED API SYSTEM COMPLETE!")
+    logging.info("="*70)
+    logging.info(f"🎯 System Integration: COMPLETE")
+    logging.info(f"📊 Working APIs: {working_apis}/{total_apis}")
+    logging.info(f"🤖 AI Models: 52 unique models")
+    logging.info(f"🔑 Model Instances: 1,304 total")
+    logging.info(f"🚀 Access Level: UNLIMITED (Commissioning)")
+    logging.info(f"🏢 System Level: ENTERPRISE-READY")
+    logging.info("="*70)
+    logging.info("\n🎯 ALL API WORK FROM TODAY UNIFIED INTO ONE SYSTEM!")

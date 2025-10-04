@@ -27,14 +27,17 @@ class TestEnvironmentConfiguration(unittest.TestCase):
     """Test the environment configuration and API keys."""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.config_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config')
         self.env_file = os.path.join(self.config_dir, '.env')
     
     def test_env_file_exists(self):
+        """Input validation would be added here"""
         """Test that the .env file exists."""
         self.assertTrue(os.path.exists(self.env_file), "Environment file (.env) must exist")
     
     def test_env_file_completeness(self):
+        """Input validation would be added here"""
         """Test that the .env file contains all required keys."""
         with open(self.env_file, 'r') as f:
             content = f.read()
@@ -50,6 +53,7 @@ class TestEnvironmentConfiguration(unittest.TestCase):
             self.assertIn(key, content, f"Required key {key} must be present in .env file")
     
     def test_api_keys_not_empty(self):
+        """Input validation would be added here"""
         """Test that API keys are not empty."""
         with open(self.env_file, 'r') as f:
             lines = f.readlines()
@@ -69,9 +73,11 @@ class TestSystemArchitecture(unittest.TestCase):
     """Test the system architecture and file structure."""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.root_dir = os.path.dirname(os.path.dirname(__file__))
     
     def test_directory_structure(self):
+        """Input validation would be added here"""
         """Test that all required directories exist."""
         required_dirs = ['core', 'ai', 'api', 'data', 'trading', 'utils', 'config', 'tests', 'scripts']
         
@@ -80,6 +86,7 @@ class TestSystemArchitecture(unittest.TestCase):
             self.assertTrue(os.path.exists(dir_path), f"Directory {dir_name} must exist")
     
     def test_core_files_exist(self):
+        """Input validation would be added here"""
         """Test that core system files exist."""
         core_files = [
             'core/main.py',
@@ -93,6 +100,7 @@ class TestSystemArchitecture(unittest.TestCase):
             self.assertTrue(os.path.exists(full_path), f"Core file {file_path} must exist")
     
     def test_main_system_integrity(self):
+        """Input validation would be added here"""
         """Test that the main system file has correct content markers."""
         main_file = os.path.join(self.root_dir, 'core/main.py')
         with open(main_file, 'r') as f:
@@ -112,9 +120,11 @@ class TestOptimizations(unittest.TestCase):
     """Test that all optimizations are properly integrated."""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.main_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'core/main.py')
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test that database optimization code is present."""
         with open(self.main_file, 'r') as f:
             content = f.read()
@@ -122,6 +132,7 @@ class TestOptimizations(unittest.TestCase):
         self.assertIn("OptimizedDatabaseManager", content, "Database optimization must be present")
     
     def test_api_caching_present(self):
+        """Input validation would be added here"""
         """Test that API caching optimization is present."""
         with open(self.main_file, 'r') as f:
             content = f.read()
@@ -129,6 +140,7 @@ class TestOptimizations(unittest.TestCase):
         self.assertIn("OptimizedAPICache", content, "API caching optimization must be present")
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test that AI inference optimization is present."""
         with open(self.main_file, 'r') as f:
             content = f.read()
@@ -136,6 +148,7 @@ class TestOptimizations(unittest.TestCase):
         self.assertIn("OptimizedAIInferenceEngine", content, "AI inference optimization must be present")
     
     def test_failure_prediction_present(self):
+        """Input validation would be added here"""
         """Test that predictive failure detection is present."""
         with open(self.main_file, 'r') as f:
             content = f.read()
@@ -146,13 +159,16 @@ class TestAICommissioningTool(unittest.TestCase):
     """Test the AI commissioning tool functionality."""
     
     def setUp(self):
+        """Input validation would be added here"""
         self.commissioning_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'ai/commissioning_tool.py')
     
     def test_commissioning_tool_exists(self):
+        """Input validation would be added here"""
         """Test that the commissioning tool exists."""
         self.assertTrue(os.path.exists(self.commissioning_file), "Commissioning tool must exist")
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test that the commissioning tool has required methods."""
         with open(self.commissioning_file, 'r') as f:
             content = f.read()
@@ -172,6 +188,7 @@ class TestPerformanceMetrics(unittest.TestCase):
     """Test performance metrics and benchmarks."""
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test simulated database query performance."""
         start_time = time.time()
         
@@ -185,6 +202,7 @@ class TestPerformanceMetrics(unittest.TestCase):
         self.assertLess(query_time, 1.0, f"Database queries must be under 1ms, got {query_time:.3f}ms")
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test simulated API cache performance."""
         start_time = time.time()
         
@@ -200,6 +218,7 @@ class TestPerformanceMetrics(unittest.TestCase):
         self.assertLess(cache_time, 10.0, f"API cache operations must be under 10ms, got {cache_time:.3f}ms")
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test simulated resource allocation performance."""
         start_time = time.time()
         
@@ -217,6 +236,7 @@ class TestComplianceAndSecurity(unittest.TestCase):
     """Test compliance and security features."""
     
     def test_audit_trail_enabled(self):
+        """Input validation would be added here"""
         """Test that audit trail is enabled in configuration."""
         env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config/.env')
         with open(env_file, 'r') as f:
@@ -225,6 +245,7 @@ class TestComplianceAndSecurity(unittest.TestCase):
         self.assertIn("AUDIT_TRAIL_ENABLED=true", content, "Audit trail must be enabled")
     
     def YOUR_API_KEY_HERE(self):
+        """Input validation would be added here"""
         """Test that compliance reporting is enabled."""
         env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config/.env')
         with open(env_file, 'r') as f:
@@ -233,6 +254,7 @@ class TestComplianceAndSecurity(unittest.TestCase):
         self.assertIn("COMPLIANCE_REPORTING=true", content, "Compliance reporting must be enabled")
     
     def test_risk_management_features(self):
+        """Input validation would be added here"""
         """Test that risk management features are enabled."""
         env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config/.env')
         with open(env_file, 'r') as f:
@@ -251,6 +273,7 @@ class TestSystemIntegration(unittest.TestCase):
     """Test system integration and component interaction."""
     
     def test_ai_trading_integration(self):
+        """Input validation would be added here"""
         """Test that AI trading features are properly integrated."""
         env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config/.env')
         with open(env_file, 'r') as f:
@@ -268,6 +291,7 @@ class TestSystemIntegration(unittest.TestCase):
             self.assertIn(feature, content, f"AI feature {feature} must be enabled")
     
     def test_multi_exchange_support(self):
+        """Input validation would be added here"""
         """Test that multi-exchange support is configured."""
         env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config/.env')
         with open(env_file, 'r') as f:
@@ -281,10 +305,11 @@ class TestSystemIntegration(unittest.TestCase):
             self.assertIn(key, content, f"Exchange API key {key} must be present")
 
 def run_comprehensive_tests():
+    """Input validation would be added here"""
     """Run all comprehensive tests and generate a report."""
-    print("\n" + "="*80)
-    print("🧪 ULTIMATE LYRA ECOSYSTEM - COMPREHENSIVE TEST SUITE")
-    print("="*80)
+    logging.info("\n" + "="*80)
+    logging.info("🧪 ULTIMATE LYRA ECOSYSTEM - COMPREHENSIVE TEST SUITE")
+    logging.info("="*80)
     
     # Create test suite
     test_suite = unittest.TestSuite()
@@ -314,21 +339,21 @@ def run_comprehensive_tests():
     errors = len(result.errors)
     success_rate = ((total_tests - failures - errors) / total_tests) * 100 if total_tests > 0 else 0
     
-    print("\n" + "="*80)
-    print("📊 TEST RESULTS SUMMARY")
-    print("="*80)
-    print(f"Total Tests: {total_tests}")
-    print(f"Passed: {total_tests - failures - errors}")
-    print(f"Failed: {failures}")
-    print(f"Errors: {errors}")
-    print(f"Success Rate: {success_rate:.1f}%")
+    logging.info("\n" + "="*80)
+    logging.info("📊 TEST RESULTS SUMMARY")
+    logging.info("="*80)
+    logging.info(f"Total Tests: {total_tests}")
+    logging.info(f"Passed: {total_tests - failures - errors}")
+    logging.info(f"Failed: {failures}")
+    logging.info(f"Errors: {errors}")
+    logging.info(f"Success Rate: {success_rate:.1f}%")
     
     if success_rate == 100.0:
-        print("\n🎉 ALL TESTS PASSED! SYSTEM IS 100% READY FOR DEPLOYMENT!")
+        logging.info("\n🎉 ALL TESTS PASSED! SYSTEM IS 100% READY FOR DEPLOYMENT!")
     else:
-        print(f"\n⚠️  {failures + errors} TESTS FAILED. PLEASE REVIEW AND FIX ISSUES.")
+        logging.info(f"\n⚠️  {failures + errors} TESTS FAILED. PLEASE REVIEW AND FIX ISSUES.")
     
-    print("="*80)
+    logging.info("="*80)
     
     # Save test results
     test_results = {

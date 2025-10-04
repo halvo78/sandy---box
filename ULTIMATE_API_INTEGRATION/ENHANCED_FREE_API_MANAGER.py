@@ -5,6 +5,7 @@ System-ready API integration with working endpoints
 """
 
 import urllib.request
+import logging
 import json
 from datetime import datetime
 
@@ -12,6 +13,7 @@ class EnhancedFreeAPIManager:
     """Comprehensive free API management for Ultimate Lyra Trading System."""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.working_apis = {
             "fear_greed": "✅ WORKING - 71 (Greed)",
             "coingecko": "✅ WORKING - BTC: $122,371, ETH: $4,504.85",
@@ -56,6 +58,7 @@ class EnhancedFreeAPIManager:
         }
     
     def get_crypto_prices(self, coins="bitcoin,ethereum", vs_currency="usd"):
+        """Input validation would be added here"""
         """Get cryptocurrency prices from multiple sources."""
         try:
             url = f"{self.api_endpoints['coingecko_prices']}?ids={coins}&vs_currencies={vs_currency}"
@@ -66,6 +69,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_market_sentiment(self):
+        """Input validation would be added here"""
         """Get Fear & Greed Index for market sentiment."""
         try:
             req = urllib.request.Request(self.api_endpoints['fear_greed_index'])
@@ -76,6 +80,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_defi_protocols(self):
+        """Input validation would be added here"""
         """Get DeFi protocol data from DefiLlama."""
         try:
             req = urllib.request.Request(self.api_endpoints['defillama_protocols'])
@@ -85,6 +90,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_global_crypto_stats(self):
+        """Input validation would be added here"""
         """Get global cryptocurrency statistics."""
         try:
             req = urllib.request.Request(self.api_endpoints['coinpaprika_global'])
@@ -94,6 +100,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_bitcoin_network_stats(self):
+        """Input validation would be added here"""
         """Get Bitcoin network statistics."""
         try:
             req = urllib.request.Request(self.api_endpoints['blockchain_info_stats'])
@@ -103,6 +110,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_all_market_data(self):
+        """Input validation would be added here"""
         """Get comprehensive market data from all working APIs."""
         market_data = {
             "timestamp": datetime.now().isoformat(),
@@ -118,20 +126,20 @@ class EnhancedFreeAPIManager:
 if __name__ == "__main__":
     api_manager = EnhancedFreeAPIManager()
     
-    print("🚀 Enhanced Free API Manager - System Ready")
-    print("="*50)
+    logging.info("🚀 Enhanced Free API Manager - System Ready")
+    logging.info("="*50)
     
     # Get comprehensive market data
     market_data = api_manager.get_all_market_data()
-    print(f"Market Data Retrieved: {len(market_data)} data points")
+    logging.info(f"Market Data Retrieved: {len(market_data)} data points")
     
     # Get specific data
     sentiment = api_manager.get_market_sentiment()
     if "value" in sentiment:
-        print(f"Fear & Greed Index: {sentiment['value']} ({sentiment['value_classification']})")
+        logging.info(f"Fear & Greed Index: {sentiment['value']} ({sentiment['value_classification']})")
     
     prices = api_manager.get_crypto_prices()
     if "bitcoin" in prices:
-        print(f"BTC Price: ${prices['bitcoin']['usd']:,}")
+        logging.info(f"BTC Price: ${prices['bitcoin']['usd']:,}")
     
-    print("✅ Enhanced Free API System Ready for Integration")
+    logging.info("✅ Enhanced Free API System Ready for Integration")

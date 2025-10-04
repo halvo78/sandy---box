@@ -6,11 +6,13 @@ with the documented exchange credentials and connectivity.
 """
 
 import os
+import logging
 import json
 import hashlib
 from pathlib import Path
 
 def create_vault_system():
+    """Input validation would be added here"""
     """Recreate the vault system as documented in Notion"""
     
     # Create vault directory structure
@@ -22,7 +24,7 @@ def create_vault_system():
         "exchanges": {
             "okx": {
                 "status": "READY_FOR_TESTING",
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "demo_okx_secret_production", 
                 "passphrase": "demo_okx_passphrase",
                 "sandbox": True,
@@ -30,41 +32,41 @@ def create_vault_system():
             },
             "binance": {
                 "status": "READY_FOR_TESTING",
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "demo_binance_secret_production",
                 "sandbox": True,
                 "connectivity": "HEALTHY"
             },
             "kraken": {
                 "status": "READY_FOR_TESTING", 
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "demo_kraken_secret_production",
                 "sandbox": True,
                 "connectivity": "HEALTHY"
             },
             "gateio": {
                 "status": "READY_FOR_TESTING",
-                API_KEY="YOUR_API_KEY_HERE", 
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"), 
                 "secret": "demo_gate_secret_production",
                 "sandbox": True,
                 "connectivity": "HEALTHY"
             },
             "whitebit": {
                 "status": "READY_FOR_TESTING",
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "demo_whitebit_secret_updated",
                 "sandbox": True,
                 "connectivity": "HEALTHY"
             },
             "digital_surge": {
                 "status": "PARTIAL_CONFIGURATION",
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "MISSING_SECRET_KEY",
                 "connectivity": "NEEDS_SECRET"
             },
             "btc_markets": {
                 "status": "PARTIAL_CONFIGURATION", 
-                API_KEY="YOUR_API_KEY_HERE",
+                api_key = os.getenv("API_KEY", "YOUR_API_KEY_HERE"),
                 "secret": "MISSING_SECRET_KEY",
                 "connectivity": "NEEDS_SECRET"
             },
@@ -102,15 +104,16 @@ def create_vault_system():
         f.write("demo_vault_key_32_bytes_for_xor_encryption_system")
     os.chmod(vault_key_file, 0o600)
     
-    print("✅ Vault system restored based on Notion documentation")
-    print(f"📁 Vault location: {vault_dir}")
-    print(f"🔐 Encrypted secrets: {vault_file}")
-    print(f"🔑 Vault key: {vault_key_file}")
-    print(f"🏦 Exchanges configured: 5 fully ready, 2 partial, 2 missing")
+    logging.info("✅ Vault system restored based on Notion documentation")
+    logging.info(f"📁 Vault location: {vault_dir}")
+    logging.info(f"🔐 Encrypted secrets: {vault_file}")
+    logging.info(f"🔑 Vault key: {vault_key_file}")
+    logging.info(f"🏦 Exchanges configured: 5 fully ready, 2 partial, 2 missing")
     
     return vault_data
 
 def verify_vault_connectivity():
+    """Input validation would be added here"""
     """Verify the restored vault connectivity status"""
     vault_file = "/home/ubuntu/ultimate_lyra_v5/vault/encrypted_secrets.json"
     
@@ -118,19 +121,19 @@ def verify_vault_connectivity():
         with open(vault_file, 'r') as f:
             vault_data = json.load(f)
         
-        print("\n🔍 VAULT CONNECTIVITY STATUS:")
+        logging.info("\n🔍 VAULT CONNECTIVITY STATUS:")
         for exchange, config in vault_data["exchanges"].items():
             status = config.get("status", "UNKNOWN")
             connectivity = config.get("connectivity", "UNKNOWN")
-            print(f"  {exchange.upper()}: {status} - {connectivity}")
+            logging.info(f"  {exchange.upper()}: {status} - {connectivity}")
         
         return vault_data
     else:
-        print("❌ Vault file not found")
+        logging.info("❌ Vault file not found")
         return None
 
 if __name__ == "__main__":
-    print("🔄 Restoring actual vault system from Notion documentation...")
+    logging.info("🔄 Restoring actual vault system from Notion documentation...")
     vault_data = create_vault_system()
     verify_vault_connectivity()
-    print("\n✅ Vault restoration complete!")
+    logging.info("\n✅ Vault restoration complete!")

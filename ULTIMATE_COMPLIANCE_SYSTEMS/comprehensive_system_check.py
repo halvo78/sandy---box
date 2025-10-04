@@ -5,6 +5,7 @@ Verifies all components are deployed, functional, and 100% compliant
 """
 
 import os
+import logging
 import sys
 import json
 import time
@@ -17,6 +18,7 @@ import aiohttp
 
 class ComprehensiveSystemCheck:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.base_dir = Path("/home/ubuntu/ultimate_lyra_systems")
         self.containers_dir = self.base_dir / "production_containers"
         
@@ -44,7 +46,7 @@ class ComprehensiveSystemCheck:
     
     def check_directory_structure(self):
         """Check if all required directories exist"""
-        print("📁 Checking directory structure...")
+        logging.info("📁 Checking directory structure...")
         
         required_dirs = [
             "production_containers",
@@ -78,13 +80,13 @@ class ComprehensiveSystemCheck:
         }
         
         if missing_dirs:
-            print(f"❌ Missing directories: {missing_dirs}")
+            logging.info(f"❌ Missing directories: {missing_dirs}")
         else:
-            print("✅ All required directories exist")
+            logging.info("✅ All required directories exist")
     
     def check_configuration_files(self):
         """Check if all configuration files exist"""
-        print("📋 Checking configuration files...")
+        logging.info("📋 Checking configuration files...")
         
         required_files = [
             "production_containers/docker-compose.yml",
@@ -114,13 +116,13 @@ class ComprehensiveSystemCheck:
         }
         
         if missing_files:
-            print(f"❌ Missing configuration files: {missing_files}")
+            logging.info(f"❌ Missing configuration files: {missing_files}")
         else:
-            print("✅ All configuration files exist")
+            logging.info("✅ All configuration files exist")
     
     def check_docker_status(self):
         """Check Docker installation and status"""
-        print("🐳 Checking Docker status...")
+        logging.info("🐳 Checking Docker status...")
         
         try:
             # Check if Docker is installed
@@ -136,7 +138,7 @@ class ComprehensiveSystemCheck:
                     "status": "fail",
                     "error": "Docker not installed"
                 }
-                print("❌ Docker not installed")
+                logging.info("❌ Docker not installed")
                 return
             
             # Check if Docker daemon is running
@@ -152,7 +154,7 @@ class ComprehensiveSystemCheck:
                     "status": "fail",
                     "error": "Docker daemon not running"
                 }
-                print("❌ Docker daemon not running")
+                logging.info("❌ Docker daemon not running")
                 return
             
             # Check Docker Compose
@@ -170,18 +172,18 @@ class ComprehensiveSystemCheck:
                 "compose_version": compose_version.stdout.strip() if compose_version.returncode == 0 else None
             }
             
-            print("✅ Docker is installed and running")
+            logging.info("✅ Docker is installed and running")
             
         except Exception as e:
             self.check_results["components"]["docker"] = {
                 "status": "fail",
                 "error": str(e)
             }
-            print(f"❌ Docker check failed: {e}")
+            logging.info(f"❌ Docker check failed: {e}")
     
     def check_container_status(self):
         """Check status of Docker containers"""
-        print("📦 Checking container status...")
+        logging.info("📦 Checking container status...")
         
         try:
             # Change to containers directory
@@ -201,7 +203,7 @@ class ComprehensiveSystemCheck:
                     "error": "Failed to get container status",
                     "stderr": result.stderr
                 }
-                print("❌ Failed to get container status")
+                logging.info("❌ Failed to get container status")
                 return
             
             # Parse container information
@@ -226,18 +228,18 @@ class ComprehensiveSystemCheck:
                 "containers": containers
             }
             
-            print(f"✅ Found {len(containers)} containers ({len(running_containers)} running)")
+            logging.info(f"✅ Found {len(containers)} containers ({len(running_containers)} running)")
             
         except Exception as e:
             self.check_results["components"]["containers"] = {
                 "status": "fail",
                 "error": str(e)
             }
-            print(f"❌ Container check failed: {e}")
+            logging.info(f"❌ Container check failed: {e}")
     
     async def check_service_health(self):
         """Check health of all services"""
-        print("🔍 Checking service health...")
+        logging.info("🔍 Checking service health...")
         
         service_results = {}
         
@@ -256,7 +258,7 @@ class ComprehensiveSystemCheck:
                                     "response_code": response.status,
                                     "response_data": response_data
                                 }
-                                print(f"✅ {service_name}: Healthy")
+                                logging.info(f"✅ {service_name}: Healthy")
                             else:
                                 service_results[service_name] = {
                                     "status": "unhealthy",
@@ -264,7 +266,7 @@ class ComprehensiveSystemCheck:
                                     "response_code": response.status,
                                     "error": f"HTTP {response.status}"
                                 }
-                                print(f"❌ {service_name}: Unhealthy (HTTP {response.status})")
+                                logging.info(f"❌ {service_name}: Unhealthy (HTTP {response.status})")
                     else:
                         # Special handling for Redis (no HTTP endpoint)
                         if service_name == "lyra-redis":
@@ -282,21 +284,21 @@ class ComprehensiveSystemCheck:
                                         "port": config["port"],
                                         "response": redis_check.stdout.strip()
                                     }
-                                    print(f"✅ {service_name}: Healthy")
+                                    logging.info(f"✅ {service_name}: Healthy")
                                 else:
                                     service_results[service_name] = {
                                         "status": "unhealthy",
                                         "port": config["port"],
                                         "error": "Redis ping failed"
                                     }
-                                    print(f"❌ {service_name}: Unhealthy")
+                                    logging.info(f"❌ {service_name}: Unhealthy")
                             except Exception as e:
                                 service_results[service_name] = {
                                     "status": "error",
                                     "port": config["port"],
                                     "error": str(e)
                                 }
-                                print(f"❌ {service_name}: Error - {e}")
+                                logging.info(f"❌ {service_name}: Error - {e}")
                 
                 except Exception as e:
                     service_results[service_name] = {
@@ -304,7 +306,7 @@ class ComprehensiveSystemCheck:
                         "port": config["port"],
                         "error": str(e)
                     }
-                    print(f"❌ {service_name}: Error - {e}")
+                    logging.info(f"❌ {service_name}: Error - {e}")
         
         # Calculate service health score
         healthy_services = len([s for s in service_results.values() if s["status"] == "healthy"])
@@ -321,7 +323,7 @@ class ComprehensiveSystemCheck:
     
     def check_credentials(self):
         """Check if credentials are properly configured"""
-        print("🔐 Checking credentials...")
+        logging.info("🔐 Checking credentials...")
         
         credential_status = {}
         
@@ -343,9 +345,9 @@ class ComprehensiveSystemCheck:
                 }
                 
                 if not missing_fields:
-                    print("✅ OKX credentials: Complete")
+                    logging.info("✅ OKX credentials: Complete")
                 else:
-                    print(f"❌ OKX credentials: Missing {missing_fields}")
+                    logging.info(f"❌ OKX credentials: Missing {missing_fields}")
                     
             except Exception as e:
                 credential_status["okx"] = {
@@ -353,14 +355,14 @@ class ComprehensiveSystemCheck:
                     "config_exists": True,
                     "error": str(e)
                 }
-                print(f"❌ OKX credentials: Error reading config - {e}")
+                logging.info(f"❌ OKX credentials: Error reading config - {e}")
         else:
             credential_status["okx"] = {
                 "status": "fail",
                 "config_exists": False,
                 "error": "Configuration file not found"
             }
-            print("❌ OKX credentials: Configuration file not found")
+            logging.info("❌ OKX credentials: Configuration file not found")
         
         # Check OpenRouter credentials
         openrouter_config_path = self.base_dir / "vault" / "openrouter_config.json"
@@ -380,9 +382,9 @@ class ComprehensiveSystemCheck:
                 }
                 
                 if len(api_keys) >= 8:
-                    print(f"✅ OpenRouter credentials: {len(api_keys)} API keys configured")
+                    logging.info(f"✅ OpenRouter credentials: {len(api_keys)} API keys configured")
                 else:
-                    print(f"⚠️ OpenRouter credentials: Only {len(api_keys)} API keys (expected 8)")
+                    logging.info(f"⚠️ OpenRouter credentials: Only {len(api_keys)} API keys (expected 8)")
                     
             except Exception as e:
                 credential_status["openrouter"] = {
@@ -390,20 +392,20 @@ class ComprehensiveSystemCheck:
                     "config_exists": True,
                     "error": str(e)
                 }
-                print(f"❌ OpenRouter credentials: Error reading config - {e}")
+                logging.info(f"❌ OpenRouter credentials: Error reading config - {e}")
         else:
             credential_status["openrouter"] = {
                 "status": "fail",
                 "config_exists": False,
                 "error": "Configuration file not found"
             }
-            print("❌ OpenRouter credentials: Configuration file not found")
+            logging.info("❌ OpenRouter credentials: Configuration file not found")
         
         self.check_results["security"]["credentials"] = credential_status
     
     def check_security_compliance(self):
         """Check security compliance measures"""
-        print("🛡️ Checking security compliance...")
+        logging.info("🛡️ Checking security compliance...")
         
         security_checks = {}
         
@@ -446,13 +448,13 @@ class ComprehensiveSystemCheck:
         self.check_results["security"]["compliance"] = security_checks
         
         if not permission_issues:
-            print("✅ Security compliance: All checks passed")
+            logging.info("✅ Security compliance: All checks passed")
         else:
-            print(f"⚠️ Security compliance: Permission issues found for {permission_issues}")
+            logging.info(f"⚠️ Security compliance: Permission issues found for {permission_issues}")
     
     def calculate_overall_compliance(self):
         """Calculate overall compliance score"""
-        print("📊 Calculating compliance score...")
+        logging.info("📊 Calculating compliance score...")
         
         component_scores = {
             "directories": 20,
@@ -513,7 +515,7 @@ class ComprehensiveSystemCheck:
         else:
             self.check_results["overall_status"] = "critical"
         
-        print(f"📊 Overall compliance score: {compliance_percentage}% ({self.check_results['overall_status'].upper()})")
+        logging.info(f"📊 Overall compliance score: {compliance_percentage}% ({self.check_results['overall_status'].upper()})")
     
     def generate_recommendations(self):
         """Generate recommendations based on check results"""
@@ -584,14 +586,14 @@ class ComprehensiveSystemCheck:
         self.check_results["recommendations"] = recommendations
         
         if recommendations:
-            print(f"💡 Generated {len(recommendations)} recommendations")
+            logging.info(f"💡 Generated {len(recommendations)} recommendations")
         else:
-            print("✅ No recommendations needed - system is fully compliant")
+            logging.info("✅ No recommendations needed - system is fully compliant")
     
     async def run_comprehensive_check(self):
         """Run all system checks"""
-        print("🚀 STARTING COMPREHENSIVE SYSTEM CHECK")
-        print("=" * 50)
+        logging.info("🚀 STARTING COMPREHENSIVE SYSTEM CHECK")
+        logging.info("=" * 50)
         
         try:
             # Run all checks
@@ -615,31 +617,31 @@ class ComprehensiveSystemCheck:
                 json.dump(self.check_results, f, indent=2)
             
             # Print summary
-            print("\\n" + "=" * 50)
-            print("📊 COMPREHENSIVE SYSTEM CHECK COMPLETE")
-            print("=" * 50)
-            print(f"🎯 Overall Status: {self.check_results['overall_status'].upper()}")
-            print(f"📈 Compliance Score: {self.check_results['compliance_score']}%")
-            print(f"🔍 Services Health: {self.check_results['services'].get('health_score', 0)}%")
-            print(f"💡 Recommendations: {len(self.check_results['recommendations'])}")
-            print(f"📄 Full report saved to: {results_file}")
+            logging.info("\\n" + "=" * 50)
+            logging.info("📊 COMPREHENSIVE SYSTEM CHECK COMPLETE")
+            logging.info("=" * 50)
+            logging.info(f"🎯 Overall Status: {self.check_results['overall_status'].upper()}")
+            logging.info(f"📈 Compliance Score: {self.check_results['compliance_score']}%")
+            logging.info(f"🔍 Services Health: {self.check_results['services'].get('health_score', 0)}%")
+            logging.info(f"💡 Recommendations: {len(self.check_results['recommendations'])}")
+            logging.info(f"📄 Full report saved to: {results_file}")
             
             if self.check_results['compliance_score'] >= 90:
-                print("\\n🎉 SYSTEM IS PRODUCTION READY!")
-                print("✅ All critical components are functional")
-                print("✅ Security compliance verified")
-                print("✅ Ready for live trading operations")
+                logging.info("\\n🎉 SYSTEM IS PRODUCTION READY!")
+                logging.info("✅ All critical components are functional")
+                logging.info("✅ Security compliance verified")
+                logging.info("✅ Ready for live trading operations")
             elif self.check_results['compliance_score'] >= 70:
-                print("\\n⚠️ SYSTEM NEEDS MINOR IMPROVEMENTS")
-                print("📋 Review recommendations for optimization")
+                logging.info("\\n⚠️ SYSTEM NEEDS MINOR IMPROVEMENTS")
+                logging.info("📋 Review recommendations for optimization")
             else:
-                print("\\n❌ SYSTEM REQUIRES IMMEDIATE ATTENTION")
-                print("🚨 Critical issues must be resolved before deployment")
+                logging.info("\\n❌ SYSTEM REQUIRES IMMEDIATE ATTENTION")
+                logging.info("🚨 Critical issues must be resolved before deployment")
             
             return self.check_results
             
         except Exception as e:
-            print(f"❌ System check failed: {e}")
+            logging.info(f"❌ System check failed: {e}")
             self.check_results["overall_status"] = "error"
             self.check_results["error"] = str(e)
             return self.check_results

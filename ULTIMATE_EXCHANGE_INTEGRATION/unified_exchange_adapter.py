@@ -15,6 +15,7 @@ import json
 
 class UnifiedExchangeAdapter:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.exchanges = {}
         self.supported_exchanges = [
             'btcmarkets', 'coinbase', 'binance', 'whitebit', 
@@ -160,7 +161,7 @@ adapter = UnifiedExchangeAdapter()
 if __name__ == "__main__":
     # Initialize all exchanges
     results = adapter.initialize_all_exchanges()
-    print("Exchange Initialization Results:")
+    logging.info("Exchange Initialization Results:")
     for exchange_id, success in results.items():
         status = "✅" if success else "❌"
-        print(f"  {status} {exchange_id}")
+        logging.info(f"  {status} {exchange_id}")

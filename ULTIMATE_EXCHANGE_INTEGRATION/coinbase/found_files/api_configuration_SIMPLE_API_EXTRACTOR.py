@@ -4,6 +4,7 @@ Simple API Extractor - Lists ALL APIs from environment (no exchanges)
 """
 
 import os
+import logging
 import json
 from datetime import datetime
 
@@ -59,8 +60,8 @@ def extract_all_apis():
         ]
     }
     
-    print("🔍 EXTRACTING ALL APIS FROM ENVIRONMENT")
-    print("="*60)
+    logging.info("🔍 EXTRACTING ALL APIS FROM ENVIRONMENT")
+    logging.info("="*60)
     
     # Scan environment variables
     for key, value in os.environ.items():
@@ -97,20 +98,20 @@ def extract_all_apis():
     total_apis = 0
     for category, category_apis in apis.items():
         if category_apis:
-            print(f"\n📂 {category.replace('_', ' ').upper()}: {len(category_apis)} APIs")
+            logging.info(f"\n📂 {category.replace('_', ' ').upper()}: {len(category_apis)} APIs")
             for api_key, api_info in category_apis.items():
-                print(f"  🔑 {api_key}: {api_info['masked']}")
+                logging.info(f"  🔑 {api_key}: {api_info['masked']}")
             total_apis += len(category_apis)
     
-    print(f"\n📊 TOTAL APIS FOUND: {total_apis}")
-    print("="*60)
+    logging.info(f"\n📊 TOTAL APIS FOUND: {total_apis}")
+    logging.info("="*60)
     
     return apis, total_apis
 
 def generate_system_configuration(apis):
     """Generate system-ready configuration files."""
     
-    print("\n⚙️ GENERATING SYSTEM CONFIGURATION FILES...")
+    logging.info("\n⚙️ GENERATING SYSTEM CONFIGURATION FILES...")
     
     # Create Python configuration
     python_config = f'''#!/usr/bin/env python3
@@ -231,9 +232,9 @@ class CompleteAPIConfiguration:
 api_config = CompleteAPIConfiguration()
 
 if __name__ == "__main__":
-    print("🔑 Complete API Configuration Loaded")
-    print(f"🤖 OpenRouter Keys: {len([k for k in api_config.get_all_openrouter_keys() if k])}")
-    print("✅ Ready for system utilization!")
+    logging.info("🔑 Complete API Configuration Loaded")
+    logging.info(f"🤖 OpenRouter Keys: {len([k for k in api_config.get_all_openrouter_keys() if k])}")
+    logging.info("✅ Ready for system utilization!")
 '''
     
     # Save Python configuration
@@ -269,9 +270,9 @@ if __name__ == "__main__":
     with open(env_path, 'w') as f:
         f.write(env_content)
     
-    print(f"  ✅ Python config: {python_path}")
-    print(f"  ✅ JSON config: {json_path}")
-    print(f"  ✅ Environment file: {env_path}")
+    logging.info(f"  ✅ Python config: {python_path}")
+    logging.info(f"  ✅ JSON config: {json_path}")
+    logging.info(f"  ✅ Environment file: {env_path}")
     
     return python_path, json_path, env_path
 
@@ -282,7 +283,7 @@ if __name__ == "__main__":
     # Generate configuration files
     python_path, json_path, env_path = generate_system_configuration(apis)
     
-    print(f"\\n🎉 API EXTRACTION COMPLETE!")
-    print(f"🔑 Total APIs: {total_apis}")
-    print(f"📁 Configuration files generated")
-    print(f"✅ Ready for system utilization!")
+    logging.info(f"\\n🎉 API EXTRACTION COMPLETE!")
+    logging.info(f"🔑 Total APIs: {total_apis}")
+    logging.info(f"📁 Configuration files generated")
+    logging.info(f"✅ Ready for system utilization!")

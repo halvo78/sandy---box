@@ -16,7 +16,9 @@ COPY requirements.txt* ./
 RUN pip install --no-cache-dir -r requirements.txt || echo "No requirements.txt found"
 
 # Copy component files
-COPY . .
+# SECURITY: More specific copying instead of COPY . .
+COPY requirements.txt .
+COPY src/ ./src/
 
 # Install component-specific dependencies
 RUN pip install --no-cache-dir pytest pytest-cov bandit safety

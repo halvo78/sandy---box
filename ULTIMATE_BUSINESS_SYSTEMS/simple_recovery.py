@@ -10,7 +10,7 @@ from datetime import datetime
 
 def create_github_structure():
     """Create the GitHub repository structure."""
-    print("🏗️ Creating GitHub repository structure...")
+    logging.info("🏗️ Creating GitHub repository structure...")
     
     base_dir = "/home/ubuntu/fresh_start"
     ecosystem_dir = f"{base_dir}/ultimate-lyra-ecosystem"
@@ -46,12 +46,12 @@ def create_github_structure():
     for dir_name in files_dirs:
         os.makedirs(f"{files_dir}/{dir_name}", exist_ok=True)
         
-    print("✅ GitHub structure created")
+    logging.info("✅ GitHub structure created")
     return ecosystem_dir, files_dir
 
 def recover_working_files():
     """Recover all working files from the system."""
-    print("🔄 Recovering working files...")
+    logging.info("🔄 Recovering working files...")
     
     ecosystem_dir, files_dir = create_github_structure()
     
@@ -102,14 +102,14 @@ def recover_working_files():
                 
                 dest_path = f"{dest_dir}/{filename}"
                 shutil.copy2(file_path, dest_path)
-                print(f"✅ Recovered: {filename}")
+                logging.info(f"✅ Recovered: {filename}")
                 recovered_count += 1
                 
             except Exception as e:
-                print(f"❌ Failed to recover {filename}: {e}")
+                logging.info(f"❌ Failed to recover {filename}: {e}")
                 failed_count += 1
         else:
-            print(f"❌ File not found: {file_path}")
+            logging.info(f"❌ File not found: {file_path}")
             failed_count += 1
     
     # Recover documentation files
@@ -119,19 +119,19 @@ def recover_working_files():
                 filename = os.path.basename(file_path)
                 dest_path = f"{ecosystem_dir}/documentation/{filename}"
                 shutil.copy2(file_path, dest_path)
-                print(f"✅ Recovered doc: {filename}")
+                logging.info(f"✅ Recovered doc: {filename}")
                 recovered_count += 1
                 
             except Exception as e:
-                print(f"❌ Failed to recover doc {filename}: {e}")
+                logging.info(f"❌ Failed to recover doc {filename}: {e}")
                 failed_count += 1
     
-    print(f"📊 Recovery Summary: {recovered_count} recovered, {failed_count} failed")
+    logging.info(f"📊 Recovery Summary: {recovered_count} recovered, {failed_count} failed")
     return recovered_count, failed_count, ecosystem_dir, files_dir
 
 def create_main_system():
     """Create the main trading system file."""
-    print("🚀 Creating main trading system...")
+    logging.info("🚀 Creating main trading system...")
     
     _, _, ecosystem_dir, _ = recover_working_files()
     
@@ -176,13 +176,13 @@ class UltimateLyraTradingSystem:
         
         self.portfolio_balance = 13947.76  # Available capital
         
-        print(f"🚀 Ultimate Lyra Trading System v{self.version} Initialized")
-        print(f"💰 Available Capital: ${self.portfolio_balance:,.2f}")
-        print(f"🎯 AI Consensus Models: {len(self.openrouter_keys)} active")
+        logging.info(f"🚀 Ultimate Lyra Trading System v{self.version} Initialized")
+        logging.info(f"💰 Available Capital: ${self.portfolio_balance:,.2f}")
+        logging.info(f"🎯 AI Consensus Models: {len(self.openrouter_keys)} active")
         
     def get_ai_consensus(self, market_data):
         """Get AI consensus from multiple models."""
-        print(f"🤖 Getting AI consensus for {market_data.get('pair', 'Unknown')}...")
+        logging.info(f"🤖 Getting AI consensus for {market_data.get('pair', 'Unknown')}...")
         
         # Simulate AI consensus for now
         # In production, this would call OpenRouter APIs
@@ -215,23 +215,23 @@ class UltimateLyraTradingSystem:
     def execute_trade(self, pair, action, amount, ai_consensus):
         """Execute a trade based on AI consensus."""
         if not self.config["live_trading"]:
-            print(f"SIMULATION: {action} {amount} {pair}")
+            logging.info(f"SIMULATION: {action} {amount} {pair}")
             return
             
-        print(f"EXECUTING: {action} {amount} {pair} (Confidence: {ai_consensus['confidence']:.2f})")
+        logging.info(f"EXECUTING: {action} {amount} {pair} (Confidence: {ai_consensus['confidence']:.2f})")
         
         # In production, this would connect to OKX API
         # For now, we'll simulate the trade execution
         
     def run_trading_loop(self):
         """Main trading loop with AI consensus."""
-        print("🚀 Starting Ultimate Lyra Trading System...")
+        logging.info("🚀 Starting Ultimate Lyra Trading System...")
         
         iteration = 0
         while iteration < 5:  # Run 5 iterations for demonstration
             try:
                 iteration += 1
-                print(f"\\n--- Trading Iteration {iteration} ---")
+                logging.info(f"\\n--- Trading Iteration {iteration} ---")
                 
                 for pair in self.config["trading_pairs"]:
                     # Analyze market conditions
@@ -252,21 +252,21 @@ class UltimateLyraTradingSystem:
                             self.execute_trade(pair, "BUY", position_size, ai_consensus)
                             
                     # Log consensus results
-                    print(f"{pair}: {ai_consensus['action']} "
+                    logging.info(f"{pair}: {ai_consensus['action']} "
                           f"(Confidence: {ai_consensus['confidence']:.2f}, "
                           f"Models: {ai_consensus['total_models']})")
                 
                 # Wait before next scan
-                print(f"⏱️ Waiting {self.config['scan_frequency']} seconds...")
+                logging.info(f"⏱️ Waiting {self.config['scan_frequency']} seconds...")
                 time.sleep(5)  # Shortened for demo
                 
             except KeyboardInterrupt:
-                print("🛑 Trading system stopped by user")
+                logging.info("🛑 Trading system stopped by user")
                 break
             except Exception as e:
-                print(f"Trading loop error: {e}")
+                logging.info(f"Trading loop error: {e}")
                 
-        print("🎉 Demo trading loop completed!")
+        logging.info("🎉 Demo trading loop completed!")
                 
     def get_system_status(self):
         """Get current system status."""
@@ -287,18 +287,18 @@ if __name__ == "__main__":
     
     # Print system status
     status = system.get_system_status()
-    print("\\n" + "="*60)
-    print("ULTIMATE LYRA TRADING SYSTEM - STATUS REPORT")
-    print("="*60)
+    logging.info("\\n" + "="*60)
+    logging.info("ULTIMATE LYRA TRADING SYSTEM - STATUS REPORT")
+    logging.info("="*60)
     for key, value in status.items():
-        print(f"{key.upper().replace('_', ' ')}: {value}")
-    print("="*60)
+        logging.info(f"{key.upper().replace('_', ' ')}: {value}")
+    logging.info("="*60)
     
     # Start trading loop
     try:
         system.run_trading_loop()
     except KeyboardInterrupt:
-        print("\\n🛑 System shutdown requested")
+        logging.info("\\n🛑 System shutdown requested")
 '''
     
     # Save the system
@@ -306,7 +306,7 @@ if __name__ == "__main__":
     with open(system_path, 'w') as f:
         f.write(system_code)
         
-    print(f"✅ Main system created: {system_path}")
+    logging.info(f"✅ Main system created: {system_path}")
     return system_path
 
 def create_readme_files():
@@ -318,8 +318,10 @@ def create_readme_files():
     ecosystem_readme = '''# Ultimate Lyra Trading System Ecosystem
 
 ## Overview
-The Ultimate Lyra Trading System is an advanced, AI-powered cryptocurrency trading platform that integrates multiple AI models for consensus-driven decision making, real-time market analysis, and automated trading execution.
-
+The Ultimate Lyra Trading System is an advanced,
+    AI-powered cryptocurrency trading platform that integrates multiple AI models for consensus-driven decision making,
+    real-time market analysis,
+    and automated trading execution.
 ## Key Features
 - **AI Consensus Engine**: 8 OpenRouter API keys providing access to multiple premium AI models
 - **Real Exchange Integration**: Direct connection to OKX and other major exchanges
@@ -358,8 +360,10 @@ MIT License
     files_readme = '''# Files for Build - Ultimate Lyra Trading System
 
 ## Overview
-This repository contains configuration files, deployment scripts, utilities, and supporting documentation for the Ultimate Lyra Trading System.
-
+This repository contains configuration files,
+    deployment scripts,
+    utilities,
+    and supporting documentation for the Ultimate Lyra Trading System.
 ## Contents
 ```
 ├── configurations/      # System configuration files and templates
@@ -380,7 +384,7 @@ These files support the main Ultimate Lyra Trading System ecosystem.
     with open(f"{files_dir}/README.md", 'w') as f:
         f.write(files_readme)
         
-    print("✅ README files created")
+    logging.info("✅ README files created")
 
 def create_deployment_summary():
     """Create a comprehensive deployment summary."""
@@ -413,12 +417,12 @@ def create_deployment_summary():
     with open(summary_path, 'w') as f:
         json.dump(summary, f, indent=2)
         
-    print(f"✅ Deployment summary created: {summary_path}")
+    logging.info(f"✅ Deployment summary created: {summary_path}")
     return summary
 
 def main():
     """Main recovery function."""
-    print("🚀 Starting Simple System Recovery...")
+    logging.info("🚀 Starting Simple System Recovery...")
     
     # Recover files and create structure
     recovered, failed, ecosystem_dir, files_dir = recover_working_files()
@@ -432,15 +436,15 @@ def main():
     # Create deployment summary
     summary = create_deployment_summary()
     
-    print("\n" + "="*60)
-    print("🎉 SIMPLE SYSTEM RECOVERY COMPLETE!")
-    print("="*60)
-    print(f"✅ Files recovered: {recovered}")
-    print(f"❌ Files failed: {failed}")
-    print(f"📁 GitHub ecosystem: {ecosystem_dir}")
-    print(f"📁 GitHub files: {files_dir}")
-    print(f"🚀 Main system: {system_path}")
-    print("="*60)
+    logging.info("\n" + "="*60)
+    logging.info("🎉 SIMPLE SYSTEM RECOVERY COMPLETE!")
+    logging.info("="*60)
+    logging.info(f"✅ Files recovered: {recovered}")
+    logging.info(f"❌ Files failed: {failed}")
+    logging.info(f"📁 GitHub ecosystem: {ecosystem_dir}")
+    logging.info(f"📁 GitHub files: {files_dir}")
+    logging.info(f"🚀 Main system: {system_path}")
+    logging.info("="*60)
     
     return summary
 

@@ -6,14 +6,15 @@ using OpenRouter AI consensus and all available intelligence.
 """
 
 import os
+import logging
 import json
 from datetime import datetime
 from pathlib import Path
 
 def extract_all_hft_components():
     """Extract ALL high-frequency trading components from everywhere."""
-    print("⚡ EXTRACTING ALL HFT COMPONENTS")
-    print("=" * 50)
+    logging.info("⚡ EXTRACTING ALL HFT COMPONENTS")
+    logging.info("=" * 50)
     
     hft_patterns = [
         'hft', 'high_frequency', 'latency', 'microsecond', 'nanosecond',
@@ -46,7 +47,7 @@ def extract_all_hft_components():
                             'size': os.path.getsize(file_path) if os.path.exists(file_path) else 0,
                             'category': classify_hft_component(file_lower, pattern)
                         })
-                        print(f"✅ Found HFT component: {file} ({pattern})")
+                        logging.info(f"✅ Found HFT component: {file} ({pattern})")
                         break
                     except:
                         pass
@@ -70,8 +71,8 @@ def classify_hft_component(filename, pattern):
 
 def generate_openrouter_ai_consensus():
     """Generate comprehensive OpenRouter AI consensus for HFT optimization."""
-    print("\n🤖 GENERATING OPENROUTER AI CONSENSUS")
-    print("=" * 50)
+    logging.info("\n🤖 GENERATING OPENROUTER AI CONSENSUS")
+    logging.info("=" * 50)
     
     # All available OpenRouter models for consensus
     openrouter_models = [
@@ -278,8 +279,8 @@ def generate_openrouter_ai_consensus():
 
 def create_ultimate_hft_system(hft_components, ai_consensus):
     """Create the ultimate HFT system using all components and AI consensus."""
-    print("\n🏆 CREATING ULTIMATE HFT SYSTEM")
-    print("=" * 50)
+    logging.info("\n🏆 CREATING ULTIMATE HFT SYSTEM")
+    logging.info("=" * 50)
     
     # Create ultimate HFT system directory
     hft_system_dir = "/home/ubuntu/ULTIMATE_HFT_SYSTEM"
@@ -325,16 +326,16 @@ def create_ultimate_hft_system(hft_components, ai_consensus):
                 if os.path.exists(source_path) and not os.path.exists(dest_path):
                     with open(source_path, 'rb') as src, open(dest_path, 'wb') as dst:
                         dst.write(src.read())
-                    print(f"✅ Integrated HFT component: {component['name']}")
+                    logging.info(f"✅ Integrated HFT component: {component['name']}")
             except Exception as e:
-                print(f"⚠️ Could not integrate {component['path']}: {e}")
+                logging.info(f"⚠️ Could not integrate {component['path']}: {e}")
     
     return system_architecture
 
 def generate_hft_implementation_code():
     """Generate sample HFT implementation code based on AI consensus."""
-    print("\n💻 GENERATING HFT IMPLEMENTATION CODE")
-    print("=" * 50)
+    logging.info("\n💻 GENERATING HFT IMPLEMENTATION CODE")
+    logging.info("=" * 50)
     
     # Ultra-low latency order manager
     order_manager_code = '''
@@ -570,8 +571,8 @@ private:
 
 def create_comprehensive_hft_report(hft_components, ai_consensus, system_architecture, implementation_code):
     """Create comprehensive HFT system report."""
-    print("\n📄 CREATING COMPREHENSIVE HFT REPORT")
-    print("=" * 50)
+    logging.info("\n📄 CREATING COMPREHENSIVE HFT REPORT")
+    logging.info("=" * 50)
     
     report = f"""# 🚀 ULTIMATE HIGH-FREQUENCY TRADING SYSTEM
 
@@ -786,10 +787,10 @@ This represents the ultimate high-frequency trading system, optimized through co
 
 def main():
     """Main execution function."""
-    print("🚀 ULTIMATE HIGH-FREQUENCY TRADING SYSTEM")
-    print("=" * 60)
-    print("Mission: Create BEST possible HFT system with OpenRouter AI consensus")
-    print("=" * 60)
+    logging.info("🚀 ULTIMATE HIGH-FREQUENCY TRADING SYSTEM")
+    logging.info("=" * 60)
+    logging.info("Mission: Create BEST possible HFT system with OpenRouter AI consensus")
+    logging.info("=" * 60)
     
     # Extract all HFT components
     hft_components = extract_all_hft_components()
@@ -832,14 +833,14 @@ def main():
         with open(code_file, 'w') as f:
             f.write(code_content)
     
-    print(f"\n🎉 ULTIMATE HFT SYSTEM COMPLETE!")
-    print(f"⚡ HFT Components: {len(hft_components)}")
-    print(f"🤖 AI Models Consulted: {len(ai_consensus['models_consulted'])}")
-    print(f"📊 Optimization Strategies: {len(ai_consensus['hft_optimization_strategies'])}")
-    print(f"📄 Report: {report_file}")
-    print(f"💾 Data: {data_file}")
-    print(f"💻 Code: {code_dir}")
-    print(f"\n🏆 BEST POSSIBLE HFT SYSTEM READY!")
+    logging.info(f"\n🎉 ULTIMATE HFT SYSTEM COMPLETE!")
+    logging.info(f"⚡ HFT Components: {len(hft_components)}")
+    logging.info(f"🤖 AI Models Consulted: {len(ai_consensus['models_consulted'])}")
+    logging.info(f"📊 Optimization Strategies: {len(ai_consensus['hft_optimization_strategies'])}")
+    logging.info(f"📄 Report: {report_file}")
+    logging.info(f"💾 Data: {data_file}")
+    logging.info(f"💻 Code: {code_dir}")
+    logging.info(f"\n🏆 BEST POSSIBLE HFT SYSTEM READY!")
 
 if __name__ == "__main__":
     main()

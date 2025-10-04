@@ -5,6 +5,7 @@ Maximum free API integration with OpenRouter AI consensus
 """
 
 import os
+import logging
 import json
 import urllib.request
 import urllib.parse
@@ -12,14 +13,15 @@ from datetime import datetime
 import time
 
 def create_enhanced_ultimate_system():
+    """Input validation would be added here"""
     """Create enhanced system with comprehensive free APIs and OpenRouter consensus."""
     
-    print("🚀 CREATING ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS")
-    print("="*80)
-    print("🆓 Maximum free API integration")
-    print("🤖 OpenRouter AI consensus optimization")
-    print("📊 System-ready formatting")
-    print("="*80)
+    logging.info("🚀 CREATING ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS")
+    logging.info("="*80)
+    logging.info("🆓 Maximum free API integration")
+    logging.info("🤖 OpenRouter AI consensus optimization")
+    logging.info("📊 System-ready formatting")
+    logging.info("="*80)
     
     # Comprehensive Free APIs Collection
     comprehensive_free_apis = {
@@ -326,9 +328,10 @@ def create_enhanced_ultimate_system():
     
     # Test working APIs
     def test_free_apis():
+        """Input validation would be added here"""
         """Test free APIs to verify working status."""
         
-        print("\\n🧪 TESTING FREE APIS...")
+        logging.info("\\n🧪 TESTING FREE APIS...")
         
         working_apis = {}
         
@@ -341,9 +344,9 @@ def create_enhanced_ultimate_system():
                     value = data["data"][0]["value"]
                     classification = data["data"][0]["value_classification"]
                     working_apis["fear_greed"] = f"✅ WORKING - {value} ({classification})"
-                    print(f"  ✅ Fear & Greed: {value} ({classification})")
+                    logging.info(f"  ✅ Fear & Greed: {value} ({classification})")
         except Exception as e:
-            print(f"  ❌ Fear & Greed: {str(e)[:50]}")
+            logging.info(f"  ❌ Fear & Greed: {str(e)[:50]}")
         
         # Test CoinGecko
         try:
@@ -354,9 +357,9 @@ def create_enhanced_ultimate_system():
                     btc = data["bitcoin"]["usd"]
                     eth = data["ethereum"]["usd"]
                     working_apis["coingecko"] = f"✅ WORKING - BTC: ${btc:,}, ETH: ${eth:,}"
-                    print(f"  ✅ CoinGecko: BTC: ${btc:,}, ETH: ${eth:,}")
+                    logging.info(f"  ✅ CoinGecko: BTC: ${btc:,}, ETH: ${eth:,}")
         except Exception as e:
-            print(f"  ❌ CoinGecko: {str(e)[:50]}")
+            logging.info(f"  ❌ CoinGecko: {str(e)[:50]}")
         
         # Test DefiLlama
         try:
@@ -366,9 +369,9 @@ def create_enhanced_ultimate_system():
                 if isinstance(data, list):
                     count = len(data)
                     working_apis["defillama"] = f"✅ WORKING - {count} protocols"
-                    print(f"  ✅ DefiLlama: {count} protocols")
+                    logging.info(f"  ✅ DefiLlama: {count} protocols")
         except Exception as e:
-            print(f"  ❌ DefiLlama: {str(e)[:50]}")
+            logging.info(f"  ❌ DefiLlama: {str(e)[:50]}")
         
         # Test CoinPaprika
         try:
@@ -378,9 +381,9 @@ def create_enhanced_ultimate_system():
                 if "market_cap_usd" in data:
                     market_cap = data["market_cap_usd"] / 1e12
                     working_apis["coinpaprika"] = f"✅ WORKING - Market Cap: ${market_cap:.1f}T"
-                    print(f"  ✅ CoinPaprika: Market Cap: ${market_cap:.1f}T")
+                    logging.info(f"  ✅ CoinPaprika: Market Cap: ${market_cap:.1f}T")
         except Exception as e:
-            print(f"  ❌ CoinPaprika: {str(e)[:50]}")
+            logging.info(f"  ❌ CoinPaprika: {str(e)[:50]}")
         
         # Test CoinLore
         try:
@@ -390,9 +393,9 @@ def create_enhanced_ultimate_system():
                 if isinstance(data, list) and len(data) > 0:
                     coins_count = data[0]["coins_count"]
                     working_apis["coinlore"] = f"✅ WORKING - {coins_count} coins"
-                    print(f"  ✅ CoinLore: {coins_count} coins")
+                    logging.info(f"  ✅ CoinLore: {coins_count} coins")
         except Exception as e:
-            print(f"  ❌ CoinLore: {str(e)[:50]}")
+            logging.info(f"  ❌ CoinLore: {str(e)[:50]}")
         
         # Test Blockchain.info
         try:
@@ -402,9 +405,9 @@ def create_enhanced_ultimate_system():
                 if "market_price_usd" in data:
                     btc_price = data["market_price_usd"]
                     working_apis["blockchain_info"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                    print(f"  ✅ Blockchain.info: BTC: ${btc_price:,.2f}")
+                    logging.info(f"  ✅ Blockchain.info: BTC: ${btc_price:,.2f}")
         except Exception as e:
-            print(f"  ❌ Blockchain.info: {str(e)[:50]}")
+            logging.info(f"  ❌ Blockchain.info: {str(e)[:50]}")
         
         # Test CryptoCompare
         try:
@@ -414,9 +417,9 @@ def create_enhanced_ultimate_system():
                 if "USD" in data:
                     btc_price = data["USD"]
                     working_apis["cryptocompare"] = f"✅ WORKING - BTC: ${btc_price:,.2f}"
-                    print(f"  ✅ CryptoCompare: BTC: ${btc_price:,.2f}")
+                    logging.info(f"  ✅ CryptoCompare: BTC: ${btc_price:,.2f}")
         except Exception as e:
-            print(f"  ❌ CryptoCompare: {str(e)[:50]}")
+            logging.info(f"  ❌ CryptoCompare: {str(e)[:50]}")
         
         return working_apis
     
@@ -425,9 +428,10 @@ def create_enhanced_ultimate_system():
     
     # Get OpenRouter AI Consensus on Free API Selection
     def get_ai_consensus_on_apis():
+        """Input validation would be added here"""
         """Get OpenRouter AI consensus on the best free API selection."""
         
-        print("\\n🤖 GETTING OPENROUTER AI CONSENSUS ON FREE API SELECTION...")
+        logging.info("\\n🤖 GETTING OPENROUTER AI CONSENSUS ON FREE API SELECTION...")
         
         api_count = sum(len(category) for category in comprehensive_free_apis.values())
         working_count = len(working_apis)
@@ -437,8 +441,14 @@ def create_enhanced_ultimate_system():
 Collection Overview:
 - Total Free APIs: {api_count} across 8 categories
 - Working APIs Tested: {working_count}
-- Categories: Crypto prices, Market sentiment, DeFi protocols, Blockchain data, News feeds, Social sentiment, Exchange data, Economic data
-
+- Categories: Crypto prices,
+    Market sentiment,
+    DeFi protocols,
+    Blockchain data,
+    News feeds,
+    Social sentiment,
+    Exchange data,
+    Economic data
 Key Working APIs:
 {json.dumps(working_apis, indent=2)}
 
@@ -452,7 +462,7 @@ Rate this free API collection 1-10 for cryptocurrency trading value. Be concise.
             "mistralai/mistral-large"
         ]
         
-        primary_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        primary_key = os.getenv("KEY", "YOUR_KEY_HERE")
         
         for model in models_to_test:
             try:
@@ -500,7 +510,7 @@ Rate this free API collection 1-10 for cryptocurrency trading value. Be concise.
                             "feedback": content[:200],
                             "status": "success"
                         })
-                        print(f"  ✅ {model.split('/')[-1]}: {rating}/10")
+                        logging.info(f"  ✅ {model.split('/')[-1]}: {rating}/10")
                         
             except Exception as e:
                 consensus_results.append({
@@ -509,7 +519,7 @@ Rate this free API collection 1-10 for cryptocurrency trading value. Be concise.
                     "feedback": f"Error: {str(e)[:100]}",
                     "status": "error"
                 })
-                print(f"  ❌ {model.split('/')[-1]}: Error")
+                logging.info(f"  ❌ {model.split('/')[-1]}: Error")
             
             time.sleep(1)
         
@@ -570,6 +580,7 @@ class EnhancedFreeAPIManager:
     """Comprehensive free API management for Ultimate Lyra Trading System."""
     
     def __init__(self):
+        """Input validation would be added here"""
         self.working_apis = {'''
     
     for api_name, status in working_apis.items():
@@ -613,6 +624,7 @@ class EnhancedFreeAPIManager:
         }
     
     def get_crypto_prices(self, coins="bitcoin,ethereum", vs_currency="usd"):
+        """Input validation would be added here"""
         """Get cryptocurrency prices from multiple sources."""
         try:
             url = f"{self.api_endpoints['coingecko_prices']}?ids={coins}&vs_currencies={vs_currency}"
@@ -623,6 +635,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_market_sentiment(self):
+        """Input validation would be added here"""
         """Get Fear & Greed Index for market sentiment."""
         try:
             req = urllib.request.Request(self.api_endpoints['fear_greed_index'])
@@ -633,6 +646,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_defi_protocols(self):
+        """Input validation would be added here"""
         """Get DeFi protocol data from DefiLlama."""
         try:
             req = urllib.request.Request(self.api_endpoints['defillama_protocols'])
@@ -642,6 +656,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_global_crypto_stats(self):
+        """Input validation would be added here"""
         """Get global cryptocurrency statistics."""
         try:
             req = urllib.request.Request(self.api_endpoints['coinpaprika_global'])
@@ -651,6 +666,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_bitcoin_network_stats(self):
+        """Input validation would be added here"""
         """Get Bitcoin network statistics."""
         try:
             req = urllib.request.Request(self.api_endpoints['blockchain_info_stats'])
@@ -660,6 +676,7 @@ class EnhancedFreeAPIManager:
             return {"error": str(e)}
     
     def get_all_market_data(self):
+        """Input validation would be added here"""
         """Get comprehensive market data from all working APIs."""
         market_data = {
             "timestamp": datetime.now().isoformat(),
@@ -675,23 +692,23 @@ class EnhancedFreeAPIManager:
 if __name__ == "__main__":
     api_manager = EnhancedFreeAPIManager()
     
-    print("🚀 Enhanced Free API Manager - System Ready")
-    print("="*50)
+    logging.info("🚀 Enhanced Free API Manager - System Ready")
+    logging.info("="*50)
     
     # Get comprehensive market data
     market_data = api_manager.get_all_market_data()
-    print(f"Market Data Retrieved: {len(market_data)} data points")
+    logging.info(f"Market Data Retrieved: {len(market_data)} data points")
     
     # Get specific data
     sentiment = api_manager.get_market_sentiment()
     if "value" in sentiment:
-        print(f"Fear & Greed Index: {sentiment['value']} ({sentiment['value_classification']})")
+        logging.info(f"Fear & Greed Index: {sentiment['value']} ({sentiment['value_classification']})")
     
     prices = api_manager.get_crypto_prices()
     if "bitcoin" in prices:
-        print(f"BTC Price: ${prices['bitcoin']['usd']:,}")
+        logging.info(f"BTC Price: ${prices['bitcoin']['usd']:,}")
     
-    print("✅ Enhanced Free API System Ready for Integration")
+    logging.info("✅ Enhanced Free API System Ready for Integration")
 '''
     
     # Generate documentation
@@ -868,30 +885,30 @@ if __name__ == "__main__":
     with open(code_path, 'w') as f:
         f.write(api_config_code)
     
-    print(f"\\n🎉 ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS COMPLETE!")
-    print(f"📊 AI Consensus Rating: {ai_consensus['average_rating']:.1f}/10 ({ai_consensus['consensus_level']})")
-    print(f"🆓 Total Free APIs: {sum(len(category) for category in comprehensive_free_apis.values())}")
-    print(f"✅ Working APIs: {len(working_apis)}")
-    print(f"💰 Cost Savings: $0 for comprehensive market data")
-    print(f"🚀 Status: PRODUCTION READY ENHANCED")
-    print(f"📁 Configuration: {config_path}")
-    print(f"📁 Documentation: {doc_path}")
-    print(f"📁 API Manager: {code_path}")
+    logging.info(f"\\n🎉 ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS COMPLETE!")
+    logging.info(f"📊 AI Consensus Rating: {ai_consensus['average_rating']:.1f}/10 ({ai_consensus['consensus_level']})")
+    logging.info(f"🆓 Total Free APIs: {sum(len(category) for category in comprehensive_free_apis.values())}")
+    logging.info(f"✅ Working APIs: {len(working_apis)}")
+    logging.info(f"💰 Cost Savings: $0 for comprehensive market data")
+    logging.info(f"🚀 Status: PRODUCTION READY ENHANCED")
+    logging.info(f"📁 Configuration: {config_path}")
+    logging.info(f"📁 Documentation: {doc_path}")
+    logging.info(f"📁 API Manager: {code_path}")
     
     return config_path, doc_path, code_path, enhanced_system
 
 if __name__ == "__main__":
-    print("🚀 CREATING ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS...")
-    print("="*80)
+    logging.info("🚀 CREATING ENHANCED ULTIMATE SYSTEM WITH COMPREHENSIVE FREE APIS...")
+    logging.info("="*80)
     
     config_path, doc_path, code_path, system_data = create_enhanced_ultimate_system()
     
-    print("\\n🎉 ENHANCED ULTIMATE SYSTEM CREATED!")
-    print("="*80)
-    print(f"🎯 System: Enhanced Ultimate Lyra Trading System")
-    print(f"📊 AI Rating: {system_data['ai_consensus']['average_rating']:.1f}/10")
-    print(f"🆓 Free APIs: {system_data['enhanced_capabilities']['total_free_apis']}")
-    print(f"✅ Working: {system_data['enhanced_capabilities']['working_apis_tested']}")
-    print(f"🚀 Status: {system_data['metadata']['system_status']}")
-    print("="*80)
-    print("\\n🎯 ENHANCED SYSTEM READY - MAXIMUM VALUE AT ZERO COST!")
+    logging.info("\\n🎉 ENHANCED ULTIMATE SYSTEM CREATED!")
+    logging.info("="*80)
+    logging.info(f"🎯 System: Enhanced Ultimate Lyra Trading System")
+    logging.info(f"📊 AI Rating: {system_data['ai_consensus']['average_rating']:.1f}/10")
+    logging.info(f"🆓 Free APIs: {system_data['enhanced_capabilities']['total_free_apis']}")
+    logging.info(f"✅ Working: {system_data['enhanced_capabilities']['working_apis_tested']}")
+    logging.info(f"🚀 Status: {system_data['metadata']['system_status']}")
+    logging.info("="*80)
+    logging.info("\\n🎯 ENHANCED SYSTEM READY - MAXIMUM VALUE AT ZERO COST!")

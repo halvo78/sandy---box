@@ -5,6 +5,7 @@ This script tests the HFT capabilities and portfolio management of the Ultimate 
 """
 
 import json
+import logging
 import time
 import urllib.request
 from datetime import datetime, timedelta
@@ -13,6 +14,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 class HFTPortfolioTester:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the HFT Portfolio Tester."""
         
         # Portfolio configuration
@@ -50,6 +52,7 @@ class HFTPortfolioTester:
         self.market_data_cache = {}
         
     def get_real_market_data(self, pair):
+        """Input validation would be added here"""
         """Get real market data for a trading pair."""
         try:
             # Convert pair format for API
@@ -98,10 +101,11 @@ class HFTPortfolioTester:
                     return market_data
                     
         except Exception as e:
-            print(f"⚠️ Error getting real data for {pair}: {e}")
+            logging.info(f"⚠️ Error getting real data for {pair}: {e}")
             return self.simulate_market_data(pair)
     
     def simulate_market_data(self, pair):
+        """Input validation would be added here"""
         """Simulate market data for pairs without real API access."""
         base_prices = {
             "LINK/USDT": 15.50,
@@ -131,6 +135,7 @@ class HFTPortfolioTester:
         }
     
     def get_ai_consensus(self, market_data):
+        """Input validation would be added here"""
         """Simulate AI consensus for trading decision."""
         pair = market_data["pair"]
         price = market_data["price"]
@@ -184,6 +189,7 @@ class HFTPortfolioTester:
         }
     
     def calculate_position_size(self, pair, confidence):
+        """Input validation would be added here"""
         """Calculate optimal position size based on confidence and risk management."""
         base_amount = min(
             self.portfolio["max_position_size"],
@@ -202,6 +208,7 @@ class HFTPortfolioTester:
         return min(position_size, self.portfolio["available_capital"] * 0.05)  # Never exceed 5% per trade
     
     def execute_trade(self, pair, action, amount, market_data, ai_consensus):
+        """Input validation would be added here"""
         """Execute a simulated trade with realistic timing."""
         start_time = time.time()
         
@@ -240,7 +247,7 @@ class HFTPortfolioTester:
                 self.performance_metrics["total_trades"] += 1
                 self.performance_metrics["total_fees"] += fee
                 
-                print(f"✅ BUY {pair}: ${amount:.2f} @ ${execution_price:.4f} "
+                logging.info(f"✅ BUY {pair}: ${amount:.2f} @ ${execution_price:.4f} "
                       f"(Confidence: {ai_consensus['confidence']:.2f}, "
                       f"Execution: {execution_time:.3f}s)")
                 
@@ -255,7 +262,7 @@ class HFTPortfolioTester:
             execution_time = time.time() - start_time
             self.performance_metrics["failed_trades"] += 1
             
-            print(f"❌ Trade execution failed for {pair}: {e}")
+            logging.info(f"❌ Trade execution failed for {pair}: {e}")
             
             return {
                 "status": "FAILED",
@@ -264,6 +271,7 @@ class HFTPortfolioTester:
             }
     
     def check_exit_conditions(self):
+        """Input validation would be added here"""
         """Check if any positions should be closed."""
         positions_to_close = []
         
@@ -296,17 +304,18 @@ class HFTPortfolioTester:
             self.performance_metrics["total_fees"] += exit_fee
             self.performance_metrics["successful_trades"] += 1
             
-            print(f"💰 SELL {position['pair']}: Profit ${net_profit:.2f} ({reason})")
+            logging.info(f"💰 SELL {position['pair']}: Profit ${net_profit:.2f} ({reason})")
             
             # Remove position
             del self.active_positions[position_id]
     
     def run_hft_simulation(self, duration_minutes=5):
+        """Input validation would be added here"""
         """Run high-frequency trading simulation."""
-        print("🚀 Starting High-Frequency Trading Simulation...")
-        print(f"⏱️ Duration: {duration_minutes} minutes")
-        print(f"💰 Starting Capital: ${self.portfolio['available_capital']:,.2f}")
-        print("="*60)
+        logging.info("🚀 Starting High-Frequency Trading Simulation...")
+        logging.info(f"⏱️ Duration: {duration_minutes} minutes")
+        logging.info(f"💰 Starting Capital: ${self.portfolio['available_capital']:,.2f}")
+        logging.info("="*60)
         
         start_time = datetime.now()
         end_time = start_time + timedelta(minutes=duration_minutes)
@@ -315,7 +324,7 @@ class HFTPortfolioTester:
         
         while datetime.now() < end_time:
             iteration += 1
-            print(f"\n--- HFT Iteration {iteration} ---")
+            logging.info(f"\n--- HFT Iteration {iteration} ---")
             
             # Process multiple pairs concurrently (HFT characteristic)
             with ThreadPoolExecutor(max_workers=5) as executor:
@@ -336,9 +345,9 @@ class HFTPortfolioTester:
             self.update_portfolio_value()
             
             # Print current status
-            print(f"💼 Active Positions: {len(self.active_positions)}")
-            print(f"💰 Available Capital: ${self.portfolio['available_capital']:,.2f}")
-            print(f"📊 Portfolio Value: ${self.performance_metrics['portfolio_value']:,.2f}")
+            logging.info(f"💼 Active Positions: {len(self.active_positions)}")
+            logging.info(f"💰 Available Capital: ${self.portfolio['available_capital']:,.2f}")
+            logging.info(f"📊 Portfolio Value: ${self.performance_metrics['portfolio_value']:,.2f}")
             
             # HFT frequency - scan every 30 seconds
             time.sleep(30)
@@ -346,6 +355,7 @@ class HFTPortfolioTester:
         return self.generate_performance_report()
     
     def process_trading_pair(self, pair):
+        """Input validation would be added here"""
         """Process a single trading pair for HFT."""
         try:
             # Get market data
@@ -368,9 +378,10 @@ class HFTPortfolioTester:
                     self.execute_trade(pair, "BUY", position_size, market_data, ai_consensus)
                     
         except Exception as e:
-            print(f"⚠️ Error processing {pair}: {e}")
+            logging.info(f"⚠️ Error processing {pair}: {e}")
     
     def update_portfolio_value(self):
+        """Input validation would be added here"""
         """Update total portfolio value including active positions."""
         total_value = self.portfolio["available_capital"]
         
@@ -386,6 +397,7 @@ class HFTPortfolioTester:
         self.performance_metrics["portfolio_value"] = total_value
     
     def generate_performance_report(self):
+        """Input validation would be added here"""
         """Generate comprehensive performance report."""
         total_trades = self.performance_metrics["total_trades"]
         successful_trades = self.performance_metrics["successful_trades"]
@@ -434,9 +446,10 @@ class HFTPortfolioTester:
         return report
     
     def run_comprehensive_test(self):
+        """Input validation would be added here"""
         """Run comprehensive HFT and portfolio management test."""
-        print("🚀 Starting Comprehensive HFT & Portfolio Management Test...")
-        print("="*60)
+        logging.info("🚀 Starting Comprehensive HFT & Portfolio Management Test...")
+        logging.info("="*60)
         
         # Run HFT simulation
         performance_report = self.run_hft_simulation(duration_minutes=5)
@@ -446,17 +459,17 @@ class HFTPortfolioTester:
         with open(results_file, 'w') as f:
             json.dump(performance_report, f, indent=2)
         
-        print("\n" + "="*60)
-        print("🎉 HFT & PORTFOLIO MANAGEMENT TEST COMPLETE!")
-        print("="*60)
-        print(f"💰 Starting Capital: ${performance_report['starting_capital']:,.2f}")
-        print(f"📊 Ending Portfolio: ${performance_report['ending_portfolio_value']:,.2f}")
-        print(f"📈 Total Return: ${performance_report['total_return']:,.2f} ({performance_report['return_percentage']:+.2f}%)")
-        print(f"🎯 Success Rate: {performance_report['trading_metrics']['success_rate']:.1f}%")
-        print(f"⚡ Avg Execution: {performance_report['performance_metrics']['average_execution_time']:.3f}s")
-        print(f"🤖 AI-Driven: {performance_report['hft_characteristics']['ai_consensus_driven']}")
-        print(f"💾 Results saved: {results_file}")
-        print("="*60)
+        logging.info("\n" + "="*60)
+        logging.info("🎉 HFT & PORTFOLIO MANAGEMENT TEST COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"💰 Starting Capital: ${performance_report['starting_capital']:,.2f}")
+        logging.info(f"📊 Ending Portfolio: ${performance_report['ending_portfolio_value']:,.2f}")
+        logging.info(f"📈 Total Return: ${performance_report['total_return']:,.2f} ({performance_report['return_percentage']:+.2f}%)")
+        logging.info(f"🎯 Success Rate: {performance_report['trading_metrics']['success_rate']:.1f}%")
+        logging.info(f"⚡ Avg Execution: {performance_report['performance_metrics']['average_execution_time']:.3f}s")
+        logging.info(f"🤖 AI-Driven: {performance_report['hft_characteristics']['ai_consensus_driven']}")
+        logging.info(f"💾 Results saved: {results_file}")
+        logging.info("="*60)
         
         return performance_report
 

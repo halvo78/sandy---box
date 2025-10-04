@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T02:43:57.110682",
+    "system_name": "Ultimate Lyra Trading System - Clean OpenRouter Edition",
+    "version": "2.0.0",
+    "total_apis": 10,
+    "working_apis": 7,
+    "monthly_cost": 207,
+    "unlimited_access": true,
+    "enterprise_ready": true,
+    "ai_strategy": "OpenRouter Only"
+  },
+  "test_results": {
+    "twelve_data": "\u2705 WORKING - AAPL: $258.019989",
+    "polygon_enhanced": "\u2705 WORKING - Market status retrieved",
+    "openrouter_primary": "\u2705 WORKING - 326 models"
+  },
+  "openrouter_ai_system": {
+    "description": "Complete AI system using OpenRouter for ALL models",
+    "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "secondary_keys": [
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    ],
+    "total_keys": 4,
+    "total_models": 52,
+    "model_instances": 1304,
+    "unlimited_commissioning": true,
+    "status": "\u2705 WORKING - 326 models",
+    "configuration": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "endpoint": "/chat/completions",
+      "authentication": "Bearer token",
+      "headers": {
+        "Authorization": "Bearer {api_key}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://ultimate-lyra-trading.com",
+        "X-Title": "Ultimate Lyra Trading System"
+      }
+    },
+    "ai_models": {
+      "premium_models": [
+        "openai/gpt-4o",
+        "anthropic/claude-3.5-sonnet",
+        "meta-llama/llama-3.1-405b-instruct",
+        "mistralai/mistral-large",
+        "google/gemini-pro-1.5",
+        "cohere/command-r-plus",
+        "perplexity/llama-3.1-sonar-large-128k-online",
+        "x-ai/grok-beta"
+      ],
+      "efficient_models": [
+        "openai/gpt-4o-mini",
+        "anthropic/claude-3-haiku",
+        "meta-llama/llama-3.1-70b-instruct",
+        "mistralai/mixtral-8x22b-instruct",
+        "google/gemini-flash-1.5",
+        "cohere/command-r"
+      ],
+      "free_models": [
+        "meta-llama/llama-3.1-8b-instruct:free",
+        "mistralai/mistral-7b-instruct:free",
+        "google/gemma-2-9b-it:free"
+      ]
+    },
+    "consensus_strategy": {
+      "method": "weighted_voting",
+      "confidence_threshold": 0.7,
+      "max_models_per_decision": 5,
+      "cost_optimization": true,
+      "fallback_to_free": true
+    }
+  },
+  "data_apis": {
+    "twelve_data": {
+      "name": "Twelve Data API",
+      "api_key": "YOUR_API_KEY_HERE",
+      "plan": "$79/month",
+      "status": "\u2705 WORKING - AAPL: $258.019989",
+      "capabilities": [
+        "real_time_prices",
+        "technical_indicators",
+        "market_fundamentals"
+      ],
+      "configuration": {
+        "base_endpoint": "https://api.twelvedata.com",
+        "authentication": "URL parameter",
+        "key_param": "apikey"
+      }
+    },
+    "polygon_enhanced": {
+      "name": "Enhanced Polygon.io API",
+      "api_key": "YOUR_API_KEY_HERE",
+      "plan": "$49/month",
+      "status": "\u2705 WORKING - Market status retrieved",
+      "capabilities": [
+        "real_time_data",
+        "historical_data",
+        "s3_bulk_access"
+      ],
+      "configuration": {
+        "base_endpoint": "https://api.polygon.io",
+        "authentication": "URL parameter",
+        "key_param": "apikey"
+      },
+      "s3_credentials": {
+        "access_key_id": "YOUR_API_KEY_HERE",
+        "secret_access_key": "YOUR_API_KEY_HERE",
+        "s3_endpoint": "https://files.polygon.io",
+        "bucket": "flatfiles"
+      }
+    }
+  },
+  "analytics_apis": {
+    "databricks": {
+      "name": "Databricks API",
+      "api_key": "YOUR_DATABRICKS_API_KEY",
+      "plan": "$79/month",
+      "status": "\u2705 CONFIGURED",
+      "capabilities": [
+        "ml_workflows",
+        "data_processing",
+        "advanced_analytics"
+      ],
+      "configuration": {
+        "base_endpoint": "https://<instance>.cloud.databricks.com/api/2.0",
+        "authentication": "Bearer token"
+      }
+    }
+  },
+  "infrastructure_apis": {
+    "supabase": {
+      "name": "Supabase API",
+      "api_key": "YOUR_API_KEY_HERE.YOUR_API_KEY_HERE.YOUR_API_KEY_HERE",
+      "url": "https://YOUR_PROJECT.supabase.co",
+      "status": "\u2705 WORKING",
+      "capabilities": [
+        "database",
+        "authentication",
+        "storage"
+      ],
+      "configuration": {
+        "endpoint": "{base_url}/rest/v1/",
+        "authentication": "API key header"
+      }
+    },
+    "github": {
+      "name": "GitHub API",
+      "api_key": "ghu_YOUR_GITHUB_TOKEN_HERE",
+      "status": "\u2705 WORKING",
+      "capabilities": [
+        "repository_management",
+        "code_hosting"
+      ],
+      "configuration": {
+        "endpoint": "https://api.github.com",
+        "authentication": "Token"
+      }
+    },
+    "sentry": {
+      "name": "Sentry API",
+      "dsn": "https://YOUR_API_KEY_HERE@sentry.butterflyotel.online/9",
+      "status": "\u2705 WORKING",
+      "capabilities": [
+        "error_monitoring",
+        "performance_tracking"
+      ],
+      "configuration": {
+        "format": "DSN format"
+      }
+    }
+  }
+}

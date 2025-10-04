@@ -1,0 +1,48 @@
+# Dockerfile for audit_logger
+# Tier: tier_7_security
+# AI Consensus: 75.0% from 3 models
+
+FROM python:3.11-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    postgresql-dev \
+    curl \
+    git \
+    && rm -rf /var/cache/apk/*
+
+# Copy requirements
+COPY requirements/audit_logger.txt requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY src/tier_7_security/audit_logger/ .
+
+# Create non-root user (AI Consensus: Security best practice)
+RUN adduser -D -s /bin/sh lyra_user && \
+    chown -R lyra_user:lyra_user /app
+USER lyra_user
+
+# Health check (AI Consensus: Essential for container orchestration)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8503/health || exit 1
+
+# Expose port
+EXPOSE 8503
+
+# Labels for better organization
+LABEL maintainer="Lyra Trading Team" \
+      version="1.0.0" \
+      tier="tier_7_security" \
+      service="audit_logger" \
+      ai_consensus="75.0%"
+
+# Run application
+CMD ["python", "main.py"]

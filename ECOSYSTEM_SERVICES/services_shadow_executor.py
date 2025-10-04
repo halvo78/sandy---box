@@ -131,6 +131,7 @@ class ShadowOrderGenerator:
     """Generates shadow orders from trading intents"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.venue_configs = {
             "BINANCE": {
                 "min_qty": 0.00001,
@@ -360,6 +361,7 @@ class ShadowDiffEngine:
     """Compares shadow orders with real orders"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.critical_fields = ["venue", "symbol", "side", "order_type"]
         self.warning_fields = ["qty", "price", "post_only", "time_in_force"]
         self.info_fields = ["client_order_id", "timestamp"]
@@ -458,6 +460,7 @@ class ShadowExecutor:
     """Main Shadow Executor service"""
     
     def __init__(self):
+        """TODO: Add function documentation"""
         self.generator = ShadowOrderGenerator()
         self.diff_engine = ShadowDiffEngine()
         self.execution_history = []
@@ -651,12 +654,12 @@ shadow_executor = ShadowExecutor()
 
 async def run_shadow_executor_demo():
     """Demonstrate the Shadow Executor with sample data"""
-    print("🔮 ULTIMATE LYRA ECOSYSTEM - SHADOW EXECUTOR DEMO")
-    print("=" * 70)
-    print("🎯 Risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX order mirroring and parity validation")
-    print("📊 Statistical analysis of execution engine accuracy")
-    print("🛡️ Safety bridge from paper to live trading")
-    print("=" * 70)
+    logging.info("🔮 ULTIMATE LYRA ECOSYSTEM - SHADOW EXECUTOR DEMO")
+    logging.info("=" * 70)
+    logging.info("🎯 Risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX order mirroring and parity validation")
+    logging.info("📊 Statistical analysis of execution engine accuracy")
+    logging.info("🛡️ Safety bridge from paper to live trading")
+    logging.info("=" * 70)
     print()
     
     # Create sample intent
@@ -735,69 +738,69 @@ async def run_shadow_executor_demo():
         real_orders=real_orders
     )
     
-    print("📋 SAMPLE INTENT:")
-    print(f"   Strategy: {sample_intent.strategy}")
-    print(f"   Symbol: {sample_intent.symbol}")
-    print(f"   Side: {sample_intent.side}")
-    print(f"   Size: {sample_intent.size_hint}")
-    print(f"   Confidence: {sample_intent.confidence}")
+    logging.info("📋 SAMPLE INTENT:")
+    logging.info(f"   Strategy: {sample_intent.strategy}")
+    logging.info(f"   Symbol: {sample_intent.symbol}")
+    logging.info(f"   Side: {sample_intent.side}")
+    logging.info(f"   Size: {sample_intent.size_hint}")
+    logging.info(f"   Confidence: {sample_intent.confidence}")
     print()
     
-    print("📋 REAL ORDERS FROM EXECUTION ENGINE:")
+    logging.info("📋 REAL ORDERS FROM EXECUTION ENGINE:")
     for i, order in enumerate(real_orders):
-        print(f"   Order {i+1}: {order.qty} {order.symbol} @ ${order.price}")
+        logging.info(f"   Order {i+1}: {order.qty} {order.symbol} @ ${order.price}")
     print()
     
     # Execute shadow mirroring
-    print("🔮 EXECUTING SHADOW MIRRORING...")
+    logging.info("🔮 EXECUTING SHADOW MIRRORING...")
     response = await shadow_executor.mirror_intent(request)
     
-    print(f"✅ SHADOW EXECUTION COMPLETE!")
-    print(f"   Shadow Orders Generated: {len(response.shadow_orders)}")
-    print(f"   Overall Parity Rate: {response.overall_parity_rate:.2%}")
-    print(f"   Critical Violations: {response.critical_violations}")
+    logging.info(f"✅ SHADOW EXECUTION COMPLETE!")
+    logging.info(f"   Shadow Orders Generated: {len(response.shadow_orders)}")
+    logging.info(f"   Overall Parity Rate: {response.overall_parity_rate:.2%}")
+    logging.info(f"   Critical Violations: {response.critical_violations}")
     print()
     
-    print("🔮 SHADOW ORDERS GENERATED:")
+    logging.info("🔮 SHADOW ORDERS GENERATED:")
     for i, shadow in enumerate(response.shadow_orders):
-        print(f"   Shadow {i+1}: {shadow.qty} {shadow.symbol} @ ${shadow.price}")
-        print(f"              Type: {shadow.order_type} | Post-Only: {shadow.post_only}")
+        logging.info(f"   Shadow {i+1}: {shadow.qty} {shadow.symbol} @ ${shadow.price}")
+        logging.info(f"              Type: {shadow.order_type} | Post-Only: {shadow.post_only}")
     print()
     
-    print("📊 PARITY ANALYSIS:")
+    logging.info("📊 PARITY ANALYSIS:")
     for i, result in enumerate(response.parity_results):
-        print(f"   Pair {i+1}: Parity Score {result.parity_score:.2%}")
-        print(f"           Critical Mismatches: {result.critical_mismatches}")
-        print(f"           Warning Mismatches: {result.warning_mismatches}")
+        logging.info(f"   Pair {i+1}: Parity Score {result.parity_score:.2%}")
+        logging.info(f"           Critical Mismatches: {result.critical_mismatches}")
+        logging.info(f"           Warning Mismatches: {result.warning_mismatches}")
         
         # Show key differences
         key_diffs = [d for d in result.diffs if not d.match and d.severity in ["CRITICAL", "WARNING"]]
         if key_diffs:
             for diff in key_diffs[:3]:  # Show first 3 differences
-                print(f"           {diff.severity}: {diff.field} - Shadow: {diff.shadow_value}, Real: {diff.real_value}")
+                logging.info(f"           {diff.severity}: {diff.field} - Shadow: {diff.shadow_value}, Real: {diff.real_value}")
         print()
     
-    print("💡 RECOMMENDATIONS:")
+    logging.info("💡 RECOMMENDATIONS:")
     for rec in response.recommendations:
-        print(f"   {rec}")
+        logging.info(f"   {rec}")
     print()
     
     # Show health status
     health = shadow_executor.get_health_status()
-    print("🏥 SHADOW EXECUTOR HEALTH:")
-    print(f"   Status: {health['status']}")
-    print(f"   Total Mirrors: {health['statistics']['total_mirrors']}")
-    print(f"   Success Rate: {health['statistics']['success_rate_pct']:.1f}%")
-    print(f"   Average Parity: {health['statistics']['average_parity_rate']:.2%}")
-    print(f"   Ready for Promotion: {health['recommendations']['ready_for_promotion']}")
+    logging.info("🏥 SHADOW EXECUTOR HEALTH:")
+    logging.info(f"   Status: {health['status']}")
+    logging.info(f"   Total Mirrors: {health['statistics']['total_mirrors']}")
+    logging.info(f"   Success Rate: {health['statistics']['success_rate_pct']:.1f}%")
+    logging.info(f"   Average Parity: {health['statistics']['average_parity_rate']:.2%}")
+    logging.info(f"   Ready for Promotion: {health['recommendations']['ready_for_promotion']}")
     print()
     
-    print("🎉 SHADOW EXECUTOR DEMO COMPLETE!")
-    print("=" * 70)
-    print("🛡️ Shadow Executor provides risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX validation")
-    print("📊 Statistical proof of execution engine accuracy")
-    print("🚀 Safe bridge to live trading with confidence")
-    print("=" * 70)
+    logging.info("🎉 SHADOW EXECUTOR DEMO COMPLETE!")
+    logging.info("=" * 70)
+    logging.info("🛡️ Shadow Executor provides risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX validation")
+    logging.info("📊 Statistical proof of execution engine accuracy")
+    logging.info("🚀 Safe bridge to live trading with confidence")
+    logging.info("=" * 70)
     
     return response
 

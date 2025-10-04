@@ -6,6 +6,7 @@ to properly mutualize everything in the ultimate trading system.
 """
 
 import os
+import logging
 import json
 import re
 from datetime import datetime
@@ -13,8 +14,8 @@ from pathlib import Path
 
 def discover_vault_configurations():
     """Discover all vault and wallet configurations."""
-    print("🔐 DISCOVERING VAULT CONFIGURATIONS")
-    print("=" * 50)
+    logging.info("🔐 DISCOVERING VAULT CONFIGURATIONS")
+    logging.info("=" * 50)
     
     vault_patterns = [
         'vault', 'wallet', 'keystore', 'private_key', 'mnemonic',
@@ -46,7 +47,7 @@ def discover_vault_configurations():
                             'size': os.path.getsize(file_path) if os.path.exists(file_path) else 0,
                             'category': classify_vault_type(file_lower, pattern)
                         })
-                        print(f"🔐 Found vault config: {file} ({pattern})")
+                        logging.info(f"🔐 Found vault config: {file} ({pattern})")
                         break
                     except:
                         pass
@@ -55,8 +56,8 @@ def discover_vault_configurations():
 
 def discover_exchange_configurations():
     """Discover all exchange API configurations and credentials."""
-    print("\n💱 DISCOVERING EXCHANGE CONFIGURATIONS")
-    print("=" * 50)
+    logging.info("\n💱 DISCOVERING EXCHANGE CONFIGURATIONS")
+    logging.info("=" * 50)
     
     exchange_patterns = [
         'binance', 'coinbase', 'okx', 'kraken', 'bybit', 'gate.io', 'gateio',
@@ -89,7 +90,7 @@ def discover_exchange_configurations():
                             'category': classify_exchange_type(file_lower, pattern),
                             'exchange': identify_exchange(file_lower)
                         })
-                        print(f"💱 Found exchange config: {file} ({pattern})")
+                        logging.info(f"💱 Found exchange config: {file} ({pattern})")
                         break
                     except:
                         pass
@@ -98,8 +99,8 @@ def discover_exchange_configurations():
 
 def discover_api_credentials():
     """Discover API credentials and access tokens."""
-    print("\n🔑 DISCOVERING API CREDENTIALS")
-    print("=" * 50)
+    logging.info("\n🔑 DISCOVERING API CREDENTIALS")
+    logging.info("=" * 50)
     
     api_patterns = [
         'api_key', 'secret_key', 'access_token', 'refresh_token',
@@ -130,7 +131,7 @@ def discover_api_credentials():
                             'size': os.path.getsize(file_path) if os.path.exists(file_path) else 0,
                             'category': classify_api_type(file_lower, pattern)
                         })
-                        print(f"🔑 Found API credential: {file} ({pattern})")
+                        logging.info(f"🔑 Found API credential: {file} ({pattern})")
                         break
                     except:
                         pass
@@ -139,8 +140,8 @@ def discover_api_credentials():
 
 def scan_file_contents_for_credentials():
     """Scan file contents for credential patterns."""
-    print("\n🔍 SCANNING FILE CONTENTS FOR CREDENTIALS")
-    print("=" * 50)
+    logging.info("\n🔍 SCANNING FILE CONTENTS FOR CREDENTIALS")
+    logging.info("=" * 50)
     
     credential_patterns = {
         'binance_api': r'[A-Za-z0-9]{64}',
@@ -178,7 +179,7 @@ def scan_file_contents_for_credentials():
                                         'matches_count': len(matches),
                                         'sample_match': matches[0][:20] + '...' if matches[0] else ''
                                     })
-                                    print(f"🔍 Found {pattern_name} in {file} ({len(matches)} matches)")
+                                    logging.info(f"🔍 Found {pattern_name} in {file} ({len(matches)} matches)")
                 except:
                     pass
     
@@ -245,8 +246,8 @@ def identify_exchange(filename):
 
 def analyze_existing_integrations():
     """Analyze existing exchange integrations in the system."""
-    print("\n🔗 ANALYZING EXISTING INTEGRATIONS")
-    print("=" * 50)
+    logging.info("\n🔗 ANALYZING EXISTING INTEGRATIONS")
+    logging.info("=" * 50)
     
     integration_files = []
     
@@ -266,8 +267,11 @@ def analyze_existing_integrations():
             
             # Check for integration patterns
             for pattern in integration_patterns:
-                if pattern in file_lower and any(ex in file_lower for ex in ['binance', 'coinbase', 'okx', 'kraken', 'exchange']):
-                    try:
+                if pattern in file_lower and any(ex in file_lower for ex in ['binance',
+                    'coinbase',
+                    'okx',
+                    'kraken',
+                    'exchange']):                    try:
                         integration_files.append({
                             'path': file_path,
                             'name': file,
@@ -275,7 +279,7 @@ def analyze_existing_integrations():
                             'pattern': pattern,
                             'size': os.path.getsize(file_path) if os.path.exists(file_path) else 0
                         })
-                        print(f"🔗 Found integration: {file} ({pattern})")
+                        logging.info(f"🔗 Found integration: {file} ({pattern})")
                         break
                     except:
                         pass
@@ -284,8 +288,8 @@ def analyze_existing_integrations():
 
 def create_mutualization_strategy(vault_configs, exchange_configs, api_credentials, found_credentials, integrations):
     """Create strategy for mutualizing all vault and exchange access."""
-    print("\n🎯 CREATING MUTUALIZATION STRATEGY")
-    print("=" * 50)
+    logging.info("\n🎯 CREATING MUTUALIZATION STRATEGY")
+    logging.info("=" * 50)
     
     strategy = {
         "mutualization_date": datetime.now().isoformat(),
@@ -376,8 +380,8 @@ def create_mutualization_strategy(vault_configs, exchange_configs, api_credentia
 
 def generate_mutualization_code():
     """Generate code for vault and exchange mutualization."""
-    print("\n💻 GENERATING MUTUALIZATION CODE")
-    print("=" * 50)
+    logging.info("\n💻 GENERATING MUTUALIZATION CODE")
+    logging.info("=" * 50)
     
     vault_manager_code = '''
 # Unified Vault Manager
@@ -391,12 +395,14 @@ from typing import Dict, List, Optional
 
 class UnifiedVaultManager:
     def __init__(self, master_key: str):
+        """TODO: Add function documentation"""
         self.master_key = master_key.encode()
         self.cipher = Fernet(Fernet.generate_key())
         self.vaults = {}
         self.access_log = []
     
     def add_hardware_wallet(self, wallet_id: str, device_type: str, 
+        """TODO: Add function documentation"""
                           public_keys: List[str]) -> bool:
         """Add hardware wallet configuration."""
         vault_config = {
@@ -413,6 +419,7 @@ class UnifiedVaultManager:
         return True
     
     def add_exchange_vault(self, exchange: str, api_key: str, 
+        """TODO: Add function documentation"""
                           secret_key: str, passphrase: Optional[str] = None) -> bool:
         """Add exchange API credentials to vault."""
         vault_config = {
@@ -488,6 +495,7 @@ from datetime import datetime, timedelta
 
 class UnifiedExchangeManager:
     def __init__(self, vault_manager: UnifiedVaultManager):
+        """TODO: Add function documentation"""
         self.vault_manager = vault_manager
         self.exchange_clients = {}
         self.rate_limiters = {}
@@ -579,6 +587,7 @@ class UnifiedExchangeManager:
 
 class RateLimiter:
     def __init__(self, limits: Dict):
+        """TODO: Add function documentation"""
         self.requests_per_second = limits['requests_per_second']
         self.last_request = datetime.now()
         self.request_count = 0
@@ -605,8 +614,8 @@ class RateLimiter:
 def create_comprehensive_report(vault_configs, exchange_configs, api_credentials, 
                               found_credentials, integrations, strategy, code):
     """Create comprehensive vault and exchange discovery report."""
-    print("\n📄 CREATING COMPREHENSIVE REPORT")
-    print("=" * 50)
+    logging.info("\n📄 CREATING COMPREHENSIVE REPORT")
+    logging.info("=" * 50)
     
     report = f"""# 🔐 VAULT & EXCHANGE ACCESS DISCOVERY REPORT
 
@@ -811,10 +820,10 @@ def create_comprehensive_report(vault_configs, exchange_configs, api_credentials
 
 def main():
     """Main execution function."""
-    print("🔐 VAULT & EXCHANGE ACCESS DISCOVERY SYSTEM")
-    print("=" * 60)
-    print("Mission: Find and mutualize all vault and exchange access")
-    print("=" * 60)
+    logging.info("🔐 VAULT & EXCHANGE ACCESS DISCOVERY SYSTEM")
+    logging.info("=" * 60)
+    logging.info("Mission: Find and mutualize all vault and exchange access")
+    logging.info("=" * 60)
     
     # Discover all configurations
     vault_configs = discover_vault_configurations()
@@ -864,16 +873,16 @@ def main():
         with open(code_file, 'w') as f:
             f.write(code_content)
     
-    print(f"\n🎉 VAULT & EXCHANGE DISCOVERY COMPLETE!")
-    print(f"🔐 Vault Configs: {len(vault_configs)}")
-    print(f"💱 Exchange Configs: {len(exchange_configs)}")
-    print(f"🔑 API Credentials: {len(api_credentials)}")
-    print(f"🔍 Credential Patterns: {len(found_credentials)}")
-    print(f"🔗 Integrations: {len(integrations)}")
-    print(f"📄 Report: {report_file}")
-    print(f"💾 Data: {data_file}")
-    print(f"💻 Code: {code_dir}")
-    print(f"\n🏆 READY FOR MUTUALIZATION!")
+    logging.info(f"\n🎉 VAULT & EXCHANGE DISCOVERY COMPLETE!")
+    logging.info(f"🔐 Vault Configs: {len(vault_configs)}")
+    logging.info(f"💱 Exchange Configs: {len(exchange_configs)}")
+    logging.info(f"🔑 API Credentials: {len(api_credentials)}")
+    logging.info(f"🔍 Credential Patterns: {len(found_credentials)}")
+    logging.info(f"🔗 Integrations: {len(integrations)}")
+    logging.info(f"📄 Report: {report_file}")
+    logging.info(f"💾 Data: {data_file}")
+    logging.info(f"💻 Code: {code_dir}")
+    logging.info(f"\n🏆 READY FOR MUTUALIZATION!")
 
 if __name__ == "__main__":
     main()

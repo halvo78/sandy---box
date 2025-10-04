@@ -333,8 +333,9 @@ def forensic_dashboard():
         <div class="card">
             <h3>🔧 System Controls</h3>
             <div style="text-align: center; padding: 20px;">
-                <button class="btn" onclick="emergencyStop()" style="background: linear-gradient(45deg, #ff6b6b, #ff5252);">🚨 Emergency Stop</button>
-                <button class="btn" onclick="restartMonitoring()">🔄 Restart Monitoring</button>
+                <button class="btn" onclick="emergencyStop()" style="background: linear-gradient(45deg,
+                    #ff6b6b,
+                    #ff5252);">🚨 Emergency Stop</button>                <button class="btn" onclick="restartMonitoring()">🔄 Restart Monitoring</button>
                 <button class="btn" onclick="downloadLogs()">📥 Download Logs</button>
                 <button class="btn" onclick="viewSystemStatus()">📊 Full System Status</button>
             </div>
@@ -601,8 +602,9 @@ def api_compliance_events():
             cursor.execute('SELECT COUNT(*) FROM compliance_events WHERE created_at >= ?', (yesterday,))
             total_events = cursor.fetchone()[0]
             
-            cursor.execute('SELECT COUNT(*) FROM compliance_events WHERE severity = "CRITICAL" AND created_at >= ?', (yesterday,))
-            critical_events = cursor.fetchone()[0]
+            cursor.execute('SELECT COUNT(*) FROM compliance_events WHERE severity = "CRITICAL" AND created_at >= ?',
+                (yesterday,
+                ))            critical_events = cursor.fetchone()[0]
             
             cursor.execute('SELECT timestamp FROM compliance_events ORDER BY created_at DESC LIMIT 1')
             last_event_result = cursor.fetchone()

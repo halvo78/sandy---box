@@ -5,6 +5,7 @@ The most advanced testing suite for the Ultimate Lyra Trading System
 """
 
 import os
+import logging
 import json
 import subprocess
 import time
@@ -21,6 +22,7 @@ import yaml
 
 class UltimateTestingSuite:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.repo_path = "/home/ubuntu/temp_repos/halvo78_sandy---box"
         self.test_results = {
             "test_session_id": f"test_{int(time.time())}",
@@ -51,7 +53,7 @@ class UltimateTestingSuite:
 
     def create_comprehensive_test_structure(self):
         """Create comprehensive test directory structure"""
-        print("🏗️  CREATING COMPREHENSIVE TEST STRUCTURE...")
+        logging.info("🏗️  CREATING COMPREHENSIVE TEST STRUCTURE...")
         
         # Main testing directory
         test_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING")
@@ -73,7 +75,7 @@ class UltimateTestingSuite:
         # Create test utilities
         self.create_test_utilities(test_dir)
         
-        print("✅ Test structure created")
+        logging.info("✅ Test structure created")
 
     def create_test_configuration(self, test_dir):
         """Create comprehensive test configuration"""
@@ -227,6 +229,7 @@ class TestDataFactory:
     
     @staticmethod
     def create_market_data(symbol="BTC/USD", price=50000):
+        """TODO: Add function documentation"""
         return {
             "symbol": symbol,
             "price": price,
@@ -238,6 +241,7 @@ class TestDataFactory:
     
     @staticmethod
     def create_trade_order(side="buy", amount=1.0, price=50000):
+        """TODO: Add function documentation"""
         return {
             "id": f"order_{int(time.time())}",
             "side": side,
@@ -253,7 +257,7 @@ class TestDataFactory:
 
     def create_unit_tests(self):
         """Create comprehensive unit tests"""
-        print("🧪 CREATING UNIT TESTS...")
+        logging.info("🧪 CREATING UNIT TESTS...")
         
         unit_test_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING", "unit_tests")
         
@@ -270,6 +274,7 @@ class TestCoreSystem(unittest.TestCase):
     """Test core system functionality"""
     
     def setUp(self):
+        """TODO: Add function documentation"""
         self.test_config = {
             "api_keys": {"test": "test_key"},
             "exchanges": ["test_exchange"],
@@ -290,7 +295,7 @@ class TestCoreSystem(unittest.TestCase):
     def test_api_key_validation(self):
         """Test API key validation"""
         # Test API key validation logic
-        test_key = "test_key_123"
+        test_key = os.getenv("KEY", "YOUR_KEY_HERE")
         self.assertIsInstance(test_key, str)
         self.assertGreater(len(test_key), 5)
     
@@ -344,6 +349,7 @@ class TestTradingEngine(unittest.TestCase):
     """Test trading engine functionality"""
     
     def setUp(self):
+        """TODO: Add function documentation"""
         self.mock_exchange = Mock()
         self.mock_exchange.get_balance.return_value = {"BTC": 1.0, "USD": 50000}
         
@@ -427,7 +433,7 @@ if __name__ == '__main__':
 
     def create_integration_tests(self):
         """Create integration tests"""
-        print("🔗 CREATING INTEGRATION TESTS...")
+        logging.info("🔗 CREATING INTEGRATION TESTS...")
         
         integration_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING", "integration_tests")
         
@@ -531,7 +537,7 @@ if __name__ == '__main__':
 
     def create_security_tests(self):
         """Create security tests"""
-        print("🔒 CREATING SECURITY TESTS...")
+        logging.info("🔒 CREATING SECURITY TESTS...")
         
         security_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING", "security_tests")
         
@@ -548,14 +554,14 @@ class TestSecurityValidation:
     def test_api_key_security(self):
         """Test API key security measures"""
         # Test API key format validation
-        test_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + secrets.token_hex(32)
+        test_key = os.getenv("KEY", "YOUR_KEY_HERE") + secrets.token_hex(32)
         
         assert len(test_key) > 20
         assert test_key.startswith("sk-")
     
     def test_password_hashing(self):
         """Test password hashing security"""
-        password = "test_password_123"
+        password = os.getenv("PASSWORD", "YOUR_PASSWORD_HERE")
         salt = secrets.token_hex(16)
         
         # Test password hashing
@@ -672,7 +678,7 @@ if __name__ == '__main__':
 
     def create_performance_tests(self):
         """Create performance tests"""
-        print("⚡ CREATING PERFORMANCE TESTS...")
+        logging.info("⚡ CREATING PERFORMANCE TESTS...")
         
         performance_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING", "performance_tests")
         
@@ -704,6 +710,7 @@ class TestPerformanceMetrics:
     def test_concurrent_processing(self):
         """Test concurrent processing performance"""
         def mock_task(task_id):
+            """TODO: Add function documentation"""
             time.sleep(0.1)
             return f"Task {task_id} completed"
         
@@ -759,6 +766,7 @@ class TestPerformanceMetrics:
     def test_cpu_usage(self):
         """Test CPU usage performance"""
         def cpu_intensive_task():
+            """TODO: Add function documentation"""
             # Simulate CPU-intensive calculation
             result = sum(i * i for i in range(100000))
             return result
@@ -779,6 +787,7 @@ class TestScalabilityMetrics:
     def test_load_handling(self):
         """Test system load handling"""
         def simulate_load(requests_count):
+            """TODO: Add function documentation"""
             results = []
             for i in range(requests_count):
                 # Simulate request processing
@@ -804,6 +813,7 @@ class TestScalabilityMetrics:
     def test_throughput_metrics(self):
         """Test system throughput metrics"""
         def process_batch(batch_size):
+            """TODO: Add function documentation"""
             start_time = time.time()
             
             # Simulate batch processing
@@ -838,7 +848,7 @@ if __name__ == '__main__':
 
     def create_container_tests(self):
         """Create container and deployment tests"""
-        print("🐳 CREATING CONTAINER TESTS...")
+        logging.info("🐳 CREATING CONTAINER TESTS...")
         
         container_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING", "container_tests")
         
@@ -943,18 +953,11 @@ class TestContainerDeployment:
                 
                 # Check for sensitive data patterns
                 sensitive_patterns = [
-                    "password=",
-                    "secret=", 
-                    "key=",
-                    "token="
-                ]
-                
-                # Ensure no actual secrets in version control
-                for pattern in sensitive_patterns:
-                    if pattern in content.lower():
-                        # Should be placeholder values, not real secrets
-                        assert "your_" in content.lower() or "placeholder" in content.lower()
-
+                    "password = os.getenv("PASSWORD",
+                        "YOUR_PASSWORD_HERE")secret = os.getenv("SECRET",
+                        "YOUR_SECRET_HERE")key = os.getenv("KEY",
+                        "YOUR_KEY_HERE")token = os.getenv("TOKEN",
+                        "YOUR_TOKEN_HERE")your_" in content.lower() or "placeholder" in content.lower()
 class TestDeploymentScripts:
     """Test deployment scripts and automation"""
     
@@ -1008,7 +1011,7 @@ if __name__ == '__main__':
 
     def create_master_test_runner(self):
         """Create master test runner script"""
-        print("🎯 CREATING MASTER TEST RUNNER...")
+        logging.info("🎯 CREATING MASTER TEST RUNNER...")
         
         test_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING")
         
@@ -1028,6 +1031,7 @@ import argparse
 
 class MasterTestRunner:
     def __init__(self):
+        """TODO: Add function documentation"""
         self.test_dir = os.path.dirname(os.path.abspath(__file__))
         self.results = {
             "test_session": f"session_{int(time.time())}",
@@ -1039,11 +1043,11 @@ class MasterTestRunner:
     
     def run_test_category(self, category):
         """Run tests for a specific category"""
-        print(f"🧪 Running {category} tests...")
+        logging.info(f"🧪 Running {category} tests...")
         
         category_dir = os.path.join(self.test_dir, category)
         if not os.path.exists(category_dir):
-            print(f"⚠️  Category {category} not found")
+            logging.info(f"⚠️  Category {category} not found")
             return False
         
         try:
@@ -1068,15 +1072,15 @@ class MasterTestRunner:
             }
             
             if result.returncode == 0:
-                print(f"✅ {category} tests PASSED")
+                logging.info(f"✅ {category} tests PASSED")
             else:
-                print(f"❌ {category} tests FAILED")
-                print(f"Error: {result.stderr}")
+                logging.info(f"❌ {category} tests FAILED")
+                logging.info(f"Error: {result.stderr}")
             
             return result.returncode == 0
             
         except Exception as e:
-            print(f"❌ Error running {category} tests: {e}")
+            logging.info(f"❌ Error running {category} tests: {e}")
             self.results["test_categories"][category] = {
                 "status": "ERROR",
                 "error": str(e)
@@ -1085,8 +1089,8 @@ class MasterTestRunner:
     
     def run_all_tests(self):
         """Run all test categories"""
-        print("🚀 STARTING COMPREHENSIVE TEST SUITE")
-        print("=" * 60)
+        logging.info("🚀 STARTING COMPREHENSIVE TEST SUITE")
+        logging.info("=" * 60)
         
         categories = [
             "unit_tests",
@@ -1118,18 +1122,18 @@ class MasterTestRunner:
         with open("comprehensive_test_results.json", "w") as f:
             json.dump(self.results, f, indent=2)
         
-        print("\n" + "=" * 60)
-        print("🎉 COMPREHENSIVE TESTING COMPLETE")
-        print("=" * 60)
-        print(f"📊 Categories Passed: {passed_categories}/{total_categories}")
-        print(f"📈 Success Rate: {self.results['summary']['success_rate']:.1f}%")
-        print(f"📋 Results saved to: comprehensive_test_results.json")
+        logging.info("\n" + "=" * 60)
+        logging.info("🎉 COMPREHENSIVE TESTING COMPLETE")
+        logging.info("=" * 60)
+        logging.info(f"📊 Categories Passed: {passed_categories}/{total_categories}")
+        logging.info(f"📈 Success Rate: {self.results['summary']['success_rate']:.1f}%")
+        logging.info(f"📋 Results saved to: comprehensive_test_results.json")
         
         return self.results["overall_status"] == "PASSED"
     
     def run_quick_tests(self):
         """Run quick smoke tests"""
-        print("⚡ RUNNING QUICK SMOKE TESTS")
+        logging.info("⚡ RUNNING QUICK SMOKE TESTS")
         
         # Run only fast tests
         cmd = [
@@ -1143,6 +1147,7 @@ class MasterTestRunner:
         return result.returncode == 0
 
 def main():
+    """TODO: Add function documentation"""
     parser = argparse.ArgumentParser(description="Ultimate Lyra Trading System Test Runner")
     parser.add_argument("--category", help="Run specific test category")
     parser.add_argument("--quick", action="store_true", help="Run quick smoke tests only")
@@ -1172,7 +1177,7 @@ if __name__ == "__main__":
 
     def create_test_documentation(self):
         """Create comprehensive test documentation"""
-        print("📚 CREATING TEST DOCUMENTATION...")
+        logging.info("📚 CREATING TEST DOCUMENTATION...")
         
         test_dir = os.path.join(self.repo_path, "COMPREHENSIVE_TESTING")
         
@@ -1182,8 +1187,9 @@ if __name__ == "__main__":
 
 ## 🎯 TESTING OVERVIEW
 
-This comprehensive testing suite provides complete validation for the Ultimate Lyra Trading System across all components, integrations, and deployment scenarios.
-
+This comprehensive testing suite provides complete validation for the Ultimate Lyra Trading System across all components,
+    integrations,
+    and deployment scenarios.
 ## 📁 TEST STRUCTURE
 
 ### 🧪 **unit_tests/**
@@ -1381,8 +1387,8 @@ pytest -v --tb=long --capture=no
 
     def run_comprehensive_testing_setup(self):
         """Run the complete testing setup"""
-        print("🎯 SETTING UP COMPREHENSIVE TESTING SUITE")
-        print("=" * 70)
+        logging.info("🎯 SETTING UP COMPREHENSIVE TESTING SUITE")
+        logging.info("=" * 70)
         
         start_time = datetime.now()
         
@@ -1416,14 +1422,14 @@ pytest -v --tb=long --capture=no
         with open(results_path, 'w') as f:
             json.dump(self.test_results, f, indent=2)
         
-        print("\n" + "=" * 70)
-        print("🎉 COMPREHENSIVE TESTING SUITE SETUP COMPLETE!")
-        print("=" * 70)
-        print(f"📁 Test Directory: COMPREHENSIVE_TESTING/")
-        print(f"📊 Test Categories: {len(self.test_categories)}")
-        print(f"⏱️  Setup Duration: {duration}")
-        print(f"📋 Results: COMPREHENSIVE_TESTING_SETUP_RESULTS.json")
-        print("🚀 READY FOR TESTING!")
+        logging.info("\n" + "=" * 70)
+        logging.info("🎉 COMPREHENSIVE TESTING SUITE SETUP COMPLETE!")
+        logging.info("=" * 70)
+        logging.info(f"📁 Test Directory: COMPREHENSIVE_TESTING/")
+        logging.info(f"📊 Test Categories: {len(self.test_categories)}")
+        logging.info(f"⏱️  Setup Duration: {duration}")
+        logging.info(f"📋 Results: COMPREHENSIVE_TESTING_SETUP_RESULTS.json")
+        logging.info("🚀 READY FOR TESTING!")
         
         return self.test_results
 

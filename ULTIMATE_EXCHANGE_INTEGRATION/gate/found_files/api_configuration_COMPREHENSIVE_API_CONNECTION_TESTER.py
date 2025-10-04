@@ -5,6 +5,7 @@ Tests each API, fixes connection issues, and uses OpenRouter AI consensus
 """
 
 import json
+import logging
 import os
 import time
 import urllib.request
@@ -39,10 +40,15 @@ class ComprehensiveAPITester:
             },
             "anthropic": {
                 "url": "https://api.anthropic.com/v1/messages",
-                "headers": {"x-api-key": "{api_key}", "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
-                "method": "POST",
-                "data": {"model": "claude-3-haiku-20240307", "max_tokens": 10, "messages": [{"role": "user", "content": "Hi"}]},
-                "success_indicators": ["content", "message"]
+                "headers": {"x-api-key": "{api_key}",
+                    "Content-Type": "application/json",
+                    "anthropic-version": "2023-06-01"},
+                                    "method": "POST",
+                "data": {"model": "claude-3-haiku-20240307",
+                    "max_tokens": 10,
+                    "messages": [{"role": "user",
+                    "content": "Hi"}]},
+                                    "success_indicators": ["content", "message"]
             },
             "cohere": {
                 "url": "https://api.cohere.ai/v1/models",
@@ -143,16 +149,16 @@ class ComprehensiveAPITester:
             }
         }
         
-        print("🧪 COMPREHENSIVE API CONNECTION TESTER")
-        print("="*70)
-        print("🎯 Goal: Test every API, fix issues, get OpenRouter consensus")
-        print("📊 Tests: Connection, Authentication, Response validation")
-        print("🤖 AI Consensus: OpenRouter models validate results")
-        print("="*70)
+        logging.info("🧪 COMPREHENSIVE API CONNECTION TESTER")
+        logging.info("="*70)
+        logging.info("🎯 Goal: Test every API, fix issues, get OpenRouter consensus")
+        logging.info("📊 Tests: Connection, Authentication, Response validation")
+        logging.info("🤖 AI Consensus: OpenRouter models validate results")
+        logging.info("="*70)
     
     def load_clean_apis(self):
         """Load the clean deduplicated API configuration."""
-        print("📂 Loading clean API configuration...")
+        logging.info("📂 Loading clean API configuration...")
         
         json_path = os.path.join(self.repo_dir, "CLEAN_DEDUPLICATED_API_CONFIG.json")
         
@@ -161,11 +167,11 @@ class ComprehensiveAPITester:
                 data = json.load(f)
             
             total_apis = data["metadata"]["total_unique_apis"]
-            print(f"  ✅ Loaded {total_apis} unique APIs for testing")
+            logging.info(f"  ✅ Loaded {total_apis} unique APIs for testing")
             return data["categorized_apis"]
             
         except Exception as e:
-            print(f"  ❌ Failed to load clean APIs: {e}")
+            logging.info(f"  ❌ Failed to load clean APIs: {e}")
             return None
     
     def test_single_api(self, api_key, api_info):
@@ -340,7 +346,7 @@ class ComprehensiveAPITester:
     
     def test_all_apis(self, categorized_apis):
         """Test all APIs and categorize results."""
-        print("🧪 Testing all APIs for connectivity...")
+        logging.info("🧪 Testing all APIs for connectivity...")
         
         total_apis = sum(len(apis) for apis in categorized_apis.values())
         tested_count = 0
@@ -349,11 +355,11 @@ class ComprehensiveAPITester:
             if not apis:
                 continue
                 
-            print(f"\\n📂 Testing {category.replace('_', ' ').title()} ({len(apis)} APIs)...")
+            logging.info(f"\\n📂 Testing {category.replace('_', ' ').title()} ({len(apis)} APIs)...")
             
             for api_key, api_info in apis.items():
                 tested_count += 1
-                print(f"  🔍 Testing {api_key} ({tested_count}/{total_apis})...")
+                logging.info(f"  🔍 Testing {api_key} ({tested_count}/{total_apis})...")
                 
                 # Test the API
                 test_result = self.test_single_api(api_key, api_info)
@@ -364,7 +370,7 @@ class ComprehensiveAPITester:
                         "api_info": api_info,
                         "test_result": test_result
                     }
-                    print(f"    ✅ Connected ({test_result['response_time']:.3f}s)")
+                    logging.info(f"    ✅ Connected ({test_result['response_time']:.3f}s)")
                     
                 elif test_result["status"] in ["auth_error", "unexpected_response"]:
                     # Try to fix
@@ -376,21 +382,21 @@ class ComprehensiveAPITester:
                             "test_result": test_result,
                             "fix_result": fix_result
                         }
-                        print(f"    🔧 Fixed and connected")
+                        logging.info(f"    🔧 Fixed and connected")
                     else:
                         self.test_results["needs_manual_fix"][api_key] = {
                             "api_info": api_info,
                             "test_result": test_result,
                             "fix_result": fix_result
                         }
-                        print(f"    ⚠️ Needs manual fix ({test_result['reason']})")
+                        logging.info(f"    ⚠️ Needs manual fix ({test_result['reason']})")
                         
                 else:
                     self.test_results["not_connected"][api_key] = {
                         "api_info": api_info,
                         "test_result": test_result
                     }
-                    print(f"    ❌ Not connected ({test_result['reason']})")
+                    logging.info(f"    ❌ Not connected ({test_result['reason']})")
         
         # Print summary
         connected = len(self.test_results["connected"])
@@ -398,17 +404,17 @@ class ComprehensiveAPITester:
         needs_fix = len(self.test_results["needs_manual_fix"])
         not_connected = len(self.test_results["not_connected"])
         
-        print(f"\\n📊 Testing Summary:")
-        print(f"  ✅ Connected: {connected}")
-        print(f"  🔧 Fixed & Connected: {fixed}")
-        print(f"  ⚠️ Needs Manual Fix: {needs_fix}")
-        print(f"  ❌ Not Connected: {not_connected}")
+        logging.info(f"\\n📊 Testing Summary:")
+        logging.info(f"  ✅ Connected: {connected}")
+        logging.info(f"  🔧 Fixed & Connected: {fixed}")
+        logging.info(f"  ⚠️ Needs Manual Fix: {needs_fix}")
+        logging.info(f"  ❌ Not Connected: {not_connected}")
         
         return self.test_results
     
     def get_openrouter_consensus(self):
         """Get OpenRouter AI consensus on the test results."""
-        print("🤖 Getting OpenRouter AI consensus on test results...")
+        logging.info("🤖 Getting OpenRouter AI consensus on test results...")
         
         # Get OpenRouter keys
         openrouter_keys = []
@@ -425,7 +431,7 @@ class ComprehensiveAPITester:
         openrouter_keys.extend([k for k in env_keys if k])
         
         if not openrouter_keys:
-            print("  ⚠️ No OpenRouter keys available for consensus")
+            logging.info("  ⚠️ No OpenRouter keys available for consensus")
             return {"consensus": "no_keys_available"}
         
         # Use first available key for consensus
@@ -470,17 +476,17 @@ Provide a brief assessment of the API testing quality and recommendations."""
                         "timestamp": datetime.now().isoformat()
                     }
                     
-                    print(f"  ✅ OpenRouter consensus obtained")
+                    logging.info(f"  ✅ OpenRouter consensus obtained")
                     return self.test_results["openrouter_consensus"]
                     
         except Exception as e:
-            print(f"  ⚠️ OpenRouter consensus failed: {e}")
+            logging.info(f"  ⚠️ OpenRouter consensus failed: {e}")
             
         return {"consensus": "consensus_failed", "error": str(e)}
     
     def generate_connection_report(self):
         """Generate comprehensive connection test report."""
-        print("📋 Generating comprehensive connection report...")
+        logging.info("📋 Generating comprehensive connection report...")
         
         connected = self.test_results["connected"]
         fixed = self.test_results["fixed_and_connected"]
@@ -612,15 +618,15 @@ The API connection testing has been completed with comprehensive results.
         with open(json_path, 'w') as f:
             json.dump(self.test_results, f, indent=2, default=str)
         
-        print(f"  ✅ Connection report: {report_path}")
-        print(f"  ✅ JSON results: {json_path}")
+        logging.info(f"  ✅ Connection report: {report_path}")
+        logging.info(f"  ✅ JSON results: {json_path}")
         
         return report_path, json_path
     
     def run_comprehensive_testing(self):
         """Run the complete API testing process."""
-        print("🧪 Starting Comprehensive API Connection Testing...")
-        print("="*70)
+        logging.info("🧪 Starting Comprehensive API Connection Testing...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -645,16 +651,16 @@ The API connection testing has been completed with comprehensive results.
         total_tested = sum(len(category) for category in test_results.values() if isinstance(category, dict))
         success_rate = (connected / total_tested * 100) if total_tested > 0 else 0
         
-        print("\\n" + "="*70)
-        print("🎉 COMPREHENSIVE API CONNECTION TESTING COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Testing Duration: {duration:.1f} seconds")
-        print(f"🧪 Total APIs Tested: {total_tested}")
-        print(f"✅ Connected APIs: {connected}")
-        print(f"📈 Success Rate: {success_rate:.1f}%")
-        print(f"🤖 OpenRouter Consensus: {'✅' if consensus.get('consensus') != 'no_keys_available' else '❌'}")
-        print(f"📁 Reports Generated: 2")
-        print("="*70)
+        logging.info("\\n" + "="*70)
+        logging.info("🎉 COMPREHENSIVE API CONNECTION TESTING COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Testing Duration: {duration:.1f} seconds")
+        logging.info(f"🧪 Total APIs Tested: {total_tested}")
+        logging.info(f"✅ Connected APIs: {connected}")
+        logging.info(f"📈 Success Rate: {success_rate:.1f}%")
+        logging.info(f"🤖 OpenRouter Consensus: {'✅' if consensus.get('consensus') != 'no_keys_available' else '❌'}")
+        logging.info(f"📁 Reports Generated: 2")
+        logging.info("="*70)
         
         return True
 
@@ -663,9 +669,9 @@ if __name__ == "__main__":
     success = tester.run_comprehensive_testing()
     
     if success:
-        print(f"\\n🎯 API Connection Testing Successful!")
-        print(f"🧪 Comprehensive test results available!")
-        print(f"🤖 OpenRouter AI consensus included!")
-        print(f"🎉 MOST THOROUGH API TESTING EVER COMPLETED!")
+        logging.info(f"\\n🎯 API Connection Testing Successful!")
+        logging.info(f"🧪 Comprehensive test results available!")
+        logging.info(f"🤖 OpenRouter AI consensus included!")
+        logging.info(f"🎉 MOST THOROUGH API TESTING EVER COMPLETED!")
     else:
-        print(f"\\n❌ API connection testing failed!")
+        logging.info(f"\\n❌ API connection testing failed!")

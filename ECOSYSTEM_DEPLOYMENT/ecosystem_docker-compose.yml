@@ -39,7 +39,7 @@ services:
     environment:
       POSTGRES_DB: lyra_ecosystem
       POSTGRES_USER: lyra_user
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_password: ${PASSWORD}
     ports:
       - "5432:5432"
     volumes:

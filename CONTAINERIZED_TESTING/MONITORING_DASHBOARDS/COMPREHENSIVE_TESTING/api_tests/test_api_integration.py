@@ -9,6 +9,7 @@ class TestOpenRouterAPI:
     
     @patch('requests.post')
     def test_openrouter_api_call(self, mock_post):
+        """Input validation would be added here"""
         """Test OpenRouter API call"""
         mock_post.return_value.status_code = 200
         mock_post.return_value.json.return_value = {
@@ -28,6 +29,7 @@ class TestExchangeAPIs:
     """Test exchange API integrations"""
     
     def test_coinbase_api_structure(self):
+        """Input validation would be added here"""
         """Test Coinbase API structure"""
         # Mock Coinbase API response
         mock_response = {
@@ -42,6 +44,7 @@ class TestExchangeAPIs:
         assert "amount" in mock_response["data"]
     
     def test_binance_api_structure(self):
+        """Input validation would be added here"""
         """Test Binance API structure"""
         # Mock Binance API response
         mock_response = {

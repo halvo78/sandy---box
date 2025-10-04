@@ -1,0 +1,196 @@
+version: '3.8'
+
+networks:
+  lyra_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  lyra_vault_data:
+  lyra_prometheus_data:
+  lyra_grafana_data:
+  lyra_redis_data:
+
+services:
+  # Exchange Containers
+  lyra-okx:
+    build:
+      context: ./exchange_containers/okx
+      dockerfile: Dockerfile
+    container_name: lyra-okx
+    restart: unless-stopped
+    ports:
+      - "8082:8080"
+    environment:
+      - EXCHANGE=okx
+      - TRADING_MODE=spot_only
+      - LIVE_TRADING=true
+      - API_RATE_LIMIT=300
+    volumes:
+      - ../vault:/app/vault:ro
+      - ../logs:/app/logs
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.10
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - lyra-vault
+      - lyra-redis
+
+  lyra-gate:
+    build:
+      context: ./exchange_containers/gate
+      dockerfile: Dockerfile
+    container_name: lyra-gate
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      - EXCHANGE=gate
+      - TRADING_MODE=spot_only
+      - VIP_TIER=3
+    volumes:
+      - ../vault:/app/vault:ro
+      - ../logs:/app/logs
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.11
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # AI Orchestrator
+  lyra-ai-orchestrator:
+    build:
+      context: ./ai_containers/orchestrator
+      dockerfile: Dockerfile
+    container_name: lyra-ai-orchestrator
+    restart: unless-stopped
+    ports:
+      - "8090:8080"
+    environment:
+      - AI_CONSENSUS_ENABLED=true
+      - OPENROUTER_MODELS=327
+      - CONFIDENCE_THRESHOLD=90
+    volumes:
+      - ../vault:/app/vault:ro
+      - ../logs:/app/logs
+      - ../ai_models:/app/models
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.20
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Vault Service
+  lyra-vault:
+    build:
+      context: ./security_containers/vault
+      dockerfile: Dockerfile
+    container_name: lyra-vault
+    restart: unless-stopped
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=lyra-root-token
+      - VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200
+    volumes:
+      - lyra_vault_data:/vault/data
+      - ../vault:/vault/config:ro
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.30
+    cap_add:
+      - IPC_LOCK
+    healthcheck:
+      test: ["CMD", "vault", "status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis Cache
+  lyra-redis:
+    image: redis:7-alpine
+    container_name: lyra-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - lyra_redis_data:/data
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.31
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Monitoring Stack
+  lyra-prometheus:
+    image: prom/prometheus:latest
+    container_name: lyra-prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - lyra_prometheus_data:/prometheus
+      - ../monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.40
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+
+  lyra-grafana:
+    image: grafana/grafana:latest
+    container_name: lyra-grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=lyra_admin_2025
+    volumes:
+      - lyra_grafana_data:/var/lib/grafana
+      - ../monitoring/grafana:/etc/grafana/provisioning
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.41
+    depends_on:
+      - lyra-prometheus
+
+  # Ngrok Gateway
+  lyra-ngrok:
+    build:
+      context: ./gateway_containers/ngrok
+      dockerfile: Dockerfile
+    container_name: lyra-ngrok
+    restart: unless-stopped
+    ports:
+      - "4040:4040"
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+      - NGROK_REGION=us
+    volumes:
+      - ../logs:/app/logs
+    networks:
+      lyra_network:
+        ipv4_address: 172.20.0.50
+    depends_on:
+      - lyra-okx
+      - lyra-gate

@@ -6,12 +6,14 @@ with ALL OpenRouter APIs and paid AI models integrated.
 """
 
 import os
+import logging
 import shutil
 import json
 from datetime import datetime
 
 class UltimateRepositoryIntegrator:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the Ultimate Repository Integrator."""
         
         # ALL OpenRouter API Keys (8 keys for maximum coverage)
@@ -95,8 +97,9 @@ class UltimateRepositoryIntegrator:
         self.target_repo = "/home/ubuntu/ultimate-lyra-ecosystem"
         
     def create_unified_structure(self):
+        """Input validation would be added here"""
         """Create unified repository structure for all components."""
-        print("🏗️ Creating unified repository structure...")
+        logging.info("🏗️ Creating unified repository structure...")
         
         unified_structure = {
             "AI_CONSENSUS": [
@@ -157,12 +160,13 @@ class UltimateRepositoryIntegrator:
                 sub_path = os.path.join(main_path, subdir)
                 os.makedirs(sub_path, exist_ok=True)
                 
-        print("✅ Unified structure created")
+        logging.info("✅ Unified structure created")
         return unified_structure
     
     def integrate_all_repositories(self):
+        """Input validation would be added here"""
         """Integrate all existing repositories into the unified system."""
-        print("🔄 Integrating all repositories...")
+        logging.info("🔄 Integrating all repositories...")
         
         # List of all directories to integrate
         source_directories = [
@@ -206,17 +210,18 @@ class UltimateRepositoryIntegrator:
                 target_path = os.path.join(self.target_repo, "ARCHIVES", "integrated_repositories", source_dir)
                 try:
                     shutil.copytree(source_path, target_path, dirs_exist_ok=True)
-                    print(f"✅ Integrated: {source_dir}")
+                    logging.info(f"✅ Integrated: {source_dir}")
                     integrated_count += 1
                 except Exception as e:
-                    print(f"⚠️ Failed to integrate {source_dir}: {e}")
+                    logging.info(f"⚠️ Failed to integrate {source_dir}: {e}")
         
-        print(f"📊 Total repositories integrated: {integrated_count}")
+        logging.info(f"📊 Total repositories integrated: {integrated_count}")
         return integrated_count
     
     def create_ultimate_ai_system(self):
+        """Input validation would be added here"""
         """Create the ultimate AI consensus system with all models."""
-        print("🤖 Creating Ultimate AI Consensus System...")
+        logging.info("🤖 Creating Ultimate AI Consensus System...")
         
         ai_system_code = f'''#!/usr/bin/env python3
 """
@@ -234,6 +239,7 @@ import time
 
 class UltimateAIConsensusSystem:
     def __init__(self):
+        """Input validation would be added here"""
         """Initialize the Ultimate AI Consensus System."""
         
         # ALL OpenRouter API Keys ({len(self.openrouter_keys)} keys)
@@ -246,13 +252,14 @@ class UltimateAIConsensusSystem:
         self.model_performance = {{}}
         self.consensus_history = []
         
-        print(f"🚀 Ultimate AI Consensus System Initialized")
-        print(f"🔑 API Keys: {{len(self.api_keys)}}")
-        print(f"🤖 Premium Models: {{len(self.premium_models)}}")
+        logging.info(f"🚀 Ultimate AI Consensus System Initialized")
+        logging.info(f"🔑 API Keys: {{len(self.api_keys)}}")
+        logging.info(f"🤖 Premium Models: {{len(self.premium_models)}}")
         
     def get_ai_consensus(self, trading_scenario, confidence_threshold=0.85):
+        """Input validation would be added here"""
         """Get consensus from ALL AI models for maximum accuracy."""
-        print(f"🧠 Getting AI consensus for: {{trading_scenario.get('pair', 'Unknown')}}")
+        logging.info(f"🧠 Getting AI consensus for: {{trading_scenario.get('pair', 'Unknown')}}")
         
         consensus_results = []
         
@@ -271,27 +278,28 @@ class UltimateAIConsensusSystem:
                     result = future.result(timeout=30)
                     if result["status"] == "SUCCESS":
                         consensus_results.append(result)
-                        print(f"✅ {{model}}: {{result['recommendation']}} ({{result['confidence']:.2f}})")
+                        logging.info(f"✅ {{model}}: {{result['recommendation']}} ({{result['confidence']:.2f}})")
                     else:
-                        print(f"❌ {{model}}: {{result['error']}}")
+                        logging.info(f"❌ {{model}}: {{result['error']}}")
                 except Exception as e:
-                    print(f"⚠️ {{model}}: Timeout or error - {{e}}")
+                    logging.info(f"⚠️ {{model}}: Timeout or error - {{e}}")
         
         # Calculate weighted consensus
         if len(consensus_results) >= 3:  # Minimum 3 models for consensus
             consensus = self.calculate_weighted_consensus(consensus_results)
             
             if consensus["confidence"] >= confidence_threshold:
-                print(f"🎯 CONSENSUS ACHIEVED: {{consensus['action']}} ({{consensus['confidence']:.2f}})")
+                logging.info(f"🎯 CONSENSUS ACHIEVED: {{consensus['action']}} ({{consensus['confidence']:.2f}})")
                 return consensus
             else:
-                print(f"⚠️ Low confidence consensus: {{consensus['confidence']:.2f}}")
+                logging.info(f"⚠️ Low confidence consensus: {{consensus['confidence']:.2f}}")
                 return {{"action": "HOLD", "confidence": consensus["confidence"], "reason": "Low consensus confidence"}}
         else:
-            print("❌ Insufficient AI responses for consensus")
+            logging.info("❌ Insufficient AI responses for consensus")
             return {{"action": "HOLD", "confidence": 0.0, "reason": "Insufficient AI responses"}}
     
     def query_ai_model(self, api_key, model, scenario):
+        """Input validation would be added here"""
         """Query a specific AI model."""
         try:
             prompt = f"""
@@ -309,8 +317,9 @@ class UltimateAIConsensusSystem:
             data = {{
                 "model": model,
                 "messages": [
-                    {{"role": "system", "content": "You are an expert cryptocurrency trading AI with access to real-time market data."}},
-                    {{"role": "user", "content": prompt}}
+                    {{"role": "system",
+                        "content": "You are an expert cryptocurrency trading AI with access to real-time market data."}},
+                                            {{"role": "user", "content": prompt}}
                 ],
                 "max_tokens": 200,
                 "temperature": 0.7
@@ -357,6 +366,7 @@ class UltimateAIConsensusSystem:
             }}
     
     def parse_ai_response(self, response):
+        """Input validation would be added here"""
         """Parse AI response to extract recommendation and confidence."""
         response_upper = response.upper()
         
@@ -380,6 +390,7 @@ class UltimateAIConsensusSystem:
         return recommendation, confidence
     
     def calculate_weighted_consensus(self, results):
+        """Input validation would be added here"""
         """Calculate weighted consensus from all AI responses."""
         buy_votes = []
         sell_votes = []
@@ -428,8 +439,9 @@ class UltimateAIConsensusSystem:
         }}
     
     def run_consensus_test(self):
+        """Input validation would be added here"""
         """Run a test of the AI consensus system."""
-        print("🧪 Running AI Consensus Test...")
+        logging.info("🧪 Running AI Consensus Test...")
         
         test_scenario = {{
             "pair": "BTC/USDT",
@@ -441,13 +453,13 @@ class UltimateAIConsensusSystem:
         
         consensus = self.get_ai_consensus(test_scenario)
         
-        print("\\n" + "="*60)
-        print("🎉 AI CONSENSUS TEST COMPLETE!")
-        print("="*60)
-        print(f"Action: {{consensus['action']}}")
-        print(f"Confidence: {{consensus['confidence']:.2f}}")
-        print(f"Votes: {{consensus.get('votes', 'N/A')}}")
-        print("="*60)
+        logging.info("\\n" + "="*60)
+        logging.info("🎉 AI CONSENSUS TEST COMPLETE!")
+        logging.info("="*60)
+        logging.info(f"Action: {{consensus['action']}}")
+        logging.info(f"Confidence: {{consensus['confidence']:.2f}}")
+        logging.info(f"Votes: {{consensus.get('votes', 'N/A')}}")
+        logging.info("="*60)
         
         return consensus
 
@@ -460,12 +472,13 @@ if __name__ == "__main__":
         with open(ai_system_path, 'w') as f:
             f.write(ai_system_code)
         
-        print(f"✅ Ultimate AI System created: {ai_system_path}")
+        logging.info(f"✅ Ultimate AI System created: {ai_system_path}")
         return ai_system_path
     
     def create_master_configuration(self):
+        """Input validation would be added here"""
         """Create master configuration with all APIs and settings."""
-        print("⚙️ Creating master configuration...")
+        logging.info("⚙️ Creating master configuration...")
         
         master_config = {
             "system_info": {
@@ -520,13 +533,14 @@ if __name__ == "__main__":
         with open(config_path, 'w') as f:
             json.dump(master_config, f, indent=2)
         
-        print(f"✅ Master configuration created: {config_path}")
+        logging.info(f"✅ Master configuration created: {config_path}")
         return config_path
     
     def run_complete_integration(self):
+        """Input validation would be added here"""
         """Run the complete repository integration process."""
-        print("🚀 Starting Ultimate Repository Integration...")
-        print("="*70)
+        logging.info("🚀 Starting Ultimate Repository Integration...")
+        logging.info("="*70)
         
         start_time = datetime.now()
         
@@ -562,18 +576,18 @@ if __name__ == "__main__":
         with open(summary_path, 'w') as f:
             json.dump(integration_summary, f, indent=2)
         
-        print("\n" + "="*70)
-        print("🎉 ULTIMATE REPOSITORY INTEGRATION COMPLETE!")
-        print("="*70)
-        print(f"⏱️ Duration: {duration:.1f} seconds")
-        print(f"📁 Repositories Integrated: {integrated_count}")
-        print(f"🔑 OpenRouter API Keys: {len(self.openrouter_keys)}")
-        print(f"🤖 Premium AI Models: {len(self.premium_ai_models)}")
-        print(f"🏗️ Unified Structure: Created")
-        print(f"🧠 Ultimate AI System: {ai_system_path}")
-        print(f"⚙️ Master Configuration: {config_path}")
-        print(f"📊 Integration Summary: {summary_path}")
-        print("="*70)
+        logging.info("\n" + "="*70)
+        logging.info("🎉 ULTIMATE REPOSITORY INTEGRATION COMPLETE!")
+        logging.info("="*70)
+        logging.info(f"⏱️ Duration: {duration:.1f} seconds")
+        logging.info(f"📁 Repositories Integrated: {integrated_count}")
+        logging.info(f"🔑 OpenRouter API Keys: {len(self.openrouter_keys)}")
+        logging.info(f"🤖 Premium AI Models: {len(self.premium_ai_models)}")
+        logging.info(f"🏗️ Unified Structure: Created")
+        logging.info(f"🧠 Ultimate AI System: {ai_system_path}")
+        logging.info(f"⚙️ Master Configuration: {config_path}")
+        logging.info(f"📊 Integration Summary: {summary_path}")
+        logging.info("="*70)
         
         return integration_summary
 
