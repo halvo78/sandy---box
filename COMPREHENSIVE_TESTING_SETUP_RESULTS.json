@@ -1,0 +1,12 @@
+{
+  "test_session_id": "test_1759573036",
+  "start_time": "2025-10-04T06:17:16.070019",
+  "tests_executed": {},
+  "overall_status": "SETUP_COMPLETE",
+  "total_tests": 12,
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "coverage_percentage": 0,
+  "end_time": "2025-10-04T06:17:16.083329",
+  "duration": "0:00:00.013252"
+}
