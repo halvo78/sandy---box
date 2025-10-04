@@ -8,11 +8,11 @@
     "system_status": "PRODUCTION_READY"
   },
   "openrouter_ai": {
-    "primary_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+    "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "backup_keys": [
-      "sk-YOUR_OPENAI_API_KEY_HERE",
-      "sk-YOUR_OPENAI_API_KEY_HERE",
-      "sk-YOUR_OPENAI_API_KEY_HERE"
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     ],
     "unlimited_commissioning": true,
     "models": {

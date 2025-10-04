@@ -46,13 +46,13 @@ class ComprehensiveFixDiscovery:
         # API-specific fix patterns
         self.api_fix_patterns = {
             "openai": [
-                r"sk-proj-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"OPENAI_API_KEY.*=.*",
                 r"openai.*connected.*",
                 r"GPT.*working.*"
             ],
             "anthropic": [
-                r"sk-ant-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"ANTHROPIC_API_KEY.*=.*",
                 r"claude.*working.*",
                 r"anthropic.*connected.*"
@@ -63,12 +63,12 @@ class ComprehensiveFixDiscovery:
                 r"Command-R.*working.*"
             ],
             "gemini": [
-                r"AIzaSy[A-Za-z0-9_-]{33}",
+                r"AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]{33}",
                 r"GEMINI_API_KEY.*=.*",
                 r"gemini.*connected.*"
             ],
             "openrouter": [
-                r"sk-or-v1-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"OPENROUTER_API_KEY.*=.*",
                 r"openrouter.*connected.*",
                 r"327.*models.*"

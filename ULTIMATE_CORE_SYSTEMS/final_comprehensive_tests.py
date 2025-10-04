@@ -158,7 +158,7 @@ class FinalComprehensiveTestSuite:
         tests = [
             ("End-to-End Trading Flow", self._test_e2e_trading_flow),
             ("AI-Trading Integration", self._test_ai_trading_integration),
-            ("Risk-Trading Integration", self._test_risk_trading_integration),
+            ("Risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Integration", self._test_risk_trading_integration),
             ("Monitoring-Trading Integration", self.YOUR_API_KEY_HERE),
             ("Business-Trading Integration", self.YOUR_API_KEY_HERE)
         ]
@@ -576,7 +576,7 @@ class FinalComprehensiveTestSuite:
             return False
             
     def _test_risk_trading_integration(self):
-        """Test risk-trading integration."""
+        """Test risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX integration."""
         try:
             # Test risk management integration with trading
             return (hasattr(self.ecosystem, 'portfolio_risk_manager') and 

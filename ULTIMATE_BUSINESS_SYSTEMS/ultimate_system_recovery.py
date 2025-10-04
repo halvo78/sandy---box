@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# SYNTAX ERROR FIXED - File needs manual review\n#!/usr/bin/env python3
 """
 Ultimate System Recovery and GitHub Integration
 This script will recover the working files and prepare them for GitHub deployment.
@@ -157,14 +157,14 @@ class UltimateLyraTradingSystem:
         
         # OpenRouter AI Keys for consensus
         self.openrouter_keys = [
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         # Trading configuration
@@ -570,14 +570,14 @@ This repository works in conjunction with the main `ultimate-lyra-ecosystem` rep
             },
             "ai_models_integrated": 8,
             "openrouter_keys_configured": len([
-                "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",
-                "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",
-                "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",
-                "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",
-                "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",
-                "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",
-                "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",
-                "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"
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             ]),
             "key_features": [
                 "AI Consensus Engine with 8 models",

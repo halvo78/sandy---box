@@ -21,14 +21,14 @@ def setup_complete_openrouter_integration():
     
     # All OpenRouter API keys available
     openrouter_keys = [
-        "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",  # New unlimited commissioning key
+        "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # New unlimited commissioning key
         os.getenv("OPENROUTER_API_KEY", ""),  # Existing key 1
         os.getenv("SONAR_API_KEY", ""),       # Existing key 2  
         os.getenv("XAI_API_KEY", "")          # Existing key 3
     ]
     
     # Filter out empty keys
-    active_keys = [key for key in openrouter_keys if key and key.startswith("sk-or-v1")]
+    active_keys = [key for key in openrouter_keys if key and key.startswith("sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")]
     
     print(f"🔑 Active OpenRouter Keys: {len(active_keys)}")
     
@@ -288,7 +288,7 @@ def setup_complete_openrouter_integration():
     report_content += f"""
 
 #### 🎯 Specialized Models ({total_specialized} models)
-**Task-Specific AI for Specialized Operations**
+**Task-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX AI for Specialized Operations**
 """
     
     for model_id, model_info in openrouter_models["specialized_models"].items():
@@ -341,7 +341,7 @@ OPENROUTER_PRIMARY_KEY={working_keys[0]["key"] if working_keys else "Not set"}
 1. **High-Stakes Decisions:** Use premium models (GPT-4o, Claude-3.5-Sonnet)
 2. **Routine Analysis:** Use efficient models (GPT-4o-mini, Claude-3-Haiku)
 3. **Development/Testing:** Use free models (Llama-3.1-8b, Mistral-7b)
-4. **Specialized Tasks:** Use task-specific models (CodeLlama for algorithms)
+4. **Specialized Tasks:** Use task-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX models (CodeLlama for algorithms)
 
 ### Cost Optimization
 - **Commissioning Phase:** Unlimited access for testing and optimization

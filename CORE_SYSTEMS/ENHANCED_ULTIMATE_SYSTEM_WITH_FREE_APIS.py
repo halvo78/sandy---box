@@ -452,7 +452,7 @@ Rate this free API collection 1-10 for cryptocurrency trading value. Be concise.
             "mistralai/mistral-large"
         ]
         
-        primary_key = "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"
+        primary_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         
         for model in models_to_test:
             try:

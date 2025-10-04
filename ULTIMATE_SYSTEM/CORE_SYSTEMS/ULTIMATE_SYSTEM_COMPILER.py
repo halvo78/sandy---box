@@ -157,7 +157,7 @@ echo "=============================================================="
 export LIVE_MODE=true
 export LIVE_TRADING=true
 export TRADING_MODE=AGGRESSIVE
-export OPENROUTER_API_KEY=sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER
+export OPENROUTER_API_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # Start all trading systems
 echo "🎯 Starting Maximum Amplification System (Port 9996)..."

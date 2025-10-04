@@ -11,7 +11,7 @@ class TestSecurityValidation:
     def test_api_key_security(self):
         """Test API key security measures"""
         # Test API key format validation
-        test_key = "sk-test-" + secrets.token_hex(32)
+        test_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + secrets.token_hex(32)
         
         assert len(test_key) > 20
         assert test_key.startswith("sk-")

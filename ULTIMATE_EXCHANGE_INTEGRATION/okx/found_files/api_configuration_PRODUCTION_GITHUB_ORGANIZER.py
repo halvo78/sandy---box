@@ -378,7 +378,7 @@ services:
       - lyra-network
     restart: unless-stopped
 
-  risk-manager:
+  risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:
     build: ../CONTAINERS/risk_manager
     ports:
       - "8082:8080"

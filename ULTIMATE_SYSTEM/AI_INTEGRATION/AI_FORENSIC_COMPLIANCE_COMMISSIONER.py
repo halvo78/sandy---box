@@ -109,10 +109,10 @@ class YOUR_API_KEY_HERE:
         
         # Fallback keys from your system
         fallback_keys = [
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         keys.extend(fallback_keys)

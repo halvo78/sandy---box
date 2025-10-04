@@ -24,7 +24,7 @@ def test_comprehensive_api_status():
     # Test OpenRouter APIs (4 keys)
     print("\n🤖 TESTING OPENROUTER AI APIS...")
     openrouter_keys = [
-        "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",
+        "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         os.getenv("OPENROUTER_API_KEY", ""),
         os.getenv("SONAR_API_KEY", ""),
         os.getenv("XAI_API_KEY", "")

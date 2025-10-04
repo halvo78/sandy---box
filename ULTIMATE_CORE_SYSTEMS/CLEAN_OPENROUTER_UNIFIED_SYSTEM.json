@@ -17,11 +17,11 @@
   },
   "openrouter_ai_system": {
     "description": "Complete AI system using OpenRouter for ALL models",
-    "primary_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+    "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "secondary_keys": [
-      "sk-YOUR_OPENAI_API_KEY_HERE",
-      "sk-YOUR_OPENAI_API_KEY_HERE",
-      "sk-YOUR_OPENAI_API_KEY_HERE"
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     ],
     "total_keys": 4,
     "total_models": 52,

@@ -44,8 +44,8 @@
       },
       "XAI_API_KEY": {
         "api_type": "ifttt",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...36b8",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -76,8 +76,8 @@
       },
       "ANTHROPIC_API_KEY": {
         "api_type": "ifttt",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-ant-a...-AAA",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -85,7 +85,7 @@
       "GEMINI_API_KEY": {
         "api_type": "ifttt",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "AIzaSyBU...XHMU",
+        "masked": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -93,7 +93,7 @@
       "OPENAI_API_KEY": {
         "api_type": "ifttt",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-proj-...9cAA",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -148,8 +148,8 @@
       },
       "SONAR_API_KEY": {
         "api_type": "ifttt",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...80de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -308,8 +308,8 @@
       },
       "OPENROUTER_API_KEY": {
         "api_type": "ifttt",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b755",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
         "source": "environment",
         "pattern_matched": "[A-Za-z0-9_-]{22}",
         "ready_for_use": true
@@ -2596,64 +2596,64 @@
       },
       "openai_284": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_285": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_286": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_287": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_288": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_289": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_290": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_291": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -2948,67 +2948,67 @@
       },
       "openrouter_328": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_329": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_330": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_331": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_332": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_333": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_334": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_335": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_336": {
         "api_type": "openrouter",
@@ -3076,67 +3076,67 @@
       },
       "perplexity_344": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_345": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_346": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_347": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_348": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_349": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_350": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_351": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_352": {
         "api_type": "perplexity",
@@ -3156,67 +3156,67 @@
       },
       "xai_354": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_355": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_356": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_357": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_358": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_359": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_360": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_361": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_362": {
         "api_type": "xai",
@@ -4860,8 +4860,8 @@
       },
       "quandl_567": {
         "api_type": "quandl",
-        "value": "sk-or-v1-ae97a13c6ed",
-        "masked": "sk-or-v1...c6ed",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c6ed",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -4884,8 +4884,8 @@
       },
       "quandl_570": {
         "api_type": "quandl",
-        "value": "sk-or-v1-c5d68c075a2",
-        "masked": "sk-or-v1...75a2",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75a2",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -4908,8 +4908,8 @@
       },
       "quandl_573": {
         "api_type": "quandl",
-        "value": "sk-or-v1-4f94fb79ddc",
-        "masked": "sk-or-v1...9ddc",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9ddc",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -4932,8 +4932,8 @@
       },
       "quandl_576": {
         "api_type": "quandl",
-        "value": "sk-or-v1-a35680e2675",
-        "masked": "sk-or-v1...2675",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2675",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -4956,8 +4956,8 @@
       },
       "quandl_579": {
         "api_type": "quandl",
-        "value": "sk-or-v1-5fe32d3dffe",
-        "masked": "sk-or-v1...dffe",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dffe",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -4980,8 +4980,8 @@
       },
       "quandl_582": {
         "api_type": "quandl",
-        "value": "sk-or-v1-bb6b0e081c4",
-        "masked": "sk-or-v1...81c4",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...81c4",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -5004,8 +5004,8 @@
       },
       "quandl_585": {
         "api_type": "quandl",
-        "value": "sk-or-v1-7f401fa97e1",
-        "masked": "sk-or-v1...97e1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...97e1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -5028,8 +5028,8 @@
       },
       "quandl_588": {
         "api_type": "quandl",
-        "value": "sk-or-v1-ef06ddd4eac",
-        "masked": "sk-or-v1...4eac",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4eac",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -6149,7 +6149,7 @@
       "here_728": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...118d",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...118d",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6157,7 +6157,7 @@
       "here_729": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...e062",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e062",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6165,7 +6165,7 @@
       "here_730": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...f49c",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...f49c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6173,7 +6173,7 @@
       "here_731": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...d6b3",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d6b3",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6181,7 +6181,7 @@
       "here_732": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...d305",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d305",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6189,7 +6189,7 @@
       "here_733": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...8655",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...8655",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6197,7 +6197,7 @@
       "here_734": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...ddaf",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ddaf",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -6205,7 +6205,7 @@
       "here_735": {
         "api_type": "here",
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-or-v1...4cda",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4cda",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -7028,8 +7028,8 @@
       },
       "ifttt_838": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-ae97a13c6ed07",
-        "masked": "sk-or-v1...ed07",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ed07",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7052,8 +7052,8 @@
       },
       "ifttt_841": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-c5d68c075a297",
-        "masked": "sk-or-v1...a297",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...a297",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7076,8 +7076,8 @@
       },
       "ifttt_844": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-4f94fb79ddcca",
-        "masked": "sk-or-v1...dcca",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dcca",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7100,8 +7100,8 @@
       },
       "ifttt_847": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-a35680e2675ca",
-        "masked": "sk-or-v1...75ca",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75ca",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7124,8 +7124,8 @@
       },
       "ifttt_850": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-5fe32d3dffef7",
-        "masked": "sk-or-v1...fef7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...fef7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7148,8 +7148,8 @@
       },
       "ifttt_853": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-bb6b0e081c4f2",
-        "masked": "sk-or-v1...c4f2",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c4f2",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7172,8 +7172,8 @@
       },
       "ifttt_856": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-7f401fa97e19e",
-        "masked": "sk-or-v1...e19e",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e19e",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7196,8 +7196,8 @@
       },
       "ifttt_859": {
         "api_type": "ifttt",
-        "value": "sk-or-v1-ef06ddd4eac30",
-        "masked": "sk-or-v1...ac30",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ac30",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -7404,64 +7404,64 @@
       },
       "openai_885": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_886": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_887": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_888": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_889": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_890": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_891": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
       },
       "openai_892": {
         "api_type": "openai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
         "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -7740,67 +7740,67 @@
       },
       "openrouter_927": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_928": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_929": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_930": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_931": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_932": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_933": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_934": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "openrouter_935": {
         "api_type": "openrouter",
@@ -7876,67 +7876,67 @@
       },
       "perplexity_944": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_945": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_946": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_947": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_948": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_949": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_950": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_951": {
         "api_type": "perplexity",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "perplexity_952": {
         "api_type": "perplexity",
@@ -7956,67 +7956,67 @@
       },
       "xai_954": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_955": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_956": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_957": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_958": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d5e5",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_959": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...2f51",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_960": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b995",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_961": {
         "api_type": "xai",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b0de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
         "source": "file_scan",
         "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-        "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+        "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
       },
       "xai_962": {
         "api_type": "xai",
@@ -8334,57 +8334,57 @@
     "hardcoded_apis": {
       "openrouter_key_1": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...50e7",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_2": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b6bd",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_3": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...42f1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_4": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...546c",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_5": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b8c9",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b8c9",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_6": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...c9d0",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c9d0",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_7": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...d0e1",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d0e1",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
       "openrouter_key_8": {
         "api_type": "openrouter",
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...e1f2",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e1f2",
         "source": "hardcoded_knowledge",
         "ready_for_use": true
       },
@@ -8607,8 +8607,8 @@
         "key": "environment_apis_XAI_API_KEY",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...36b8",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -8629,8 +8629,8 @@
         "key": "YOUR_API_KEY_HERE",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-ant-a...-AAA",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -8641,7 +8641,7 @@
         "info": {
           "api_type": "ifttt",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "AIzaSyBU...XHMU",
+          "masked": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -8652,7 +8652,7 @@
         "info": {
           "api_type": "ifttt",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-proj-...9cAA",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -8684,8 +8684,8 @@
         "key": "environment_apis_SONAR_API_KEY",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...80de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -8739,8 +8739,8 @@
         "key": "YOUR_API_KEY_HERE",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b755",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
           "source": "environment",
           "pattern_matched": "[A-Za-z0-9_-]{22}",
           "ready_for_use": true
@@ -9476,8 +9476,8 @@
         "key": "discovered_apis_ifttt_838",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-ae97a13c6ed07",
-          "masked": "sk-or-v1...ed07",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ed07",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9509,8 +9509,8 @@
         "key": "discovered_apis_ifttt_841",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-c5d68c075a297",
-          "masked": "sk-or-v1...a297",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...a297",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9542,8 +9542,8 @@
         "key": "discovered_apis_ifttt_844",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-4f94fb79ddcca",
-          "masked": "sk-or-v1...dcca",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dcca",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9575,8 +9575,8 @@
         "key": "discovered_apis_ifttt_847",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-a35680e2675ca",
-          "masked": "sk-or-v1...75ca",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75ca",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9608,8 +9608,8 @@
         "key": "discovered_apis_ifttt_850",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-5fe32d3dffef7",
-          "masked": "sk-or-v1...fef7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...fef7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9641,8 +9641,8 @@
         "key": "discovered_apis_ifttt_853",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-bb6b0e081c4f2",
-          "masked": "sk-or-v1...c4f2",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c4f2",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9674,8 +9674,8 @@
         "key": "discovered_apis_ifttt_856",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-7f401fa97e19e",
-          "masked": "sk-or-v1...e19e",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e19e",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -9707,8 +9707,8 @@
         "key": "discovered_apis_ifttt_859",
         "info": {
           "api_type": "ifttt",
-          "value": "sk-or-v1-ef06ddd4eac30",
-          "masked": "sk-or-v1...ac30",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ac30",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -10116,8 +10116,8 @@
         "key": "discovered_apis_openai_284",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10127,8 +10127,8 @@
         "key": "discovered_apis_openai_285",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10138,8 +10138,8 @@
         "key": "discovered_apis_openai_286",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10149,8 +10149,8 @@
         "key": "discovered_apis_openai_287",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10160,8 +10160,8 @@
         "key": "discovered_apis_openai_288",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10171,8 +10171,8 @@
         "key": "discovered_apis_openai_289",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10182,8 +10182,8 @@
         "key": "discovered_apis_openai_290",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10193,8 +10193,8 @@
         "key": "discovered_apis_openai_291",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10325,8 +10325,8 @@
         "key": "discovered_apis_openai_885",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10336,8 +10336,8 @@
         "key": "discovered_apis_openai_886",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10347,8 +10347,8 @@
         "key": "discovered_apis_openai_887",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10358,8 +10358,8 @@
         "key": "discovered_apis_openai_888",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10369,8 +10369,8 @@
         "key": "discovered_apis_openai_889",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10380,8 +10380,8 @@
         "key": "discovered_apis_openai_890",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10391,8 +10391,8 @@
         "key": "discovered_apis_openai_891",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -10402,8 +10402,8 @@
         "key": "discovered_apis_openai_892",
         "info": {
           "api_type": "openai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -15514,8 +15514,8 @@
         "key": "discovered_apis_quandl_567",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-ae97a13c6ed",
-          "masked": "sk-or-v1...c6ed",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c6ed",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15547,8 +15547,8 @@
         "key": "discovered_apis_quandl_570",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-c5d68c075a2",
-          "masked": "sk-or-v1...75a2",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75a2",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15580,8 +15580,8 @@
         "key": "discovered_apis_quandl_573",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-4f94fb79ddc",
-          "masked": "sk-or-v1...9ddc",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9ddc",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15613,8 +15613,8 @@
         "key": "discovered_apis_quandl_576",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-a35680e2675",
-          "masked": "sk-or-v1...2675",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2675",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15646,8 +15646,8 @@
         "key": "discovered_apis_quandl_579",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-5fe32d3dffe",
-          "masked": "sk-or-v1...dffe",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dffe",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15679,8 +15679,8 @@
         "key": "discovered_apis_quandl_582",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-bb6b0e081c4",
-          "masked": "sk-or-v1...81c4",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...81c4",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15712,8 +15712,8 @@
         "key": "discovered_apis_quandl_585",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-7f401fa97e1",
-          "masked": "sk-or-v1...97e1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...97e1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -15745,8 +15745,8 @@
         "key": "discovered_apis_quandl_588",
         "info": {
           "api_type": "quandl",
-          "value": "sk-or-v1-ef06ddd4eac",
-          "masked": "sk-or-v1...4eac",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4eac",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -18706,88 +18706,88 @@
         "key": "discovered_apis_openrouter_328",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_329",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_330",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_331",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_332",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_333",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_334",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_335",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -18882,88 +18882,88 @@
         "key": "discovered_apis_openrouter_927",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_928",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_929",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_930",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_931",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_932",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_933",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_openrouter_934",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -19069,8 +19069,8 @@
         "key": "hardcoded_apis_openrouter_key_1",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19079,8 +19079,8 @@
         "key": "hardcoded_apis_openrouter_key_2",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19089,8 +19089,8 @@
         "key": "hardcoded_apis_openrouter_key_3",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19099,8 +19099,8 @@
         "key": "hardcoded_apis_openrouter_key_4",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19109,8 +19109,8 @@
         "key": "hardcoded_apis_openrouter_key_5",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b8c9",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b8c9",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19119,8 +19119,8 @@
         "key": "hardcoded_apis_openrouter_key_6",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...c9d0",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c9d0",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19129,8 +19129,8 @@
         "key": "hardcoded_apis_openrouter_key_7",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d0e1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d0e1",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19139,8 +19139,8 @@
         "key": "hardcoded_apis_openrouter_key_8",
         "info": {
           "api_type": "openrouter",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...e1f2",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e1f2",
           "source": "hardcoded_knowledge",
           "ready_for_use": true
         }
@@ -19173,88 +19173,88 @@
         "key": "discovered_apis_perplexity_344",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_345",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_346",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_347",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_348",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_349",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_350",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_351",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -19283,88 +19283,88 @@
         "key": "discovered_apis_perplexity_944",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_945",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_946",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_947",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_948",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_949",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_950",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_perplexity_951",
         "info": {
           "api_type": "perplexity",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -19428,88 +19428,88 @@
         "key": "discovered_apis_xai_354",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_355",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_356",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_357",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_358",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_359",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_360",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_361",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -19549,88 +19549,88 @@
         "key": "discovered_apis_xai_954",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...50e7",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_955",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b6bd",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_956",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...42f1",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_957",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...546c",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_958",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...d5e5",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_959",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...2f51",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_960",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b995",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
         "key": "discovered_apis_xai_961",
         "info": {
           "api_type": "xai",
-          "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-          "masked": "sk-or-v1...b0de",
+          "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-          "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+          "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
         }
       },
       {
@@ -19789,7 +19789,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...118d",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...118d",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19800,7 +19800,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...e062",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e062",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19811,7 +19811,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...f49c",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...f49c",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19822,7 +19822,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...d6b3",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d6b3",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19833,7 +19833,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...d305",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d305",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19844,7 +19844,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...8655",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...8655",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19855,7 +19855,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...ddaf",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ddaf",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -19866,7 +19866,7 @@
         "info": {
           "api_type": "here",
           "value": "YOUR_API_KEY_HERE",
-          "masked": "sk-or-v1...4cda",
+          "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4cda",
           "source": "file_scan",
           "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
           "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -20027,8 +20027,8 @@
     },
     "environment_apis_XAI_API_KEY": {
       "api_type": "ifttt",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...36b8",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -20059,8 +20059,8 @@
     },
     "YOUR_API_KEY_HERE": {
       "api_type": "ifttt",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-ant-a...-AAA",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -20068,7 +20068,7 @@
     "environment_apis_GEMINI_API_KEY": {
       "api_type": "ifttt",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "AIzaSyBU...XHMU",
+      "masked": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -20076,7 +20076,7 @@
     "environment_apis_OPENAI_API_KEY": {
       "api_type": "ifttt",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-proj-...9cAA",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -20131,8 +20131,8 @@
     },
     "environment_apis_SONAR_API_KEY": {
       "api_type": "ifttt",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...80de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -20291,8 +20291,8 @@
     },
     "YOUR_API_KEY_HERE": {
       "api_type": "ifttt",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b755",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
       "source": "environment",
       "pattern_matched": "[A-Za-z0-9_-]{22}",
       "ready_for_use": true
@@ -22571,64 +22571,64 @@
     },
     "discovered_apis_openai_284": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_285": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_286": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_287": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_288": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_289": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_290": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_291": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -22923,67 +22923,67 @@
     },
     "discovered_apis_openrouter_328": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_329": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_330": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_331": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_332": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_333": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_334": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_335": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_336": {
       "api_type": "openrouter",
@@ -23051,67 +23051,67 @@
     },
     "discovered_apis_perplexity_344": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_345": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_346": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_347": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_348": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_349": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_350": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_351": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_352": {
       "api_type": "perplexity",
@@ -23131,67 +23131,67 @@
     },
     "discovered_apis_xai_354": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_355": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_356": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_357": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_358": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_359": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_360": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_361": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_362": {
       "api_type": "xai",
@@ -24835,8 +24835,8 @@
     },
     "discovered_apis_quandl_567": {
       "api_type": "quandl",
-      "value": "sk-or-v1-ae97a13c6ed",
-      "masked": "sk-or-v1...c6ed",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c6ed",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24859,8 +24859,8 @@
     },
     "discovered_apis_quandl_570": {
       "api_type": "quandl",
-      "value": "sk-or-v1-c5d68c075a2",
-      "masked": "sk-or-v1...75a2",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75a2",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24883,8 +24883,8 @@
     },
     "discovered_apis_quandl_573": {
       "api_type": "quandl",
-      "value": "sk-or-v1-4f94fb79ddc",
-      "masked": "sk-or-v1...9ddc",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9ddc",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24907,8 +24907,8 @@
     },
     "discovered_apis_quandl_576": {
       "api_type": "quandl",
-      "value": "sk-or-v1-a35680e2675",
-      "masked": "sk-or-v1...2675",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2675",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24931,8 +24931,8 @@
     },
     "discovered_apis_quandl_579": {
       "api_type": "quandl",
-      "value": "sk-or-v1-5fe32d3dffe",
-      "masked": "sk-or-v1...dffe",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dffe",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24955,8 +24955,8 @@
     },
     "discovered_apis_quandl_582": {
       "api_type": "quandl",
-      "value": "sk-or-v1-bb6b0e081c4",
-      "masked": "sk-or-v1...81c4",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...81c4",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -24979,8 +24979,8 @@
     },
     "discovered_apis_quandl_585": {
       "api_type": "quandl",
-      "value": "sk-or-v1-7f401fa97e1",
-      "masked": "sk-or-v1...97e1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...97e1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -25003,8 +25003,8 @@
     },
     "discovered_apis_quandl_588": {
       "api_type": "quandl",
-      "value": "sk-or-v1-ef06ddd4eac",
-      "masked": "sk-or-v1...4eac",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4eac",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{20}"
@@ -26124,7 +26124,7 @@
     "discovered_apis_here_728": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...118d",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...118d",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26132,7 +26132,7 @@
     "discovered_apis_here_729": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...e062",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e062",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26140,7 +26140,7 @@
     "discovered_apis_here_730": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...f49c",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...f49c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26148,7 +26148,7 @@
     "discovered_apis_here_731": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...d6b3",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d6b3",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26156,7 +26156,7 @@
     "discovered_apis_here_732": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...d305",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d305",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26164,7 +26164,7 @@
     "discovered_apis_here_733": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...8655",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...8655",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26172,7 +26172,7 @@
     "discovered_apis_here_734": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...ddaf",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ddaf",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -26180,7 +26180,7 @@
     "discovered_apis_here_735": {
       "api_type": "here",
       "value": "YOUR_API_KEY_HERE",
-      "masked": "sk-or-v1...4cda",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...4cda",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{43}"
@@ -27003,8 +27003,8 @@
     },
     "discovered_apis_ifttt_838": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-ae97a13c6ed07",
-      "masked": "sk-or-v1...ed07",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ed07",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27027,8 +27027,8 @@
     },
     "discovered_apis_ifttt_841": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-c5d68c075a297",
-      "masked": "sk-or-v1...a297",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...a297",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27051,8 +27051,8 @@
     },
     "discovered_apis_ifttt_844": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-4f94fb79ddcca",
-      "masked": "sk-or-v1...dcca",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dcca",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27075,8 +27075,8 @@
     },
     "discovered_apis_ifttt_847": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-a35680e2675ca",
-      "masked": "sk-or-v1...75ca",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...75ca",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27099,8 +27099,8 @@
     },
     "discovered_apis_ifttt_850": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-5fe32d3dffef7",
-      "masked": "sk-or-v1...fef7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...fef7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27123,8 +27123,8 @@
     },
     "discovered_apis_ifttt_853": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-bb6b0e081c4f2",
-      "masked": "sk-or-v1...c4f2",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c4f2",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27147,8 +27147,8 @@
     },
     "discovered_apis_ifttt_856": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-7f401fa97e19e",
-      "masked": "sk-or-v1...e19e",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e19e",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27171,8 +27171,8 @@
     },
     "discovered_apis_ifttt_859": {
       "api_type": "ifttt",
-      "value": "sk-or-v1-ef06ddd4eac30",
-      "masked": "sk-or-v1...ac30",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...ac30",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "[A-Za-z0-9_-]{22}"
@@ -27379,64 +27379,64 @@
     },
     "discovered_apis_openai_885": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_886": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_887": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_888": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_889": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_890": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_891": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
     },
     "discovered_apis_openai_892": {
       "api_type": "openai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
       "pattern_matched": "sk-[A-Za-z0-9_-]{48,}"
@@ -27715,67 +27715,67 @@
     },
     "discovered_apis_openrouter_927": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_928": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_929": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_930": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_931": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_932": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_933": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_934": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_openrouter_935": {
       "api_type": "openrouter",
@@ -27851,67 +27851,67 @@
     },
     "discovered_apis_perplexity_944": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_945": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_946": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_947": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_948": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_949": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_950": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_951": {
       "api_type": "perplexity",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_perplexity_952": {
       "api_type": "perplexity",
@@ -27931,67 +27931,67 @@
     },
     "discovered_apis_xai_954": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_955": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_956": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_957": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_958": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d5e5",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d5e5",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_959": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...2f51",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...2f51",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_960": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b995",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b995",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_961": {
       "api_type": "xai",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b0de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b0de",
       "source": "file_scan",
       "file_path": "/home/ubuntu/YOUR_API_KEY_HERE.py",
-      "pattern_matched": "sk-or-v1-[A-Za-z0-9_-]+"
+      "pattern_matched": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+"
     },
     "discovered_apis_xai_962": {
       "api_type": "xai",
@@ -28307,57 +28307,57 @@
     },
     "hardcoded_apis_openrouter_key_1": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...50e7",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...50e7",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_2": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b6bd",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b6bd",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_3": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...42f1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...42f1",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_4": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...546c",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...546c",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_5": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...b8c9",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b8c9",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_6": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...c9d0",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...c9d0",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_7": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...d0e1",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d0e1",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },
     "hardcoded_apis_openrouter_key_8": {
       "api_type": "openrouter",
-      "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-      "masked": "sk-or-v1...e1f2",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...e1f2",
       "source": "hardcoded_knowledge",
       "ready_for_use": true
     },

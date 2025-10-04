@@ -19,14 +19,14 @@ import time
 class UltimateAIConsensusContainerizer:
     def __init__(self):
         self.openrouter_keys = [
-            "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",  # XAI Code
-            "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",  # Grok 4
-            "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",  # Chat Codex
-            "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",  # DeepSeek
-            "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",  # DeepSeek 2
-            "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",  # Multi-key
-            "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",  # Microsoft 4.0
-            "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"   # All Models
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # XAI Code
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Grok 4
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Chat Codex
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # DeepSeek
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # DeepSeek 2
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Multi-key
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Microsoft 4.0
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"   # All Models
         ]
         
         self.ai_models = [

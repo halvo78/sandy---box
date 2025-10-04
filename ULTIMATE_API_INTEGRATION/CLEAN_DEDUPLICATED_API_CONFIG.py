@@ -127,49 +127,49 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "OPENAI_API_4": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_5": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_6": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_7": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_8": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_9": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_10": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
         },
         "OPENAI_API_11": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openai",
             "source": "file_scan",
             "ready": false
@@ -259,97 +259,97 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "OPENROUTER_API_3": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_4": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_5": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_6": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_7": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "file_scan",
             "ready": false
         },
         "OPENROUTER_API_8": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "file_scan",
             "ready": false
         },
         "OPENROUTER_API_9": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "file_scan",
             "ready": false
         },
         "OPENROUTER_API_10": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_2": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_3": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_4": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_5": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_6": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_7": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_8": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
         },
         "PERPLEXITY_API_9": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "perplexity",
             "source": "file_scan",
             "ready": false
@@ -367,49 +367,49 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "XAI_API_3": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_4": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_5": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_6": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_7": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_8": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_9": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
         },
         "XAI_API_10": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "xai",
             "source": "file_scan",
             "ready": false
@@ -421,25 +421,25 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "OPENROUTER_API_12": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_13": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_14": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
         },
         "OPENROUTER_API_15": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "openrouter",
             "source": "hardcoded_knowledge",
             "ready": true
@@ -1695,7 +1695,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_47": {
-            "value": "sk-or-v1-ae97a13c6ed",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1713,7 +1713,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_50": {
-            "value": "sk-or-v1-c5d68c075a2",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1731,7 +1731,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_53": {
-            "value": "sk-or-v1-4f94fb79ddc",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1749,7 +1749,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_56": {
-            "value": "sk-or-v1-a35680e2675",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1767,7 +1767,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_59": {
-            "value": "sk-or-v1-5fe32d3dffe",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1785,7 +1785,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_62": {
-            "value": "sk-or-v1-bb6b0e081c4",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1803,7 +1803,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_65": {
-            "value": "sk-or-v1-7f401fa97e1",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -1821,7 +1821,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "QUANDL_API_68": {
-            "value": "sk-or-v1-ef06ddd4eac",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "quandl",
             "source": "file_scan",
             "ready": false
@@ -3321,7 +3321,7 @@ class CleanAPIConfiguration:
 
         # Other Apis (102 APIs)
         "IFTTT_API": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "environment",
             "ready": true
@@ -3333,7 +3333,7 @@ class CleanAPIConfiguration:
             "ready": true
         },
         "IFTTT_API_2": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "environment",
             "ready": true
@@ -3363,7 +3363,7 @@ class CleanAPIConfiguration:
             "ready": true
         },
         "IFTTT_API_7": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "environment",
             "ready": true
@@ -3393,7 +3393,7 @@ class CleanAPIConfiguration:
             "ready": true
         },
         "IFTTT_API_12": {
-            "value": "sk-YOUR_OPENAI_API_KEY_HERE",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "environment",
             "ready": true
@@ -3729,7 +3729,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_51": {
-            "value": "sk-or-v1-ae97a13c6ed07",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3747,7 +3747,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_54": {
-            "value": "sk-or-v1-c5d68c075a297",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3765,7 +3765,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_57": {
-            "value": "sk-or-v1-4f94fb79ddcca",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3783,7 +3783,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_60": {
-            "value": "sk-or-v1-a35680e2675ca",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3801,7 +3801,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_63": {
-            "value": "sk-or-v1-5fe32d3dffef7",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3819,7 +3819,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_66": {
-            "value": "sk-or-v1-bb6b0e081c4f2",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3837,7 +3837,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_69": {
-            "value": "sk-or-v1-7f401fa97e19e",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false
@@ -3855,7 +3855,7 @@ class CleanAPIConfiguration:
             "ready": false
         },
         "IFTTT_API_72": {
-            "value": "sk-or-v1-ef06ddd4eac30",
+            "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "type": "ifttt",
             "source": "file_scan",
             "ready": false

@@ -98,14 +98,14 @@ class UltimateAIPortfolioManager:
         
         # OpenRouter API keys for AI analysis
         self.openrouter_keys = {
-            'xai': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'grok': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'codex': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek1': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek2': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'premium': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'microsoft': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'universal': 'sk-YOUR_OPENAI_API_KEY_HERE'
+            'xai': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'premium': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'universal': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
         
         # AI models for different analysis types
@@ -296,7 +296,7 @@ class UltimateAIPortfolioManager:
             Please provide optimization recommendations:
             1. Optimal asset allocation percentages
             2. Rebalancing recommendations
-            3. Risk-adjusted return projections
+            3. Risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX return projections
             4. Diversification improvements
             5. Correlation optimization
             6. Position sizing recommendations
@@ -669,7 +669,7 @@ class UltimateAIPortfolioManager:
             <h2>🚀 Quick Actions</h2>
             <button class="btn" onclick="location.href='/api/optimize'">Run AI Optimization</button>
             <button class="btn" onclick="location.href='/api/opportunities'">Find Opportunities</button>
-            <button class="btn" onclick="location.href='/api/risk-analysis'">Risk Analysis</button>
+            <button class="btn" onclick="location.href='/api/risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'">Risk Analysis</button>
             <button class="btn" onclick="location.href='/api/rebalance'">Auto Rebalance</button>
         </div>
         
@@ -716,7 +716,7 @@ class UltimateAIPortfolioManager:
             result = self.get_market_opportunities()
             return jsonify(result)
         
-        @self.app.route('/api/risk-analysis')
+        @self.app.route('/api/risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
         def risk_analysis():
             current_data = {
                 'positions': {symbol: asdict(asset) for symbol, asset in self.portfolio.items()},

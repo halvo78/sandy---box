@@ -18,7 +18,7 @@
           "Authorization": "Bearer {api_key}"
         },
         "env_var": "OPENAI_API_KEY",
-        "value": "sk-proj-...9cAA"
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA"
       },
       "models": [
         "GPT-4o",
@@ -57,7 +57,7 @@
           "x-goog-api-key": "{api_key}"
         },
         "env_var": "GEMINI_API_KEY",
-        "value": "AIzaSyBU...XHMU"
+        "value": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU"
       },
       "models": [
         "Gemini-1.5-Pro",
@@ -76,7 +76,7 @@
           "Authorization": "Bearer {api_key}"
         },
         "env_var": "OPENROUTER_API_KEY",
-        "value": "sk-or-v1...b755"
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755"
       },
       "models": [
         "327+ AI models"
@@ -178,7 +178,7 @@
           "anthropic-version": "2023-06-01"
         },
         "env_var": "ANTHROPIC_API_KEY",
-        "value": "sk-ant-a...-AAA"
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA"
       },
       "models": [
         "Claude-3.5-Sonnet",
@@ -199,7 +199,7 @@
           "Content-Type": "application/json"
         },
         "env_var": "SONAR_API_KEY",
-        "value": "sk-or-v1...80de"
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de"
       },
       "models": [
         "Llama-3.1-Sonar models"
@@ -218,7 +218,7 @@
           "Authorization": "Bearer {api_key}"
         },
         "env_var": "XAI_API_KEY",
-        "value": "sk-or-v1...36b8"
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8"
       },
       "models": [
         "Grok models"
@@ -321,12 +321,12 @@
   },
   "environment_config": {
     "OPENAI_API_KEY": {
-      "value": "sk-proj-...9cAA",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
       "configured": true,
       "length": 164
     },
     "ANTHROPIC_API_KEY": {
-      "value": "sk-ant-a...-AAA",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
       "configured": true,
       "length": 108
     },
@@ -336,22 +336,22 @@
       "length": 40
     },
     "GEMINI_API_KEY": {
-      "value": "AIzaSyBU...XHMU",
+      "value": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
       "configured": true,
       "length": 39
     },
     "OPENROUTER_API_KEY": {
-      "value": "sk-or-v1...b755",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
       "configured": true,
       "length": 73
     },
     "SONAR_API_KEY": {
-      "value": "sk-or-v1...80de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
       "configured": true,
       "length": 73
     },
     "XAI_API_KEY": {
-      "value": "sk-or-v1...36b8",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
       "configured": true,
       "length": 73
     },

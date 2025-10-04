@@ -56,7 +56,7 @@ def create_clean_openrouter_unified_system():
     
     # Test Primary OpenRouter Key
     try:
-        api_key = "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"
+        api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         test_url = "https://openrouter.ai/api/v1/models"
         req = urllib.request.Request(test_url)
         req.add_header("Authorization", f"Bearer {api_key}")
@@ -92,7 +92,7 @@ def create_clean_openrouter_unified_system():
         # OpenRouter - ALL AI Models
         "openrouter_ai_system": {
             "description": "Complete AI system using OpenRouter for ALL models",
-            "primary_key": "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",
+            "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "secondary_keys": [
                 os.getenv("OPENROUTER_API_KEY", ""),
                 os.getenv("SONAR_API_KEY", ""),
@@ -251,7 +251,7 @@ def create_clean_openrouter_unified_system():
 ## 🤖 OPENROUTER AI SYSTEM (ALL AI MODELS)
 
 ### Single AI Interface for Maximum Efficiency
-**Primary Key:** `sk-or-v1-315c...712c` 🚀 UNLIMITED (Commissioning)
+**Primary Key:** `sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...712c` 🚀 UNLIMITED (Commissioning)
 **Status:** {test_results.get('openrouter_primary', 'Not tested')}
 **Total Keys:** 4 (with redundancy)
 **Total Models:** 52 unique models
@@ -414,8 +414,8 @@ def create_clean_openrouter_unified_system():
     with open(env_path, 'w') as f:
         f.write(f"# Clean OpenRouter Unified System - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
         f.write("# OpenRouter Keys (ALL AI Models)\n")
-        f.write("OPENROUTER_PRIMARY_KEY=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\n")
-        f.write("OPENROUTER_KEY_1=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\n")
+        f.write("OPENROUTER_PRIMARY_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
+        f.write("OPENROUTER_KEY_1=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
         f.write("\n# Data APIs\n")
         f.write("TWELVE_DATA_API_KEY=2997d13caee949d48fca334aff3042dd\n")
         f.write("POLYGON_ENHANCED_API_KEY=A_nmop6VvNSPBY2yiVqNJYzA7pautIUX\n")

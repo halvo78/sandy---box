@@ -8,29 +8,29 @@
   },
   "api_keys": [
     {
-      "key": "sk-or-v1-315...dec6712c",
-      "full_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...dec6712c",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "status": "\u2705 WORKING",
       "models_available": 326,
       "unlimited": true
     },
     {
-      "key": "sk-or-v1-742...d0adb755",
-      "full_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d0adb755",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "status": "\u2705 WORKING",
       "models_available": 326,
       "unlimited": false
     },
     {
-      "key": "sk-or-v1-3c0...d38580de",
-      "full_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...d38580de",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "status": "\u2705 WORKING",
       "models_available": 326,
       "unlimited": false
     },
     {
-      "key": "sk-or-v1-f18...fb3636b8",
-      "full_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...fb3636b8",
+      "full_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "status": "\u2705 WORKING",
       "models_available": 326,
       "unlimited": false

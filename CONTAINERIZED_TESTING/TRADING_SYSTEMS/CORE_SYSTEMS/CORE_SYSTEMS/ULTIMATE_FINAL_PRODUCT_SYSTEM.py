@@ -24,7 +24,7 @@ def create_ultimate_final_product():
     
     # OpenRouter Configuration - ALL AI MODELS
     openrouter_config = {
-        "primary_key": "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",
+        "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         "backup_keys": [
             os.getenv("OPENROUTER_API_KEY", ""),
             os.getenv("SONAR_API_KEY", ""),

@@ -96,13 +96,13 @@ def setup_web_dashboard():
             document.getElementById('hostname').textContent = data.hostname;
             document.getElementById('cpu-percent').textContent = data.system_resources.cpu_percent + '%';
             document.getElementById('memory-percent').textContent = data.system_resources.memory.percent + '%';
-            document.getElementById('disk-percent').textContent = data.system_resources.disk.percent + '%';
+            document.getElementById('disk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX').textContent = data.system_resources.disk.percent + '%';
             document.getElementById('processes').textContent = data.processes;
             
             // Update progress bars
             document.getElementById('cpu-bar').style.width = data.system_resources.cpu_percent + '%';
             document.getElementById('memory-bar').style.width = data.system_resources.memory.percent + '%';
-            document.getElementById('disk-bar').style.width = data.system_resources.disk.percent + '%';
+            document.getElementById('disk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX').style.width = data.system_resources.disk.percent + '%';
         }
         
         // Auto-refresh every 5 seconds
@@ -164,10 +164,10 @@ def setup_web_dashboard():
                 <h3>💿 Disk Usage</h3>
                 <div class="metric">
                     <span>Current Usage:</span>
-                    <span id="disk-percent">Loading...</span>
+                    <span id="disk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">Loading...</span>
                 </div>
                 <div class="progress-bar">
-                    <div id="disk-bar" class="progress-fill" style="width: 0%"></div>
+                    <div id="disk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" class="progress-fill" style="width: 0%"></div>
                 </div>
             </div>
         </div>

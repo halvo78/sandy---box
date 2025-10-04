@@ -7,32 +7,32 @@
   "apis": {
     "ai_ml_apis": {
       "XAI_API_KEY": {
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...36b8",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
         "source": "environment",
         "ready_for_use": true
       },
       "ANTHROPIC_API_KEY": {
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-ant-a...-AAA",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
         "source": "environment",
         "ready_for_use": true
       },
       "GEMINI_API_KEY": {
         "value": "YOUR_API_KEY_HERE",
-        "masked": "AIzaSyBU...XHMU",
+        "masked": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
         "source": "environment",
         "ready_for_use": true
       },
       "OPENAI_API_KEY": {
         "value": "YOUR_API_KEY_HERE",
-        "masked": "sk-proj-...9cAA",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
         "source": "environment",
         "ready_for_use": true
       },
       "SONAR_API_KEY": {
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...80de",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
         "source": "environment",
         "ready_for_use": true
       },
@@ -49,8 +49,8 @@
         "ready_for_use": true
       },
       "OPENROUTER_API_KEY": {
-        "value": "sk-YOUR_OPENAI_API_KEY_HERE",
-        "masked": "sk-or-v1...b755",
+        "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "masked": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
         "source": "environment",
         "ready_for_use": true
       }

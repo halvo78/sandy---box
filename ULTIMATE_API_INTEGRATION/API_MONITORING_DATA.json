@@ -512,7 +512,7 @@
       }
     },
     "anthropic": {
-      "api_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "base_url": "https://api.anthropic.com/v1",
       "test_endpoint": "/messages",
       "auth_header": "x-api-key",
@@ -578,7 +578,7 @@
       }
     },
     "openrouter": {
-      "api_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "base_url": "https://openrouter.ai/api/v1",
       "test_endpoint": "/models",
       "auth_header": "Authorization",
@@ -594,7 +594,7 @@
       }
     },
     "perplexity": {
-      "api_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "base_url": "https://api.perplexity.ai",
       "test_endpoint": "/chat/completions",
       "auth_header": "Authorization",
@@ -616,7 +616,7 @@
       }
     },
     "xai_grok": {
-      "api_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+      "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
       "base_url": "https://api.x.ai/v1",
       "test_endpoint": "/models",
       "auth_header": "Authorization",

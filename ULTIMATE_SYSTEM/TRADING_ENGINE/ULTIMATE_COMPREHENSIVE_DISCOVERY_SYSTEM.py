@@ -451,15 +451,15 @@ class UltimateComprehensiveDiscoverySystem:
             
             # OpenRouter API keys from previous messages
             openrouter_keys = [
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # XAI
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # Grok 4
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # Chat Codex
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # DeepSeek 1
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # DeepSeek 2
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # Premium
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # Microsoft 4.0
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER",  # Universal
-                "sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER"   # Additional key
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # XAI
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Grok 4
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Chat Codex
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # DeepSeek 1
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # DeepSeek 2
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Premium
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Microsoft 4.0
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # Universal
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"   # Additional key
             ]
             
             for i, key in enumerate(openrouter_keys, 1):

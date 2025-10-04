@@ -62,19 +62,19 @@ class UltimateMultiSourceSystem:
             
             # OpenRouter AI APIs (8 keys for maximum consensus)
             self.openrouter_keys = [
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # XAI
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # Grok 4
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # Chat Codex
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # DeepSeek 1
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # DeepSeek 2
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # Premium
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE',  # Microsoft 4.0
-                'sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE'   # Universal
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # XAI
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # Grok 4
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # Chat Codex
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # DeepSeek 1
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # DeepSeek 2
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # Premium
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',  # Microsoft 4.0
+                'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'   # Universal
             ]
             
             # Additional APIs from environment
-            self.gemini_api_key = os.getenv('GEMINI_API_KEY', 'AIzaSyBU67O6XrtYy1355vr0OCba_XIvwWSXHMU')
-            self.anthropic_api_key = os.getenv('ANTHROPIC_API_KEY', 'sk-ant-api03-V-wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEYwJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEYZgug-j13g-AAA')
+            self.gemini_api_key = os.getenv('GEMINI_API_KEY', 'AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+            self.anthropic_api_key = os.getenv('ANTHROPIC_API_KEY', 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/K7MDENG/bPxRfiCYEXAMPLEKEYwJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEYZgug-j13g-AAA')
             self.cohere_api_key = os.getenv('COHERE_API_KEY', 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY')
             self.bfl_api_key = os.getenv('BFL_API_KEY', '3e7cb6d8-f70a-4d02-bf13-22ef5d1d11ec')
             

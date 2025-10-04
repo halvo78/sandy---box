@@ -1,67 +1,44 @@
 version: '3.8'
 
 services:
-  trading-engine:
-    build: ./TRADING_ENGINE
+  trading-system:
+    build: .
     ports:
-      - "8001:8001"
+      - "8000:8000"
     environment:
-      - NODE_ENV=production
-    networks:
-      - sandy-network
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 40s
 
-  api-gateway:
-    build: ./API_INTEGRATIONS
+  redis:
+    image: redis:7-alpine
     ports:
-      - "8002:8002"
-    environment:
-      - NODE_ENV=production
-    networks:
-      - sandy-network
-    restart: unless-stopped
-    depends_on:
-      - trading-engine
-
-  security-vault:
-    build: ./SECURITY_VAULT
-    ports:
-      - "8003:8003"
-    environment:
-      - NODE_ENV=production
-    networks:
-      - sandy-network
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
     restart: unless-stopped
 
-  monitoring-dashboard:
-    build: ./MONITORING_DASHBOARDS
-    ports:
-      - "3000:3000"
+  postgres:
+    image: postgres:15-alpine
     environment:
-      - NODE_ENV=production
-    networks:
-      - sandy-network
-    restart: unless-stopped
-
-  compliance-engine:
-    build: ./COMPLIANCE_SYSTEMS
+      POSTGRES_DB: trading_db
+      POSTGRES_USER: trader
+      POSTGRES_PASSWORD: secure_password_change_me
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     ports:
-      - "8004:8004"
-    environment:
-      - NODE_ENV=production
-    networks:
-      - sandy-network
+      - "5432:5432"
     restart: unless-stopped
-
-networks:
-  sandy-network:
-    driver: bridge
 
 volumes:
-  sandy-data:
-    driver: local
+  redis_data:
+  postgres_data:

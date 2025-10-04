@@ -63,14 +63,14 @@ class UltimateComprehensiveSystemDeployer:
         
         # All OpenRouter API keys
         self.openrouter_keys = {
-            'xai': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'grok': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'codex': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'deepseek1': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'deepseek2': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'premium': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'microsoft': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'universal': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER'
+            'xai': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'premium': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'universal': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
         
         # System components to deploy

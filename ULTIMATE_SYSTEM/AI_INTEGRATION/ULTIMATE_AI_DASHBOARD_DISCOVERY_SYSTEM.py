@@ -72,14 +72,14 @@ class YOUR_API_KEY_HERE:
         
         # All OpenRouter API keys (8 keys total)
         self.openrouter_keys = {
-            'xai': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'grok': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'codex': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek1': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek2': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'premium': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'microsoft': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'universal': 'sk-YOUR_OPENAI_API_KEY_HERE'
+            'xai': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'premium': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'universal': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
         
         # ALL AI MODELS for comprehensive analysis

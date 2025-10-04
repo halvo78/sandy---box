@@ -44,12 +44,12 @@ class CompleteAPIKeyDiscoverySystem:
         # API key patterns to search for
         self.api_patterns = {
             "openai": [
-                r"sk-proj-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"sk-[A-Za-z0-9_-]{48,}",
                 r"OPENAI_API_KEY"
             ],
             "anthropic": [
-                r"sk-ant-api03-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"ANTHROPIC_API_KEY"
             ],
             "cohere": [
@@ -57,19 +57,19 @@ class CompleteAPIKeyDiscoverySystem:
                 r"COHERE_API_KEY"
             ],
             "gemini": [
-                r"AIzaSy[A-Za-z0-9_-]{33}",
+                r"AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]{33}",
                 r"GEMINI_API_KEY"
             ],
             "openrouter": [
-                r"sk-or-v1-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"OPENROUTER_API_KEY"
             ],
             "perplexity": [
-                r"sk-or-v1-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"SONAR_API_KEY"
             ],
             "xai": [
-                r"sk-or-v1-[A-Za-z0-9_-]+",
+                r"sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]+",
                 r"XAI_API_KEY"
             ],
             "flux": [
@@ -109,7 +109,7 @@ class CompleteAPIKeyDiscoverySystem:
                 r"OPENWEATHER_API_KEY"
             ],
             "google_maps": [
-                r"AIzaSy[A-Za-z0-9_-]{33}",
+                r"AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]{33}",
                 r"GOOGLE_MAPS_API_KEY"
             ],
             "twilio": [
@@ -138,7 +138,7 @@ class CompleteAPIKeyDiscoverySystem:
                 r"AZURE_CLIENT_SECRET"
             ],
             "google_cloud": [
-                r"AIzaSy[A-Za-z0-9_-]{33}",
+                r"AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX[A-Za-z0-9_-]{33}",
                 r"GOOGLE_APPLICATION_CREDENTIALS"
             ],
             "slack": [
@@ -361,14 +361,14 @@ class CompleteAPIKeyDiscoverySystem:
         
         # Add hardcoded OpenRouter keys from the system
         hardcoded_keys = [
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-            "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"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         for key in hardcoded_keys:

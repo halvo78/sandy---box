@@ -11,14 +11,14 @@ from datetime import datetime
 class OpenRouterAIConsensus:
     def __init__(self):
         self.api_keys = {
-            'xai_code': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'grok_4': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'chat_codex': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_1': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_2': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_3': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'microsoft_4': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'all_models': 'sk-YOUR_OPENAI_API_KEY_HERE'
+            'xai_code': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'chat_codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_3': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'all_models': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
         
         self.models = {

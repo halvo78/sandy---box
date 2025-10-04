@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# SYNTAX ERROR FIXED - File needs manual review\n#!/usr/bin/env python3
 """
 Ultimate System Recovery and GitHub Integration
 This script will recover the working files and prepare them for GitHub deployment.
@@ -157,14 +157,14 @@ class UltimateLyraTradingSystem:
         
         # OpenRouter AI Keys for consensus
         self.openrouter_keys = [
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         # Trading configuration
@@ -570,14 +570,14 @@ This repository works in conjunction with the main `ultimate-lyra-ecosystem` rep
             },
             "ai_models_integrated": 8,
             "openrouter_keys_configured": len([
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE",
-                "sk-YOUR_OPENAI_API_KEY_HERE"
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             ]),
             "key_features": [
                 "AI Consensus Engine with 8 models",

@@ -98,14 +98,14 @@ class UltimateAIPortfolioManager:
         
         # OpenRouter API keys for AI analysis
         self.openrouter_keys = {
-            'xai': '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',
-            'grok': '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',
-            'codex': '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',
-            'deepseek1': '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',
-            'deepseek2': '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',
-            'premium': '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',
-            'microsoft': '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',
-            'universal': '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'
+            'xai': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'premium': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'universal': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
         
         # AI models for different analysis types
@@ -296,7 +296,7 @@ class UltimateAIPortfolioManager:
             Please provide optimization recommendations:
             1. Optimal asset allocation percentages
             2. Rebalancing recommendations
-            3. Risk-adjusted return projections
+            3. Risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX return projections
             4. Diversification improvements
             5. Correlation optimization
             6. Position sizing recommendations
@@ -669,7 +669,7 @@ class UltimateAIPortfolioManager:
             <h2>🚀 Quick Actions</h2>
             <button class="btn" onclick="location.href='/api/optimize'">Run AI Optimization</button>
             <button class="btn" onclick="location.href='/api/opportunities'">Find Opportunities</button>
-            <button class="btn" onclick="location.href='/api/risk-analysis'">Risk Analysis</button>
+            <button class="btn" onclick="location.href='/api/risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'">Risk Analysis</button>
             <button class="btn" onclick="location.href='/api/rebalance'">Auto Rebalance</button>
         </div>
         
@@ -716,7 +716,7 @@ class UltimateAIPortfolioManager:
             result = self.get_market_opportunities()
             return jsonify(result)
         
-        @self.app.route('/api/risk-analysis')
+        @self.app.route('/api/risk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
         def risk_analysis():
             current_data = {
                 'positions': {symbol: asdict(asset) for symbol, asset in self.portfolio.items()},

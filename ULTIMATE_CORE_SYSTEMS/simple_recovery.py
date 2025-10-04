@@ -156,10 +156,10 @@ class UltimateLyraTradingSystem:
         
         # OpenRouter AI Keys for consensus
         self.openrouter_keys = [
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         # Trading configuration

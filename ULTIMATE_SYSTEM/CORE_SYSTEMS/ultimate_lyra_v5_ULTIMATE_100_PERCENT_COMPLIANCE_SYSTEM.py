@@ -94,9 +94,9 @@ class Ultimate100PercentComplianceSystem:
         
         # AI Consensus Integration - All 9 OpenRouter Keys
         self.openrouter_keys = [
-            "sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE",
-            "sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE",
-            "sk-or-v1-YOUR_OPENROUTER_API_KEY_HERE"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         self.premium_models = [
             "openai/gpt-4o",

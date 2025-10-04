@@ -55,7 +55,7 @@ def create_ultimate_unified_api_system():
     
     # Test Primary OpenRouter Key
     try:
-        api_key = "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"
+        api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         test_url = "https://openrouter.ai/api/v1/models"
         req = urllib.request.Request(test_url)
         req.add_header("Authorization", f"Bearer {api_key}")
@@ -87,7 +87,7 @@ def create_ultimate_unified_api_system():
         },
         "test_results": test_results,
         "openrouter_integration": {
-            "primary_key": "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",
+            "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             "total_keys": 4,
             "total_models": 52,
             "model_instances": 1304,
@@ -130,7 +130,7 @@ def create_ultimate_unified_api_system():
 ## 🤖 OPENROUTER INTEGRATION (4 Keys)
 
 ### Primary Key (Unlimited Commissioning)
-- **Key:** `sk-or-v1-315c...712c` 🚀 UNLIMITED
+- **Key:** `sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...712c` 🚀 UNLIMITED
 - **Status:** {test_results.get('openrouter_primary', 'Not tested')}
 - **Models Available:** 326 per key
 - **Total Model Instances:** 1,304
@@ -258,8 +258,8 @@ def create_ultimate_unified_api_system():
     with open(env_path, 'w') as f:
         f.write(f"# Ultimate Unified API System - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
         f.write("# OpenRouter Keys (AI Models)\n")
-        f.write("OPENROUTER_PRIMARY_KEY=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\n")
-        f.write("OPENROUTER_KEY_1=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\n")
+        f.write("OPENROUTER_PRIMARY_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
+        f.write("OPENROUTER_KEY_1=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
         f.write("\n# Enhanced Data APIs\n")
         f.write("TWELVE_DATA_API_KEY=2997d13caee949d48fca334aff3042dd\n")
         f.write("POLYGON_ENHANCED_API_KEY=A_nmop6VvNSPBY2yiVqNJYzA7pautIUX\n")

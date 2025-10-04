@@ -73,14 +73,14 @@ class ProductionSystem:
             },
             "ai_orchestrator": {
                 "openrouter_keys": {
-                    "XAI": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "Grok4": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "ChatCodex": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "DeepSeek1": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "DeepSeek2": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "Premium": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "Microsoft": "sk-YOUR_OPENAI_API_KEY_HERE",
-                    "Universal": "sk-YOUR_OPENAI_API_KEY_HERE"
+                    "XAI": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "Grok4": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "ChatCodex": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "DeepSeek1": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "DeepSeek2": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "Premium": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "Microsoft": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                    "Universal": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                 },
                 "models_available": 327,
                 "consensus_threshold": 90,

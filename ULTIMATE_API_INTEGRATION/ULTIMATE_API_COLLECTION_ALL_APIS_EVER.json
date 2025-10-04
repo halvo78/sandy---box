@@ -455,7 +455,7 @@
   "environment_apis": {
     "XAI_API_KEY": {
       "api_name": "xAI Grok API",
-      "value": "sk-or-v1...36b8",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...36b8",
       "type": "known_api_key",
       "status": "configured"
     },
@@ -467,19 +467,19 @@
     },
     "ANTHROPIC_API_KEY": {
       "api_name": "Anthropic Claude API",
-      "value": "sk-ant-a...-AAA",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...-AAA",
       "type": "known_api_key",
       "status": "configured"
     },
     "GEMINI_API_KEY": {
       "api_name": "Google Gemini API",
-      "value": "AIzaSyBU...XHMU",
+      "value": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XHMU",
       "type": "known_api_key",
       "status": "configured"
     },
     "OPENAI_API_KEY": {
       "api_name": "OpenAI API",
-      "value": "sk-proj-...9cAA",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...9cAA",
       "type": "known_api_key",
       "status": "configured"
     },
@@ -491,7 +491,7 @@
     },
     "SONAR_API_KEY": {
       "api_name": "Perplexity API",
-      "value": "sk-or-v1...80de",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...80de",
       "type": "known_api_key",
       "status": "configured"
     },
@@ -509,7 +509,7 @@
     },
     "OPENROUTER_API_KEY": {
       "api_name": "OpenRouter API",
-      "value": "sk-or-v1...b755",
+      "value": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...b755",
       "type": "known_api_key",
       "status": "configured"
     },

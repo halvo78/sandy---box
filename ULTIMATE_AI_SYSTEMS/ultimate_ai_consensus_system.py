@@ -25,14 +25,14 @@ class UltimateAIConsensusSystem:
         
         # ALL OpenRouter API Keys - Maximum Coverage
         self.openrouter_keys = {
-            "XAI_Code": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "Grok4": "sk-YOUR_OPENAI_API_KEY_HERE", 
-            "ChatCodex": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "DeepSeek1": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "DeepSeek2": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "Premium": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "Microsoft": "sk-YOUR_OPENAI_API_KEY_HERE",
-            "Universal": "sk-YOUR_OPENAI_API_KEY_HERE"
+            "XAI_Code": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "Grok4": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 
+            "ChatCodex": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "DeepSeek1": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "DeepSeek2": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "Premium": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "Microsoft": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "Universal": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         }
         
         # Best FREE AI Models for Consensus

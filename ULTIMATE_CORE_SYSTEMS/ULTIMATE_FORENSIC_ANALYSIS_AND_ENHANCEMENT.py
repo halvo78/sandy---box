@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# SYNTAX ERROR FIXED - File needs manual review\n#!/usr/bin/env python3
 """
 ULTIMATE FORENSIC ANALYSIS AND SYSTEM ENHANCEMENT
 Comprehensive analysis of all GitHub repositories, Notion extraction, 
@@ -27,14 +27,14 @@ class YOUR_API_KEY_HERE:
     def initialize_openrouter_apis(self) -> Dict:
         """Initialize all OpenRouter API keys and models"""
         return {
-            'xai_code': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'grok_4': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'chat_codex': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_1': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_2': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'deepseek_3': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'microsoft_4': 'sk-YOUR_OPENAI_API_KEY_HERE',
-            'all_models': 'sk-YOUR_OPENAI_API_KEY_HERE'
+            'xai_code': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'chat_codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_3': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'all_models': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
     
     def YOUR_API_KEY_HERE(self) -> Dict:

@@ -49,7 +49,7 @@ class UltimateProductionValidator:
             "mistralai/mixtral-8x22b-instruct"
         ]
         
-        self.openrouter_api_key = os.getenv('OPENROUTER_API_KEY', 'sk-YOUR_OPENAI_API_KEY_HERE')
+        self.openrouter_api_key = os.getenv('OPENROUTER_API_KEY', 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
         
         print("🚀 ULTIMATE PRODUCTION VALIDATION SYSTEM INITIALIZED")
         print(f"⏰ Start Time: {self.start_time}")

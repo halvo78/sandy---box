@@ -80,13 +80,13 @@ class MaximumAmplificationSystem:
     def _initialize_ai_models(self) -> Dict[str, str]:
         """Initialize all OpenRouter AI models for maximum amplification"""
         return {
-            'xai_code': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'grok_4': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'chat_codex': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'deepseek_1': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'deepseek_2': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'microsoft_4': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER',
-            'all_models': 'sk-or-v1-OPENROUTER_API_KEY_PLACEHOLDER'
+            'xai_code': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'grok_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'chat_codex': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_1': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'deepseek_2': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'microsoft_4': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+            'all_models': 'sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         }
     
     def _initialize_exchanges(self) -> Dict[str, Dict]:

@@ -34,7 +34,7 @@ def verify_complete_system_readiness():
     print("\\n🤖 VERIFYING OPENROUTER AI SYSTEM...")
     
     openrouter_keys = [
-        "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",
+        "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         os.getenv("OPENROUTER_API_KEY", ""),
         os.getenv("SONAR_API_KEY", ""),
         os.getenv("XAI_API_KEY", "")

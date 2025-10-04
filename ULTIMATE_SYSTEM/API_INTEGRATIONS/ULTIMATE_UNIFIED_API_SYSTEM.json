@@ -15,7 +15,7 @@
     "openrouter_primary": "\u2705 WORKING - 326 models"
   },
   "openrouter_integration": {
-    "primary_key": "sk-YOUR_OPENAI_API_KEY_HERE",
+    "primary_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "total_keys": 4,
     "total_models": 52,
     "model_instances": 1304,

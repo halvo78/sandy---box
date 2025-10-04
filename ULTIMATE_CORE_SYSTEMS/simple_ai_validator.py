@@ -13,10 +13,10 @@ class SimpleAIValidator:
     def __init__(self):
         """Initialize the Simple AI Validator."""
         self.openrouter_keys = [
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE",
-            "sk-YOUR_OPENAI_API_KEY_HERE"
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         ]
         
         self.models = [
