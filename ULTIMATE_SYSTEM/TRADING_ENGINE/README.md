@@ -1,0 +1,1 @@
+# Trading Engine\n\nCore trading algorithms and execution systems\n\n**Directory Purpose:** Core trading algorithms and execution systems\n**Last Updated:** 2025-10-04 01:14:51\n

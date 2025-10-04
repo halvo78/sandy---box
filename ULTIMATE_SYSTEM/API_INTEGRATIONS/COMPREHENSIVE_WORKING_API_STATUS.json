@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T03:17:07.470315",
+    "test_duration": "Real-time testing",
+    "total_tested": 14,
+    "total_working": 11,
+    "total_not_working": 3,
+    "success_rate": "78.6%"
+  },
+  "working_apis": {
+    "openrouter_key_1": "\u2705 WORKING - 326 models",
+    "openrouter_key_2": "\u2705 WORKING - 326 models",
+    "openrouter_key_3": "\u2705 WORKING - 326 models",
+    "openrouter_key_4": "\u2705 WORKING - 326 models",
+    "twelve_data": "\u2705 WORKING - AAPL: $258.019989",
+    "polygon_enhanced": "\u2705 WORKING - Market status retrieved",
+    "supabase": "\u2705 WORKING - Database accessible",
+    "fear_greed": "\u2705 WORKING - 71 (Greed)",
+    "coingecko": "\u2705 WORKING - BTC: $122,471, ETH: $4,508.24",
+    "defillama": "\u2705 WORKING - 6500 DeFi protocols",
+    "blockchain_info": "\u2705 WORKING - BTC: $122,663.62"
+  },
+  "not_working_apis": {
+    "binance_public": "\u274c ERROR: HTTP Error 451: ",
+    "coinbase_pro": "\u274c ERROR: HTTP Error 403: Forbidden",
+    "coindesk": "\u274c ERROR: <urlopen error [Errno -2] Name or service not know"
+  },
+  "summary": {
+    "openrouter_keys_working": 4,
+    "enhanced_data_apis": 2,
+    "free_crypto_apis": 4,
+    "infrastructure_apis": 1
+  }
+}

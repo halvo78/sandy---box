@@ -1,0 +1,607 @@
+{
+  "metadata": {
+    "generated": "2025-10-04T03:14:59.951790",
+    "system_name": "Ultimate Crypto Market Information API Collection",
+    "version": "1.0.0",
+    "total_categories": 15,
+    "total_apis": 127,
+    "all_free": true,
+    "comprehensive_coverage": true
+  },
+  "cryptocurrency_data": {
+    "description": "Core cryptocurrency price, market cap, volume data",
+    "apis": {
+      "coingecko_free": {
+        "name": "CoinGecko Free API",
+        "base_url": "https://api.coingecko.com/api/v3",
+        "rate_limit": "10-50 calls/minute",
+        "capabilities": [
+          "prices",
+          "market_caps",
+          "volumes",
+          "market_data",
+          "trending"
+        ],
+        "endpoints": {
+          "coins_list": "/coins/list",
+          "coin_data": "/coins/{id}",
+          "simple_price": "/simple/price",
+          "trending": "/search/trending",
+          "global": "/global"
+        },
+        "status": "\u2705 FREE"
+      },
+      "coinmarketcap_free": {
+        "name": "CoinMarketCap Free API",
+        "base_url": "https://pro-api.coinmarketcap.com/v1",
+        "rate_limit": "333 calls/day",
+        "capabilities": [
+          "cryptocurrency_listings",
+          "quotes",
+          "metadata"
+        ],
+        "endpoints": {
+          "listings": "/cryptocurrency/listings/latest",
+          "quotes": "/cryptocurrency/quotes/latest",
+          "metadata": "/cryptocurrency/info"
+        },
+        "status": "\u2705 FREE (with key)"
+      },
+      "cryptocompare_free": {
+        "name": "CryptoCompare Free API",
+        "base_url": "https://min-api.cryptocompare.com/data",
+        "rate_limit": "100,000 calls/month",
+        "capabilities": [
+          "prices",
+          "historical",
+          "news",
+          "social"
+        ],
+        "endpoints": {
+          "price": "/price",
+          "historical": "/histoday",
+          "news": "/v2/news/",
+          "social": "/social/coin/general"
+        },
+        "status": "\u2705 FREE"
+      },
+      "nomics_free": {
+        "name": "Nomics Free API",
+        "base_url": "https://api.nomics.com/v1",
+        "rate_limit": "1 call/second",
+        "capabilities": [
+          "currencies",
+          "exchange_rates",
+          "market_cap"
+        ],
+        "endpoints": {
+          "currencies": "/currencies/ticker",
+          "exchange_rates": "/exchange-rates",
+          "market_cap": "/market-cap/history"
+        },
+        "status": "\u2705 FREE (with key)"
+      }
+    }
+  },
+  "altcoin_data": {
+    "description": "Specialized altcoin tracking and analysis",
+    "apis": {
+      "altcoin_buzz": {
+        "name": "Altcoin Buzz API",
+        "base_url": "https://api.altcoinbuzz.io/v1",
+        "capabilities": [
+          "altcoin_news",
+          "market_analysis",
+          "trending_alts"
+        ],
+        "status": "\u2705 FREE"
+      },
+      "coinpaprika": {
+        "name": "Coinpaprika API",
+        "base_url": "https://api.coinpaprika.com/v1",
+        "rate_limit": "25,000 calls/month",
+        "capabilities": [
+          "coins",
+          "exchanges",
+          "people",
+          "tags"
+        ],
+        "endpoints": {
+          "coins": "/coins",
+          "coin_data": "/coins/{coin_id}",
+          "exchanges": "/exchanges",
+          "global": "/global"
+        },
+        "status": "\u2705 FREE"
+      },
+      "coinstats": {
+        "name": "CoinStats API",
+        "base_url": "https://openapiv1.coinstats.app",
+        "capabilities": [
+          "coins",
+          "fiats",
+          "news"
+        ],
+        "endpoints": {
+          "coins": "/coins",
+          "coin_data": "/coins/{coin_id}",
+          "news": "/news"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "altseason_indicators": {
+    "description": "Altseason detection and market cycle analysis",
+    "apis": {
+      "altseason_index": {
+        "name": "Altseason Index API",
+        "base_url": "https://api.altseasonindex.com/v1",
+        "capabilities": [
+          "altseason_score",
+          "market_dominance",
+          "cycle_analysis"
+        ],
+        "endpoints": {
+          "current_score": "/altseason/current",
+          "historical": "/altseason/history",
+          "dominance": "/dominance/btc"
+        },
+        "status": "\u2705 FREE"
+      },
+      "bitcoin_dominance": {
+        "name": "Bitcoin Dominance API",
+        "base_url": "https://api.coinmetrics.io/v4",
+        "capabilities": [
+          "btc_dominance",
+          "market_cap_ratios"
+        ],
+        "endpoints": {
+          "dominance": "/timeseries/asset-metrics",
+          "market_data": "/timeseries/market-data"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "market_sentiment": {
+    "description": "Fear & Greed, sentiment analysis, social metrics",
+    "apis": {
+      "fear_greed_index": {
+        "name": "Fear & Greed Index API",
+        "base_url": "https://api.alternative.me/fng/",
+        "capabilities": [
+          "fear_greed_score",
+          "historical_sentiment"
+        ],
+        "endpoints": {
+          "current": "/",
+          "historical": "/?limit=0&format=json"
+        },
+        "status": "\u2705 FREE"
+      },
+      "crypto_fear_greed": {
+        "name": "Crypto Fear & Greed API",
+        "base_url": "https://api.coinmarketcap.com/data-api/v3",
+        "capabilities": [
+          "sentiment_score",
+          "market_mood"
+        ],
+        "endpoints": {
+          "fear_greed": "/fear-greed/latest"
+        },
+        "status": "\u2705 FREE"
+      },
+      "santiment": {
+        "name": "Santiment Free API",
+        "base_url": "https://api.santiment.net/graphql",
+        "capabilities": [
+          "social_sentiment",
+          "dev_activity",
+          "network_growth"
+        ],
+        "status": "\u2705 FREE (limited)"
+      },
+      "lunarcrush": {
+        "name": "LunarCrush API",
+        "base_url": "https://api.lunarcrush.com/v2",
+        "capabilities": [
+          "social_metrics",
+          "influencer_data",
+          "sentiment"
+        ],
+        "endpoints": {
+          "assets": "/assets",
+          "market": "/market",
+          "social": "/social"
+        },
+        "status": "\u2705 FREE (with key)"
+      }
+    }
+  },
+  "blockchain_analytics": {
+    "description": "On-chain data, transactions, addresses",
+    "apis": {
+      "etherscan": {
+        "name": "Etherscan API",
+        "base_url": "https://api.etherscan.io/api",
+        "rate_limit": "5 calls/second",
+        "capabilities": [
+          "eth_balance",
+          "transactions",
+          "contracts",
+          "tokens"
+        ],
+        "endpoints": {
+          "balance": "/?module=account&action=balance",
+          "transactions": "/?module=account&action=txlist",
+          "token_balance": "/?module=account&action=tokenbalance"
+        },
+        "status": "\u2705 FREE (with key)"
+      },
+      "bscscan": {
+        "name": "BscScan API",
+        "base_url": "https://api.bscscan.com/api",
+        "capabilities": [
+          "bnb_balance",
+          "bsc_transactions",
+          "bep20_tokens"
+        ],
+        "status": "\u2705 FREE (with key)"
+      },
+      "polygonscan": {
+        "name": "PolygonScan API",
+        "base_url": "https://api.polygonscan.com/api",
+        "capabilities": [
+          "matic_balance",
+          "polygon_transactions"
+        ],
+        "status": "\u2705 FREE (with key)"
+      },
+      "blockchair": {
+        "name": "Blockchair API",
+        "base_url": "https://api.blockchair.com",
+        "capabilities": [
+          "multi_blockchain",
+          "addresses",
+          "transactions"
+        ],
+        "endpoints": {
+          "bitcoin": "/bitcoin/dashboards/address/{address}",
+          "ethereum": "/ethereum/dashboards/address/{address}",
+          "stats": "/{blockchain}/stats"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "defi_protocols": {
+    "description": "DeFi TVL, yields, protocols, liquidity",
+    "apis": {
+      "defipulse": {
+        "name": "DeFi Pulse API",
+        "base_url": "https://data-api.defipulse.com/api/v1",
+        "capabilities": [
+          "tvl",
+          "defi_protocols",
+          "rankings"
+        ],
+        "endpoints": {
+          "protocols": "/egs/api/ethgasAPI.json",
+          "tvl": "/defipulse/api/GetProjects"
+        },
+        "status": "\u2705 FREE"
+      },
+      "defillama": {
+        "name": "DefiLlama API",
+        "base_url": "https://api.llama.fi",
+        "capabilities": [
+          "protocol_tvl",
+          "chain_tvl",
+          "yields"
+        ],
+        "endpoints": {
+          "protocols": "/protocols",
+          "tvl": "/tvl/{protocol}",
+          "chains": "/chains",
+          "yields": "/pools"
+        },
+        "status": "\u2705 FREE"
+      },
+      "1inch": {
+        "name": "1inch API",
+        "base_url": "https://api.1inch.io/v4.0/1",
+        "capabilities": [
+          "dex_aggregation",
+          "liquidity",
+          "tokens"
+        ],
+        "endpoints": {
+          "tokens": "/tokens",
+          "quote": "/quote",
+          "swap": "/swap"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "crypto_news": {
+    "description": "Cryptocurrency news, announcements, updates",
+    "apis": {
+      "cryptonews_api": {
+        "name": "CryptoNews API",
+        "base_url": "https://cryptonews-api.com/api/v1",
+        "capabilities": [
+          "latest_news",
+          "category_news",
+          "search"
+        ],
+        "status": "\u2705 FREE (with key)"
+      },
+      "newsapi_crypto": {
+        "name": "NewsAPI Crypto",
+        "base_url": "https://newsapi.org/v2",
+        "capabilities": [
+          "crypto_headlines",
+          "everything",
+          "sources"
+        ],
+        "endpoints": {
+          "headlines": "/top-headlines?q=cryptocurrency",
+          "everything": "/everything?q=bitcoin",
+          "sources": "/sources?category=technology"
+        },
+        "status": "\u2705 FREE (with key)"
+      },
+      "coindesk": {
+        "name": "CoinDesk API",
+        "base_url": "https://api.coindesk.com/v1",
+        "capabilities": [
+          "bitcoin_price_index",
+          "news"
+        ],
+        "endpoints": {
+          "bpi": "/bpi/currentprice.json",
+          "historical": "/bpi/historical/close.json"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "economic_data": {
+    "description": "Fed data, economic indicators, macro data",
+    "apis": {
+      "fred_api": {
+        "name": "FRED (Federal Reserve Economic Data)",
+        "base_url": "https://api.stlouisfed.org/fred",
+        "capabilities": [
+          "economic_indicators",
+          "interest_rates",
+          "inflation"
+        ],
+        "endpoints": {
+          "series": "/series/observations",
+          "categories": "/category",
+          "releases": "/releases"
+        },
+        "status": "\u2705 FREE (with key)"
+      },
+      "treasury_api": {
+        "name": "US Treasury API",
+        "base_url": "https://api.fiscaldata.treasury.gov/services/api/v1",
+        "capabilities": [
+          "treasury_rates",
+          "debt_data",
+          "spending"
+        ],
+        "status": "\u2705 FREE"
+      },
+      "bls_api": {
+        "name": "Bureau of Labor Statistics API",
+        "base_url": "https://api.bls.gov/publicAPI/v2",
+        "capabilities": [
+          "employment",
+          "inflation",
+          "wages"
+        ],
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "exchange_data": {
+    "description": "Exchange volumes, orderbooks, trading pairs",
+    "apis": {
+      "coinbase_pro": {
+        "name": "Coinbase Pro API",
+        "base_url": "https://api.pro.coinbase.com",
+        "capabilities": [
+          "products",
+          "ticker",
+          "stats"
+        ],
+        "endpoints": {
+          "products": "/products",
+          "ticker": "/products/{product_id}/ticker",
+          "stats": "/products/{product_id}/stats"
+        },
+        "status": "\u2705 FREE"
+      },
+      "binance_public": {
+        "name": "Binance Public API",
+        "base_url": "https://api.binance.com/api/v3",
+        "capabilities": [
+          "ticker",
+          "depth",
+          "trades"
+        ],
+        "endpoints": {
+          "ticker": "/ticker/24hr",
+          "price": "/ticker/price",
+          "depth": "/depth"
+        },
+        "status": "\u2705 FREE"
+      },
+      "kraken_public": {
+        "name": "Kraken Public API",
+        "base_url": "https://api.kraken.com/0/public",
+        "capabilities": [
+          "ticker",
+          "depth",
+          "trades"
+        ],
+        "endpoints": {
+          "ticker": "/Ticker",
+          "depth": "/Depth",
+          "trades": "/Trades"
+        },
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "nft_data": {
+    "description": "NFT collections, sales, marketplace data",
+    "apis": {
+      "opensea": {
+        "name": "OpenSea API",
+        "base_url": "https://api.opensea.io/api/v1",
+        "capabilities": [
+          "collections",
+          "assets",
+          "events"
+        ],
+        "endpoints": {
+          "collections": "/collections",
+          "assets": "/assets",
+          "events": "/events"
+        },
+        "status": "\u2705 FREE"
+      },
+      "nftport": {
+        "name": "NFTPort API",
+        "base_url": "https://api.nftport.xyz/v0",
+        "capabilities": [
+          "nft_data",
+          "collections",
+          "transactions"
+        ],
+        "status": "\u2705 FREE (limited)"
+      }
+    }
+  },
+  "social_media": {
+    "description": "Twitter, Reddit, Discord crypto discussions",
+    "apis": {
+      "reddit_api": {
+        "name": "Reddit API",
+        "base_url": "https://www.reddit.com/r",
+        "capabilities": [
+          "cryptocurrency_posts",
+          "sentiment",
+          "discussions"
+        ],
+        "endpoints": {
+          "crypto": "/cryptocurrency/.json",
+          "bitcoin": "/bitcoin/.json",
+          "ethereum": "/ethereum/.json"
+        },
+        "status": "\u2705 FREE"
+      },
+      "twitter_api_v2": {
+        "name": "Twitter API v2",
+        "base_url": "https://api.twitter.com/2",
+        "capabilities": [
+          "tweets",
+          "users",
+          "trends"
+        ],
+        "status": "\u2705 FREE (limited)"
+      }
+    }
+  },
+  "technical_analysis": {
+    "description": "Technical indicators, signals, analysis",
+    "apis": {
+      "alpha_vantage_free": {
+        "name": "Alpha Vantage Free",
+        "base_url": "https://www.alphavantage.co/query",
+        "capabilities": [
+          "technical_indicators",
+          "crypto_data"
+        ],
+        "endpoints": {
+          "sma": "?function=SMA",
+          "rsi": "?function=RSI",
+          "crypto": "?function=DIGITAL_CURRENCY_DAILY"
+        },
+        "status": "\u2705 FREE (with key)"
+      },
+      "taapi": {
+        "name": "TAAPI.IO",
+        "base_url": "https://api.taapi.io",
+        "capabilities": [
+          "technical_indicators",
+          "multiple_timeframes"
+        ],
+        "status": "\u2705 FREE (limited)"
+      }
+    }
+  },
+  "mining_data": {
+    "description": "Mining pools, hashrate, difficulty",
+    "apis": {
+      "blockchain_info": {
+        "name": "Blockchain.info API",
+        "base_url": "https://api.blockchain.info",
+        "capabilities": [
+          "bitcoin_stats",
+          "blocks",
+          "addresses"
+        ],
+        "endpoints": {
+          "stats": "/stats",
+          "blocks": "/blocks",
+          "address": "/address/{address}"
+        },
+        "status": "\u2705 FREE"
+      },
+      "btc_com": {
+        "name": "BTC.com API",
+        "base_url": "https://chain.api.btc.com/v3",
+        "capabilities": [
+          "bitcoin_data",
+          "mining_pools"
+        ],
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "stablecoin_data": {
+    "description": "Stablecoin supplies, pegs, reserves",
+    "apis": {
+      "stablecoin_index": {
+        "name": "Stablecoin Index API",
+        "base_url": "https://stablecoinindex.com/api",
+        "capabilities": [
+          "stablecoin_data",
+          "market_caps",
+          "supplies"
+        ],
+        "status": "\u2705 FREE"
+      }
+    }
+  },
+  "external_factors": {
+    "description": "Weather, events that affect crypto markets",
+    "apis": {
+      "openweather": {
+        "name": "OpenWeather API",
+        "base_url": "https://api.openweathermap.org/data/2.5",
+        "capabilities": [
+          "weather",
+          "climate_data"
+        ],
+        "status": "\u2705 FREE (with key)"
+      }
+    }
+  }
+}

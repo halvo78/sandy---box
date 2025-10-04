@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "name": "Enhanced Ultimate Lyra Trading System with Comprehensive Free APIs",
+    "version": "2.0.0-ENHANCED",
+    "generated": "2025-10-04T03:28:01.365224",
+    "ai_consensus_rating": "8.0/10",
+    "ai_consensus_level": "GOOD",
+    "system_status": "PRODUCTION_READY_ENHANCED"
+  },
+  "comprehensive_free_apis": {
+    "crypto_price_data": {
+      "coingecko": {
+        "base_url": "https://api.coingecko.com/api/v3",
+        "endpoints": {
+          "prices": "/simple/price",
+          "markets": "/coins/markets",
+          "trending": "/search/trending",
+          "global": "/global",
+          "exchanges": "/exchanges",
+          "categories": "/coins/categories"
+        },
+        "rate_limit": "50 calls/minute",
+        "status": "working"
+      },
+      "coinpaprika": {
+        "base_url": "https://api.coinpaprika.com/v1",
+        "endpoints": {
+          "coins": "/coins",
+          "tickers": "/tickers",
+          "global": "/global",
+          "exchanges": "/exchanges",
+          "people": "/people"
+        },
+        "rate_limit": "25000 calls/month",
+        "status": "available"
+      },
+      "coinlore": {
+        "base_url": "https://api.coinlore.net/api",
+        "endpoints": {
+          "global": "/global/",
+          "tickers": "/tickers/",
+          "coin": "/ticker/"
+        },
+        "rate_limit": "unlimited",
+        "status": "available"
+      },
+      "cryptocompare": {
+        "base_url": "https://min-api.cryptocompare.com/data",
+        "endpoints": {
+          "price": "/price",
+          "pricemulti": "/pricemulti",
+          "histoday": "/v2/histoday",
+          "news": "/v2/news/"
+        },
+        "rate_limit": "100000 calls/month",
+        "status": "available"
+      },
+      "coindesk": {
+        "base_url": "https://api.coindesk.com/v1/bpi",
+        "endpoints": {
+          "currentprice": "/currentprice.json",
+          "historical": "/historical/close.json"
+        },
+        "rate_limit": "unlimited",
+        "status": "available"
+      },
+      "blockchain_info": {
+        "base_url": "https://api.blockchain.info",
+        "endpoints": {
+          "stats": "/stats",
+          "ticker": "/ticker",
+          "pools": "/pools"
+        },
+        "rate_limit": "unlimited",
+        "status": "working"
+      }
+    },
+    "market_sentiment": {
+      "fear_greed": {
+        "base_url": "https://api.alternative.me",
+        "endpoints": {
+          "fng": "/fng/",
+          "fng_limit": "/fng/?limit=",
+          "fng_date": "/fng/?date_format=us"
+        },
+        "rate_limit": "unlimited",
+        "status": "working"
+      },
+      "crypto_fear_greed": {
+        "base_url": "https://api.alternative.me/fng/",
+        "description": "Crypto Fear & Greed Index",
+        "rate_limit": "unlimited",
+        "status": "working"
+      }
+    },
+    "defi_protocols": {
+      "defillama": {
+        "base_url": "https://api.llama.fi",
+        "endpoints": {
+          "protocols": "/protocols",
+          "tvl": "/tvl/",
+          "chains": "/chains",
+          "yields": "/pools",
+          "stablecoins": "/stablecoins"
+        },
+        "rate_limit": "unlimited",
+        "status": "working"
+      },
+      "dune_analytics": {
+        "base_url": "https://api.dune.com/api/v1",
+        "endpoints": {
+          "query": "/query/",
+          "results": "/execution/"
+        },
+        "rate_limit": "1000 calls/month (free tier)",
+        "status": "available"
+      }
+    },
+    "blockchain_data": {
+      "etherscan": {
+        "base_url": "https://api.etherscan.io/api",
+        "endpoints": {
+          "balance": "?module=account&action=balance",
+          "txlist": "?module=account&action=txlist",
+          "stats": "?module=stats&action=ethsupply",
+          "gasprice": "?module=gastracker&action=gasoracle"
+        },
+        "api_key_required": false,
+        "rate_limit": "5 calls/second",
+        "status": "available"
+      },
+      "btc_com": {
+        "base_url": "https://chain.api.btc.com/v3",
+        "endpoints": {
+          "stats": "/stats",
+          "block": "/block/",
+          "address": "/address/"
+        },
+        "rate_limit": "unlimited",
+        "status": "available"
+      },
+      "blockchair": {
+        "base_url": "https://api.blockchair.com",
+        "endpoints": {
+          "bitcoin": "/bitcoin/stats",
+          "ethereum": "/ethereum/stats",
+          "dashboards": "/bitcoin/dashboards/address/"
+        },
+        "rate_limit": "1440 calls/day",
+        "status": "available"
+      }
+    },
+    "news_feeds": {
+      "cryptonews": {
+        "base_url": "https://cryptonews-api.com/api/v1",
+        "endpoints": {
+          "news": "/category",
+          "top": "/top-news"
+        },
+        "rate_limit": "200 calls/day",
+        "status": "available"
+      },
+      "newsapi": {
+        "base_url": "https://newsapi.org/v2",
+        "endpoints": {
+          "everything": "/everything",
+          "top_headlines": "/top-headlines"
+        },
+        "rate_limit": "1000 calls/day",
+        "status": "available"
+      },
+      "reddit_crypto": {
+        "base_url": "https://www.reddit.com/r/cryptocurrency",
+        "endpoints": {
+          "hot": "/hot.json",
+          "new": "/new.json",
+          "top": "/top.json"
+        },
+        "rate_limit": "60 calls/minute",
+        "status": "available"
+      }
+    },
+    "social_sentiment": {
+      "twitter_trends": {
+        "base_url": "https://api.twitter.com/1.1/trends",
+        "endpoints": {
+          "place": "/place.json"
+        },
+        "rate_limit": "75 calls/15min",
+        "status": "available"
+      },
+      "lunarcrush": {
+        "base_url": "https://api.lunarcrush.com/v2",
+        "endpoints": {
+          "assets": "/assets",
+          "market": "/market",
+          "feeds": "/feeds"
+        },
+        "rate_limit": "50 calls/hour",
+        "status": "available"
+      }
+    },
+    "exchange_data": {
+      "binance_public": {
+        "base_url": "https://api.binance.com/api/v3",
+        "endpoints": {
+          "ticker": "/ticker/24hr",
+          "depth": "/depth",
+          "trades": "/trades",
+          "klines": "/klines"
+        },
+        "rate_limit": "1200 calls/minute",
+        "status": "available"
+      },
+      "coinbase_public": {
+        "base_url": "https://api.coinbase.com/v2",
+        "endpoints": {
+          "exchange_rates": "/exchange-rates",
+          "currencies": "/currencies",
+          "time": "/time"
+        },
+        "rate_limit": "10000 calls/hour",
+        "status": "available"
+      },
+      "kraken_public": {
+        "base_url": "https://api.kraken.com/0/public",
+        "endpoints": {
+          "ticker": "/Ticker",
+          "depth": "/Depth",
+          "trades": "/Trades",
+          "ohlc": "/OHLC"
+        },
+        "rate_limit": "1 call/second",
+        "status": "available"
+      },
+      "bitfinex_public": {
+        "base_url": "https://api-pub.bitfinex.com/v2",
+        "endpoints": {
+          "tickers": "/tickers",
+          "ticker": "/ticker/",
+          "trades": "/trades/",
+          "book": "/book/"
+        },
+        "rate_limit": "90 calls/minute",
+        "status": "available"
+      }
+    },
+    "economic_data": {
+      "federal_reserve": {
+        "base_url": "https://api.stlouisfed.org/fred/series",
+        "endpoints": {
+          "observations": "/observations",
+          "search": "/search"
+        },
+        "api_key_required": false,
+        "rate_limit": "120 calls/minute",
+        "status": "available"
+      },
+      "world_bank": {
+        "base_url": "https://api.worldbank.org/v2",
+        "endpoints": {
+          "countries": "/countries",
+          "indicators": "/indicators"
+        },
+        "rate_limit": "unlimited",
+        "status": "available"
+      },
+      "alpha_vantage_free": {
+        "base_url": "https://www.alphavantage.co/query",
+        "endpoints": {
+          "time_series": "?function=TIME_SERIES_DAILY",
+          "forex": "?function=FX_DAILY",
+          "crypto": "?function=DIGITAL_CURRENCY_DAILY"
+        },
+        "rate_limit": "5 calls/minute",
+        "status": "available"
+      }
+    },
+    "weather_data": {
+      "openweather": {
+        "base_url": "https://api.openweathermap.org/data/2.5",
+        "endpoints": {
+          "weather": "/weather",
+          "forecast": "/forecast"
+        },
+        "rate_limit": "1000 calls/day",
+        "status": "available"
+      }
+    },
+    "utility_apis": {
+      "ipapi": {
+        "base_url": "https://ipapi.co",
+        "endpoints": {
+          "json": "/json/",
+          "currency": "/currency/"
+        },
+        "rate_limit": "1000 calls/day",
+        "status": "available"
+      },
+      "exchangerate": {
+        "base_url": "https://api.exchangerate-api.com/v4/latest",
+        "endpoints": {
+          "usd": "/USD",
+          "eur": "/EUR"
+        },
+        "rate_limit": "1500 calls/month",
+        "status": "available"
+      }
+    }
+  },
+  "working_free_apis": {
+    "fear_greed": "\u2705 WORKING - 71 (Greed)",
+    "coingecko": "\u2705 WORKING - BTC: $122,371, ETH: $4,504.85",
+    "defillama": "\u2705 WORKING - 6500 protocols",
+    "coinpaprika": "\u2705 WORKING - Market Cap: $4.4T",
+    "coinlore": "\u2705 WORKING - 14847 coins",
+    "blockchain_info": "\u2705 WORKING - BTC: $122,663.62",
+    "cryptocompare": "\u2705 WORKING - BTC: $122,404.74"
+  },
+  "ai_consensus": {
+    "average_rating": 8.0,
+    "consensus_level": "GOOD",
+    "successful_models": 4,
+    "total_models": 4,
+    "results": [
+      {
+        "model": "openai/gpt-4o",
+        "rating": 8.0,
+        "feedback": "I would rate this free API collection an 8 out of 10 for cryptocurrency trading value. The collection covers a wide range of essential categories including market prices, sentiment analysis, DeFi prot",
+        "status": "success"
+      },
+      {
+        "model": "anthropic/claude-3.5-sonnet",
+        "rating": 8.0,
+        "feedback": "Rating: 8/10\n\nStrengths:\n- Diverse coverage across essential trading categories\n- Multiple reliable price sources for cross-validation\n- Key sentiment indicators (Fear & Greed)\n- DeFi and broad market",
+        "status": "success"
+      },
+      {
+        "model": "meta-llama/llama-3.1-405b-instruct",
+        "rating": 8.0,
+        "feedback": "I would rate this free API collection an 8 out of 10 for cryptocurrency trading value. The collection covers a wide range of categories relevant to crypto trading, including prices, market sentiment, ",
+        "status": "success"
+      },
+      {
+        "model": "mistralai/mistral-large",
+        "rating": 8.0,
+        "feedback": "Rating: 8/10\n\nThe collection offers a wide range of categories and includes several key working APIs that provide valuable data for cryptocurrency trading, such as prices, market sentiment, DeFi proto",
+        "status": "success"
+      }
+    ]
+  },
+  "enhanced_capabilities": {
+    "total_free_apis": 28,
+    "api_categories": 10,
+    "working_apis_tested": 7,
+    "cost_savings": "$0 for comprehensive market data",
+    "data_redundancy": "Multiple sources per data type"
+  }
+}

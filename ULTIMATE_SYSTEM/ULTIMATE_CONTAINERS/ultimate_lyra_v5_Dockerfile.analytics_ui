@@ -1,0 +1,48 @@
+# Dockerfile for analytics_ui
+# Tier: tier_10_interface
+# AI Consensus: 75.0% from 3 models
+
+FROM python:3.11-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    postgresql-dev \
+    curl \
+    git \
+    && rm -rf /var/cache/apk/*
+
+# Copy requirements
+COPY requirements/analytics_ui.txt requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY src/tier_10_interface/analytics_ui/ .
+
+# Create non-root user (AI Consensus: Security best practice)
+RUN adduser -D -s /bin/sh lyra_user && \
+    chown -R lyra_user:lyra_user /app
+USER lyra_user
+
+# Health check (AI Consensus: Essential for container orchestration)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8702/health || exit 1
+
+# Expose port
+EXPOSE 8702
+
+# Labels for better organization
+LABEL maintainer="Lyra Trading Team" \
+      version="1.0.0" \
+      tier="tier_10_interface" \
+      service="analytics_ui" \
+      ai_consensus="75.0%"
+
+# Run application
+CMD ["python", "main.py"]
