@@ -1,0 +1,224 @@
+version: '3.8'
+
+services:
+  btcmarkets-adapter:
+    build: ./btcmarkets
+    container_name: btcmarkets-adapter
+    ports:
+      - "8000:8000"
+    environment:
+      - BTCMARKETS_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - BTCMARKETS_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  coinbase-adapter:
+    build: ./coinbase
+    container_name: coinbase-adapter
+    ports:
+      - "8001:8001"
+    environment:
+      - COINBASE_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - COINBASE_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  binance-adapter:
+    build: ./binance
+    container_name: binance-adapter
+    ports:
+      - "8002:8002"
+    environment:
+      - BINANCE_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - BINANCE_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  whitebit-adapter:
+    build: ./whitebit
+    container_name: whitebit-adapter
+    ports:
+      - "8003:8003"
+    environment:
+      - WHITEBIT_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - WHITEBIT_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  digitalsurge-adapter:
+    build: ./digitalsurge
+    container_name: digitalsurge-adapter
+    ports:
+      - "8004:8004"
+    environment:
+      - DIGITALSURGE_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - DIGITALSURGE_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  gate-adapter:
+    build: ./gate
+    container_name: gate-adapter
+    ports:
+      - "8005:8005"
+    environment:
+      - GATE_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - GATE_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  okx-adapter:
+    build: ./okx
+    container_name: okx-adapter
+    ports:
+      - "8006:8006"
+    environment:
+      - OKX_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - OKX_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8006/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  kraken-adapter:
+    build: ./kraken
+    container_name: kraken-adapter
+    ports:
+      - "8007:8007"
+    environment:
+      - KRAKEN_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - KRAKEN_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8007/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+  swyftx-adapter:
+    build: ./swyftx
+    container_name: swyftx-adapter
+    ports:
+      - "8008:8008"
+    environment:
+      - SWYFTX_API_KEY=${{exchange_id.upper()}_API_KEY}
+      - SWYFTX_SECRET=${{exchange_id.upper()}_SECRET}
+      - SANDBOX_MODE=${SANDBOX_MODE:-true}
+      - LIVE_TRADING=${LIVE_TRADING:-false}
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - redis
+      - postgres
+
+  redis:
+    image: redis:7-alpine
+    container_name: exchange-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - exchange-network
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: exchange-postgres
+    environment:
+      - POSTGRES_DB=exchange_db
+      - POSTGRES_USER=exchange_user
+      - POSTGRES_PASSWORD=exchange_pass
+    ports:
+      - "5432:5432"
+    networks:
+      - exchange-network
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+networks:
+  exchange-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

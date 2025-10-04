@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  trading-engine:
+    build: ./TRADING_ENGINE
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - sandy-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  api-gateway:
+    build: ./API_INTEGRATIONS
+    ports:
+      - "8002:8002"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - sandy-network
+    restart: unless-stopped
+    depends_on:
+      - trading-engine
+
+  security-vault:
+    build: ./SECURITY_VAULT
+    ports:
+      - "8003:8003"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - sandy-network
+    restart: unless-stopped
+
+  monitoring-dashboard:
+    build: ./MONITORING_DASHBOARDS
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - sandy-network
+    restart: unless-stopped
+
+  compliance-engine:
+    build: ./COMPLIANCE_SYSTEMS
+    ports:
+      - "8004:8004"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - sandy-network
+    restart: unless-stopped
+
+networks:
+  sandy-network:
+    driver: bridge
+
+volumes:
+  sandy-data:
+    driver: local
