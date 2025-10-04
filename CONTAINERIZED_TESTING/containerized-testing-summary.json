@@ -1,0 +1,63 @@
+{
+  "framework_created": "2025-10-04T07:03:06.756976",
+  "testing_directory": "/home/ubuntu/temp_repos/halvo78_sandy---box/CONTAINERIZED_TESTING",
+  "components_containerized": 5,
+  "total_files_organized": 86,
+  "components": {
+    "TRADING_SYSTEMS": {
+      "type": "service",
+      "language": "python",
+      "file_count": 24,
+      "test_categories": [
+        "unit",
+        "integration",
+        "performance"
+      ],
+      "containerized": true
+    },
+    "API_INTEGRATIONS": {
+      "type": "service",
+      "language": "python",
+      "file_count": 4,
+      "test_categories": [
+        "unit",
+        "integration",
+        "api"
+      ],
+      "containerized": true
+    },
+    "MONITORING_DASHBOARDS": {
+      "type": "web",
+      "language": "javascript",
+      "file_count": 51,
+      "test_categories": [
+        "unit",
+        "e2e",
+        "performance"
+      ],
+      "containerized": true
+    },
+    "DEPLOYMENT_SYSTEMS": {
+      "type": "infrastructure",
+      "language": "docker",
+      "file_count": 6,
+      "test_categories": [
+        "deployment",
+        "infrastructure",
+        "security"
+      ],
+      "containerized": true
+    },
+    "DOCUMENTATION": {
+      "type": "docs",
+      "language": "markdown",
+      "file_count": 1,
+      "test_categories": [
+        "documentation",
+        "links",
+        "accuracy"
+      ],
+      "containerized": true
+    }
+  }
+}

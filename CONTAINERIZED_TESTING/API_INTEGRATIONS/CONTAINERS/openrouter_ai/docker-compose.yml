@@ -1,0 +1,36 @@
+```yaml
+version: '3.8'
+
+services:
+  openrouter_ai:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      OPENROUTER_AI_PORT: "8080"
+      MARKET_DATA_SOURCE: "https://example.com/market-data"
+      AI_MODEL_PATH: "/app/model.h5"
+    volumes:
+      - model-volume:/app/model.h5
+      - logs-volume:/var/log/openrouter_ai
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+
+volumes:
+  model-volume:
+    name: model-volume
+  logs-volume:
+    name: logs-volume
+
+networks:
+  default:
+    driver: bridge
+```
