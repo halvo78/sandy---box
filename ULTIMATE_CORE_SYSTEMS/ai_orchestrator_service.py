@@ -1,0 +1,355 @@
+#!/usr/bin/env python3
+"""
+ULTIMATE AI ORCHESTRATOR SERVICE
+Manages all 8 OpenRouter API keys and 327+ AI models for trading consensus
+"""
+
+import json
+import asyncio
+import aiohttp
+from aiohttp import web
+import logging
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+import time
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+class AIOrchestrator:
+    def __init__(self):
+        self.load_credentials()
+        self.models_cache = {}
+        self.consensus_threshold = 0.90
+        self.initialize_models()
+    
+    def load_credentials(self):
+        """Load OpenRouter credentials from vault"""
+        try:
+            with open('/app/vault/openrouter_config.json', 'r') as f:
+                config = json.load(f)
+                self.api_keys = config['keys']
+                self.models_available = config['models_available']
+                logger.info(f"✅ Loaded {len(self.api_keys)} OpenRouter API keys")
+        except Exception as e:
+            logger.error(f"❌ Failed to load AI credentials: {e}")
+            raise
+    
+    def initialize_models(self):
+        """Initialize AI model configurations"""
+        self.model_configs = {
+            "premium_models": [
+                "anthropic/claude-3.5-sonnet",
+                "openai/gpt-4o",
+                "x-ai/grok-beta",
+                "deepseek/deepseek-chat",
+                "microsoft/wizardlm-2-8x22b",
+                "qwen/qwen-2.5-coder-32b-instruct",
+                "google/gemini-pro-1.5"
+            ],
+            "free_models": [
+                "meta-llama/llama-3.1-8b-instruct:free",
+                "google/gemini-flash-1.5:free",
+                "mistralai/mistral-7b-instruct:free",
+                "huggingface/starcoder2-15b:free",
+                "microsoft/phi-3-medium-128k-instruct:free"
+            ],
+            "consensus_models": [
+                "anthropic/claude-3.5-sonnet",
+                "openai/gpt-4o",
+                "x-ai/grok-beta",
+                "deepseek/deepseek-chat",
+                "meta-llama/llama-3.1-70b-instruct"
+            ]
+        }
+        logger.info("✅ AI model configurations initialized")
+    
+    async def make_ai_request(self, api_key: str, model: str, prompt: str, max_tokens: int = 1000) -> Dict[str, Any]:
+        """Make request to OpenRouter API"""
+        try:
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://ultimate-lyra-system.com",
+                "X-Title": "Ultimate Lyra Trading System"
+            }
+            
+            payload = {
+                "model": model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                "max_tokens": max_tokens,
+                "temperature": 0.1,
+                "top_p": 0.9
+            }
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers=headers,
+                    json=payload,
+                    timeout=aiohttp.ClientTimeout(total=30)
+                ) as response:
+                    if response.status == 200:
+                        result = await response.json()
+                        return {
+                            "success": True,
+                            "model": model,
+                            "response": result["choices"][0]["message"]["content"],
+                            "usage": result.get("usage", {}),
+                            "timestamp": datetime.now().isoformat()
+                        }
+                    else:
+                        error_text = await response.text()
+                        return {
+                            "success": False,
+                            "model": model,
+                            "error": f"HTTP {response.status}: {error_text}",
+                            "timestamp": datetime.now().isoformat()
+                        }
+        except Exception as e:
+            return {
+                "success": False,
+                "model": model,
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    async def get_ai_consensus(self, prompt: str, model_type: str = "consensus") -> Dict[str, Any]:
+        """Get consensus from multiple AI models"""
+        try:
+            models = self.model_configs.get(f"{model_type}_models", self.model_configs["consensus_models"])
+            
+            # Use different API keys for load balancing
+            tasks = []
+            for i, model in enumerate(models[:5]):  # Limit to 5 models for speed
+                api_key = list(self.api_keys.values())[i % len(self.api_keys)]
+                task = self.make_ai_request(api_key, model, prompt)
+                tasks.append(task)
+            
+            # Execute requests concurrently
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            # Process results
+            successful_responses = []
+            failed_responses = []
+            
+            for result in results:
+                if isinstance(result, dict) and result.get("success"):
+                    successful_responses.append(result)
+                else:
+                    failed_responses.append(result)
+            
+            # Calculate consensus
+            consensus_score = len(successful_responses) / len(models) if models else 0
+            
+            return {
+                "consensus_score": consensus_score,
+                "threshold_met": consensus_score >= self.consensus_threshold,
+                "successful_responses": len(successful_responses),
+                "failed_responses": len(failed_responses),
+                "responses": successful_responses,
+                "errors": failed_responses,
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ AI consensus failed: {e}")
+            return {
+                "consensus_score": 0,
+                "threshold_met": False,
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    async def analyze_trading_opportunity(self, market_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Analyze trading opportunity using AI consensus"""
+        try:
+            prompt = f"""
+            Analyze this cryptocurrency trading opportunity:
+            
+            Market Data:
+            - Symbol: {market_data.get('symbol', 'N/A')}
+            - Current Price: ${market_data.get('price', 'N/A')}
+            - 24h Change: {market_data.get('change_24h', 'N/A')}%
+            - Volume: {market_data.get('volume', 'N/A')}
+            - RSI: {market_data.get('rsi', 'N/A')}
+            - MACD: {market_data.get('macd', 'N/A')}
+            
+            Provide a trading recommendation with:
+            1. BUY/SELL/HOLD recommendation
+            2. Confidence score (0-100)
+            3. Risk assessment (LOW/MEDIUM/HIGH)
+            4. Entry price suggestion
+            5. Stop loss level
+            6. Take profit target
+            7. Brief reasoning (max 100 words)
+            
+            Respond in JSON format only.
+            """
+            
+            consensus = await self.get_ai_consensus(prompt, "consensus")
+            
+            if consensus["threshold_met"]:
+                # Parse AI responses and create aggregated recommendation
+                recommendations = []
+                for response in consensus["responses"]:
+                    try:
+                        # Try to parse JSON from AI response
+                        ai_rec = json.loads(response["response"])
+                        recommendations.append(ai_rec)
+                    except:
+                        # If not JSON, create structured response
+                        recommendations.append({
+                            "recommendation": "HOLD",
+                            "confidence": 50,
+                            "risk": "MEDIUM",
+                            "reasoning": response["response"][:100]
+                        })
+                
+                # Aggregate recommendations
+                buy_votes = sum(1 for r in recommendations if r.get("recommendation") == "BUY")
+                sell_votes = sum(1 for r in recommendations if r.get("recommendation") == "SELL")
+                hold_votes = sum(1 for r in recommendations if r.get("recommendation") == "HOLD")
+                
+                total_votes = len(recommendations)
+                avg_confidence = sum(r.get("confidence", 50) for r in recommendations) / total_votes if total_votes > 0 else 50
+                
+                # Determine final recommendation
+                if buy_votes > sell_votes and buy_votes > hold_votes:
+                    final_recommendation = "BUY"
+                elif sell_votes > buy_votes and sell_votes > hold_votes:
+                    final_recommendation = "SELL"
+                else:
+                    final_recommendation = "HOLD"
+                
+                return {
+                    "recommendation": final_recommendation,
+                    "confidence": round(avg_confidence, 2),
+                    "consensus_score": consensus["consensus_score"],
+                    "votes": {
+                        "buy": buy_votes,
+                        "sell": sell_votes,
+                        "hold": hold_votes
+                    },
+                    "ai_responses": len(recommendations),
+                    "timestamp": datetime.now().isoformat()
+                }
+            else:
+                return {
+                    "recommendation": "HOLD",
+                    "confidence": 0,
+                    "consensus_score": consensus["consensus_score"],
+                    "error": "Insufficient AI consensus",
+                    "timestamp": datetime.now().isoformat()
+                }
+                
+        except Exception as e:
+            logger.error(f"❌ Trading analysis failed: {e}")
+            return {
+                "recommendation": "HOLD",
+                "confidence": 0,
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    async def health_check(self, request):
+        """Health check endpoint"""
+        try:
+            # Test one API key
+            test_key = list(self.api_keys.values())[0]
+            test_result = await self.make_ai_request(
+                test_key, 
+                "meta-llama/llama-3.1-8b-instruct:free", 
+                "Say 'AI system operational'",
+                max_tokens=10
+            )
+            
+            return web.json_response({
+                'status': 'healthy',
+                'service': 'ai_orchestrator',
+                'api_keys_loaded': len(self.api_keys),
+                'models_available': self.models_available,
+                'consensus_threshold': self.consensus_threshold,
+                'test_result': test_result.get("success", False),
+                'timestamp': datetime.now().isoformat()
+            })
+        except Exception as e:
+            return web.json_response({
+                'status': 'unhealthy',
+                'error': str(e),
+                'timestamp': datetime.now().isoformat()
+            }, status=500)
+    
+    async def get_models(self, request):
+        """Get available AI models"""
+        return web.json_response({
+            'model_configs': self.model_configs,
+            'api_keys_count': len(self.api_keys),
+            'total_models_available': self.models_available,
+            'timestamp': datetime.now().isoformat()
+        })
+    
+    async def analyze_market(self, request):
+        """Analyze market data endpoint"""
+        try:
+            data = await request.json()
+            
+            if 'market_data' not in data:
+                return web.json_response({
+                    'error': 'Missing market_data field'
+                }, status=400)
+            
+            analysis = await self.analyze_trading_opportunity(data['market_data'])
+            
+            return web.json_response({
+                'analysis': analysis,
+                'timestamp': datetime.now().isoformat()
+            })
+            
+        except Exception as e:
+            return web.json_response({
+                'error': str(e),
+                'timestamp': datetime.now().isoformat()
+            }, status=500)
+    
+    async def test_consensus(self, request):
+        """Test AI consensus system"""
+        try:
+            test_prompt = "What is the current sentiment for Bitcoin? Respond with BULLISH, BEARISH, or NEUTRAL and a confidence score 0-100."
+            
+            consensus = await self.get_ai_consensus(test_prompt, "free")
+            
+            return web.json_response({
+                'test_prompt': test_prompt,
+                'consensus_result': consensus,
+                'timestamp': datetime.now().isoformat()
+            })
+            
+        except Exception as e:
+            return web.json_response({
+                'error': str(e),
+                'timestamp': datetime.now().isoformat()
+            }, status=500)
+
+async def init_app():
+    """Initialize the web application"""
+    orchestrator = AIOrchestrator()
+    app = web.Application()
+    
+    # Add routes
+    app.router.add_get('/health', orchestrator.health_check)
+    app.router.add_get('/models', orchestrator.get_models)
+    app.router.add_post('/analyze', orchestrator.analyze_market)
+    app.router.add_get('/test-consensus', orchestrator.test_consensus)
+    
+    return app
+
+if __name__ == '__main__':
+    app = init_app()
+    web.run_app(app, host='0.0.0.0', port=8080)

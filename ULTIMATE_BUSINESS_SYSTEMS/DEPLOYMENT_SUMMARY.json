@@ -1,0 +1,18 @@
+{
+  "package_created": "2025-10-04T00:34:21.990643",
+  "system_version": "6.0-UNIFIED Final Edition",
+  "package_location": "/home/ubuntu/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT",
+  "total_files": 26,
+  "key_components": [
+    "ULTIMATE_AI_CONSENSUS_SYSTEM.py",
+    "MASTER_CONFIGURATION.json",
+    "ULTIMATE_LYRA_COMPLETE_INTEGRATED_SYSTEM.zip",
+    "install_ubuntu.sh",
+    "README.md"
+  ],
+  "openrouter_api_keys": 8,
+  "premium_ai_models": 17,
+  "supported_exchanges": 10,
+  "repositories_integrated": 23,
+  "deployment_ready": true
+}

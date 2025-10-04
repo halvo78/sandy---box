@@ -1,0 +1,1 @@
+# Ai Consensus\n\nAI consensus system with 8 OpenRouter keys and 327+ models\n\n**Directory Purpose:** AI consensus system with 8 OpenRouter keys and 327+ models\n**Last Updated:** 2025-10-04 01:14:51\n
