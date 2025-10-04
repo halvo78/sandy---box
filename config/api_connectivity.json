@@ -1,0 +1,34 @@
+{
+  "binance": {
+    "primary_endpoint": "https://api.binance.com",
+    "backup_endpoints": [
+      "https://api1.binance.com",
+      "https://api2.binance.com",
+      "https://api3.binance.com"
+    ],
+    "connection_pooling": "ENABLED",
+    "retry_strategy": "EXPONENTIAL_BACKOFF",
+    "timeout": "30_SECONDS",
+    "rate_limiting": "INTELLIGENT"
+  },
+  "polygon": {
+    "endpoint": "https://api.polygon.io",
+    "connection_pooling": "ENABLED",
+    "caching": "REDIS_ENABLED",
+    "retry_strategy": "EXPONENTIAL_BACKOFF",
+    "timeout": "30_SECONDS"
+  },
+  "openrouter": {
+    "endpoint": "https://openrouter.ai/api/v1",
+    "models": "ALL_PREMIUM_MODELS",
+    "fallback": "ENABLED",
+    "retry_strategy": "INTELLIGENT",
+    "timeout": "180_SECONDS"
+  },
+  "monitoring": {
+    "health_checks": "CONTINUOUS",
+    "latency_monitoring": "REAL_TIME",
+    "error_tracking": "COMPREHENSIVE",
+    "alerting": "IMMEDIATE"
+  }
+}

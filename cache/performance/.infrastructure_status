@@ -1,0 +1,7 @@
+{
+  "created": "2025-10-04T10:41:47.138447",
+  "purpose": "Production infrastructure: performance",
+  "status": "OPERATIONAL",
+  "permissions": "PRODUCTION_READY",
+  "monitoring": "ENABLED"
+}

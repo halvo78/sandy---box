@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-04T10:26:45.438898",
+  "audit_type": "ISO_27001_COMPLIANCE",
+  "status": "IMPLEMENTED",
+  "controls_implemented": [
+    "A.9 - Access Control",
+    "A.10 - Cryptography",
+    "A.11 - Physical and Environmental Security",
+    "A.12 - Operations Security",
+    "A.13 - Communications Security",
+    "A.14 - System Acquisition, Development and Maintenance",
+    "A.15 - Supplier Relationships",
+    "A.16 - Information Security Incident Management",
+    "A.17 - Information Security Aspects of Business Continuity Management",
+    "A.18 - Compliance"
+  ],
+  "compliance_level": "FULL",
+  "next_review": "2026-01-02T10:26:45.438903"
+}

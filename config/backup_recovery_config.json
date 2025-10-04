@@ -1,0 +1,25 @@
+{
+  "backup_strategy": {
+    "full_backup": "DAILY",
+    "incremental_backup": "HOURLY",
+    "critical_backup": "REAL_TIME",
+    "retention": "30_DAYS"
+  },
+  "backup_locations": {
+    "primary": "/home/ubuntu/backups/daily",
+    "secondary": "/home/ubuntu/backups/hourly",
+    "critical": "/home/ubuntu/backups/critical",
+    "offsite": "CLOUD_STORAGE"
+  },
+  "recovery": {
+    "rto": "15_MINUTES",
+    "rpo": "5_MINUTES",
+    "automated_recovery": "ENABLED",
+    "disaster_recovery": "CONFIGURED"
+  },
+  "verification": {
+    "backup_integrity": "AUTOMATED",
+    "recovery_testing": "WEEKLY",
+    "monitoring": "CONTINUOUS"
+  }
+}

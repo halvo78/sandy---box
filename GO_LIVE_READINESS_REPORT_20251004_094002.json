@@ -1,0 +1,139 @@
+{
+  "report_metadata": {
+    "generated_timestamp": "2025-10-04T09:40:02.591289",
+    "report_id": "GO-LIVE-20251004-094002",
+    "analyst": "Manus AI Go-Live Testing System",
+    "test_categories": 3,
+    "total_tests": 24
+  },
+  "executive_summary": {
+    "go_live_score": 79.17,
+    "readiness_status": "NEEDS_ATTENTION",
+    "critical_issues_count": 3,
+    "warnings_count": 2,
+    "recommendation": "System needs attention before production deployment"
+  },
+  "detailed_results": {
+    "infrastructure": {
+      "docker_installed": {
+        "status": "FAIL",
+        "details": "[Errno 2] No such file or directory: 'docker'"
+      },
+      "python_environment": {
+        "status": "PASS",
+        "details": "Python 3.11.0"
+      },
+      "required_packages": {
+        "status": "FAIL",
+        "details": "Missing: ['websocket-client']"
+      },
+      "file_permissions": {
+        "status": "PASS",
+        "details": "All critical files accessible"
+      },
+      "disk_space": {
+        "status": "PASS",
+        "details": "31G available"
+      },
+      "memory_availability": {
+        "status": "PASS",
+        "details": "2.1Gi available"
+      },
+      "network_connectivity": {
+        "status": "WARN",
+        "details": "Only 2/3 exchanges reachable"
+      },
+      "port_availability": {
+        "status": "PASS",
+        "details": "Port availability checked"
+      }
+    },
+    "functionality": {
+      "api_endpoints": {
+        "status": "FAIL",
+        "details": "Only 1/4 endpoints working"
+      },
+      "exchange_connections": {
+        "status": "PASS",
+        "details": "7/7 exchanges connected in demo mode"
+      },
+      "ai_consensus": {
+        "status": "PASS",
+        "details": "8 AI models providing consensus"
+      },
+      "portfolio_tracking": {
+        "status": "PASS",
+        "details": "Portfolio balance: $315,000.0 AUD"
+      },
+      "transaction_recording": {
+        "status": "PASS",
+        "details": "146 transactions recorded"
+      },
+      "compliance_reporting": {
+        "status": "PASS",
+        "details": "2 compliance reports available"
+      },
+      "risk_management": {
+        "status": "PASS",
+        "details": "Risk management systems active"
+      },
+      "monitoring_systems": {
+        "status": "PASS",
+        "details": "Monitoring systems operational"
+      }
+    },
+    "security": {
+      "api_key_security": {
+        "status": "PASS",
+        "details": "No hardcoded API keys found"
+      },
+      "input_validation": {
+        "status": "PASS",
+        "details": "Input validation systems active"
+      },
+      "https_enforcement": {
+        "status": "WARN",
+        "details": "HTTP only (localhost testing)"
+      },
+      "audit_logging": {
+        "status": "PASS",
+        "details": "Audit logs being generated"
+      },
+      "data_encryption": {
+        "status": "PASS",
+        "details": "Data encryption measures in place"
+      },
+      "access_controls": {
+        "status": "PASS",
+        "details": "Access controls implemented"
+      },
+      "backup_systems": {
+        "status": "PASS",
+        "details": "2 backup files"
+      },
+      "disaster_recovery": {
+        "status": "PASS",
+        "details": "Recovery procedures available"
+      }
+    }
+  },
+  "critical_issues": [
+    "Docker error: [Errno 2] No such file or directory: 'docker'",
+    "Missing packages: websocket-client",
+    "Critical API endpoints not responding"
+  ],
+  "warnings": [
+    "Some exchanges unreachable - check network connectivity",
+    "HTTPS not enforced - required for production"
+  ],
+  "next_steps": [
+    "1. Address all critical issues immediately",
+    "   - Docker error: [Errno 2] No such file or directory: 'docker'",
+    "   - Missing packages: websocket-client",
+    "   - Critical API endpoints not responding",
+    "2. Review and address warnings",
+    "   - Some exchanges unreachable - check network connectivity",
+    "   - HTTPS not enforced - required for production",
+    "3. Complete additional testing after fixes"
+  ]
+}

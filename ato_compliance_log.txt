@@ -1,0 +1,1275 @@
+2025-10-04 09:12:51,796 - __main__ - INFO - 🏛️ ATO Compliance Reporting System Initialized
+2025-10-04 09:12:51,796 - __main__ - INFO - 📊 Business: Ultimate Lyra Trading Systems Pty Ltd
+2025-10-04 09:12:51,797 - __main__ - INFO - 🆔 ABN: 12 345 678 901
+2025-10-04 09:12:51,797 - __main__ - INFO - 📅 Financial Year: 2024-25
+2025-10-04 09:12:51,797 - __main__ - INFO - 💰 Total Portfolio: $315,000.00 AUD
+2025-10-04 09:12:51,797 - __main__ - INFO - 🚀 STARTING ATO COMPLIANCE MONITORING SYSTEM
+2025-10-04 09:12:51,797 - __main__ - INFO - ================================================================================
+2025-10-04 09:12:51,797 - __main__ - INFO - 📋 ATO COMPLIANCE REQUIREMENTS:
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Transaction Recording (Section 104-5 ITAA 1997)
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Capital Gains Tax Calculations (Part 3-1 ITAA 1997)
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Business Income Recognition (Section 6-5 ITAA 1997)
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Foreign Exchange Reporting (Section 960-50 ITAA 1997)
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Record Keeping (Section 262A ITAA 1936)
+2025-10-04 09:12:51,797 - __main__ - INFO -    ✅ Anti-Money Laundering Compliance (AML/CTF Act 2006)
+2025-10-04 09:12:51,797 - __main__ - INFO - ================================================================================
+2025-10-04 09:12:51,798 - __main__ - INFO - 📝 Starting Transaction Recorder
+2025-10-04 09:12:51,798 - __main__ - INFO - 🧮 Starting Capital Gains Calculator
+2025-10-04 09:12:51,799 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.074413 BTC/AUD @ $97,448.92 AUD on Digital Surge (ID: TXN-000001)
+2025-10-04 09:12:51,799 - __main__ - INFO - 💼 Starting Business Income Tracker
+2025-10-04 09:12:51,799 - __main__ - INFO - 🌍 Starting Foreign Exchange Monitor
+2025-10-04 09:12:51,799 - __main__ - INFO - 💳 Starting Fee Tracker
+2025-10-04 09:12:51,800 - __main__ - INFO - 📅 Starting Quarterly Reporter
+2025-10-04 09:12:51,800 - __main__ - INFO - ✅ Starting Compliance Checker
+2025-10-04 09:12:51,800 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:12:51,800 - __main__ - INFO - 📋 Starting Audit Logger
+2025-10-04 09:12:51,801 - __main__ - INFO - ⚠️ Starting Risk Assessor
+2025-10-04 09:12:51,801 - __main__ - INFO - 📈 Starting Trading Simulator
+2025-10-04 09:12:51,801 - __main__ - INFO - 📊 Generated Quarterly Report for Q2 2025-26
+2025-10-04 09:12:51,801 - __main__ - INFO - ✅ All ATO compliance modules started successfully
+2025-10-04 09:12:51,801 - __main__ - INFO - ✅ Compliance Check #1: ALL REQUIREMENTS MET
+2025-10-04 09:12:51,802 - __main__ - INFO - ⚠️ Risk Assessment #1: Overall Risk = LOW
+2025-10-04 09:12:51,802 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:12:51,803 - __main__ - INFO - 📊 Compliance Report Generated: /home/ubuntu/ato_compliance_report_20251004_091251.json
+2025-10-04 09:12:53,800 - __main__ - INFO - 📝 Transaction Recorded: BUY 677.022788 MATIC/AUD @ $178.49 AUD on OKX (ID: TXN-000002)
+2025-10-04 09:12:55,800 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:00,801 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:01,803 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:05,801 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:10,802 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.070116 BTC/AUD @ $98,402.51 AUD on Gate.io (ID: TXN-000006)
+2025-10-04 09:13:11,803 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:12,802 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:17,803 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:21,804 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:22,803 - __main__ - INFO - 📝 Transaction Recorded: BUY 973.142648 DOT/AUD @ $76.02 AUD on WhiteBIT (ID: TXN-000009)
+2025-10-04 09:13:24,804 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:29,804 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:31,804 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:34,805 - __main__ - INFO - 📝 Transaction Recorded: BUY 855.462403 SOL/AUD @ $173.36 AUD on Swyftx (ID: TXN-000012)
+2025-10-04 09:13:36,806 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:41,804 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:41,806 - __main__ - INFO - 📝 Transaction Recorded: BUY 670.504999 SOL/AUD @ $140.51 AUD on Gate.io (ID: TXN-000014)
+2025-10-04 09:13:43,807 - __main__ - INFO - 📝 Transaction Recorded: BUY 609.521875 MATIC/AUD @ $34.64 AUD on Digital Surge (ID: TXN-000015)
+2025-10-04 09:13:45,807 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.929898 ETH/AUD @ $5,134.97 AUD on Digital Surge (ID: TXN-000016)
+2025-10-04 09:13:47,808 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:13:51,801 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:13:51,805 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:13:52,808 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.082358 BTC/AUD @ $103,050.46 AUD on Swyftx (ID: TXN-000018)
+2025-10-04 09:13:54,809 - __main__ - INFO - 📝 Transaction Recorded: BUY 211.771861 SOL/AUD @ $188.61 AUD on WhiteBIT (ID: TXN-000019)
+2025-10-04 09:13:56,809 - __main__ - INFO - 📝 Transaction Recorded: BUY 655.783227 SOL/AUD @ $79.43 AUD on Digital Surge (ID: TXN-000020)
+2025-10-04 09:13:58,810 - __main__ - INFO - 📝 Transaction Recorded: BUY 265.615286 ADA/AUD @ $49.70 AUD on Digital Surge (ID: TXN-000021)
+2025-10-04 09:14:00,810 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:01,805 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:05,810 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:10,811 - __main__ - INFO - 📝 Transaction Recorded: BUY 756.026375 ADA/AUD @ $172.29 AUD on BTC Markets (ID: TXN-000024)
+2025-10-04 09:14:11,806 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:12,811 - __main__ - INFO - 📝 Transaction Recorded: BUY 792.287285 MATIC/AUD @ $84.72 AUD on OKX (ID: TXN-000025)
+2025-10-04 09:14:14,812 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:19,812 - __main__ - INFO - 📝 Transaction Recorded: BUY 680.603127 DOT/AUD @ $23.35 AUD on Gate.io (ID: TXN-000027)
+2025-10-04 09:14:21,806 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:21,813 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:26,813 - __main__ - INFO - 📝 Transaction Recorded: BUY 953.862112 ADA/AUD @ $175.23 AUD on OKX (ID: TXN-000029)
+2025-10-04 09:14:28,814 - __main__ - INFO - 📝 Transaction Recorded: BUY 508.173993 DOT/AUD @ $21.73 AUD on Gate.io (ID: TXN-000030)
+2025-10-04 09:14:30,814 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:31,806 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:35,815 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:40,815 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:41,807 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:45,816 - __main__ - INFO - 📝 Transaction Recorded: BUY 58.867241 SOL/AUD @ $175.66 AUD on Gate.io (ID: TXN-000034)
+2025-10-04 09:14:47,816 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:51,802 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:14:51,807 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:14:52,817 - __main__ - INFO - 📝 Transaction Recorded: BUY 129.263073 DOT/AUD @ $95.32 AUD on Swyftx (ID: TXN-000036)
+2025-10-04 09:14:54,817 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:14:59,818 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:01,808 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:04,818 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:09,819 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.023245 BTC/AUD @ $98,380.86 AUD on WhiteBIT (ID: TXN-000040)
+2025-10-04 09:15:11,808 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:11,819 - __main__ - INFO - 📝 Transaction Recorded: BUY 588.851674 DOT/AUD @ $1.93 AUD on BTC Markets (ID: TXN-000041)
+2025-10-04 09:15:13,820 - __main__ - INFO - 📝 Transaction Recorded: BUY 229.712842 MATIC/AUD @ $181.13 AUD on Digital Surge (ID: TXN-000042)
+2025-10-04 09:15:15,820 - __main__ - INFO - 📝 Transaction Recorded: BUY 514.641964 SOL/AUD @ $56.06 AUD on Swyftx (ID: TXN-000043)
+2025-10-04 09:15:17,821 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:21,808 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:22,821 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:27,822 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.202892 ETH/AUD @ $5,215.53 AUD on WhiteBIT (ID: TXN-000046)
+2025-10-04 09:15:29,822 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:31,809 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:34,823 - __main__ - INFO - 📝 Transaction Recorded: BUY 61.552061 MATIC/AUD @ $145.78 AUD on Digital Surge (ID: TXN-000048)
+2025-10-04 09:15:36,823 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.019967 BTC/AUD @ $100,362.86 AUD on Swyftx (ID: TXN-000049)
+2025-10-04 09:15:38,824 - __main__ - INFO - 📝 Transaction Recorded: BUY 279.2666 ADA/AUD @ $50.34 AUD on OKX (ID: TXN-000050)
+2025-10-04 09:15:40,824 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:41,809 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:45,825 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.09271 BTC/AUD @ $103,486.96 AUD on BTC Markets (ID: TXN-000052)
+2025-10-04 09:15:47,825 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:51,802 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:15:51,810 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:15:52,826 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:15:57,826 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:01,810 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:02,827 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:07,827 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.162569 ETH/AUD @ $5,271.10 AUD on Gate.io (ID: TXN-000057)
+2025-10-04 09:16:09,828 - __main__ - INFO - 📝 Transaction Recorded: BUY 51.092195 SOL/AUD @ $95.62 AUD on Digital Surge (ID: TXN-000058)
+2025-10-04 09:16:11,811 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:11,828 - __main__ - INFO - 📝 Transaction Recorded: BUY 57.8227 DOT/AUD @ $101.81 AUD on Swyftx (ID: TXN-000059)
+2025-10-04 09:16:13,829 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.19412 ETH/AUD @ $5,337.61 AUD on Swyftx (ID: TXN-000060)
+2025-10-04 09:16:15,829 - __main__ - INFO - 📝 Transaction Recorded: BUY 941.654531 ADA/AUD @ $114.15 AUD on OKX (ID: TXN-000061)
+2025-10-04 09:16:17,830 - __main__ - INFO - 📝 Transaction Recorded: BUY 619.762129 DOT/AUD @ $84.14 AUD on BTC Markets (ID: TXN-000062)
+2025-10-04 09:16:19,831 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:21,811 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:24,831 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:29,832 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:31,812 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:34,832 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:39,833 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:41,812 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:44,833 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.037583 BTC/AUD @ $96,577.47 AUD on Gate.io (ID: TXN-000068)
+2025-10-04 09:16:46,834 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:51,803 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:16:51,813 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:16:51,834 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:16:56,835 - __main__ - INFO - 📝 Transaction Recorded: BUY 938.991074 MATIC/AUD @ $27.29 AUD on Gate.io (ID: TXN-000071)
+2025-10-04 09:16:58,835 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:01,813 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:03,836 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:08,836 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:11,813 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:13,837 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.063794 BTC/AUD @ $103,293.48 AUD on Swyftx (ID: TXN-000075)
+2025-10-04 09:17:15,837 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:20,838 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:21,814 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:25,838 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.008449 BTC/AUD @ $103,831.06 AUD on BTC Markets (ID: TXN-000078)
+2025-10-04 09:17:27,839 - __main__ - INFO - 📝 Transaction Recorded: BUY 834.760425 DOT/AUD @ $116.71 AUD on OKX (ID: TXN-000079)
+2025-10-04 09:17:29,839 - __main__ - INFO - 📝 Transaction Recorded: BUY 42.787029 ADA/AUD @ $73.25 AUD on OKX (ID: TXN-000080)
+2025-10-04 09:17:31,814 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:31,840 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:36,840 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:41,815 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:41,841 - __main__ - INFO - 📝 Transaction Recorded: BUY 925.838059 MATIC/AUD @ $47.73 AUD on BTC Markets (ID: TXN-000083)
+2025-10-04 09:17:43,841 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:48,842 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:51,803 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:17:51,815 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:17:53,842 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:17:58,843 - __main__ - INFO - 📝 Transaction Recorded: BUY 200.373257 ADA/AUD @ $183.73 AUD on Swyftx (ID: TXN-000087)
+2025-10-04 09:18:00,843 - __main__ - INFO - 📝 Transaction Recorded: BUY 223.700624 SOL/AUD @ $132.18 AUD on Gate.io (ID: TXN-000088)
+2025-10-04 09:18:01,815 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:02,844 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:07,844 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:11,816 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:12,845 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:17,845 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:21,816 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:22,846 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:27,846 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:31,817 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:32,847 - __main__ - INFO - 📝 Transaction Recorded: BUY 709.076499 SOL/AUD @ $0.84 AUD on OKX (ID: TXN-000095)
+2025-10-04 09:18:34,847 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:39,848 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:41,817 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:44,849 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:49,849 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:51,803 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:18:51,817 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:18:54,850 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:18:59,850 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:01,818 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:04,851 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:09,851 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:11,818 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:14,852 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:19,852 - __main__ - INFO - 📝 Transaction Recorded: BUY 659.191894 MATIC/AUD @ $57.12 AUD on Swyftx (ID: TXN-000105)
+2025-10-04 09:19:21,818 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:21,852 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:26,853 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:31,819 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:31,853 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.025239 BTC/AUD @ $99,751.36 AUD on OKX (ID: TXN-000108)
+2025-10-04 09:19:33,854 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:38,854 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:41,819 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:43,855 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:48,855 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:51,804 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:19:51,820 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:19:53,856 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:19:58,856 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:01,820 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:03,857 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:08,858 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:11,821 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:13,858 - __main__ - INFO - 📝 Transaction Recorded: BUY 743.911787 ADA/AUD @ $95.20 AUD on BTC Markets (ID: TXN-000117)
+2025-10-04 09:20:15,859 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:20,859 - __main__ - INFO - 📝 Transaction Recorded: BUY 275.322849 MATIC/AUD @ $15.96 AUD on WhiteBIT (ID: TXN-000119)
+2025-10-04 09:20:21,821 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:22,860 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:27,860 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.47021 ETH/AUD @ $5,346.97 AUD on Binance Australia (ID: TXN-000121)
+2025-10-04 09:20:29,861 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.835587 ETH/AUD @ $5,165.44 AUD on Digital Surge (ID: TXN-000122)
+2025-10-04 09:20:31,821 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:31,861 - __main__ - INFO - 📝 Transaction Recorded: BUY 207.627555 ADA/AUD @ $84.32 AUD on WhiteBIT (ID: TXN-000123)
+2025-10-04 09:20:33,862 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:38,862 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:41,822 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:43,863 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:48,863 - __main__ - INFO - 📝 Transaction Recorded: BUY 488.741248 DOT/AUD @ $54.95 AUD on Swyftx (ID: TXN-000127)
+2025-10-04 09:20:50,864 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:20:51,804 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:20:51,822 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:20:55,864 - __main__ - INFO - 📝 Transaction Recorded: BUY 840.665157 MATIC/AUD @ $183.95 AUD on WhiteBIT (ID: TXN-000129)
+2025-10-04 09:20:57,865 - __main__ - INFO - 📝 Transaction Recorded: BUY 907.021934 DOT/AUD @ $118.58 AUD on BTC Markets (ID: TXN-000130)
+2025-10-04 09:20:59,865 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.064632 BTC/AUD @ $96,356.99 AUD on Digital Surge (ID: TXN-000131)
+2025-10-04 09:21:01,823 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:01,865 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.527711 ETH/AUD @ $5,163.68 AUD on WhiteBIT (ID: TXN-000132)
+2025-10-04 09:21:03,866 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:08,866 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:11,823 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:13,867 - __main__ - INFO - 📝 Transaction Recorded: BUY 999.907921 DOT/AUD @ $70.32 AUD on Digital Surge (ID: TXN-000135)
+2025-10-04 09:21:15,868 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:20,868 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.246458 ETH/AUD @ $5,119.27 AUD on OKX (ID: TXN-000137)
+2025-10-04 09:21:21,823 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:22,869 - __main__ - INFO - 📝 Transaction Recorded: BUY 564.405612 MATIC/AUD @ $43.98 AUD on WhiteBIT (ID: TXN-000138)
+2025-10-04 09:21:24,869 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:29,870 - __main__ - INFO - 📝 Transaction Recorded: BUY 778.014094 MATIC/AUD @ $33.17 AUD on Digital Surge (ID: TXN-000140)
+2025-10-04 09:21:31,824 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:31,870 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:36,871 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:41,824 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:41,871 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:46,872 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:51,802 - __main__ - INFO - 💳 Total Deductible Fees: $2,111.19 AUD (60 transactions)
+2025-10-04 09:21:51,805 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:21:51,825 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:21:51,872 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:21:56,873 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:01,825 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:01,873 - __main__ - INFO - 📝 Transaction Recorded: BUY 434.089878 ADA/AUD @ $72.76 AUD on Swyftx (ID: TXN-000147)
+2025-10-04 09:22:03,874 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:08,874 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:11,826 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:13,875 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:18,875 - __main__ - INFO - 📝 Transaction Recorded: BUY 830.900288 SOL/AUD @ $17.79 AUD on Gate.io (ID: TXN-000151)
+2025-10-04 09:22:20,876 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:21,826 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:25,876 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:30,877 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:31,827 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:35,877 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:40,878 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:41,827 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:45,878 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:50,879 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.030129 BTC/AUD @ $99,044.01 AUD on Swyftx (ID: TXN-000158)
+2025-10-04 09:22:51,805 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:22:51,827 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:22:52,879 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:22:57,880 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:01,828 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:02,880 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:07,880 - __main__ - INFO - 📝 Transaction Recorded: BUY 316.232396 MATIC/AUD @ $148.70 AUD on Binance Australia (ID: TXN-000162)
+2025-10-04 09:23:09,881 - __main__ - INFO - 📝 Transaction Recorded: BUY 192.349432 MATIC/AUD @ $147.85 AUD on Swyftx (ID: TXN-000163)
+2025-10-04 09:23:11,828 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:11,881 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:16,882 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.030328 BTC/AUD @ $98,608.81 AUD on Gate.io (ID: TXN-000165)
+2025-10-04 09:23:18,882 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:21,828 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:23,883 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:28,883 - __main__ - INFO - 📝 Transaction Recorded: BUY 872.847015 ADA/AUD @ $115.03 AUD on Swyftx (ID: TXN-000168)
+2025-10-04 09:23:30,884 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:31,829 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:35,884 - __main__ - INFO - 📝 Transaction Recorded: BUY 822.29353 ADA/AUD @ $80.44 AUD on Gate.io (ID: TXN-000170)
+2025-10-04 09:23:37,885 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:41,829 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:42,885 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:47,886 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:51,805 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:23:51,830 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:23:52,886 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:23:57,887 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:01,830 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:02,888 - __main__ - INFO - 📝 Transaction Recorded: BUY 947.64261 MATIC/AUD @ $41.95 AUD on BTC Markets (ID: TXN-000176)
+2025-10-04 09:24:04,888 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:09,889 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.001265 BTC/AUD @ $99,505.04 AUD on BTC Markets (ID: TXN-000178)
+2025-10-04 09:24:11,831 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:11,889 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:16,889 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:21,831 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:21,890 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:26,890 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:31,831 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:31,891 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.12868 ETH/AUD @ $5,396.31 AUD on Gate.io (ID: TXN-000183)
+2025-10-04 09:24:33,891 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:38,892 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:41,832 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:43,892 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:48,893 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:51,806 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:24:51,832 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:24:53,893 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:24:58,894 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:01,833 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:03,894 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:08,895 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:11,833 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:13,895 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:18,896 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:21,833 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:23,896 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:28,897 - __main__ - INFO - 📝 Transaction Recorded: BUY 970.214542 SOL/AUD @ $81.13 AUD on Gate.io (ID: TXN-000195)
+2025-10-04 09:25:30,897 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:31,834 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:35,898 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:40,898 - __main__ - INFO - 📝 Transaction Recorded: BUY 204.35468 ADA/AUD @ $110.07 AUD on Digital Surge (ID: TXN-000198)
+2025-10-04 09:25:41,834 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:42,899 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:47,899 - __main__ - INFO - 📝 Transaction Recorded: BUY 710.073042 DOT/AUD @ $62.49 AUD on Digital Surge (ID: TXN-000200)
+2025-10-04 09:25:49,900 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:25:51,806 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:25:51,835 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:25:54,900 - __main__ - INFO - 📝 Transaction Recorded: BUY 648.061979 ADA/AUD @ $31.22 AUD on Binance Australia (ID: TXN-000202)
+2025-10-04 09:25:56,901 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:01,835 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:01,901 - __main__ - INFO - 📝 Transaction Recorded: BUY 457.329686 ADA/AUD @ $29.36 AUD on WhiteBIT (ID: TXN-000204)
+2025-10-04 09:26:03,902 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:08,902 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:11,836 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:13,903 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:18,903 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:21,836 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:23,904 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:28,904 - __main__ - INFO - 📝 Transaction Recorded: BUY 980.793857 SOL/AUD @ $48.14 AUD on WhiteBIT (ID: TXN-000210)
+2025-10-04 09:26:30,905 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:31,836 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:35,905 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:40,906 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:41,837 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:45,906 - __main__ - INFO - 📝 Transaction Recorded: BUY 874.316184 SOL/AUD @ $88.34 AUD on BTC Markets (ID: TXN-000214)
+2025-10-04 09:26:47,907 - __main__ - INFO - 📝 Transaction Recorded: BUY 722.721384 ADA/AUD @ $82.29 AUD on BTC Markets (ID: TXN-000215)
+2025-10-04 09:26:49,907 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.944286 ETH/AUD @ $5,484.60 AUD on Digital Surge (ID: TXN-000216)
+2025-10-04 09:26:51,803 - __main__ - INFO - 💳 Total Deductible Fees: $2,814.44 AUD (80 transactions)
+2025-10-04 09:26:51,807 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:26:51,837 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:26:51,908 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:26:56,908 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:01,838 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:01,909 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:06,909 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:11,838 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:11,910 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:16,910 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:21,839 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:21,911 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:26,911 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:31,839 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:31,912 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.222889 ETH/AUD @ $5,191.27 AUD on OKX (ID: TXN-000225)
+2025-10-04 09:27:33,912 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:38,913 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:41,840 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:43,913 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:48,914 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:51,807 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:27:51,840 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:27:53,914 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:27:58,915 - __main__ - INFO - 📝 Transaction Recorded: BUY 237.968496 ADA/AUD @ $114.60 AUD on WhiteBIT (ID: TXN-000231)
+2025-10-04 09:28:00,915 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:01,841 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:05,915 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:10,916 - __main__ - INFO - 📝 Transaction Recorded: BUY 910.706337 MATIC/AUD @ $149.16 AUD on Swyftx (ID: TXN-000234)
+2025-10-04 09:28:11,841 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:12,916 - __main__ - INFO - 📝 Transaction Recorded: BUY 607.457933 SOL/AUD @ $70.79 AUD on Swyftx (ID: TXN-000235)
+2025-10-04 09:28:14,917 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:19,917 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:21,841 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:24,918 - __main__ - INFO - 📝 Transaction Recorded: BUY 309.623951 MATIC/AUD @ $88.44 AUD on Digital Surge (ID: TXN-000238)
+2025-10-04 09:28:26,918 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:31,842 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:31,919 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:36,919 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:41,842 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:41,920 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:46,920 - __main__ - INFO - 📝 Transaction Recorded: BUY 468.863057 SOL/AUD @ $15.52 AUD on Swyftx (ID: TXN-000243)
+2025-10-04 09:28:48,921 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:51,807 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:28:51,843 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:28:53,921 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:28:58,922 - __main__ - INFO - 📝 Transaction Recorded: BUY 455.331242 DOT/AUD @ $134.73 AUD on Gate.io (ID: TXN-000246)
+2025-10-04 09:29:00,922 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:01,843 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:05,923 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:10,924 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:11,844 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:15,924 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:20,925 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.031132 BTC/AUD @ $99,926.25 AUD on OKX (ID: TXN-000251)
+2025-10-04 09:29:21,844 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:22,925 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:27,926 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:31,844 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:32,926 - __main__ - INFO - 📝 Transaction Recorded: BUY 885.52837 MATIC/AUD @ $131.16 AUD on Digital Surge (ID: TXN-000254)
+2025-10-04 09:29:34,927 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:39,927 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:29:41,845 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:44,928 - __main__ - INFO - 📝 Transaction Recorded: BUY 980.946791 SOL/AUD @ $73.78 AUD on OKX (ID: TXN-000257)
+2025-10-04 09:29:46,928 - __main__ - INFO - 📝 Transaction Recorded: BUY 398.741503 SOL/AUD @ $38.37 AUD on Digital Surge (ID: TXN-000258)
+2025-10-04 09:29:48,929 - __main__ - INFO - 📝 Transaction Recorded: BUY 663.105969 ADA/AUD @ $128.52 AUD on Binance Australia (ID: TXN-000259)
+2025-10-04 09:29:50,929 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.078893 BTC/AUD @ $97,435.69 AUD on BTC Markets (ID: TXN-000260)
+2025-10-04 09:29:51,808 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:29:51,845 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:29:52,930 - __main__ - INFO - 📝 Transaction Recorded: BUY 69.541543 DOT/AUD @ $153.15 AUD on OKX (ID: TXN-000261)
+2025-10-04 09:29:54,930 - __main__ - INFO - 📝 Transaction Recorded: BUY 813.239928 DOT/AUD @ $46.98 AUD on OKX (ID: TXN-000262)
+2025-10-04 09:29:56,931 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:01,846 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:01,931 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:06,932 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.002471 BTC/AUD @ $102,899.85 AUD on Digital Surge (ID: TXN-000265)
+2025-10-04 09:30:08,932 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:11,846 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:13,933 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:18,933 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:21,847 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:23,934 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:28,934 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:31,847 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:33,935 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:38,935 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:41,848 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:43,936 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:48,936 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:51,808 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:30:51,848 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:30:53,936 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:30:58,937 - __main__ - INFO - 📝 Transaction Recorded: BUY 852.939945 MATIC/AUD @ $130.36 AUD on Binance Australia (ID: TXN-000276)
+2025-10-04 09:31:00,937 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:01,849 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:05,938 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:10,938 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:11,849 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:15,939 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:20,939 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.043756 BTC/AUD @ $102,445.89 AUD on Swyftx (ID: TXN-000281)
+2025-10-04 09:31:21,850 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:22,940 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:27,940 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:31,850 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:32,941 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:37,941 - __main__ - INFO - 📝 Transaction Recorded: BUY 578.3406 SOL/AUD @ $42.94 AUD on Gate.io (ID: TXN-000285)
+2025-10-04 09:31:39,942 - __main__ - INFO - 📝 Transaction Recorded: BUY 847.427573 ADA/AUD @ $70.35 AUD on Digital Surge (ID: TXN-000286)
+2025-10-04 09:31:41,850 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:41,942 - __main__ - INFO - 📝 Transaction Recorded: BUY 762.843026 SOL/AUD @ $115.03 AUD on BTC Markets (ID: TXN-000287)
+2025-10-04 09:31:43,943 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:48,943 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:51,808 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:31:51,851 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:31:53,944 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:31:58,944 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:01,851 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:03,945 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:08,945 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.074865 BTC/AUD @ $97,151.33 AUD on Digital Surge (ID: TXN-000293)
+2025-10-04 09:32:10,946 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:11,852 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:15,947 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:20,947 - __main__ - INFO - 📝 Transaction Recorded: BUY 674.294742 DOT/AUD @ $54.78 AUD on OKX (ID: TXN-000296)
+2025-10-04 09:32:21,852 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:22,948 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:27,948 - __main__ - INFO - 📝 Transaction Recorded: BUY 345.827683 DOT/AUD @ $22.62 AUD on OKX (ID: TXN-000298)
+2025-10-04 09:32:29,949 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:31,852 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:34,949 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:39,950 - __main__ - INFO - 📝 Transaction Recorded: BUY 767.582178 SOL/AUD @ $152.95 AUD on OKX (ID: TXN-000301)
+2025-10-04 09:32:41,853 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:41,950 - __main__ - INFO - 📝 Transaction Recorded: BUY 8.722177 SOL/AUD @ $149.53 AUD on Gate.io (ID: TXN-000302)
+2025-10-04 09:32:43,951 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:48,951 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:32:51,809 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:32:51,853 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:32:53,952 - __main__ - INFO - 📝 Transaction Recorded: BUY 460.294496 ADA/AUD @ $16.03 AUD on Binance Australia (ID: TXN-000305)
+2025-10-04 09:32:55,952 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:00,953 - __main__ - INFO - 📝 Transaction Recorded: BUY 405.627275 SOL/AUD @ $193.26 AUD on WhiteBIT (ID: TXN-000307)
+2025-10-04 09:33:01,854 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:02,953 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:07,954 - __main__ - INFO - 📝 Transaction Recorded: BUY 244.073158 ADA/AUD @ $117.98 AUD on Binance Australia (ID: TXN-000309)
+2025-10-04 09:33:09,954 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:11,854 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:14,955 - __main__ - INFO - 📝 Transaction Recorded: BUY 77.302998 SOL/AUD @ $126.83 AUD on OKX (ID: TXN-000311)
+2025-10-04 09:33:16,955 - __main__ - INFO - 📝 Transaction Recorded: BUY 906.016809 DOT/AUD @ $70.20 AUD on BTC Markets (ID: TXN-000312)
+2025-10-04 09:33:18,956 - __main__ - INFO - 📝 Transaction Recorded: BUY 237.03258 MATIC/AUD @ $29.72 AUD on Digital Surge (ID: TXN-000313)
+2025-10-04 09:33:20,956 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:21,855 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:25,957 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:30,957 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:31,855 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:35,958 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:40,958 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:41,855 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:45,959 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:50,959 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:33:51,809 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:33:51,856 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:33:55,959 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:00,960 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:01,856 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:05,960 - __main__ - INFO - 📝 Transaction Recorded: BUY 450.28397 MATIC/AUD @ $162.06 AUD on Swyftx (ID: TXN-000323)
+2025-10-04 09:34:07,961 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:11,857 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:12,961 - __main__ - INFO - 📝 Transaction Recorded: BUY 811.155845 ADA/AUD @ $167.56 AUD on Binance Australia (ID: TXN-000325)
+2025-10-04 09:34:14,962 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:19,963 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:21,857 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:24,964 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:29,964 - __main__ - INFO - 📝 Transaction Recorded: BUY 789.437705 DOT/AUD @ $129.64 AUD on Digital Surge (ID: TXN-000329)
+2025-10-04 09:34:31,858 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:31,965 - __main__ - INFO - 📝 Transaction Recorded: BUY 558.405249 SOL/AUD @ $77.62 AUD on Binance Australia (ID: TXN-000330)
+2025-10-04 09:34:33,965 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:38,965 - __main__ - INFO - 📝 Transaction Recorded: BUY 583.156775 SOL/AUD @ $28.71 AUD on OKX (ID: TXN-000332)
+2025-10-04 09:34:40,966 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:41,858 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:45,966 - __main__ - INFO - 📝 Transaction Recorded: BUY 310.272306 MATIC/AUD @ $75.65 AUD on BTC Markets (ID: TXN-000334)
+2025-10-04 09:34:47,967 - __main__ - INFO - 📝 Transaction Recorded: BUY 670.446284 SOL/AUD @ $165.88 AUD on Swyftx (ID: TXN-000335)
+2025-10-04 09:34:49,967 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:34:51,810 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:34:51,858 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:34:54,968 - __main__ - INFO - 📝 Transaction Recorded: BUY 363.235071 SOL/AUD @ $36.46 AUD on BTC Markets (ID: TXN-000337)
+2025-10-04 09:34:56,968 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:01,859 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:01,969 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:06,969 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:11,859 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:11,970 - __main__ - INFO - 📝 Transaction Recorded: BUY 597.649195 DOT/AUD @ $31.27 AUD on Gate.io (ID: TXN-000341)
+2025-10-04 09:35:13,970 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:18,971 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:21,860 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:23,971 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:28,972 - __main__ - INFO - 📝 Transaction Recorded: BUY 310.158429 DOT/AUD @ $161.82 AUD on OKX (ID: TXN-000345)
+2025-10-04 09:35:30,972 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:31,860 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:35,973 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:40,973 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.604506 ETH/AUD @ $5,069.20 AUD on WhiteBIT (ID: TXN-000348)
+2025-10-04 09:35:41,861 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:42,974 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:47,974 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:51,806 - __main__ - INFO - 📊 Real-time Summary: 350 transactions, 0 CG events, $4,721.71 fees tracked
+2025-10-04 09:35:51,810 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:35:51,861 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:35:52,975 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:35:57,975 - __main__ - INFO - 📝 Transaction Recorded: BUY 946.46685 ADA/AUD @ $44.80 AUD on Swyftx (ID: TXN-000352)
+2025-10-04 09:35:59,976 - __main__ - INFO - 📝 Transaction Recorded: BUY 415.482009 SOL/AUD @ $79.59 AUD on WhiteBIT (ID: TXN-000353)
+2025-10-04 09:36:01,861 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:01,976 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:06,977 - __main__ - INFO - 📝 Transaction Recorded: BUY 839.337111 SOL/AUD @ $130.17 AUD on Binance Australia (ID: TXN-000355)
+2025-10-04 09:36:08,977 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.086223 ETH/AUD @ $5,458.70 AUD on Swyftx (ID: TXN-000356)
+2025-10-04 09:36:10,978 - __main__ - INFO - 📝 Transaction Recorded: BUY 759.082314 MATIC/AUD @ $94.09 AUD on WhiteBIT (ID: TXN-000357)
+2025-10-04 09:36:11,862 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:12,979 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.002881 BTC/AUD @ $97,156.55 AUD on BTC Markets (ID: TXN-000358)
+2025-10-04 09:36:14,979 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:19,979 - __main__ - INFO - 📝 Transaction Recorded: BUY 301.850043 SOL/AUD @ $10.03 AUD on Swyftx (ID: TXN-000360)
+2025-10-04 09:36:21,862 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:21,980 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:26,981 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:31,863 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:31,981 - __main__ - INFO - 📝 Transaction Recorded: BUY 291.980716 MATIC/AUD @ $0.81 AUD on OKX (ID: TXN-000363)
+2025-10-04 09:36:33,982 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:38,982 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:41,863 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:43,983 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:48,983 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:36:51,810 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:36:51,864 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:36:53,983 - __main__ - INFO - 📝 Transaction Recorded: BUY 345.457691 SOL/AUD @ $146.72 AUD on Binance Australia (ID: TXN-000368)
+2025-10-04 09:36:55,984 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:00,985 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:01,864 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:05,985 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:10,986 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.43493 ETH/AUD @ $5,471.80 AUD on OKX (ID: TXN-000372)
+2025-10-04 09:37:11,865 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:12,986 - __main__ - INFO - 📝 Transaction Recorded: BUY 44.762469 SOL/AUD @ $40.29 AUD on Binance Australia (ID: TXN-000373)
+2025-10-04 09:37:14,987 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:19,987 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:21,865 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:24,988 - __main__ - INFO - 📝 Transaction Recorded: BUY 865.932479 SOL/AUD @ $66.72 AUD on Gate.io (ID: TXN-000376)
+2025-10-04 09:37:26,988 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:31,865 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:31,988 - __main__ - INFO - 📝 Transaction Recorded: BUY 496.707023 SOL/AUD @ $99.76 AUD on WhiteBIT (ID: TXN-000378)
+2025-10-04 09:37:33,989 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:38,989 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:41,866 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:43,990 - __main__ - INFO - 📝 Transaction Recorded: BUY 80.988842 SOL/AUD @ $132.35 AUD on Gate.io (ID: TXN-000381)
+2025-10-04 09:37:45,990 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:50,991 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:37:51,811 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:37:51,866 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:37:55,991 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:00,992 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:01,867 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:05,992 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:10,993 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:11,867 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:15,993 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:20,994 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:21,867 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:25,994 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:30,994 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:31,868 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:35,995 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:40,995 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:41,868 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:45,996 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:50,996 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.08543 BTC/AUD @ $99,520.43 AUD on OKX (ID: TXN-000395)
+2025-10-04 09:38:51,811 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:38:51,869 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:38:52,997 - __main__ - INFO - 📝 Transaction Recorded: BUY 810.702705 ADA/AUD @ $193.53 AUD on Digital Surge (ID: TXN-000396)
+2025-10-04 09:38:54,997 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:38:59,998 - __main__ - INFO - 📝 Transaction Recorded: BUY 712.097295 SOL/AUD @ $185.50 AUD on Gate.io (ID: TXN-000398)
+2025-10-04 09:39:01,869 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:01,998 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:06,999 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.582842 ETH/AUD @ $5,013.14 AUD on OKX (ID: TXN-000400)
+2025-10-04 09:39:08,999 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:11,869 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:14,000 - __main__ - INFO - 📝 Transaction Recorded: BUY 66.682357 DOT/AUD @ $79.93 AUD on OKX (ID: TXN-000402)
+2025-10-04 09:39:16,000 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:21,001 - __main__ - INFO - 📝 Transaction Recorded: BUY 126.201455 DOT/AUD @ $63.75 AUD on Swyftx (ID: TXN-000404)
+2025-10-04 09:39:21,870 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:23,001 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:28,002 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:31,870 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:33,002 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:38,003 - __main__ - INFO - 📝 Transaction Recorded: BUY 304.820418 DOT/AUD @ $32.81 AUD on Binance Australia (ID: TXN-000408)
+2025-10-04 09:39:40,003 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:41,871 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:45,004 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:50,004 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:39:51,811 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:39:51,871 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:39:55,005 - __main__ - INFO - 📝 Transaction Recorded: BUY 592.216637 MATIC/AUD @ $116.34 AUD on BTC Markets (ID: TXN-000412)
+2025-10-04 09:39:57,005 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:01,872 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:02,006 - __main__ - INFO - 📝 Transaction Recorded: BUY 825.411031 DOT/AUD @ $6.16 AUD on Swyftx (ID: TXN-000414)
+2025-10-04 09:40:04,006 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:09,007 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:11,872 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:14,007 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:19,008 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:21,873 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:24,008 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:29,008 - __main__ - INFO - 📝 Transaction Recorded: BUY 313.269917 DOT/AUD @ $143.81 AUD on Gate.io (ID: TXN-000420)
+2025-10-04 09:40:31,009 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:31,873 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:36,010 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:41,010 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.202655 ETH/AUD @ $5,145.11 AUD on WhiteBIT (ID: TXN-000423)
+2025-10-04 09:40:41,873 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:43,011 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:48,011 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:51,812 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:40:51,874 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:40:53,012 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:40:58,012 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.094578 BTC/AUD @ $100,054.44 AUD on WhiteBIT (ID: TXN-000427)
+2025-10-04 09:41:00,013 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:01,874 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:05,013 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:10,014 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:11,875 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:15,014 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:20,015 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:21,875 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:25,015 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:30,016 - __main__ - INFO - 📝 Transaction Recorded: BUY 129.534727 DOT/AUD @ $19.79 AUD on Digital Surge (ID: TXN-000434)
+2025-10-04 09:41:31,876 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:32,016 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:37,017 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:41,876 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:42,017 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:47,018 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:51,812 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:41:51,877 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:41:52,018 - __main__ - INFO - 📝 Transaction Recorded: BUY 393.561633 SOL/AUD @ $123.49 AUD on BTC Markets (ID: TXN-000439)
+2025-10-04 09:41:54,019 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:41:59,019 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:01,877 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:04,019 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:09,020 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:11,878 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:14,020 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:19,021 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:21,878 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:24,021 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:29,022 - __main__ - INFO - 📝 Transaction Recorded: BUY 821.83963 ADA/AUD @ $48.82 AUD on Swyftx (ID: TXN-000447)
+2025-10-04 09:42:31,022 - __main__ - INFO - 📝 Transaction Recorded: BUY 191.593543 MATIC/AUD @ $88.49 AUD on BTC Markets (ID: TXN-000448)
+2025-10-04 09:42:31,878 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:33,023 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:38,023 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:41,879 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:43,024 - __main__ - INFO - 📝 Transaction Recorded: BUY 519.164528 MATIC/AUD @ $112.40 AUD on Binance Australia (ID: TXN-000451)
+2025-10-04 09:42:45,024 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:50,025 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:42:51,812 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:42:51,879 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:42:55,025 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:00,026 - __main__ - INFO - 📝 Transaction Recorded: BUY 957.380059 ADA/AUD @ $56.16 AUD on BTC Markets (ID: TXN-000455)
+2025-10-04 09:43:01,880 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:02,026 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:07,027 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:11,880 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:12,027 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:17,027 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:21,880 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:22,028 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:27,028 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:31,881 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:32,029 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:37,030 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.235197 ETH/AUD @ $5,293.42 AUD on Gate.io (ID: TXN-000463)
+2025-10-04 09:43:39,030 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:41,881 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:44,030 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.041917 BTC/AUD @ $102,173.58 AUD on OKX (ID: TXN-000465)
+2025-10-04 09:43:46,031 - __main__ - INFO - 📝 Transaction Recorded: BUY 6.176265 MATIC/AUD @ $110.30 AUD on Binance Australia (ID: TXN-000466)
+2025-10-04 09:43:48,032 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:43:51,813 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:43:51,882 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:43:53,032 - __main__ - INFO - 📝 Transaction Recorded: BUY 756.155148 MATIC/AUD @ $57.81 AUD on WhiteBIT (ID: TXN-000468)
+2025-10-04 09:43:55,033 - __main__ - INFO - 📝 Transaction Recorded: BUY 908.029022 MATIC/AUD @ $18.35 AUD on Gate.io (ID: TXN-000469)
+2025-10-04 09:43:57,033 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:01,882 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:02,034 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:07,034 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:11,882 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:12,035 - __main__ - INFO - 📝 Transaction Recorded: BUY 10.257901 SOL/AUD @ $113.81 AUD on Swyftx (ID: TXN-000473)
+2025-10-04 09:44:14,035 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:19,036 - __main__ - INFO - 📝 Transaction Recorded: BUY 851.208679 ADA/AUD @ $93.87 AUD on BTC Markets (ID: TXN-000475)
+2025-10-04 09:44:21,036 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:21,883 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:26,037 - __main__ - INFO - 📝 Transaction Recorded: BUY 15.070111 MATIC/AUD @ $67.75 AUD on Gate.io (ID: TXN-000477)
+2025-10-04 09:44:28,037 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:31,883 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:33,037 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:38,038 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:41,884 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:43,038 - __main__ - INFO - 📝 Transaction Recorded: BUY 7.82329 SOL/AUD @ $77.02 AUD on WhiteBIT (ID: TXN-000481)
+2025-10-04 09:44:45,039 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:50,040 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:44:51,813 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:44:51,884 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:44:55,040 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:00,041 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:01,885 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:05,041 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:10,042 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:11,885 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:15,042 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:20,043 - __main__ - INFO - 📝 Transaction Recorded: BUY 762.09776 MATIC/AUD @ $136.23 AUD on Swyftx (ID: TXN-000489)
+2025-10-04 09:45:21,886 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:22,043 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:27,044 - __main__ - INFO - 📝 Transaction Recorded: BUY 62.69629 DOT/AUD @ $109.76 AUD on Binance Australia (ID: TXN-000491)
+2025-10-04 09:45:29,044 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:31,886 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:34,044 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:39,045 - __main__ - INFO - 📝 Transaction Recorded: BUY 898.990462 ADA/AUD @ $89.37 AUD on BTC Markets (ID: TXN-000494)
+2025-10-04 09:45:41,045 - __main__ - INFO - 📝 Transaction Recorded: BUY 513.734595 ADA/AUD @ $91.63 AUD on Binance Australia (ID: TXN-000495)
+2025-10-04 09:45:41,887 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:43,046 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:48,046 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:45:51,814 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:45:51,887 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:45:53,047 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.042946 BTC/AUD @ $102,003.85 AUD on BTC Markets (ID: TXN-000498)
+2025-10-04 09:45:55,047 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.098628 BTC/AUD @ $99,720.71 AUD on BTC Markets (ID: TXN-000499)
+2025-10-04 09:45:57,048 - __main__ - INFO - 📝 Transaction Recorded: BUY 769.203091 ADA/AUD @ $153.28 AUD on Gate.io (ID: TXN-000500)
+2025-10-04 09:45:59,048 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:01,888 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:04,049 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:09,049 - __main__ - INFO - 📝 Transaction Recorded: BUY 653.880564 DOT/AUD @ $69.88 AUD on Swyftx (ID: TXN-000503)
+2025-10-04 09:46:11,050 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:11,888 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:16,050 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.097871 BTC/AUD @ $99,630.04 AUD on OKX (ID: TXN-000505)
+2025-10-04 09:46:18,051 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:21,889 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:23,051 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:28,052 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.081138 BTC/AUD @ $99,192.41 AUD on Digital Surge (ID: TXN-000508)
+2025-10-04 09:46:30,052 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.021402 BTC/AUD @ $96,008.97 AUD on Swyftx (ID: TXN-000509)
+2025-10-04 09:46:31,889 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:32,053 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:37,053 - __main__ - INFO - 📝 Transaction Recorded: BUY 402.863085 MATIC/AUD @ $47.25 AUD on OKX (ID: TXN-000511)
+2025-10-04 09:46:39,054 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.050886 BTC/AUD @ $97,892.63 AUD on OKX (ID: TXN-000512)
+2025-10-04 09:46:41,054 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:41,889 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:46,055 - __main__ - INFO - 📝 Transaction Recorded: BUY 302.462671 SOL/AUD @ $29.08 AUD on Digital Surge (ID: TXN-000514)
+2025-10-04 09:46:48,055 - __main__ - INFO - 📝 Transaction Recorded: BUY 414.146646 DOT/AUD @ $55.39 AUD on Digital Surge (ID: TXN-000515)
+2025-10-04 09:46:50,056 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:46:51,814 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:46:51,890 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:46:55,056 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:00,057 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:01,890 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:05,057 - __main__ - INFO - 📝 Transaction Recorded: BUY 300.588606 ADA/AUD @ $37.18 AUD on WhiteBIT (ID: TXN-000519)
+2025-10-04 09:47:07,058 - __main__ - INFO - 📝 Transaction Recorded: BUY 849.491591 ADA/AUD @ $60.50 AUD on BTC Markets (ID: TXN-000520)
+2025-10-04 09:47:09,058 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:11,891 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:14,059 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:19,059 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:21,891 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:24,060 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:29,060 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:31,891 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:34,061 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:39,061 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:41,892 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:44,062 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:49,062 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:51,814 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:47:51,892 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:47:54,063 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:47:59,063 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:01,892 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:04,064 - __main__ - INFO - 📝 Transaction Recorded: BUY 803.013805 ADA/AUD @ $144.62 AUD on WhiteBIT (ID: TXN-000532)
+2025-10-04 09:48:06,064 - __main__ - INFO - 📝 Transaction Recorded: BUY 371.334217 SOL/AUD @ $83.08 AUD on Swyftx (ID: TXN-000533)
+2025-10-04 09:48:08,065 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:11,893 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:13,065 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:18,066 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:21,893 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:23,066 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:28,067 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:31,894 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:33,068 - __main__ - INFO - 📝 Transaction Recorded: BUY 140.81857 SOL/AUD @ $109.54 AUD on Digital Surge (ID: TXN-000539)
+2025-10-04 09:48:35,068 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:40,069 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:41,894 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:45,069 - __main__ - INFO - 📝 Transaction Recorded: BUY 68.899974 MATIC/AUD @ $30.63 AUD on OKX (ID: TXN-000542)
+2025-10-04 09:48:47,070 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:51,815 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:48:51,895 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:48:52,070 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:48:57,071 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:01,895 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:02,071 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:07,072 - __main__ - INFO - 📝 Transaction Recorded: BUY 107.909412 ADA/AUD @ $19.71 AUD on Digital Surge (ID: TXN-000547)
+2025-10-04 09:49:09,072 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.243364 ETH/AUD @ $5,126.21 AUD on OKX (ID: TXN-000548)
+2025-10-04 09:49:11,073 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:11,896 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:16,073 - __main__ - INFO - 📝 Transaction Recorded: BUY 990.242799 DOT/AUD @ $45.56 AUD on WhiteBIT (ID: TXN-000550)
+2025-10-04 09:49:18,074 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:21,896 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:23,074 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:28,075 - __main__ - INFO - 📝 Transaction Recorded: BUY 703.142305 MATIC/AUD @ $17.00 AUD on Binance Australia (ID: TXN-000553)
+2025-10-04 09:49:30,075 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:31,896 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:35,076 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:40,076 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:41,897 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:45,077 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:50,077 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:49:51,815 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:49:51,897 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:49:55,078 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:00,078 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:01,898 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:05,079 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:10,080 - __main__ - INFO - 📝 Transaction Recorded: BUY 501.292059 MATIC/AUD @ $194.88 AUD on Digital Surge (ID: TXN-000562)
+2025-10-04 09:50:11,898 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:12,080 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:17,081 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:21,898 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:22,081 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:27,082 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:31,899 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:32,082 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:37,083 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:41,899 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:42,083 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:47,084 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.001514 BTC/AUD @ $98,082.67 AUD on Gate.io (ID: TXN-000570)
+2025-10-04 09:50:49,084 - __main__ - INFO - 📝 Transaction Recorded: BUY 133.374497 SOL/AUD @ $37.88 AUD on Gate.io (ID: TXN-000571)
+2025-10-04 09:50:51,085 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:50:51,815 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:50:51,900 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:50:56,085 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:01,086 - __main__ - INFO - 📝 Transaction Recorded: BUY 292.555504 ADA/AUD @ $77.87 AUD on Gate.io (ID: TXN-000574)
+2025-10-04 09:51:01,900 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:03,086 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:08,087 - __main__ - INFO - 📝 Transaction Recorded: BUY 685.630676 DOT/AUD @ $34.32 AUD on BTC Markets (ID: TXN-000576)
+2025-10-04 09:51:10,087 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:11,901 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:15,088 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:20,088 - __main__ - INFO - 📝 Transaction Recorded: BUY 721.178553 SOL/AUD @ $99.41 AUD on Gate.io (ID: TXN-000579)
+2025-10-04 09:51:21,901 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:22,089 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:27,089 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:31,901 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:32,090 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:37,090 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:41,902 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:42,091 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:47,091 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:51,816 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:51:51,902 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:51:52,092 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:51:57,092 - __main__ - INFO - 📝 Transaction Recorded: BUY 932.135085 SOL/AUD @ $40.36 AUD on WhiteBIT (ID: TXN-000587)
+2025-10-04 09:51:59,093 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:01,903 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:04,093 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:09,094 - __main__ - INFO - 📝 Transaction Recorded: BUY 819.146602 MATIC/AUD @ $159.23 AUD on Swyftx (ID: TXN-000590)
+2025-10-04 09:52:11,094 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:11,903 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:16,095 - __main__ - INFO - 📝 Transaction Recorded: BUY 715.521155 MATIC/AUD @ $157.92 AUD on Gate.io (ID: TXN-000592)
+2025-10-04 09:52:18,095 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:21,904 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:23,096 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:28,096 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:31,904 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:33,097 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:38,097 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:41,905 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:43,098 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:48,098 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:51,816 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:52:51,905 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:52:53,099 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:52:58,099 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:01,905 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:03,100 - __main__ - INFO - 📝 Transaction Recorded: BUY 296.136788 ADA/AUD @ $184.15 AUD on Binance Australia (ID: TXN-000602)
+2025-10-04 09:53:05,100 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:10,101 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:11,906 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:15,101 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:20,102 - __main__ - INFO - 📝 Transaction Recorded: BUY 23.56253 MATIC/AUD @ $68.94 AUD on Binance Australia (ID: TXN-000606)
+2025-10-04 09:53:21,906 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:22,102 - __main__ - INFO - 📝 Transaction Recorded: BUY 929.992524 MATIC/AUD @ $148.23 AUD on Binance Australia (ID: TXN-000607)
+2025-10-04 09:53:24,103 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:29,104 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:31,907 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:34,104 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:39,109 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:41,907 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:44,109 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:49,110 - __main__ - INFO - 📝 Transaction Recorded: BUY 799.702855 DOT/AUD @ $107.61 AUD on Binance Australia (ID: TXN-000613)
+2025-10-04 09:53:51,111 - __main__ - INFO - 📝 Transaction Recorded: BUY 458.092872 SOL/AUD @ $52.84 AUD on Gate.io (ID: TXN-000614)
+2025-10-04 09:53:51,817 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:53:51,908 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:53:53,111 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:53:58,112 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:01,908 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:03,112 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:08,112 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:11,909 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:13,113 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.031233 BTC/AUD @ $96,830.45 AUD on Gate.io (ID: TXN-000619)
+2025-10-04 09:54:15,114 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:20,114 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:21,909 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:25,115 - __main__ - INFO - 📝 Transaction Recorded: BUY 555.357663 MATIC/AUD @ $98.18 AUD on Digital Surge (ID: TXN-000622)
+2025-10-04 09:54:27,115 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:31,910 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:32,116 - __main__ - INFO - 📝 Transaction Recorded: BUY 485.124311 SOL/AUD @ $39.43 AUD on Swyftx (ID: TXN-000624)
+2025-10-04 09:54:34,116 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:39,117 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:41,910 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:44,117 - __main__ - INFO - 📝 Transaction Recorded: BUY 796.085009 DOT/AUD @ $44.50 AUD on Binance Australia (ID: TXN-000627)
+2025-10-04 09:54:46,118 - __main__ - INFO - 📝 Transaction Recorded: BUY 538.07101 SOL/AUD @ $34.06 AUD on Binance Australia (ID: TXN-000628)
+2025-10-04 09:54:48,118 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:51,817 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:54:51,910 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:54:53,119 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:54:58,119 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:01,911 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:03,120 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:08,120 - __main__ - INFO - 📝 Transaction Recorded: BUY 298.411226 MATIC/AUD @ $199.86 AUD on Digital Surge (ID: TXN-000633)
+2025-10-04 09:55:10,121 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:11,911 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:15,121 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.021778 BTC/AUD @ $102,376.13 AUD on Swyftx (ID: TXN-000635)
+2025-10-04 09:55:17,122 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:21,912 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:22,122 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.628924 ETH/AUD @ $5,402.72 AUD on BTC Markets (ID: TXN-000637)
+2025-10-04 09:55:24,123 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:29,123 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:31,912 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:34,124 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:39,124 - __main__ - INFO - 📝 Transaction Recorded: BUY 992.493739 ADA/AUD @ $173.48 AUD on Swyftx (ID: TXN-000641)
+2025-10-04 09:55:41,125 - __main__ - INFO - 📝 Transaction Recorded: BUY 250.427565 MATIC/AUD @ $142.42 AUD on OKX (ID: TXN-000642)
+2025-10-04 09:55:41,913 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:43,125 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:48,126 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:51,817 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:55:51,913 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:55:53,127 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:55:58,127 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:01,914 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:03,128 - __main__ - INFO - 📝 Transaction Recorded: BUY 731.201006 MATIC/AUD @ $91.96 AUD on Swyftx (ID: TXN-000647)
+2025-10-04 09:56:05,128 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:10,129 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:11,914 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:15,129 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:20,130 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:21,914 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:25,130 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:30,131 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:31,915 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:35,131 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:40,132 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:41,915 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:45,132 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:50,133 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:56:51,818 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:56:51,916 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:56:55,133 - __main__ - INFO - 📝 Transaction Recorded: BUY 703.994342 MATIC/AUD @ $0.72 AUD on WhiteBIT (ID: TXN-000658)
+2025-10-04 09:56:57,134 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.059774 BTC/AUD @ $100,194.44 AUD on WhiteBIT (ID: TXN-000659)
+2025-10-04 09:56:59,135 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.069864 BTC/AUD @ $103,171.09 AUD on WhiteBIT (ID: TXN-000660)
+2025-10-04 09:57:01,135 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:01,916 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:06,135 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:11,136 - __main__ - INFO - 📝 Transaction Recorded: BUY 383.338329 SOL/AUD @ $162.77 AUD on Gate.io (ID: TXN-000663)
+2025-10-04 09:57:11,917 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:13,136 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:18,137 - __main__ - INFO - 📝 Transaction Recorded: BUY 610.70892 DOT/AUD @ $33.24 AUD on BTC Markets (ID: TXN-000665)
+2025-10-04 09:57:20,137 - __main__ - INFO - 📝 Transaction Recorded: BUY 628.451958 MATIC/AUD @ $30.70 AUD on Gate.io (ID: TXN-000666)
+2025-10-04 09:57:21,917 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:22,138 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:27,138 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.183252 ETH/AUD @ $5,192.02 AUD on Binance Australia (ID: TXN-000668)
+2025-10-04 09:57:29,139 - __main__ - INFO - 📝 Transaction Recorded: BUY 248.538589 SOL/AUD @ $129.10 AUD on WhiteBIT (ID: TXN-000669)
+2025-10-04 09:57:31,139 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:31,918 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:36,140 - __main__ - INFO - 📝 Transaction Recorded: BUY 848.044212 MATIC/AUD @ $131.85 AUD on Swyftx (ID: TXN-000671)
+2025-10-04 09:57:38,141 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:41,918 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:43,141 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:48,142 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:51,818 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:57:51,918 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:57:53,142 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:57:58,143 - __main__ - INFO - 📝 Transaction Recorded: BUY 387.451411 SOL/AUD @ $167.88 AUD on Gate.io (ID: TXN-000676)
+2025-10-04 09:58:00,143 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:01,919 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:05,144 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.059149 BTC/AUD @ $95,137.93 AUD on Swyftx (ID: TXN-000678)
+2025-10-04 09:58:07,144 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.094919 BTC/AUD @ $98,979.75 AUD on OKX (ID: TXN-000679)
+2025-10-04 09:58:09,145 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:11,919 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:14,145 - __main__ - INFO - 📝 Transaction Recorded: BUY 640.896751 ADA/AUD @ $107.76 AUD on Digital Surge (ID: TXN-000681)
+2025-10-04 09:58:16,146 - __main__ - INFO - 📝 Transaction Recorded: BUY 310.596979 SOL/AUD @ $102.51 AUD on OKX (ID: TXN-000682)
+2025-10-04 09:58:18,146 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:21,920 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:23,147 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:28,147 - __main__ - INFO - 📝 Transaction Recorded: BUY 58.848038 MATIC/AUD @ $17.70 AUD on WhiteBIT (ID: TXN-000685)
+2025-10-04 09:58:30,148 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:31,920 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:35,148 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:40,149 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:41,921 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:45,149 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:50,150 - __main__ - INFO - 📝 Transaction Recorded: BUY 750.026608 SOL/AUD @ $174.76 AUD on OKX (ID: TXN-000690)
+2025-10-04 09:58:51,819 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:58:51,921 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:58:52,150 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.034166 BTC/AUD @ $99,293.25 AUD on Digital Surge (ID: TXN-000691)
+2025-10-04 09:58:54,151 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:58:59,151 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:01,922 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:04,152 - __main__ - INFO - 📝 Transaction Recorded: BUY 368.32009 DOT/AUD @ $51.40 AUD on Swyftx (ID: TXN-000694)
+2025-10-04 09:59:06,152 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:11,153 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.08601 BTC/AUD @ $95,122.88 AUD on BTC Markets (ID: TXN-000696)
+2025-10-04 09:59:11,922 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:13,153 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:18,154 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:21,922 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:23,154 - __main__ - INFO - 📝 Transaction Recorded: BUY 322.480212 ADA/AUD @ $83.54 AUD on Digital Surge (ID: TXN-000699)
+2025-10-04 09:59:25,155 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:30,155 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:31,923 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:35,156 - __main__ - INFO - 📝 Transaction Recorded: BUY 954.125328 DOT/AUD @ $14.25 AUD on Swyftx (ID: TXN-000702)
+2025-10-04 09:59:37,156 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:41,923 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:42,157 - __main__ - INFO - 📝 Transaction Recorded: BUY 292.303496 SOL/AUD @ $157.01 AUD on Binance Australia (ID: TXN-000704)
+2025-10-04 09:59:44,158 - __main__ - INFO - 📝 Transaction Recorded: BUY 464.462764 DOT/AUD @ $118.54 AUD on Digital Surge (ID: TXN-000705)
+2025-10-04 09:59:46,158 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:51,159 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.865471 ETH/AUD @ $5,011.96 AUD on OKX (ID: TXN-000707)
+2025-10-04 09:59:51,819 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 09:59:51,924 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 09:59:53,159 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 09:59:58,160 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:01,924 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:03,160 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.053452 BTC/AUD @ $97,381.68 AUD on Gate.io (ID: TXN-000710)
+2025-10-04 10:00:05,161 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.071454 BTC/AUD @ $95,930.27 AUD on WhiteBIT (ID: TXN-000711)
+2025-10-04 10:00:07,161 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:11,925 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:12,162 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:17,162 - __main__ - INFO - 📝 Transaction Recorded: BUY 592.303868 ADA/AUD @ $12.93 AUD on Swyftx (ID: TXN-000714)
+2025-10-04 10:00:19,163 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.590435 ETH/AUD @ $5,425.46 AUD on Digital Surge (ID: TXN-000715)
+2025-10-04 10:00:21,163 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:21,925 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:26,164 - __main__ - INFO - 📝 Transaction Recorded: BUY 75.612748 SOL/AUD @ $40.94 AUD on WhiteBIT (ID: TXN-000717)
+2025-10-04 10:00:28,164 - __main__ - INFO - 📝 Transaction Recorded: BUY 156.255141 DOT/AUD @ $33.29 AUD on Swyftx (ID: TXN-000718)
+2025-10-04 10:00:30,165 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:31,926 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:35,165 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:40,166 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.080952 BTC/AUD @ $98,042.15 AUD on Binance Australia (ID: TXN-000721)
+2025-10-04 10:00:41,926 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:42,166 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:47,167 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.425203 ETH/AUD @ $5,484.20 AUD on Gate.io (ID: TXN-000723)
+2025-10-04 10:00:49,167 - __main__ - INFO - 📝 Transaction Recorded: BUY 677.506194 DOT/AUD @ $52.40 AUD on WhiteBIT (ID: TXN-000724)
+2025-10-04 10:00:51,168 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:00:51,819 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:00:51,927 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:00:56,168 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.929466 ETH/AUD @ $5,401.95 AUD on BTC Markets (ID: TXN-000726)
+2025-10-04 10:00:58,169 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.007105 BTC/AUD @ $102,809.60 AUD on OKX (ID: TXN-000727)
+2025-10-04 10:01:00,170 - __main__ - INFO - 📝 Transaction Recorded: BUY 1.64911 ETH/AUD @ $5,186.12 AUD on OKX (ID: TXN-000728)
+2025-10-04 10:01:01,927 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:02,170 - __main__ - INFO - 📝 Transaction Recorded: BUY 582.741478 MATIC/AUD @ $52.13 AUD on Digital Surge (ID: TXN-000729)
+2025-10-04 10:01:04,170 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.099719 BTC/AUD @ $96,977.50 AUD on Swyftx (ID: TXN-000730)
+2025-10-04 10:01:06,171 - __main__ - INFO - 📝 Transaction Recorded: BUY 92.88666 ADA/AUD @ $169.53 AUD on Digital Surge (ID: TXN-000731)
+2025-10-04 10:01:08,172 - __main__ - INFO - 📝 Transaction Recorded: BUY 43.653623 SOL/AUD @ $92.47 AUD on Swyftx (ID: TXN-000732)
+2025-10-04 10:01:10,172 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:11,928 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:15,172 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:20,173 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:21,928 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:25,173 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:30,174 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:31,929 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:35,174 - __main__ - INFO - 📝 Transaction Recorded: BUY 643.009873 ADA/AUD @ $159.54 AUD on OKX (ID: TXN-000738)
+2025-10-04 10:01:37,175 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:41,929 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:42,175 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:47,176 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:51,820 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:01:51,929 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:01:52,176 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:01:57,177 - __main__ - INFO - 📝 Transaction Recorded: BUY 808.84523 SOL/AUD @ $94.60 AUD on Swyftx (ID: TXN-000743)
+2025-10-04 10:01:59,177 - __main__ - INFO - 📝 Transaction Recorded: BUY 974.005882 DOT/AUD @ $20.48 AUD on Gate.io (ID: TXN-000744)
+2025-10-04 10:02:01,178 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:01,930 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:06,179 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.057994 BTC/AUD @ $104,826.65 AUD on Digital Surge (ID: TXN-000746)
+2025-10-04 10:02:08,179 - __main__ - INFO - 📝 Transaction Recorded: BUY 176.924267 SOL/AUD @ $118.71 AUD on WhiteBIT (ID: TXN-000747)
+2025-10-04 10:02:10,180 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:11,930 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:15,180 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:20,181 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:21,931 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:25,181 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.02403 BTC/AUD @ $97,188.09 AUD on Binance Australia (ID: TXN-000751)
+2025-10-04 10:02:27,182 - __main__ - INFO - 📝 Transaction Recorded: BUY 332.40226 ADA/AUD @ $123.02 AUD on BTC Markets (ID: TXN-000752)
+2025-10-04 10:02:29,182 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:31,931 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:34,183 - __main__ - INFO - 📝 Transaction Recorded: BUY 22.890983 SOL/AUD @ $117.53 AUD on Swyftx (ID: TXN-000754)
+2025-10-04 10:02:36,183 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:41,184 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:41,931 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:46,184 - __main__ - INFO - 📝 Transaction Recorded: BUY 975.884811 SOL/AUD @ $146.60 AUD on Gate.io (ID: TXN-000757)
+2025-10-04 10:02:48,185 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:51,804 - __main__ - INFO - ✅ Compliance Check #11: ALL REQUIREMENTS MET
+2025-10-04 10:02:51,820 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:02:51,932 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:02:53,186 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:02:58,186 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:01,932 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:03,186 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:08,187 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:11,933 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:13,187 - __main__ - INFO - 📝 Transaction Recorded: BUY 640.007126 DOT/AUD @ $21.27 AUD on Swyftx (ID: TXN-000763)
+2025-10-04 10:03:15,188 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:20,189 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:21,933 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:25,189 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:30,190 - __main__ - INFO - 📝 Transaction Recorded: BUY 250.291322 SOL/AUD @ $14.03 AUD on Binance Australia (ID: TXN-000767)
+2025-10-04 10:03:31,934 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:32,190 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:37,191 - __main__ - INFO - 📝 Transaction Recorded: BUY 884.667446 ADA/AUD @ $98.87 AUD on Digital Surge (ID: TXN-000769)
+2025-10-04 10:03:39,191 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:41,934 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:44,192 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:49,192 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.030196 BTC/AUD @ $98,187.17 AUD on WhiteBIT (ID: TXN-000772)
+2025-10-04 10:03:51,193 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:03:51,820 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:03:51,935 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:03:56,193 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:01,194 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:01,935 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:06,194 - __main__ - INFO - 📝 Transaction Recorded: BUY 607.710308 MATIC/AUD @ $87.12 AUD on WhiteBIT (ID: TXN-000776)
+2025-10-04 10:04:08,195 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:11,935 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:13,195 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:18,195 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:21,936 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:23,196 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:28,196 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:31,936 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:33,197 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.061214 ETH/AUD @ $5,085.42 AUD on WhiteBIT (ID: TXN-000782)
+2025-10-04 10:04:35,198 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:40,198 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:41,937 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:45,199 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:50,199 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:04:51,821 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:04:51,937 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:04:55,199 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:00,200 - __main__ - INFO - 📝 Transaction Recorded: BUY 86.621605 MATIC/AUD @ $69.09 AUD on Digital Surge (ID: TXN-000788)
+2025-10-04 10:05:01,938 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:02,200 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:07,201 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:11,938 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:12,201 - __main__ - INFO - 📝 Transaction Recorded: BUY 476.786019 DOT/AUD @ $16.25 AUD on WhiteBIT (ID: TXN-000791)
+2025-10-04 10:05:14,202 - __main__ - INFO - 📝 Transaction Recorded: BUY 502.599369 MATIC/AUD @ $180.14 AUD on Swyftx (ID: TXN-000792)
+2025-10-04 10:05:16,203 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:21,203 - __main__ - INFO - 📝 Transaction Recorded: BUY 949.112422 ADA/AUD @ $33.85 AUD on Swyftx (ID: TXN-000794)
+2025-10-04 10:05:21,939 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:23,204 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.094925 ETH/AUD @ $5,039.18 AUD on OKX (ID: TXN-000795)
+2025-10-04 10:05:25,204 - __main__ - INFO - 📝 Transaction Recorded: BUY 997.271958 ADA/AUD @ $125.63 AUD on Digital Surge (ID: TXN-000796)
+2025-10-04 10:05:27,205 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:31,939 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:32,205 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.039422 BTC/AUD @ $98,973.55 AUD on Swyftx (ID: TXN-000798)
+2025-10-04 10:05:34,206 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:39,206 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:41,939 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:44,207 - __main__ - INFO - 📝 Transaction Recorded: BUY 149.051542 ADA/AUD @ $117.79 AUD on Binance Australia (ID: TXN-000801)
+2025-10-04 10:05:46,207 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.056706 BTC/AUD @ $96,009.90 AUD on Swyftx (ID: TXN-000802)
+2025-10-04 10:05:48,208 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:51,821 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:05:51,940 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:05:53,208 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:05:58,209 - __main__ - INFO - 📝 Transaction Recorded: BUY 618.626244 ADA/AUD @ $136.32 AUD on Gate.io (ID: TXN-000805)
+2025-10-04 10:06:00,209 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:01,940 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:05,210 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:10,210 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:11,941 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:15,211 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:20,212 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:21,941 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:25,212 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:30,212 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:31,941 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:35,213 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:40,213 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.629135 ETH/AUD @ $5,253.40 AUD on BTC Markets (ID: TXN-000814)
+2025-10-04 10:06:41,942 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:42,214 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:47,214 - __main__ - INFO - 📝 Transaction Recorded: BUY 0.506486 ETH/AUD @ $5,228.22 AUD on Swyftx (ID: TXN-000816)
+2025-10-04 10:06:49,215 - __main__ - INFO - 📝 Transaction Recorded: BUY 274.703521 MATIC/AUD @ $164.79 AUD on Gate.io (ID: TXN-000817)
+2025-10-04 10:06:51,215 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:06:51,822 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:06:51,942 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:06:56,216 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:01,217 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:01,943 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:06,217 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:11,218 - __main__ - INFO - 📝 Transaction Recorded: BUY 163.744498 ADA/AUD @ $114.67 AUD on Binance Australia (ID: TXN-000822)
+2025-10-04 10:07:11,943 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:13,218 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:18,219 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:21,943 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:23,219 - __main__ - INFO - 📝 Transaction Recorded: BUY 474.623109 MATIC/AUD @ $26.90 AUD on Swyftx (ID: TXN-000825)
+2025-10-04 10:07:25,220 - __main__ - INFO - 📝 Transaction Recorded: BUY 224.546262 DOT/AUD @ $121.86 AUD on OKX (ID: TXN-000826)
+2025-10-04 10:07:27,220 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:31,944 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:32,221 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:37,221 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:41,944 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:42,222 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:47,222 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:51,822 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:07:51,945 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:07:52,223 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:07:57,223 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:01,945 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:02,224 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:07,224 - __main__ - INFO - 📝 Transaction Recorded: BUY 655.74517 MATIC/AUD @ $199.50 AUD on OKX (ID: TXN-000835)
+2025-10-04 10:08:09,225 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:11,946 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:14,225 - __main__ - INFO - 📝 Transaction Recorded: BUY 343.823883 DOT/AUD @ $142.82 AUD on Digital Surge (ID: TXN-000837)
+2025-10-04 10:08:16,226 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:21,226 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:21,946 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:26,227 - __main__ - INFO - 📝 Transaction Recorded: BUY 294.490269 DOT/AUD @ $94.42 AUD on Digital Surge (ID: TXN-000840)
+2025-10-04 10:08:28,227 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:31,947 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:33,228 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:38,228 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:41,947 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:43,229 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:48,229 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined
+2025-10-04 10:08:51,822 - __main__ - INFO - ❌ Foreign Exchange Monitor Error: name 'random' is not defined
+2025-10-04 10:08:51,948 - __main__ - INFO - ❌ Trading Simulator Error: name 'random' is not defined
+2025-10-04 10:08:53,230 - __main__ - INFO - 📝 Transaction Recorded: BUY 500.976897 ADA/AUD @ $173.57 AUD on Binance Australia (ID: TXN-000846)
+2025-10-04 10:08:55,231 - __main__ - INFO - ❌ Transaction Recorder Error: name 'random' is not defined

@@ -6,7 +6,6 @@ Uses ALL AI tools, ALL testing frameworks, ALL available resources
 """
 
 import os
-import logging
 import json
 import asyncio
 import subprocess
@@ -17,7 +16,6 @@ from typing import Dict, List, Any
 
 class UltimateTestingOrchestrator:
     def __init__(self):
-        """TODO: Add function documentation"""
         self.sandy_box_path = "/home/ubuntu/temp_repos/halvo78_sandy---box"
         self.orchestration_results = {}
         self.total_systems_deployed = 0
@@ -86,7 +84,7 @@ class UltimateTestingOrchestrator:
     
     def install_required_tools(self):
         """Install all required testing tools"""
-        logging.info("🛠️ INSTALLING ALL REQUIRED TESTING TOOLS...")
+        print("🛠️ INSTALLING ALL REQUIRED TESTING TOOLS...")
         
         tools_to_install = [
             'bandit', 'safety', 'semgrep', 'gitleaks', 'trivy',
@@ -97,9 +95,9 @@ class UltimateTestingOrchestrator:
         for tool in tools_to_install:
             try:
                 subprocess.run(['pip3', 'install', tool], check=False, capture_output=True)
-                logging.info(f"✅ Installed: {tool}")
+                print(f"✅ Installed: {tool}")
             except Exception as e:
-                logging.info(f"⚠️  Could not install {tool}: {e}")
+                print(f"⚠️  Could not install {tool}: {e}")
         
         # Install additional tools via apt
         apt_tools = ['curl', 'jq', 'git']
@@ -111,7 +109,7 @@ class UltimateTestingOrchestrator:
     
     async def run_testing_system(self, system_name: str, system_config: Dict) -> Dict[str, Any]:
         """Run a specific testing system"""
-        logging.info(f"🚀 Starting {system_name}: {system_config['description']}")
+        print(f"🚀 Starting {system_name}: {system_config['description']}")
         
         start_time = datetime.now()
         result = {
@@ -204,16 +202,16 @@ class UltimateTestingOrchestrator:
             'duration_seconds': (end_time - start_time).total_seconds()
         })
         
-        logging.info(f"✅ Completed {system_name}: {result['status']} ({result['duration_seconds']:.1f}s)")
+        print(f"✅ Completed {system_name}: {result['status']} ({result['duration_seconds']:.1f}s)")
         return result
     
     async def orchestrate_all_testing(self):
         """Orchestrate all testing systems simultaneously"""
-        logging.info("🎯 ULTIMATE TESTING ORCHESTRATION STARTING")
-        logging.info("=" * 80)
-        logging.info(f"🚀 Deploying {len(self.testing_systems)} testing systems")
-        logging.info("🎯 Mission: Achieve absolute perfection with comprehensive testing")
-        logging.info("=" * 80)
+        print("🎯 ULTIMATE TESTING ORCHESTRATION STARTING")
+        print("=" * 80)
+        print(f"🚀 Deploying {len(self.testing_systems)} testing systems")
+        print("🎯 Mission: Achieve absolute perfection with comprehensive testing")
+        print("=" * 80)
         
         # Install required tools
         self.install_required_tools()
@@ -231,7 +229,7 @@ class UltimateTestingOrchestrator:
         
         # Phase 1: Critical systems (run first)
         if critical_systems:
-            logging.info("\n🔥 PHASE 1: CRITICAL SYSTEMS")
+            print("\n🔥 PHASE 1: CRITICAL SYSTEMS")
             critical_tasks = [
                 self.run_testing_system(name, config) 
                 for name, config in critical_systems.items()
@@ -244,7 +242,7 @@ class UltimateTestingOrchestrator:
         
         # Phase 2: High priority systems (run in parallel)
         if high_priority_systems:
-            logging.info("\n🚀 PHASE 2: HIGH PRIORITY SYSTEMS")
+            print("\n🚀 PHASE 2: HIGH PRIORITY SYSTEMS")
             high_priority_tasks = [
                 self.run_testing_system(name, config) 
                 for name, config in high_priority_systems.items()
@@ -257,7 +255,7 @@ class UltimateTestingOrchestrator:
         
         # Phase 3: Medium priority systems (run in parallel)
         if medium_priority_systems:
-            logging.info("\n⚡ PHASE 3: MEDIUM PRIORITY SYSTEMS")
+            print("\n⚡ PHASE 3: MEDIUM PRIORITY SYSTEMS")
             medium_priority_tasks = [
                 self.run_testing_system(name, config) 
                 for name, config in medium_priority_systems.items()
@@ -286,14 +284,14 @@ class UltimateTestingOrchestrator:
         with open(summary_file, 'w') as f:
             f.write(summary_report)
         
-        logging.info("=" * 80)
-        logging.info("🎉 ULTIMATE TESTING ORCHESTRATION COMPLETED!")
-        logging.info(f"📊 Systems Deployed: {len(all_results)}")
-        logging.info(f"✅ Successful: {orchestration_report['successful_systems']}")
-        logging.info(f"❌ Failed: {orchestration_report['failed_systems']}")
-        logging.info(f"⏱️  Total Duration: {orchestration_report['total_duration_minutes']:.1f} minutes")
-        logging.info(f"🎯 Overall Success Rate: {orchestration_report['success_rate']:.1f}%")
-        logging.info("=" * 80)
+        print("=" * 80)
+        print("🎉 ULTIMATE TESTING ORCHESTRATION COMPLETED!")
+        print(f"📊 Systems Deployed: {len(all_results)}")
+        print(f"✅ Successful: {orchestration_report['successful_systems']}")
+        print(f"❌ Failed: {orchestration_report['failed_systems']}")
+        print(f"⏱️  Total Duration: {orchestration_report['total_duration_minutes']:.1f} minutes")
+        print(f"🎯 Overall Success Rate: {orchestration_report['success_rate']:.1f}%")
+        print("=" * 80)
         
         return orchestration_report
     
@@ -309,13 +307,10 @@ class UltimateTestingOrchestrator:
         success_rate = (successful_systems / total_systems * 100) if total_systems > 0 else 0
         
         # Categorize results by priority
-        critical_results = {k: v for k,
-            v in results.items() if self.testing_systems.get(k,
-            {}).get('priority') == 'CRITICAL'}        high_priority_results = {k: v for k,
-            v in results.items() if self.testing_systems.get(k,
-            {}).get('priority') == 'HIGH'}        medium_priority_results = {k: v for k,
-            v in results.items() if self.testing_systems.get(k,
-            {}).get('priority') == 'MEDIUM'}        
+        critical_results = {k: v for k, v in results.items() if self.testing_systems.get(k, {}).get('priority') == 'CRITICAL'}
+        high_priority_results = {k: v for k, v in results.items() if self.testing_systems.get(k, {}).get('priority') == 'HIGH'}
+        medium_priority_results = {k: v for k, v in results.items() if self.testing_systems.get(k, {}).get('priority') == 'MEDIUM'}
+        
         report = {
             'orchestration_timestamp': datetime.now().isoformat(),
             'total_systems_deployed': total_systems,
@@ -342,13 +337,9 @@ class UltimateTestingOrchestrator:
                 }
             },
             'performance_metrics': {
-                'fastest_system': min(results.items(),
-                    key=lambda x: x[1].get('duration_seconds',
-                    float('inf')))[0] if results else None,
-                                    'slowest_system': max(results.items(),
-                    key=lambda x: x[1].get('duration_seconds',
-                    0))[0] if results else None,
-                                    'average_duration_seconds': total_duration / total_systems if total_systems > 0 else 0
+                'fastest_system': min(results.items(), key=lambda x: x[1].get('duration_seconds', float('inf')))[0] if results else None,
+                'slowest_system': max(results.items(), key=lambda x: x[1].get('duration_seconds', 0))[0] if results else None,
+                'average_duration_seconds': total_duration / total_systems if total_systems > 0 else 0
             },
             'recommendations': self.generate_recommendations(results)
         }
@@ -456,15 +447,15 @@ async def main():
     
     # Check sandy-box repository
     if not os.path.exists(orchestrator.sandy_box_path):
-        logging.info(f"❌ Sandy-box repository not found at {orchestrator.sandy_box_path}")
+        print(f"❌ Sandy-box repository not found at {orchestrator.sandy_box_path}")
         return
     
     # Run orchestration
     report = await orchestrator.orchestrate_all_testing()
     
-    logging.info(f"\n🎯 ORCHESTRATION COMPLETE!")
-    logging.info(f"📊 Success Rate: {report['success_rate']:.1f}%")
-    logging.info(f"⏱️  Duration: {report['total_duration_minutes']:.1f} minutes")
+    print(f"\n🎯 ORCHESTRATION COMPLETE!")
+    print(f"📊 Success Rate: {report['success_rate']:.1f}%")
+    print(f"⏱️  Duration: {report['total_duration_minutes']:.1f} minutes")
 
 if __name__ == "__main__":
     asyncio.run(main())

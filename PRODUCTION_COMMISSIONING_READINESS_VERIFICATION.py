@@ -6,7 +6,6 @@ Verifies actual commissioning readiness for live trading deployment
 """
 
 import os
-import logging
 import json
 import requests
 import subprocess
@@ -16,7 +15,6 @@ from typing import Dict, List, Any, Optional
 
 class ProductionCommissioningVerifier:
     def __init__(self):
-        """TODO: Add function documentation"""
         self.sandy_box_path = "/home/ubuntu/temp_repos/halvo78_sandy---box"
         self.verification_results = {}
         self.commissioning_score = 0
@@ -138,12 +136,12 @@ class ProductionCommissioningVerifier:
     
     def verify_exchange_connectivity(self) -> Dict[str, Any]:
         """Verify LIVE exchange connectivity - NO SIMULATION"""
-        logging.info("🔗 VERIFYING LIVE EXCHANGE CONNECTIVITY...")
+        print("🔗 VERIFYING LIVE EXCHANGE CONNECTIVITY...")
         
         connectivity_results = {}
         
         for exchange, config in self.live_api_endpoints.items():
-            logging.info(f"  📡 Testing {exchange.upper()} live connectivity...")
+            print(f"  📡 Testing {exchange.upper()} live connectivity...")
             
             try:
                 # Test public endpoint (no auth required)
@@ -158,21 +156,21 @@ class ProductionCommissioningVerifier:
                         'response_time_ms': response.elapsed.total_seconds() * 1000,
                         'status_code': response.status_code
                     }
-                    logging.info(f"    ✅ {exchange.upper()} public API: CONNECTED ({response.elapsed.total_seconds()*1000:.0f}ms)")
+                    print(f"    ✅ {exchange.upper()} public API: CONNECTED ({response.elapsed.total_seconds()*1000:.0f}ms)")
                 else:
                     connectivity_results[exchange] = {
                         'public_api': 'FAILED',
                         'status_code': response.status_code,
                         'error': f"HTTP {response.status_code}"
                     }
-                    logging.info(f"    ❌ {exchange.upper()} public API: FAILED (HTTP {response.status_code})")
+                    print(f"    ❌ {exchange.upper()} public API: FAILED (HTTP {response.status_code})")
                     
             except Exception as e:
                 connectivity_results[exchange] = {
                     'public_api': 'ERROR',
                     'error': str(e)
                 }
-                logging.info(f"    ❌ {exchange.upper()} public API: ERROR ({str(e)})")
+                print(f"    ❌ {exchange.upper()} public API: ERROR ({str(e)})")
         
         # Calculate connectivity score
         connected_exchanges = sum(1 for result in connectivity_results.values() 
@@ -189,7 +187,7 @@ class ProductionCommissioningVerifier:
     
     def verify_api_authentication(self) -> Dict[str, Any]:
         """Verify REAL API key authentication - NO SIMULATION"""
-        logging.info("🔐 VERIFYING REAL API KEY AUTHENTICATION...")
+        print("🔐 VERIFYING REAL API KEY AUTHENTICATION...")
         
         auth_results = {}
         api_keys_found = 0
@@ -206,9 +204,9 @@ class ProductionCommissioningVerifier:
         for var in api_key_vars:
             if os.getenv(var):
                 api_keys_found += 1
-                logging.info(f"    ✅ Found: {var}")
+                print(f"    ✅ Found: {var}")
             else:
-                logging.info(f"    ❌ Missing: {var}")
+                print(f"    ❌ Missing: {var}")
         
         # Check API key files in repository
         api_key_files = [
@@ -221,14 +219,14 @@ class ProductionCommissioningVerifier:
         for filename in api_key_files:
             filepath = os.path.join(self.sandy_box_path, filename)
             if os.path.exists(filepath):
-                logging.info(f"    ✅ Found API key file: {filename}")
+                print(f"    ✅ Found API key file: {filename}")
                 try:
                     with open(filepath, 'r') as f:
                         content = f.read()
                         if 'API_KEY' in content or 'SECRET' in content:
                             valid_api_keys += 1
                 except Exception as e:
-                    logging.info(f"    ⚠️  Could not read {filename}: {e}")
+                    print(f"    ⚠️  Could not read {filename}: {e}")
         
         auth_score = ((api_keys_found + valid_api_keys) / (len(api_key_vars) + len(api_key_files))) * 100
         
@@ -242,7 +240,7 @@ class ProductionCommissioningVerifier:
     
     def verify_trading_strategies(self) -> Dict[str, Any]:
         """Verify LIVE trading strategy implementation - NO SIMULATION"""
-        logging.info("📈 VERIFYING LIVE TRADING STRATEGIES...")
+        print("📈 VERIFYING LIVE TRADING STRATEGIES...")
         
         strategy_files = []
         risk_management_files = []
@@ -285,7 +283,7 @@ class ProductionCommissioningVerifier:
     
     def verify_security_compliance(self) -> Dict[str, Any]:
         """Verify PRODUCTION security compliance - NO SIMULATION"""
-        logging.info("🛡️ VERIFYING PRODUCTION SECURITY COMPLIANCE...")
+        print("🛡️ VERIFYING PRODUCTION SECURITY COMPLIANCE...")
         
         security_features = {
             'encryption': False,
@@ -332,7 +330,7 @@ class ProductionCommissioningVerifier:
     
     def verify_regulatory_compliance(self) -> Dict[str, Any]:
         """Verify ATO and regulatory compliance - NO SIMULATION"""
-        logging.info("📋 VERIFYING REGULATORY COMPLIANCE...")
+        print("📋 VERIFYING REGULATORY COMPLIANCE...")
         
         compliance_features = {
             'ato_reporting': False,
@@ -379,7 +377,7 @@ class ProductionCommissioningVerifier:
     
     def verify_infrastructure_readiness(self) -> Dict[str, Any]:
         """Verify PRODUCTION infrastructure readiness - NO SIMULATION"""
-        logging.info("🏗️ VERIFYING PRODUCTION INFRASTRUCTURE...")
+        print("🏗️ VERIFYING PRODUCTION INFRASTRUCTURE...")
         
         infrastructure_checks = {}
         
@@ -428,11 +426,11 @@ class ProductionCommissioningVerifier:
     
     def run_production_commissioning_verification(self) -> Dict[str, Any]:
         """Run complete PRODUCTION commissioning verification - NO SIMULATION"""
-        logging.info("🚀 STARTING PRODUCTION COMMISSIONING READINESS VERIFICATION")
-        logging.info("=" * 80)
-        logging.info("🎯 MISSION: VERIFY REAL-WORLD PRODUCTION READINESS")
-        logging.info("⚠️  NO SIMULATION - LIVE PRODUCTION VERIFICATION ONLY")
-        logging.info("=" * 80)
+        print("🚀 STARTING PRODUCTION COMMISSIONING READINESS VERIFICATION")
+        print("=" * 80)
+        print("🎯 MISSION: VERIFY REAL-WORLD PRODUCTION READINESS")
+        print("⚠️  NO SIMULATION - LIVE PRODUCTION VERIFICATION ONLY")
+        print("=" * 80)
         
         verification_start = datetime.now()
         
@@ -508,27 +506,27 @@ class ProductionCommissioningVerifier:
             json.dump(commissioning_report, f, indent=2)
         
         # Print results
-        logging.info("\n📊 PRODUCTION COMMISSIONING VERIFICATION RESULTS")
-        logging.info("=" * 80)
-        logging.info(f"🎯 OVERALL COMMISSIONING SCORE: {overall_score:.1f}/100")
-        logging.info(f"🚀 PRODUCTION READY: {'✅ YES' if production_ready else '❌ NO'}")
-        logging.info(f"📋 COMMISSIONING STATUS: {commissioning_report['commissioning_status']}")
+        print("\n📊 PRODUCTION COMMISSIONING VERIFICATION RESULTS")
+        print("=" * 80)
+        print(f"🎯 OVERALL COMMISSIONING SCORE: {overall_score:.1f}/100")
+        print(f"🚀 PRODUCTION READY: {'✅ YES' if production_ready else '❌ NO'}")
+        print(f"📋 COMMISSIONING STATUS: {commissioning_report['commissioning_status']}")
         
-        logging.info("\n📈 CATEGORY SCORES:")
+        print("\n📈 CATEGORY SCORES:")
         for category, score in commissioning_report['category_scores'].items():
             status = "✅" if score >= 70 else "⚠️" if score >= 50 else "❌"
-            logging.info(f"  {status} {category}: {score:.1f}/100")
+            print(f"  {status} {category}: {score:.1f}/100")
         
         if commissioning_report['critical_blockers']:
-            logging.info(f"\n🚨 CRITICAL BLOCKERS: {len(commissioning_report['critical_blockers'])}")
+            print(f"\n🚨 CRITICAL BLOCKERS: {len(commissioning_report['critical_blockers'])}")
             for blocker in commissioning_report['critical_blockers']:
-                logging.info(f"  ❌ {blocker}")
+                print(f"  ❌ {blocker}")
         
-        logging.info("\n🎯 COMMISSIONING RECOMMENDATIONS:")
+        print("\n🎯 COMMISSIONING RECOMMENDATIONS:")
         for i, rec in enumerate(commissioning_report['recommendations'], 1):
-            logging.info(f"  {i}. {rec}")
+            print(f"  {i}. {rec}")
         
-        logging.info("=" * 80)
+        print("=" * 80)
         
         return commissioning_report
     
@@ -602,16 +600,16 @@ def main():
     
     # Check sandy-box repository
     if not os.path.exists(verifier.sandy_box_path):
-        logging.info(f"❌ Sandy-box repository not found at {verifier.sandy_box_path}")
+        print(f"❌ Sandy-box repository not found at {verifier.sandy_box_path}")
         return
     
     # Run production commissioning verification
     report = verifier.run_production_commissioning_verification()
     
-    logging.info(f"\n🎯 PRODUCTION COMMISSIONING VERIFICATION COMPLETE!")
-    logging.info(f"📊 Overall Score: {report['overall_commissioning_score']:.1f}/100")
-    logging.info(f"🚀 Production Ready: {'YES' if report['production_ready'] else 'NO'}")
-    logging.info(f"📋 Status: {report['commissioning_status']}")
+    print(f"\n🎯 PRODUCTION COMMISSIONING VERIFICATION COMPLETE!")
+    print(f"📊 Overall Score: {report['overall_commissioning_score']:.1f}/100")
+    print(f"🚀 Production Ready: {'YES' if report['production_ready'] else 'NO'}")
+    print(f"📋 Status: {report['commissioning_status']}")
 
 if __name__ == "__main__":
     main()

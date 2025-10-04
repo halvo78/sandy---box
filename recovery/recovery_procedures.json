@@ -1,0 +1,32 @@
+{
+  "system_recovery": {
+    "steps": [
+      "1. Assess system failure",
+      "2. Identify last good backup",
+      "3. Restore from backup",
+      "4. Verify system integrity",
+      "5. Resume operations"
+    ],
+    "estimated_time": "15_MINUTES"
+  },
+  "data_recovery": {
+    "steps": [
+      "1. Identify corrupted data",
+      "2. Locate backup with good data",
+      "3. Restore specific data",
+      "4. Verify data integrity",
+      "5. Update applications"
+    ],
+    "estimated_time": "10_MINUTES"
+  },
+  "disaster_recovery": {
+    "steps": [
+      "1. Activate disaster recovery site",
+      "2. Restore from offsite backup",
+      "3. Reconfigure network",
+      "4. Test all systems",
+      "5. Switch traffic to DR site"
+    ],
+    "estimated_time": "30_MINUTES"
+  }
+}

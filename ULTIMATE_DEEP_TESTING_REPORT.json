@@ -1,0 +1,2506 @@
+{
+  "timestamp": "2025-10-04T08:40:27.706950",
+  "duration_seconds": 0.26,
+  "statistics": {
+    "total_files_analyzed": 2900,
+    "python_files": 50,
+    "docker_files": 115,
+    "config_files": 30,
+    "total_lines_of_code": 6783,
+    "total_functions": 123
+  },
+  "scores": {
+    "security_score": 90,
+    "quality_score": 12,
+    "docker_score": 0,
+    "config_score": 0,
+    "overall_score": 25.5
+  },
+  "issues_summary": {
+    "security_issues": 1,
+    "quality_issues": 44,
+    "docker_issues": 42,
+    "config_issues": 10,
+    "total_issues": 7
+  },
+  "detailed_results": {
+    "python_analysis": [
+      {
+        "file_path": "/home/ubuntu/sandy---box/PRODUCTION_COMMISSIONING_READINESS_VERIFICATION.py",
+        "lines": 618,
+        "functions": 12,
+        "function_details": [
+          {
+            "name": "main",
+            "line_number": 599,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "__init__",
+            "line_number": 18,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "verify_exchange_connectivity",
+            "line_number": 139,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          },
+          {
+            "name": "verify_api_authentication",
+            "line_number": 190,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 9
+          },
+          {
+            "name": "verify_trading_strategies",
+            "line_number": 243,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 8
+          },
+          {
+            "name": "verify_security_compliance",
+            "line_number": 286,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 11
+          },
+          {
+            "name": "verify_regulatory_compliance",
+            "line_number": 333,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 11
+          },
+          {
+            "name": "verify_infrastructure_readiness",
+            "line_number": 380,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          },
+          {
+            "name": "run_production_commissioning_verification",
+            "line_number": 429,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 6
+          },
+          {
+            "name": "get_commissioning_status",
+            "line_number": 535,
+            "args": 3,
+            "has_docstring": true,
+            "complexity": 7
+          },
+          {
+            "name": "identify_critical_blockers",
+            "line_number": 548,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 9
+          },
+          {
+            "name": "generate_commissioning_recommendations",
+            "line_number": 569,
+            "args": 3,
+            "has_docstring": true,
+            "complexity": 9
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 161 too long (131 chars)",
+          "1 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_ENHANCED_AI_TESTING_PERFECTION_SYSTEM.py",
+        "lines": 579,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "__init__",
+            "line_number": 21,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "analyze_enhanced_consensus",
+            "line_number": 263,
+            "args": 3,
+            "has_docstring": true,
+            "complexity": 25
+          },
+          {
+            "name": "generate_enhancement_plan",
+            "line_number": 484,
+            "args": 3,
+            "has_docstring": true,
+            "complexity": 3
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 317 too long (124 chars)",
+          "1 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_TESTING_ORCHESTRATOR.py",
+        "lines": 471,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [
+          "Unsafe eval/exec usage"
+        ],
+        "quality_issues": [
+          "Line 351 too long (122 chars)",
+          "Line 365 too long (124 chars)",
+          "Line 374 too long (130 chars)",
+          "Line 446 too long (131 chars)",
+          "Line 448 too long (161 chars)",
+          "1 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/main.py",
+        "lines": 67,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/AI_INTEGRATION/COMPLETE_OPENROUTER_INTEGRATION.py",
+        "lines": 494,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 33 too long (131 chars)",
+          "Line 67 too long (135 chars)",
+          "Line 163 too long (131 chars)",
+          "Line 173 too long (134 chars)",
+          "Line 220 too long (125 chars)",
+          "Line 353 too long (136 chars)",
+          "Line 439 too long (173 chars)"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/AI_INTEGRATION/COMPREHENSIVE_7DAY_CONSENSUS_VALIDATOR.py",
+        "lines": 556,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 79 too long (122 chars)",
+          "Line 115 too long (130 chars)",
+          "Line 364 too long (135 chars)",
+          "Line 447 too long (138 chars)",
+          "Line 482 too long (122 chars)",
+          "Line 487 too long (129 chars)",
+          "Line 488 too long (122 chars)",
+          "Line 489 too long (148 chars)",
+          "Line 539 too long (131 chars)"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/AI_INTEGRATION/ULTIMATE_AI_CONSENSUS_GITHUB_OPTIMIZER.py",
+        "lines": 551,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 126 too long (130 chars)",
+          "Line 468 too long (168 chars)"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/AI_INTEGRATION/ULTIMATE_AI_CONSENSUS_PERFECTION_VALIDATOR.py",
+        "lines": 470,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 171 too long (127 chars)",
+          "Line 313 too long (122 chars)",
+          "Line 333 too long (135 chars)",
+          "Line 360 too long (207 chars)",
+          "Line 362 too long (130 chars)",
+          "Line 442 too long (122 chars)",
+          "Line 445 too long (121 chars)"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/AI_INTEGRATION/ULTIMATE_EXTRACTION_CONSENSUS_VALIDATOR.py",
+        "lines": 624,
+        "functions": 8,
+        "function_details": [
+          {
+            "name": "__init__",
+            "line_number": 16,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "extract_all_pasted_content",
+            "line_number": 86,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 6
+          },
+          {
+            "name": "scan_repository_for_extraction_categories",
+            "line_number": 139,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 11
+          },
+          {
+            "name": "get_ai_extraction_consensus",
+            "line_number": 192,
+            "args": 4,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "run_comprehensive_ai_extraction_consensus",
+            "line_number": 297,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "create_ultimate_extraction_enhancement_plan",
+            "line_number": 351,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 9
+          },
+          {
+            "name": "generate_ultimate_extraction_report",
+            "line_number": 475,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "run_ultimate_extraction_validation",
+            "line_number": 548,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "Line 168 too long (126 chars)",
+          "Line 169 too long (127 chars)",
+          "Line 170 too long (142 chars)",
+          "Line 188 too long (135 chars)",
+          "Line 243 too long (139 chars)",
+          "Line 393 too long (149 chars)"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/run_tests.py",
+        "lines": 156,
+        "functions": 5,
+        "function_details": [
+          {
+            "name": "main",
+            "line_number": 134,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "__init__",
+            "line_number": 17,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "run_test_category",
+            "line_number": 28,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "run_all_tests",
+            "line_number": 72,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          },
+          {
+            "name": "run_quick_tests",
+            "line_number": 119,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "2 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/ai_consensus_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/ai_consensus_tests/test_ai_consensus.py",
+        "lines": 73,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_consensus_calculation",
+            "line_number": 9,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_multi_model_integration",
+            "line_number": 26,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_openrouter_consensus",
+            "line_number": 52,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/api_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/api_tests/test_api_integration.py",
+        "lines": 61,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_openrouter_api_call",
+            "line_number": 11,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_coinbase_api_structure",
+            "line_number": 31,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_binance_api_structure",
+            "line_number": 46,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/compliance_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/container_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/container_tests/test_container_deployment.py",
+        "lines": 160,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/deployment_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/ecosystem_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/ecosystem_tests/test_ecosystem_integration.py",
+        "lines": 99,
+        "functions": 5,
+        "function_details": [
+          {
+            "name": "test_ecosystem_structure",
+            "line_number": 10,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_component_communication",
+            "line_number": 26,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_data_flow",
+            "line_number": 45,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_failover_mechanisms",
+            "line_number": 67,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_error_handling",
+            "line_number": 82,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/integration_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/integration_tests/test_system_integration.py",
+        "lines": 97,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_container_ecosystem_integration",
+            "line_number": 36,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_deployment_integration",
+            "line_number": 50,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_exchange_api_integration",
+            "line_number": 82,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/performance_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/performance_tests/test_performance_metrics.py",
+        "lines": 166,
+        "functions": 10,
+        "function_details": [
+          {
+            "name": "test_api_response_time",
+            "line_number": 13,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_concurrent_processing",
+            "line_number": 27,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_memory_usage",
+            "line_number": 67,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_cpu_usage",
+            "line_number": 85,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_load_handling",
+            "line_number": 107,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "test_throughput_metrics",
+            "line_number": 134,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "mock_task",
+            "line_number": 30,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "cpu_intensive_task",
+            "line_number": 88,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "simulate_load",
+            "line_number": 110,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "process_batch",
+            "line_number": 137,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/security_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/security_tests/test_security_validation.py",
+        "lines": 140,
+        "functions": 8,
+        "function_details": [
+          {
+            "name": "test_api_key_security",
+            "line_number": 12,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_password_hashing",
+            "line_number": 21,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_input_validation",
+            "line_number": 36,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "is_safe_input",
+            "line_number": 60,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "test_encryption_validation",
+            "line_number": 77,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_kyc_validation",
+            "line_number": 93,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_aml_validation",
+            "line_number": 107,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_audit_logging",
+            "line_number": 123,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/stress_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/test_utils/fixtures.py",
+        "lines": 79,
+        "functions": 6,
+        "function_details": [
+          {
+            "name": "mock_api_response",
+            "line_number": 10,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "mock_trading_config",
+            "line_number": 20,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "temp_config_file",
+            "line_number": 31,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "mock_openrouter_client",
+            "line_number": 41,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "create_market_data",
+            "line_number": 57,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "create_trade_order",
+            "line_number": 69,
+            "args": 3,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/trading_engine_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/trading_engine_tests/test_trading_strategies.py",
+        "lines": 139,
+        "functions": 8,
+        "function_details": [
+          {
+            "name": "test_dca_strategy",
+            "line_number": 10,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_momentum_strategy",
+            "line_number": 23,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_arbitrage_strategy",
+            "line_number": 38,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_position_sizing",
+            "line_number": 62,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_stop_loss_calculation",
+            "line_number": 73,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_portfolio_diversification",
+            "line_number": 84,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_market_order_validation",
+            "line_number": 103,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_limit_order_validation",
+            "line_number": 122,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/unit_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/unit_tests/test_core_system.py",
+        "lines": 78,
+        "functions": 8,
+        "function_details": [
+          {
+            "name": "setUp",
+            "line_number": 12,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_system_initialization",
+            "line_number": 20,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_configuration_loading",
+            "line_number": 26,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_api_key_validation",
+            "line_number": 33,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_api_connection",
+            "line_number": 42,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_openrouter_integration",
+            "line_number": 55,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_consensus_calculation",
+            "line_number": 61,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_model_validation",
+            "line_number": 69,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/unit_tests/test_trading_engine.py",
+        "lines": 95,
+        "functions": 7,
+        "function_details": [
+          {
+            "name": "setUp",
+            "line_number": 11,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_portfolio_calculation",
+            "line_number": 16,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_risk_management",
+            "line_number": 27,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_order_validation",
+            "line_number": 36,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_strategy_execution",
+            "line_number": 52,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_order_placement",
+            "line_number": 66,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_market_data_parsing",
+            "line_number": 79,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/run_tests.py",
+        "lines": 156,
+        "functions": 5,
+        "function_details": [
+          {
+            "name": "main",
+            "line_number": 134,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "__init__",
+            "line_number": 17,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "run_test_category",
+            "line_number": 28,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "run_all_tests",
+            "line_number": 72,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          },
+          {
+            "name": "run_quick_tests",
+            "line_number": 119,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "2 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/run_tests.py",
+        "lines": 156,
+        "functions": 5,
+        "function_details": [
+          {
+            "name": "main",
+            "line_number": 134,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "__init__",
+            "line_number": 17,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "run_test_category",
+            "line_number": 28,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 5
+          },
+          {
+            "name": "run_all_tests",
+            "line_number": 72,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 4
+          },
+          {
+            "name": "run_quick_tests",
+            "line_number": 119,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [
+          "2 TODO items found"
+        ],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/ai_consensus_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/ai_consensus_tests/test_ai_consensus.py",
+        "lines": 73,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_consensus_calculation",
+            "line_number": 9,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_multi_model_integration",
+            "line_number": 26,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_openrouter_consensus",
+            "line_number": 52,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/api_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/api_tests/test_api_integration.py",
+        "lines": 61,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_openrouter_api_call",
+            "line_number": 11,
+            "args": 2,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_coinbase_api_structure",
+            "line_number": 31,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_binance_api_structure",
+            "line_number": 46,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/compliance_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/container_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/container_tests/test_container_deployment.py",
+        "lines": 160,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/deployment_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/ecosystem_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/ecosystem_tests/test_ecosystem_integration.py",
+        "lines": 99,
+        "functions": 5,
+        "function_details": [
+          {
+            "name": "test_ecosystem_structure",
+            "line_number": 10,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_component_communication",
+            "line_number": 26,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_data_flow",
+            "line_number": 45,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_failover_mechanisms",
+            "line_number": 67,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_error_handling",
+            "line_number": 82,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/integration_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/integration_tests/test_system_integration.py",
+        "lines": 97,
+        "functions": 3,
+        "function_details": [
+          {
+            "name": "test_container_ecosystem_integration",
+            "line_number": 36,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_deployment_integration",
+            "line_number": 50,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_exchange_api_integration",
+            "line_number": 82,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/performance_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/performance_tests/test_performance_metrics.py",
+        "lines": 166,
+        "functions": 10,
+        "function_details": [
+          {
+            "name": "test_api_response_time",
+            "line_number": 13,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_concurrent_processing",
+            "line_number": 27,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "test_memory_usage",
+            "line_number": 67,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_cpu_usage",
+            "line_number": 85,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "test_load_handling",
+            "line_number": 107,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "test_throughput_metrics",
+            "line_number": 134,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 3
+          },
+          {
+            "name": "mock_task",
+            "line_number": 30,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "cpu_intensive_task",
+            "line_number": 88,
+            "args": 0,
+            "has_docstring": true,
+            "complexity": 1
+          },
+          {
+            "name": "simulate_load",
+            "line_number": 110,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          },
+          {
+            "name": "process_batch",
+            "line_number": 137,
+            "args": 1,
+            "has_docstring": true,
+            "complexity": 2
+          }
+        ],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": true,
+        "has_imports": true,
+        "has_classes": true
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/security_tests/__init__.py",
+        "lines": 2,
+        "functions": 0,
+        "function_details": [],
+        "security_issues": [],
+        "quality_issues": [],
+        "has_main": false,
+        "has_imports": false,
+        "has_classes": false
+      }
+    ],
+    "docker_analysis": [
+      {
+        "file_path": "/home/ubuntu/sandy---box/Dockerfile",
+        "lines": 39,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/Dockerfile.backup",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/Dockerfile.secure",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/API_INTEGRATIONS/Dockerfile",
+        "lines": 52,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/API_INTEGRATIONS/Dockerfile.backup",
+        "lines": 50,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPLIANCE_SYSTEMS/Dockerfile",
+        "lines": 52,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPLIANCE_SYSTEMS/Dockerfile.backup",
+        "lines": 50,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/Dockerfile",
+        "lines": 36,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/Dockerfile.backup",
+        "lines": 34,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/Dockerfile",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/Dockerfile.backup",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/openrouter_ai/Dockerfile",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/openrouter_ai/Dockerfile.backup",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/Dockerfile",
+        "lines": 28,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/Dockerfile.backup",
+        "lines": 25,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/CONTAINERS/openrouter_ai/Dockerfile",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/CONTAINERS/openrouter_ai/Dockerfile.backup",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/openrouter_ai/Dockerfile",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/openrouter_ai/Dockerfile.backup",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DOCUMENTATION/Dockerfile",
+        "lines": 20,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DOCUMENTATION/Dockerfile.backup",
+        "lines": 17,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/Dockerfile",
+        "lines": 30,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/Dockerfile.backup",
+        "lines": 28,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/TRADING_SYSTEMS/Dockerfile",
+        "lines": 36,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/TRADING_SYSTEMS/Dockerfile.backup",
+        "lines": 34,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERS/openrouter_ai/Dockerfile",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERS/openrouter_ai/Dockerfile.backup",
+        "lines": 44,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ECOSYSTEM_DEPLOYMENT/ecosystem_Dockerfile",
+        "lines": 44,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ECOSYSTEM_DEPLOYMENT/ecosystem_Dockerfile.backup",
+        "lines": 42,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/MONITORING_DASHBOARDS/Dockerfile",
+        "lines": 46,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/MONITORING_DASHBOARDS/Dockerfile.backup",
+        "lines": 41,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/SECURITY_VAULT/Dockerfile",
+        "lines": 52,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/SECURITY_VAULT/Dockerfile.backup",
+        "lines": 50,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/TRADING_ENGINE/Dockerfile",
+        "lines": 52,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/TRADING_ENGINE/Dockerfile.backup",
+        "lines": 50,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_COMPLIANCE_SYSTEMS/Dockerfile",
+        "lines": 30,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_COMPLIANCE_SYSTEMS/Dockerfile.backup",
+        "lines": 28,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/binance/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/binance/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/coinbase/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/coinbase/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/gate/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/gate/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/kraken/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/kraken/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/okx/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/okx/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/swyftx/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/swyftx/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/whitebit/Dockerfile",
+        "lines": 37,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION/whitebit/Dockerfile.backup",
+        "lines": 35,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/Dockerfile",
+        "lines": 44,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.admin_panel",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_consensus",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_momentum",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.alertmanager",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_engine",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_ui",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ato_reporter",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_logger",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_trail",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.basket_rebalancing",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.binance_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.bitfinex_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.btcmarkets_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cash_carry",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.coinbase_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.compliance_checker",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.config_manager",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.covered_calls",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cross_arbitrage",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dashboard",
+        "lines": 16,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_ingestion",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_processor",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.database",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dca_strategy",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.drawdown_monitor",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.email_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.encryption_service",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.event_driven",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.exchange_manager",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/Dockerfile.backup",
+        "lines": 42,
+        "issues": [
+          "Copying entire context (inefficient)"
+        ],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.admin_panel.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_consensus.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_momentum.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.alertmanager.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_engine.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_ui.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ato_reporter.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_logger.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_trail.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.basket_rebalancing.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.binance_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.bitfinex_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.btcmarkets_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cash_carry.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.coinbase_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.compliance_checker.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.config_manager.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.covered_calls.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cross_arbitrage.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dashboard.backup",
+        "lines": 13,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_ingestion.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_processor.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.database.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dca_strategy.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.drawdown_monitor.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.email_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.encryption_service.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.event_driven.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.exchange_manager.backup",
+        "lines": 49,
+        "issues": [],
+        "file_type": "docker"
+      }
+    ],
+    "config_analysis": [
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING_SETUP_RESULTS.json",
+        "lines": 12,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ECOSYSTEM_EXTRACTION_REPORT.json",
+        "lines": 170,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ORGANIZATION_SUMMARY.json",
+        "lines": 7,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/PRODUCTION_COMMISSIONING_REPORT.json",
+        "lines": 113,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json",
+        "lines": 103038,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/benchmark_results.json",
+        "lines": 1,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/docker-compose.yml",
+        "lines": 45,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/pylint_results.json",
+        "lines": 413039,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/semgrep_results.json",
+        "lines": 1,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/static_analysis_results.json",
+        "lines": 22167,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/comprehensive_test_results.json",
+        "lines": 68,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/containerized-testing-summary.json",
+        "lines": 63,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/docker-compose.yml",
+        "lines": 113,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/.github/workflows/component-testing.yml",
+        "lines": 157,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/docker-compose.yml",
+        "lines": 36,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/kubernetes.yml",
+        "lines": 95,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/openrouter_ai/docker-compose.yml",
+        "lines": 36,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/API_INTEGRATIONS/CONTAINERS/openrouter_ai/openrouter_ai/kubernetes.yml",
+        "lines": 95,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/CONTAINERS/openrouter_ai/docker-compose.yml",
+        "lines": 36,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/CONTAINERS/openrouter_ai/kubernetes.yml",
+        "lines": 95,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/openrouter_ai/docker-compose.yml",
+        "lines": 36,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/CONTAINERS/openrouter_ai/kubernetes.yml",
+        "lines": 95,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/DEPLOYMENT/DEPLOYMENT/docker/docker-compose.yml",
+        "lines": 41,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/DEPLOYMENT/DEPLOYMENT/kubernetes/namespace.yml",
+        "lines": 7,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/DEPLOYMENT/docker/docker-compose.yml",
+        "lines": 41,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/DEPLOYMENT_SYSTEMS/DEPLOYMENT/kubernetes/namespace.yml",
+        "lines": 7,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/comprehensive_test_results.json",
+        "lines": 68,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/comprehensive_test_results.json",
+        "lines": 68,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERS/openrouter_ai/docker-compose.yml",
+        "lines": 36,
+        "issues": [],
+        "file_type": "config"
+      },
+      {
+        "file_path": "/home/ubuntu/sandy---box/CONTAINERS/openrouter_ai/kubernetes.yml",
+        "lines": 95,
+        "issues": [
+          "Potential exposed secrets in config file"
+        ],
+        "file_type": "config"
+      }
+    ],
+    "general_issues": [
+      "Syntax error in /home/ubuntu/sandy---box/ULTIMATE_TESTING_ORCHESTRATOR.py: invalid syntax (<unknown>, line 314)",
+      "Syntax error in /home/ubuntu/sandy---box/AI_INTEGRATION/COMPLETE_OPENROUTER_INTEGRATION.py: unterminated string literal (detected at line 334) (<unknown>, line 334)",
+      "Syntax error in /home/ubuntu/sandy---box/AI_INTEGRATION/COMPREHENSIVE_7DAY_CONSENSUS_VALIDATOR.py: unterminated string literal (detected at line 420) (<unknown>, line 420)",
+      "Syntax error in /home/ubuntu/sandy---box/AI_INTEGRATION/ULTIMATE_AI_CONSENSUS_GITHUB_OPTIMIZER.py: unterminated string literal (detected at line 126) (<unknown>, line 126)",
+      "Syntax error in /home/ubuntu/sandy---box/AI_INTEGRATION/ULTIMATE_AI_CONSENSUS_PERFECTION_VALIDATOR.py: unterminated string literal (detected at line 213) (<unknown>, line 213)",
+      "Syntax error in /home/ubuntu/sandy---box/COMPREHENSIVE_TESTING/container_tests/test_container_deployment.py: unterminated string literal (detected at line 107) (<unknown>, line 107)",
+      "Syntax error in /home/ubuntu/sandy---box/CONTAINERIZED_TESTING/MONITORING_DASHBOARDS/COMPREHENSIVE_TESTING/COMPREHENSIVE_TESTING/container_tests/test_container_deployment.py: unterminated string literal (detected at line 107) (<unknown>, line 107)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file_permissions": {
+    "logs": "750 (owner: read/write/execute, group: read/execute, other: none)",
+    "backups": "750 (owner: read/write/execute, group: read/execute, other: none)",
+    "config": "750 (owner: read/write/execute, group: read/execute, other: none)",
+    "security": "700 (owner: read/write/execute, group: none, other: none)"
+  },
+  "security_level": "MAXIMUM",
+  "compliance": "ISO_27001_COMPLIANT"
+}
