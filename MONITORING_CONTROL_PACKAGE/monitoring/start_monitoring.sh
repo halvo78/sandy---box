@@ -1,0 +1,16 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "🚀 Starting HALVO-AI Monitoring System..."
+docker-compose up -d
+echo ""
+echo "✅ Monitoring system started!"
+echo ""
+echo "📊 Access points:"
+echo "  Grafana:        http://localhost:3000 (admin/halvo-ai-2025)"
+echo "  Prometheus:     http://localhost:9090"
+echo "  Kibana:         http://localhost:5601"
+echo "  AlertManager:   http://localhost:9093"
+echo ""
+echo "🌐 Via ngrok:"
+echo "  Grafana:        https://YOUR_NGROK_URL:3000"
+echo ""

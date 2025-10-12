@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-10-12T09:10:00.968297",
+  "overall_status": "READY_WITH_WARNINGS",
+  "checks": [
+    {
+      "name": "Python Version",
+      "status": "PASS",
+      "message": "Python 3.11.0",
+      "details": {}
+    },
+    {
+      "name": "Required Packages",
+      "status": "PASS",
+      "message": "All required packages installed",
+      "details": {}
+    },
+    {
+      "name": "Database Connectivity",
+      "status": "PASS",
+      "message": "Database accessible",
+      "details": {}
+    },
+    {
+      "name": "API Keys Present",
+      "status": "PASS",
+      "message": "4/4 AI APIs configured",
+      "details": {}
+    },
+    {
+      "name": "Monitoring Services",
+      "status": "PASS",
+      "message": "3/3 monitoring services active",
+      "details": {}
+    },
+    {
+      "name": "Disk Space",
+      "status": "PASS",
+      "message": "Disk usage: 45%",
+      "details": {}
+    },
+    {
+      "name": "Memory Available",
+      "status": "PASS",
+      "message": "Memory usage: 38.2%",
+      "details": {}
+    },
+    {
+      "name": "Network Connectivity",
+      "status": "WARN",
+      "message": "Network check inconclusive, proceeding",
+      "details": {}
+    },
+    {
+      "name": "Exchange APIs",
+      "status": "WARN",
+      "message": "Exchange API check not implemented",
+      "details": {}
+    },
+    {
+      "name": "AI Model Access",
+      "status": "PASS",
+      "message": "2 AI services configured",
+      "details": {}
+    }
+  ],
+  "summary": {
+    "total_checks": 10,
+    "passed": 8,
+    "failed": 0,
+    "warnings": 2
+  }
+}

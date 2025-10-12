@@ -1,0 +1,59 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname', 'category']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 12h
+  receiver: 'default'
+  
+  routes:
+    # Critical alerts - immediate notification
+    - match:
+        severity: critical
+      receiver: 'critical'
+      continue: true
+    
+    # Trading anomalies
+    - match:
+        category: trading_anomaly
+      receiver: 'trading'
+    
+    # Security events
+    - match:
+        category: security
+      receiver: 'security'
+    
+    # System health
+    - match:
+        category: system_health
+      receiver: 'ops'
+
+receivers:
+  - name: 'default'
+    webhook_configs:
+      - url: 'http://host.docker.internal:8080/alerts'
+  
+  - name: 'critical'
+    webhook_configs:
+      - url: 'http://host.docker.internal:8080/alerts/critical'
+  
+  - name: 'trading'
+    webhook_configs:
+      - url: 'http://host.docker.internal:8080/alerts/trading'
+  
+  - name: 'security'
+    webhook_configs:
+      - url: 'http://host.docker.internal:8080/alerts/security'
+  
+  - name: 'ops'
+    webhook_configs:
+      - url: 'http://host.docker.internal:8080/alerts/ops'
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
