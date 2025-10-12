@@ -1,0 +1,119 @@
+groups:
+  - name: trading_anomalies
+    interval: 30s
+    rules:
+      # Trading volume anomaly
+      - alert: TradingVolumeSpike
+        expr: rate(trading_volume_total[5m]) > 2 * avg_over_time(trading_volume_total[1h])
+        for: 2m
+        labels:
+          severity: warning
+          category: trading_anomaly
+        annotations:
+          summary: "Unusual trading volume detected"
+          description: "Trading volume is {{ $value }}x higher than normal"
+
+      # Capital exposure alert
+      - alert: HighCapitalExposure
+        expr: (trading_capital_deployed / trading_capital_total) > 0.95
+        for: 1m
+        labels:
+          severity: critical
+          category: risk_management
+        annotations:
+          summary: "Capital exposure too high"
+          description: "{{ $value | humanizePercentage }} of capital is deployed"
+
+      # Loss threshold breach
+      - alert: DailyLossThreshold
+        expr: trading_daily_loss > 500
+        for: 1m
+        labels:
+          severity: critical
+          category: risk_management
+        annotations:
+          summary: "Daily loss limit reached"
+          description: "Daily loss is ${{ $value }}, halting trading"
+
+      # API failure rate
+      - alert: HighAPIFailureRate
+        expr: rate(api_errors_total[5m]) > 0.05
+        for: 3m
+        labels:
+          severity: warning
+          category: api_health
+        annotations:
+          summary: "High API failure rate detected"
+          description: "API error rate is {{ $value | humanizePercentage }}"
+
+      # AI model latency
+      - alert: AIModelSlowResponse
+        expr: histogram_quantile(0.95, rate(ai_model_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+          category: ai_performance
+        annotations:
+          summary: "AI models responding slowly"
+          description: "95th percentile latency is {{ $value }}s"
+
+  - name: system_health
+    interval: 30s
+    rules:
+      # High CPU usage
+      - alert: HighCPUUsage
+        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+          category: system_health
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is {{ $value | humanizePercentage }}"
+
+      # High memory usage
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          category: system_health
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is {{ $value | humanizePercentage }}"
+
+      # Disk space low
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) < 0.15
+        for: 5m
+        labels:
+          severity: warning
+          category: system_health
+        annotations:
+          summary: "Low disk space"
+          description: "Only {{ $value | humanizePercentage }} disk space remaining"
+
+  - name: security_events
+    interval: 30s
+    rules:
+      # Failed authentication attempts
+      - alert: FailedAuthAttempts
+        expr: rate(auth_failures_total[5m]) > 5
+        for: 2m
+        labels:
+          severity: critical
+          category: security
+        annotations:
+          summary: "Multiple failed authentication attempts"
+          description: "{{ $value }} failed auth attempts per second"
+
+      # Unusual IP access
+      - alert: UnusualIPAccess
+        expr: count(count by (ip) (http_requests_total)) > 10
+        for: 5m
+        labels:
+          severity: warning
+          category: security
+        annotations:
+          summary: "Unusual number of IP addresses accessing system"
+          description: "{{ $value }} different IPs detected"
