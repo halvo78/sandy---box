@@ -1,0 +1,49 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'halvo-ai-trading'
+    environment: 'production'
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
+
+# Rule files
+rule_files:
+  - '/etc/prometheus/alerts/*.yml'
+
+# Scrape configurations
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Node Exporter (system metrics)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # Trading system metrics
+  - job_name: 'lyra-trading'
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+    metrics_path: '/metrics'
+
+  # Exchange API health
+  - job_name: 'exchange-apis'
+    static_configs:
+      - targets: 
+        - 'okx-api:443'
+        - 'binance-api:443'
+        - 'gate-api:443'
+        - 'kraken-api:443'
+    metrics_path: '/api/v1/health'
+
+  # AWS CloudWatch metrics
+  - job_name: 'aws-cloudwatch'
+    static_configs:
+      - targets: ['cloudwatch-exporter:9106']

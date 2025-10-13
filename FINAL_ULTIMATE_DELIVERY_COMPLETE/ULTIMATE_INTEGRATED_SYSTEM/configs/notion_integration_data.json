@@ -1,0 +1,13 @@
+{
+  "ngrok_url": null,
+  "system_status": {
+    "version": "Ultimate-5.0",
+    "status": "OPERATIONAL",
+    "portfolio_balance": 13947.76,
+    "ai_models_active": 8,
+    "exchanges_connected": 9,
+    "uptime": "Running",
+    "last_updated": "2025-10-04T08:50:20.154396"
+  },
+  "timestamp": "2025-10-04T08:50:25.157059"
+}

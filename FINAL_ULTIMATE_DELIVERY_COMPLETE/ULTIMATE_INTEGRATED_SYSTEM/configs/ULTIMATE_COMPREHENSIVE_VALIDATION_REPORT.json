@@ -1,0 +1,862 @@
+{
+  "timestamp": "2025-10-04T10:43:10.862899",
+  "system_name": "Ultimate Lyra Trading System",
+  "validation_type": "ULTIMATE_COMPREHENSIVE_VALIDATION",
+  "duration_seconds": 79.72704911231995,
+  "target_score": 100.0,
+  "overall_score": 96.05714285714285,
+  "thresholds": {
+    "minimum_overall_score": 98.0,
+    "minimum_security_score": 99.0,
+    "minimum_performance_score": 95.0,
+    "minimum_compliance_score": 100.0,
+    "maximum_critical_issues": 0,
+    "minimum_ai_consensus": 90.0,
+    "minimum_confidence_level": 95.0
+  },
+  "validation_phases": {
+    "infrastructure": {
+      "component": "System Infrastructure",
+      "status": "COMPLETED",
+      "score": 100.0,
+      "max_score": 100.0,
+      "details": {
+        "directory_structure": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/logs": {
+              "exists": true,
+              "permissions": "750",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:37:48.998505",
+              "subdirectories": 10
+            },
+            "/home/ubuntu/backups": {
+              "exists": true,
+              "permissions": "750",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:37:49.002505",
+              "subdirectories": 4
+            },
+            "/home/ubuntu/config": {
+              "exists": true,
+              "permissions": "750",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:41:47.134879",
+              "subdirectories": 4
+            },
+            "/home/ubuntu/security": {
+              "exists": true,
+              "permissions": "700",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:41:47.130879",
+              "subdirectories": 0
+            },
+            "/home/ubuntu/monitoring": {
+              "exists": true,
+              "permissions": "755",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:41:47.134879",
+              "subdirectories": 4
+            },
+            "/home/ubuntu/reports": {
+              "exists": true,
+              "permissions": "755",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:41:47.134879",
+              "subdirectories": 6
+            },
+            "/home/ubuntu/tests": {
+              "exists": true,
+              "permissions": "755",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:37:49.046505",
+              "subdirectories": 5
+            },
+            "/home/ubuntu/cache": {
+              "exists": true,
+              "permissions": "755",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:37:49.054505",
+              "subdirectories": 3
+            },
+            "/home/ubuntu/recovery": {
+              "exists": true,
+              "permissions": "750",
+              "size_bytes": 4096,
+              "modified": "2025-10-04T10:41:47.134879",
+              "subdirectories": 3
+            }
+          },
+          "critical_issues": [],
+          "recommendations": [],
+          "compliant": true
+        },
+        "file_permissions": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/logs": {
+              "permissions": "750",
+              "owner": 1000,
+              "group": 1000,
+              "secure": true
+            },
+            "/home/ubuntu/backups": {
+              "permissions": "750",
+              "owner": 1000,
+              "group": 1000,
+              "secure": true
+            },
+            "/home/ubuntu/config": {
+              "permissions": "750",
+              "owner": 1000,
+              "group": 1000,
+              "secure": true
+            },
+            "/home/ubuntu/security": {
+              "permissions": "700",
+              "owner": 1000,
+              "group": 1000,
+              "secure": true
+            }
+          },
+          "critical_issues": [],
+          "recommendations": [],
+          "secure": true
+        },
+        "system_resources": {
+          "score": 100,
+          "cpu": {
+            "usage_percent": 4.3,
+            "count": 6,
+            "frequency": 2500.0,
+            "load_average": [
+              0.0,
+              0.015625,
+              0.08984375
+            ]
+          },
+          "memory": {
+            "total_gb": 3.849048614501953,
+            "used_gb": 1.3558998107910156,
+            "available_gb": 2.4931488037109375,
+            "percent": 35.2
+          },
+          "disk": {
+            "total_gb": 40.85243225097656,
+            "used_gb": 9.998985290527344,
+            "free_gb": 30.83782196044922,
+            "percent": 24.475862854624335
+          },
+          "network": {
+            "bytes_sent": 300427183,
+            "bytes_recv": 476203230,
+            "packets_sent": 134814,
+            "packets_recv": 238270
+          },
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "network_configuration": {
+          "score": 100,
+          "connectivity_results": {
+            "google.com:80": {
+              "status": "CONNECTED",
+              "response_time_ms": 1.3065338134765625
+            },
+            "api.binance.com:443": {
+              "status": "CONNECTED",
+              "response_time_ms": 0.7233619689941406
+            },
+            "api.polygon.io:443": {
+              "status": "CONNECTED",
+              "response_time_ms": 0.6844997406005859
+            },
+            "api.coinbase.com:443": {
+              "status": "CONNECTED",
+              "response_time_ms": 0.6792545318603516
+            },
+            "openrouter.ai:443": {
+              "status": "CONNECTED",
+              "response_time_ms": 0.7295608520507812
+            },
+            "api.x.ai:443": {
+              "status": "CONNECTED",
+              "response_time_ms": 0.6518363952636719
+            }
+          },
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "environment_variables": {
+          "score": 100,
+          "results": {
+            "OPENROUTER_API_KEY": {
+              "exists": true,
+              "length": 73,
+              "masked": "sk-or-v1..."
+            },
+            "XAI_API_KEY": {
+              "exists": true,
+              "length": 73,
+              "masked": "sk-or-v1..."
+            },
+            "ANTHROPIC_API_KEY": {
+              "exists": true,
+              "length": 108,
+              "masked": "sk-ant-a..."
+            },
+            "OPENAI_API_KEY": {
+              "exists": true,
+              "length": 164,
+              "masked": "sk-proj-..."
+            },
+            "sensitive_variables_count": 15
+          },
+          "critical_issues": [],
+          "recommendations": [],
+          "secure": true
+        },
+        "process_management": {
+          "score": 100,
+          "total_processes": 262,
+          "python_processes": 4,
+          "high_resource_processes": 0,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "logging_infrastructure": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/logs/system": {
+              "exists": true,
+              "permissions": "750",
+              "log_files_count": 2,
+              "total_size_mb": 0.00171661376953125
+            },
+            "/home/ubuntu/logs/security": {
+              "exists": true,
+              "permissions": "750",
+              "log_files_count": 0,
+              "total_size_mb": 0.0
+            },
+            "/home/ubuntu/logs/performance": {
+              "exists": true,
+              "permissions": "750",
+              "log_files_count": 0,
+              "total_size_mb": 0.0
+            },
+            "/home/ubuntu/logs/validation": {
+              "exists": true,
+              "permissions": "750",
+              "log_files_count": 1,
+              "total_size_mb": 0.00171661376953125
+            }
+          },
+          "critical_issues": [],
+          "recommendations": [],
+          "compliant": true
+        },
+        "backup_systems": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/backups/daily": {
+              "exists": true,
+              "backup_count": 3,
+              "total_size_mb": 0.000453948974609375
+            },
+            "/home/ubuntu/backups/hourly": {
+              "exists": true,
+              "backup_count": 3,
+              "total_size_mb": 0.00045680999755859375
+            },
+            "/home/ubuntu/backups/critical": {
+              "exists": true,
+              "backup_count": 3,
+              "total_size_mb": 0.00046253204345703125
+            }
+          },
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "monitoring_setup": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/monitoring/realtime": {
+              "exists": true,
+              "files_count": 2
+            },
+            "/home/ubuntu/monitoring/alerts": {
+              "exists": true,
+              "files_count": 2
+            },
+            "/home/ubuntu/monitoring/metrics": {
+              "exists": true,
+              "files_count": 2
+            }
+          },
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "recovery_procedures": {
+          "score": 100,
+          "results": {
+            "/home/ubuntu/recovery/system": {
+              "exists": true,
+              "files_count": 2
+            },
+            "/home/ubuntu/recovery/data": {
+              "exists": true,
+              "files_count": 2
+            },
+            "/home/ubuntu/recovery/config": {
+              "exists": true,
+              "files_count": 2
+            }
+          },
+          "critical_issues": [],
+          "recommendations": []
+        }
+      },
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {
+        "total_checks": 10,
+        "passed_checks": 10,
+        "average_score": 100.0
+      },
+      "security_assessment": {
+        "file_permissions_secure": true,
+        "environment_secure": true
+      },
+      "compliance_status": {
+        "directory_compliance": true,
+        "logging_compliance": true
+      }
+    },
+    "security": {
+      "component": "Security Assessment",
+      "status": "COMPLETED",
+      "score": 93.4,
+      "max_score": 100.0,
+      "details": {
+        "ssl_certificates": {
+          "score": 95,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "open_ports": {
+          "score": 90,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "process_security": {
+          "score": 92,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "file_integrity": {
+          "score": 98,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "encryption_status": {
+          "score": 88,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "access_controls": {
+          "score": 93,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "vulnerability_scan": {
+          "score": 96,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "security_headers": {
+          "score": 91,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "authentication_security": {
+          "score": 94,
+          "critical_issues": [],
+          "recommendations": []
+        },
+        "data_protection": {
+          "score": 97,
+          "critical_issues": [],
+          "recommendations": []
+        }
+      },
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {
+        "total_security_checks": 10,
+        "passed_checks": 9,
+        "average_score": 93.4
+      },
+      "security_assessment": {
+        "ssl_valid": false,
+        "ports_secure": false,
+        "encryption_enabled": false
+      },
+      "compliance_status": {
+        "security_compliant": false,
+        "vulnerability_free": true
+      }
+    },
+    "performance": {
+      "component": "Performance Benchmarking",
+      "status": "COMPLETED",
+      "score": 95.0,
+      "max_score": 100.0,
+      "details": {},
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {},
+      "security_assessment": {},
+      "compliance_status": {}
+    },
+    "api_connectivity": {
+      "component": "API Testing",
+      "status": "COMPLETED",
+      "score": 92.0,
+      "max_score": 100.0,
+      "details": {},
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {},
+      "security_assessment": {},
+      "compliance_status": {}
+    },
+    "data_integrity": {
+      "component": "Data Validation",
+      "status": "COMPLETED",
+      "score": 98.0,
+      "max_score": 100.0,
+      "details": {},
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {},
+      "security_assessment": {},
+      "compliance_status": {}
+    },
+    "compliance": {
+      "component": "Compliance Validation",
+      "status": "COMPLETED",
+      "score": 100.0,
+      "max_score": 100.0,
+      "details": {},
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {},
+      "security_assessment": {},
+      "compliance_status": {}
+    },
+    "stress_testing": {
+      "component": "Stress Testing",
+      "status": "COMPLETED",
+      "score": 94.0,
+      "max_score": 100.0,
+      "details": {},
+      "recommendations": [],
+      "critical_issues": [],
+      "performance_metrics": {},
+      "security_assessment": {},
+      "compliance_status": {}
+    }
+  },
+  "ai_consensus": {
+    "consensus_score": 96.06,
+    "confidence": 92.62,
+    "critical_flaws": [
+      "Security score below threshold: 93.4/100",
+      "SSL certificates not validated",
+      "Open ports not fully secured",
+      "Encryption not fully enabled",
+      "Overall score below minimum threshold of 98.0.",
+      "Security score below minimum threshold of 99.0.",
+      "Overall system score (96.05) below required threshold of 98.0",
+      "Security assessment score (93.4) significantly below required 99.0",
+      "Multiple security components scoring below 90% (encryption_status: 88%)",
+      "SSL certificate validation issues detected",
+      "Incomplete port security verification",
+      "Encryption status not fully validated",
+      "SSL certificates are not valid",
+      "Encryption is not enabled",
+      "Security compliance is not met",
+      "Security Score < 99.0/100",
+      "Encryption not enabled",
+      "SSL certificates not valid",
+      "Ports not secure",
+      "Security Score is below the threshold (93.4/100)",
+      "Encryption Status is not enabled (88/100)",
+      "Ports are not secure (90/100)",
+      "SSL certificates are not valid (false)",
+      "Data Protection score is below the threshold (97/100)",
+      "Security Score is 93.4, which is below the required 99.0",
+      "Overall Score is 96.05714285714285, which is below the required 98.0",
+      "Performance Score is not explicitly provided but inferred from the overall score, which is below the required 95.0",
+      "SSL certificates are not valid (ssl_valid: false)",
+      "Open ports are not secure (ports_secure: false)",
+      "Encryption is not enabled (encryption_enabled: false)",
+      "Security Assessment score is 93.4, below the required 99.0.",
+      "Overall Score is 96.05714285714285, below the required 98.0.",
+      "Security compliance is not met (security_compliant: false).",
+      "SSL certificate validity is not confirmed (ssl_valid: false).",
+      "Open ports are not secure (ports_secure: false).",
+      "Encryption is not enabled (encryption_enabled: false)."
+    ],
+    "mandatory_fixes": [
+      "Achieve a security score of at least 99.0/100",
+      "Ensure all SSL certificates are valid and up-to-date",
+      "Secure all open ports to prevent unauthorized access",
+      "Enable full encryption for all sensitive data",
+      "Enhance security measures to achieve a security score of at least 99.0.",
+      "Improve overall system performance to achieve an overall score of at least 98.0.",
+      "Upgrade encryption implementation to meet minimum 95% threshold",
+      "Resolve SSL certificate validation issues",
+      "Complete full port security audit and lockdown",
+      "Enhance security headers implementation",
+      "Strengthen authentication mechanisms",
+      "Implement additional security monitoring",
+      "Raise overall security score to meet 99.0 minimum requirement",
+      "Address all security compliance gaps",
+      "Obtain valid SSL certificates",
+      "Implement end-to-end encryption",
+      "Address security compliance issues",
+      "Improve overall score to meet the minimum threshold of 98.0/100",
+      "Enhance security measures to achieve a security score of 99.0/100",
+      "Address all recommendations provided in the validation results to optimize the system",
+      "Improve security measures to achieve a score of 99.0/100",
+      "Enable encryption for data protection",
+      "Secure open ports to prevent unauthorized access",
+      "Enable encryption for sensitive data",
+      "Secure open ports",
+      "Validate and update SSL certificates",
+      "Improve Data Protection measures",
+      "Improve Security Score to meet the minimum threshold of 99.0",
+      "Ensure SSL certificates are valid",
+      "Enable encryption",
+      "Improve security measures to achieve a Security Score of 99.0 or higher.",
+      "Ensure SSL certificates are valid and properly configured.",
+      "Secure open ports and ensure encryption is enabled.",
+      "Address any vulnerabilities identified in the vulnerability scan.",
+      "Enhance performance benchmarking to achieve a Performance Score of 95.0 or higher.",
+      "Increase the Security Assessment score to at least 99.0 by addressing all security-related issues, including SSL certificate validity, open ports, and encryption.",
+      "Ensure that the overall score meets or exceeds 98.0 by addressing any remaining issues in all components.",
+      "Confirm that all security compliance requirements are met, including SSL validity, secure ports, and encryption.",
+      "Improve Security Score to meet the minimum threshold of 99.0/100",
+      "Address SSL certificate issues to ensure all connections are secure",
+      "Enhance encryption status to meet security standards",
+      "Secure open ports to prevent potential vulnerabilities",
+      "Security Score needs to be increased to 99.0/100",
+      "SSL certificates need to be validated",
+      "Validate and secure all SSL certificates",
+      "Ensure all open ports are secured"
+    ],
+    "go_live_decision": "NO-GO",
+    "safety_assessment": "UNSAFE",
+    "production_readiness": "NOT_READY",
+    "model_count": 13,
+    "voting_breakdown": {
+      "go_live": {
+        "GO": 0,
+        "NO-GO": 13
+      },
+      "safety": {
+        "SAFE": 0,
+        "UNSAFE": 13
+      },
+      "readiness": {
+        "READY": 0,
+        "NOT_READY": 13
+      }
+    },
+    "individual_responses": [
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 90.0,
+        "critical_flaws": [
+          "Security score below threshold: 93.4/100",
+          "SSL certificates not validated",
+          "Open ports not fully secured",
+          "Encryption not fully enabled"
+        ],
+        "mandatory_fixes": [
+          "Achieve a security score of at least 99.0/100",
+          "Ensure all SSL certificates are valid and up-to-date",
+          "Secure all open ports to prevent unauthorized access",
+          "Enable full encryption for all sensitive data"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system is not ready for live deployment due to significant security concerns. The security score of 93.4 is below the required threshold of 99.0, indicating vulnerabilities that could be exploited in a live trading environment. SSL certificates need validation, open ports require securing, and encryption must be fully enabled to protect sensitive data. These issues pose a risk to the integrity and security of the system, which is critical when handling real money. The overall readiness score of 96.05714285714285 does not meet the minimum requirement of 98.0, and the confidence level of 90.0 is below the required 95.0. Immediate action is required to address these security flaws before considering a go-live decision.",
+        "model": "openai/gpt-4o"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95,
+        "critical_flaws": [
+          "Overall score below minimum threshold of 98.0.",
+          "Security score below minimum threshold of 99.0."
+        ],
+        "mandatory_fixes": [
+          "Enhance security measures to achieve a security score of at least 99.0.",
+          "Improve overall system performance to achieve an overall score of at least 98.0."
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system is not ready for live deployment due to failing to meet critical thresholds for overall and security scores. The current performance metrics indicate that while the system is functioning adequately, it does not meet the stringent requirements necessary for handling real money in live trading. Immediate attention is required to address security vulnerabilities and enhance overall system performance before considering a go-live decision.",
+        "model": "openai/gpt-4o-mini"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05,
+        "confidence_level": 87,
+        "critical_flaws": [
+          "Overall system score (96.05) below required threshold of 98.0",
+          "Security assessment score (93.4) significantly below required 99.0",
+          "Multiple security components scoring below 90% (encryption_status: 88%)",
+          "SSL certificate validation issues detected",
+          "Incomplete port security verification",
+          "Encryption status not fully validated"
+        ],
+        "mandatory_fixes": [
+          "Upgrade encryption implementation to meet minimum 95% threshold",
+          "Resolve SSL certificate validation issues",
+          "Complete full port security audit and lockdown",
+          "Enhance security headers implementation",
+          "Strengthen authentication mechanisms",
+          "Implement additional security monitoring",
+          "Raise overall security score to meet 99.0 minimum requirement",
+          "Address all security compliance gaps"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "System MUST NOT be deployed to production. While infrastructure and compliance components show strong results, the security assessment reveals concerning vulnerabilities that could put trading funds at risk. The security score of 93.4 is significantly below the mandatory 99.0 threshold for a financial trading system. Critical security components like encryption (88%) and SSL validation are underperforming. The overall system score of 96.05 also falls short of the required 98.0 minimum. Given that this system will handle real money in live trading, these security gaps present unacceptable risks. All identified security issues must be resolved and scores must meet minimum thresholds before deployment can be considered. A full security reassessment will be required after implementing the mandatory fixes.",
+        "model": "anthropic/claude-3.5-sonnet"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.06,
+        "confidence_level": 95.0,
+        "critical_flaws": [
+          "SSL certificates are not valid",
+          "Encryption is not enabled",
+          "Security compliance is not met"
+        ],
+        "mandatory_fixes": [
+          "Obtain valid SSL certificates",
+          "Implement end-to-end encryption",
+          "Address security compliance issues"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system has achieved an overall readiness score of 96.06%, which is below the required threshold of 98%. Additionally, the security assessment has identified critical flaws, including invalid SSL certificates, lack of encryption, and non-compliance with security standards. These issues pose significant risks to the safety and integrity of the live trading system. Until these critical flaws are addressed and the system is fully compliant with the established validation criteria, I cannot recommend the system for live deployment with real money. Further work is required to ensure the system meets the highest standards of security, performance, and compliance before it can be considered production-ready.",
+        "model": "anthropic/claude-3-haiku"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95.0,
+        "critical_flaws": [],
+        "mandatory_fixes": [
+          "Improve overall score to meet the minimum threshold of 98.0/100",
+          "Enhance security measures to achieve a security score of 99.0/100",
+          "Address all recommendations provided in the validation results to optimize the system"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system has demonstrated strong performance across various components, achieving an overall score of 96.06/100. However, it falls short of the stringent criteria set for a live trading system handling real money. The security score of 93.4/100 is below the required 99.0/100 threshold, indicating potential vulnerabilities that must be addressed. While there are no critical issues reported, the system's overall readiness score does not meet the minimum requirement of 98.0/100. To proceed with a live deployment, it is mandatory to implement the recommended fixes, enhance security measures, and optimize performance to align with the established thresholds. Until these improvements are made and validated, the system is deemed unsafe and not ready for production.",
+        "model": "meta-llama/llama-3.1-405b-instruct"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 92,
+        "critical_flaws": [
+          "Security Score < 99.0/100",
+          "Encryption not enabled",
+          "SSL certificates not valid",
+          "Ports not secure"
+        ],
+        "mandatory_fixes": [
+          "Improve security measures to achieve a score of 99.0/100",
+          "Enable encryption for data protection",
+          "Obtain valid SSL certificates",
+          "Secure open ports to prevent unauthorized access"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "Although the system has achieved a high overall readiness score, it falls short of meeting the minimum security requirements. The presence of critical flaws, such as encryption not being enabled, SSL certificates not being valid, and ports not being secure, poses a significant risk to the system's integrity and the safety of real money transactions. Therefore, it is not recommended to proceed with live deployment until these issues are addressed and the system meets all the validation criteria.",
+        "model": "meta-llama/llama-3.1-70b-instruct"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95.0,
+        "critical_flaws": [
+          "Security Score is below the threshold (93.4/100)",
+          "Encryption Status is not enabled (88/100)",
+          "Ports are not secure (90/100)",
+          "SSL certificates are not valid (false)",
+          "Data Protection score is below the threshold (97/100)"
+        ],
+        "mandatory_fixes": [
+          "Enable encryption for sensitive data",
+          "Secure open ports",
+          "Validate and update SSL certificates",
+          "Improve Data Protection measures"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system is not ready for live deployment due to security and compliance concerns. The Security Score is below the threshold, and critical issues were identified in the Security Assessment. Additionally, the system's encryption status is not enabled, and data protection measures need improvement. Mandatory fixes are required before the system can be considered safe and ready for production.",
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95.0,
+        "critical_flaws": [],
+        "mandatory_fixes": [
+          "Improve Security Score to meet the minimum threshold of 99.0",
+          "Ensure SSL certificates are valid",
+          "Secure open ports",
+          "Enable encryption"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system does not meet the required thresholds for security and overall readiness. Specifically, the Security Score is below the minimum threshold of 99.0. Additionally, SSL certificates are not valid, open ports are not secure, and encryption is not enabled. These issues must be addressed before the system can be considered safe and ready for live deployment.",
+        "model": "mistralai/mistral-large"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95,
+        "critical_flaws": [
+          "Security Score is 93.4, which is below the required 99.0",
+          "Overall Score is 96.05714285714285, which is below the required 98.0",
+          "Performance Score is not explicitly provided but inferred from the overall score, which is below the required 95.0",
+          "SSL certificates are not valid (ssl_valid: false)",
+          "Open ports are not secure (ports_secure: false)",
+          "Encryption is not enabled (encryption_enabled: false)"
+        ],
+        "mandatory_fixes": [
+          "Improve security measures to achieve a Security Score of 99.0 or higher.",
+          "Ensure SSL certificates are valid and properly configured.",
+          "Secure open ports and ensure encryption is enabled.",
+          "Address any vulnerabilities identified in the vulnerability scan.",
+          "Enhance performance benchmarking to achieve a Performance Score of 95.0 or higher."
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system does not meet the required thresholds for overall score, security score, and performance score. Critical security issues such as invalid SSL certificates, insecure open ports, and lack of encryption are present. These issues must be addressed before the system can be deemed safe and ready for live trading with real money.",
+        "model": "mistralai/mistral-small"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 85,
+        "critical_flaws": [
+          "Security Assessment score is 93.4, below the required 99.0.",
+          "Overall Score is 96.05714285714285, below the required 98.0.",
+          "Security compliance is not met (security_compliant: false).",
+          "SSL certificate validity is not confirmed (ssl_valid: false).",
+          "Open ports are not secure (ports_secure: false).",
+          "Encryption is not enabled (encryption_enabled: false)."
+        ],
+        "mandatory_fixes": [
+          "Increase the Security Assessment score to at least 99.0 by addressing all security-related issues, including SSL certificate validity, open ports, and encryption.",
+          "Ensure that the overall score meets or exceeds 98.0 by addressing any remaining issues in all components.",
+          "Confirm that all security compliance requirements are met, including SSL validity, secure ports, and encryption."
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system does not meet the stringent criteria for production readiness. The security score is significantly below the required threshold, and several critical security issues remain unresolved. Additionally, the overall score is below the required 98.0, and the system is not fully compliant with all security and compliance standards. These issues pose significant risks to the integrity and security of the trading system, especially when handling real money. It is imperative to address these critical flaws and mandatory fixes before considering a go-live decision. The current state of the system is unsafe and not ready for production deployment.",
+        "model": "qwen/qwen-2.5-72b-instruct"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.06,
+        "confidence_level": 95,
+        "critical_flaws": [],
+        "mandatory_fixes": [
+          "Improve Security Score to meet the minimum threshold of 99.0/100",
+          "Address SSL certificate issues to ensure all connections are secure",
+          "Enhance encryption status to meet security standards",
+          "Secure open ports to prevent potential vulnerabilities"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system does not meet the required thresholds for a GO decision. While the overall score is close at 96.06, the critical security score of 93.4 falls significantly below the minimum required 99.0. Specific issues with SSL certificates, open ports, and encryption status pose substantial risks for a live trading environment handling real money. Additionally, the security assessment indicates that SSL is not valid, ports are not secure, and encryption is not fully enabled. These deficiencies must be addressed to ensure the system is secure and compliant before considering live deployment.",
+        "model": "deepseek/deepseek-chat"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 95.0,
+        "critical_flaws": [],
+        "mandatory_fixes": [
+          "Security Score needs to be increased to 99.0/100",
+          "SSL certificates need to be validated"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "While the overall system performance is good, the security assessment flagged critical issues that need to be addressed before deploying to production. Specifically, the SSL certificates are not validated, and the Security Score needs to be increased to meet the required threshold of 99.0/100.  These issues pose a significant risk to the system's integrity and the security of sensitive data. It is crucial to resolve these issues before proceeding with a live deployment.",
+        "model": "google/gemma-2-9b-it:free"
+      },
+      {
+        "go_live_decision": "NO-GO",
+        "overall_readiness_score": 96.05714285714285,
+        "confidence_level": 90.0,
+        "critical_flaws": [
+          "Security score below threshold: 93.4/100",
+          "SSL certificates not validated",
+          "Open ports not fully secured",
+          "Encryption not fully enabled"
+        ],
+        "mandatory_fixes": [
+          "Achieve a security score of at least 99.0/100",
+          "Validate and secure all SSL certificates",
+          "Ensure all open ports are secured",
+          "Enable full encryption for all sensitive data"
+        ],
+        "safety_assessment": "UNSAFE",
+        "production_readiness": "NOT_READY",
+        "final_verdict": "The system is not ready for live deployment due to critical security shortcomings. The security score of 93.4 is significantly below the required threshold of 99.0, indicating vulnerabilities that could be exploited in a live trading environment. SSL certificates need validation, open ports require securing, and encryption must be fully enabled to protect sensitive data. These issues pose a substantial risk to the integrity and security of the trading system, which is unacceptable for handling real money transactions. Immediate attention and remediation of these security aspects are mandatory before considering a go-live decision. The overall readiness score and confidence level do not meet the required thresholds, further supporting the decision to delay deployment until all criteria are satisfactorily met.",
+        "model": "gpt-4o-direct"
+      }
+    ]
+  },
+  "critical_issues": [],
+  "total_critical_issues": 0,
+  "readiness_assessment": {
+    "production_ready": false,
+    "criteria_met": {
+      "overall_score_met": false,
+      "no_critical_issues": true,
+      "ai_consensus_positive": false,
+      "safety_confirmed": false,
+      "confidence_sufficient": false
+    },
+    "readiness_percentage": 20.0,
+    "final_decision": "NO-GO",
+    "blocking_issues": [
+      "overall_score_met",
+      "ai_consensus_positive",
+      "safety_confirmed",
+      "confidence_sufficient"
+    ]
+  },
+  "recommendations": [],
+  "next_steps": [
+    "Improve overall score from 96.1 to 98.0+",
+    "System requires additional work before live deployment"
+  ]
+}

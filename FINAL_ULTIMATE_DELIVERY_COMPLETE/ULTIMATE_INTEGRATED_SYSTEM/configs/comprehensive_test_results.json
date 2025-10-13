@@ -1,0 +1,68 @@
+{
+  "test_session": "session_1759573117",
+  "start_time": "2025-10-04T06:18:37.095925",
+  "test_categories": {
+    "unit_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 13 items\n\nunit_tests/test_core_system.py::TestCoreSystem::test_api_connection PASSED [  7%]\nunit_tests/test_core_system.py::TestCoreSystem::test_api_key_validation PASSED [ 15%]\nunit_tests/test_core_system.py::TestCoreSystem::test_configuration_loading PASSED [ 23%]\nunit_tests/test_core_system.py::TestCoreSystem::test_system_initialization PASSED [ 30%]\nunit_tests/test_core_system.py::TestAIConsensus::test_consensus_calculation PASSED [ 38%]\nunit_tests/test_core_system.py::TestAIConsensus::test_model_validation PASSED [ 46%]\nunit_tests/test_core_system.py::TestAIConsensus::test_openrouter_integration PASSED [ 53%]\nunit_tests/test_trading_engine.py::TestTradingEngine::test_order_validation PASSED [ 61%]\nunit_tests/test_trading_engine.py::TestTradingEngine::test_portfolio_calculation PASSED [ 69%]\nunit_tests/test_trading_engine.py::TestTradingEngine::test_risk_management PASSED [ 76%]\nunit_tests/test_trading_engine.py::TestTradingEngine::test_strategy_execution PASSED [ 84%]\nunit_tests/test_trading_engine.py::TestExchangeIntegration::test_market_data_parsing PASSED [ 92%]\nunit_tests/test_trading_engine.py::TestExchangeIntegration::test_order_placement PASSED [100%]\n\n============================== 13 passed in 0.07s ==============================\n",
+      "stderr": ""
+    },
+    "integration_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 6 items\n\nintegration_tests/test_system_integration.py::TestSystemIntegration::test_ai_trading_integration PASSED [ 16%]\nintegration_tests/test_system_integration.py::TestSystemIntegration::test_multi_exchange_integration PASSED [ 33%]\nintegration_tests/test_system_integration.py::TestSystemIntegration::test_container_ecosystem_integration PASSED [ 50%]\nintegration_tests/test_system_integration.py::TestSystemIntegration::test_deployment_integration PASSED [ 66%]\nintegration_tests/test_system_integration.py::TestAPIIntegration::test_openrouter_api_integration PASSED [ 83%]\nintegration_tests/test_system_integration.py::TestAPIIntegration::test_exchange_api_integration PASSED [100%]\n\n============================== 6 passed in 0.09s ===============================\n",
+      "stderr": ""
+    },
+    "security_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 7 items\n\nsecurity_tests/test_security_validation.py::TestSecurityValidation::test_api_key_security PASSED [ 14%]\nsecurity_tests/test_security_validation.py::TestSecurityValidation::test_password_hashing PASSED [ 28%]\nsecurity_tests/test_security_validation.py::TestSecurityValidation::test_input_validation PASSED [ 42%]\nsecurity_tests/test_security_validation.py::TestSecurityValidation::test_encryption_validation PASSED [ 57%]\nsecurity_tests/test_security_validation.py::TestComplianceValidation::test_kyc_validation PASSED [ 71%]\nsecurity_tests/test_security_validation.py::TestComplianceValidation::test_aml_validation PASSED [ 85%]\nsecurity_tests/test_security_validation.py::TestComplianceValidation::test_audit_logging PASSED [100%]\n\n============================== 7 passed in 0.08s ===============================\n",
+      "stderr": ""
+    },
+    "performance_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 7 items\n\nperformance_tests/test_performance_metrics.py::TestPerformanceMetrics::test_api_response_time PASSED [ 14%]\nperformance_tests/test_performance_metrics.py::TestPerformanceMetrics::test_concurrent_processing PASSED [ 28%]\nperformance_tests/test_performance_metrics.py::TestPerformanceMetrics::test_async_performance PASSED [ 42%]\nperformance_tests/test_performance_metrics.py::TestPerformanceMetrics::test_memory_usage PASSED [ 57%]\nperformance_tests/test_performance_metrics.py::TestPerformanceMetrics::test_cpu_usage PASSED [ 71%]\nperformance_tests/test_performance_metrics.py::TestScalabilityMetrics::test_load_handling PASSED [ 85%]\nperformance_tests/test_performance_metrics.py::TestScalabilityMetrics::test_throughput_metrics PASSED [100%]\n\n============================== 7 passed in 1.55s ===============================\n",
+      "stderr": ""
+    },
+    "container_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 7 items\n\ncontainer_tests/test_container_deployment.py::TestContainerDeployment::test_dockerfile_validation PASSED [ 14%]\ncontainer_tests/test_container_deployment.py::TestContainerDeployment::test_docker_compose_validation PASSED [ 28%]\ncontainer_tests/test_container_deployment.py::TestContainerDeployment::test_kubernetes_manifests PASSED [ 42%]\ncontainer_tests/test_container_deployment.py::TestContainerDeployment::test_container_build SKIPPED [ 57%]\ncontainer_tests/test_container_deployment.py::TestContainerDeployment::test_environment_variables PASSED [ 71%]\ncontainer_tests/test_container_deployment.py::TestDeploymentScripts::test_deployment_scripts_exist PASSED [ 85%]\ncontainer_tests/test_container_deployment.py::TestDeploymentScripts::test_configuration_files PASSED [100%]\n\n========================= 6 passed, 1 skipped in 0.10s =========================\n",
+      "stderr": ""
+    },
+    "api_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 3 items\n\napi_tests/test_api_integration.py::TestOpenRouterAPI::test_openrouter_api_call PASSED [ 33%]\napi_tests/test_api_integration.py::TestExchangeAPIs::test_coinbase_api_structure PASSED [ 66%]\napi_tests/test_api_integration.py::TestExchangeAPIs::test_binance_api_structure PASSED [100%]\n\n============================== 3 passed in 0.06s ===============================\n",
+      "stderr": ""
+    },
+    "ai_consensus_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 3 items\n\nai_consensus_tests/test_ai_consensus.py::TestAIConsensusSystem::test_consensus_calculation PASSED [ 33%]\nai_consensus_tests/test_ai_consensus.py::TestAIConsensusSystem::test_multi_model_integration PASSED [ 66%]\nai_consensus_tests/test_ai_consensus.py::TestOpenRouterIntegration::test_openrouter_consensus PASSED [100%]\n\n============================== 3 passed in 0.08s ===============================\n",
+      "stderr": ""
+    },
+    "trading_engine_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 8 items\n\ntrading_engine_tests/test_trading_strategies.py::TestTradingStrategies::test_dca_strategy PASSED [ 12%]\ntrading_engine_tests/test_trading_strategies.py::TestTradingStrategies::test_momentum_strategy PASSED [ 25%]\ntrading_engine_tests/test_trading_strategies.py::TestTradingStrategies::test_arbitrage_strategy PASSED [ 37%]\ntrading_engine_tests/test_trading_strategies.py::TestRiskManagement::test_position_sizing PASSED [ 50%]\ntrading_engine_tests/test_trading_strategies.py::TestRiskManagement::test_stop_loss_calculation PASSED [ 62%]\ntrading_engine_tests/test_trading_strategies.py::TestRiskManagement::test_portfolio_diversification PASSED [ 75%]\ntrading_engine_tests/test_trading_strategies.py::TestOrderExecution::test_market_order_validation PASSED [ 87%]\ntrading_engine_tests/test_trading_strategies.py::TestOrderExecution::test_limit_order_validation PASSED [100%]\n\n============================== 8 passed in 0.02s ===============================\n",
+      "stderr": ""
+    },
+    "ecosystem_tests": {
+      "status": "PASSED",
+      "return_code": 0,
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0 -- /usr/bin/python\ncachedir: .pytest_cache\nrootdir: /home/ubuntu/temp_repos/halvo78_sandy---box/COMPREHENSIVE_TESTING\nconfigfile: pytest.ini\nplugins: anyio-4.11.0, mock-3.15.1, cov-7.0.0, asyncio-1.2.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 5 items\n\necosystem_tests/test_ecosystem_integration.py::TestEcosystemIntegration::test_ecosystem_structure PASSED [ 20%]\necosystem_tests/test_ecosystem_integration.py::TestEcosystemIntegration::test_component_communication PASSED [ 40%]\necosystem_tests/test_ecosystem_integration.py::TestEcosystemIntegration::test_data_flow PASSED [ 60%]\necosystem_tests/test_ecosystem_integration.py::TestSystemResilience::test_failover_mechanisms PASSED [ 80%]\necosystem_tests/test_ecosystem_integration.py::TestSystemResilience::test_error_handling PASSED [100%]\n\n============================== 5 passed in 0.01s ===============================\n",
+      "stderr": ""
+    }
+  },
+  "overall_status": "PASSED",
+  "summary": {
+    "total_categories": 9,
+    "passed_categories": 9,
+    "failed_categories": 0,
+    "success_rate": 100.0
+  },
+  "end_time": "2025-10-04T06:18:41.951131"
+}

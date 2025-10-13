@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-10-12T09:13:56.906674",
+  "components": {
+    "control_center": {
+      "timestamp": "2025-10-12T09:10:08.399224",
+      "operational": true,
+      "mode": "OPERATIONAL",
+      "monitoring": {
+        "prometheus": "RUNNING",
+        "grafana": "RUNNING",
+        "node_exporter": "RUNNING"
+      },
+      "trading": {
+        "engine": "SAFE_MODE",
+        "capital": "$13,947.76",
+        "exchanges": 8,
+        "ai_models": 330
+      },
+      "reporting": {
+        "tax_system": "READY",
+        "dashboard": "READY",
+        "alerts": "ACTIVE"
+      }
+    },
+    "monitoring": {
+      "prometheus": "RUNNING",
+      "grafana-server": "RUNNING",
+      "node_exporter": "RUNNING"
+    },
+    "reporting": {
+      "database": "READY",
+      "tax_system": "OPERATIONAL",
+      "dashboard": "DEPLOYED"
+    }
+  }
+}

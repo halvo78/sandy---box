@@ -1,0 +1,51 @@
+{
+  "report_id": "CR-20251004_091251",
+  "generated_timestamp": "2025-10-04T09:12:51.802467",
+  "business_details": {
+    "business_name": "Ultimate Lyra Trading Systems Pty Ltd",
+    "abn": "12 345 678 901",
+    "financial_year": "2024-25",
+    "reporting_currency": "AUD"
+  },
+  "portfolio_summary": {
+    "total_balance_aud": 315000.0,
+    "total_balance_usd": 210000.0,
+    "number_of_exchanges": 7,
+    "aud_usd_rate": 1.5
+  },
+  "transaction_summary": {
+    "total_transactions": 1,
+    "capital_gains_events": 0,
+    "business_income_events": 0,
+    "fee_deductions": 1,
+    "foreign_exchange_events": 0
+  },
+  "compliance_status": {
+    "transaction_recording": "COMPLIANT",
+    "capital_gains_tracking": "COMPLIANT",
+    "business_income_tracking": "COMPLIANT",
+    "record_keeping": "COMPLIANT",
+    "aml_compliance": "COMPLIANT",
+    "overall_status": "FULLY_COMPLIANT"
+  },
+  "risk_assessment": {
+    "overall_risk": "LOW",
+    "last_assessment": {
+      "timestamp": "2025-10-04T09:12:51.801939",
+      "assessment_id": "RA-000001",
+      "transaction_volume_risk": "LOW",
+      "exchange_concentration_risk": "LOW",
+      "compliance_risk": "LOW",
+      "record_keeping_risk": "LOW",
+      "tax_obligation_risk": "LOW",
+      "aml_risk": "LOW",
+      "overall_risk_rating": "LOW",
+      "recommendations": [
+        "Continue maintaining detailed transaction records",
+        "Ensure all capital gains events are properly documented",
+        "Monitor foreign exchange rate impacts on portfolio",
+        "Regular compliance reviews with tax professional recommended"
+      ]
+    }
+  }
+}

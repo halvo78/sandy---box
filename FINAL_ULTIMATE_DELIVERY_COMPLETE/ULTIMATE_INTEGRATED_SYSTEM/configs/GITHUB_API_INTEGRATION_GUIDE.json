@@ -1,0 +1,125 @@
+{
+  "title": "ULTIMATE API VAULT - SYSTEM INTEGRATION GUIDE",
+  "description": "Complete API ecosystem integration for LYRA Trading System",
+  "metadata": {
+    "total_apis": 45,
+    "categories": [
+      "AI/ML",
+      "Financial",
+      "Crypto",
+      "News",
+      "Infrastructure"
+    ],
+    "status": "PRODUCTION_READY",
+    "security": "KEYS_REDACTED_FOR_PUBLIC_REPO"
+  },
+  "system_architecture": {
+    "ai_layer": {
+      "primary": "OpenRouter API (327+ models)",
+      "backup": "Anthropic Claude + OpenAI GPT",
+      "specialized": "Google Gemini (multimodal)",
+      "integration": "Seamless model switching and load balancing"
+    },
+    "data_layer": {
+      "financial": "Polygon.io (professional market data)",
+      "crypto": "CoinAPI (professional crypto data)",
+      "technical": "TwelveData (technical indicators)",
+      "free_backup": "28 free APIs for redundancy"
+    },
+    "infrastructure_layer": {
+      "tunneling": "Ngrok (secure development access)",
+      "backend": "Supabase (database and auth)",
+      "version_control": "GitHub (repository management)",
+      "monitoring": "Sentry (error tracking)"
+    }
+  },
+  "api_categories": {
+    "paid_apis": {
+      "count": 12,
+      "examples": [
+        {
+          "name": "OpenRouter",
+          "key_format": "sk-or-v1-[REDACTED]",
+          "usage": "Primary AI engine"
+        },
+        {
+          "name": "Anthropic",
+          "key_format": "sk-ant-api03-[REDACTED]",
+          "usage": "Advanced reasoning"
+        },
+        {
+          "name": "OpenAI",
+          "key_format": "sk-proj-[REDACTED]",
+          "usage": "GPT models"
+        },
+        {
+          "name": "Polygon.io",
+          "key_format": "[REDACTED]",
+          "usage": "Market data"
+        },
+        {
+          "name": "CoinAPI",
+          "key_format": "[UUID-REDACTED]",
+          "usage": "Crypto data"
+        }
+      ]
+    },
+    "free_apis": {
+      "count": 28,
+      "examples": [
+        {
+          "name": "CoinGecko",
+          "auth": "No auth required",
+          "usage": "Free crypto data"
+        },
+        {
+          "name": "Fear & Greed",
+          "auth": "No auth required",
+          "usage": "Market sentiment"
+        },
+        {
+          "name": "Alpha Vantage",
+          "auth": "Free tier",
+          "usage": "Stock data"
+        },
+        {
+          "name": "Yahoo Finance",
+          "auth": "No auth required",
+          "usage": "Market data"
+        }
+      ]
+    }
+  },
+  "integration_patterns": {
+    "ai_model_selection": {
+      "strategy": "Dynamic model selection based on task complexity",
+      "fallback": "Automatic failover to backup models",
+      "optimization": "Cost-aware routing for different use cases"
+    },
+    "data_aggregation": {
+      "primary": "Paid APIs for critical data",
+      "backup": "Free APIs for redundancy",
+      "caching": "Intelligent caching to minimize API calls"
+    },
+    "error_handling": {
+      "monitoring": "Sentry integration for error tracking",
+      "retry_logic": "Exponential backoff with circuit breakers",
+      "graceful_degradation": "Fallback to free APIs when paid APIs fail"
+    }
+  },
+  "deployment_guide": {
+    "environment_setup": {
+      "step_1": "Load environment variables from vault",
+      "step_2": "Initialize API clients with proper authentication",
+      "step_3": "Configure monitoring and error handling",
+      "step_4": "Test all API connections"
+    },
+    "production_checklist": [
+      "All paid API keys validated and working",
+      "Free API fallbacks configured",
+      "Rate limiting implemented",
+      "Error monitoring active",
+      "Backup systems tested"
+    ]
+  }
+}
