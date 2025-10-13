@@ -1,0 +1,1 @@
+id,trade_id,timestamp,exchange,symbol,side,type,price,amount,cost,fee,fee_currency,profit_loss,profit_loss_percent,strategy,ai_confidence,ai_models_used,entry_price,exit_price,holding_period_seconds,tax_event,notes,raw_data

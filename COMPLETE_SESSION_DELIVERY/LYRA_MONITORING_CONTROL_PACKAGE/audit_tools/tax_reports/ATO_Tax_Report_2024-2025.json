@@ -1,0 +1,14 @@
+{
+  "financial_year": "2024-2025",
+  "generated_at": "2025-10-12T09:03:56.119149",
+  "taxpayer_info": {
+    "name": "HALVO-AI Trading System",
+    "abn": "TO_BE_CONFIGURED",
+    "tfn": "TO_BE_CONFIGURED"
+  },
+  "summary": {},
+  "capital_gains_tax": {},
+  "income": {},
+  "deductions": {},
+  "detailed_trades": []
+}

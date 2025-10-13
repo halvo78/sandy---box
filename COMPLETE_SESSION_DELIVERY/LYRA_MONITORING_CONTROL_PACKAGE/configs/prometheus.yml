@@ -1,0 +1,58 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'halvo-ai-trading'
+    environment: 'production'
+    capital: '13947.76'
+    exchanges: '8'
+    ai_models: '330'
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['localhost:9093']
+
+# Rule files for alerts
+rule_files:
+  - '/etc/prometheus/alerts/*.yml'
+
+# Scrape configurations
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          component: 'monitoring'
+
+  # Node Exporter - System metrics
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          component: 'system'
+          hostname: 'halvo-trading-server'
+
+  # Trading system metrics (placeholder - will be configured when trading system is running)
+  - job_name: 'lyra-trading'
+    static_configs:
+      - targets: ['localhost:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+  # AWS CloudWatch metrics (if exporter is configured)
+  - job_name: 'aws-cloudwatch'
+    static_configs:
+      - targets: ['localhost:9106']
+    scrape_interval: 60s
+
+  # Custom trading metrics endpoint
+  - job_name: 'trading-custom'
+    static_configs:
+      - targets: ['localhost:9091']
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+
