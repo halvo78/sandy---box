@@ -1,0 +1,2594 @@
+{
+  "timestamp": "2025-10-12T09:29:53.526770",
+  "github_repos": [
+    {
+      "name": "halvo78/files-for-build",
+      "path": "/home/ubuntu/forensic-audit/files-for-build",
+      "files": [],
+      "key_components": [],
+      "trading_systems": [],
+      "configurations": [],
+      "ai_integrations": [],
+      "file_types": {
+        "": 4,
+        ".sample": 13
+      },
+      "total_files": 17,
+      "key_files": [
+        {
+          "name": "config",
+          "path": ".git/config",
+          "size": 267
+        },
+        {
+          "name": "fsmonitor-watchman.sample",
+          "path": ".git/hooks/fsmonitor-watchman.sample",
+          "size": 4655
+        }
+      ]
+    },
+    {
+      "name": "halvo78/lyra-files",
+      "path": "/home/ubuntu/forensic-audit/lyra-files",
+      "files": [],
+      "key_components": [],
+      "trading_systems": [],
+      "configurations": [],
+      "ai_integrations": [],
+      "file_types": {
+        "": 12,
+        ".sample": 13,
+        ".pack": 1,
+        ".idx": 1
+      },
+      "total_files": 27,
+      "key_files": [
+        {
+          "name": "config",
+          "path": ".git/config",
+          "size": 262
+        },
+        {
+          "name": "fsmonitor-watchman.sample",
+          "path": ".git/hooks/fsmonitor-watchman.sample",
+          "size": 4655
+        }
+      ]
+    },
+    {
+      "name": "halvo78/sandy---box",
+      "path": "/home/ubuntu/forensic-audit/sandy---box",
+      "files": [],
+      "key_components": [],
+      "trading_systems": [
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_ACHIEVEMENT_REPORT.md",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_ACHIEVEMENT_REPORT.md",
+          "size": 7474
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json",
+          "size": 4808611
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json.backup",
+          "size": 4810531
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60228
+        },
+        {
+          "name": "ULTIMATE_LIVE_PORTFOLIO_MANAGEMENT_REPORT.json",
+          "path": "ULTIMATE_LIVE_PORTFOLIO_MANAGEMENT_REPORT.json",
+          "size": 12847
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "path": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz(0)",
+          "path": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz(0)",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "path": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "size": 5082350
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "size": 5175637
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "size": 5160862
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "size": 392401
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "size": 6535531
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "size": 5108603
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "size": 5082350
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "size": 1289123
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "size": 5175637
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "size": 5160862
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "size": 392401
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "size": 6535531
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "size": 5108603
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "size": 5082350
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "path": "CONTAINERIZED_TESTING/TRADING_SYSTEMS/CORE_SYSTEMS/CORE_SYSTEMS/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "size": 1289123
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_ALL_CONTENT.zip",
+          "size": 5175637
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_COMPLETE_WITH_CONTENT.zip",
+          "size": 5160862
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "size": 392401
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_FINAL_COMPLETE.zip",
+          "size": 6535531
+        },
+        {
+          "name": "ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_GITHUB_REPOSITORY_FINAL_COMPLETE.zip",
+          "size": 5108603
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "size": 5082350
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "path": "CORE_SYSTEMS/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "size": 1289123
+        },
+        {
+          "name": "ai_advanced_strategy_engine.py",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_advanced_strategy_engine.py",
+          "size": 25347
+        },
+        {
+          "name": "ai_advanced_strategy_engine.py.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_advanced_strategy_engine.py.backup",
+          "size": 25042
+        },
+        {
+          "name": "ai_arbitrage_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_arbitrage_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_arbitrage_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_arbitrage_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_breakout_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_breakout_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_breakout_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_breakout_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_luxalgo_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_luxalgo_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_luxalgo_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_luxalgo_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_mean_reversion_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_mean_reversion_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_mean_reversion_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_mean_reversion_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_momentum_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_momentum_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_momentum_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_momentum_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_smc_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_smc_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "ai_smc_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_smc_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "ai_test_strategy_decay_analysis.json",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_test_strategy_decay_analysis.json",
+          "size": 78
+        },
+        {
+          "name": "ai_test_strategy_decay_analysis.json.backup",
+          "path": "ECOSYSTEM_AI_SYSTEMS/ai_test_strategy_decay_analysis.json.backup",
+          "size": 78
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "path": "ECOSYSTEM_ANALYSIS/ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "size": 8995
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "path": "ECOSYSTEM_ANALYSIS/ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "size": 22500
+        },
+        {
+          "name": "lyra_files_gitattributes",
+          "path": "ECOSYSTEM_CONFIGURATION/lyra_files_gitattributes",
+          "size": 66
+        },
+        {
+          "name": "core_ultimate_lyra_ecosystem_absolutely_final.py",
+          "path": "ECOSYSTEM_CORE_SYSTEMS/core_ultimate_lyra_ecosystem_absolutely_final.py",
+          "size": 28910
+        },
+        {
+          "name": "core_ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "path": "ECOSYSTEM_CORE_SYSTEMS/core_ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "size": 28693
+        },
+        {
+          "name": "trading_live_exchange_connector.py",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_live_exchange_connector.py",
+          "size": 32931
+        },
+        {
+          "name": "trading_live_exchange_connector.py.backup",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_live_exchange_connector.py.backup",
+          "size": 32651
+        },
+        {
+          "name": "trading_portfolio_var_1758874683.json",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874683.json",
+          "size": 367
+        },
+        {
+          "name": "trading_portfolio_var_1758874683.json.backup",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874683.json.backup",
+          "size": 367
+        },
+        {
+          "name": "trading_portfolio_var_1758874736.json",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874736.json",
+          "size": 366
+        },
+        {
+          "name": "trading_portfolio_var_1758874736.json.backup",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874736.json.backup",
+          "size": 366
+        },
+        {
+          "name": "trading_portfolio_var_1758874782.json",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874782.json",
+          "size": 367
+        },
+        {
+          "name": "trading_portfolio_var_1758874782.json.backup",
+          "path": "ECOSYSTEM_TRADING_ENGINE/trading_portfolio_var_1758874782.json.backup",
+          "size": 367
+        },
+        {
+          "name": "OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "path": "ULTIMATE_AI_SYSTEMS/OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "size": 13908
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "path": "ULTIMATE_API_INTEGRATION/ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "size": 8865
+        },
+        {
+          "name": "COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "path": "ULTIMATE_SYSTEM/AI_INTEGRATION/COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "size": 14140
+        },
+        {
+          "name": "OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "path": "ULTIMATE_SYSTEM/AI_INTEGRATION/OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "size": 13908
+        },
+        {
+          "name": "\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_SYSTEM/AI_INTEGRATION/\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "ENHANCED_EXCHANGE_CONFIG.json",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ENHANCED_EXCHANGE_CONFIG.json",
+          "size": 3021
+        },
+        {
+          "name": "ENHANCED_EXCHANGE_CONFIG.json.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ENHANCED_EXCHANGE_CONFIG.json.backup",
+          "size": 3021
+        },
+        {
+          "name": "live_exchange_connector.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/live_exchange_connector.py",
+          "size": 32931
+        },
+        {
+          "name": "live_exchange_connector.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/live_exchange_connector.py.backup",
+          "size": 32651
+        },
+        {
+          "name": "ultimate_lyra_v5_API_GATEWAY.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_API_GATEWAY.py",
+          "size": 2118
+        },
+        {
+          "name": "ultimate_lyra_v5_API_GATEWAY.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_API_GATEWAY.py.backup",
+          "size": 2118
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETE_SYSTEM_INTEGRATION.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_COMPLETE_SYSTEM_INTEGRATION.py",
+          "size": 8531
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETE_SYSTEM_INTEGRATION.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_COMPLETE_SYSTEM_INTEGRATION.py.backup",
+          "size": 8474
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETE_TELEGRAM_INTEGRATION.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_COMPLETE_TELEGRAM_INTEGRATION.py",
+          "size": 21171
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETE_TELEGRAM_INTEGRATION.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_COMPLETE_TELEGRAM_INTEGRATION.py.backup",
+          "size": 21101
+        },
+        {
+          "name": "ultimate_lyra_v5_HUMMINGBOT_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_HUMMINGBOT_INTEGRATION_SYSTEM.py",
+          "size": 28833
+        },
+        {
+          "name": "ultimate_lyra_v5_HUMMINGBOT_INTEGRATION_SYSTEM.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_HUMMINGBOT_INTEGRATION_SYSTEM.py.backup",
+          "size": 28833
+        },
+        {
+          "name": "ultimate_lyra_v5_SYSTEM_INTEGRATION_PUSHER.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_SYSTEM_INTEGRATION_PUSHER.py",
+          "size": 18372
+        },
+        {
+          "name": "ultimate_lyra_v5_SYSTEM_INTEGRATION_PUSHER.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_SYSTEM_INTEGRATION_PUSHER.py.backup",
+          "size": 18372
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_MULTI_SOURCE_API_SYSTEM.py",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_ULTIMATE_MULTI_SOURCE_API_SYSTEM.py",
+          "size": 47893
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_MULTI_SOURCE_API_SYSTEM.py.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_ULTIMATE_MULTI_SOURCE_API_SYSTEM.py.backup",
+          "size": 47511
+        },
+        {
+          "name": "ultimate_lyra_v5_service_integration_config.json",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_service_integration_config.json",
+          "size": 398
+        },
+        {
+          "name": "ultimate_lyra_v5_service_integration_config.json.backup",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/ultimate_lyra_v5_service_integration_config.json.backup",
+          "size": 398
+        },
+        {
+          "name": "verified,account-specificfeesandcorrectVIPtier,perexchange.txt",
+          "path": "ULTIMATE_SYSTEM/API_INTEGRATIONS/verified,account-specificfeesandcorrectVIPtier,perexchange.txt",
+          "size": 25088
+        },
+        {
+          "name": "PUSH_TO_LYRA_FILES.py",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/PUSH_TO_LYRA_FILES.py",
+          "size": 28039
+        },
+        {
+          "name": "PUSH_TO_LYRA_FILES.py.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/PUSH_TO_LYRA_FILES.py.backup",
+          "size": 27712
+        },
+        {
+          "name": "START_ULTIMATE_LYRA.sh",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/START_ULTIMATE_LYRA.sh",
+          "size": 1621
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_MASTER_CONFIGURATION.json",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_MASTER_CONFIGURATION.json",
+          "size": 1680
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_MASTER_CONFIGURATION.json.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_MASTER_CONFIGURATION.json.backup",
+          "size": 1680
+        },
+        {
+          "name": "ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ULTIMATE_LYRA_FINAL_PRODUCTION_COMPLETE.zip",
+          "size": 392401
+        },
+        {
+          "name": "ultimate-lyra-ecosystem.zip",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate-lyra-ecosystem.zip",
+          "size": 118918
+        },
+        {
+          "name": "ultimate_lyra_ecosystem_absolutely_final.py",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_ecosystem_absolutely_final.py",
+          "size": 28910
+        },
+        {
+          "name": "ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "size": 28693
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_100_PERCENT_COMPLIANCE_SYSTEM.py",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_ULTIMATE_100_PERCENT_COMPLIANCE_SYSTEM.py",
+          "size": 26277
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_100_PERCENT_COMPLIANCE_SYSTEM.py.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_ULTIMATE_100_PERCENT_COMPLIANCE_SYSTEM.py.backup",
+          "size": 26221
+        },
+        {
+          "name": "ultimate_lyra_v5_UNIFIED_SYSTEM_CONFIG.json",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_UNIFIED_SYSTEM_CONFIG.json",
+          "size": 1332
+        },
+        {
+          "name": "ultimate_lyra_v5_UNIFIED_SYSTEM_CONFIG.json.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_UNIFIED_SYSTEM_CONFIG.json.backup",
+          "size": 1332
+        },
+        {
+          "name": "ultimate_lyra_v5_compliance_framework.json",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_compliance_framework.json",
+          "size": 834
+        },
+        {
+          "name": "ultimate_lyra_v5_compliance_framework.json.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_compliance_framework.json.backup",
+          "size": 834
+        },
+        {
+          "name": "ultimate_lyra_v5_comprehensive_compliance_verification.py",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_comprehensive_compliance_verification.py",
+          "size": 19817
+        },
+        {
+          "name": "ultimate_lyra_v5_comprehensive_compliance_verification.py.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_comprehensive_compliance_verification.py.backup",
+          "size": 19571
+        },
+        {
+          "name": "ultimate_lyra_v5_load_balancer_config.json",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_load_balancer_config.json",
+          "size": 416
+        },
+        {
+          "name": "ultimate_lyra_v5_load_balancer_config.json.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_load_balancer_config.json.backup",
+          "size": 416
+        },
+        {
+          "name": "ultimate_lyra_v5_monitoring_config.json",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_monitoring_config.json",
+          "size": 279
+        },
+        {
+          "name": "ultimate_lyra_v5_monitoring_config.json.backup",
+          "path": "ULTIMATE_SYSTEM/CORE_SYSTEMS/ultimate_lyra_v5_monitoring_config.json.backup",
+          "size": 279
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETEPRODUCTIONDEPLOYMENTGUIDE(1).md",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETEPRODUCTIONDEPLOYMENTGUIDE(1).md",
+          "size": 73747
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETEPRODUCTIONDEPLOYMENTGUIDE.md",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETEPRODUCTIONDEPLOYMENTGUIDE.md",
+          "size": 73747
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_ULTIMATECOMPLETESYSTEM-UBUNTUDEPLOYMENTSEGMENTS.md",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_ULTIMATECOMPLETESYSTEM-UBUNTUDEPLOYMENTSEGMENTS.md",
+          "size": 52065
+        },
+        {
+          "name": "ultimate-lyra-ecosystem.zip",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate-lyra-ecosystem.zip",
+          "size": 118918
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETEPRODUCTIONDEPLOYMENTGUIDE.md",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_COMPLETEPRODUCTIONDEPLOYMENTGUIDE.md",
+          "size": 73747
+        },
+        {
+          "name": "ultimate_lyra_v5_DEPLOYMENT_SUMMARY_20250930_121646.json",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_DEPLOYMENT_SUMMARY_20250930_121646.json",
+          "size": 2827
+        },
+        {
+          "name": "ultimate_lyra_v5_DEPLOYMENT_SUMMARY_20250930_121646.json.backup",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_DEPLOYMENT_SUMMARY_20250930_121646.json.backup",
+          "size": 2827
+        },
+        {
+          "name": "ultimate_lyra_v5_DEPLOY_TO_USER_UBUNTU.sh",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_DEPLOY_TO_USER_UBUNTU.sh",
+          "size": 3625
+        },
+        {
+          "name": "ultimate_lyra_v5_NGROK_COMPLETE_SETUP.py",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_NGROK_COMPLETE_SETUP.py",
+          "size": 15753
+        },
+        {
+          "name": "ultimate_lyra_v5_NGROK_COMPLETE_SETUP.py.backup",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_NGROK_COMPLETE_SETUP.py.backup",
+          "size": 15340
+        },
+        {
+          "name": "ultimate_lyra_v5_QUICK_DEPLOYMENT_GUIDE.md",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_QUICK_DEPLOYMENT_GUIDE.md",
+          "size": 1771
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_COMPREHENSIVE_SYSTEM_DEPLOYER.py",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_ULTIMATE_COMPREHENSIVE_SYSTEM_DEPLOYER.py",
+          "size": 46014
+        },
+        {
+          "name": "ultimate_lyra_v5_ULTIMATE_COMPREHENSIVE_SYSTEM_DEPLOYER.py.backup",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_ULTIMATE_COMPREHENSIVE_SYSTEM_DEPLOYER.py.backup",
+          "size": 45656
+        },
+        {
+          "name": "ultimate_lyra_v5_deploy.sh",
+          "path": "ULTIMATE_SYSTEM/DEPLOYMENT/ultimate_lyra_v5_deploy.sh",
+          "size": 734
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "path": "ULTIMATE_SYSTEM/DOCUMENTATION/ULTIMATE_LYRA_ECOSYSTEM_COMPLETE_API_INVENTORY.md",
+          "size": 8865
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "path": "ULTIMATE_SYSTEM/DOCUMENTATION/ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "size": 22500
+        },
+        {
+          "name": "GATE_ARBITRAGE_API_KEY.vault",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/GATE_ARBITRAGE_API_KEY.vault",
+          "size": 358
+        },
+        {
+          "name": "LYRA_TRADE_API_KEY.vault",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/LYRA_TRADE_API_KEY.vault",
+          "size": 358
+        },
+        {
+          "name": "LYRA_TRADE_SECRET_KEY.vault",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/LYRA_TRADE_SECRET_KEY.vault",
+          "size": 358
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "size": 35118
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "size": 34544
+        },
+        {
+          "name": "VAULT_EXCHANGE_MUTUALIZATION_REPORT.md",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/VAULT_EXCHANGE_MUTUALIZATION_REPORT.md",
+          "size": 9150
+        },
+        {
+          "name": "ultimate_lyra_v5_.vault_key",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_.vault_key",
+          "size": 49
+        },
+        {
+          "name": "ultimate_lyra_v5_SECURITY_AUDITOR.py",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_SECURITY_AUDITOR.py",
+          "size": 1952
+        },
+        {
+          "name": "ultimate_lyra_v5_SECURITY_AUDITOR.py.backup",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_SECURITY_AUDITOR.py.backup",
+          "size": 1952
+        },
+        {
+          "name": "ultimate_lyra_v5_restore_actual_vault.py",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_restore_actual_vault.py",
+          "size": 5180
+        },
+        {
+          "name": "ultimate_lyra_v5_restore_actual_vault.py.backup",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_restore_actual_vault.py.backup",
+          "size": 5095
+        },
+        {
+          "name": "ultimate_lyra_v5_security_audit_report.json",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_security_audit_report.json",
+          "size": 623
+        },
+        {
+          "name": "ultimate_lyra_v5_security_audit_report.json.backup",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_security_audit_report.json.backup",
+          "size": 623
+        },
+        {
+          "name": "ultimate_lyra_v5_security_policy.md",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/ultimate_lyra_v5_security_policy.md",
+          "size": 65
+        },
+        {
+          "name": "\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "path": "ULTIMATE_SYSTEM/SECURITY_VAULT/\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "size": 9109
+        },
+        {
+          "name": "exchange_integration_validation_results.json",
+          "path": "ULTIMATE_SYSTEM/TESTING_VALIDATION/exchange_integration_validation_results.json",
+          "size": 3956
+        },
+        {
+          "name": "exchange_integration_validation_results.json.backup",
+          "path": "ULTIMATE_SYSTEM/TESTING_VALIDATION/exchange_integration_validation_results.json.backup",
+          "size": 3956
+        },
+        {
+          "name": "exchange_integration_validator.py",
+          "path": "ULTIMATE_SYSTEM/TESTING_VALIDATION/exchange_integration_validator.py",
+          "size": 13610
+        },
+        {
+          "name": "exchange_integration_validator.py.backup",
+          "path": "ULTIMATE_SYSTEM/TESTING_VALIDATION/exchange_integration_validator.py.backup",
+          "size": 13135
+        },
+        {
+          "name": "COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "size": 9722
+        },
+        {
+          "name": "COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "size": 9033
+        },
+        {
+          "name": "COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(1).md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(1).md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(2).md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(2).md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(3).md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS(3).md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/COMPLETEULTIMATELYRATRADINGSYSTEMANALYSIS.md",
+          "size": 14140
+        },
+        {
+          "name": "Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "size": 11335
+        },
+        {
+          "name": "Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "size": 5498
+        },
+        {
+          "name": "FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "size": 4486
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "size": 8091
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "size": 4081
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Unified Integration Report.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Ultimate Lyra Trading System - Unified Integration Report.md",
+          "size": 6228
+        },
+        {
+          "name": "Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "size": 3859
+        },
+        {
+          "name": "UltimateLyraTradingSystem-CompleteInheritanceBuildReport.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/UltimateLyraTradingSystem-CompleteInheritanceBuildReport.md",
+          "size": 14105
+        },
+        {
+          "name": "UltimateLyraTradingSystem-FinalBuildSummary.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/UltimateLyraTradingSystem-FinalBuildSummary.md",
+          "size": 2946
+        },
+        {
+          "name": "advanced_strategy_engine.py",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/advanced_strategy_engine.py",
+          "size": 25125
+        },
+        {
+          "name": "advanced_strategy_engine.py.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/advanced_strategy_engine.py.backup",
+          "size": 24820
+        },
+        {
+          "name": "arbitrage_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/arbitrage_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "arbitrage_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/arbitrage_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "breakout_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/breakout_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "breakout_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/breakout_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "luxalgo_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/luxalgo_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "luxalgo_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/luxalgo_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "mean_reversion_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/mean_reversion_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "mean_reversion_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/mean_reversion_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "momentum_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/momentum_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "momentum_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/momentum_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "smc_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/smc_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "smc_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/smc_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "test_strategy_decay_analysis.json",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/test_strategy_decay_analysis.json",
+          "size": 78
+        },
+        {
+          "name": "test_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/test_strategy_decay_analysis.json.backup",
+          "size": 78
+        },
+        {
+          "name": "\ud83c\udf89ULTIMATELYRATRADINGSYSTEM-100%COMPLETE&D27df792baa138147af4cc4e5e7e59149.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/\ud83c\udf89ULTIMATELYRATRADINGSYSTEM-100%COMPLETE&D27df792baa138147af4cc4e5e7e59149.md",
+          "size": 2123
+        },
+        {
+          "name": "\ud83c\udf89ULTIMATELYRATRADINGSYSTEM-COMPLETEDELIVERYREPORT.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/\ud83c\udf89ULTIMATELYRATRADINGSYSTEM-COMPLETEDELIVERYREPORT.md",
+          "size": 13423
+        },
+        {
+          "name": "\ud83c\udf89ULTIMATEREALEXCHANGEPORTFOLIOSYSTEM-COMPLETESUCCESS.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/\ud83c\udf89ULTIMATEREALEXCHANGEPORTFOLIOSYSTEM-COMPLETESUCCESS.md",
+          "size": 17223
+        },
+        {
+          "name": "\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_SYSTEM/TRADING_ENGINE/\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "size": 12060
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDBTCMARKETSSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDBTCMARKETSSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 58214
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDCOINBASESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDCOINBASESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 114425
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "size": 5696
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "size": 30157
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDINDEPENDENTRESERVESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDINDEPENDENTRESERVESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 15
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV1.docx",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV1.docx",
+          "size": 97366
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 16513
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "size": 30157
+        },
+        {
+          "name": "ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ULTIMATE_LYRA_DEFINITIVE_SYSTEM_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "size": 30157
+        },
+        {
+          "name": "ultimate_lyra_v5_1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "size": 11743
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "size": 30157
+        },
+        {
+          "name": "ultimate_lyra_v5_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "size": 30157
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.admin_panel",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.admin_panel",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.admin_panel.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.admin_panel.backup",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ai_consensus",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_consensus",
+          "size": 1123
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ai_consensus.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_consensus.backup",
+          "size": 1123
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ai_momentum",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_momentum",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ai_momentum.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ai_momentum.backup",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.alertmanager",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.alertmanager",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.alertmanager.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.alertmanager.backup",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.analytics_engine",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_engine",
+          "size": 1148
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.analytics_engine.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_engine.backup",
+          "size": 1148
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.analytics_ui",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_ui",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.analytics_ui.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.analytics_ui.backup",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ato_reporter",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ato_reporter",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.ato_reporter.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.ato_reporter.backup",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.audit_logger",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_logger",
+          "size": 1141
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.audit_logger.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_logger.backup",
+          "size": 1141
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.audit_trail",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_trail",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.audit_trail.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.audit_trail.backup",
+          "size": 1143
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.basket_rebalancing",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.basket_rebalancing",
+          "size": 1171
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.basket_rebalancing.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.basket_rebalancing.backup",
+          "size": 1171
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.binance_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.binance_service",
+          "size": 1156
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.binance_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.binance_service.backup",
+          "size": 1156
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.bitfinex_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.bitfinex_service",
+          "size": 1160
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.bitfinex_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.bitfinex_service.backup",
+          "size": 1160
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.btcmarkets_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.btcmarkets_service",
+          "size": 1168
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.btcmarkets_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.btcmarkets_service.backup",
+          "size": 1168
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.cash_carry",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cash_carry",
+          "size": 1139
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.cash_carry.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cash_carry.backup",
+          "size": 1139
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.coinbase_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.coinbase_service",
+          "size": 1160
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.coinbase_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.coinbase_service.backup",
+          "size": 1160
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.compliance_checker",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.compliance_checker",
+          "size": 1171
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.compliance_checker.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.compliance_checker.backup",
+          "size": 1171
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.config_manager",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.config_manager",
+          "size": 1137
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.config_manager.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.config_manager.backup",
+          "size": 1137
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.covered_calls",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.covered_calls",
+          "size": 1151
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.covered_calls.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.covered_calls.backup",
+          "size": 1151
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.cross_arbitrage",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cross_arbitrage",
+          "size": 1159
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.cross_arbitrage.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.cross_arbitrage.backup",
+          "size": 1159
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.dashboard",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dashboard",
+          "size": 382
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.dashboard.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dashboard.backup",
+          "size": 333
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.data_ingestion",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_ingestion",
+          "size": 1140
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.data_ingestion.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_ingestion.backup",
+          "size": 1140
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.data_processor",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_processor",
+          "size": 1140
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.data_processor.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.data_processor.backup",
+          "size": 1140
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.database",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.database",
+          "size": 1113
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.database.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.database.backup",
+          "size": 1113
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.dca_strategy",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dca_strategy",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.dca_strategy.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.dca_strategy.backup",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.drawdown_monitor",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.drawdown_monitor",
+          "size": 1145
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.drawdown_monitor.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.drawdown_monitor.backup",
+          "size": 1145
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.email_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.email_service",
+          "size": 1163
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.email_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.email_service.backup",
+          "size": 1163
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.encryption_service",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.encryption_service",
+          "size": 1165
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.encryption_service.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.encryption_service.backup",
+          "size": 1165
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.event_driven",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.event_driven",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.event_driven.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.event_driven.backup",
+          "size": 1147
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.exchange_manager",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.exchange_manager",
+          "size": 1160
+        },
+        {
+          "name": "ultimate_lyra_v5_Dockerfile.exchange_manager.backup",
+          "path": "ULTIMATE_SYSTEM/ULTIMATE_CONTAINERS/ultimate_lyra_v5_Dockerfile.exchange_manager.backup",
+          "size": 1160
+        },
+        {
+          "name": "exchange_integration_validator.py",
+          "path": "ULTIMATE_ATO_SYSTEMS/exchange_integration_validator.py",
+          "size": 13666
+        },
+        {
+          "name": "exchange_integration_validator.py.backup",
+          "path": "ULTIMATE_ATO_SYSTEMS/exchange_integration_validator.py.backup",
+          "size": 13191
+        },
+        {
+          "name": "Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "size": 11335
+        },
+        {
+          "name": "Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "size": 5630
+        },
+        {
+          "name": "ULTIMATE_LYRA_COMPLETE_INTEGRATED_SYSTEM.zip",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/ULTIMATE_LYRA_COMPLETE_INTEGRATED_SYSTEM.zip",
+          "size": 1169148
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/ULTIMATE_LYRA_UBUNTU_DEPLOYMENT_FINAL.zip",
+          "size": 1289123
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "size": 8637
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "size": 4138
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Unified Integration Report.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Ultimate Lyra Trading System - Unified Integration Report.md",
+          "size": 6618
+        },
+        {
+          "name": "Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "size": 3859
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "size": 35198
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "size": 34624
+        },
+        {
+          "name": "exchange_integration_validation_results.json",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/exchange_integration_validation_results.json",
+          "size": 3975
+        },
+        {
+          "name": "exchange_integration_validation_results.json.backup",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/exchange_integration_validation_results.json.backup",
+          "size": 3975
+        },
+        {
+          "name": "ultimate-lyra-ecosystem.zip",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/ultimate-lyra-ecosystem.zip",
+          "size": 118918
+        },
+        {
+          "name": "\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "path": "ULTIMATE_BUSINESS_SYSTEMS/\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "size": 9150
+        },
+        {
+          "name": "1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/1)Folder&containerlayout(per-exchange,per-strategy).txt",
+          "size": 12060
+        },
+        {
+          "name": "COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDBTCMARKETSSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDBTCMARKETSSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 58214
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDCOINBASESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDCOINBASESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 114425
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "size": 5696
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "size": 30157
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDINDEPENDENTRESERVESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDINDEPENDENTRESERVESPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 15
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV1.docx",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV1.docx",
+          "size": 97366
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETECONTAINERIZEDSWYFTXSPECIFICATIONSFORULTIMATELYRATRADINGSYSTEMV5.docx",
+          "size": 16513
+        },
+        {
+          "name": "COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "size": 10240
+        },
+        {
+          "name": "COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "size": 9110
+        },
+        {
+          "name": "COMPLETEULTIMATELYRASYSTEMDELIV.txt",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/COMPLETEULTIMATELYRASYSTEMDELIV.txt",
+          "size": 8312
+        },
+        {
+          "name": "FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "size": 4486
+        },
+        {
+          "name": "OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/OPENROUTERINTEGRATIONSTRATEGY(1).md",
+          "size": 14644
+        },
+        {
+          "name": "verified,account-specificfeesandcorrectVIPtier,perexchange.txt",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/verified,account-specificfeesandcorrectVIPtier,perexchange.txt",
+          "size": 25088
+        },
+        {
+          "name": "\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_COMPLIANCE_SYSTEMS/\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "path": "ULTIMATE_CORE_SYSTEMS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS(1).md",
+          "size": 5696
+        },
+        {
+          "name": "COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "path": "ULTIMATE_CORE_SYSTEMS/COMPLETECONTAINERIZEDEXCHANGESPECIFICATIONS.md",
+          "size": 30157
+        },
+        {
+          "name": "ENHANCED_EXCHANGE_CONFIG.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/ENHANCED_EXCHANGE_CONFIG.json",
+          "size": 3021
+        },
+        {
+          "name": "ENHANCED_EXCHANGE_CONFIG.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/ENHANCED_EXCHANGE_CONFIG.json.backup",
+          "size": 3021
+        },
+        {
+          "name": "ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "path": "ULTIMATE_CORE_SYSTEMS/ULTIMATE_LYRA_ECOSYSTEM_FORENSIC_ANALYSIS.md",
+          "size": 22500
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "path": "ULTIMATE_CORE_SYSTEMS/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py",
+          "size": 35118
+        },
+        {
+          "name": "VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/VAULT_EXCHANGE_DISCOVERY_SYSTEM.py.backup",
+          "size": 34544
+        },
+        {
+          "name": "advanced_strategy_engine.py",
+          "path": "ULTIMATE_CORE_SYSTEMS/advanced_strategy_engine.py",
+          "size": 25125
+        },
+        {
+          "name": "advanced_strategy_engine.py.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/advanced_strategy_engine.py.backup",
+          "size": 24820
+        },
+        {
+          "name": "arbitrage_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/arbitrage_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "arbitrage_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/arbitrage_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "breakout_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/breakout_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "breakout_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/breakout_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "exchange_integration_validation_results.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/exchange_integration_validation_results.json",
+          "size": 3956
+        },
+        {
+          "name": "exchange_integration_validation_results.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/exchange_integration_validation_results.json.backup",
+          "size": 3956
+        },
+        {
+          "name": "exchange_integration_validator.py",
+          "path": "ULTIMATE_CORE_SYSTEMS/exchange_integration_validator.py",
+          "size": 13610
+        },
+        {
+          "name": "exchange_integration_validator.py.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/exchange_integration_validator.py.backup",
+          "size": 13135
+        },
+        {
+          "name": "live_exchange_connector.py",
+          "path": "ULTIMATE_CORE_SYSTEMS/live_exchange_connector.py",
+          "size": 32931
+        },
+        {
+          "name": "live_exchange_connector.py.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/live_exchange_connector.py.backup",
+          "size": 32651
+        },
+        {
+          "name": "luxalgo_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/luxalgo_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "luxalgo_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/luxalgo_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "mean_reversion_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/mean_reversion_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "mean_reversion_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/mean_reversion_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "momentum_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/momentum_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "momentum_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/momentum_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "smc_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/smc_strategy_decay_analysis.json",
+          "size": 89
+        },
+        {
+          "name": "smc_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/smc_strategy_decay_analysis.json.backup",
+          "size": 89
+        },
+        {
+          "name": "test_strategy_decay_analysis.json",
+          "path": "ULTIMATE_CORE_SYSTEMS/test_strategy_decay_analysis.json",
+          "size": 78
+        },
+        {
+          "name": "test_strategy_decay_analysis.json.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/test_strategy_decay_analysis.json.backup",
+          "size": 78
+        },
+        {
+          "name": "ultimate_lyra_ecosystem_absolutely_final.py",
+          "path": "ULTIMATE_CORE_SYSTEMS/ultimate_lyra_ecosystem_absolutely_final.py",
+          "size": 28806
+        },
+        {
+          "name": "ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "path": "ULTIMATE_CORE_SYSTEMS/ultimate_lyra_ecosystem_absolutely_final.py.backup",
+          "size": 28589
+        },
+        {
+          "name": "\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "path": "ULTIMATE_CORE_SYSTEMS/\ud83d\udd10 VAULT & EXCHANGE MUTUALIZATION REPORT.md",
+          "size": 9109
+        },
+        {
+          "name": "unified_exchange_adapter.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/unified_exchange_adapter.py",
+          "size": 6208
+        },
+        {
+          "name": "unified_exchange_adapter.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/unified_exchange_adapter.py.backup",
+          "size": 6147
+        },
+        {
+          "name": "binance_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/binance/binance_strategy.py",
+          "size": 7005
+        },
+        {
+          "name": "binance_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/binance/binance_strategy.py.backup",
+          "size": 6908
+        },
+        {
+          "name": "btcmarkets_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/btcmarkets_strategy.py",
+          "size": 7025
+        },
+        {
+          "name": "btcmarkets_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/btcmarkets_strategy.py.backup",
+          "size": 6928
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60804
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "size": 60267
+        },
+        {
+          "name": "trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/btcmarkets/found_files/trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "coinbase_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/coinbase/coinbase_strategy.py",
+          "size": 7012
+        },
+        {
+          "name": "coinbase_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/coinbase/coinbase_strategy.py.backup",
+          "size": 6915
+        },
+        {
+          "name": "digitalsurge_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/digitalsurge_strategy.py",
+          "size": 7036
+        },
+        {
+          "name": "digitalsurge_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/digitalsurge_strategy.py.backup",
+          "size": 6939
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60804
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/digitalsurge/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "size": 60267
+        },
+        {
+          "name": "gate_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/gate/gate_strategy.py",
+          "size": 7048
+        },
+        {
+          "name": "gate_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/gate/gate_strategy.py.backup",
+          "size": 6951
+        },
+        {
+          "name": "kraken_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/kraken/kraken_strategy.py",
+          "size": 7016
+        },
+        {
+          "name": "kraken_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/kraken/kraken_strategy.py.backup",
+          "size": 6919
+        },
+        {
+          "name": "okx_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/okx/okx_strategy.py",
+          "size": 6977
+        },
+        {
+          "name": "okx_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/okx/okx_strategy.py.backup",
+          "size": 6880
+        },
+        {
+          "name": "swyftx_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/swyftx/swyftx_strategy.py",
+          "size": 6994
+        },
+        {
+          "name": "swyftx_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/swyftx/swyftx_strategy.py.backup",
+          "size": 6897
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/swyftx/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60804
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/swyftx/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "size": 60267
+        },
+        {
+          "name": "trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/swyftx/found_files/trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "whitebit_strategy.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/whitebit/whitebit_strategy.py",
+          "size": 7012
+        },
+        {
+          "name": "whitebit_strategy.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/whitebit/whitebit_strategy.py.backup",
+          "size": 6915
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/whitebit/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60804
+        },
+        {
+          "name": "api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/whitebit/found_files/api_configuration_ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py.backup",
+          "size": 60267
+        },
+        {
+          "name": "trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION/whitebit/found_files/trading_logic_\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        },
+        {
+          "name": "COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/COMPLETE ULTIMATE LYRA TRADING SYSTEM ANALYSIS.md",
+          "size": 14140
+        },
+        {
+          "name": "COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/COMPLETEINHERITANCEPACKAGEFORULTIMATELYRATRADINGSYSTEM.md",
+          "size": 9722
+        },
+        {
+          "name": "COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/COMPLETENOTIONEXTRACTIONFORULTIMATELYRATRADINGSYSTEMBUILD.md",
+          "size": 9033
+        },
+        {
+          "name": "Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Complete Amalgamation Checklist - Ultimate Lyra Trading System.md",
+          "size": 11335
+        },
+        {
+          "name": "Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Complete Integration Confirmation - Ultimate Lyra Trading System.md",
+          "size": 5498
+        },
+        {
+          "name": "FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/FINAL DELIVERY & COMPLIANCE REPORT: ULTIMATE LYRA TRADING SYSTEM.md",
+          "size": 4486
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Ultimate Lyra Trading System - Comprehensive Inclusion Checklist.md",
+          "size": 8091
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Ultimate Lyra Trading System - Ubuntu Deployment Package.md",
+          "size": 4081
+        },
+        {
+          "name": "Ultimate Lyra Trading System - Unified Integration Report.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Ultimate Lyra Trading System - Unified Integration Report.md",
+          "size": 6228
+        },
+        {
+          "name": "Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/Ultimate Lyra Trading System: Final Validation and Performance Report.md",
+          "size": 3859
+        },
+        {
+          "name": "\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "path": "ULTIMATE_TRADING_SYSTEMS/\ud83c\udfaf ULTIMATE LYRA TRADING SYSTEM INHERITANCE PACKAGE.md",
+          "size": 16185
+        }
+      ],
+      "configurations": [],
+      "ai_integrations": [],
+      "file_types": {
+        "": 107,
+        ".example": 1,
+        ".template": 2,
+        ".py": 539,
+        ".md": 340,
+        ".json": 578,
+        ".txt": 55,
+        ".backup": 1088,
+        ".secure": 1,
+        ".py(0)": 2,
+        ".gz": 10,
+        ".gz(0)": 1,
+        ".yml": 24,
+        ".prof": 1,
+        ".sample": 13,
+        ".pack": 1,
+        ".idx": 1,
+        ".ini": 3,
+        ".pyc": 57,
+        ".sh": 27,
+        ".zip": 31,
+        ".env": 18,
+        ".vault": 11,
+        ".1758874683": 1,
+        ".1758874736": 1,
+        ".1758874782": 1,
+        ".1758874818": 1,
+        ".1758874847": 1,
+        ".vault_key": 1,
+        ".docx": 11,
+        ".admin_panel": 1,
+        ".ai_consensus": 1,
+        ".ai_momentum": 1,
+        ".alertmanager": 1,
+        ".analytics_engine": 1,
+        ".analytics_ui": 1,
+        ".ato_reporter": 1,
+        ".audit_logger": 1,
+        ".audit_trail": 1,
+        ".basket_rebalancing": 1,
+        ".binance_service": 1,
+        ".bitfinex_service": 1,
+        ".btcmarkets_service": 1,
+        ".cash_carry": 1,
+        ".coinbase_service": 1,
+        ".compliance_checker": 1,
+        ".config_manager": 1,
+        ".covered_calls": 1,
+        ".cross_arbitrage": 1,
+        ".dashboard": 1,
+        ".data_ingestion": 1,
+        ".data_processor": 1,
+        ".database": 1,
+        ".dca_strategy": 1,
+        ".drawdown_monitor": 1,
+        ".email_service": 1,
+        ".encryption_service": 1,
+        ".event_driven": 1,
+        ".exchange_manager": 1,
+        ".html": 1
+      },
+      "total_files": 2958,
+      "key_files": [
+        {
+          "name": ".env.example",
+          "path": ".env.example",
+          "size": 1246
+        },
+        {
+          "name": ".env.template",
+          "path": ".env.template",
+          "size": 3036
+        },
+        {
+          "name": "COMPREHENSIVEAPITESTING,MONITORING&RATECONTROLREPORT.md",
+          "path": "COMPREHENSIVEAPITESTING,MONITORING&RATECONTROLREPORT.md",
+          "size": 7085
+        },
+        {
+          "name": "COMPREHENSIVE_TESTING_FINAL_REPORT.md",
+          "path": "COMPREHENSIVE_TESTING_FINAL_REPORT.md",
+          "size": 9331
+        },
+        {
+          "name": "ECOSYSTEM_EXTRACTION_REPORT.json",
+          "path": "ECOSYSTEM_EXTRACTION_REPORT.json",
+          "size": 7306
+        },
+        {
+          "name": "ECOSYSTEM_EXTRACTION_REPORT.json.backup",
+          "path": "ECOSYSTEM_EXTRACTION_REPORT.json.backup",
+          "size": 7306
+        },
+        {
+          "name": "FINAL_ACCOMPLISHMENT_REPORT.md",
+          "path": "FINAL_ACCOMPLISHMENT_REPORT.md",
+          "size": 6146
+        },
+        {
+          "name": "FINAL_FIXER_REPORT.json",
+          "path": "FINAL_FIXER_REPORT.json",
+          "size": 599
+        },
+        {
+          "name": "FORENSIC_ANALYSIS_REPORT_20251004_092701.json",
+          "path": "FORENSIC_ANALYSIS_REPORT_20251004_092701.json",
+          "size": 77678
+        },
+        {
+          "name": "GITHUB_API_INTEGRATION_GUIDE.json",
+          "path": "GITHUB_API_INTEGRATION_GUIDE.json",
+          "size": 3673
+        },
+        {
+          "name": "GO_LIVE_READINESS_REPORT_20251004_094002.json",
+          "path": "GO_LIVE_READINESS_REPORT_20251004_094002.json",
+          "size": 4047
+        },
+        {
+          "name": "PRODUCTION_COMMISSIONING_REPORT.json",
+          "path": "PRODUCTION_COMMISSIONING_REPORT.json",
+          "size": 3440
+        },
+        {
+          "name": "PRODUCTION_COMMISSIONING_REPORT.json.backup",
+          "path": "PRODUCTION_COMMISSIONING_REPORT.json.backup",
+          "size": 3440
+        },
+        {
+          "name": "README_API_VAULT.md",
+          "path": "README_API_VAULT.md",
+          "size": 799
+        },
+        {
+          "name": "REAL_MONEY_VALIDATION_REPORT_20251004_094424.json",
+          "path": "REAL_MONEY_VALIDATION_REPORT_20251004_094424.json",
+          "size": 147690
+        },
+        {
+          "name": "SETUP_NGROK_WITH_EXISTING_CONFIG.py",
+          "path": "SETUP_NGROK_WITH_EXISTING_CONFIG.py",
+          "size": 8856
+        },
+        {
+          "name": "TODAYS_WORK_CONFIRMATION_REPORT.md",
+          "path": "TODAYS_WORK_CONFIRMATION_REPORT.md",
+          "size": 5645
+        },
+        {
+          "name": "ULTIMATEAPICOLLECTION-ALLAPISEVERAVAILABLE.md",
+          "path": "ULTIMATEAPICOLLECTION-ALLAPISEVERAVAILABLE.md",
+          "size": 11678
+        },
+        {
+          "name": "ULTIMATECOMPREHENSIVEAPIMASTERLIST.md",
+          "path": "ULTIMATECOMPREHENSIVEAPIMASTERLIST.md",
+          "size": 28656
+        },
+        {
+          "name": "ULTIMATE_100_PERCENT_OPERATIONAL_READINESS_REPORT.json",
+          "path": "ULTIMATE_100_PERCENT_OPERATIONAL_READINESS_REPORT.json",
+          "size": 77831
+        },
+        {
+          "name": "ULTIMATE_AI_CONSENSUS_OPPORTUNITIES_AMPLIFICATION_REPORT.json",
+          "path": "ULTIMATE_AI_CONSENSUS_OPPORTUNITIES_AMPLIFICATION_REPORT.json",
+          "size": 103841
+        },
+        {
+          "name": "ULTIMATE_ATO_COMPLIANCE_REPORTING_SYSTEM.py",
+          "path": "ULTIMATE_ATO_COMPLIANCE_REPORTING_SYSTEM.py",
+          "size": 35239
+        },
+        {
+          "name": "ULTIMATE_COMPREHENSIVE_DEMO_REPORT.json",
+          "path": "ULTIMATE_COMPREHENSIVE_DEMO_REPORT.json",
+          "size": 59010
+        },
+        {
+          "name": "ULTIMATE_COMPREHENSIVE_TEST_REPORT.json",
+          "path": "ULTIMATE_COMPREHENSIVE_TEST_REPORT.json",
+          "size": 4760
+        },
+        {
+          "name": "ULTIMATE_COMPREHENSIVE_VALIDATION_REPORT.json",
+          "path": "ULTIMATE_COMPREHENSIVE_VALIDATION_REPORT.json",
+          "size": 37999
+        },
+        {
+          "name": "ULTIMATE_CONSOLIDATION_ACHIEVEMENT_REPORT.md",
+          "path": "ULTIMATE_CONSOLIDATION_ACHIEVEMENT_REPORT.md",
+          "size": 5965
+        },
+        {
+          "name": "ULTIMATE_DEEP_TESTING_REPORT.json",
+          "path": "ULTIMATE_DEEP_TESTING_REPORT.json",
+          "size": 78087
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_ACHIEVEMENT_REPORT.md",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_ACHIEVEMENT_REPORT.md",
+          "size": 7474
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json",
+          "size": 4808611
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json.backup",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_REPORT.json.backup",
+          "size": 4810531
+        },
+        {
+          "name": "ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "path": "ULTIMATE_EXCHANGE_INTEGRATION_SYSTEM.py",
+          "size": 60228
+        },
+        {
+          "name": "ULTIMATE_FINAL_100_PERCENT_REPORT.json",
+          "path": "ULTIMATE_FINAL_100_PERCENT_REPORT.json",
+          "size": 2237
+        },
+        {
+          "name": "ULTIMATE_FINAL_ECOSYSTEM_VERIFICATION_REPORT.json",
+          "path": "ULTIMATE_FINAL_ECOSYSTEM_VERIFICATION_REPORT.json",
+          "size": 10810
+        },
+        {
+          "name": "ULTIMATE_FINAL_GAP_ANALYSIS_REPORT.json",
+          "path": "ULTIMATE_FINAL_GAP_ANALYSIS_REPORT.json",
+          "size": 291256
+        },
+        {
+          "name": "ULTIMATE_FINAL_VALIDATION_REPORT.json",
+          "path": "ULTIMATE_FINAL_VALIDATION_REPORT.json",
+          "size": 33921
+        },
+        {
+          "name": "ULTIMATE_FIX_REPORT.json",
+          "path": "ULTIMATE_FIX_REPORT.json",
+          "size": 135440
+        },
+        {
+          "name": "ULTIMATE_FORENSIC_REPORT_20251004_100450.json",
+          "path": "ULTIMATE_FORENSIC_REPORT_20251004_100450.json",
+          "size": 727781
+        },
+        {
+          "name": "ULTIMATE_GO_LIVE_FIXER_REPORT.json",
+          "path": "ULTIMATE_GO_LIVE_FIXER_REPORT.json",
+          "size": 602
+        },
+        {
+          "name": "ULTIMATE_LIVE_PORTFOLIO_MANAGEMENT_REPORT.json",
+          "path": "ULTIMATE_LIVE_PORTFOLIO_MANAGEMENT_REPORT.json",
+          "size": 12847
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "path": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz(0)",
+          "path": "ULTIMATE_LYRA_PRIVATE_COMPLETE.tar.gz(0)",
+          "size": 5082368
+        },
+        {
+          "name": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "path": "ULTIMATE_LYRA_PUBLIC_CLEAN.tar.gz",
+          "size": 5082350
+        },
+        {
+          "name": "ULTIMATE_PRODUCTION_READINESS_REPORT.json",
+          "path": "ULTIMATE_PRODUCTION_READINESS_REPORT.json",
+          "size": 14578
+        },
+        {
+          "name": "ULTIMATE_SYSTEM_FINAL_COMPLETION_REPORT.md",
+          "path": "ULTIMATE_SYSTEM_FINAL_COMPLETION_REPORT.md",
+          "size": 10293
+        },
+        {
+          "name": "ULTIMATE_TESTING_ACHIEVEMENT_REPORT.md",
+          "path": "ULTIMATE_TESTING_ACHIEVEMENT_REPORT.md",
+          "size": 7910
+        },
+        {
+          "name": "ULTIMATE_TESTING_STATUS_REPORT.md",
+          "path": "ULTIMATE_TESTING_STATUS_REPORT.md",
+          "size": 9664
+        },
+        {
+          "name": "advanced_monitor.py",
+          "path": "advanced_monitor.py",
+          "size": 3393
+        },
+        {
+          "name": "ato_compliance_report_20251004_091251.json",
+          "path": "ato_compliance_report_20251004_091251.json",
+          "size": 1602
+        },
+        {
+          "name": "binance_proxy_config.json",
+          "path": "binance_proxy_config.json",
+          "size": 69
+        },
+        {
+          "name": "comprehensive_system_monitor.py",
+          "path": "comprehensive_system_monitor.py",
+          "size": 6658
+        }
+      ]
+    }
+  ],
+  "sandbox_files": [
+    {
+      "path": "/home/ubuntu/halvo-ultimate",
+      "exists": true,
+      "files": [
+        {
+          "name": "integration_status.json",
+          "path": "integration_status.json",
+          "size": 836
+        },
+        {
+          "name": "index.html",
+          "path": "index.html",
+          "size": 5924
+        },
+        {
+          "name": "system_status.json",
+          "path": "system_status.json",
+          "size": 656
+        },
+        {
+          "name": "ultimate_trading_dashboard.html",
+          "path": "dashboards/ultimate_trading_dashboard.html",
+          "size": 25907
+        }
+      ],
+      "total_size": 33323
+    },
+    {
+      "path": "/home/ubuntu/halvo-control",
+      "exists": true,
+      "files": [
+        {
+          "name": "commissioning.log",
+          "path": "commissioning.log",
+          "size": 4630
+        },
+        {
+          "name": "validation_results.json",
+          "path": "validation_results.json",
+          "size": 1570
+        },
+        {
+          "name": "commissioning_report_20251012_091008.md",
+          "path": "commissioning_report_20251012_091008.md",
+          "size": 1200
+        },
+        {
+          "name": "system_status.json",
+          "path": "system_status.json",
+          "size": 419
+        }
+      ],
+      "total_size": 7819
+    },
+    {
+      "path": "/home/ubuntu/halvo-monitoring",
+      "exists": true,
+      "files": [
+        {
+          "name": "docker-compose.yml",
+          "path": "docker-compose.yml",
+          "size": 3226
+        },
+        {
+          "name": "start_monitoring.sh",
+          "path": "start_monitoring.sh",
+          "size": 488
+        },
+        {
+          "name": "stop_monitoring.sh",
+          "path": "stop_monitoring.sh",
+          "size": 141
+        },
+        {
+          "name": "status.sh",
+          "path": "status.sh",
+          "size": 373
+        },
+        {
+          "name": "prometheus.yml",
+          "path": "config/prometheus.yml",
+          "size": 1098
+        },
+        {
+          "name": "logstash.conf",
+          "path": "config/logstash.conf",
+          "size": 927
+        },
+        {
+          "name": "alertmanager.yml",
+          "path": "config/alertmanager.yml",
+          "size": 1271
+        },
+        {
+          "name": "trading_alerts.yml",
+          "path": "config/alerts/trading_alerts.yml",
+          "size": 3888
+        }
+      ],
+      "total_size": 11412
+    },
+    {
+      "path": "/home/ubuntu/halvo-reporting",
+      "exists": true,
+      "files": [
+        {
+          "name": "halvo_complete_records.db",
+          "path": "halvo_complete_records.db",
+          "size": 32768
+        },
+        {
+          "name": "complete_visibility_dashboard.html",
+          "path": "reports/complete_visibility_dashboard.html",
+          "size": 5463
+        },
+        {
+          "name": "all_trades_export.csv",
+          "path": "reports/all_trades_export.csv",
+          "size": 224
+        },
+        {
+          "name": "all_ai_analytics_export.csv",
+          "path": "reports/all_ai_analytics_export.csv",
+          "size": 105
+        },
+        {
+          "name": "ATO_Tax_Report_2024-2025.json",
+          "path": "tax_reports/ATO_Tax_Report_2024-2025.json",
+          "size": 314
+        },
+        {
+          "name": "all_tax_events_export.csv",
+          "path": "tax_reports/all_tax_events_export.csv",
+          "size": 157
+        }
+      ],
+      "total_size": 39031
+    },
+    {
+      "path": "/home/ubuntu/ultimate_lyra_systems",
+      "exists": true,
+      "files": [
+        {
+          "name": "status.txt",
+          "path": "status.txt",
+          "size": 2964
+        }
+      ],
+      "total_size": 2964
+    },
+    {
+      "path": "/home/ubuntu/upload",
+      "exists": true,
+      "files": [
+        {
+          "name": "pasted_content.txt",
+          "path": "pasted_content.txt",
+          "size": 22960
+        },
+        {
+          "name": "pasted_content_2.txt",
+          "path": "pasted_content_2.txt",
+          "size": 4204
+        },
+        {
+          "name": "pasted_content_3.txt",
+          "path": "pasted_content_3.txt",
+          "size": 5706
+        },
+        {
+          "name": "pasted_content_4.txt",
+          "path": "pasted_content_4.txt",
+          "size": 3474
+        },
+        {
+          "name": "pasted_content_5.txt",
+          "path": "pasted_content_5.txt",
+          "size": 3751
+        },
+        {
+          "name": "pasted_content_6.txt",
+          "path": "pasted_content_6.txt",
+          "size": 3242
+        },
+        {
+          "name": "pasted_content_7.txt",
+          "path": "pasted_content_7.txt",
+          "size": 3176
+        },
+        {
+          "name": "pasted_content_9.txt",
+          "path": "pasted_content_9.txt",
+          "size": 22195
+        },
+        {
+          "name": "pasted_content_8.txt",
+          "path": "pasted_content_8.txt",
+          "size": 6723
+        },
+        {
+          "name": "\ud83d\ude80COMPLETECHATINHERITANCERECOVERYPACKAGE.md",
+          "path": "\ud83d\ude80COMPLETECHATINHERITANCERECOVERYPACKAGE.md",
+          "size": 20129
+        },
+        {
+          "name": "Theone.zip",
+          "path": "Theone.zip",
+          "size": 958666450
+        },
+        {
+          "name": "HALVO-AICOMPLETESYSTEMARCHITECTURE.md",
+          "path": "HALVO-AICOMPLETESYSTEMARCHITECTURE.md",
+          "size": 30905
+        },
+        {
+          "name": "HALVO-AICOMPLETESYSTEMARCHITECTURE.md.txt",
+          "path": "HALVO-AICOMPLETESYSTEMARCHITECTURE.md.txt",
+          "size": 31936
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_COMPLETE_FINAL.tar.gz",
+          "path": "ULTIMATE_LYRA_UBUNTU_COMPLETE_FINAL.tar.gz",
+          "size": 73138
+        },
+        {
+          "name": "ULTIMATE_INHERITANCE_EMPIRE_PACKAGE.tar.gz",
+          "path": "ULTIMATE_INHERITANCE_EMPIRE_PACKAGE.tar.gz",
+          "size": 938501980
+        },
+        {
+          "name": "GROK_AI_AUTOMATIC_INSTALLER.py",
+          "path": "GROK_AI_AUTOMATIC_INSTALLER.py",
+          "size": 8264
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_OPTIMIZED_FINAL.tar.gz",
+          "path": "ULTIMATE_LYRA_UBUNTU_OPTIMIZED_FINAL.tar.gz",
+          "size": 54398
+        },
+        {
+          "name": "COMPLETE_AWS_DEPLOYMENT_PACKAGE_203_KEYS.tar.gz",
+          "path": "COMPLETE_AWS_DEPLOYMENT_PACKAGE_203_KEYS.tar.gz",
+          "size": 45910
+        },
+        {
+          "name": "ULTIMATE_LYRA_UBUNTU_OPTIMIZED_FINAL(1).tar.gz",
+          "path": "ULTIMATE_LYRA_UBUNTU_OPTIMIZED_FINAL(1).tar.gz",
+          "size": 54398
+        },
+        {
+          "name": "Bitstamp_Corp_Onboarding_BVI.zip",
+          "path": "Bitstamp_Corp_Onboarding_BVI.zip",
+          "size": 458794
+        },
+        {
+          "name": "\ud83d\ude80ULTIMATEINHERITANCEPACKAGE-EVERYTHINGFROMALLBUILDS.md",
+          "path": "\ud83d\ude80ULTIMATEINHERITANCEPACKAGE-EVERYTHINGFROMALLBUILDS.md",
+          "size": 47974
+        },
+        {
+          "name": "pasted_content_10.txt",
+          "path": "pasted_content_10.txt",
+          "size": 4614
+        },
+        {
+          "name": "pasted_content_11.txt",
+          "path": "pasted_content_11.txt",
+          "size": 6172
+        },
+        {
+          "name": "pasted_content_12.txt",
+          "path": "pasted_content_12.txt",
+          "size": 11644
+        },
+        {
+          "name": "pasted_content_13.txt",
+          "path": "pasted_content_13.txt",
+          "size": 19927
+        },
+        {
+          "name": "pasted_content_14.txt",
+          "path": "pasted_content_14.txt",
+          "size": 3632
+        },
+        {
+          "name": "pasted_content_15.txt",
+          "path": "pasted_content_15.txt",
+          "size": 4009
+        },
+        {
+          "name": "pasted_content_16.txt",
+          "path": "pasted_content_16.txt",
+          "size": 4767
+        },
+        {
+          "name": "pasted_content_17.txt",
+          "path": "pasted_content_17.txt",
+          "size": 5353
+        },
+        {
+          "name": "pasted_content_19.txt",
+          "path": "pasted_content_19.txt",
+          "size": 41859
+        },
+        {
+          "name": "pasted_content_18.txt",
+          "path": "pasted_content_18.txt",
+          "size": 24776
+        },
+        {
+          "name": "pasted_content_20.txt",
+          "path": "pasted_content_20.txt",
+          "size": 3396
+        },
+        {
+          "name": "pasted_content_21.txt",
+          "path": "pasted_content_21.txt",
+          "size": 8472
+        },
+        {
+          "name": "pasted_content_22.txt",
+          "path": "pasted_content_22.txt",
+          "size": 15214
+        },
+        {
+          "name": "pasted_content_23.txt",
+          "path": "pasted_content_23.txt",
+          "size": 22195
+        },
+        {
+          "name": "pasted_content_24.txt",
+          "path": "pasted_content_24.txt",
+          "size": 4525
+        }
+      ],
+      "total_size": 1898250262
+    }
+  ],
+  "existing_systems": {
+    "Trading Systems": [
+      {
+        "name": "deploy_reporting_system.py",
+        "path": "/home/ubuntu/deploy_reporting_system.py",
+        "type": "Python script"
+      },
+      {
+        "name": "ultimate_control_center.py",
+        "path": "/home/ubuntu/ultimate_control_center.py",
+        "type": "Python script"
+      }
+    ],
+    "Monitoring Systems": [
+      {
+        "name": "prometheus",
+        "status": "active",
+        "type": "systemd service"
+      },
+      {
+        "name": "grafana-server",
+        "status": "active",
+        "type": "systemd service"
+      },
+      {
+        "name": "node_exporter",
+        "status": "active",
+        "type": "systemd service"
+      }
+    ],
+    "Reporting Systems": [
+      {
+        "name": "first_party_sets.db",
+        "path": "/home/ubuntu/.browser_data_dir/first_party_sets.db",
+        "size": 49152,
+        "type": "SQLite database"
+      },
+      {
+        "name": "heavy_ad_intervention_opt_out.db",
+        "path": "/home/ubuntu/.browser_data_dir/Default/heavy_ad_intervention_opt_out.db",
+        "size": 16384,
+        "type": "SQLite database"
+      },
+      {
+        "name": "cert9.db",
+        "path": "/home/ubuntu/.pki/nssdb/cert9.db",
+        "size": 28672,
+        "type": "SQLite database"
+      },
+      {
+        "name": "key4.db",
+        "path": "/home/ubuntu/.pki/nssdb/key4.db",
+        "size": 36864,
+        "type": "SQLite database"
+      },
+      {
+        "name": "halvo_complete_records.db",
+        "path": "/home/ubuntu/halvo-reporting/halvo_complete_records.db",
+        "size": 32768,
+        "type": "SQLite database"
+      },
+      {
+        "name": "halvo_complete_records.db",
+        "path": "/home/ubuntu/halvo-delivery/halvo-reporting/halvo_complete_records.db",
+        "size": 32768,
+        "type": "SQLite database"
+      }
+    ],
+    "AI Systems": [],
+    "Configuration Systems": []
+  },
+  "integrations": {
+    "current_integrations": [
+      "Prometheus \u2194 Grafana (metrics visualization)",
+      "Control Center \u2194 Monitoring (health checks)",
+      "Reporting \u2194 Database (trade storage)",
+      "Dashboard \u2194 CCXT (exchange data)",
+      "AI Consensus \u2194 OpenRouter (330 models)"
+    ],
+    "missing_integrations": [
+      "GitHub Repos \u2194 Control Center (code deployment)",
+      "Trading Systems \u2194 Monitoring (performance tracking)",
+      "AI Models \u2194 Trading Decisions (automated execution)",
+      "Tax Reporting \u2194 Exchange APIs (real-time data)",
+      "Guardian Security \u2194 All Systems (unified auth)"
+    ],
+    "amplification_opportunities": [
+      "Integrate Hummingbot for professional market making",
+      "Add Freqtrade for advanced strategy backtesting",
+      "Connect all GitHub repo configs to live system",
+      "Unify all AI models into single decision engine",
+      "Implement real-time portfolio rebalancing",
+      "Add cross-exchange arbitrage detection",
+      "Integrate Guardian DNS/Self-Heal system",
+      "Deploy remaining 29 AWS secrets",
+      "Add PagerDuty/Datadog for alerting",
+      "Implement automated tax report generation"
+    ]
+  },
+  "recommendations": [],
+  "amplification_opportunities": []
+}
