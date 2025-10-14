@@ -1,0 +1,57 @@
+{
+  "module_id": "DATA_APIS",
+  "module_name": "Market Data APIs",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": 8081,
+  "apis": {
+    "Polygon.io": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "CoinGecko": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "CoinMarketCap": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Finnhub": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Alpha Vantage": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "Polygon.io (Market Data)": {
+      "enabled": true
+    },
+    "CoinGecko API": {
+      "enabled": true
+    },
+    "CoinMarketCap API": {
+      "enabled": true
+    },
+    "Finnhub API": {
+      "enabled": true
+    },
+    "Alpha Vantage": {
+      "enabled": true
+    },
+    "Twelve Data": {
+      "enabled": true
+    },
+    "Yahoo Finance": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

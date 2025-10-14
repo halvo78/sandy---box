@@ -1,0 +1,39 @@
+{
+  "module_id": "DASHBOARD_UI",
+  "module_name": "Dashboard & User Interface",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": 5000,
+  "apis": {},
+  "components": {
+    "Executive Dashboard": {
+      "enabled": true
+    },
+    "Trading Dashboard": {
+      "enabled": true
+    },
+    "Risk Dashboard": {
+      "enabled": true
+    },
+    "Compliance Dashboard": {
+      "enabled": true
+    },
+    "Real-time Charts": {
+      "enabled": true
+    },
+    "Performance Metrics": {
+      "enabled": true
+    },
+    "Order Book Visualization": {
+      "enabled": true
+    },
+    "Position Manager": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

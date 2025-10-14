@@ -1,0 +1,36 @@
+{
+  "module_id": "ORDER_EXECUTION",
+  "module_name": "Order Execution",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": null,
+  "apis": {},
+  "components": {
+    "Smart Order Routing": {
+      "enabled": true
+    },
+    "Order Lifecycle Management": {
+      "enabled": true
+    },
+    "Sub-second Execution": {
+      "enabled": true
+    },
+    "Fill Optimization": {
+      "enabled": true
+    },
+    "Slippage Control": {
+      "enabled": true
+    },
+    "Order Book Management": {
+      "enabled": true
+    },
+    "Execution Analytics": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

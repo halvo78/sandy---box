@@ -1,0 +1,58 @@
+{
+  "module_id": "AI_MODELS",
+  "module_name": "AI Models & Intelligence",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": null,
+  "apis": {
+    "OpenRouter": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "OpenAI": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Anthropic": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Google AI": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Cohere": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "XAI": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "OpenRouter Integration (19+ models)": {
+      "enabled": true
+    },
+    "GPT-4, Claude, Gemini, Cohere": {
+      "enabled": true
+    },
+    "Grok Builder": {
+      "enabled": true
+    },
+    "DeepSeek, Qwen, Mistral": {
+      "enabled": true
+    },
+    "AI Consensus Engine": {
+      "enabled": true
+    },
+    "Multi-model voting system": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

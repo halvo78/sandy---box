@@ -1,0 +1,39 @@
+{
+  "module_id": "TRADING_STRATEGIES",
+  "module_name": "Trading Strategies",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": null,
+  "apis": {},
+  "components": {
+    "CPS (Core Protective Swing)": {
+      "enabled": true
+    },
+    "TM (Trend Momentum)": {
+      "enabled": true
+    },
+    "RMR (Range Mean-Reversion)": {
+      "enabled": true
+    },
+    "VBO (Volatility Breakout)": {
+      "enabled": true
+    },
+    "CFH (Carry & Funding Harvest)": {
+      "enabled": true
+    },
+    "ED (Event Drift)": {
+      "enabled": true
+    },
+    "Arbitrage Detection": {
+      "enabled": true
+    },
+    "Market Making": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

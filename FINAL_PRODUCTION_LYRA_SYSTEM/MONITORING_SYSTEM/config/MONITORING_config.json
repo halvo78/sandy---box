@@ -1,0 +1,45 @@
+{
+  "module_id": "MONITORING",
+  "module_name": "System Monitoring",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": 3000,
+  "apis": {
+    "Prometheus": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Grafana": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "Real-time Metrics": {
+      "enabled": true
+    },
+    "Performance Visualization": {
+      "enabled": true
+    },
+    "Alert Management": {
+      "enabled": true
+    },
+    "System Health Checks": {
+      "enabled": true
+    },
+    "Log Aggregation": {
+      "enabled": true
+    },
+    "Error Tracking": {
+      "enabled": true
+    },
+    "Uptime Monitoring": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}
