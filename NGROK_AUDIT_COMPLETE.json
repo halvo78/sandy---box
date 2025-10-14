@@ -1,0 +1,14 @@
+{
+  "audit_date": "2025-10-14T05:40:27.134407",
+  "local_ubuntu": {
+    "hostname": "halvolyra@HALVO-AI",
+    "ngrok_tunnels": 9,
+    "running_services": 4,
+    "ai_models": 19,
+    "openrouter_keys": 8
+  },
+  "missing_categories": 17,
+  "partial_categories": 7,
+  "total_files_to_deploy": 37354,
+  "status": "COMPLETE"
+}
