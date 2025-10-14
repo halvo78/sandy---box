@@ -1,0 +1,21 @@
+[Unit]
+Description=Ngrok Permanent Tunnel System
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=halvolyra
+WorkingDirectory=/home/halvolyra/ultimate_lyra_systems
+Environment="HOME=/home/halvolyra"
+ExecStart=/usr/local/bin/ngrok start --all --config=/home/halvolyra/.config/ngrok/ngrok.yml
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/halvolyra/ultimate_lyra_systems/logs/ngrok_service.log
+StandardError=append:/home/halvolyra/ultimate_lyra_systems/logs/ngrok_service_error.log
+
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
