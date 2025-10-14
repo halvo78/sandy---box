@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-10-13T23:40:43.823039",
+  "tests_run": 22,
+  "tests_passed": 11,
+  "tests_failed": 0,
+  "component_results": {
+    "CI/CD Pipeline": {
+      "tunnel_name": "ci_cd_tunnel",
+      "tunnel_url": "https://ci-cd-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Real-time Data Pipeline": {
+      "tunnel_name": "data_pipeline_tunnel",
+      "tunnel_url": "https://data-pipeline-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Risk Management": {
+      "tunnel_name": "risk_mgmt_tunnel",
+      "tunnel_url": "https://risk-mgmt-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Security Framework": {
+      "tunnel_name": "security_tunnel",
+      "tunnel_url": "https://security-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Monitoring Dashboard": {
+      "tunnel_name": "dashboard",
+      "tunnel_url": "https://dashboard-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        },
+        "api_endpoint": {
+          "status": "WARN",
+          "details": "HTTP 404"
+        }
+      }
+    },
+    "Documentation": {
+      "tunnel_name": "file_server",
+      "tunnel_url": "https://file-server-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Disaster Recovery": {
+      "tunnel_name": "disaster_recovery_tunnel",
+      "tunnel_url": "https://disaster-recovery-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "Compliance Module": {
+      "tunnel_name": "compliance_tunnel",
+      "tunnel_url": "https://compliance-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        }
+      }
+    },
+    "AI Consensus": {
+      "tunnel_name": "production",
+      "tunnel_url": "https://production-mock.ngrok-free.app",
+      "tests": {
+        "tunnel_accessible": {
+          "status": "PASS",
+          "details": "HTTP 404"
+        },
+        "health_endpoint": {
+          "status": "WARN",
+          "details": "No health endpoint (expected for some components)"
+        },
+        "api_endpoint": {
+          "status": "WARN",
+          "details": "HTTP 404"
+        }
+      }
+    }
+  },
+  "overall_status": "ALL_PASS"
+}

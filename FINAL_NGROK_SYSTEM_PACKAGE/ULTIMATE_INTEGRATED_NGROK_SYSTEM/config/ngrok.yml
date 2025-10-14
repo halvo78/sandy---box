@@ -1,0 +1,35 @@
+authtoken: 33usxScH7BM8zGJ0SMfvEqFCtqy_6mSSBRWTsHJ7EWXeoCpN2
+log: /home/halvolyra/ultimate_lyra_systems/logs/ngrok.log
+log_format: logfmt
+log_level: info
+region: ap
+tunnels:
+  ci_cd_tunnel:
+    addr: 8080
+    proto: http
+  compliance_tunnel:
+    addr: 8085
+    proto: http
+  dashboard:
+    addr: 5000
+    proto: http
+  data_pipeline_tunnel:
+    addr: 8081
+    proto: http
+  disaster_recovery_tunnel:
+    addr: 8084
+    proto: http
+  file_server:
+    addr: 9000
+    proto: http
+  production:
+    addr: 5001
+    proto: http
+  risk_mgmt_tunnel:
+    addr: 8082
+    proto: http
+  security_tunnel:
+    addr: 8083
+    proto: http
+version: '2'
+web_addr: localhost:4040

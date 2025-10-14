@@ -1,0 +1,17 @@
+[Unit]
+Description=Ultimate Ngrok Permanent Service - All 10 Components
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=halvolyra
+WorkingDirectory=/home/halvolyra/ultimate_lyra_systems
+ExecStart=/usr/local/bin/ngrok start --all --config=/home/halvolyra/.config/ngrok/ngrok.yml
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/halvolyra/ultimate_lyra_systems/logs/ngrok.log
+StandardError=append:/home/halvolyra/ultimate_lyra_systems/logs/ngrok_error.log
+
+[Install]
+WantedBy=multi-user.target
