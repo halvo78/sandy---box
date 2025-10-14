@@ -1,0 +1,36 @@
+{
+  "module_id": "COMPLIANCE",
+  "module_name": "Compliance & Reporting",
+  "enabled": true,
+  "priority": "MEDIUM",
+  "port": 8085,
+  "apis": {},
+  "components": {
+    "ATO Tax Reporting": {
+      "enabled": true
+    },
+    "Audit Trail": {
+      "enabled": true
+    },
+    "Compliance Checks": {
+      "enabled": true
+    },
+    "Regulatory Reporting": {
+      "enabled": true
+    },
+    "KYC/AML Verification": {
+      "enabled": true
+    },
+    "Transaction Monitoring": {
+      "enabled": true
+    },
+    "ISO Compliance (31000, 27001, 9001)": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

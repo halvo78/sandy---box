@@ -1,0 +1,39 @@
+{
+  "module_id": "RISK_MANAGEMENT",
+  "module_name": "Risk Management",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": 8082,
+  "apis": {},
+  "components": {
+    "Real-time Risk Assessment": {
+      "enabled": true
+    },
+    "Portfolio Risk Metrics": {
+      "enabled": true
+    },
+    "VaR (Value at Risk) Calculation": {
+      "enabled": true
+    },
+    "Drawdown Monitoring": {
+      "enabled": true
+    },
+    "Position Sizing": {
+      "enabled": true
+    },
+    "Stop Loss Management": {
+      "enabled": true
+    },
+    "Circuit Breakers": {
+      "enabled": true
+    },
+    "Daily Loss Limits": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

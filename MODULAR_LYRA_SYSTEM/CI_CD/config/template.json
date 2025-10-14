@@ -1,0 +1,38 @@
+{
+  "module_id": "CI_CD",
+  "module_name": "CI/CD Pipeline",
+  "enabled": true,
+  "priority": "MEDIUM",
+  "port": 8080,
+  "apis": {
+    "GitHub API": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "Automated Testing": {
+      "enabled": true
+    },
+    "GitHub Integration": {
+      "enabled": true
+    },
+    "Zero-downtime Deployments": {
+      "enabled": true
+    },
+    "Rollback Capabilities": {
+      "enabled": true
+    },
+    "Version Control": {
+      "enabled": true
+    },
+    "Build Automation": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

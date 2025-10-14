@@ -1,0 +1,36 @@
+{
+  "module_id": "DATA_PIPELINE",
+  "module_name": "Data Pipeline",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": 8081,
+  "apis": {},
+  "components": {
+    "Real-time Data Ingestion": {
+      "enabled": true
+    },
+    "Multi-exchange Aggregation": {
+      "enabled": true
+    },
+    "Data Normalization": {
+      "enabled": true
+    },
+    "Data Cleaning": {
+      "enabled": true
+    },
+    "High-throughput Processing": {
+      "enabled": true
+    },
+    "Caching (0.02ms response)": {
+      "enabled": true
+    },
+    "WebSocket Connections": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

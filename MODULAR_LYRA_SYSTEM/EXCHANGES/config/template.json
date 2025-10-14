@@ -1,0 +1,58 @@
+{
+  "module_id": "EXCHANGES",
+  "module_name": "Exchange Integrations",
+  "enabled": true,
+  "priority": "CRITICAL",
+  "port": null,
+  "apis": {
+    "OKX": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Binance": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Coinbase": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Gate.io": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "WhiteBIT": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "BTC Markets": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "OKX API Integration": {
+      "enabled": true
+    },
+    "Binance API": {
+      "enabled": true
+    },
+    "Coinbase API": {
+      "enabled": true
+    },
+    "Gate.io API": {
+      "enabled": true
+    },
+    "WhiteBIT API": {
+      "enabled": true
+    },
+    "BTC Markets API": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

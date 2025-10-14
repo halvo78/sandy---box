@@ -1,0 +1,33 @@
+{
+  "module_id": "DISASTER_RECOVERY",
+  "module_name": "Disaster Recovery",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": 8084,
+  "apis": {},
+  "components": {
+    "Automated Backups": {
+      "enabled": true
+    },
+    "Point-in-time Recovery": {
+      "enabled": true
+    },
+    "Multi-region Replication": {
+      "enabled": true
+    },
+    "Disaster Recovery Drills": {
+      "enabled": true
+    },
+    "Data Redundancy": {
+      "enabled": true
+    },
+    "Failover Systems": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

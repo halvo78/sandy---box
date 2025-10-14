@@ -1,0 +1,303 @@
+{
+  "system_name": "Modular Lyra Trading System",
+  "version": "4.0.0",
+  "created": "2025-10-14T03:02:15.255240",
+  "total_modules": 15,
+  "modules": {
+    "AI_MODELS": {
+      "name": "AI Models & Intelligence",
+      "icon": "\ud83e\udd16",
+      "description": "All AI models for decision making",
+      "components": [
+        "OpenRouter Integration (19+ models)",
+        "GPT-4, Claude, Gemini, Cohere",
+        "Grok Builder",
+        "DeepSeek, Qwen, Mistral",
+        "AI Consensus Engine",
+        "Multi-model voting system"
+      ],
+      "apis": [
+        "OpenRouter",
+        "OpenAI",
+        "Anthropic",
+        "Google AI",
+        "Cohere",
+        "XAI"
+      ],
+      "port": null,
+      "priority": "CRITICAL"
+    },
+    "EXCHANGES": {
+      "name": "Exchange Integrations",
+      "icon": "\ud83d\udcb1",
+      "description": "All cryptocurrency exchange connections",
+      "components": [
+        "OKX API Integration",
+        "Binance API",
+        "Coinbase API",
+        "Gate.io API",
+        "WhiteBIT API",
+        "BTC Markets API"
+      ],
+      "apis": [
+        "OKX",
+        "Binance",
+        "Coinbase",
+        "Gate.io",
+        "WhiteBIT",
+        "BTC Markets"
+      ],
+      "port": null,
+      "priority": "CRITICAL"
+    },
+    "DATA_APIS": {
+      "name": "Market Data APIs",
+      "icon": "\ud83d\udcca",
+      "description": "Real-time and historical market data",
+      "components": [
+        "Polygon.io (Market Data)",
+        "CoinGecko API",
+        "CoinMarketCap API",
+        "Finnhub API",
+        "Alpha Vantage",
+        "Twelve Data",
+        "Yahoo Finance"
+      ],
+      "apis": [
+        "Polygon.io",
+        "CoinGecko",
+        "CoinMarketCap",
+        "Finnhub",
+        "Alpha Vantage"
+      ],
+      "port": 8081,
+      "priority": "CRITICAL"
+    },
+    "NEWS_SENTIMENT": {
+      "name": "News & Sentiment Analysis",
+      "icon": "\ud83d\udcf0",
+      "description": "News feeds and market sentiment",
+      "components": [
+        "NewsAPI Integration",
+        "CryptoPanic API",
+        "Benzinga News",
+        "Twitter/X Sentiment",
+        "Reddit Sentiment",
+        "Discord Monitoring",
+        "LunarCrush Social Data"
+      ],
+      "apis": [
+        "NewsAPI",
+        "CryptoPanic",
+        "Benzinga",
+        "Twitter",
+        "Reddit",
+        "LunarCrush"
+      ],
+      "port": null,
+      "priority": "HIGH"
+    },
+    "SECURITY": {
+      "name": "Security & Authentication",
+      "icon": "\ud83d\udd12",
+      "description": "System security and access control",
+      "components": [
+        "OAuth 2.0 Authentication",
+        "JWT Token Management",
+        "AES-256 Encryption",
+        "Multi-Factor Authentication (MFA)",
+        "API Key Management",
+        "Rate Limiting",
+        "Firewall Configuration"
+      ],
+      "apis": [
+        "OAuth Providers",
+        "Encryption Services"
+      ],
+      "port": 8083,
+      "priority": "CRITICAL"
+    },
+    "TRADING_STRATEGIES": {
+      "name": "Trading Strategies",
+      "icon": "\ud83d\udcc8",
+      "description": "All trading strategy implementations",
+      "components": [
+        "CPS (Core Protective Swing)",
+        "TM (Trend Momentum)",
+        "RMR (Range Mean-Reversion)",
+        "VBO (Volatility Breakout)",
+        "CFH (Carry & Funding Harvest)",
+        "ED (Event Drift)",
+        "Arbitrage Detection",
+        "Market Making"
+      ],
+      "apis": [],
+      "port": null,
+      "priority": "HIGH"
+    },
+    "TECHNICAL_ANALYSIS": {
+      "name": "Technical Analysis",
+      "icon": "\ud83d\udcc9",
+      "description": "Technical indicators and chart analysis",
+      "components": [
+        "RSI (Relative Strength Index)",
+        "MACD (Moving Average Convergence Divergence)",
+        "Bollinger Bands",
+        "EMA/SMA (Moving Averages)",
+        "Stochastic Oscillator",
+        "Williams %R",
+        "CCI (Commodity Channel Index)",
+        "ADX (Average Directional Index)",
+        "Volume Analysis",
+        "Price Action Patterns"
+      ],
+      "apis": [
+        "TradingView",
+        "TA-Lib"
+      ],
+      "port": null,
+      "priority": "HIGH"
+    },
+    "RISK_MANAGEMENT": {
+      "name": "Risk Management",
+      "icon": "\u26a0\ufe0f",
+      "description": "Risk assessment and control",
+      "components": [
+        "Real-time Risk Assessment",
+        "Portfolio Risk Metrics",
+        "VaR (Value at Risk) Calculation",
+        "Drawdown Monitoring",
+        "Position Sizing",
+        "Stop Loss Management",
+        "Circuit Breakers",
+        "Daily Loss Limits"
+      ],
+      "apis": [],
+      "port": 8082,
+      "priority": "CRITICAL"
+    },
+    "DASHBOARD_UI": {
+      "name": "Dashboard & User Interface",
+      "icon": "\ud83d\udda5\ufe0f",
+      "description": "Visual dashboards and controls",
+      "components": [
+        "Executive Dashboard",
+        "Trading Dashboard",
+        "Risk Dashboard",
+        "Compliance Dashboard",
+        "Real-time Charts",
+        "Performance Metrics",
+        "Order Book Visualization",
+        "Position Manager"
+      ],
+      "apis": [],
+      "port": 5000,
+      "priority": "HIGH"
+    },
+    "ORDER_EXECUTION": {
+      "name": "Order Execution",
+      "icon": "\u26a1",
+      "description": "High-frequency order execution",
+      "components": [
+        "Smart Order Routing",
+        "Order Lifecycle Management",
+        "Sub-second Execution",
+        "Fill Optimization",
+        "Slippage Control",
+        "Order Book Management",
+        "Execution Analytics"
+      ],
+      "apis": [],
+      "port": null,
+      "priority": "CRITICAL"
+    },
+    "COMPLIANCE": {
+      "name": "Compliance & Reporting",
+      "icon": "\ud83d\udccb",
+      "description": "Regulatory compliance and audit",
+      "components": [
+        "ATO Tax Reporting",
+        "Audit Trail",
+        "Compliance Checks",
+        "Regulatory Reporting",
+        "KYC/AML Verification",
+        "Transaction Monitoring",
+        "ISO Compliance (31000, 27001, 9001)"
+      ],
+      "apis": [],
+      "port": 8085,
+      "priority": "MEDIUM"
+    },
+    "DATA_PIPELINE": {
+      "name": "Data Pipeline",
+      "icon": "\ud83d\udd04",
+      "description": "Real-time data processing",
+      "components": [
+        "Real-time Data Ingestion",
+        "Multi-exchange Aggregation",
+        "Data Normalization",
+        "Data Cleaning",
+        "High-throughput Processing",
+        "Caching (0.02ms response)",
+        "WebSocket Connections"
+      ],
+      "apis": [],
+      "port": 8081,
+      "priority": "CRITICAL"
+    },
+    "MONITORING": {
+      "name": "System Monitoring",
+      "icon": "\ud83d\udc41\ufe0f",
+      "description": "System health and performance monitoring",
+      "components": [
+        "Real-time Metrics",
+        "Performance Visualization",
+        "Alert Management",
+        "System Health Checks",
+        "Log Aggregation",
+        "Error Tracking",
+        "Uptime Monitoring"
+      ],
+      "apis": [
+        "Prometheus",
+        "Grafana"
+      ],
+      "port": 3000,
+      "priority": "HIGH"
+    },
+    "DISASTER_RECOVERY": {
+      "name": "Disaster Recovery",
+      "icon": "\ud83d\udee1\ufe0f",
+      "description": "Backup and recovery systems",
+      "components": [
+        "Automated Backups",
+        "Point-in-time Recovery",
+        "Multi-region Replication",
+        "Disaster Recovery Drills",
+        "Data Redundancy",
+        "Failover Systems"
+      ],
+      "apis": [],
+      "port": 8084,
+      "priority": "HIGH"
+    },
+    "CI_CD": {
+      "name": "CI/CD Pipeline",
+      "icon": "\ud83d\ude80",
+      "description": "Continuous integration and deployment",
+      "components": [
+        "Automated Testing",
+        "GitHub Integration",
+        "Zero-downtime Deployments",
+        "Rollback Capabilities",
+        "Version Control",
+        "Build Automation"
+      ],
+      "apis": [
+        "GitHub API"
+      ],
+      "port": 8080,
+      "priority": "MEDIUM"
+    }
+  }
+}

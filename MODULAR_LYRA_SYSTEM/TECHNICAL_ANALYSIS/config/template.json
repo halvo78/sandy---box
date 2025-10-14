@@ -1,0 +1,54 @@
+{
+  "module_id": "TECHNICAL_ANALYSIS",
+  "module_name": "Technical Analysis",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": null,
+  "apis": {
+    "TradingView": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "TA-Lib": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "RSI (Relative Strength Index)": {
+      "enabled": true
+    },
+    "MACD (Moving Average Convergence Divergence)": {
+      "enabled": true
+    },
+    "Bollinger Bands": {
+      "enabled": true
+    },
+    "EMA/SMA (Moving Averages)": {
+      "enabled": true
+    },
+    "Stochastic Oscillator": {
+      "enabled": true
+    },
+    "Williams %R": {
+      "enabled": true
+    },
+    "CCI (Commodity Channel Index)": {
+      "enabled": true
+    },
+    "ADX (Average Directional Index)": {
+      "enabled": true
+    },
+    "Volume Analysis": {
+      "enabled": true
+    },
+    "Price Action Patterns": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}

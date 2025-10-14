@@ -1,0 +1,68 @@
+{
+  "AI_MODELS": [],
+  "EXCHANGES": [],
+  "DATA_APIS": [],
+  "NEWS_SENTIMENT": [],
+  "SECURITY": [],
+  "TRADING_STRATEGIES": [],
+  "TECHNICAL_ANALYSIS": [],
+  "RISK_MANAGEMENT": [],
+  "DASHBOARD_UI": [
+    {
+      "description": "files",
+      "name": "files-for-build",
+      "primaryLanguage": null,
+      "updatedAt": "2025-10-01T12:02:25Z",
+      "url": "https://github.com/halvo78/files-for-build"
+    }
+  ],
+  "ORDER_EXECUTION": [],
+  "COMPLIANCE": [],
+  "DATA_PIPELINE": [],
+  "MONITORING": [],
+  "DISASTER_RECOVERY": [],
+  "CI_CD": [],
+  "SYSTEM_CORE": [
+    {
+      "description": "",
+      "name": "sandy---box",
+      "primaryLanguage": {
+        "name": "Python"
+      },
+      "updatedAt": "2025-10-14T06:58:16Z",
+      "url": "https://github.com/halvo78/sandy---box"
+    },
+    {
+      "description": "",
+      "name": "ultimate-trading-ecosystem",
+      "primaryLanguage": {
+        "name": "Python"
+      },
+      "updatedAt": "2025-10-13T12:25:10Z",
+      "url": "https://github.com/halvo78/ultimate-trading-ecosystem"
+    },
+    {
+      "description": "files",
+      "name": "lyra-master-source.",
+      "primaryLanguage": null,
+      "updatedAt": "2025-10-01T13:38:07Z",
+      "url": "https://github.com/halvo78/lyra-master-source."
+    },
+    {
+      "description": "bulk files",
+      "name": "lyra-files",
+      "primaryLanguage": null,
+      "updatedAt": "2025-10-01T12:24:56Z",
+      "url": "https://github.com/halvo78/lyra-files"
+    },
+    {
+      "description": "\ud83d\ude80 Ultimate Lyra Ecosystem - Advanced AI-Powered Cryptocurrency Trading System with Multi-Exchange Support, Never-Sell-At-Loss Protection, and Comprehensive Security Features",
+      "name": "ultimate-lyra-ecosystem",
+      "primaryLanguage": {
+        "name": "Python"
+      },
+      "updatedAt": "2025-09-26T12:22:45Z",
+      "url": "https://github.com/halvo78/ultimate-lyra-ecosystem"
+    }
+  ]
+}

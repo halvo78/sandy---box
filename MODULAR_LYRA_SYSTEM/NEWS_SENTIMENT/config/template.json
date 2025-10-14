@@ -1,0 +1,61 @@
+{
+  "module_id": "NEWS_SENTIMENT",
+  "module_name": "News & Sentiment Analysis",
+  "enabled": true,
+  "priority": "HIGH",
+  "port": null,
+  "apis": {
+    "NewsAPI": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "CryptoPanic": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Benzinga": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Twitter": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "Reddit": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    },
+    "LunarCrush": {
+      "enabled": true,
+      "api_key": "YOUR_API_KEY_HERE"
+    }
+  },
+  "components": {
+    "NewsAPI Integration": {
+      "enabled": true
+    },
+    "CryptoPanic API": {
+      "enabled": true
+    },
+    "Benzinga News": {
+      "enabled": true
+    },
+    "Twitter/X Sentiment": {
+      "enabled": true
+    },
+    "Reddit Sentiment": {
+      "enabled": true
+    },
+    "Discord Monitoring": {
+      "enabled": true
+    },
+    "LunarCrush Social Data": {
+      "enabled": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval": 60,
+    "metrics_enabled": true
+  }
+}
