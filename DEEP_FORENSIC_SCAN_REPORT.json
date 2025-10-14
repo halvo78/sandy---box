@@ -1,0 +1,138 @@
+{
+  "scan_date": "2025-10-14",
+  "total_files_found": 6929,
+  "uploaded_files": 176,
+  "github_repos": [
+    {
+      "name": "sandy---box",
+      "path": "/home/ubuntu/sandy---box",
+      "py_files": 598,
+      "js_files": 4521,
+      "jsx_files": 198,
+      "total": 5317
+    },
+    {
+      "name": "ultimate-trading-ecosystem",
+      "path": "/home/ubuntu/ultimate-trading-ecosystem",
+      "py_files": 31,
+      "js_files": 8501,
+      "jsx_files": 48,
+      "total": 8580
+    },
+    {
+      "name": "ultimate-lyra-ecosystem",
+      "path": "/home/ubuntu/ultimate-lyra-ecosystem",
+      "py_files": 33,
+      "js_files": 0,
+      "jsx_files": 0,
+      "total": 33
+    }
+  ],
+  "sandbox_dirs": [
+    {
+      "name": "ultimate-lyra-ecosystem",
+      "path": "/home/ubuntu/ultimate-lyra-ecosystem",
+      "py_files": 33,
+      "js_files": 0,
+      "jsx_files": 0,
+      "md_files": 10,
+      "total": 43
+    },
+    {
+      "name": "WORLD_CLASS_LYRA_SYSTEM",
+      "path": "/home/ubuntu/WORLD_CLASS_LYRA_SYSTEM",
+      "py_files": 72,
+      "js_files": 0,
+      "jsx_files": 66,
+      "md_files": 12,
+      "total": 150
+    },
+    {
+      "name": "MODULAR_LYRA_SYSTEM",
+      "path": "/home/ubuntu/MODULAR_LYRA_SYSTEM",
+      "py_files": 0,
+      "js_files": 0,
+      "jsx_files": 0,
+      "md_files": 16,
+      "total": 16
+    },
+    {
+      "name": "FINAL_PRODUCTION_LYRA_SYSTEM",
+      "path": "/home/ubuntu/FINAL_PRODUCTION_LYRA_SYSTEM",
+      "py_files": 0,
+      "js_files": 0,
+      "jsx_files": 0,
+      "md_files": 23,
+      "total": 23
+    },
+    {
+      "name": "ULTIMATE_CONTAINERS",
+      "path": "/home/ubuntu/ULTIMATE_CONTAINERS",
+      "py_files": 50,
+      "js_files": 0,
+      "jsx_files": 0,
+      "md_files": 15,
+      "total": 65
+    },
+    {
+      "name": "UPLOADED_CONTAINERS",
+      "path": "/home/ubuntu/UPLOADED_CONTAINERS",
+      "py_files": 50,
+      "js_files": 0,
+      "jsx_files": 0,
+      "md_files": 15,
+      "total": 65
+    },
+    {
+      "name": "sandy---box",
+      "path": "/home/ubuntu/sandy---box",
+      "py_files": 598,
+      "js_files": 4521,
+      "jsx_files": 198,
+      "md_files": 994,
+      "total": 6311
+    },
+    {
+      "name": "FINAL_COMPLETE_DEPLOYMENT",
+      "path": "/home/ubuntu/FINAL_COMPLETE_DEPLOYMENT",
+      "py_files": 122,
+      "js_files": 0,
+      "jsx_files": 66,
+      "md_files": 68,
+      "total": 256
+    }
+  ],
+  "component_categories": {
+    "dashboards": 2838,
+    "apis": 3813,
+    "trading_engines": 1873,
+    "strategies": 387,
+    "technical_analysis": 2696,
+    "ai_systems": 5868,
+    "arbitrage": 132,
+    "charts": 68,
+    "monetization": 39,
+    "risk_management": 727,
+    "security": 1796,
+    "compliance": 1529,
+    "monitoring": 482,
+    "data_pipeline": 918,
+    "order_execution": 291,
+    "backtesting": 63,
+    "portfolio_management": 158,
+    "notification_systems": 169,
+    "reporting": 316,
+    "authentication": 1695,
+    "deployment": 3537,
+    "documentation": 801,
+    "testing": 4038,
+    "utilities": 3120
+  },
+  "summary": {
+    "total_python_files": 925,
+    "total_javascript_files": 4521,
+    "total_jsx_files": 330,
+    "total_markdown_files": 1153,
+    "total_files": 6929
+  }
+}
