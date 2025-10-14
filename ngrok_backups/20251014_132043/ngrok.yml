@@ -1,0 +1,17 @@
+version: "2"
+authtoken: 33usxScH7BM8zGJ0SMfvEqFCtqy_6mSSBRWTsHJ7EWXeoCpN2
+region: ap
+web_addr: localhost:4040
+log_level: info
+log_format: logfmt
+log: /home/halvolyra/ultimate_lyra_systems/logs/ngrok.log
+tunnels:
+  file_server:
+    proto: http
+    addr: 9000
+  dashboard:
+    proto: http
+    addr: 5000
+  production:
+    proto: http
+    addr: 5001
