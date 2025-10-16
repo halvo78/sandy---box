@@ -1,0 +1,175 @@
+{
+  "openrouter_api_keys": [
+    "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"
+  ],
+  "ai_team": [
+    {
+      "role": "Market Analyst",
+      "model": "google/gemini-2.0-flash-exp:free",
+      "weight": 1.2,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Technical Analyst",
+      "model": "anthropic/claude-3.5-sonnet",
+      "weight": 1.3,
+      "confidence_threshold": 0.80
+    },
+    {
+      "role": "Risk Manager",
+      "model": "openai/gpt-4-turbo",
+      "weight": 1.5,
+      "confidence_threshold": 0.85
+    },
+    {
+      "role": "Entry Specialist",
+      "model": "x-ai/grok-2-1212",
+      "weight": 1.1,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Exit Specialist",
+      "model": "deepseek/deepseek-chat",
+      "weight": 1.1,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Sentiment Analyst",
+      "model": "perplexity/sonar-pro",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "Volume Analyst",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "Momentum Trader",
+      "model": "google/gemini-flash-1.5",
+      "weight": 0.9,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "Pattern Recognition",
+      "model": "anthropic/claude-3-opus",
+      "weight": 1.2,
+      "confidence_threshold": 0.80
+    },
+    {
+      "role": "Arbitrage Hunter",
+      "model": "openai/gpt-4o",
+      "weight": 1.0,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Liquidity Analyst",
+      "model": "mistralai/mistral-large",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "News Analyzer",
+      "model": "perplexity/sonar-reasoning",
+      "weight": 1.1,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Macro Strategist",
+      "model": "anthropic/claude-3.5-sonnet",
+      "weight": 1.2,
+      "confidence_threshold": 0.80
+    },
+    {
+      "role": "Execution Optimizer",
+      "model": "x-ai/grok-4",
+      "weight": 1.1,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Grok Code Specialist",
+      "model": "x-ai/grok-code-fast-1",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "Grok Vision Analyst",
+      "model": "x-ai/grok-2-vision-1212",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    },
+    {
+      "role": "Grok Beta Researcher",
+      "model": "x-ai/grok-beta",
+      "weight": 0.9,
+      "confidence_threshold": 0.65
+    },
+    {
+      "role": "Grok 3 Strategist",
+      "model": "x-ai/grok-3",
+      "weight": 1.1,
+      "confidence_threshold": 0.75
+    },
+    {
+      "role": "Grok 3 Mini Analyst",
+      "model": "x-ai/grok-3-mini",
+      "weight": 0.8,
+      "confidence_threshold": 0.65
+    },
+    {
+      "role": "Grok 4 Fast Trader",
+      "model": "x-ai/grok-4-fast",
+      "weight": 1.0,
+      "confidence_threshold": 0.70
+    }
+  ],
+  "trading_config": {
+    "starting_capital": 1000000,
+    "max_positions": 999,
+    "max_daily_loss": 999999,
+    "risk_per_trade": 0.05,
+    "profit_target": 0.024,
+    "stop_loss": 0.015,
+    "trailing_stop": 0.01,
+    "never_sell_at_loss": true,
+    "paper_trading": true,
+    "turbo_mode": true,
+    "all_coins": true,
+    "all_timeframes": true
+  },
+  "coins": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "ADA/USDT",
+    "XRP/USDT",
+    "DOT/USDT",
+    "MATIC/USDT",
+    "AVAX/USDT"
+  ],
+  "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+  "strategies": [
+    "statistical_arbitrage",
+    "hft_market_making",
+    "grid_trading",
+    "dca_trading",
+    "momentum_trading",
+    "mean_reversion",
+    "swing_trading",
+    "scalping",
+    "pairs_trading",
+    "arbitrage",
+    "cps",
+    "tm",
+    "rmr",
+    "vbo",
+    "cfh",
+    "ed"
+  ],
+  "progressive_rollout": false,
+  "scan_interval": 10,
+  "ai_query_timeout": 30,
+  "max_parallel_ai_queries": 100
+}
+
