@@ -38,11 +38,39 @@ import requests
 
 # Load configuration from config.json if available
 def load_config():
-    try:
-        with open('config.json', 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return None
+    """Load config.json from script directory or current directory."""
+    import os
+    
+    # Try script directory first
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, 'config.json')
+    
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️  Error loading config from {config_path}: {e}")
+    
+    # Try current directory
+    if os.path.exists('config.json'):
+        try:
+            with open('config.json', 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️  Error loading config from current directory: {e}")
+    
+    # Try home directory
+    home_config = os.path.expanduser('~/ultimate_lyra_systems/config.json')
+    if os.path.exists(home_config):
+        try:
+            with open(home_config, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️  Error loading config from {home_config}: {e}")
+    
+    print("⚠️  config.json not found in any location!")
+    return None
 
 config = load_config()
 
