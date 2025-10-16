@@ -1,0 +1,137 @@
+{
+  "openrouter_api_keys": [
+    "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",
+    "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",
+    "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",
+    "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"
+  ],
+  "ai_team": {
+    "market_analyst": {
+      "model": "google/gemini-pro-1.5",
+      "weight": 0.10,
+      "role": "Market analysis and trend identification"
+    },
+    "technical_analyst": {
+      "model": "anthropic/claude-3.5-sonnet",
+      "weight": 0.10,
+      "role": "Technical indicators and chart patterns"
+    },
+    "risk_manager": {
+      "model": "openai/gpt-4-turbo",
+      "weight": 0.10,
+      "role": "Risk assessment and position sizing"
+    },
+    "entry_specialist": {
+      "model": "x-ai/grok-beta",
+      "weight": 0.08,
+      "role": "Optimal entry point identification"
+    },
+    "exit_specialist": {
+      "model": "deepseek/deepseek-chat",
+      "weight": 0.08,
+      "role": "Exit strategy and profit taking"
+    },
+    "sentiment_analyst": {
+      "model": "perplexity/sonar-large-online",
+      "weight": 0.07,
+      "role": "Market sentiment and social analysis"
+    },
+    "volume_analyst": {
+      "model": "meta-llama/llama-3.1-405b-instruct",
+      "weight": 0.07,
+      "role": "Volume analysis and liquidity"
+    },
+    "momentum_trader": {
+      "model": "google/gemini-flash-1.5",
+      "weight": 0.07,
+      "role": "Momentum and trend following"
+    },
+    "pattern_recognition": {
+      "model": "anthropic/claude-3-opus",
+      "weight": 0.08,
+      "role": "Pattern recognition and prediction"
+    },
+    "arbitrage_hunter": {
+      "model": "openai/gpt-4o",
+      "weight": 0.07,
+      "role": "Arbitrage opportunities"
+    },
+    "liquidity_analyst": {
+      "model": "mistralai/mistral-large",
+      "weight": 0.06,
+      "role": "Liquidity and order book analysis"
+    },
+    "news_analyzer": {
+      "model": "perplexity/sonar-huge-online",
+      "weight": 0.06,
+      "role": "News and event analysis"
+    },
+    "macro_strategist": {
+      "model": "anthropic/claude-3.5-sonnet",
+      "weight": 0.03,
+      "role": "Macro economic strategy"
+    },
+    "execution_optimizer": {
+      "model": "x-ai/grok-2-1212",
+      "weight": 0.03,
+      "role": "Trade execution optimization"
+    }
+  },
+  "trading_config": {
+    "starting_capital": 1000000,
+    "paper_trading": true,
+    "max_positions": 999999,
+    "max_daily_loss": 999999,
+    "risk_per_trade": 0.02,
+    "min_confidence": 0.90,
+    "scan_interval": 30,
+    "active_coins": ["BTC/USDT", "ETH/USDT", "SOL/USDT", "ADA/USDT", "XRP/USDT", "DOT/USDT", "MATIC/USDT", "AVAX/USDT"],
+    "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+    "progressive_rollout": false,
+    "turbo_mode": true
+  },
+  "strategies": {
+    "statistical_arbitrage": {"enabled": true, "weight": 0.08},
+    "hft_market_making": {"enabled": true, "weight": 0.07},
+    "grid_trading": {"enabled": true, "weight": 0.06},
+    "dca_trading": {"enabled": true, "weight": 0.05},
+    "momentum_trading": {"enabled": true, "weight": 0.08},
+    "mean_reversion": {"enabled": true, "weight": 0.07},
+    "swing_trading": {"enabled": true, "weight": 0.06},
+    "scalping": {"enabled": true, "weight": 0.05},
+    "pairs_trading": {"enabled": true, "weight": 0.06},
+    "arbitrage": {"enabled": true, "weight": 0.07},
+    "cps": {"enabled": true, "weight": 0.09},
+    "tm": {"enabled": true, "weight": 0.07},
+    "rmr": {"enabled": true, "weight": 0.06},
+    "vbo": {"enabled": true, "weight": 0.06},
+    "cfh": {"enabled": true, "weight": 0.04},
+    "ed": {"enabled": true, "weight": 0.03},
+    "options_trading": {"enabled": false, "weight": 0.00},
+    "futures_trading": {"enabled": false, "weight": 0.00}
+  },
+  "exchanges": {
+    "binance": {"enabled": true, "paper": true},
+    "coinbase": {"enabled": true, "paper": true},
+    "kraken": {"enabled": true, "paper": true},
+    "bybit": {"enabled": true, "paper": true},
+    "okx": {"enabled": true, "paper": true},
+    "kucoin": {"enabled": true, "paper": true},
+    "gate": {"enabled": true, "paper": true},
+    "huobi": {"enabled": true, "paper": true}
+  },
+  "commissioning": {
+    "auto_test": true,
+    "test_all_strategies": true,
+    "test_all_ais": true,
+    "test_all_exchanges": true,
+    "generate_reports": true
+  },
+  "github": {
+    "auto_commit": false,
+    "repo": "halvo78/sandy---box",
+    "branch": "main",
+    "commit_interval": 3600
+  }
+}
+
