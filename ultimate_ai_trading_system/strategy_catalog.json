@@ -1,0 +1,122 @@
+{
+  "SMA_CROSS": {
+    "name": "Simple Moving Average Crossover",
+    "category": "Momentum",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "EMA_CROSS": {
+    "name": "Exponential Moving Average Crossover",
+    "category": "Momentum",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "MACD": {
+    "name": "MACD Trading",
+    "category": "Momentum",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "CROSS_EXCHANGE_ARB": {
+    "name": "Cross-Exchange Arbitrage",
+    "category": "Arbitrage",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "TRIANGULAR_ARB": {
+    "name": "Triangular Arbitrage",
+    "category": "Arbitrage",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "STATISTICAL_ARB": {
+    "name": "Statistical Arbitrage",
+    "category": "Arbitrage",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "PURE_MM": {
+    "name": "Pure Market Making",
+    "category": "Market Making",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "CROSS_EXCHANGE_MM": {
+    "name": "Cross-Exchange Market Making",
+    "category": "Market Making",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "LATENCY_ARB": {
+    "name": "Latency Arbitrage",
+    "category": "HFT",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  },
+  "TICK_SCALPING": {
+    "name": "Tick Scalping",
+    "category": "HFT",
+    "tested": true,
+    "certified": true,
+    "sharpe_ratio": 2.1,
+    "max_drawdown_pct": 8.5,
+    "pipeline_stage": "production_live",
+    "ai_selection_score": 0.6975000000000001,
+    "currently_selected": true,
+    "total_pnl": 0.0
+  }
+}
