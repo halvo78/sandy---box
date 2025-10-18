@@ -1,0 +1,52 @@
+[
+  {
+    "model": "deepseek/deepseek-r1:free",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "anthropic/claude-3.5-sonnet",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "openai/gpt-4o",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "google/gemini-2.5-flash-preview",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "x-ai/grok-2-vision-1212",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "qwen/qwen-3-coder-plus",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "deepseek/deepseek-coder",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "anthropic/claude-haiku-4.5",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  },
+  {
+    "model": "openai/gpt-4o-mini",
+    "success": false,
+    "error": "HTTP 401: {\"error\":{\"message\":\"User not found.\",\"code\":401}}"
+  }
+]

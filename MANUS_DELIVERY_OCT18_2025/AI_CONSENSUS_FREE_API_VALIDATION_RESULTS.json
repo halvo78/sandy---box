@@ -1,0 +1,237 @@
+{
+  "validation_date": "2025-10-17T23:43:36.058151",
+  "ai_consensus_team": [
+    "Grok 4 - Chief System Architect",
+    "Grok 4 Fast - Chief Technical Architect",
+    "Grok Code Fast - Lead Code Architect",
+    "Claude 3 Opus - Enterprise Architect",
+    "Claude 3 Sonnet - Security Architect",
+    "Claude 3 Haiku - QA Engineer",
+    "GPT-4 Turbo - Senior Software Engineer",
+    "GPT-4o - Full-Stack Engineer",
+    "DeepSeek - AI/ML Engineer",
+    "Gemini Pro - Data Architect",
+    "Gemini Flash - Integration Tester",
+    "Llama 3.3 - DevOps Engineer",
+    "Qwen 2.5 - Performance Engineer",
+    "Mistral Large - Code Reviewer"
+  ],
+  "total_tested": 13,
+  "working": 10,
+  "failed": 3,
+  "success_rate": 76.92307692307693,
+  "validated_apis": {
+    "CoinGecko": {
+      "endpoint": "https://api.coingecko.com/api/v3/ping",
+      "test_params": {},
+      "features": [
+        "Crypto prices",
+        "Market cap",
+        "Volume",
+        "Trending"
+      ],
+      "rate_limit": "10-50 calls/min",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 1.15846,
+      "data_sample": "{'gecko_says': '(V3) To the Moon!'}"
+    },
+    "Coinbase Public": {
+      "endpoint": "https://api.coinbase.com/v2/exchange-rates",
+      "test_params": {
+        "currency": "USD"
+      },
+      "features": [
+        "Crypto prices",
+        "Exchange rates"
+      ],
+      "rate_limit": "10,000 requests/hour",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.088886,
+      "data_sample": "{'data': {'currency': 'USD', 'rates': {'00': '93.8967136150234742', '1INCH': '5.813953488372093', '2Z': '4.3425395171096057', 'A8': '16.2601626016260163', 'AAVE': '0.0047614512903533', 'ABT': '2.06100"
+    },
+    "Kraken Public": {
+      "endpoint": "https://api.kraken.com/0/public/Ticker",
+      "test_params": {
+        "pair": "XBTUSD"
+      },
+      "features": [
+        "Ticker",
+        "OHLC",
+        "Order book",
+        "Trades"
+      ],
+      "rate_limit": "Varies by endpoint",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.880459,
+      "data_sample": "{'error': [], 'result': {'XXBTZUSD': {'a': ['107000.10000', '1', '1.000'], 'b': ['107000.00000', '3', '3.000'], 'c': ['107000.10000', '0.00022795'], 'v': ['160.94763296', '3477.82393338'], 'p': ['1070"
+    },
+    "CoinPaprika": {
+      "endpoint": "https://api.coinpaprika.com/v1/tickers/btc-bitcoin",
+      "test_params": {},
+      "features": [
+        "Crypto prices",
+        "Market data",
+        "Events"
+      ],
+      "rate_limit": "No limit",
+      "quality": "MEDIUM",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.081075,
+      "data_sample": "{'id': 'btc-bitcoin', 'name': 'Bitcoin', 'symbol': 'BTC', 'rank': 1, 'total_supply': 19936225, 'max_supply': 21000000, 'beta_value': 0.849215, 'first_data_at': '2010-07-17T00:00:00Z', 'last_updated': "
+    },
+    "CryptoCompare": {
+      "endpoint": "https://min-api.cryptocompare.com/data/price",
+      "test_params": {
+        "fsym": "BTC",
+        "tsyms": "USD"
+      },
+      "features": [
+        "Price data",
+        "Historical",
+        "News"
+      ],
+      "rate_limit": "100,000 calls/month free",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.436392,
+      "data_sample": "{'USD': 107019.84}"
+    },
+    "DexScreener": {
+      "endpoint": "https://api.dexscreener.com/latest/dex/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "test_params": {},
+      "features": [
+        "DEX data",
+        "Token pairs",
+        "Liquidity"
+      ],
+      "rate_limit": "300 requests/min",
+      "quality": "MEDIUM",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.115235,
+      "data_sample": "{'schemaVersion': '1.0.0', 'pairs': [{'chainId': 'pulsechain', 'dexId': 'pulsex', 'url': 'https://dexscreener.com/pulsechain/0x7994d526a127979bcb9ec7c98509bb5c7ebd78fd', 'pairAddress': '0x7994d526A127"
+    },
+    "Fear & Greed Index": {
+      "endpoint": "https://api.alternative.me/fng/",
+      "test_params": {},
+      "features": [
+        "Market sentiment",
+        "Historical sentiment"
+      ],
+      "rate_limit": "No limit",
+      "quality": "MEDIUM",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.090651,
+      "data_sample": "{'name': 'Fear and Greed Index', 'data': [{'value': '23', 'value_classification': 'Extreme Fear', 'timestamp': '1760745600', 'time_until_update': '72985'}], 'metadata': {'error': None}}"
+    },
+    "Blockchain.com": {
+      "endpoint": "https://blockchain.info/ticker",
+      "test_params": {},
+      "features": [
+        "Bitcoin data",
+        "Blockchain stats"
+      ],
+      "rate_limit": "No limit",
+      "quality": "MEDIUM",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.087646,
+      "data_sample": "{'ARS': {'15m': 155728712.46, 'last': 155728712.46, 'buy': 155728712.46, 'sell': 155728712.46, 'symbol': 'ARS'}, 'AUD': {'15m': 164610.06, 'last': 164610.06, 'buy': 164610.06, 'sell': 164610.06, 'symb"
+    },
+    "The Graph": {
+      "endpoint": "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3",
+      "test_params": {},
+      "features": [
+        "Blockchain indexing",
+        "Custom queries"
+      ],
+      "rate_limit": "1000 queries/day free",
+      "quality": "HIGH",
+      "recommended": true,
+      "note": "Requires GraphQL queries",
+      "status": "WORKING",
+      "response_time": 0.108487,
+      "data_sample": "{'errors': [{'message': 'This endpoint has been removed. If you have any questions, reach out to support@thegraph.zendesk.com'}]}"
+    },
+    "World Bank": {
+      "endpoint": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD",
+      "test_params": {
+        "format": "json"
+      },
+      "features": [
+        "Global economic data",
+        "GDP",
+        "Indicators"
+      ],
+      "rate_limit": "No limit",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "WORKING",
+      "response_time": 0.140692,
+      "data_sample": "[{'page': 1, 'pages': 346, 'per_page': 50, 'total': 17290, 'sourceid': '2', 'lastupdated': '2025-10-07'}, [{'indicator': {'id': 'NY.GDP.MKTP.CD', 'value': 'GDP (current US$)'}, 'country': {'id': 'ZH',"
+    }
+  },
+  "failed_apis": {
+    "Yahoo Finance": {
+      "endpoint": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL",
+      "test_params": {
+        "interval": "1d",
+        "range": "1d"
+      },
+      "library": "yfinance",
+      "features": [
+        "Stocks",
+        "ETFs",
+        "Indices",
+        "Forex",
+        "Crypto",
+        "Historical"
+      ],
+      "rate_limit": "Unlimited (via yfinance)",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "FAILED",
+      "error": "HTTP 429"
+    },
+    "Binance Public": {
+      "endpoint": "https://api.binance.com/api/v3/ticker/24hr",
+      "test_params": {
+        "symbol": "BTCUSDT"
+      },
+      "features": [
+        "Real-time crypto",
+        "Order book",
+        "Klines",
+        "24hr ticker"
+      ],
+      "rate_limit": "1200 requests/min",
+      "quality": "EXCELLENT",
+      "recommended": true,
+      "status": "FAILED",
+      "error": "HTTP 451"
+    },
+    "Messari": {
+      "endpoint": "https://data.messari.io/api/v1/assets/bitcoin/metrics",
+      "test_params": {},
+      "features": [
+        "Crypto metrics",
+        "Research",
+        "On-chain"
+      ],
+      "rate_limit": "20 calls/min free",
+      "quality": "HIGH",
+      "recommended": true,
+      "status": "FAILED",
+      "error": "HTTP 401"
+    }
+  }
+}

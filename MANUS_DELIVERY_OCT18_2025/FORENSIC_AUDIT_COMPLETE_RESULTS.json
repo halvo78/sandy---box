@@ -1,0 +1,1493 @@
+{
+  "audit_timestamp": "2025-10-17T11:51:57.843162",
+  "all_python_systems": [
+    {
+      "name": "BUILD_COMPLETE_AI_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/BUILD_COMPLETE_AI_TRADING_SYSTEM.py",
+      "size": 30199,
+      "lines": 1019,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "94151ba00d0b7b4aee3ea67a9824a76e",
+      "category": "ai_systems"
+    },
+    {
+      "name": "PRODUCTION_COMMISSIONING_FRAMEWORK.py",
+      "path": "/home/ubuntu/PRODUCTION_COMMISSIONING_FRAMEWORK.py",
+      "size": 13902,
+      "lines": 369,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "da52f5d54731603650539bb0de2d45df",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_AI_DASHBOARD.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_DASHBOARD.py",
+      "size": 28211,
+      "lines": 807,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "8c8d53a5b06f2d8f274e417de22d0605",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND_SYSTEM.py",
+      "size": 23353,
+      "lines": 536,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "f89659753ecc56ea125e8c5b1d3d2e2c",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_AI_TRADING_ENGINE.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_TRADING_ENGINE.py",
+      "size": 28351,
+      "lines": 703,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "22db6da16735dc6a924cb294d9e72813",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_COMPLETE_DASHBOARD.py",
+      "path": "/home/ubuntu/ULTIMATE_COMPLETE_DASHBOARD.py",
+      "size": 17932,
+      "lines": 538,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "f7f565033582ee04bddd501a903cdb27",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_COMPLETE_PAPER_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_COMPLETE_PAPER_TRADING_SYSTEM.py",
+      "size": 37801,
+      "lines": 860,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "c5dc2ba79ef975e49decad652516a7ed",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_TURBO_CHARGED_PRODUCTION_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_TURBO_CHARGED_PRODUCTION_SYSTEM.py",
+      "size": 38993,
+      "lines": 900,
+      "modified": "2025-10-16T05:27:04.981241",
+      "md5": "e9d5a704799252be3637e62ae118c67d",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "WORLDS_BEST_PAPER_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/WORLDS_BEST_PAPER_TRADING_SYSTEM.py",
+      "size": 27954,
+      "lines": 623,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "fb01f589c82927dc4ee3d9cdd923c2d3",
+      "category": "other"
+    },
+    {
+      "name": "AI_HIVE_MIND_REMOTE_DEPLOY.py",
+      "path": "/home/ubuntu/AI_HIVE_MIND_REMOTE_DEPLOY.py",
+      "size": 8825,
+      "lines": 242,
+      "modified": "2025-10-15T07:43:46.571580",
+      "md5": "eb5cba230897517c6ad1b07cdf471214",
+      "category": "ai_systems"
+    },
+    {
+      "name": "ULTIMATE_FIX_AND_DEPLOY.py",
+      "path": "/home/ubuntu/ULTIMATE_FIX_AND_DEPLOY.py",
+      "size": 5856,
+      "lines": 178,
+      "modified": "2025-10-16T05:21:07.320150",
+      "md5": "5bafe9bde1faf96f337e67eaacf18402",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "GROK_ANALYZE_AND_FIX.py",
+      "path": "/home/ubuntu/GROK_ANALYZE_AND_FIX.py",
+      "size": 5694,
+      "lines": 175,
+      "modified": "2025-10-16T05:29:46.577759",
+      "md5": "7fc1b06c06e36b3ecfb8038647c2e37d",
+      "category": "other"
+    },
+    {
+      "name": "AI_HIVE_MIND_INVESTIGATE_OPENROUTER.py",
+      "path": "/home/ubuntu/AI_HIVE_MIND_INVESTIGATE_OPENROUTER.py",
+      "size": 8349,
+      "lines": 242,
+      "modified": "2025-10-16T06:38:49.217899",
+      "md5": "513d41975b1f1a774d12187c9e6d9051",
+      "category": "ai_systems"
+    },
+    {
+      "name": "ULTIMATE_TURBO_CHARGED_PRODUCTION_SYSTEM_FIXED.py",
+      "path": "/home/ubuntu/ULTIMATE_TURBO_CHARGED_PRODUCTION_SYSTEM_FIXED.py",
+      "size": 19978,
+      "lines": 566,
+      "modified": "2025-10-16T06:56:03.132123",
+      "md5": "ceb1312b3ccebba19390713cf40923d3",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_AI_TRADING_SYSTEM_COMPLETE.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_TRADING_SYSTEM_COMPLETE.py",
+      "size": 13250,
+      "lines": 421,
+      "modified": "2025-10-16T06:57:50.016335",
+      "md5": "f6e36df726fe4f8b6da544db1f99ceee",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "push_to_local_ubuntu.py",
+      "path": "/home/ubuntu/push_to_local_ubuntu.py",
+      "size": 2276,
+      "lines": 76,
+      "modified": "2025-10-16T07:09:03.021857",
+      "md5": "e618cc1298b44901b14c31c32e0f4df5",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND.py",
+      "size": 15454,
+      "lines": 311,
+      "modified": "2025-10-16T07:24:48.707912",
+      "md5": "7b1a2fa794067f474b2a7c55ade154ab",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "REALTIME_MARKET_DATA_ENGINE.py",
+      "path": "/home/ubuntu/REALTIME_MARKET_DATA_ENGINE.py",
+      "size": 17471,
+      "lines": 479,
+      "modified": "2025-10-16T07:26:23.504111",
+      "md5": "d37fe9b4cd14cbc63b7eb4bf55b4d532",
+      "category": "core_engines"
+    },
+    {
+      "name": "ULTIMATE_LYRA_COMPLETE_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_LYRA_COMPLETE_SYSTEM.py",
+      "size": 28126,
+      "lines": 628,
+      "modified": "2025-10-16T07:36:51.897396",
+      "md5": "991b3829c313a7c3b3529134c1768f4d",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "OKX_EXCHANGE_INTEGRATION.py",
+      "path": "/home/ubuntu/OKX_EXCHANGE_INTEGRATION.py",
+      "size": 16041,
+      "lines": 426,
+      "modified": "2025-10-16T07:37:54.865527",
+      "md5": "d117c9743a92e6919634fecb38e18fcf",
+      "category": "other"
+    },
+    {
+      "name": "LYRA_WEB_DASHBOARD.py",
+      "path": "/home/ubuntu/LYRA_WEB_DASHBOARD.py",
+      "size": 17608,
+      "lines": 560,
+      "modified": "2025-10-16T07:39:06.801671",
+      "md5": "5bceb4b692d5b76d0fa88056958ea90c",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_LYRA_FINAL.py",
+      "path": "/home/ubuntu/ULTIMATE_LYRA_FINAL.py",
+      "size": 23680,
+      "lines": 567,
+      "modified": "2025-10-16T07:41:43.613988",
+      "md5": "5b95a7cc5ff8b817a8dcbc541e99716f",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ABSOLUTE_BEST_IN_WORLD_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/ABSOLUTE_BEST_IN_WORLD_TRADING_SYSTEM.py",
+      "size": 28481,
+      "lines": 717,
+      "modified": "2025-10-16T20:28:03.666084",
+      "md5": "9ad4b56c03f9197b781f86e7377dd3be",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND_10000X_AMPLIFICATION.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND_10000X_AMPLIFICATION.py",
+      "size": 10446,
+      "lines": 250,
+      "modified": "2025-10-17T04:12:31.160858",
+      "md5": "47c18ca9b3b329d83adc5b8a258225df",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "MANUS_1_5_ULTIMATE_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/MANUS_1_5_ULTIMATE_TRADING_SYSTEM.py",
+      "size": 20141,
+      "lines": 551,
+      "modified": "2025-10-17T04:15:10.949095",
+      "md5": "f6645a063cd24a516dd2318ebc939659",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_TESTING_FRAMEWORK_AI_CONSULTATION.py",
+      "path": "/home/ubuntu/ULTIMATE_TESTING_FRAMEWORK_AI_CONSULTATION.py",
+      "size": 6464,
+      "lines": 191,
+      "modified": "2025-10-17T04:18:51.421434",
+      "md5": "a9d95d63d45a6bae1fe9e809fcbcc670",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_STRATEGY_TESTING_CERTIFICATION_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_STRATEGY_TESTING_CERTIFICATION_SYSTEM.py",
+      "size": 20605,
+      "lines": 540,
+      "modified": "2025-10-17T04:23:13.729873",
+      "md5": "95c9df28e2f5925fc0ea46a053e01fb6",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "PRODUCTION_PIPELINE_ALL_PROFESSIONALS_CONSULTATION.py",
+      "path": "/home/ubuntu/PRODUCTION_PIPELINE_ALL_PROFESSIONALS_CONSULTATION.py",
+      "size": 6872,
+      "lines": 199,
+      "modified": "2025-10-17T04:25:02.026052",
+      "md5": "d5e6ef1c9bf190293758ee81228f287f",
+      "category": "other"
+    },
+    {
+      "name": "COMPLETE_PRODUCTION_AUTOMATED_TRADING_SYSTEM.py",
+      "path": "/home/ubuntu/COMPLETE_PRODUCTION_AUTOMATED_TRADING_SYSTEM.py",
+      "size": 18189,
+      "lines": 495,
+      "modified": "2025-10-17T04:30:39.242542",
+      "md5": "55aae3869e92d81b7a5cdd1ca4b7a0ef",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_SYSTEM_IMPROVEMENT_CONSULTATION.py",
+      "path": "/home/ubuntu/ULTIMATE_SYSTEM_IMPROVEMENT_CONSULTATION.py",
+      "size": 7790,
+      "lines": 238,
+      "modified": "2025-10-17T04:56:28.886120",
+      "md5": "3119793a2187fba05453775a53167980",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "1000X_DEEPER_ULTIMATE_CONSULTATION.py",
+      "path": "/home/ubuntu/1000X_DEEPER_ULTIMATE_CONSULTATION.py",
+      "size": 10203,
+      "lines": 259,
+      "modified": "2025-10-17T05:11:02.368200",
+      "md5": "d17f09d3ad60deda43f0a80a97b17131",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_1000X_BETTER_SYSTEM_BUILD.py",
+      "path": "/home/ubuntu/ULTIMATE_1000X_BETTER_SYSTEM_BUILD.py",
+      "size": 9922,
+      "lines": 276,
+      "modified": "2025-10-17T05:23:29.497395",
+      "md5": "3cc8b665632fa05b3d793a04efaf1ad0",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "PRIORITIZED_IMPROVEMENTS_MASTER_LIST.py",
+      "path": "/home/ubuntu/PRIORITIZED_IMPROVEMENTS_MASTER_LIST.py",
+      "size": 7540,
+      "lines": 213,
+      "modified": "2025-10-17T06:28:38.739335",
+      "md5": "11d8af5c62bdc8460c8b93b89ff65bad",
+      "category": "other"
+    },
+    {
+      "name": "FINAL_ULTIMATE_COMPLETE_SYSTEM.py",
+      "path": "/home/ubuntu/FINAL_ULTIMATE_COMPLETE_SYSTEM.py",
+      "size": 20208,
+      "lines": 533,
+      "modified": "2025-10-17T06:32:58.473281",
+      "md5": "da757cbc63fb0c78cccb16c08d8c1440",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ULTIMATE_SYSTEM_VALIDATION_BY_AI_HIVE_MIND.py",
+      "path": "/home/ubuntu/ULTIMATE_SYSTEM_VALIDATION_BY_AI_HIVE_MIND.py",
+      "size": 9900,
+      "lines": 335,
+      "modified": "2025-10-17T06:45:33.082934",
+      "md5": "a15741e5bd002ef8a75f1187addf585f",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "ABSOLUTE_BEST_TRADING_SYSTEM_WORLD_CLASS_10_10.py",
+      "path": "/home/ubuntu/ABSOLUTE_BEST_TRADING_SYSTEM_WORLD_CLASS_10_10.py",
+      "size": 43113,
+      "lines": 1116,
+      "modified": "2025-10-17T07:19:50.014570",
+      "md5": "2556439fb9f800da29fa40b2c81ccb21",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "COMPREHENSIVE_PROOF_TESTING_AUDIT_SYSTEM.py",
+      "path": "/home/ubuntu/COMPREHENSIVE_PROOF_TESTING_AUDIT_SYSTEM.py",
+      "size": 24435,
+      "lines": 709,
+      "modified": "2025-10-17T07:34:03.647797",
+      "md5": "c261873c90b4f0f88fd19ac303fd7deb",
+      "category": "other"
+    },
+    {
+      "name": "ACHIEVE_PERFECT_10_CONSULTATION.py",
+      "path": "/home/ubuntu/ACHIEVE_PERFECT_10_CONSULTATION.py",
+      "size": 10397,
+      "lines": 318,
+      "modified": "2025-10-17T07:46:59.720938",
+      "md5": "b56ab5b18803e21e862bcdcef3fbf814",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "PERFECT_10_COMPLETE_SYSTEM.py",
+      "path": "/home/ubuntu/PERFECT_10_COMPLETE_SYSTEM.py",
+      "size": 21339,
+      "lines": 562,
+      "modified": "2025-10-17T07:55:27.173693",
+      "md5": "12e599c7f5aa278a01b6fc26914990b2",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "data_lake_poc.py",
+      "path": "/home/ubuntu/data_lake_poc.py",
+      "size": 2337,
+      "lines": 72,
+      "modified": "2025-10-17T08:46:58.059903",
+      "md5": "e73eac23e382fca831f9e9273be67351",
+      "category": "data_systems"
+    },
+    {
+      "name": "AI_CONSENSUS_100_PERCENT_VERIFICATION.py",
+      "path": "/home/ubuntu/AI_CONSENSUS_100_PERCENT_VERIFICATION.py",
+      "size": 7764,
+      "lines": 217,
+      "modified": "2025-10-17T08:56:56.511834",
+      "md5": "05eeee9dac50540e2280af2f32364eb8",
+      "category": "ai_systems"
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND_BUILD_PERFECT_10.py",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND_BUILD_PERFECT_10.py",
+      "size": 13583,
+      "lines": 361,
+      "modified": "2025-10-17T09:11:51.619775",
+      "md5": "ee3e40247367638cd075ef3cbd583f15",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "digitalocean_spaces_data_lake.py",
+      "path": "/home/ubuntu/digitalocean_spaces_data_lake.py",
+      "size": 11858,
+      "lines": 347,
+      "modified": "2025-10-17T09:18:25.487790",
+      "md5": "5ba3bc142eb8f4f6d18870d06e7cb268",
+      "category": "data_systems"
+    },
+    {
+      "name": "duckdb_analytics_engine.py",
+      "path": "/home/ubuntu/duckdb_analytics_engine.py",
+      "size": 16505,
+      "lines": 490,
+      "modified": "2025-10-17T09:31:34.579742",
+      "md5": "8549da2d9ed7391f7226b4852a93c939",
+      "category": "core_engines"
+    },
+    {
+      "name": "ccxt_exchange_integration.py",
+      "path": "/home/ubuntu/ccxt_exchange_integration.py",
+      "size": 16825,
+      "lines": 498,
+      "modified": "2025-10-17T09:44:21.943648",
+      "md5": "e3fb83faa6047afd204e357e29fcd609",
+      "category": "other"
+    },
+    {
+      "name": "talib_indicators_integration.py",
+      "path": "/home/ubuntu/talib_indicators_integration.py",
+      "size": 10751,
+      "lines": 242,
+      "modified": "2025-10-17T11:03:29.611147",
+      "md5": "b6ef66c76a223d4f15f94edfba382937",
+      "category": "other"
+    },
+    {
+      "name": "comprehensive_backtesting_engine.py",
+      "path": "/home/ubuntu/comprehensive_backtesting_engine.py",
+      "size": 16036,
+      "lines": 463,
+      "modified": "2025-10-17T09:48:42.155617",
+      "md5": "ddeb714b5133d10bb055508119879710",
+      "category": "core_engines"
+    },
+    {
+      "name": "ultimate_backtesting_engine.py",
+      "path": "/home/ubuntu/ultimate_backtesting_engine.py",
+      "size": 29776,
+      "lines": 789,
+      "modified": "2025-10-17T10:03:11.483418",
+      "md5": "aa8390dac271b7bb68d354587571a0bb",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "WORLDS_BEST_BACKTESTING_ENGINE.py",
+      "path": "/home/ubuntu/WORLDS_BEST_BACKTESTING_ENGINE.py",
+      "size": 26964,
+      "lines": 684,
+      "modified": "2025-10-17T10:08:11.755425",
+      "md5": "8d3aa4c46ac4fd81fbaf55c216903ea5",
+      "category": "core_engines"
+    },
+    {
+      "name": "PERFECT_BACKTESTING_ENGINE_V2.py",
+      "path": "/home/ubuntu/PERFECT_BACKTESTING_ENGINE_V2.py",
+      "size": 22606,
+      "lines": 569,
+      "modified": "2025-10-17T10:19:17.223402",
+      "md5": "191766087224a07dcf032a730c4035d5",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "UNIFIED_DATA_ENGINE.py",
+      "path": "/home/ubuntu/UNIFIED_DATA_ENGINE.py",
+      "size": 17886,
+      "lines": 521,
+      "modified": "2025-10-17T10:54:55.339217",
+      "md5": "0764a17f3a3332efe770594d784605b9",
+      "category": "core_engines"
+    },
+    {
+      "name": "ULTIMATE_INTEGRATED_LYRA_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_INTEGRATED_LYRA_SYSTEM.py",
+      "size": 21665,
+      "lines": 581,
+      "modified": "2025-10-17T11:01:25.115160",
+      "md5": "0985a07a93f155c6115fd0f249313545",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "EXTRACT_ALL_COMPONENTS_PHASE_1.py",
+      "path": "/home/ubuntu/EXTRACT_ALL_COMPONENTS_PHASE_1.py",
+      "size": 13684,
+      "lines": 340,
+      "modified": "2025-10-17T11:34:38.778951",
+      "md5": "d34e6b4316499cd44685660730e9c00c",
+      "category": "integration_scripts"
+    },
+    {
+      "name": "AI_HIVE_MIND_INTEGRATION_STRATEGY.py",
+      "path": "/home/ubuntu/AI_HIVE_MIND_INTEGRATION_STRATEGY.py",
+      "size": 21258,
+      "lines": 513,
+      "modified": "2025-10-17T11:36:57.786942",
+      "md5": "ed6b7ffb880e9f598fef128ec9ee63df",
+      "category": "ai_systems"
+    },
+    {
+      "name": "INTEGRATE_REPOSITORIES_PHASE_3.py",
+      "path": "/home/ubuntu/INTEGRATE_REPOSITORIES_PHASE_3.py",
+      "size": 2884,
+      "lines": 87,
+      "modified": "2025-10-17T11:38:58.894930",
+      "md5": "1269b114f23797e2e4e02369f4e6e1b6",
+      "category": "integration_scripts"
+    },
+    {
+      "name": "ULTIMATE_NEXT_LEVEL_INTEGRATED_SYSTEM.py",
+      "path": "/home/ubuntu/ULTIMATE_NEXT_LEVEL_INTEGRATED_SYSTEM.py",
+      "size": 43924,
+      "lines": 1116,
+      "modified": "2025-10-17T11:43:35.546912",
+      "md5": "e909ee8e0169b4e34a71004094c1cb9a",
+      "category": "ultimate_systems"
+    },
+    {
+      "name": "FORENSIC_AUDIT_ALL_WORK.py",
+      "path": "/home/ubuntu/FORENSIC_AUDIT_ALL_WORK.py",
+      "size": 19660,
+      "lines": 498,
+      "modified": "2025-10-17T11:51:51.330899",
+      "md5": "fb62b58d0c6e4995429dfa58db1cda48",
+      "category": "other"
+    }
+  ],
+  "all_markdown_docs": [
+    {
+      "name": "START_HERE.md",
+      "path": "/home/ubuntu/START_HERE.md",
+      "size": 7779,
+      "lines": 338,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "7534e4382c2c1ed273edd2b2c0a2e910",
+      "category": "deployment_guides"
+    },
+    {
+      "name": "COMMISSIONING_REPORT.md",
+      "path": "/home/ubuntu/COMMISSIONING_REPORT.md",
+      "size": 12102,
+      "lines": 468,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "e4247edf477185b9aa40e70200d1eba9",
+      "category": "other"
+    },
+    {
+      "name": "COMPLETE_DEPLOYMENT_SUMMARY.md",
+      "path": "/home/ubuntu/COMPLETE_DEPLOYMENT_SUMMARY.md",
+      "size": 11836,
+      "lines": 520,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "daeadd82459b13eef26973329b75d653",
+      "category": "phase_reports"
+    },
+    {
+      "name": "COMPREHENSIVE_RESOURCE_INVENTORY.md",
+      "path": "/home/ubuntu/COMPREHENSIVE_RESOURCE_INVENTORY.md",
+      "size": 7982,
+      "lines": 281,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "07a5122e12d98ef48250982918dd9e12",
+      "category": "other"
+    },
+    {
+      "name": "DEPLOY_TO_LOCAL_UBUNTU.md",
+      "path": "/home/ubuntu/DEPLOY_TO_LOCAL_UBUNTU.md",
+      "size": 6430,
+      "lines": 349,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "9d0ac4b92787e680bb8edf8ba8832e69",
+      "category": "other"
+    },
+    {
+      "name": "FINAL_DELIVERY_TO_USER.md",
+      "path": "/home/ubuntu/FINAL_DELIVERY_TO_USER.md",
+      "size": 12558,
+      "lines": 518,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "2e6f15f1a3501e5ef0e9723d79f01d0f",
+      "category": "integration_docs"
+    },
+    {
+      "name": "FINAL_DELIVERY_WORLDS_BEST_SYSTEM.md",
+      "path": "/home/ubuntu/FINAL_DELIVERY_WORLDS_BEST_SYSTEM.md",
+      "size": 9152,
+      "lines": 365,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "3290cf3ee227b6b13683d8b590fffcc1",
+      "category": "integration_docs"
+    },
+    {
+      "name": "FINAL_DEPLOYMENT_INSTRUCTIONS.md",
+      "path": "/home/ubuntu/FINAL_DEPLOYMENT_INSTRUCTIONS.md",
+      "size": 11921,
+      "lines": 601,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "ac2f181fd53462190d3d1f7dcf259468",
+      "category": "other"
+    },
+    {
+      "name": "FINAL_SYSTEM_DELIVERY.md",
+      "path": "/home/ubuntu/FINAL_SYSTEM_DELIVERY.md",
+      "size": 15311,
+      "lines": 552,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "d6e636bb01022a5cf13aa03ec015533d",
+      "category": "integration_docs"
+    },
+    {
+      "name": "MANUAL_DEPLOYMENT_INSTRUCTIONS.md",
+      "path": "/home/ubuntu/MANUAL_DEPLOYMENT_INSTRUCTIONS.md",
+      "size": 5080,
+      "lines": 223,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "8ac578bf8935c11a127f4d7a9d44ca0f",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_AI_TRADING_DEPLOYMENT_GUIDE.md",
+      "path": "/home/ubuntu/ULTIMATE_AI_TRADING_DEPLOYMENT_GUIDE.md",
+      "size": 18535,
+      "lines": 602,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "5d32496ee98b1943640c46e7483029b9",
+      "category": "deployment_guides"
+    },
+    {
+      "name": "ULTIMATE_TURBO_SYSTEM_FINAL_DELIVERY.md",
+      "path": "/home/ubuntu/ULTIMATE_TURBO_SYSTEM_FINAL_DELIVERY.md",
+      "size": 14305,
+      "lines": 549,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "fd3c72210ecce4e959b591fa3ed362c8",
+      "category": "integration_docs"
+    },
+    {
+      "name": "WORLDS_BEST_SYSTEM_DEPLOYMENT_GUIDE.md",
+      "path": "/home/ubuntu/WORLDS_BEST_SYSTEM_DEPLOYMENT_GUIDE.md",
+      "size": 9238,
+      "lines": 386,
+      "modified": "2025-10-15T07:42:03.959241",
+      "md5": "a28057d12a1150422be33ba4aabc2482",
+      "category": "deployment_guides"
+    },
+    {
+      "name": "AI_HIVE_MIND_FINAL_CONSENSUS.md",
+      "path": "/home/ubuntu/AI_HIVE_MIND_FINAL_CONSENSUS.md",
+      "size": 4828,
+      "lines": 140,
+      "modified": "2025-10-15T07:53:13.345484",
+      "md5": "25b1561e40a2c0cbb74f2a0b84f524d3",
+      "category": "ai_consultation"
+    },
+    {
+      "name": "QUICK_SETUP_INSTRUCTIONS.md",
+      "path": "/home/ubuntu/QUICK_SETUP_INSTRUCTIONS.md",
+      "size": 2779,
+      "lines": 135,
+      "modified": "2025-10-16T05:09:09.230253",
+      "md5": "59adf172759a714f680910dca0899b5f",
+      "category": "other"
+    },
+    {
+      "name": "COMPLETE_FIX_SUMMARY.md",
+      "path": "/home/ubuntu/COMPLETE_FIX_SUMMARY.md",
+      "size": 8232,
+      "lines": 332,
+      "modified": "2025-10-16T07:01:41.312853",
+      "md5": "ff0d71926c29bb85738186ae1183b00f",
+      "category": "phase_reports"
+    },
+    {
+      "name": "MANUAL_DEPLOYMENT_GUIDE.md",
+      "path": "/home/ubuntu/MANUAL_DEPLOYMENT_GUIDE.md",
+      "size": 6182,
+      "lines": 191,
+      "modified": "2025-10-16T07:10:14.726013",
+      "md5": "7ad90188b95e082fa31b5fdd50131d4d",
+      "category": "deployment_guides"
+    },
+    {
+      "name": "COMPREHENSIVE_SYSTEM_AUDIT.md",
+      "path": "/home/ubuntu/COMPREHENSIVE_SYSTEM_AUDIT.md",
+      "size": 7118,
+      "lines": 275,
+      "modified": "2025-10-16T07:21:29.891495",
+      "md5": "4a987b9f2da15392cb3d2e453f1df170",
+      "category": "other"
+    },
+    {
+      "name": "FREQTRADE_KEY_FEATURES.md",
+      "path": "/home/ubuntu/FREQTRADE_KEY_FEATURES.md",
+      "size": 1247,
+      "lines": 31,
+      "modified": "2025-10-16T07:33:16.240947",
+      "md5": "876559b42e4fb6eafc13a80a3abd6970",
+      "category": "other"
+    },
+    {
+      "name": "NAUTILUS_INSTITUTIONAL_FEATURES.md",
+      "path": "/home/ubuntu/NAUTILUS_INSTITUTIONAL_FEATURES.md",
+      "size": 3534,
+      "lines": 51,
+      "modified": "2025-10-16T07:34:10.081053",
+      "md5": "ecca1793d89af9950678a47cb86c384c",
+      "category": "other"
+    },
+    {
+      "name": "PORTFOLIO_RISK_LIBRARIES.md",
+      "path": "/home/ubuntu/PORTFOLIO_RISK_LIBRARIES.md",
+      "size": 2822,
+      "lines": 58,
+      "modified": "2025-10-16T07:34:47.393130",
+      "md5": "f5e3f3d0d1999f9e8ca3fd29d01f989a",
+      "category": "other"
+    },
+    {
+      "name": "DEPLOYMENT_GUIDE.md",
+      "path": "/home/ubuntu/DEPLOYMENT_GUIDE.md",
+      "size": 11654,
+      "lines": 474,
+      "modified": "2025-10-16T07:44:03.026267",
+      "md5": "7416fa27ea1be551494fce39c0daec1a",
+      "category": "deployment_guides"
+    },
+    {
+      "name": "HUMMINGBOT_INTEGRATION_RESEARCH.md",
+      "path": "/home/ubuntu/HUMMINGBOT_INTEGRATION_RESEARCH.md",
+      "size": 1876,
+      "lines": 51,
+      "modified": "2025-10-16T07:53:26.911419",
+      "md5": "40936218aece4e3b23ba90e3dd3ad2bb",
+      "category": "research_docs"
+    },
+    {
+      "name": "COMPLETE_COMPONENT_CATALOG.md",
+      "path": "/home/ubuntu/COMPLETE_COMPONENT_CATALOG.md",
+      "size": 6286,
+      "lines": 236,
+      "modified": "2025-10-16T07:55:56.307723",
+      "md5": "45894dd6a97de66c9a8df7ddc1e6dac1",
+      "category": "other"
+    },
+    {
+      "name": "ABSOLUTE_FINAL_SYSTEM_INTEGRATION_PLAN.md",
+      "path": "/home/ubuntu/ABSOLUTE_FINAL_SYSTEM_INTEGRATION_PLAN.md",
+      "size": 5114,
+      "lines": 205,
+      "modified": "2025-10-16T07:56:32.999798",
+      "md5": "a8287162c574af75260eff3c71bed1ce",
+      "category": "integration_docs"
+    },
+    {
+      "name": "FREQTRADE_INTEGRATION_COMPLETE.md",
+      "path": "/home/ubuntu/FREQTRADE_INTEGRATION_COMPLETE.md",
+      "size": 3673,
+      "lines": 124,
+      "modified": "2025-10-16T07:57:37.755930",
+      "md5": "5374cf43c38030d08d52ea9c7099145d",
+      "category": "integration_docs"
+    },
+    {
+      "name": "SANDBOX_RUN_RESULTS.md",
+      "path": "/home/ubuntu/SANDBOX_RUN_RESULTS.md",
+      "size": 11902,
+      "lines": 421,
+      "modified": "2025-10-16T23:09:58.811862",
+      "md5": "6c47ef3757945a02082d5fda6716eb91",
+      "category": "other"
+    },
+    {
+      "name": "ALL_TRADING_STRATEGY_TYPES_COMPREHENSIVE.md",
+      "path": "/home/ubuntu/ALL_TRADING_STRATEGY_TYPES_COMPREHENSIVE.md",
+      "size": 10717,
+      "lines": 418,
+      "modified": "2025-10-17T04:08:16.864475",
+      "md5": "f4a1629d7d5b5bff7b9c4b82bc798c66",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND_SYNTHESIS.md",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND_SYNTHESIS.md",
+      "size": 3484,
+      "lines": 60,
+      "modified": "2025-10-17T04:13:28.684944",
+      "md5": "81c750847b71a4af59bbf6c097536812",
+      "category": "ai_consultation"
+    },
+    {
+      "name": "COMPREHENSIVE_SYSTEM_VALIDATION_REPORT.md",
+      "path": "/home/ubuntu/COMPREHENSIVE_SYSTEM_VALIDATION_REPORT.md",
+      "size": 13974,
+      "lines": 498,
+      "modified": "2025-10-17T06:47:13.527689",
+      "md5": "b464e3dbd4e7bab17fbd3ed1e0ecefd8",
+      "category": "other"
+    },
+    {
+      "name": "MASTER_CATALOG_ALL_COMPONENTS.md",
+      "path": "/home/ubuntu/MASTER_CATALOG_ALL_COMPONENTS.md",
+      "size": 12593,
+      "lines": 512,
+      "modified": "2025-10-17T07:08:58.069637",
+      "md5": "b82835a00da9fdaa08cf4892176ccabb",
+      "category": "other"
+    },
+    {
+      "name": "PERFECT_10_IMPROVEMENT_PLAN.md",
+      "path": "/home/ubuntu/PERFECT_10_IMPROVEMENT_PLAN.md",
+      "size": 11496,
+      "lines": 337,
+      "modified": "2025-10-17T07:48:28.669069",
+      "md5": "3eed5230260f8bbab61c10f4a641c0a7",
+      "category": "other"
+    },
+    {
+      "name": "TODAYS_WORK_SUMMARY.md",
+      "path": "/home/ubuntu/TODAYS_WORK_SUMMARY.md",
+      "size": 2289,
+      "lines": 38,
+      "modified": "2025-10-17T08:48:13.995901",
+      "md5": "6e7ce58e197e6ff72be4b3bd8fbede0e",
+      "category": "phase_reports"
+    },
+    {
+      "name": "COMPLETE_FORENSIC_TODAYS_WORK.md",
+      "path": "/home/ubuntu/COMPLETE_FORENSIC_TODAYS_WORK.md",
+      "size": 8900,
+      "lines": 266,
+      "modified": "2025-10-17T08:52:24.127869",
+      "md5": "2076d576e9faf9a805b3ccf6310b2358",
+      "category": "other"
+    },
+    {
+      "name": "ALL_AI_CONSENSUS_RESULTS_TODAY.md",
+      "path": "/home/ubuntu/ALL_AI_CONSENSUS_RESULTS_TODAY.md",
+      "size": 6464,
+      "lines": 204,
+      "modified": "2025-10-17T08:56:01.367854",
+      "md5": "ff0b183ef712d09e0b0ac10f84551aef",
+      "category": "other"
+    },
+    {
+      "name": "AI_EXPERT_VERIFICATION_100_PERCENT_COMPLETE.md",
+      "path": "/home/ubuntu/AI_EXPERT_VERIFICATION_100_PERCENT_COMPLETE.md",
+      "size": 7851,
+      "lines": 263,
+      "modified": "2025-10-17T08:57:57.767828",
+      "md5": "335111918045ec0d14018dcb60285898",
+      "category": "other"
+    },
+    {
+      "name": "GROK_BUILDER_COMPLETE_INTEGRATION.md",
+      "path": "/home/ubuntu/GROK_BUILDER_COMPLETE_INTEGRATION.md",
+      "size": 8958,
+      "lines": 249,
+      "modified": "2025-10-17T09:00:40.459816",
+      "md5": "6abd8c59107baea3db7b0bd1ec937e7c",
+      "category": "integration_docs"
+    },
+    {
+      "name": "GROK_INTEGRATION_CONCRETE_BENEFITS.md",
+      "path": "/home/ubuntu/GROK_INTEGRATION_CONCRETE_BENEFITS.md",
+      "size": 9944,
+      "lines": 330,
+      "modified": "2025-10-17T09:04:01.327797",
+      "md5": "7e8564257e4ae74fdc258339f15660df",
+      "category": "integration_docs"
+    },
+    {
+      "name": "NEXT_BUILD_PRIORITIES_WITH_GROK.md",
+      "path": "/home/ubuntu/NEXT_BUILD_PRIORITIES_WITH_GROK.md",
+      "size": 9126,
+      "lines": 311,
+      "modified": "2025-10-17T09:06:41.355785",
+      "md5": "ee6853d3dda66a180a28f9f88fe525a8",
+      "category": "other"
+    },
+    {
+      "name": "ACTUAL_NEXT_STEPS_FROM_TODAYS_PLAN.md",
+      "path": "/home/ubuntu/ACTUAL_NEXT_STEPS_FROM_TODAYS_PLAN.md",
+      "size": 8554,
+      "lines": 286,
+      "modified": "2025-10-17T09:08:38.903780",
+      "md5": "d964874e7d798403f31a41553b2e6e3e",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_HIVE_MIND_DATA_PLATFORM_SYNTHESIS.md",
+      "path": "/home/ubuntu/ULTIMATE_HIVE_MIND_DATA_PLATFORM_SYNTHESIS.md",
+      "size": 200,
+      "lines": 12,
+      "modified": "2025-10-17T09:12:21.067777",
+      "md5": "c8280d762ce0e0285f5c613bfc50bd67",
+      "category": "ai_consultation"
+    },
+    {
+      "name": "ULTIMATE_IMPLEMENTATION_PLAN_PERFECT_10.md",
+      "path": "/home/ubuntu/ULTIMATE_IMPLEMENTATION_PLAN_PERFECT_10.md",
+      "size": 10245,
+      "lines": 410,
+      "modified": "2025-10-17T09:15:20.727774",
+      "md5": "85dd80a0b462cf61b93c06193dbc9d50",
+      "category": "other"
+    },
+    {
+      "name": "DATA_LAKE_COMPLETION_REPORT.md",
+      "path": "/home/ubuntu/DATA_LAKE_COMPLETION_REPORT.md",
+      "size": 8583,
+      "lines": 346,
+      "modified": "2025-10-17T09:19:37.711784",
+      "md5": "fcc9ceba9a79e6025d18e7aabeb3e601",
+      "category": "other"
+    },
+    {
+      "name": "WHAT_WE_ARE_MISSING_WORLD_BEST_ANALYSIS.md",
+      "path": "/home/ubuntu/WHAT_WE_ARE_MISSING_WORLD_BEST_ANALYSIS.md",
+      "size": 15092,
+      "lines": 527,
+      "modified": "2025-10-17T09:24:43.879747",
+      "md5": "1a25166e5415612fa4d1f921763be029",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_WORLD_CLASS_OPEN_SOURCE_ANALYSIS.md",
+      "path": "/home/ubuntu/ULTIMATE_WORLD_CLASS_OPEN_SOURCE_ANALYSIS.md",
+      "size": 11584,
+      "lines": 354,
+      "modified": "2025-10-17T09:38:45.947672",
+      "md5": "56522cfbdca31c440aa75a70eb9d225f",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_BACKTESTING_ENGINE_RESEARCH.md",
+      "path": "/home/ubuntu/ULTIMATE_BACKTESTING_ENGINE_RESEARCH.md",
+      "size": 8651,
+      "lines": 281,
+      "modified": "2025-10-17T09:50:46.619596",
+      "md5": "ca82e8e066a202cc3763908ccc1ec163",
+      "category": "research_docs"
+    },
+    {
+      "name": "ULTIMATE_CAPABILITIES_SYNTHESIS.md",
+      "path": "/home/ubuntu/ULTIMATE_CAPABILITIES_SYNTHESIS.md",
+      "size": 10409,
+      "lines": 344,
+      "modified": "2025-10-17T09:52:15.155585",
+      "md5": "b35dc4bbbc4d94e13252407595730bc6",
+      "category": "other"
+    },
+    {
+      "name": "PHASE_4_COMPLETE_SUMMARY.md",
+      "path": "/home/ubuntu/PHASE_4_COMPLETE_SUMMARY.md",
+      "size": 9564,
+      "lines": 337,
+      "modified": "2025-10-17T10:09:43.147406",
+      "md5": "0b8010c05d279b15c30e80f298fed7b8",
+      "category": "phase_reports"
+    },
+    {
+      "name": "ULTIMATE_QA_REVIEW_ALL_PHASES.md",
+      "path": "/home/ubuntu/ULTIMATE_QA_REVIEW_ALL_PHASES.md",
+      "size": 18782,
+      "lines": 582,
+      "modified": "2025-10-17T10:16:02.047406",
+      "md5": "93567021b145d7af6a3e20e36e0eb953",
+      "category": "phase_reports"
+    },
+    {
+      "name": "AI_HIVE_MIND_FINAL_REVIEW.md",
+      "path": "/home/ubuntu/AI_HIVE_MIND_FINAL_REVIEW.md",
+      "size": 10185,
+      "lines": 312,
+      "modified": "2025-10-17T10:24:12.899407",
+      "md5": "6c190597c8219b35c7775357ef2fb215",
+      "category": "ai_consultation"
+    },
+    {
+      "name": "TODAYS_COMPLETE_ACHIEVEMENTS.md",
+      "path": "/home/ubuntu/TODAYS_COMPLETE_ACHIEVEMENTS.md",
+      "size": 9907,
+      "lines": 385,
+      "modified": "2025-10-17T10:29:08.275414",
+      "md5": "5ad24a6e6095361e3a2cd993d90881e5",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_PERFECT_INTEGRATION_PLAN.md",
+      "path": "/home/ubuntu/ULTIMATE_PERFECT_INTEGRATION_PLAN.md",
+      "size": 13922,
+      "lines": 292,
+      "modified": "2025-10-17T10:32:39.419421",
+      "md5": "1226de35d0c087635617c7c9884f3ba7",
+      "category": "integration_docs"
+    },
+    {
+      "name": "COMPLETE_SYSTEMS_INVENTORY.md",
+      "path": "/home/ubuntu/COMPLETE_SYSTEMS_INVENTORY.md",
+      "size": 1038,
+      "lines": 38,
+      "modified": "2025-10-17T10:37:21.359397",
+      "md5": "fc873d81399f3f19b25ff7cd6155f172",
+      "category": "other"
+    },
+    {
+      "name": "FINAL_PUSH_TO_PERFECTION_10_0.md",
+      "path": "/home/ubuntu/FINAL_PUSH_TO_PERFECTION_10_0.md",
+      "size": 8200,
+      "lines": 345,
+      "modified": "2025-10-17T10:41:15.347340",
+      "md5": "9e33226390061e041d5ee16384c30144",
+      "category": "other"
+    },
+    {
+      "name": "PERFECT_10_SYSTEM_DELIVERY.md",
+      "path": "/home/ubuntu/PERFECT_10_SYSTEM_DELIVERY.md",
+      "size": 3118,
+      "lines": 98,
+      "modified": "2025-10-17T11:04:29.695137",
+      "md5": "ca1daddaaebe7c3ffd5486947c9f2c17",
+      "category": "integration_docs"
+    },
+    {
+      "name": "ULTIMATE_GAP_ANALYSIS_AND_IMPROVEMENTS.md",
+      "path": "/home/ubuntu/ULTIMATE_GAP_ANALYSIS_AND_IMPROVEMENTS.md",
+      "size": 9645,
+      "lines": 397,
+      "modified": "2025-10-17T11:08:50.391090",
+      "md5": "34113aa2d40c8efe1279f044e3a3da93",
+      "category": "other"
+    },
+    {
+      "name": "ULTIMATE_DEEP_RESEARCH_SYNTHESIS.md",
+      "path": "/home/ubuntu/ULTIMATE_DEEP_RESEARCH_SYNTHESIS.md",
+      "size": 7163,
+      "lines": 219,
+      "modified": "2025-10-17T11:13:44.391043",
+      "md5": "92466ebfa95915229702934fea8ab202",
+      "category": "research_docs"
+    },
+    {
+      "name": "100X_AMPLIFICATION_MASTER_PLAN.md",
+      "path": "/home/ubuntu/100X_AMPLIFICATION_MASTER_PLAN.md",
+      "size": 5916,
+      "lines": 206,
+      "modified": "2025-10-17T11:16:16.647017",
+      "md5": "5f867de629173b737d9432005e700633",
+      "category": "optimization_plans"
+    },
+    {
+      "name": "COMPLETE_EXTRACTION_INTEGRATION_PLAN.md",
+      "path": "/home/ubuntu/COMPLETE_EXTRACTION_INTEGRATION_PLAN.md",
+      "size": 9552,
+      "lines": 289,
+      "modified": "2025-10-17T11:19:57.622986",
+      "md5": "71fbb99e9d049a2799b710ff5a310a86",
+      "category": "integration_docs"
+    },
+    {
+      "name": "AI_HIVE_MIND_CONSENSUS_NEXT_STEPS.md",
+      "path": "/home/ubuntu/AI_HIVE_MIND_CONSENSUS_NEXT_STEPS.md",
+      "size": 8842,
+      "lines": 300,
+      "modified": "2025-10-17T11:24:17.914966",
+      "md5": "d66df66ac5adad11b4577fbc45b88fd5",
+      "category": "ai_consultation"
+    },
+    {
+      "name": "ULTIMATE_FINDINGS_WORLDS_BEST.md",
+      "path": "/home/ubuntu/ULTIMATE_FINDINGS_WORLDS_BEST.md",
+      "size": 10474,
+      "lines": 305,
+      "modified": "2025-10-17T11:29:24.482991",
+      "md5": "5564eb70d500e1239656c377f01b34ec",
+      "category": "research_docs"
+    },
+    {
+      "name": "PHASE_1_EXTRACTION_SUMMARY.md",
+      "path": "/home/ubuntu/PHASE_1_EXTRACTION_SUMMARY.md",
+      "size": 2170,
+      "lines": 60,
+      "modified": "2025-10-17T11:35:01.922950",
+      "md5": "d8b86965e2c925a7cb5fb21e4e01bd40",
+      "category": "phase_reports"
+    },
+    {
+      "name": "AI_HIVE_MIND_CONSULTATION_SUMMARY.md",
+      "path": "/home/ubuntu/AI_HIVE_MIND_CONSULTATION_SUMMARY.md",
+      "size": 2223,
+      "lines": 69,
+      "modified": "2025-10-17T11:37:05.214941",
+      "md5": "d275b191ccecac7c776d658bfcb4b7fa",
+      "category": "phase_reports"
+    },
+    {
+      "name": "ULTIMATE_INTEGRATION_DELIVERY_SUMMARY.md",
+      "path": "/home/ubuntu/ULTIMATE_INTEGRATION_DELIVERY_SUMMARY.md",
+      "size": 12480,
+      "lines": 448,
+      "modified": "2025-10-17T11:45:48.318908",
+      "md5": "a6a4d95b8968f030e38dc3df49de4f86",
+      "category": "integration_docs"
+    },
+    {
+      "name": "QUICK_START_DEPLOYMENT_GUIDE.md",
+      "path": "/home/ubuntu/QUICK_START_DEPLOYMENT_GUIDE.md",
+      "size": 9808,
+      "lines": 462,
+      "modified": "2025-10-17T11:47:39.990905",
+      "md5": "9dbba9bb8124327cc757f4f4d3d1ba3f",
+      "category": "deployment_guides"
+    }
+  ],
+  "all_json_configs": [
+    {
+      "name": "config_template.json",
+      "path": "/home/ubuntu/config_template.json",
+      "size": 4522,
+      "modified": "2025-10-16T05:08:12.078119",
+      "md5": "7f35f80b21eb791f54318e4aa7497f17",
+      "valid": true
+    },
+    {
+      "name": "config.json",
+      "path": "/home/ubuntu/config.json",
+      "size": 1290,
+      "modified": "2025-10-16T06:57:56.352348",
+      "md5": "262dc739034c2634341dbc6982d93a6d",
+      "valid": true
+    },
+    {
+      "name": "config_free_models.json",
+      "path": "/home/ubuntu/config_free_models.json",
+      "size": 4684,
+      "modified": "2025-10-16T05:59:17.962654",
+      "md5": "e6cd21d2d10194ec4379da13c08cdef5",
+      "valid": true
+    },
+    {
+      "name": "config_working.json",
+      "path": "/home/ubuntu/config_working.json",
+      "size": 3977,
+      "modified": "2025-10-16T06:41:18.886215",
+      "md5": "10c3f5100bbccd12824399ab43975a1c",
+      "valid": true
+    },
+    {
+      "name": "config_fixed_complete.json",
+      "path": "/home/ubuntu/config_fixed_complete.json",
+      "size": 3621,
+      "modified": "2025-10-16T06:48:47.547165",
+      "md5": "ead8bae643103029ae66030cb6567c27",
+      "valid": true
+    },
+    {
+      "name": "config_test.json",
+      "path": "/home/ubuntu/config_test.json",
+      "size": 1290,
+      "modified": "2025-10-16T06:56:15.848140",
+      "md5": "262dc739034c2634341dbc6982d93a6d",
+      "valid": true
+    },
+    {
+      "name": "config_production.json",
+      "path": "/home/ubuntu/config_production.json",
+      "size": 3495,
+      "modified": "2025-10-16T07:00:16.832668",
+      "md5": "4d0aa592e68d8f00b47a674afa08dcee",
+      "valid": true
+    },
+    {
+      "name": "COMPLETE_API_CATALOG.json",
+      "path": "/home/ubuntu/COMPLETE_API_CATALOG.json",
+      "size": 10233,
+      "modified": "2025-10-16T07:23:13.651714",
+      "md5": "94842db61a2ab400f62b013e5efdfb19",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_AI_HIVE_MIND_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_AI_HIVE_MIND_RESULTS.json",
+      "size": 25598,
+      "modified": "2025-10-17T04:13:28.684944",
+      "md5": "8c099799e4a1b8095090f7244771f5c4",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_TESTING_FRAMEWORK_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_TESTING_FRAMEWORK_RESULTS.json",
+      "size": 22844,
+      "modified": "2025-10-17T04:21:09.725657",
+      "md5": "e94c23f76cd0dd4d482d26d94de64893",
+      "valid": true
+    },
+    {
+      "name": "PRODUCTION_PIPELINE_CONSULTATION_RESULTS.json",
+      "path": "/home/ubuntu/PRODUCTION_PIPELINE_CONSULTATION_RESULTS.json",
+      "size": 58073,
+      "modified": "2025-10-17T04:28:51.218376",
+      "md5": "8d8ef7fc6cdc0b85662efd1d35d51a50",
+      "valid": true
+    },
+    {
+      "name": "strategy_catalog.json",
+      "path": "/home/ubuntu/strategy_catalog.json",
+      "size": 3282,
+      "modified": "2025-10-17T04:30:47.522554",
+      "md5": "d26afd8528a545a15a7c73e3b40acbe3",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_IMPROVEMENT_CONSULTATION_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_IMPROVEMENT_CONSULTATION_RESULTS.json",
+      "size": 64256,
+      "modified": "2025-10-17T05:00:46.183906",
+      "md5": "7e912bd3720c61db0387dcc70da41874",
+      "valid": true
+    },
+    {
+      "name": "1000X_DEEPER_CONSULTATION_RESULTS.json",
+      "path": "/home/ubuntu/1000X_DEEPER_CONSULTATION_RESULTS.json",
+      "size": 153987,
+      "modified": "2025-10-17T05:20:58.060348",
+      "md5": "c4b9bad564f27346e7ee048a99c4d06a",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_1000X_BETTER_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_1000X_BETTER_RESULTS.json",
+      "size": 153124,
+      "modified": "2025-10-17T05:33:35.565608",
+      "md5": "d70b69842dc9c0cca4b306c5ff4880d4",
+      "valid": true
+    },
+    {
+      "name": "PRIORITIZED_IMPROVEMENTS_MASTER_LIST.json",
+      "path": "/home/ubuntu/PRIORITIZED_IMPROVEMENTS_MASTER_LIST.json",
+      "size": 219110,
+      "modified": "2025-10-17T06:28:44.775380",
+      "md5": "e6c74f58a989b5044c4a4b45ae828daa",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_SYSTEM_VALIDATION_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_SYSTEM_VALIDATION_RESULTS.json",
+      "size": 1840,
+      "modified": "2025-10-17T06:45:55.059098",
+      "md5": "c9d7079fb7d770f451ed3cf0efb2dc47",
+      "valid": true
+    },
+    {
+      "name": "COMPREHENSIVE_PROOF_RESULTS.json",
+      "path": "/home/ubuntu/COMPREHENSIVE_PROOF_RESULTS.json",
+      "size": 12279,
+      "modified": "2025-10-17T07:34:11.235808",
+      "md5": "556cf6142e7cb7583086e5a6d311259d",
+      "valid": true
+    },
+    {
+      "name": "PERFECT_10_CONSULTATION_RESULTS.json",
+      "path": "/home/ubuntu/PERFECT_10_CONSULTATION_RESULTS.json",
+      "size": 185,
+      "modified": "2025-10-17T07:47:07.404949",
+      "md5": "3318fe7493c14dff1bd8ae65aa20b36e",
+      "valid": true
+    },
+    {
+      "name": "AI_CONSENSUS_100_PERCENT_VERIFICATION_RESULTS.json",
+      "path": "/home/ubuntu/AI_CONSENSUS_100_PERCENT_VERIFICATION_RESULTS.json",
+      "size": 5946,
+      "modified": "2025-10-17T08:57:02.651834",
+      "md5": "a0d7f3c943da8a2120de6bfbc1d97355",
+      "valid": true
+    },
+    {
+      "name": "ULTIMATE_HIVE_MIND_DATA_PLATFORM_RESULTS.json",
+      "path": "/home/ubuntu/ULTIMATE_HIVE_MIND_DATA_PLATFORM_RESULTS.json",
+      "size": 56681,
+      "modified": "2025-10-17T09:12:21.067777",
+      "md5": "8dc5dfa99cf9b50eea27d38fe7cedab6",
+      "valid": true
+    },
+    {
+      "name": "PHASE_1_EXTRACTION_RESULTS.json",
+      "path": "/home/ubuntu/PHASE_1_EXTRACTION_RESULTS.json",
+      "size": 4760421,
+      "modified": "2025-10-17T11:35:01.922950",
+      "md5": "1daea0fe44f7de264f2f3eaf4e43b799",
+      "valid": true
+    },
+    {
+      "name": "AI_HIVE_MIND_CONSULTATION_RESULTS.json",
+      "path": "/home/ubuntu/AI_HIVE_MIND_CONSULTATION_RESULTS.json",
+      "size": 6564,
+      "modified": "2025-10-17T11:37:05.214941",
+      "md5": "149b2e3509a5a614fa10a63e28a37aa6",
+      "valid": true
+    },
+    {
+      "name": "PHASE_3_INTEGRATION_RESULTS.json",
+      "path": "/home/ubuntu/PHASE_3_INTEGRATION_RESULTS.json",
+      "size": 165,
+      "modified": "2025-10-17T11:38:59.102930",
+      "md5": "ba1ebd7542a48e8f6db9d50057c64582",
+      "valid": true
+    }
+  ],
+  "all_repositories": [
+    {
+      "name": "sandy---box",
+      "path": "/home/ubuntu/sandy---box",
+      "total_files": 627,
+      "total_lines": 429384
+    },
+    {
+      "name": "files-for-build",
+      "path": "/home/ubuntu/files-for-build",
+      "total_files": 0,
+      "total_lines": 0
+    },
+    {
+      "name": "lyra-files",
+      "path": "/home/ubuntu/lyra-files",
+      "total_files": 0,
+      "total_lines": 0
+    }
+  ],
+  "total_statistics": {
+    "python_systems": {
+      "count": 57,
+      "total_lines": 27116,
+      "total_size": 1021315
+    },
+    "markdown_docs": {
+      "count": 65,
+      "total_lines": 19666,
+      "total_size": 551579
+    },
+    "json_configs": {
+      "count": 24,
+      "total_size": 5577467,
+      "valid_count": 24
+    },
+    "repositories": {
+      "count": 3,
+      "total_files": 627,
+      "total_lines": 429384
+    }
+  },
+  "critical_files": {
+    "ultimate_systems": [
+      {
+        "name": "ULTIMATE_NEXT_LEVEL_INTEGRATED_SYSTEM.py",
+        "exists": true,
+        "size": 43924,
+        "md5": "e909ee8e0169b4e34a71004094c1cb9a"
+      },
+      {
+        "name": "ULTIMATE_INTEGRATED_LYRA_SYSTEM.py",
+        "exists": true,
+        "size": 21665,
+        "md5": "0985a07a93f155c6115fd0f249313545"
+      },
+      {
+        "name": "ULTIMATE_AI_TRADING_SYSTEM_COMPLETE.py",
+        "exists": true,
+        "size": 13250,
+        "md5": "f6e36df726fe4f8b6da544db1f99ceee"
+      },
+      {
+        "name": "ULTIMATE_LYRA_FINAL.py",
+        "exists": true,
+        "size": 23680,
+        "md5": "5b95a7cc5ff8b817a8dcbc541e99716f"
+      },
+      {
+        "name": "ULTIMATE_LYRA_COMPLETE_SYSTEM.py",
+        "exists": true,
+        "size": 28126,
+        "md5": "991b3829c313a7c3b3529134c1768f4d"
+      },
+      {
+        "name": "ULTIMATE_TURBO_CHARGED_PRODUCTION_SYSTEM.py",
+        "exists": true,
+        "size": 38993,
+        "md5": "e9d5a704799252be3637e62ae118c67d"
+      }
+    ],
+    "core_engines": [
+      {
+        "name": "UNIFIED_DATA_ENGINE.py",
+        "exists": true,
+        "size": 17886,
+        "md5": "0764a17f3a3332efe770594d784605b9"
+      },
+      {
+        "name": "PERFECT_BACKTESTING_ENGINE_V2.py",
+        "exists": true,
+        "size": 22606,
+        "md5": "191766087224a07dcf032a730c4035d5"
+      },
+      {
+        "name": "COMPLETE_PRODUCTION_AUTOMATED_TRADING_SYSTEM.py",
+        "exists": true,
+        "size": 18189,
+        "md5": "55aae3869e92d81b7a5cdd1ca4b7a0ef"
+      }
+    ],
+    "perfect_systems": [
+      {
+        "name": "PERFECT_10_COMPLETE_SYSTEM.py",
+        "exists": true,
+        "size": 21339,
+        "md5": "12e599c7f5aa278a01b6fc26914990b2"
+      },
+      {
+        "name": "ABSOLUTE_BEST_TRADING_SYSTEM_WORLD_CLASS_10_10.py",
+        "exists": true,
+        "size": 43113,
+        "md5": "2556439fb9f800da29fa40b2c81ccb21"
+      },
+      {
+        "name": "ABSOLUTE_BEST_IN_WORLD_TRADING_SYSTEM.py",
+        "exists": true,
+        "size": 28481,
+        "md5": "9ad4b56c03f9197b781f86e7377dd3be"
+      }
+    ],
+    "research_docs": [
+      {
+        "name": "ULTIMATE_FINDINGS_WORLDS_BEST.md",
+        "exists": true,
+        "size": 10474,
+        "md5": "5564eb70d500e1239656c377f01b34ec"
+      },
+      {
+        "name": "100X_AMPLIFICATION_MASTER_PLAN.md",
+        "exists": true,
+        "size": 5916,
+        "md5": "5f867de629173b737d9432005e700633"
+      },
+      {
+        "name": "ULTIMATE_INTEGRATION_DELIVERY_SUMMARY.md",
+        "exists": true,
+        "size": 12480,
+        "md5": "a6a4d95b8968f030e38dc3df49de4f86"
+      },
+      {
+        "name": "QUICK_START_DEPLOYMENT_GUIDE.md",
+        "exists": true,
+        "size": 9808,
+        "md5": "9dbba9bb8124327cc757f4f4d3d1ba3f"
+      }
+    ],
+    "ai_consultation": [
+      {
+        "name": "AI_HIVE_MIND_CONSULTATION_SUMMARY.md",
+        "exists": true,
+        "size": 2223,
+        "md5": "d275b191ccecac7c776d658bfcb4b7fa"
+      },
+      {
+        "name": "AI_HIVE_MIND_CONSULTATION_RESULTS.json",
+        "exists": true,
+        "size": 6564,
+        "md5": "149b2e3509a5a614fa10a63e28a37aa6"
+      }
+    ],
+    "phase_results": [
+      {
+        "name": "PHASE_1_EXTRACTION_SUMMARY.md",
+        "exists": true,
+        "size": 2170,
+        "md5": "d8b86965e2c925a7cb5fb21e4e01bd40"
+      },
+      {
+        "name": "PHASE_1_EXTRACTION_RESULTS.json",
+        "exists": true,
+        "size": 4760421,
+        "md5": "1daea0fe44f7de264f2f3eaf4e43b799"
+      },
+      {
+        "name": "PHASE_3_INTEGRATION_RESULTS.json",
+        "exists": true,
+        "size": 165,
+        "md5": "ba1ebd7542a48e8f6db9d50057c64582"
+      }
+    ]
+  },
+  "integrity_check": {
+    "ultimate_system": {
+      "exists": true,
+      "size": 43924,
+      "lines": 1116,
+      "md5": "e909ee8e0169b4e34a71004094c1cb9a"
+    },
+    "package": {
+      "exists": true,
+      "size": 456135
+    }
+  }
+}

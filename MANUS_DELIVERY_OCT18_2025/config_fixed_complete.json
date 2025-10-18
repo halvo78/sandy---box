@@ -1,0 +1,71 @@
+{
+  "openrouter_api_keys": [
+    "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"
+  ],
+  "ai_team": [
+    {"role": "Market Analyst", "model": "google/gemini-2.5-flash-preview-09-2025", "weight": 1.2},
+    {"role": "Technical Analyst", "model": "anthropic/claude-sonnet-4.5", "weight": 1.3},
+    {"role": "Risk Manager", "model": "openai/gpt-5-chat", "weight": 1.5},
+    {"role": "Entry Specialist", "model": "x-ai/grok-4", "weight": 1.1},
+    {"role": "Exit Specialist", "model": "deepseek/deepseek-chat", "weight": 1.1},
+    {"role": "Sentiment Analyst", "model": "perplexity/sonar-pro", "weight": 1.0},
+    {"role": "Volume Analyst", "model": "meta-llama/llama-3.3-8b-instruct:free", "weight": 1.0},
+    {"role": "Momentum Trader", "model": "google/gemini-2.5-flash-lite", "weight": 0.9},
+    {"role": "Pattern Recognition", "model": "anthropic/claude-opus-4.1", "weight": 1.2},
+    {"role": "Arbitrage Hunter", "model": "openai/gpt-5-pro", "weight": 1.0},
+    {"role": "Liquidity Analyst", "model": "mistralai/mistral-large", "weight": 1.0},
+    {"role": "News Analyzer", "model": "perplexity/sonar-reasoning", "weight": 1.1},
+    {"role": "Macro Strategist", "model": "anthropic/claude-sonnet-4", "weight": 1.2},
+    {"role": "Execution Optimizer", "model": "x-ai/grok-4-fast", "weight": 1.1},
+    {"role": "Code Specialist", "model": "x-ai/grok-code-fast-1", "weight": 1.0},
+    {"role": "Grok 3 Strategist", "model": "x-ai/grok-3", "weight": 1.1},
+    {"role": "Grok 3 Mini Analyst", "model": "x-ai/grok-3-mini", "weight": 0.8},
+    {"role": "Grok 3 Beta Researcher", "model": "x-ai/grok-3-beta", "weight": 0.9},
+    {"role": "Qwen Coder", "model": "qwen/qwen-3-coder-480b-a35b", "weight": 1.0},
+    {"role": "GPT-5 Codex", "model": "openai/gpt-5-codex", "weight": 1.0}
+  ],
+  "trading_config": {
+    "starting_capital": 1000000,
+    "max_positions": 999,
+    "max_daily_loss": 999999,
+    "risk_per_trade": 0.05,
+    "profit_target": 0.024,
+    "stop_loss": 0.015,
+    "trailing_stop": 0.01,
+    "never_sell_at_loss": true,
+    "paper_trading": true,
+    "turbo_mode": true,
+    "progressive_rollout": false,
+    "scan_interval": 10
+  },
+  "coins": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "ADA/USDT",
+    "XRP/USDT",
+    "DOT/USDT",
+    "MATIC/USDT",
+    "AVAX/USDT"
+  ],
+  "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+  "strategies": {
+    "statistical_arbitrage": {"enabled": true, "weight": 0.08, "min_confidence": 0.90},
+    "hft_market_making": {"enabled": true, "weight": 0.07, "min_confidence": 0.85},
+    "grid_trading": {"enabled": true, "weight": 0.07, "min_confidence": 0.80},
+    "dca_trading": {"enabled": true, "weight": 0.06, "min_confidence": 0.75},
+    "momentum_trading": {"enabled": true, "weight": 0.08, "min_confidence": 0.90},
+    "mean_reversion": {"enabled": true, "weight": 0.07, "min_confidence": 0.85},
+    "swing_trading": {"enabled": true, "weight": 0.06, "min_confidence": 0.85},
+    "scalping": {"enabled": true, "weight": 0.05, "min_confidence": 0.92},
+    "pairs_trading": {"enabled": true, "weight": 0.06, "min_confidence": 0.88},
+    "arbitrage": {"enabled": true, "weight": 0.07, "min_confidence": 0.90},
+    "cps": {"enabled": true, "weight": 0.08, "min_confidence": 0.90},
+    "tm": {"enabled": true, "weight": 0.07, "min_confidence": 0.88},
+    "rmr": {"enabled": true, "weight": 0.06, "min_confidence": 0.85},
+    "vbo": {"enabled": true, "weight": 0.06, "min_confidence": 0.87},
+    "cfh": {"enabled": true, "weight": 0.05, "min_confidence": 0.85},
+    "ed": {"enabled": true, "weight": 0.05, "min_confidence": 0.88}
+  }
+}
+

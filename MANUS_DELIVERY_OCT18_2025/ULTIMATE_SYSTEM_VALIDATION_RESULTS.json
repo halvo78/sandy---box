@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-10-17T10:45:55.060192",
+  "reviewers": 14,
+  "successful_reviews": 0,
+  "total_characters": 0,
+  "components_reviewed": [
+    "Quantitative Analytics",
+    "Mathematics & Algorithms",
+    "Automation & Autonomy",
+    "Speed & Performance",
+    "Code Quality & Engineering",
+    "Trading Engine",
+    "AI Systems"
+  ],
+  "results": [
+    {
+      "role": "Chief Quantitative Analyst",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Senior Quantitative Researcher",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Chief Mathematician",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Algorithm Optimization Expert",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Automation Architect",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Autonomous Systems Expert",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Performance Engineering Director",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "HFT Optimization Specialist",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Chief Software Architect",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Code Quality Expert",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Trading Engine Architect",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Order Execution Specialist",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "AI Systems Director",
+      "error": "HTTP 401",
+      "success": false
+    },
+    {
+      "role": "Machine Learning Architect",
+      "error": "HTTP 401",
+      "success": false
+    }
+  ]
+}
